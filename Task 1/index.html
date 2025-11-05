@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Beebs. Form</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <a class="nav__logo" href="/">Beebs.</a>
+        <ul class="nav__links">
+          <li class="nav__item"><a class="nav__link" href="/home">Home</a></li>
+          <li class="nav__item">
+            <a class="nav__link" href="/services">Services</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="/about">About</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="/portfolio">Portfolio</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="/contact">Contact</a>
+          </li>
+        </ul>
+
+        <button class="nav__menu-icon">
+          <i class="fa-solid fa-bars" aria-label="menu-icon"></i>
+        </button>
+      </nav>
+      <div class="header__overlay">
+        <div class="header__sidebar">
+          <button class="nav__menuclose-icon">
+            <i class="fa-solid fa-x" aria-label="menu-close-icon"></i>
+          </button>
+          <ul class="nav__sidebar-links">
+            <li><a class="nav__sidebar-link" href="/home">Home</a></li>
+            <li class="nav__sidebar-linebreak"></li>
+            <li><a class="nav__sidebar-link" href="/services">Services</a></li>
+            <li class="nav__sidebar-linebreak"></li>
+            <li><a class="nav__sidebar-link" href="/about">About</a></li>
+            <li class="nav__sidebar-linebreak"></li>
+            <li>
+              <a class="nav__sidebar-link" href="/portfolio">Portfolio</a>
+            </li>
+            <li class="nav__sidebar-linebreak"></li>
+            <li><a class="nav__sidebar-link" href="/contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <article class="article">
+        <section class="article__contents">
+          <h1>Let&apos;s Talk</h1>
+          <p>
+            Have some big idea or brand to develop and need help? Then reach out
+            we&apos;d love to hear about your project and provide help
+          </p>
+        </section>
+        <section class="article__contents">
+          <h2>Email</h2>
+          <a href="mailto:beebs@gmail.com" class="article__mail"
+            >beebs@gmail.com</a
+          >
+        </section>
+        <section class="article__contents">
+          <h2>Socials</h2>
+          <ul class="article__socials">
+            <li class="article__social">
+              <a class="article__social--link" href="/">Instagram</a>
+            </li>
+            <li class="article__social">
+              <a class="article__social--link" href="/">Twitter</a>
+            </li>
+            <li class="article__social">
+              <a class="article__social--link" href="/">Facebook</a>
+            </li>
+          </ul>
+        </section>
+      </article>
+
+      <!-- form validation using the constraints -->
+      <!-- <form class="form" method="POST">
+        <div class="form__group">
+          <label class="form__label" for="username">
+            Name <span class="form__required">*</span>
+          </label>
+          <input
+            class="form__text"
+            type="text"
+            name="name"
+            id="username"
+            placeholder="John Doe"
+            minlength="2"
+            pattern="^[A-Za-z ]+$"
+            required
+          />
+        </div>
+
+        <div class="form__group">
+          <label class="form__label" for="useremail">
+            Email <span class="form__required">*</span>
+          </label>
+          <input
+            class="form__text"
+            type="email"
+            name="email"
+            id="useremail"
+            placeholder="example@mail.com"
+            required
+          />
+        </div>
+
+        <div class="form__group">
+          <label class="form__label" for="userservice">
+            What service are you interested in
+            <span class="form__required">*</span>
+          </label>
+          <select class="form__select" id="userservice" name="service" required>
+            <option value="">Select project type</option>
+            <option value="web-design">Web Design</option>
+            <option value="graphic-design">Graphic Design</option>
+            <option value="branding">Branding</option>
+            <option value="marketing">Marketing</option>
+          </select>
+        </div>
+
+        <div class="form__group">
+          <label class="form__label" for="projectbudget">
+            Budget <span class="form__required">*</span>
+          </label>
+          <select
+            class="form__select"
+            name="budget"
+            id="projectbudget"
+            required
+          >
+            <option value="">Select project budget</option>
+            <option value="less-1000">Rs 0 - 1,000</option>
+            <option value="1000-5000">Rs 1,000 - 5,000</option>
+            <option value="5000-10000">Rs 5,000 - 10,000</option>
+            <option value="more-10000">Rs 10,000 +</option>
+          </select>
+        </div>
+
+        <div class="form__group">
+          <label class="form__label" for="usermessage">
+            Message <span class="form__required">*</span>
+          </label>
+          <textarea
+            class="form__textArea"
+            id="usermessage"
+            name="message"
+            rows="5"
+            minlength="5"
+            maxlength="50"
+            required
+          ></textarea>
+        </div>
+        <button class="form__button" type="submit">Submit</button>
+      </form> -->
+      <!-- validation using javascript -->
+      <form class="form" onsubmit=" handleSubmit(event)">
+        <div class="form__group">
+          <label class="form__label" for="username">
+            Name <span class="form__required">*</span>
+          </label>
+          <input
+            class="form__text"
+            type="text"
+            name="name"
+            id="username"
+            placeholder="John Doe"
+          />
+          <div class="error-message" id="name-error"></div>
+        </div>
+
+        <div class="form__group">
+          <label class="form__label" for="useremail">
+            Email <span class="form__required">*</span>
+          </label>
+          <input
+            class="form__text"
+            type="email"
+            name="email"
+            id="useremail"
+            placeholder="example@mail.com"
+          />
+          <div class="error-message" id="email-error"></div>
+        </div>
+
+        <div class="form__group">
+          <label class="form__label" for="userservice">
+            What service are you interested in
+            <span class="form__required">*</span>
+          </label>
+          <select class="form__select" id="userservice" name="service">
+            <option value="">Select project type</option>
+            <option value="web-design">Web Design</option>
+            <option value="graphic-design">Graphic Design</option>
+            <option value="branding">Branding</option>
+            <option value="marketing">Marketing</option>
+          </select>
+          <div class="error-message" id="service-error"></div>
+        </div>
+
+        <div class="form__group">
+          <label class="form__label" for="projectbudget">
+            Budget <span class="form__required">*</span>
+          </label>
+          <select class="form__select" name="budget" id="projectbudget">
+            <option value="">Select project budget</option>
+            <option value="less-1000">Rs 0 - 1,000</option>
+            <option value="1000-5000">Rs 1,000 - 5,000</option>
+            <option value="5000-10000">Rs 5,000 - 10,000</option>
+            <option value="more-10000">Rs 10,000 +</option>
+          </select>
+          <div class="error-message" id="budget-error"></div>
+        </div>
+
+        <div class="form__group">
+          <label class="form__label" for="usermessage">
+            Message <span class="form__required">*</span>
+          </label>
+          <textarea
+            class="form__textArea"
+            id="usermessage"
+            name="message"
+            rows="5"
+          ></textarea>
+          <div class="error-message" id="message-error"></div>
+        </div>
+
+        <button class="form__button" type="submit">Submit</button>
+      </form>
+    </main>
+    <script src="./script/main.js"></script>
+  </body>
+</html>
