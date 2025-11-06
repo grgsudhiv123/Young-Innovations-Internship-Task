@@ -7,6 +7,7 @@
 html,
 body {
   @include mixin.base-reset;
+  // overflow-x: hidden;
   font-family: variables.$font-family-base;
 }
 
@@ -32,7 +33,7 @@ li {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: 10;
   background-color: transparent;
 }
 
@@ -294,13 +295,32 @@ main {
     margin: 0 auto functions.pxToRem(66);
     gap: 10px;
     text-align: center;
+
+    h1 {
+      @include mixin.font-format(
+        map.get(variables.$font-sizes, "6xl"),
+        map.get(variables.$font-weights, "bold"),
+        100%,
+        variables.$text-blue-3
+      );
+      font-family: variables.$font-family-volkhov;
+    }
+
+    p {
+      @include mixin.font-format(
+        map.get(variables.$font-sizes, "lg"),
+        map.get(variables.$font-weights, "semibold"),
+        100%,
+        variables.$secondary-text
+      );
+      text-align: center;
+    }
   }
 
   .card {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 2rem;
-    position: relative;
 
     .card__group {
       padding: functions.pxToRem(0) functions.pxToRem(36) functions.pxToRem(40);
@@ -311,6 +331,7 @@ main {
       z-index: 1;
       background-color: white;
       transition: 0.2s ease-in-out;
+      position: relative;
 
       .card__icon {
         width: functions.pxToRem(166);
@@ -349,16 +370,58 @@ main {
       border-radius: 30px 0 10px 0;
       position: absolute;
       bottom: -30px;
-      left: 280px;
+      left: 300px;
       z-index: -1;
     }
   }
 
   @media (max-width: map.get(variables.$breakpoints, "xl")) {
+    max-width: functions.pxToRem(800);
     padding: 0 functions.pxToRem(16);
 
-    .card__group {
-      padding: functions.pxToRem(0) functions.pxToRem(16) functions.pxToRem(24);
+    .card {
+      grid-template-columns: 1fr 1fr 1fr;
+
+      .card__group {
+        padding: functions.pxToRem(0) functions.pxToRem(16)
+          functions.pxToRem(24);
+      }
+
+      .card__icon-comp {
+        width: functions.pxToRem(80);
+        height: functions.pxToRem(80);
+      }
+    }
+  }
+
+  @media (max-width: map.get(variables.$breakpoints, "md")) {
+    max-width: functions.pxToRem(600);
+
+    .card {
+      grid-template-columns: 1fr 1fr;
+
+      .card__group {
+        padding: functions.pxToRem(0) functions.pxToRem(8) functions.pxToRem(16);
+      }
+
+      .card__icon-comp {
+        width: functions.pxToRem(40);
+        height: functions.pxToRem(40);
+      }
+    }
+  }
+
+  @media (max-width: map.get(variables.$breakpoints, "xs")) {
+    max-width: functions.pxToRem(250);
+
+    .services__header {
+      h1 {
+        font-weight: map.get(variables.$font-sizes, "lg");
+      }
+    }
+
+    .card {
+      grid-template-columns: 1fr;
     }
   }
 }
