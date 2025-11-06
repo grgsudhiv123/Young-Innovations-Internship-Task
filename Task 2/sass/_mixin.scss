@@ -1,0 +1,14 @@
+@use "functions";
+
+@mixin base-reset {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@mixin font-format($size-key, $fontweight-key, $line-height-key, $color) {
+  font-size: $size-key;
+  font-weight: $fontweight-key;
+  line-height: functions.pxToRem($line-height-key);
+  color: $color;
+}

@@ -1,0 +1,16 @@
+{
+  "name": "task-2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass:watch": "sass --watch sass/style.scss:css/style.css",
+    "dev": "npm run sass:watch",
+    "sass:build": "sass sass/style.scss css/style.css --style=compressed",
+    "build": "npm run sass:build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,302 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+p,
+h1,
+h2,
+h3,
+ul,
+a,
+li {
+  padding: 0;
+  margin: 0;
+}
+
+.button-base, .hero__info .hero__btn-container .hero__playdemo button, .hero__info .hero__btn-container .hero__findmore-btn, .nav__menu-btn, .nav__lang-btn, .nav__signup-btn {
+  background: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: transparent;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  max-width: 72.5rem;
+  margin: 2.9375rem auto 0;
+}
+.nav__logo img {
+  width: 7.1875rem;
+  height: auto;
+}
+.nav__list {
+  display: flex;
+  gap: 3.125rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+.nav__item {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.5rem;
+  color: #212832;
+}
+.nav__link {
+  text-decoration: none;
+  color: #212832;
+}
+.nav__link:hover {
+  color: gray;
+}
+.nav__signup-btn {
+  padding: 0.4375rem 1.125rem;
+  border: 1px solid #212832;
+  border-radius: 0.125rem;
+  transition: 0.2s ease-in-out;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.nav__signup-btn:hover {
+  background-color: #df6951;
+  color: white;
+}
+.nav__lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.nav__lang-btn .fa-chevron-down {
+  font-size: 0.625rem;
+}
+.nav__menu-btn {
+  border: none;
+  padding: 0;
+  display: none;
+}
+.nav__menu-btn .fa-bars {
+  font-size: 1.25rem;
+}
+@media (max-width: 1280px) {
+  .nav {
+    margin-top: 1.25rem;
+    padding: 0 1rem;
+  }
+  .nav__list {
+    gap: 1.875rem;
+  }
+}
+@media (max-width: 768px) {
+  .nav__item {
+    display: none;
+  }
+  .nav__menu-btn {
+    display: inline;
+  }
+}
+
+main {
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.hero {
+  max-width: 75rem;
+  height: 47.8125rem;
+  margin: 0 auto;
+  margin-bottom: 110px;
+}
+.hero__container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-top: 6.5625rem;
+}
+.hero__info {
+  max-width: 39.375rem;
+  height: fit-content;
+  width: 100%;
+  z-index: 1;
+}
+.hero__info .hero__tag-line {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 0rem;
+  color: #df6951;
+  margin-bottom: 1.5rem;
+}
+.hero__info h1 {
+  font-size: 5.25rem;
+  font-weight: 700;
+  line-height: 5.5625rem;
+  color: #181e4b;
+  font-family: "Volkhov", serif;
+  margin-bottom: 1.875rem;
+  letter-spacing: -4%;
+  position: relative;
+  z-index: 10;
+}
+.hero__info h1 .hero__heading-decore {
+  position: absolute;
+  top: 70px;
+  right: 0;
+  z-index: -1;
+}
+.hero__info h1 span {
+  white-space: nowrap;
+}
+.hero__info .hero__desc {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.875rem;
+  color: #5e6282;
+  margin-bottom: 2.125rem;
+}
+.hero__info .hero__btn-container {
+  display: flex;
+  flex-direction: row;
+  gap: 2.75rem;
+}
+.hero__info .hero__btn-container .hero__findmore-btn {
+  padding: 1.125rem 1.375rem;
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: white;
+  background-color: #f1a501;
+  border: none;
+}
+.hero__info .hero__btn-container .hero__playdemo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.3125rem;
+}
+.hero__info .hero__btn-container .hero__playdemo button {
+  padding: 1.125rem 1.25rem;
+  border-radius: 50%;
+  border: none;
+  background-color: #df6951;
+}
+.hero__info .hero__btn-container .hero__playdemo button .fa-play {
+  font-size: 16px;
+  color: #f6f6f6;
+}
+.hero__info .hero__btn-container .hero__playdemo a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #686d77;
+  transition: 0.2 ease-in-out;
+}
+.hero__info .hero__btn-container .hero__playdemo a:hover {
+  text-decoration: underline;
+}
+.hero__img-wrapper {
+  position: absolute;
+  right: 0;
+  width: 47.8125rem;
+  height: 47.8125rem;
+}
+.hero__img {
+  width: 100%;
+  height: 100%;
+}
+.hero__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.services {
+  max-width: 76.75rem;
+  margin: 0 auto;
+}
+.services__header {
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin: 0 auto 4.125rem;
+  gap: 10px;
+  text-align: center;
+}
+.services .card {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2rem;
+  position: relative;
+}
+.services .card .card__group {
+  padding: 0rem 2.25rem 2.5rem;
+  border-radius: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
+  background-color: white;
+  transition: 0.2s ease-in-out;
+}
+.services .card .card__group .card__icon {
+  width: 10.375rem;
+  height: 9.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.services .card .card__group h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 6.25%rem;
+  color: #1e1d4c;
+}
+.services .card .card__group p {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.625pxrem;
+  color: #5e6282;
+  text-align: center;
+}
+.services .card .card__group:hover {
+  box-shadow: 0px 50px 30px rgba(67, 76, 120, 0.1);
+}
+.services .card__icon-comp {
+  width: 6.25rem;
+  height: 6.25rem;
+  background-color: #df6951;
+  border-radius: 30px 0 10px 0;
+  position: absolute;
+  bottom: -30px;
+  left: 280px;
+  z-index: -1;
+}
+@media (max-width: 1280px) {
+  .services {
+    padding: 0 1rem;
+  }
+  .services .card__group {
+    padding: 0rem 1rem 1.5rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

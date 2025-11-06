@@ -3,9 +3,141 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Task 2</title>
   </head>
   <body>
+    <header class="header">
+      <nav class="nav">
+        <a class="nav__logo" href="/">
+          <img src="./assets/logo.svg" alt="Travel Logo" />
+        </a>
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a href="/" class="nav__link">Destinations</a>
+          </li>
+          <li class="nav__item"><a href="/" class="nav__link">Hotels</a></li>
+          <li class="nav__item"><a href="/" class="nav__link">Flights</a></li>
+          <li class="nav__item"><a href="/" class="nav__link">Bookings</a></li>
+          <li class="nav__item"><a href="/" class="nav__link">Login</a></li>
+          <li class="nav__item">
+            <button class="nav__signup-btn">Sign up</button>
+          </li>
+          <li class="nav__item">
+            <button class="nav__lang-btn">
+              EN
+              <i
+                aria-label="dropdown-arrow"
+                class="fa-solid fa-chevron-down"
+              ></i>
+            </button>
+          </li>
+        </ul>
+        <button class="nav__menu-btn">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </nav>
+    </header>
+
+    <!-- hero section -->
+    <main>
+      <section class="hero">
+        <div class="hero__container">
+          <div class="hero__info">
+            <p class="hero__tag-line">Best Destinations around the world</p>
+            <h1>
+              <img
+                class="hero__heading-decore"
+                src="./assets/heropage/headingDecore.svg"
+                alt="heading decore"
+              />
+              <span> Travel, enjoy </span><br />
+              <span> and live a new </span><br />
+              <span>and full life</span>
+            </h1>
+            <p class="hero__desc">
+              Built Wicket longer admire do barton vanity itself do in it.
+              Preferred to sportsmen it engrossed listening. Park gate sell they
+              west hard for the.
+            </p>
+
+            <div class="hero__btn-container">
+              <button class="hero__findmore-btn">Find out more</button>
+              <div class="hero__playdemo">
+                <button>
+                  <i class="fa-solid fa-play"></i>
+                </button>
+                <a href="/"> Play demo </a>
+              </div>
+            </div>
+          </div>
+          <div class="hero__img-wrapper">
+            <img
+              class="hero__img"
+              src="./assets/heropage/heroimg.svg"
+              alt="hero page image"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- services -->
+      <section class="services">
+        <div class="services__header">
+          <p>CATEGORY</p>
+          <h1>We Offer Best Services</h1>
+        </div>
+
+        <div class="card">
+          <div class="card__group">
+            <div class="card__icon">
+              <img src="./assets//services//anteena.svg" alt="" />
+            </div>
+            <h2>Calculated Weather</h2>
+            <p>Built Wicket longer admire do barton vanity itself do in it.</p>
+          </div>
+          <div class="card__group">
+            <div class="card__icon">
+              <img src="./assets/services//plane.svg" alt="" />
+            </div>
+            <h2>Best Flights</h2>
+            <p>Engrossed listening. Park gate sell they west hard for the.</p>
+          </div>
+          <div class="card__icon-comp"></div>
+          <div class="card__group">
+            <div class="card__icon">
+              <img src="./assets/services/mic.svg" alt="" />
+            </div>
+            <h2>Local Events</h2>
+            <p>
+              Barton vanity itself do in it. Preferd to men it engrossed
+              listening.
+            </p>
+          </div>
+          <div class="card__group">
+            <div class="card__icon">
+              <img src="./assets/services/setting.svg" alt="" />
+            </div>
+            <h2>Customization</h2>
+            <p>
+              We deliver outsourced aviation services for military customers
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="destinations"></section>
+      <section class="book-trip"></section>
+      <section class="testimonials"></section>
+      <section class="logos"></section>
+      <section class="subscribe"></section>
+    </main>
+    <footer></footer>
     <script src="./script/main.js"></script>
   </body>
 </html>

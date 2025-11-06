@@ -1,0 +1,364 @@
+@use "mixin";
+@use "functions";
+@use "variables";
+
+@use "sass:map";
+
+html,
+body {
+  @include mixin.base-reset;
+  font-family: variables.$font-family-base;
+}
+
+p,
+h1,
+h2,
+h3,
+ul,
+a,
+li {
+  padding: 0;
+  margin: 0;
+}
+
+.button-base {
+  background: transparent;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: transparent;
+}
+
+// navbar
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  max-width: functions.pxToRem(1160);
+  margin: functions.pxToRem(47) auto 0;
+
+  &__logo {
+    img {
+      width: functions.pxToRem(115);
+      height: auto;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: functions.pxToRem(50);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+  }
+
+  &__item {
+    @include mixin.font-format(
+      map.get(variables.$font-sizes, "base"),
+      map.get(variables.$font-weights, "medium"),
+      24,
+      variables.$primary-text
+    );
+  }
+
+  &__link {
+    text-decoration: none;
+    color: variables.$primary-text;
+
+    &:hover {
+      color: gray;
+    }
+  }
+
+  &__signup-btn {
+    padding: functions.pxToRem(7) functions.pxToRem(18);
+    border: 1px solid variables.$primary-text;
+    border-radius: map.get(variables.$radius, "sm");
+    transition: 0.2s ease-in-out;
+    font-size: map.get(variables.$font-sizes, "base");
+    font-weight: map.get(variables.$font-weights, "medium");
+
+    @extend .button-base;
+
+    &:hover {
+      background-color: variables.$coral;
+      color: white;
+    }
+  }
+
+  &__lang-btn {
+    @extend .button-base;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: none;
+    font-size: map.get(variables.$font-sizes, "base");
+    font-weight: map.get(variables.$font-weights, "medium");
+
+    .fa-chevron-down {
+      font-size: functions.pxToRem(10);
+    }
+  }
+
+  &__menu-btn {
+    @extend .button-base;
+    border: none;
+    padding: 0;
+    display: none;
+
+    .fa-bars {
+      font-size: functions.pxToRem(20);
+    }
+  }
+
+  @media (max-width: map.get(variables.$breakpoints, "xl")) {
+    margin-top: functions.pxToRem(20);
+    padding: 0 functions.pxToRem(16);
+
+    &__list {
+      gap: functions.pxToRem(30);
+    }
+  }
+
+  @media (max-width: map.get(variables.$breakpoints, "md")) {
+    &__item {
+      display: none;
+    }
+
+    &__menu-btn {
+      display: inline;
+    }
+  }
+}
+
+// main
+main {
+  // background-image: url("../assets//heropage/bgdecore.svg");
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+// hero section
+.hero {
+  max-width: functions.pxToRem(1200);
+  height: functions.pxToRem(765);
+  margin: 0 auto;
+
+  margin-bottom: 110px;
+  &__container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-top: functions.pxToRem(105);
+  }
+
+  // hero page desc content
+  &__info {
+    max-width: functions.pxToRem(630);
+    height: fit-content;
+    width: 100%;
+    z-index: 1;
+
+    .hero__tag-line {
+      @include mixin.font-format(
+        map.get(variables.$font-sizes, "xl"),
+        map.get(variables.$font-weights, "bold"),
+        0,
+        variables.$coral
+      );
+      margin-bottom: functions.pxToRem(24);
+    }
+
+    h1 {
+      @include mixin.font-format(
+        map.get(variables.$font-sizes, "9xl"),
+        map.get(variables.$font-weights, "bold"),
+        89,
+        variables.$text-blue-1
+      );
+      font-family: variables.$font-family-volkhov;
+      margin-bottom: functions.pxToRem(30);
+      letter-spacing: -4%;
+      position: relative;
+      z-index: 10;
+
+      .hero__heading-decore {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        z-index: -1;
+      }
+      span {
+        white-space: nowrap;
+      }
+    }
+
+    .hero__desc {
+      font-size: map.get(variables.$font-sizes, "base");
+      font-weight: map.get(variables.$font-weights, "medium");
+      line-height: functions.pxToRem(30);
+      color: variables.$secondary-text;
+      margin-bottom: functions.pxToRem(34);
+    }
+
+    .hero__btn-container {
+      display: flex;
+      flex-direction: row;
+      gap: functions.pxToRem(44);
+
+      .hero__findmore-btn {
+        @extend .button-base;
+        padding: functions.pxToRem(18) functions.pxToRem(22);
+        border-radius: map.get(variables.$radius, "lg");
+        font-size: map.get(variables.$font-sizes, "lg");
+        font-weight: 500;
+        color: white;
+        background-color: variables.$yellow;
+        border: none;
+      }
+
+      .hero__playdemo {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: functions.pxToRem(21);
+
+        button {
+          @extend .button-base;
+          padding: functions.pxToRem(18) functions.pxToRem(20);
+          border-radius: 50%;
+          border: none;
+          background-color: variables.$coral;
+
+          .fa-play {
+            font-size: 16px;
+            color: variables.$text-grey;
+            font-weight: map.get(variables.$font-sizes, "normal");
+          }
+        }
+
+        a {
+          text-decoration: none;
+          font-size: map.get(variables.$font-sizes, "base");
+          color: variables.$text-dark-grey;
+          transition: 0.2 ease-in-out;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  // hero page img content
+  &__img-wrapper {
+    position: absolute;
+    right: 0;
+    width: functions.pxToRem(765);
+    height: functions.pxToRem(765);
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+// services
+
+.services {
+  max-width: functions.pxToRem(1228);
+  margin: 0 auto;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: 0 auto functions.pxToRem(66);
+    gap: 10px;
+    text-align: center;
+  }
+
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 2rem;
+    position: relative;
+
+    .card__group {
+      padding: functions.pxToRem(0) functions.pxToRem(36) functions.pxToRem(40);
+      border-radius: map.get(variables.$radius, "5xl");
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 1;
+      background-color: white;
+      transition: 0.2s ease-in-out;
+
+      .card__icon {
+        width: functions.pxToRem(166);
+        height: functions.pxToRem(154);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      h2 {
+        @include mixin.font-format(
+          map.get(variables.$font-sizes, "lg"),
+          map.get(variables.$font-weights, "semibold"),
+          100%,
+          variables.$text-heading
+        );
+      }
+
+      p {
+        @include mixin.font-format(
+          map.get(variables.$font-sizes, "base"),
+          map.get(variables.$font-weights, "medium"),
+          26px,
+          variables.$secondary-text
+        );
+        text-align: center;
+      }
+      &:hover {
+        box-shadow: 0px 50px 30px rgb(67, 76, 120, 0.1);
+      }
+    }
+    &__icon-comp {
+      width: functions.pxToRem(100);
+      height: functions.pxToRem(100);
+      background-color: variables.$coral;
+      border-radius: 30px 0 10px 0;
+      position: absolute;
+      bottom: -30px;
+      left: 280px;
+      z-index: -1;
+    }
+  }
+
+  @media (max-width: map.get(variables.$breakpoints, "xl")) {
+    padding: 0 functions.pxToRem(16);
+
+    .card__group {
+      padding: functions.pxToRem(0) functions.pxToRem(16) functions.pxToRem(24);
+    }
+  }
+}
