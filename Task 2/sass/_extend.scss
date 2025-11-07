@@ -1,0 +1,41 @@
+@use "mixin";
+@use "variables";
+@use "sass:map";
+
+// section header and tagline styling
+.header-styling {
+  @include mixin.font-format(
+    map.get(variables.$font-sizes, "6xl"),
+    map.get(variables.$font-weights, "bold"),
+    100%,
+    variables.$text-blue-3
+  );
+  font-family: variables.$font-family-volkhov;
+  text-align: center;
+
+  @media (max-width: map.get(variables.$breakpoints, "xl")) {
+    font-size: map.get(variables.$font-sizes, "5xl");
+  }
+
+  @media (max-width: map.get(variables.$breakpoints, "md")) {
+    font-size: map.get(variables.$font-sizes, "4xl");
+  }
+
+  @media (max-width: map.get(variables.$breakpoints, "xs")) {
+    font-size: map.get(variables.$font-sizes, "2xl");
+  }
+}
+
+.tagline-styling {
+  @include mixin.font-format(
+    map.get(variables.$font-sizes, "lg"),
+    map.get(variables.$font-weights, "semibold"),
+    100%,
+    variables.$secondary-text
+  );
+  text-align: center;
+
+  @media (max-width: map.get(variables.$breakpoints, "md")) {
+    font-size: map.get(variables.$font-sizes, "sm");
+  }
+}

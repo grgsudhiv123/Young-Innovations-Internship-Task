@@ -1,7 +1,7 @@
 @use "mixin";
 @use "functions";
 @use "variables";
-
+@use "extend";
 @use "sass:map";
 
 html,
@@ -297,23 +297,11 @@ main {
     text-align: center;
 
     h1 {
-      @include mixin.font-format(
-        map.get(variables.$font-sizes, "6xl"),
-        map.get(variables.$font-weights, "bold"),
-        100%,
-        variables.$text-blue-3
-      );
-      font-family: variables.$font-family-volkhov;
+      @extend .header-styling;
     }
 
     p {
-      @include mixin.font-format(
-        map.get(variables.$font-sizes, "lg"),
-        map.get(variables.$font-weights, "semibold"),
-        100%,
-        variables.$secondary-text
-      );
-      text-align: center;
+      @extend .tagline-styling;
     }
   }
 
@@ -414,14 +402,154 @@ main {
   @media (max-width: map.get(variables.$breakpoints, "xs")) {
     max-width: functions.pxToRem(250);
 
-    .services__header {
-      h1 {
-        font-weight: map.get(variables.$font-sizes, "lg");
-      }
-    }
-
     .card {
       grid-template-columns: 1fr;
+    }
+  }
+}
+
+// destinations
+
+.destinations {
+  margin: functions.pxToRem(200) auto 0;
+  max-width: functions.pxToRem(1100);
+
+  &__header {
+    h1 {
+      @extend .header-styling;
+      margin-top: 8px;
+    }
+
+    p {
+      @extend .tagline-styling;
+    }
+  }
+
+  &__card {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    // gap: functions.pxToRem(50);
+    margin-top: functions.pxToRem(60);
+    position: relative;
+
+    .destinations__decore {
+      position: absolute;
+      right: functions.pxToRem(0);
+      top: functions.pxToRem(158);
+      width: functions.pxToRem(96);
+      height: functions.pxToRem(252);
+    }
+
+    .destinations__card-group {
+      max-width: functions.pxToRem(315);
+      width: 100%;
+      overflow: hidden;
+      border-radius: map.get(variables.$radius, "2xl");
+      background-color: white;
+      z-index: 10;
+      box-shadow: 0px 50px 30px rgb(67, 76, 120, 0.1);
+
+      .destinations__card-img {
+        width: 100%;
+        height: functions.pxToRem(327);
+        overflow: hidden;
+        transition: 0.2s ease-in-out;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          object-position: top;
+        }
+
+        &:hover {
+          scale: 1.05;
+        }
+      }
+
+      .destinations__card-info {
+        padding: 27px 20px 42px 20px;
+
+        .destinations__cardinfo-1 {
+          @include mixin.font-format(
+            map.get(variables.$font-sizes, "lg"),
+            map.get(variables.$font-weights, "normal"),
+            125%,
+            variables.$secondary-text
+          );
+          display: flex;
+          justify-content: space-between;
+          gap: functions.pxToRem(20);
+        }
+
+        .destinations__cardinfo-2 {
+          @include mixin.font-format(
+            map.get(variables.$font-sizes, "base"),
+            map.get(variables.$font-weights, "normal"),
+            125%,
+            variables.$secondary-text
+          );
+          margin-top: functions.pxToRem(19);
+          text-transform: capitalize;
+
+          .fa-location-arrow {
+            color: black;
+            margin-right: functions.pxToRem(14);
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: map.get(variables.$breakpoints, "xl")) {
+    max-width: functions.pxToRem(900);
+    margin-top: functions.pxToRem(100);
+
+    .destinations__card {
+      padding: 0 20px;
+
+      .destinations__decore {
+        right: 0;
+        width: functions.pxToRem(96);
+        height: functions.pxToRem(200);
+      }
+      .destinations__card-group {
+        max-width: functions.pxToRem(260);
+
+        .destinations__card-img {
+          height: functions.pxToRem(270);
+        }
+
+        .destinations__card-info {
+          padding: 15px 10px 24px 10px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: map.get(variables.$breakpoints, "lg")) {
+    max-width: functions.pxToRem(600);
+
+    .destinations__card {
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+
+      .destinations__decore {
+        right: functions.pxToRem(-20);
+      }
+    }
+  }
+
+  @media (max-width: map.get(variables.$breakpoints, "sm")) {
+    max-width: functions.pxToRem(300);
+
+    .destinations__card {
+      grid-template-columns: 1fr;
+      gap: 24px;
+
+      .destinations__group {
+        margin: 0 auto;
+      }
     }
   }
 }
