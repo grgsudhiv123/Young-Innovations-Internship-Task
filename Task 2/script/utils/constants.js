@@ -41,3 +41,21 @@ export const DestinationConstants = [
     img: "../assets/destinationssection/destination3.png",
   },
 ];
+
+export const BookTripSteps = [
+  {
+    header: "Choose Destination",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, tortor tempus. ",
+    icon: "../../assets/booktripsection/booktrip-icon1.svg",
+  },
+  {
+    header: "Make Payment",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, tortor tempus. ",
+    icon: "../../assets/booktripsection/booktrip-icon2.svg",
+  },
+  {
+    header: "Reach Airport on Selected Date",
+    desc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Urna, tortor tempus. ",
+    icon: "../../assets/booktripsection/booktrip-icon3.svg",
+  },
+];

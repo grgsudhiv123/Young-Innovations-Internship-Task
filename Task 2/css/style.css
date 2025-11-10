@@ -1,38 +1,36 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-.header-styling, .services__header h1, .destinations__header h1 {
+.header-styling, .services__header h2, .destinations__header h2, .booktrip__info .booktrip__header h2 {
   font-size: 3.125rem;
   font-weight: 700;
   line-height: 6.25%rem;
   color: #14183e;
   font-family: "Volkhov", serif;
-  text-align: center;
 }
 @media (max-width: 1280px) {
-  .header-styling, .services__header h1, .destinations__header h1 {
+  .header-styling, .services__header h2, .destinations__header h2, .booktrip__info .booktrip__header h2 {
     font-size: 3rem;
   }
 }
 @media (max-width: 768px) {
-  .header-styling, .services__header h1, .destinations__header h1 {
+  .header-styling, .services__header h2, .destinations__header h2, .booktrip__info .booktrip__header h2 {
     font-size: 2.25rem;
   }
 }
 @media (max-width: 480px) {
-  .header-styling, .services__header h1, .destinations__header h1 {
+  .header-styling, .services__header h2, .destinations__header h2, .booktrip__info .booktrip__header h2 {
     font-size: 1.5rem;
   }
 }
 
-.tagline-styling, .services__header p, .destinations__header p {
+.tagline-styling, .services__header p, .destinations__header p, .booktrip__info .booktrip__header p {
   font-size: 1.125rem;
   font-weight: 600;
   line-height: 6.25%rem;
   color: #5e6282;
-  text-align: center;
 }
 @media (max-width: 768px) {
-  .tagline-styling, .services__header p, .destinations__header p {
+  .tagline-styling, .services__header p, .destinations__header p, .booktrip__info .booktrip__header p {
     font-size: 0.875rem;
   }
 }
@@ -67,8 +65,9 @@ li {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10;
-  background-color: transparent;
+  z-index: 20;
+  background-color: white;
+  padding-bottom: 20px;
 }
 
 .nav {
@@ -162,7 +161,7 @@ main {
   max-width: 75rem;
   height: 47.8125rem;
   margin: 0 auto;
-  margin-bottom: 110px;
+  margin-bottom: 13.75rem;
 }
 .hero__container {
   position: relative;
@@ -269,14 +268,18 @@ main {
 .services {
   max-width: 76.75rem;
   margin: 0 auto;
+  position: relative;
+}
+.services__decore {
+  position: absolute;
+  right: 0;
 }
 .services__header {
   display: flex;
   flex-direction: column;
-  width: fit-content;
-  margin: 0 auto 4.125rem;
-  gap: 10px;
+  gap: 0.625rem;
   text-align: center;
+  margin-bottom: 4.125rem;
 }
 .services .card {
   display: grid;
@@ -368,11 +371,15 @@ main {
 }
 
 .destinations {
-  margin: 12.5rem auto 0;
   max-width: 68.75rem;
+  margin: 12.5rem auto 0;
 }
-.destinations__header h1 {
+.destinations__header h2 {
   margin-top: 8px;
+  text-align: center;
+}
+.destinations__header p {
+  text-align: center;
 }
 .destinations__card {
   display: grid;
@@ -438,7 +445,7 @@ main {
 @media (max-width: 1280px) {
   .destinations {
     max-width: 56.25rem;
-    margin-top: 6.25rem;
+    margin: 6.25rem auto 0;
   }
   .destinations .destinations__card {
     padding: 0 20px;
@@ -480,6 +487,334 @@ main {
   }
   .destinations .destinations__card .destinations__group {
     margin: 0 auto;
+  }
+}
+
+.booktrip {
+  max-width: 69.625rem;
+  margin: 12.5rem auto 0;
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
+}
+.booktrip__info {
+  width: fit-content;
+}
+.booktrip__info .booktrip__header {
+  max-width: 31.9375rem;
+  width: 100%;
+}
+.booktrip__info .booktrip__steps {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: 24.6875rem;
+  width: 100%;
+  margin-top: 1.9375rem;
+}
+.booktrip__info .booktrip__steps .booktrip__info-group {
+  display: flex;
+  flex-direction: row;
+  gap: 1.3125rem;
+}
+.booktrip__info .booktrip__steps .booktrip__info-group .booktrip__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.booktrip__info .booktrip__steps .booktrip__info-group .booktrip__info h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 7.8125%rem;
+  color: #5e6282;
+}
+.booktrip__info .booktrip__steps .booktrip__info-group .booktrip__info p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 7.8125%rem;
+  color: #5e6282;
+}
+.booktrip__card-container {
+  position: relative;
+}
+.booktrip__card-container .booktrip__card1 {
+  width: 23.125rem;
+  height: auto;
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+  box-shadow: 50px -30px 150px 20px rgba(89, 177, 230, 0.2);
+}
+.booktrip__card-container .booktrip__card1 .booktrip__img {
+  width: 100%;
+  height: 11.875rem;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+.booktrip__card-container .booktrip__card1 .booktrip__img img {
+  width: 100%;
+  object-fit: cover;
+  position: top;
+  scale: 1.04;
+}
+.booktrip__card-container .booktrip__card1 .booktrip__card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8125rem;
+  margin: 1.625rem 0;
+}
+.booktrip__card-container .booktrip__card1 .booktrip__card-header h3 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 7.8125%rem;
+  color: black;
+  letter-spacing: 1.5%;
+}
+.booktrip__card-container .booktrip__card1 .booktrip__card-header p {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 7.8125%rem;
+  color: #84829a;
+  letter-spacing: -0.5%;
+}
+.booktrip__card-container .booktrip__card1 .booktrip__card-icons {
+  display: flex;
+  flex-direction: row;
+  gap: 1.125rem;
+  margin-bottom: 1.875rem;
+}
+.booktrip__card-container .booktrip__card1 .booktrip__card-icons .booktrip__card-icon-group {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+}
+.booktrip__card-container .booktrip__card1 .booktrip__card-icons .booktrip__card-icon-group i {
+  color: #84829a;
+  font-size: 1.125rem;
+}
+@media (max-width: 768px) {
+  .booktrip__card-container .booktrip__card1 .booktrip__card-icons .booktrip__card-icon-group i {
+    font-size: 0.875rem;
+  }
+}
+.booktrip__card-container .booktrip__card1 .booktrip__card-footer {
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
+  justify-content: space-between;
+}
+.booktrip__card-container .booktrip__card1 .booktrip__card-footer .booktrip__footer-info {
+  display: flex;
+  flex-direction: row;
+  gap: 0.3125rem;
+  align-items: center;
+}
+.booktrip__card-container .booktrip__card1 .booktrip__card-footer p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 7.8125%rem;
+  color: #84829a;
+  letter-spacing: 2%;
+}
+.booktrip__card-container .booktrip__card1 .booktrip__card-footer i {
+  color: #84829a;
+  font-size: 1.125rem;
+}
+@media (max-width: 768px) {
+  .booktrip__card-container .booktrip__card1 .booktrip__card-footer i {
+    font-size: 0.875rem;
+  }
+}
+.booktrip__card-container .booktrip__card2 {
+  z-index: 10;
+  position: absolute;
+  top: 14.6875rem;
+  left: 13.875rem;
+  max-width: 16.4375rem;
+  width: 100%;
+  background-color: white;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+  box-shadow: 2px 5px 30px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  gap: 0.6875rem;
+}
+.booktrip__card-container .booktrip__card2 .booktrip__card2-img {
+  width: 4.0625rem;
+  height: 3.125rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.booktrip__card-container .booktrip__card2 .booktrip__card2-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.booktrip__card-container .booktrip__card2 .booktrip__card2-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.booktrip__card-container .booktrip__card2 .booktrip__card2-info h3 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 7.8125%rem;
+  color: black;
+  letter-spacing: 1.5%;
+}
+.booktrip__card-container .booktrip__card2 .booktrip__card2-info .booktrip__tagline {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 7.8125%rem;
+  color: #84829a;
+  letter-spacing: -3.5%;
+}
+.booktrip__card-container .booktrip__card2 .booktrip__card2-info .booktrip__progress {
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 7.8125%rem;
+  color: black;
+  letter-spacing: -5.5%;
+}
+.booktrip__card-container .booktrip__card2 .booktrip__card2-info .booktrip__progress span {
+  color: #8a79df;
+}
+.booktrip__card-container .booktrip__card2 .booktrip__card2-info .booktrip__line-container {
+  width: 100%;
+  border: 1px solid #8a79df;
+  height: 5px;
+  border-radius: 0.5rem;
+}
+.booktrip__card-container .booktrip__card2 .booktrip__card2-info .booktrip__line-container .booktrip__line {
+  width: 40%;
+  height: 100%;
+  background-color: #8a79df;
+}
+@media (max-width: 1280px) {
+  .booktrip {
+    padding: 0 1.25rem;
+    max-width: 50rem;
+    margin: 6.25rem auto 0;
+  }
+}
+@media (max-width: 1024px) {
+  .booktrip {
+    max-width: 31.25rem;
+    margin: 6.25rem auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3.125rem;
+  }
+}
+@media (max-width: 768px) {
+  .booktrip {
+    max-width: 31.25rem;
+    margin: 6.25rem auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3.125rem;
+  }
+  .booktrip .booktrip__card1 {
+    width: 18.75rem;
+    height: auto;
+    border-radius: 0.75rem;
+    padding: 0.75rem;
+  }
+  .booktrip .booktrip__card1 .booktrip__img {
+    width: 100%;
+    height: 9.375rem;
+    border-radius: 0.5rem;
+  }
+  .booktrip .booktrip__card1 .booktrip__card-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    margin: 1rem 0;
+  }
+  .booktrip .booktrip__card1 .booktrip__card-header h3 {
+    font-size: 1rem;
+  }
+  .booktrip .booktrip__card1 .booktrip__card-header p {
+    font-size: 0.875rem;
+  }
+  .booktrip .booktrip__card1 .booktrip__card-icons {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .booktrip .booktrip__card1 .booktrip__card-icons .booktrip__card-icon-group {
+    width: 2rem;
+    height: 2rem;
+  }
+  .booktrip .booktrip__card1 .booktrip__card-footer p {
+    font-size: 0.875rem;
+  }
+  .booktrip .booktrip__card2 {
+    top: 11.25rem;
+    left: 10rem;
+    max-width: 15.625rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 0.3125rem;
+  }
+  .booktrip .booktrip__card2 .booktrip__card2-img {
+    width: 2.5rem;
+    height: 2.1875rem;
+  }
+  .booktrip .booktrip__card2 .booktrip__card2-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1875rem;
+  }
+  .booktrip .booktrip__card2 .booktrip__card2-info h3 {
+    font-size: 0.875rem;
+  }
+  .booktrip .booktrip__card2 .booktrip__card2-info .booktrip__tagline,
+  .booktrip .booktrip__card2 .booktrip__card2-info .booktrip__progress {
+    font-size: 0.75rem;
+  }
+  .booktrip .booktrip__card2 .booktrip__card2-info .booktrip__line-container {
+    height: 3px;
+  }
+}
+@media (max-width: 480px) {
+  .booktrip {
+    max-width: 6.25%rem;
+    margin: 6.25rem auto 0;
+  }
+  .booktrip .booktrip__steps {
+    gap: 1.5rem;
+  }
+  .booktrip .booktrip__card1 {
+    width: 15.625rem;
+    padding: 0.5rem;
+  }
+  .booktrip .booktrip__card1 .booktrip__img {
+    width: 100%;
+    height: 8.125rem;
+  }
+  .booktrip .booktrip__card1 .booktrip__card-header {
+    margin: 0.75rem 0;
+  }
+  .booktrip .booktrip__card1 .booktrip__card-icons {
+    margin-bottom: 1.5rem;
+  }
+  .booktrip .booktrip__card1 .booktrip__card-icons .booktrip__card-icon-group {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .booktrip .booktrip__card2 {
+    top: 10.625rem;
+    left: 7.5rem;
+    max-width: 11.25rem;
+    padding: 0.625rem;
   }
 }
 

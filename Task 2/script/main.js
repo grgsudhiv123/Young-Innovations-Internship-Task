@@ -1,5 +1,8 @@
-import { DestinationConstants, ServicesConstant } from "./utils/constants.js";
-
+import {
+  BookTripSteps,
+  DestinationConstants,
+  ServicesConstant,
+} from "./utils/constants.js";
 // services section
 
 // destinations section
@@ -25,4 +28,22 @@ destination_section.innerHTML += DestinationConstants.map(
         </div>
     </div>
     `
+).join("");
+
+// book trips section
+
+const booktripsteps = document.querySelector(".booktrip__steps");
+console.log(booktripsteps);
+booktripsteps.innerHTML = BookTripSteps.map(
+  (element) => `
+        <div class="booktrip__info-group">
+            <div class="booktrip__icon-container">
+                <img src="${element.icon}" alt="Book trip icons : ${element.icon}"/>
+            </div>
+            <div class="booktrip__info">
+                <h3>${element.header}</h3>
+                <p>${element.desc}</p>
+            </div>  
+        </div>
+     `
 ).join("");

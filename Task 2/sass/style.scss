@@ -33,8 +33,9 @@ li {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 10;
-  background-color: transparent;
+  z-index: 20;
+  background-color: white;
+  padding-bottom: 20px;
 }
 
 // navbar
@@ -154,7 +155,8 @@ main {
   height: functions.pxToRem(765);
   margin: 0 auto;
 
-  margin-bottom: 110px;
+  margin-bottom: functions.pxToRem(220);
+
   &__container {
     position: relative;
     display: flex;
@@ -287,16 +289,19 @@ main {
 .services {
   max-width: functions.pxToRem(1228);
   margin: 0 auto;
+  position: relative;
+
+  &__decore {
+    position: absolute;
+    right: 0;
+  }
 
   &__header {
-    display: flex;
-    flex-direction: column;
-    width: fit-content;
-    margin: 0 auto functions.pxToRem(66);
-    gap: 10px;
+    @include mixin.flex-col(10);
     text-align: center;
+    margin-bottom: functions.pxToRem(66);
 
-    h1 {
+    h2 {
       @extend .header-styling;
     }
 
@@ -411,24 +416,23 @@ main {
 // destinations
 
 .destinations {
-  margin: functions.pxToRem(200) auto 0;
-  max-width: functions.pxToRem(1100);
-
+  @include mixin.margin-layout(1100, 200);
   &__header {
-    h1 {
+    h2 {
       @extend .header-styling;
       margin-top: 8px;
+      text-align: center;
     }
 
     p {
       @extend .tagline-styling;
+      text-align: center;
     }
   }
 
   &__card {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    // gap: functions.pxToRem(50);
     margin-top: functions.pxToRem(60);
     position: relative;
 
@@ -502,8 +506,7 @@ main {
   }
 
   @media (max-width: map.get(variables.$breakpoints, "xl")) {
-    max-width: functions.pxToRem(900);
-    margin-top: functions.pxToRem(100);
+    @include mixin.margin-layout(900, 100);
 
     .destinations__card {
       padding: 0 20px;
@@ -550,6 +553,352 @@ main {
       .destinations__group {
         margin: 0 auto;
       }
+    }
+  }
+}
+
+// book trip section
+.booktrip {
+  @include mixin.margin-layout(1114, 200);
+  @include mixin.flex-row(20);
+
+  &__info {
+    width: fit-content;
+
+    .booktrip__header {
+      max-width: functions.pxToRem(511);
+      width: 100%;
+
+      h2 {
+        @extend .header-styling;
+      }
+      p {
+        @extend .tagline-styling;
+      }
+    }
+
+    .booktrip__steps {
+      @include mixin.flex-col(48);
+      max-width: functions.pxToRem(395);
+      width: 100%;
+      margin-top: functions.pxToRem(31);
+
+      .booktrip__info-group {
+        @include mixin.flex-row(21);
+
+        .booktrip__info {
+          @include mixin.flex-col(4);
+
+          h3 {
+            @include mixin.font-format(
+              map.get(variables.$font-sizes, "base"),
+              map.get(variables.$font-weights, "bold"),
+              125%,
+              variables.$secondary-text
+            );
+          }
+          p {
+            @include mixin.font-format(
+              map.get(variables.$font-sizes, "base"),
+              map.get(variables.$font-weights, "normal"),
+              125%,
+              variables.$secondary-text
+            );
+          }
+        }
+      }
+    }
+  }
+
+  &__card-container {
+    position: relative;
+    .booktrip__card1 {
+      width: functions.pxToRem(370);
+      height: auto;
+      border-radius: map.get(variables.$radius, "3xl");
+      padding: functions.pxToRem(24);
+      box-shadow: 50px -30px 150px 20px rgb(89, 177, 230, 0.2);
+
+      .booktrip__img {
+        width: 100%;
+        height: functions.pxToRem(190);
+        overflow: hidden;
+        border-radius: map.get(variables.$radius, "2xl");
+
+        img {
+          width: 100%;
+          object-fit: cover;
+          position: top;
+          scale: 1.04;
+        }
+      }
+
+      .booktrip__card-header {
+        @include mixin.flex-col(13);
+        margin: functions.pxToRem(26) 0;
+
+        h3 {
+          @include mixin.font-format(
+            map.get(variables.$font-sizes, "lg"),
+            map.get(variables.$font-weights, "normal"),
+            125%,
+            black
+          );
+          letter-spacing: 1.5%;
+        }
+        p {
+          @include mixin.font-format(
+            map.get(variables.$font-sizes, "base"),
+            map.get(variables.$font-weights, "medium"),
+            125%,
+            variables.$text-light-grey
+          );
+          letter-spacing: -0.5%;
+        }
+      }
+
+      .booktrip__card-icons {
+        @include mixin.flex-row(18);
+        margin-bottom: functions.pxToRem(30);
+
+        .booktrip__card-icon-group {
+          width: functions.pxToRem(36);
+          height: functions.pxToRem(36);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          background-color: variables.$light-grey;
+
+          i {
+            @include mixin.cardicon-style;
+          }
+        }
+      }
+
+      .booktrip__card-footer {
+        @include mixin.flex-row(20);
+        justify-content: space-between;
+
+        .booktrip__footer-info {
+          @include mixin.flex-row(5);
+          align-items: center;
+        }
+
+        p {
+          @include mixin.font-format(
+            map.get(variables.$font-sizes, "base"),
+            map.get(variables.$font-weights, "normal"),
+            125%,
+            variables.$text-light-grey
+          );
+          letter-spacing: 2%;
+        }
+
+        i {
+          @include mixin.cardicon-style;
+        }
+      }
+    }
+
+    .booktrip__card2 {
+      z-index: 10;
+      position: absolute;
+      top: functions.pxToRem(235);
+      left: functions.pxToRem(222);
+      max-width: functions.pxToRem(263);
+      width: 100%;
+      background-color: white;
+      padding: functions.pxToRem(20);
+      border-radius: map.get(variables.$radius, "lg");
+      box-shadow: 2px 5px 30px 10px rgba(0, 0, 0, 0.1);
+      @include mixin.flex-row(11);
+
+      .booktrip__card2-img {
+        width: functions.pxToRem(65);
+        height: functions.pxToRem(50);
+        border-radius: 50%;
+        overflow: hidden;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .booktrip__card2-info {
+        width: 100%;
+        @include mixin.flex-col(12);
+
+        h3 {
+          @include mixin.font-format(
+            map.get(variables.$font-sizes, "lg"),
+            map.get(variables.$font-weights, "normal"),
+            125%,
+            black
+          );
+          letter-spacing: 1.5%;
+        }
+        .booktrip__tagline {
+          @include mixin.font-format(
+            map.get(variables.$font-sizes, "sm"),
+            map.get(variables.$font-weights, "medium"),
+            125%,
+            variables.$text-light-grey
+          );
+          letter-spacing: -3.5%;
+        }
+
+        .booktrip__progress {
+          @include mixin.font-format(
+            map.get(variables.$font-sizes, "sm"),
+            map.get(variables.$font-weights, "medium"),
+            125%,
+            black
+          );
+          letter-spacing: -5.5%;
+
+          span {
+            color: variables.$purple;
+          }
+        }
+
+        .booktrip__line-container {
+          width: 100%;
+          border: 1px solid variables.$purple;
+          height: 5px;
+          border-radius: map.get(variables.$radius, "lg");
+
+          .booktrip__line {
+            width: 40%;
+            height: 100%;
+            background-color: variables.$purple;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: map.get(variables.$breakpoints, "xl")) {
+    padding: 0 functions.pxToRem(20);
+    @include mixin.margin-layout(800, 100);
+  }
+
+  @media (max-width: map.get(variables.$breakpoints, "lg")) {
+    @include mixin.margin-layout(500, 100);
+    @include mixin.flex-col(50);
+  }
+
+  @media (max-width: map.get(variables.$breakpoints, "md")) {
+    @include mixin.margin-layout(500, 100);
+    @include mixin.flex-col(50);
+
+    .booktrip__card1 {
+      width: functions.pxToRem(300);
+      height: auto;
+      border-radius: map.get(variables.$radius, "xl");
+      padding: functions.pxToRem(12);
+
+      .booktrip__img {
+        width: 100%;
+        height: functions.pxToRem(150);
+        border-radius: map.get(variables.$radius, "lg");
+      }
+
+      .booktrip__card-header {
+        @include mixin.flex-col(2);
+        margin: functions.pxToRem(16) 0;
+
+        h3 {
+          font-size: map.get(variables.$font-sizes, "base");
+        }
+        p {
+          font-size: map.get(variables.$font-sizes, "sm");
+        }
+      }
+      .booktrip__card-icons {
+        @include mixin.flex-row(8);
+        margin-bottom: functions.pxToRem(24);
+
+        .booktrip__card-icon-group {
+          width: functions.pxToRem(32);
+          height: functions.pxToRem(32);
+        }
+      }
+
+      .booktrip__card-footer {
+        p {
+          font-size: map.get(variables.$font-sizes, "sm");
+        }
+      }
+    }
+
+    .booktrip__card2 {
+      top: functions.pxToRem(180);
+      left: functions.pxToRem(160);
+      max-width: functions.pxToRem(250);
+      padding: functions.pxToRem(16);
+      border-radius: map.get(variables.$radius, "md");
+      @include mixin.flex-row(5);
+
+      .booktrip__card2-img {
+        width: functions.pxToRem(40);
+        height: functions.pxToRem(35);
+      }
+
+      .booktrip__card2-info {
+        @include mixin.flex-col(3);
+
+        h3 {
+          font-size: map.get(variables.$font-sizes, "sm");
+        }
+        .booktrip__tagline,
+        .booktrip__progress {
+          font-size: map.get(variables.$font-sizes, "xs");
+        }
+
+        .booktrip__line-container {
+          height: 3px;
+        }
+      }
+    }
+  }
+
+  @media (max-width: map.get(variables.$breakpoints, "xs")) {
+    @include mixin.margin-layout(100%, 100);
+
+    .booktrip__steps {
+      gap: functions.pxToRem(24);
+    }
+
+    .booktrip__card1 {
+      width: functions.pxToRem(250);
+      padding: functions.pxToRem(8);
+
+      .booktrip__img {
+        width: 100%;
+        height: functions.pxToRem(130);
+      }
+
+      .booktrip__card-header {
+        margin: functions.pxToRem(12) 0;
+      }
+      .booktrip__card-icons {
+        margin-bottom: functions.pxToRem(24);
+
+        .booktrip__card-icon-group {
+          width: functions.pxToRem(24);
+          height: functions.pxToRem(24);
+        }
+      }
+    }
+
+    .booktrip__card2 {
+      top: functions.pxToRem(170);
+      left: functions.pxToRem(120);
+      max-width: functions.pxToRem(180);
+      padding: functions.pxToRem(10);
     }
   }
 }

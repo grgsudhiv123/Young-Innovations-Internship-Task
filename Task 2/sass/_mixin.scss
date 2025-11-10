@@ -1,4 +1,6 @@
 @use "functions";
+@use "variables";
+@use "sass:map";
 
 @mixin base-reset {
   margin: 0;
@@ -11,4 +13,30 @@
   font-weight: $fontweight-key;
   line-height: functions.pxToRem($line-height-key);
   color: $color;
+}
+
+@mixin margin-layout($max-width, $margin-top) {
+  max-width: functions.pxToRem($max-width);
+  margin: functions.pxToRem($margin-top) auto 0;
+}
+
+@mixin flex-row($gap) {
+  display: flex;
+  flex-direction: row;
+  gap: functions.pxToRem($gap);
+}
+
+@mixin flex-col($gap) {
+  display: flex;
+  flex-direction: column;
+  gap: functions.pxToRem($gap);
+}
+
+@mixin cardicon-style {
+  color: variables.$text-light-grey;
+  font-size: map.get(variables.$font-sizes, "lg");
+
+  @media (max-width: map.get(variables.$breakpoints, "md")) {
+    font-size: map.get(variables.$font-sizes, "sm");
+  }
 }
