@@ -1,6 +1,7 @@
 import {
   BookTripSteps,
   DestinationConstants,
+  logosSrc,
   ServicesConstant,
 } from "./utils/constants.js";
 // services section
@@ -47,3 +48,16 @@ booktripsteps.innerHTML = BookTripSteps.map(
         </div>
      `
 ).join("");
+
+// logo section
+
+const logosection = document.querySelector(".logos");
+logosection.innerHTML = logosSrc
+  .map(
+    (element) => `
+        <div class="logos__img">
+            <img src="${element.src}" alt="${element.name} image : ${element.src}"/>
+        </div>
+`
+  )
+  .join("");

@@ -59,3 +59,26 @@ export const BookTripSteps = [
     icon: "../../assets/booktripsection/booktrip-icon3.svg",
   },
 ];
+
+export const logosSrc = [
+  {
+    src: "../../assets/logossection/axon.png",
+    name: "Axon logo",
+  },
+  {
+    src: "../../assets/logossection/jetstar.png",
+    name: "Jetstar logo",
+  },
+  {
+    src: "../../assets/logossection/expedia.png",
+    name: "Expedia logo",
+  },
+  {
+    src: "../../assets/logossection/qantas.png",
+    name: "Qantas logo",
+  },
+  {
+    src: "../../assets/logossection/alitalia.png",
+    name: "Alitalia logo",
+  },
+];

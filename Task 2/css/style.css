@@ -1041,4 +1041,302 @@ main {
   }
 }
 
+.logos {
+  max-width: 67.0625rem;
+  margin: 12.5rem auto 0;
+  display: flex;
+  flex-direction: row;
+  gap: 1.25rem;
+  justify-content: space-between;
+}
+.logos__img {
+  max-width: 241px;
+  width: 100%;
+  height: 86px;
+  overflow: hidden;
+  transition: 0.2s ease-in-out;
+  border-radius: 0.75rem;
+  display: flex;
+  justify-content: center;
+}
+.logos__img img {
+  width: 161px;
+  height: 100%;
+  object-fit: contain;
+}
+.logos__img:hover {
+  box-shadow: 10px 10px 20px rgba(32, 32, 32, 0.2);
+  cursor: pointer;
+}
+@media (max-width: 1280px) {
+  .logos {
+    max-width: 56.25rem;
+    margin: 12.5rem auto 0;
+  }
+  .logos .logos__img {
+    max-width: 200px;
+    height: 70px;
+    padding: 0 20px;
+  }
+}
+@media (max-width: 1024px) {
+  .logos {
+    max-width: 46.875rem;
+    margin: 12.5rem auto 0;
+    overflow: scroll;
+  }
+  .logos .logos__img {
+    min-width: 170px;
+    height: 60px;
+  }
+}
+@media (max-width: 768px) {
+  .logos {
+    max-width: 37.5rem;
+    margin: 6.25rem auto 0;
+    gap: 10px;
+    padding: 0 10px;
+  }
+}
+
+.logos::-webkit-scrollbar {
+  display: none;
+}
+
+.subscribe {
+  max-width: 73.125rem;
+  margin: 9.375rem auto 0;
+  background-color: #dfd7f9;
+  border-radius: 129px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4.6875rem;
+  justify-content: center;
+  align-items: center;
+  padding: 79px 0px;
+  position: relative;
+}
+.subscribe__header {
+  max-width: 53.6875rem;
+  width: 100%;
+  z-index: 10;
+}
+.subscribe__header h3 {
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 3.375rem;
+  color: #5e6282;
+  text-align: center;
+}
+.subscribe__form {
+  max-width: 43.75rem;
+  margin: 0rem auto 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  z-index: 10;
+}
+.subscribe__form .subscribe__input-field {
+  width: 26.3125rem;
+  padding: 0px 1.9375rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.875rem;
+  align-items: center;
+  background-color: white;
+  border-radius: 0.75rem;
+}
+.subscribe__form .subscribe__input-field i {
+  color: #84829a;
+  font-size: 1.125rem;
+}
+@media (max-width: 768px) {
+  .subscribe__form .subscribe__input-field i {
+    font-size: 0.875rem;
+  }
+}
+.subscribe__form .subscribe__input-field input {
+  width: 100%;
+  border: none;
+  padding: 1.75rem 0;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 0rem;
+  color: #39425d;
+}
+.subscribe__form .subscribe__input-field input:focus {
+  outline: none;
+}
+.subscribe__form .subscribe__button {
+  width: 11.25rem;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 1.75rem 0;
+  background-color: #df6951;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 0rem;
+  color: white;
+}
+.subscribe__decore1 {
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  z-index: 1;
+}
+.subscribe__decore2 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+.subscribe__decore3 {
+  position: absolute;
+  top: 19.4375rem;
+  right: -6.25rem;
+  z-index: 1;
+}
+.subscribe__icon {
+  position: absolute;
+  width: 4.375rem;
+  height: 4.375rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #5e3be1;
+  top: -2.125rem;
+  right: -2.125rem;
+  z-index: 20;
+}
+.subscribe__icon i {
+  font-size: 1.5rem;
+  color: white;
+}
+@media (max-width: 1280px) {
+  .subscribe {
+    max-width: 56.25rem;
+    margin: 7.5rem auto 0;
+  }
+  .subscribe .subscribe__header {
+    max-width: 43.75rem;
+    width: 100%;
+  }
+  .subscribe .subscribe__header h3 {
+    font-size: 1.875rem;
+    line-height: 44px;
+  }
+}
+@media (max-width: 1024px) {
+  .subscribe {
+    max-width: 43.75rem;
+    margin: 7.5rem auto 0;
+    padding: 50px 0px;
+    border-radius: 100px 10px 10px 10px;
+  }
+  .subscribe .subscribe__header {
+    max-width: 31.25rem;
+    width: 100%;
+  }
+  .subscribe .subscribe__header h3 {
+    font-size: 1.25rem;
+    line-height: 36px;
+  }
+  .subscribe .subscribe__form {
+    max-width: 31.25rem;
+    margin: 0rem auto 0;
+  }
+  .subscribe .subscribe__decore1 {
+    width: 200px;
+  }
+  .subscribe .subscribe__decore2 {
+    width: 100px;
+  }
+  .subscribe .subscribe__decore3 {
+    width: 100px;
+    top: 12.5rem;
+    right: -3.125rem;
+  }
+}
+@media (max-width: 768px) {
+  .subscribe {
+    max-width: 31.25rem;
+    margin: 7.5rem auto 0;
+    padding: 36px 0px;
+    border-radius: 80px 10px 10px 10px;
+    gap: 24px;
+  }
+  .subscribe .subscribe__header {
+    max-width: 25rem;
+    width: 100%;
+  }
+  .subscribe .subscribe__header h3 {
+    font-size: 1rem;
+    line-height: 24px;
+  }
+  .subscribe .subscribe__form {
+    max-width: 25rem;
+    margin: 0rem auto 0;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .subscribe .subscribe__form .subscribe__input-field {
+    width: 100%;
+    border-radius: 0.125rem;
+    padding: 0px 0.3125rem;
+  }
+  .subscribe .subscribe__form .subscribe__input-field input {
+    padding: 0.875rem 0;
+  }
+  .subscribe .subscribe__form .subscribe__button {
+    width: 100%;
+    padding: 1.5rem 0;
+  }
+  .subscribe .subscribe__icon {
+    width: 3.125rem;
+    height: 3.125rem;
+    top: -1rem;
+    right: -1rem;
+  }
+  .subscribe .subscribe__icon i {
+    font-size: 1.5rem;
+  }
+}
+@media (max-width: 640px) {
+  .subscribe {
+    max-width: 21.875rem;
+    margin: 6.25rem auto 0;
+    border-radius: 60px 8px 8px 8px;
+    gap: 24px;
+    padding: 24px 0px;
+  }
+  .subscribe .subscribe__header {
+    max-width: 16.875rem;
+    width: 100%;
+  }
+  .subscribe .subscribe__header h3 {
+    font-size: 0.875rem;
+    line-height: 24px;
+  }
+  .subscribe .subscribe__form {
+    max-width: 15.625rem;
+    margin: 0rem auto 0;
+  }
+  .subscribe .subscribe__decore3 {
+    width: 80px;
+    top: 12.5rem;
+    right: -0.625rem;
+  }
+  .subscribe .subscribe__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    top: -0.75rem;
+    right: -0.75rem;
+  }
+  .subscribe .subscribe__icon i {
+    font-size: 1.25rem;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */

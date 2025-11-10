@@ -1129,3 +1129,309 @@ main {
     margin-top: 20px;
   }
 }
+
+// logos section
+.logos {
+  @include mixin.margin-layout(1073, 200);
+  @include mixin.flex-row(20);
+  justify-content: space-between;
+
+  &__img {
+    max-width: 241px;
+    width: 100%;
+    height: 86px;
+    overflow: hidden;
+    transition: 0.2s ease-in-out;
+    border-radius: map.get(variables.$radius, "xl");
+    display: flex;
+    justify-content: center;
+    img {
+      width: 161px;
+      height: 100%;
+      object-fit: contain;
+    }
+    &:hover {
+      box-shadow: 10px 10px 20px rgba(32, 32, 32, 0.2);
+      cursor: pointer;
+    }
+  }
+
+  @media (max-width: map.get(variables.$breakpoints, "xl")) {
+    @include mixin.margin-layout(900, 200);
+    .logos__img {
+      max-width: 200px;
+      height: 70px;
+      padding: 0 20px;
+    }
+  }
+  @media (max-width: map.get(variables.$breakpoints, "lg")) {
+    @include mixin.margin-layout(750, 200);
+
+    overflow: scroll;
+    .logos__img {
+      min-width: 170px;
+      height: 60px;
+      border-radius: map.get(variables.$radius, "md");
+    }
+  }
+
+  @media (max-width: map.get(variables.$breakpoints, "md")) {
+    @include mixin.margin-layout(600, 100);
+    gap: 10px;
+    padding: 0 10px;
+  }
+}
+
+.logos::-webkit-scrollbar {
+  display: none;
+}
+
+// subscribe section
+.subscribe {
+  @include mixin.margin-layout(1170, 150);
+  background-color: #dfd7f9;
+  border-radius: 129px 20px 20px 20px;
+  @include mixin.flex-col(75);
+  justify-content: center;
+  align-items: center;
+  padding: 79px 0px;
+  position: relative;
+
+  &__header {
+    max-width: functions.pxToRem(859);
+    width: 100%;
+    z-index: 10;
+
+    h3 {
+      @include mixin.font-format(
+        map.get(variables.$font-sizes, "4xl"),
+        map.get(variables.$font-weights, "semibold"),
+        54,
+        variables.$secondary-text
+      );
+      text-align: center;
+    }
+  }
+
+  &__form {
+    @include mixin.margin-layout(700, 0);
+    width: 100%;
+    @include mixin.flex-row(24);
+    z-index: 10;
+
+    .subscribe__input-field {
+      width: functions.pxToRem(421);
+      padding: 0px functions.pxToRem(31);
+      @include mixin.flex-row(14);
+      align-items: center;
+      background-color: white;
+      border-radius: map.get(variables.$radius, "xl");
+
+      i {
+        @include mixin.cardicon-style;
+      }
+
+      input {
+        width: 100%;
+        border: none;
+        padding: functions.pxToRem(28) 0;
+        @include mixin.font-format(
+          map.get(variables.$font-sizes, "sm"),
+          map.get(variables.$font-weights, "normal"),
+          0,
+          variables.$text-dark-blue
+        );
+      }
+      input:focus {
+        outline: none;
+      }
+    }
+
+    .subscribe__button {
+      width: functions.pxToRem(180);
+      border-radius: map.get(variables.$radius, "lg");
+      border: none;
+      padding: functions.pxToRem(28) 0;
+      background-color: variables.$coral;
+      @include mixin.font-format(
+        map.get(variables.$font-sizes, "base"),
+        map.get(variables.$font-weights, "semibold"),
+        0,
+        white
+      );
+    }
+  }
+
+  &__decore1 {
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    z-index: 1;
+  }
+
+  &__decore2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+  }
+
+  &__decore3 {
+    position: absolute;
+    top: functions.pxToRem(311);
+    right: functions.pxToRem(-100);
+    z-index: 1;
+  }
+
+  &__icon {
+    position: absolute;
+    width: functions.pxToRem(70);
+    height: functions.pxToRem(70);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: #5e3be1;
+    top: functions.pxToRem(-34);
+    right: functions.pxToRem(-34);
+    z-index: 20;
+
+    i {
+      font-size: map.get(variables.$font-sizes, "2xl");
+      color: white;
+    }
+  }
+
+  @media (max-width: map.get(variables.$breakpoints, "xl")) {
+    @include mixin.margin-layout(900, 120);
+
+    .subscribe__header {
+      max-width: functions.pxToRem(700);
+      width: 100%;
+
+      h3 {
+        font-size: map.get(variables.$font-sizes, "3xl");
+        line-height: 44px;
+      }
+    }
+  }
+
+  @media (max-width: map.get(variables.$breakpoints, "lg")) {
+    @include mixin.margin-layout(700, 120);
+    padding: 50px 0px;
+    border-radius: 100px 10px 10px 10px;
+
+    .subscribe__header {
+      max-width: functions.pxToRem(500);
+      width: 100%;
+
+      h3 {
+        font-size: map.get(variables.$font-sizes, "xl");
+        line-height: 36px;
+      }
+    }
+
+    .subscribe__form {
+      @include mixin.margin-layout(500, 0);
+    }
+
+    .subscribe__decore1 {
+      width: 200px;
+    }
+    .subscribe__decore2 {
+      width: 100px;
+    }
+
+    .subscribe__decore3 {
+      width: 100px;
+      top: functions.pxToRem(200);
+      right: functions.pxToRem(-50);
+    }
+  }
+
+  @media (max-width: map.get(variables.$breakpoints, "md")) {
+    @include mixin.margin-layout(500, 120);
+    padding: 36px 0px;
+    border-radius: 80px 10px 10px 10px;
+    gap: 24px;
+
+    .subscribe__header {
+      max-width: functions.pxToRem(400);
+      width: 100%;
+
+      h3 {
+        font-size: map.get(variables.$font-sizes, "base");
+        line-height: 24px;
+      }
+    }
+
+    .subscribe__form {
+      @include mixin.margin-layout(400, 0);
+      flex-direction: column;
+      overflow: hidden;
+
+      .subscribe__input-field {
+        width: 100%;
+        border-radius: map.get(variables.$radius, "sm");
+        padding: 0px functions.pxToRem(5);
+
+        input {
+          padding: functions.pxToRem(14) 0;
+        }
+      }
+
+      .subscribe__button {
+        width: 100%;
+        padding: functions.pxToRem(24) 0;
+      }
+    }
+
+    .subscribe__icon {
+      width: functions.pxToRem(50);
+      height: functions.pxToRem(50);
+      top: functions.pxToRem(-16);
+      right: functions.pxToRem(-16);
+
+      i {
+        font-size: map.get(variables.$font-sizes, "2xl");
+      }
+    }
+  }
+
+  @media (max-width: map.get(variables.$breakpoints, "sm")) {
+    @include mixin.margin-layout(350, 100);
+    border-radius: 60px 8px 8px 8px;
+    gap: 24px;
+    padding: 24px 0px;
+
+    .subscribe__header {
+      max-width: functions.pxToRem(270);
+      width: 100%;
+
+      h3 {
+        font-size: map.get(variables.$font-sizes, "sm");
+        line-height: 24px;
+      }
+    }
+
+    .subscribe__form {
+      @include mixin.margin-layout(250, 0);
+    }
+    .subscribe__decore3 {
+      width: 80px;
+      top: functions.pxToRem(200);
+      right: functions.pxToRem(-10);
+    }
+
+    .subscribe__icon {
+      width: functions.pxToRem(40);
+      height: functions.pxToRem(40);
+      top: functions.pxToRem(-12);
+      right: functions.pxToRem(-12);
+
+      i {
+        font-size: map.get(variables.$font-sizes, "xl");
+      }
+    }
+  }
+}
