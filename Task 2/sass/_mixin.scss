@@ -40,3 +40,13 @@
     font-size: map.get(variables.$font-sizes, "sm");
   }
 }
+
+// Card shadow effect
+@mixin card-shadow {
+  box-shadow: 0 10px 30px 0 rgba(67, 76, 120, 0.1);
+}
+
+// Transition utility
+@mixin transition($property: all) {
+  transition: $property variables.$transition-base;
+}

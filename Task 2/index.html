@@ -210,14 +210,69 @@
 
       <!-- testimonials section -->
       <section class="testimonials">
-        <div class="testimonials__info-container">
-          <div class="testimonials__info">
-            <p>Testimonials</p>
-            <h2>What people say about Us.</h2>
+        <div class="testimonials__container">
+          <div class="testimonials__header">
+            <p class="testimonials__label">TESTIMONIALS</p>
+            <h2 class="testimonials__title">What People Say About Us.</h2>
+
+            <!-- Pagination dots -->
+            <div class="testimonials__pagination">
+              <button
+                class="testimonials__dot testimonials__dot--active"
+                aria-label="Testimonial 1"
+              ></button>
+              <button
+                class="testimonials__dot"
+                aria-label="Testimonial 2"
+              ></button>
+              <button
+                class="testimonials__dot"
+                aria-label="Testimonial 3"
+              ></button>
+            </div>
+          </div>
+
+          <div class="testimonials__card">
+            <div class="testimonials__card1">
+              <div class="testimonial-card__author">
+                <img
+                  src="./assets/testimonials/testimonials.png"
+                  alt="Mike Taylor"
+                  class="testimonial-card__avatar"
+                />
+              </div>
+              <p class="testimonial-card__quote">
+                "On the Windows talking painted pasture yet its express parties
+                use. Sure last upon he same as knew next. Of believed or
+                diverted no."
+              </p>
+
+              <div class="testimonial-card__info">
+                <h3 class="testimonial-card__name">Mike taylor</h3>
+                <p class="testimonial-card__location">Lahore, Pakistan</p>
+              </div>
+            </div>
+            <div class="testimonials__card2">
+              <p class="testimonial-card__quote">
+                "On the Windows talking painted pasture yet its express parties
+                use. Sure last upon he same as knew next. Of believed or
+                diverted no."
+              </p>
+
+              <div class="testimonial-card__info">
+                <h3 class="testimonial-card__name">Chris Thomas</h3>
+                <p class="testimonial-card__location">CEO of Red Button</p>
+              </div>
+            </div>
+            <div class="testimonials__chevron-container">
+              <i class="fa-solid fa-chevron-up"></i>
+              <i class="fa-solid fa-chevron-down"></i>
+            </div>
           </div>
         </div>
-        <div class="testimonials__card-container"></div>
       </section>
+
+      <!-- logos section -->
       <section class="logos"></section>
       <section class="subscribe"></section>
     </main>

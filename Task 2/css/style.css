@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap");
-.header-styling, .services__header h2, .destinations__header h2, .booktrip__info .booktrip__header h2 {
+.header-styling, .services__header h2, .destinations__header h2, .booktrip__info .booktrip__header h2, .testimonials__title {
   font-size: 3.125rem;
   font-weight: 700;
   line-height: 6.25%rem;
@@ -8,29 +8,29 @@
   font-family: "Volkhov", serif;
 }
 @media (max-width: 1280px) {
-  .header-styling, .services__header h2, .destinations__header h2, .booktrip__info .booktrip__header h2 {
+  .header-styling, .services__header h2, .destinations__header h2, .booktrip__info .booktrip__header h2, .testimonials__title {
     font-size: 3rem;
   }
 }
 @media (max-width: 768px) {
-  .header-styling, .services__header h2, .destinations__header h2, .booktrip__info .booktrip__header h2 {
+  .header-styling, .services__header h2, .destinations__header h2, .booktrip__info .booktrip__header h2, .testimonials__title {
     font-size: 2.25rem;
   }
 }
 @media (max-width: 480px) {
-  .header-styling, .services__header h2, .destinations__header h2, .booktrip__info .booktrip__header h2 {
+  .header-styling, .services__header h2, .destinations__header h2, .booktrip__info .booktrip__header h2, .testimonials__title {
     font-size: 1.5rem;
   }
 }
 
-.tagline-styling, .services__header p, .destinations__header p, .booktrip__info .booktrip__header p {
+.tagline-styling, .services__header p, .destinations__header p, .booktrip__info .booktrip__header p, .testimonials__label {
   font-size: 1.125rem;
   font-weight: 600;
   line-height: 6.25%rem;
   color: #5e6282;
 }
 @media (max-width: 768px) {
-  .tagline-styling, .services__header p, .destinations__header p, .booktrip__info .booktrip__header p {
+  .tagline-styling, .services__header p, .destinations__header p, .booktrip__info .booktrip__header p, .testimonials__label {
     font-size: 0.875rem;
   }
 }
@@ -40,6 +40,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
   font-family: "Poppins", sans-serif;
 }
 
@@ -54,7 +55,7 @@ li {
   margin: 0;
 }
 
-.button-base, .hero__info .hero__btn-container .hero__playdemo button, .hero__info .hero__btn-container .hero__findmore-btn, .nav__menu-btn, .nav__lang-btn, .nav__signup-btn {
+.button-base, .testimonials__dot, .hero__info .hero__btn-container .hero__playdemo button, .hero__info .hero__btn-container .hero__findmore-btn, .nav__menu-btn, .nav__lang-btn, .nav__signup-btn {
   background: transparent;
   cursor: pointer;
   white-space: nowrap;
@@ -815,6 +816,228 @@ main {
     left: 7.5rem;
     max-width: 11.25rem;
     padding: 0.625rem;
+  }
+}
+
+.testimonials {
+  max-width: 72.8125rem;
+  margin: 12.5rem auto 0;
+}
+@media (max-width: 1280px) {
+  .testimonials {
+    padding: 0 1.25rem;
+    max-width: 40.625rem;
+    margin: 6.25rem auto 0;
+  }
+  .testimonials .testimonials__header {
+    width: fit-content;
+    margin: auto;
+  }
+  .testimonials .testimonials__title {
+    max-width: 100%;
+  }
+}
+@media (max-width: 768px) {
+  .testimonials {
+    max-width: 31.25rem;
+    margin: 6.25rem auto 0;
+  }
+}
+.testimonials__container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+.testimonials__header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.testimonials__title {
+  max-width: 25.5625rem;
+  line-height: 6.25%rem;
+}
+.testimonials__pagination {
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+.testimonials__dot {
+  padding: 0;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  border: none;
+}
+.testimonials__dot--active {
+  background-color: #14183e;
+}
+.testimonials__dot:hover {
+  background-color: #686d77;
+}
+@media (max-width: 768px) {
+  .testimonials__dot {
+    width: 0.625rem;
+    height: 0.625rem;
+  }
+}
+.testimonials__card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonials__card {
+  max-width: 38.625rem;
+  width: 100%;
+  position: relative;
+  display: flex;
+  gap: 6.25rem;
+}
+.testimonials__card .testimonials__card1, .testimonials__card .testimonials__card2 {
+  max-width: 23.75rem;
+  width: 100%;
+  background-color: white;
+  z-index: 10;
+  padding: 28px 34px 28px 64px;
+  border-radius: 1rem;
+  box-shadow: 0px 30px 40px rgba(67, 76, 120, 0.1);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2.125rem;
+}
+.testimonials__card .testimonials__card1 .testimonial-card__quote, .testimonials__card .testimonials__card2 .testimonial-card__quote {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 2rem;
+  color: #212832;
+}
+.testimonials__card .testimonials__card1 .testimonial-card__info h3, .testimonials__card .testimonials__card2 .testimonial-card__info h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 6.25%rem;
+  color: #212832;
+}
+.testimonials__card .testimonials__card1 .testimonial-card__info p, .testimonials__card .testimonials__card2 .testimonial-card__info p {
+  font-size: 1rem;
+  line-height: 6.25%rem;
+  color: #212832;
+}
+@media (max-width: 768px) {
+  .testimonials__card .testimonials__card1, .testimonials__card .testimonials__card2 {
+    max-width: 18.75rem;
+    padding: 16px 26px;
+    gap: 0.625rem;
+  }
+  .testimonials__card .testimonials__card1 .testimonial-card__quote, .testimonials__card .testimonials__card2 .testimonial-card__quote {
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    color: #212832;
+  }
+  .testimonials__card .testimonials__card1 .testimonial-card__info h3, .testimonials__card .testimonials__card2 .testimonial-card__info h3 {
+    line-height: 100%;
+  }
+  .testimonials__card .testimonials__card1 .testimonial-card__info p, .testimonials__card .testimonials__card2 .testimonial-card__info p {
+    line-height: 100%;
+  }
+}
+.testimonials__card .testimonials__card2 {
+  max-width: 23.125rem;
+  padding: 14px 26px;
+  position: absolute;
+  background-color: none;
+  border: 2px solid #f7f7f7;
+  box-shadow: none;
+  top: 100px;
+  left: 75px;
+  z-index: -1;
+}
+@media (max-width: 768px) {
+  .testimonials__card .testimonials__card2 {
+    display: none;
+  }
+}
+.testimonials__card .testimonial-card__author {
+  position: absolute;
+  top: -2.125rem;
+  left: -2.125rem;
+  width: 4.25rem;
+  height: 4.25rem;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 20;
+}
+.testimonials__card .testimonial-card__author img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+@media (max-width: 768px) {
+  .testimonials__card .testimonial-card__author {
+    width: 2.5rem;
+    height: 2.5rem;
+    top: -1.25rem;
+    left: -1.25rem;
+  }
+}
+@media (max-width: 640px) {
+  .testimonials__card .testimonial-card__author {
+    left: -0.625rem;
+  }
+}
+.testimonials__card .testimonials__chevron-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5625rem;
+}
+.testimonials__card .testimonials__chevron-container .fa-chevron-up {
+  color: #84829a;
+  font-size: 1.125rem;
+}
+@media (max-width: 768px) {
+  .testimonials__card .testimonials__chevron-container .fa-chevron-up {
+    font-size: 0.875rem;
+  }
+}
+.testimonials__card .testimonials__chevron-container .fa-chevron-down {
+  color: #84829a;
+  font-size: 1.125rem;
+}
+@media (max-width: 768px) {
+  .testimonials__card .testimonials__chevron-container .fa-chevron-down {
+    font-size: 0.875rem;
+  }
+}
+.testimonials__card .testimonials__chevron-container .fa-chevron-down {
+  color: black;
+}
+@media (max-width: 768px) {
+  .testimonials__card .testimonials__chevron-container {
+    gap: 1.25rem;
+  }
+}
+@media (max-width: 1024px) {
+  .testimonials__card {
+    margin-top: 80px;
+  }
+}
+@media (max-width: 768px) {
+  .testimonials__card {
+    gap: 3.125rem;
+    margin-top: 50px;
+  }
+}
+@media (max-width: 480px) {
+  .testimonials__card {
+    gap: 1.25rem;
+    margin-top: 20px;
   }
 }
 
