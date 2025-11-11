@@ -1,6 +1,7 @@
 import {
   BookTripSteps,
   DestinationConstants,
+  footerConstant,
   logosSrc,
   ServicesConstant,
 } from "./utils/constants.js";
@@ -59,5 +60,29 @@ logosection.innerHTML = logosSrc
             <img src="${element.src}" alt="${element.name} image : ${element.src}"/>
         </div>
 `
+  )
+  .join("");
+
+// footer
+
+const footerLinkSection = document.querySelector(".footer__links-container");
+footerLinkSection.innerHTML = footerConstant
+  .map(
+    (element) => `
+    <div class="footer__links">
+        <h3>${element.header}</h3>
+        <ul class="footer__links-group">
+            ${element.data
+              .map(
+                (links) => `
+                        <li>
+                            <a href="${links.link}">${links.name}</a>
+                        </li>
+                    `
+              )
+              .join("")}
+        </ul>
+    </div>
+    `
   )
   .join("");

@@ -82,3 +82,57 @@ export const logosSrc = [
     name: "Alitalia logo",
   },
 ];
+
+export const footerConstant = [
+  {
+    header: "Company",
+    data: [
+      {
+        name: "About",
+        link: "/about",
+      },
+      {
+        name: "Careers",
+        link: "/career",
+      },
+      {
+        name: "Mobile",
+        link: "/mobile",
+      },
+    ],
+  },
+  {
+    header: "Contact",
+    data: [
+      {
+        name: "Help/FAQ",
+        link: "/help",
+      },
+      {
+        name: "Press",
+        link: "/press",
+      },
+      {
+        name: "Affiliates",
+        link: "/affiliates",
+      },
+    ],
+  },
+  {
+    header: "More",
+    data: [
+      {
+        name: "Airlinefees",
+        link: "/airlinefees",
+      },
+      {
+        name: "Airline",
+        link: "/airline",
+      },
+      {
+        name: "Low fare tips",
+        link: "/low-fare-tips",
+      },
+    ],
+  },
+];
