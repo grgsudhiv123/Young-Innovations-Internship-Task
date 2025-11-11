@@ -50,3 +50,44 @@
 @mixin transition($property: all) {
   transition: $property variables.$transition-base;
 }
+
+@mixin animateX($x) {
+  @keyframes animate {
+    from {
+      transform: translateX(#{$x}px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}
+
+@mixin animateY($y) {
+  @keyframes animate {
+    from {
+      transform: translateY(#{$y}px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
+
+// @mixin animateXY($x, $y) {
+//   @keyframes animate {
+//     from {
+//       transform: translate(#{$x}px, #{$y}px);
+//       opacity: 0;
+//     }
+//     to {
+//       transform: translate(#{$x}px, #{$y}px);
+//       opacity: 1;
+//     }
+//   }
+//   animation: animate 1.5s ease-in-out forwards;
+//   animation-timing-function: linear;
+// }

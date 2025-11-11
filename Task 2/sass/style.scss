@@ -9,6 +9,23 @@ body {
   @include mixin.base-reset;
   overflow-x: hidden;
   font-family: variables.$font-family-base;
+  background-image: url("../assets/heropage/bgdecore.svg");
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-size: functions.pxToRem(766.306884765625)
+    functions.pxToRem(872.584228515625);
+
+  @media (max-width: map.get(variables.$breakpoints, "md")) {
+    background-size: functions.pxToRem(666) functions.pxToRem(772);
+  }
+
+  @media (max-width: map.get(variables.$breakpoints, "md")) {
+    background-size: functions.pxToRem(466) functions.pxToRem(572);
+  }
+
+  @media (max-width: map.get(variables.$breakpoints, "xs")) {
+    background-size: functions.pxToRem(366) functions.pxToRem(472);
+  }
 }
 
 p,
@@ -20,6 +37,154 @@ a,
 li {
   padding: 0;
   margin: 0;
+}
+
+//animation
+@keyframes fadeUp {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes lightfadeUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes lightfadeDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeLeft {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rotatefront {
+  from {
+    transform: rotate(10deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+.animate-rotateFront {
+  animation: rotateFront 0.5s ease-in-out forwards;
+  animation-timing-function: linear;
+}
+
+@keyframes rotateback {
+  from {
+    transform: rotate(-10deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+}
+.animate-rotateBack {
+  animation: rotateback 0.8s ease-in-out forwards;
+  animation-timing-function: linear;
+}
+
+.animation--fadeup,
+.animation--fadedown,
+.animation--fadeleft,
+.animation--faderight,
+.animate-p--fadeup,
+.animate-h--fadedown,
+.destination-decore--animation {
+  opacity: 0;
+}
+
+.animation--fadeup.active {
+  animation: fadeUp 0.8s ease-in-out forwards;
+}
+
+.animation--fadedown.active {
+  animation: fadeDown 0.8s ease-in-out forwards;
+}
+
+.animation--fadeleft.active {
+  animation: fadeLeft 0.8s ease-in-out forwards;
+}
+
+.animation--faderight.active {
+  animation: fadeRight 0.8s ease-in-out forwards;
+}
+
+.animate-p--fadeup.active {
+  animation: lightfadeUp 0.8s ease-in-out forwards;
+}
+
+.animate-h--fadedown.active {
+  animation: lightfadeDown 0.8s ease-in-out forwards;
+}
+
+@keyframes animate-destinationdecore {
+  from {
+    transform: translate(-50px, -100px) rotate(-30deg);
+    scale: 1.5;
+    opacity: 0;
+  }
+  to {
+    transform: translate(0px, 0px);
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+.destination-decore--animation.active {
+  animation: animate-destinationdecore 2s ease-in-out forwards;
+  animation-timing-function: linear;
+  animation-delay: 0.2s;
 }
 
 .button-base {
@@ -34,8 +199,13 @@ li {
   top: 0;
   left: 0;
   z-index: 50;
-  background-color: white;
   padding-bottom: 20px;
+  transition: variables.$transition-base;
+}
+
+.header.navbar__animation {
+  background: rgba(255, 255, 255);
+  box-shadow: 0 5px 10px rgb(107, 107, 107, 0.2);
 }
 
 // navbar
@@ -142,9 +312,26 @@ li {
   }
 }
 
+// sidebar
+.sidebar {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  background-color: rgb(107, 107, 107, 0.1);
+  backdrop-filter: blur(10px);
+
+  &__container {
+    width: 70%;
+    height: 100%;
+    float: right;
+    background-color: white;
+    box-shadow: -5px 10px 20px rgba(0, 0, 0, 0.5);
+  }
+}
+
 // main
 main {
-  // background-image: url("../assets//heropage/bgdecore.svg");
   background-repeat: no-repeat;
   background-position: right;
 }
@@ -154,7 +341,6 @@ main {
   max-width: functions.pxToRem(1200);
   height: functions.pxToRem(765);
   margin: 0 auto;
-
   margin-bottom: functions.pxToRem(220);
 
   &__container {
@@ -200,6 +386,7 @@ main {
         top: 70px;
         right: 0;
         z-index: -1;
+        opacity: 0;
       }
       span {
         white-space: nowrap;
@@ -264,23 +451,146 @@ main {
     }
   }
 
+  // animation hero info
+
+  @keyframes tagline-animation {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+  .hero__tag-line--animate {
+    animation: tagline-animation 1.5s ease-in-out forwards;
+    animation-timing-function: linear;
+  }
+
+  // header
+  @keyframes header-animate {
+    from {
+      transform: translateX(-100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes header-decore-animate {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  .hero__heading-decore--animate {
+    animation: header-decore-animate 1.5s ease-in-out forwards;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+  }
+
+  .hero__header--animate {
+    animation: header-animate 1.5s ease-in-out forwards;
+    animation-timing-function: linear;
+  }
+
+  @keyframes desc-animate {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .hero__desc--animate {
+    animation: desc-animate 3s ease-in-out forwards;
+    animation-timing-function: linear;
+  }
   // hero page img content
   &__img-wrapper {
     position: absolute;
     right: 0;
     width: functions.pxToRem(765);
     height: functions.pxToRem(765);
-  }
-
-  &__img {
-    width: 100%;
-    height: 100%;
-
-    img {
+    .hero__img {
+      position: relative;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      z-index: 10;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
+
+    .hero__plane1 {
+      top: 56px;
+      left: 157px;
+      transform: rotate(50deg);
+      position: absolute;
+      z-index: 1;
+      opacity: 1;
+    }
+
+    .hero__plane2 {
+      position: absolute;
+      top: 103px;
+      right: 10px;
+      z-index: 5;
+    }
+  }
+
+  @keyframes animate-heroimg {
+    from {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+
+  .hero__image--animate {
+    animation: animate-heroimg 1.5s ease-in-out forwards;
+    animation-timing-function: linear;
+  }
+
+  @keyframes plane1 {
+    from {
+      transform: translate(-140px, 20px) rotate(50deg);
+      opacity: 0;
+    }
+    to {
+      transform: translate(0, 0) rotate(0deg);
+      opacity: 1;
+    }
+  }
+  @keyframes plane2 {
+    0% {
+      transform: translate(-80px, 140px) rotate(0deg);
+      opacity: 0;
+    }
+  }
+
+  .hero__plane1--animate {
+    animation: plane1 1.5s ease-in-out forwards;
+    animation-timing-function: linear;
+  }
+
+  .hero__plane2--animate {
+    animation: plane2 2.5s ease-in-out forwards;
+    animation-timing-function: linear;
   }
 
   // hero section responsive code
@@ -289,11 +599,11 @@ main {
     height: auto;
     margin-bottom: functions.pxToRem(150);
 
-    &__container {
-      padding-top: functions.pxToRem(80);
+    .hero__container {
+      padding-top: functions.pxToRem(200);
     }
 
-    &__info {
+    .hero__info {
       max-width: functions.pxToRem(500);
 
       h1 {
@@ -302,12 +612,13 @@ main {
 
         .hero__heading-decore {
           top: 50px;
+          right: 50px;
           width: 300px;
         }
       }
     }
 
-    &__img-wrapper {
+    .hero__img-wrapper {
       width: functions.pxToRem(600);
       height: functions.pxToRem(600);
     }
@@ -316,13 +627,13 @@ main {
   @media (max-width: map.get(variables.$breakpoints, "lg")) {
     margin-bottom: functions.pxToRem(100);
 
-    &__container {
+    .hero__container {
       flex-direction: column-reverse;
       padding-top: functions.pxToRem(80);
       gap: functions.pxToRem(50);
     }
 
-    &__info {
+    .hero__info {
       max-width: 100%;
       text-align: center;
 
@@ -330,9 +641,9 @@ main {
         font-size: map.get(variables.$font-sizes, "6xl");
 
         .hero__heading-decore {
-          top: 40px;
-          right: 50%;
-          transform: translateX(50%);
+          top: 45px;
+          right: 25%;
+          transform: translateX(-90%);
           width: 250px;
         }
       }
@@ -342,24 +653,38 @@ main {
       }
     }
 
-    &__img-wrapper {
+    .hero__img-wrapper {
       position: relative;
       width: 100%;
       max-width: functions.pxToRem(500);
       height: functions.pxToRem(500);
       margin: 0 auto;
+
+      .hero__plane1 {
+        top: 56px;
+        left: 50px;
+        height: 150px;
+        width: 90px;
+      }
+
+      .hero__plane2 {
+        top: 80px;
+        right: -10px;
+        height: 150px;
+        width: 90px;
+      }
     }
   }
 
   @media (max-width: map.get(variables.$breakpoints, "md")) {
     margin-bottom: functions.pxToRem(80);
 
-    &__container {
+    .hero__container {
       padding-top: functions.pxToRem(100);
       gap: functions.pxToRem(40);
     }
 
-    &__info {
+    .hero__info {
       .hero__tag-line {
         font-size: map.get(variables.$font-sizes, "base");
         margin-bottom: functions.pxToRem(16);
@@ -370,8 +695,8 @@ main {
         margin-bottom: functions.pxToRem(20);
 
         .hero__heading-decore {
-          top: 30px;
-          width: 200px;
+          top: 40px;
+          right: 15%;
         }
       }
 
@@ -407,20 +732,34 @@ main {
       }
     }
 
-    &__img-wrapper {
+    .hero__img-wrapper {
       max-width: functions.pxToRem(400);
       height: functions.pxToRem(400);
+
+      .hero__plane1 {
+        top: 56px;
+        left: 50px;
+        height: 100px;
+        width: 90px;
+      }
+
+      .hero__plane2 {
+        top: 120px;
+        right: -20px;
+        height: 150px;
+        width: 90px;
+      }
     }
   }
 
   @media (max-width: map.get(variables.$breakpoints, "xs")) {
     margin-bottom: functions.pxToRem(60);
 
-    &__container {
+    .hero__container {
       gap: functions.pxToRem(30);
     }
 
-    &__info {
+    .hero__info {
       .hero__tag-line {
         font-size: map.get(variables.$font-sizes, "sm");
         margin-bottom: functions.pxToRem(12);
@@ -432,8 +771,8 @@ main {
         line-height: 1.3;
 
         .hero__heading-decore {
-          top: 20px;
-          width: 150px;
+          top: 35px;
+          width: 200px;
         }
 
         span {
@@ -1349,6 +1688,7 @@ main {
       width: 161px;
       height: 100%;
       object-fit: contain;
+      mix-blend-mode: Luminosity;
     }
     &:hover {
       box-shadow: 10px 10px 20px rgba(32, 32, 32, 0.2);

@@ -13,7 +13,7 @@
     <title>Task 2</title>
   </head>
   <body>
-    <header class="header">
+    <header class="header animation--fadedown">
       <nav class="nav">
         <a class="nav__logo" href="/">
           <img src="./assets/logo.svg" alt="Travel Logo" />
@@ -47,21 +47,27 @@
 
     <!-- hero section -->
     <main>
+      <div class="sidebar">
+        <div class="sidebar__container"></div>
+      </div>
       <section class="hero">
         <div class="hero__container">
           <div class="hero__info">
-            <p class="hero__tag-line">Best Destinations around the world</p>
-            <h1>
-              <img
-                class="hero__heading-decore"
-                src="./assets/heropage/headingDecore.svg"
-                alt="heading decore"
-              />
-              <span> Travel, enjoy </span><br />
+            <p class="hero__tag-line hero__tag-line--animate">
+              Best Destinations around the world
+            </p>
+            <h1 class="hero__header--animate">
+              <span>
+                Travel, enjoy
+                <img
+                  class="hero__heading-decore hero__heading-decore--animate"
+                  src="./assets/heropage/headingDecore.svg"
+                  alt="heading decore" /></span
+              ><br />
               <span> and live a new </span><br />
               <span>and full life</span>
             </h1>
-            <p class="hero__desc">
+            <p class="hero__desc hero__desc--animate">
               Built Wicket longer admire do barton vanity itself do in it.
               Preferred to sportsmen it engrossed listening. Park gate sell they
               west hard for the.
@@ -78,10 +84,22 @@
             </div>
           </div>
           <div class="hero__img-wrapper">
+            <div class="hero__img">
+              <img
+                class="hero__image hero__image--animate"
+                src="./assets/heropage/heroimg.png"
+                alt="hero page image"
+              />
+            </div>
             <img
-              class="hero__img"
-              src="./assets/heropage/heroimg.svg"
-              alt="hero page image"
+              class="hero__plane1 hero__plane1--animate"
+              src="./assets/heropage/plane.svg"
+              alt="hero img plane"
+            />
+            <img
+              class="hero__plane2 hero__plane2--animate"
+              src="./assets/heropage/plane.svg"
+              alt="hero img plane"
             />
           </div>
         </div>
@@ -94,22 +112,25 @@
           src="./assets/services/servicesdecore.svg"
           alt="services decore img"
         />
-        <div class="services__header">
+        <div class="services__header animation--fadeup">
           <p>CATEGORY</p>
           <h2>We Offer Best Services</h2>
         </div>
 
-        <div class="card">
+        <div class="card animation--fadeleft">
           <div class="card__group">
             <div class="card__icon">
-              <img src="./assets//services//anteena.svg" alt="" />
+              <img
+                src="./assets/services/anteena.svg"
+                alt="card icon anteena"
+              />
             </div>
             <h2>Calculated Weather</h2>
             <p>Built Wicket longer admire do barton vanity itself do in it.</p>
           </div>
           <div class="card__group">
             <div class="card__icon">
-              <img src="./assets/services//plane.svg" alt="" />
+              <img src="./assets/services/plane.svg" alt="card icon plane" />
             </div>
             <h2>Best Flights</h2>
             <p>Engrossed listening. Park gate sell they west hard for the.</p>
@@ -140,12 +161,12 @@
       <!-- destinations section -->
       <section class="destinations">
         <div class="destinations__header">
-          <p>CATEGORY</p>
-          <h2>We Offer Best Services</h2>
+          <p class="animate-p--fadeup">CATEGORY</p>
+          <h2 class="animate-h--fadedown">We Offer Best Services</h2>
         </div>
-        <div class="destinations__card">
+        <div class="destinations__card animation--fadeup">
           <img
-            class="destinations__decore"
+            class="destinations__decore destination-decore--animation"
             src="./assets/destinationssection/destinationdecore.svg"
             alt="destination section spiral decore"
           />
@@ -156,13 +177,15 @@
       <section class="booktrip">
         <div class="booktrip__info">
           <div class="booktrip__header">
-            <p>Easy and Fast</p>
-            <h2>Book your next trip in 3 easy steps</h2>
+            <p class="animate-p--fadeup">Easy and Fast</p>
+            <h2 class="animate-h--fadedown">
+              Book your next trip in 3 easy steps
+            </h2>
           </div>
-          <div class="booktrip__steps"></div>
+          <div class="booktrip__steps animation--fadeup"></div>
         </div>
         <div class="booktrip__card-container">
-          <div class="booktrip__card1">
+          <div class="booktrip__card1 animation--fadeleft">
             <div class="booktrip__img">
               <img src="./assets/booktripsection/booktripimg.jpg" alt="" />
             </div>
@@ -192,7 +215,7 @@
               <i class="fa-regular fa-heart"></i>
             </div>
           </div>
-          <div class="booktrip__card2">
+          <div class="booktrip__card2 animation--fadeup">
             <div class="booktrip__card2-img">
               <img src="./assets/booktripsection/booktripcard2img.png" />
             </div>
@@ -212,8 +235,10 @@
       <section class="testimonials">
         <div class="testimonials__container">
           <div class="testimonials__header">
-            <p class="testimonials__label">TESTIMONIALS</p>
-            <h2 class="testimonials__title">What People Say About Us.</h2>
+            <p class="testimonials__label animate-p--fadeup">TESTIMONIALS</p>
+            <h2 class="testimonials__title animate-h--fadedown">
+              What People Say About Us.
+            </h2>
 
             <!-- Pagination dots -->
             <div class="testimonials__pagination">
@@ -233,7 +258,7 @@
           </div>
 
           <div class="testimonials__card">
-            <div class="testimonials__card1">
+            <div class="testimonials__card1 animate-h--fadedown">
               <div class="testimonial-card__author">
                 <img
                   src="./assets/testimonials/testimonials.png"
@@ -252,7 +277,7 @@
                 <p class="testimonial-card__location">Lahore, Pakistan</p>
               </div>
             </div>
-            <div class="testimonials__card2">
+            <div class="testimonials__card2 animate-p--fadeup">
               <p class="testimonial-card__quote">
                 "On the Windows talking painted pasture yet its express parties
                 use. Sure last upon he same as knew next. Of believed or
@@ -273,17 +298,17 @@
       </section>
 
       <!-- logos section -->
-      <section class="logos"></section>
+      <section class="logos animation--fadeup"></section>
 
       <!-- subscribe section -->
       <section class="subscribe">
         <img
-          class="subscribe__decore1"
+          class="subscribe__decore1 animate-rotateBack"
           src="./assets/subscribesection/subdecore1.svg"
           alt="subscribe section decore 1"
         />
         <img
-          class="subscribe__decore2"
+          class="subscribe__decore2 animate-rotateFront"
           src="./assets/subscribesection/subdecore2.svg"
           alt="subscribe section decore 2"
         />
@@ -297,7 +322,7 @@
         </div>
 
         <div class="subscribe__header">
-          <h3>
+          <h3 class="animate-h--fadedown">
             Subscribe to get information, latest news and other interesting
             offers about Cobham
           </h3>

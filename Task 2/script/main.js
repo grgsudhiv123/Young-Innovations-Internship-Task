@@ -5,6 +5,23 @@ import {
   logosSrc,
   ServicesConstant,
 } from "./utils/constants.js";
+
+// navbar
+
+function navBarScroll(scrollY) {
+  const navbar = document.querySelector(".header");
+
+  if (scrollY > 80) {
+    navbar.classList.add("navbar__animation");
+  } else {
+    navbar.classList.remove("navbar__animation");
+  }
+}
+window.addEventListener("scroll", function () {
+  var scrollY = window.scrollY;
+  navBarScroll(scrollY);
+});
+
 // services section
 
 // destinations section
@@ -35,7 +52,6 @@ destination_section.innerHTML += DestinationConstants.map(
 // book trips section
 
 const booktripsteps = document.querySelector(".booktrip__steps");
-console.log(booktripsteps);
 booktripsteps.innerHTML = BookTripSteps.map(
   (element) => `
         <div class="booktrip__info-group">
@@ -56,7 +72,7 @@ const logosection = document.querySelector(".logos");
 logosection.innerHTML = logosSrc
   .map(
     (element) => `
-        <div class="logos__img">
+        <div class="logos__img ">
             <img src="${element.src}" alt="${element.name} image : ${element.src}"/>
         </div>
 `
@@ -86,3 +102,36 @@ footerLinkSection.innerHTML = footerConstant
     `
   )
   .join("");
+
+// animate
+
+const animateUPElements = document.querySelectorAll(".animation--fadeup");
+const animateDownElements = document.querySelectorAll(".animation--fadedown");
+const animateLeftElements = document.querySelectorAll(".animation--fadeleft");
+const animateRightElements = document.querySelectorAll(".animation--faderight");
+const animatePupelements = document.querySelectorAll(".animate-p--fadeup");
+const animateHdownelements = document.querySelectorAll(".animate-h--fadedown");
+const destinationDecore = document.querySelectorAll(
+  ".destination-decore--animation"
+);
+
+const rotateFront = document.querySelectorAll(".animate-rotateFront");
+const rotateBack = document.querySelectorAll(".animate-rotateBack");
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
+    }
+  });
+});
+
+animateDownElements.forEach((entries) => observer.observe(entries));
+animateUPElements.forEach((entries) => observer.observe(entries));
+animateLeftElements.forEach((entries) => observer.observe(entries));
+animateRightElements.forEach((entries) => observer.observe(entries));
+animatePupelements.forEach((entries) => observer.observe(entries));
+animateHdownelements.forEach((entries) => observer.observe(entries));
+destinationDecore.forEach((entries) => observer.observe(entries));
+rotateFront.forEach((entries) => observer.observe(entries));
+rotateBack.forEach((entries) => observer.observe(entries));
