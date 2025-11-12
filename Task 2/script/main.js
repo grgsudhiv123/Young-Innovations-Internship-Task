@@ -6,6 +6,26 @@ import {
   ServicesConstant,
 } from "./utils/constants.js";
 
+// prevent scroll
+
+function preventDefault(e) {
+  e.preventDefault();
+}
+
+const scrollOption = { passive: false };
+
+function preventScroll() {
+  window.addEventListener("scroll", preventDefault, scrollOption);
+  window.addEventListener("wheel", preventDefault, scrollOption);
+  window.addEventListener("touchmove", preventDefault, scrollOption);
+}
+
+function allowScroll() {
+  window.removeEventListener("scroll", preventDefault);
+  window.removeEventListener("wheel", preventDefault);
+  window.removeEventListener("touchmove", preventDefault);
+}
+
 // navbar
 
 function navBarScroll(scrollY) {
@@ -20,6 +40,37 @@ function navBarScroll(scrollY) {
 window.addEventListener("scroll", function () {
   var scrollY = window.scrollY;
   navBarScroll(scrollY);
+});
+
+// sidebar
+
+const sidebar = document.querySelector(".sidebar");
+const menubtn = document.querySelector(".nav__menu-btn");
+
+console.log(sidebar);
+
+menubtn.addEventListener("click", () => {
+  sidebar.classList.toggle("active");
+  preventScroll();
+  console.log("clicked");
+});
+
+const menuCloseIcon = document.querySelector(".nav__menuclose-icon");
+menuCloseIcon.addEventListener("click", () => {
+  sidebar.classList.toggle("active");
+  allowScroll();
+  console.log("Menu close icon clicked");
+});
+
+window.addEventListener("click", function (e) {
+  // dropdown
+  if (
+    (!dropbtn.contains(e.target) && !myDropDown.contains(e.target)) ||
+    navSearch.contains(e.target)
+  ) {
+    myDropDown.classList.remove("dropdown-show");
+    chevronDown.classList.remove("rotated");
+  }
 });
 
 // services section
