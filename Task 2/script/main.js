@@ -62,14 +62,16 @@ menuCloseIcon.addEventListener("click", () => {
   console.log("Menu close icon clicked");
 });
 
-window.addEventListener("click", function (e) {
-  // dropdown
+document.addEventListener("click", (e) => {
+  const isSideBarActive = sidebar.classList.contains("active");
   if (
-    (!dropbtn.contains(e.target) && !myDropDown.contains(e.target)) ||
-    navSearch.contains(e.target)
+    isSideBarActive &&
+    !sidebar.contains(e.target) &&
+    !menuIcon.contains(e.target)
   ) {
-    myDropDown.classList.remove("dropdown-show");
-    chevronDown.classList.remove("rotated");
+    sidebar.classList.remove("active");
+    console.log("Clicked outside the sidebar");
+    allowScroll();
   }
 });
 
