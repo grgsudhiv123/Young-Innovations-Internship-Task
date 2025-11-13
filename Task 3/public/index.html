@@ -53,7 +53,7 @@
     <main>
       <!-- hero -->
       <section class="w-full h-fit hero-bg">
-        <div class="relative w-full h-full hero-div">
+        <div class="relative w-full h-full hero-div overflow-hidden">
           <div
             class="absolute max-w-68 md:max-w-[34rem] lg:max-w-[42rem] xl:max-w-[60rem] w-full mx-auto flex flex-col md:gap-8 top-1/3 md:top-1/3 xl:top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
           >
@@ -97,7 +97,7 @@
           </div>
           <!-- hero img 1 -->
           <img
-            class="absolute top-160 sm:top-136 md:top-144 lg:top-176 xl:top-192 w-full"
+            class="absolute top-170 sm:top-136 md:top-144 lg:top-176 xl:top-192 w-full"
             src="../src/assets/images/heropage/bg-hill.png"
           />
           <!-- hero img 2 -->
@@ -105,10 +105,6 @@
             class="pt-144 sm:pt-100 lg:pt-116 w-full"
             src="../src/assets/images/heropage/bg-mountains.png"
           />
-          <!-- dark fade -->
-          <div
-            class="absolute bottom-0 z-10 w-full h-44 sm:h-72 md:h-100 lg:h-124 xl:h-176 hero-bg-darkfade"
-          ></div>
 
           <!-- socials -->
           <div
@@ -174,29 +170,101 @@
               <div class="h-1/4 md:h-[3.65rem] w-full bg-slate-500"></div>
             </div>
           </div>
+          <!-- dark fade -->
+          <div
+            class="absolute bottom-0 w-full h-44 sm:h-72 md:h-100 lg:h-124 xl:h-176 hero-bg-darkfade"
+          ></div>
         </div>
       </section>
 
-      <div class="w-full h-auto z-50">
+      <div
+        class="absolute w-full h-auto top-230 sm:top-200 md:top-250 lg:top-300 xl:top-360"
+      >
         <!-- contents container -->
         <div
-          class="max-w-[1462px] w-full mx-auto trasform -translate-y-112 space-y-[200px] text-white"
+          class="max-w-[22rem] sm:max-w-[35rem] md:max-w-[45rem] lg:max-w-[60rem] xl:max-w-[70rem] 2xl:max-w-[91.375rem] w-full mx-auto transform space-y-[200px] text-white mb-30"
         >
           <!-- level -->
-          <section>
-            <h1>Hikers level</h1>
+          <section
+            class="flex flex-col md:flex-row gap-2 md:gap-10 2xl:gap-0 justify-between h-180"
+          >
+            <div
+              class="w-full h-full relative flex items-center justify-start md:justify-center"
+            >
+              <!-- content indexing -->
+              <span
+                class="absolute z-1 -top-25 sm:-top-30 md:top-[70px] lg:-top-[10px] right-0 md:-right-36 lg:left-0 text-[100px] md:text-[150px] lg:text-[200px] xl:text-[240px] font-bold leading-60 opacity-10"
+              >
+                01
+              </span>
+              <div
+                class="max-w-[22rem] sm:max-w-[30rem] xl:max-w-[40rem] w-full h-fit space-y-3 md:space-y-7 z-10"
+              >
+                <div class="flex w-fit items-center gap-2 md:gap-8">
+                  <div
+                    class="w-8 md:w-18 h-0.5 bg-(--secondary-text-color)"
+                  ></div>
+                  <p
+                    class="text-(--secondary-text-color) text-[12px] md:text-lg uppercase font-extrabold"
+                  >
+                    Getting Started
+                  </p>
+                </div>
+                <h2
+                  class="font-semibold text-2xl md:text-4xl lg:text-6xl font-chronicals max-w-[555px] w-full"
+                >
+                  What level of hiker are you?
+                </h2>
+                <p class="font-bold leading-5 md:leading-8 text-sm md:text-lg">
+                  Determining what level of hiker you are can be an important
+                  tool when planning future hikes. This hiking level guide will
+                  help you plan hikes according to different hike ratings set by
+                  various websites like All Trails and Modern Hiker. What type
+                  of hiker are you &ndash; novice, moderate, advanced moderate,
+                  expert, or expert backpacker?
+                </p>
+                <div
+                  class="flex gap-4 items-center text-(--secondary-text-color)"
+                >
+                  <p class="text-sm md:text-lg font-bold">read more</p>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </div>
+              </div>
+            </div>
+            <div
+              class="max-w-[35rem] w-full h-full flex justify-end items-end 2xl:inline z-20 overflow-hidden object-center"
+            >
+              <div class="w-3/5 md:w-full">
+                <img
+                  class="w-full h-full object-cover"
+                  src="../src/assets/images/contentsection/hiker.png"
+                  alt=""
+                />
+              </div>
+            </div>
           </section>
 
           <!-- hiking gear -->
-          <section>
+          <section class="h-180">
             <h1>hiking gear</h1>
           </section>
 
           <!-- map and timing -->
-          <section>
+          <section class="h-180">
             <h1>map and timing</h1>
           </section>
-          <footer>footer</footer>
+          <footer class="">footer</footer>
         </div>
       </div>
     </main>
