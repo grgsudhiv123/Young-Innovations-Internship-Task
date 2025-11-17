@@ -133,20 +133,3 @@
     }
   }
 }
-
-.hero-header-fade-up {
-  animation: hero-fade-up 1s ease-in-out linear;
-  animation-timeline: scroll();
-  animation-range: 0vh 30vh; /* Fades out in the first 30vh of scroll */
-  animation-delay: 2s; /* Wait for the initial animation to finish */
-}
-@keyframes hero-fade-up {
-  0% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateY(-100px);
-  }
-}
