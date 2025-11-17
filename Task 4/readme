@@ -1,0 +1,10 @@
+Setup for project:
+
+json server :
+npm install -g json-server
+start server: json-server --watch db.json
+
+tailwindcss setup :
+npm install tailwindcss @tailwindcss/cli
+@import "tailwindcss";
+npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
