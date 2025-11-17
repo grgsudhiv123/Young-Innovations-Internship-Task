@@ -25,6 +25,29 @@ document.addEventListener("DOMContentLoaded", function () {
     link.addEventListener("click", closeMenu);
   });
 
+  // navbar scroll
+  const navbar = document.getElementById("navbar");
+  var navTop = navbar.getBoundingClientRect();
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > navTop.bottom) {
+      navbar.classList.add("-translate-y-100");
+    }
+    if (
+      window.scrollY >
+        document.getElementById("levelId").getBoundingClientRect().top ||
+      window.scrollY < navTop.bottom
+    ) {
+      navbar.classList.remove("-translate-y-100");
+    }
+    if (
+      window.scrollY >
+      document.getElementById("heropage").getBoundingClientRect().bottom
+    ) {
+      navbar.classList.remove("-translate-y-100");
+    }
+  });
+
   // Slider functionality
   const sections = [
     { id: "heropage", link: 'a[href="#heropage"]' },
