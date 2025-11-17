@@ -83,7 +83,6 @@
     height: auto;
     overflow-x: hidden;
     transition: all 0.2s ease-in-out;
-    font-family: var(--font-poppins);
   }
 }
 

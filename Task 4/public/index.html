@@ -325,7 +325,108 @@
     </header>
 
     <main>main contents</main>
-    <footer></footer>
+    <footer>
+      <div class="max-w-330 mx-auto w-full py-10 px-4"></div>
+      <div class="w-full bg-gray-900 pt-15 space-y-16">
+        <div class="max-w-330 mx-auto w-full flex flex-row gap-28 px-4">
+          <div class="max-w-84 w-full flex flex-col gap-4">
+            <a href="/">Ecobazar</a>
+            <p class="font-normal text-sm leading-[150%] text-gray-500">
+              Morbi cursus porttitor enim lobortis molestie. Duis gravida turpis
+              dui, eget bibendum magna congue nec.
+            </p>
+            <div class="flex flex-row gap-4 text-sm leading-[150%] text-white">
+              <span class="w-fit group">
+                <a href="/" class="font-medium">(219) 555-0114</a>
+                <span
+                  class="block max-w-0 h-px bg-(--light-green) group-hover:max-w-full w-full transition-all duration-300"
+                ></span>
+              </span>
+              <span class="text-gray-500">or</span>
+
+              <span class="w-fit group">
+                <a href="/" class="font-medium">Proxy@gmail.com</a>
+                <span
+                  class="block max-w-0 h-px bg-(--light-green) group-hover:max-w-full w-full transition-all duration-300"
+                ></span>
+              </span>
+            </div>
+          </div>
+          <div
+            id="footer-items-container"
+            class="w-full grid grid-cols-4 gap-5"
+          ></div>
+        </div>
+        <div
+          class="max-w-330 mx-auto w-full px-4 flex flex-row justify-between py-6 border-t-2 border-gray-600"
+        >
+          <p class="text-sm text-gray-500 font-normal leading-[150%]">
+            Ecobazar eCommerce © 2021. All Rights Reserved
+          </p>
+
+          <ul class="flex flex-row gap-2">
+            <li
+              class="w-[45px] h-8 flex items-center justify-center border border-gray-800 rounded-md"
+            >
+              <a href="/"
+                ><img src="../src/assets/icons/footer/ApplePay.svg"
+              /></a>
+            </li>
+            <li
+              class="w-[45px] h-8 flex items-center justify-center border border-gray-800 rounded-md"
+            >
+              <a href="/"
+                ><img src="../src/assets/icons/footer/visa-logo.svg"
+              /></a>
+            </li>
+            <li
+              class="w-[45px] h-8 flex items-end justify-end border border-gray-800 rounded-md"
+            >
+              <a href="/"
+                ><img src="../src/assets/icons/footer/Discover.svg"
+              /></a>
+            </li>
+            <li
+              class="w-[45px] h-8 flex items-center justify-center border border-gray-800 rounded-md"
+            >
+              <a href="/"
+                ><img src="../src/assets/icons/footer/Mastercard.svg"
+              /></a>
+            </li>
+            <li class="border border-gray-800 rounded-md">
+              <a
+                href="/"
+                class="w-[65px] h-8 flex flex-col justify-center items-center"
+              >
+                <span class="flex flex-row gap-0.5">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-[11px] text-white"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z"
+                    />
+                  </svg>
+                  <span
+                    class="text-white font-normal text-[11px] leading-[100%]"
+                    >Secure</span
+                  >
+                </span>
+                <span class="font-semibold text-xs text-white leading-[100%]"
+                  >Payment</span
+                >
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
     <!-- bottom navbar -->
     <div
       class="fixed block md:hidden bottom-0 bg-white w-full h-auto p-5 shadow-[0_-5px_10px_-2px_rgba(0,0,0,0.3)]"
@@ -404,6 +505,6 @@
       </div>
     </div>
 
-    <!-- <script src="./js/main.js"></script> -->
+    <script type="module" src="../src/js/main.js"></script>
   </body>
 </html>

@@ -67,7 +67,7 @@ export const navbarConstants = [
 
 // footer constants
 
-const footerConstant = [
+export const footerConstant = [
   {
     header: "My Account",
     contents: [
