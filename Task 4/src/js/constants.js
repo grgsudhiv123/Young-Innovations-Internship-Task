@@ -1,78 +1,155 @@
-const navbarConstants = [
+export const navbarConstants = [
   {
     header: "Home",
     contents: [
-      {
-        item: "Item1",
-        link: "/link/item1",
-      },
-      {
-        item: "Item2",
-        link: "/link/item2",
-      },
-      {
-        item: "Item1",
-        link: "/link/item3",
-      },
+      { item: "Overview", link: "/overview" },
+      { item: "Featured", link: "/featured" },
+      { item: "New Arrivals", link: "/new-arrivals" },
+      { item: "Popular Categories", link: "/popular-categories" },
     ],
   },
   {
     header: "Shop",
     contents: [
       {
-        item: "Item1",
-        link: "/link/item1",
+        item: "Men",
+        link: "/shop/men",
       },
       {
-        item: "Item2",
-        link: "/link/item2",
+        item: "Women",
+        link: "/shop/women",
       },
       {
-        item: "Item1",
-        link: "/link/item3",
+        item: "Electronics",
+        link: "/shop/electronics",
+      },
+      {
+        item: "Accessories",
+        link: "/shop/accessories",
+      },
+      {
+        item: "Sale",
+        link: "/shop/sale",
       },
     ],
   },
   {
     header: "Pages",
     contents: [
-      {
-        item: "Item1",
-        link: "/link/item1",
-      },
-      {
-        item: "Item2",
-        link: "/link/item2",
-      },
-      {
-        item: "Item1",
-        link: "/link/item3",
-      },
+      { item: "About Us", link: "/about-us" },
+      { item: "FAQs", link: "/faqs" },
+      { item: "Pricing", link: "/pricing" },
+      { item: "Services", link: "/services" },
+      { item: "Portfolio", link: "/portfolio" },
+      { item: "Terms & Conditions", link: "/terms" },
+      { item: "Privacy Policy", link: "/privacy" },
     ],
   },
   {
     header: "Blog",
     contents: [
-      {
-        item: "Item1",
-        link: "/link/item1",
-      },
-      {
-        item: "Item2",
-        link: "/link/item2",
-      },
-      {
-        item: "Item1",
-        link: "/link/item3",
-      },
+      { item: "Latest Posts", link: "/blog/latest" },
+      { item: "Popular Posts", link: "/blog/popular" },
+      { item: "Tutorials", link: "/blog/tutorials" },
+      { item: "Tips & Guides", link: "/blog/guides" },
+      { item: "News & Updates", link: "/blog/news" },
     ],
   },
   {
     header: "About Us",
-    link: "/aboutus",
+    link: "/about-us",
   },
   {
     header: "Contact Us",
-    link: "/contactus",
+    link: "/contact-us",
+  },
+];
+
+// footer constants
+
+const footerConstant = [
+  {
+    header: "My Account",
+    contents: [
+      {
+        item1: "My Account",
+        link: "/myaccount",
+      },
+      {
+        item1: "Order History",
+        link: "/orderhistory",
+      },
+      {
+        item1: "Shopping Cart",
+        link: "/shoppingcart",
+      },
+      {
+        item1: "Wishlist",
+        link: "/wishlist",
+      },
+    ],
+  },
+  {
+    header: "Helps",
+    contents: [
+      {
+        item1: "Contact",
+        link: "/contact",
+      },
+      {
+        item1: "Faqs",
+        link: "/faqs",
+      },
+      {
+        item1: "Terms & Condition",
+        link: "/terms&condition",
+      },
+      {
+        item1: "Privacy Policy",
+        link: "/privacypolicy",
+      },
+    ],
+  },
+  {
+    header: "Proxy",
+    contents: [
+      {
+        item1: "About",
+        link: "/about",
+      },
+      {
+        item1: "Shop",
+        link: "/shop",
+      },
+      {
+        item1: "Product",
+        link: "/product",
+      },
+      {
+        item1: "Track Order",
+        link: "/trackorder",
+      },
+    ],
+  },
+  {
+    header: "Categories",
+    contents: [
+      {
+        item1: "Fruits & Vegetables",
+        link: "/fruits&vegetables",
+      },
+      {
+        item1: "Meat & Fish",
+        link: "/meat&fish",
+      },
+      {
+        item1: "Bread & Bakery",
+        link: "/bread&bakery",
+      },
+      {
+        item1: "Beauty & Health",
+        link: "/beauty&health",
+      },
+    ],
   },
 ];

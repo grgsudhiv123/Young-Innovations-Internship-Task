@@ -1,4 +1,4 @@
-import navbar from "./components/navbar.js";
+import navbar from "./components/topnavbar.js";
 
 const API_URL = "http://localhost:8000";
 
