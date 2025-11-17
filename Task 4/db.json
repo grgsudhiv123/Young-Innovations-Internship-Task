@@ -1,1 +1,8 @@
-{}
+{
+  "posts": [
+    { "id": 1, "title": "JSON Server Setup", "author": "User" },
+    { "id": 2, "title": "Mock API Development", "author": "User" }
+  ],
+  "comments": [{ "id": 1, "body": "Great article!", "postId": 1 }],
+  "profile": { "name": "Your Name" }
+}

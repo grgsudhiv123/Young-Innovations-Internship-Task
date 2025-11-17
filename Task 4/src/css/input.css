@@ -1,0 +1,97 @@
+@import "tailwindcss";
+@layer theme, base, component, utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@layer theme {
+  :root {
+    /* color */
+    --success-dark: #2c742f;
+    --light-green: #00b207;
+
+    /* font */
+    --font-poppins: "Poppins", sans-serif;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  a,
+  ul {
+    text-decoration: none;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  a,
+  ul,
+  li {
+    padding: 0;
+    margin: 0;
+  }
+
+  * {
+    padding: 0;
+    margin: 0;
+    font-family: var(--font-secondary);
+  }
+
+  h1 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    line-height: 2.25rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2rem;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.75rem;
+  }
+
+  h5 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.75rem;
+  }
+
+  h6 {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+  }
+
+  body {
+    width: 100vw;
+    height: auto;
+    overflow-x: hidden;
+    transition: all 0.2s ease-in-out;
+    font-family: var(--font-poppins);
+  }
+}
+
+@layer utilities {
+  .header-1 {
+    max-width: 82.43rem;
+    width: 100%;
+    padding: 12px;
+    margin: auto;
+  }
+}
