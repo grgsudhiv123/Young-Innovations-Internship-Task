@@ -26,17 +26,18 @@
             viewBox="0 0 24 24"
             stroke-width="1.5"
             stroke="currentColor"
-            class="size-6"
+            class="size-6 inline md:hidden cursor-pointer"
           >
             <path
               stroke-linecap="round"
               stroke-linejoin="round"
-              d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
             />
           </svg>
           <a class="text-lg font-bold" href="/"> About </a>
         </div>
         <svg
+          id="menuBtn"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
@@ -54,29 +55,36 @@
     </header>
     <main>
       <!-- hero -->
-      <section class="w-full h-fit hero-bg">
+      <section id="heropage" class="w-full h-fit hero-bg">
         <div class="relative w-full h-full hero-div overflow-hidden">
           <div
-            class="absolute max-w-68 md:max-w-[34rem] lg:max-w-[42rem] xl:max-w-[60rem] w-full mx-auto flex flex-col gap-2 md:gap-8 top-1/3 md:top-1/3 xl:top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            class="absolute max-w-68 md:max-w-[34rem] lg:max-w-[42rem] xl:max-w-[60rem] w-full mx-auto flex flex-col gap-2 md:gap-8 top-1/3 md:top-1/3 xl:top-1/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 overflow-hidden"
           >
-            <div class="flex w-fit items-center gap-2 md:gap-8">
-              <div class="w-8 md:w-18 h-0.5 bg-(--secondary-text-color)"></div>
+            <div
+              class="flex max-w-68 md:max-w-[34rem] lg:max-w-[42rem] xl:max-w-[60rem] items-center gap-2 md:gap-8"
+            >
+              <div
+                class="w-8 md:w-18 h-0.5 bg-(--secondary-text-color) animate-hero-yellow-bar"
+              ></div>
               <p
                 class="text-(--secondary-text-color) text-[12px] md:text-lg uppercase font-extrabold tracking-[6px]"
               >
                 A Hiking guide
               </p>
             </div>
-            <h1
-              class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-[5rem] xl:leading-25 w-full text-white capitalize"
-            >
-              <span class="font-chronicals whitespace-nowrap">
-                Be prepared for the </span
-              ><br />
-              <span class="font-chronicals whitespace-nowrap">
-                Mountains and beyond!
-              </span>
-            </h1>
+
+            <div class="hero-header-fade-up">
+              <h1
+                class="text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-[5rem] xl:leading-25 w-full text-white capitalize animate-hero-header"
+              >
+                <span class="font-chronicals whitespace-nowrap">
+                  Be prepared for the </span
+                ><br />
+                <span class="font-chronicals whitespace-nowrap">
+                  Mountains and beyond!
+                </span>
+              </h1>
+            </div>
             <div class="flex items-center gap-1 sm:gap-4">
               <p class="text-[12px] md:text-lg font-extrabold text-white">
                 scroll down
@@ -87,7 +95,7 @@
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
                 stroke="currentColor"
-                class="size-3 md:size-6 text-white"
+                class="size-3 md:size-6 text-white animate-bounce duration-1000 ease-in-out"
               >
                 <path
                   stroke-linecap="round"
@@ -163,13 +171,15 @@
             <div
               class="relative flex flex-col items-end gap-5 md:gap-10 font-bold text-sm md:text-lg"
             >
-              <p>Start</p>
-              <p>01</p>
-              <p>02</p>
-              <p>03</p>
+              <a href="#heropage">Start</a>
+              <a href="#levelId" class="animate-slide-up">01</a>
+              <a href="#hikinggear">02</a>
+              <a href="#map&timing">03</a>
             </div>
-            <div class="bg-slate-50 w-1 h-36 md:h-60">
-              <div class="h-1/4 md:h-[3.65rem] w-full bg-slate-500"></div>
+            <div class="bg-slate-50 w-1 h-36 md:h-58 slidebar-container">
+              <div
+                class="h-1/4 md:h-[3.65rem] w-full bg-slate-500 slidebar"
+              ></div>
             </div>
           </div>
           <!-- dark fade -->
@@ -188,23 +198,24 @@
         >
           <!-- level -->
           <section
-            class="flex flex-col md:flex-row gap-2 md:gap-10 2xl:gap-0 justify-between h-180"
+            id="levelId"
+            class="flex flex-col md:flex-row gap-2 md:gap-10 2xl:gap-0 justify-between h-180 animate-scroll-bottom-right"
           >
             <div
               class="w-full h-full relative flex items-center justify-start md:justify-center"
             >
               <!-- content indexing -->
-              <span
+              <p
                 class="absolute z-1 -top-25 sm:-top-30 md:top-[70px] lg:-top-[10px] xl:top-[38px] right-0 md:-right-36 lg:left-0 text-[100px] md:text-[150px] lg:text-[200px] xl:text-[240px] font-bold leading-60 opacity-10"
               >
                 01
-              </span>
+              </p>
               <div
-                class="max-w-[22rem] sm:max-w-[30rem] xl:max-w-[40rem] w-full h-fit space-y-3 md:space-y-7 z-10"
+                class="max-w-[22rem] sm:max-w-[30rem] xl:max-w-[40rem] w-full h-fit space-y-3 md:space-y-7 z-10 transform duration-150 ease-in-out"
               >
                 <div class="flex w-fit items-center gap-2 md:gap-8">
                   <div
-                    class="w-8 md:w-18 h-0.5 bg-(--secondary-text-color)"
+                    class="max-w-8 md:max-w-18 w-full h-0.5 bg-(--secondary-text-color) animate-yellow-bar"
                   ></div>
                   <p
                     class="text-(--secondary-text-color) text-[12px] md:text-lg uppercase font-extrabold tracking-[6px]"
@@ -245,7 +256,7 @@
               </div>
             </div>
             <div
-              class="max-w-[35rem] w-full h-full flex justify-end items-end 2xl:inline z-20 overflow-hidden object-center"
+              class="max-w-140 w-full h-full flex justify-end items-end 2xl:inline z-20 overflow-hidden object-center"
             >
               <div class="w-3/5 md:w-full">
                 <img
@@ -259,14 +270,15 @@
 
           <!-- hiking gear -->
           <section
-            class="flex flex-col-reverse md:flex-row gap-2 md:gap-10 2xl:gap-28 justify-between h-180"
+            id="hikinggear"
+            class="flex flex-col-reverse md:flex-row gap-2 md:gap-10 2xl:gap-28 justify-between h-180 animate-scroll-bottom-left"
           >
             <div
               class="max-w-140 w-full h-full flex justify-end items-end 2xl:inline z-20 overflow-hidden"
             >
               <div class="w-3/5 md:w-full h-full md:h-7/10 lg:h-full">
                 <img
-                  class="w-full h-full object-cover object-center object-top-left"
+                  class="w-full h-full object-cover object-center"
                   src="../src/assets/images/contentsection/hikinggear.jpg"
                   alt="Hiking gear img"
                 />
@@ -286,7 +298,7 @@
               >
                 <div class="flex w-fit items-center gap-2 md:gap-8">
                   <div
-                    class="w-8 md:w-18 h-0.5 bg-(--secondary-text-color)"
+                    class="w-8 md:w-18 h-0.5 bg-(--secondary-text-color) animate-yellow-bar"
                   ></div>
                   <p
                     class="text-(--secondary-text-color) text-[12px] md:text-lg uppercase font-extrabold tracking-[6px]"
@@ -332,7 +344,8 @@
 
           <!-- map and timing -->
           <section
-            class="flex flex-col md:flex-row gap-2 md:gap-10 2xl:gap-0 justify-between h-180"
+            id="map&timing"
+            class="flex flex-col md:flex-row gap-2 md:gap-10 2xl:gap-0 justify-between h-180 animate-scroll-bottom-right"
           >
             <div
               class="w-full h-full relative flex items-center justify-start md:justify-center"
@@ -348,7 +361,7 @@
               >
                 <div class="flex w-fit items-center gap-2 md:gap-8">
                   <div
-                    class="w-8 md:w-18 h-0.5 bg-(--secondary-text-color)"
+                    class="w-8 md:w-18 h-0.5 bg-(--secondary-text-color) animate-yellow-bar"
                   ></div>
                   <p
                     class="text-(--secondary-text-color) text-[12px] md:text-lg uppercase font-extrabold tracking-[6px]"
@@ -389,7 +402,7 @@
               </div>
             </div>
             <div
-              class="max-w-[35rem] w-full h-full flex justify-end items-end 2xl:inline z-20 overflow-hidden object-center"
+              class="max-w-140 w-full h-full flex justify-end items-end 2xl:inline z-20 overflow-hidden object-center"
             >
               <div class="w-3/5 md:w-full h-full md:h-7/10 lg:h-full">
                 <img
@@ -413,7 +426,7 @@
                   >MNTN</a
                 >
                 <p
-                  class="font-bold text-sm sm:text-base md:text-md lg:text-lg leading-5 md:leading-8"
+                  class="font-bold text-sm sm:text-base md:text-md lg:text-lg leading-5n md:leading-8"
                 >
                   Get out there & discover your next slope, mountain &
                   destination!
@@ -491,5 +504,81 @@
         </div>
       </div>
     </main>
+    <div id="menuOverlay" class="menu-overlay"></div>
+
+    <!-- Mobile Menu Slider -->
+    <div id="mobileMenu" class="mobile-menu">
+      <!-- Close Button -->
+      <button id="closeMenu" class="close-menu-btn">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="currentColor"
+          class="size-8"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </button>
+
+      <!-- Menu Content -->
+      <nav class="mobile-menu-content">
+        <a href="/" class="font-chronicals uppercase text-2xl mb-8 block"
+          >MNTN</a
+        >
+
+        <ul class="flex flex-col gap-6">
+          <li>
+            <a
+              href="#levelId"
+              class="text-2xl font-bold hover:text-yellow-400 transition-colors"
+            >
+              Equipment
+            </a>
+          </li>
+          <li>
+            <a
+              href="#hikinggear"
+              class="text-2xl font-bold hover:text-yellow-400 transition-colors"
+            >
+              About Us
+            </a>
+          </li>
+          <li>
+            <a
+              href="#map&timing"
+              class="text-2xl font-bold hover:text-yellow-400 transition-colors"
+            >
+              Blog
+            </a>
+          </li>
+        </ul>
+
+        <!-- Account Link -->
+        <div class="flex items-center gap-2 mt-10">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+            />
+          </svg>
+          <a class="text-base font-bold" href="/">Account</a>
+        </div>
+      </nav>
+    </div>
   </body>
+  <script src="../src/js/main.js"></script>
 </html>
