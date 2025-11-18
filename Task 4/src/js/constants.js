@@ -1,3 +1,5 @@
+import { box, bus, headphone, shoppingBag } from "./icons.js";
+
 export const navbarConstants = [
   {
     header: "Home",
@@ -62,6 +64,31 @@ export const navbarConstants = [
   {
     header: "Contact Us",
     link: "/contact-us",
+  },
+];
+
+// featured conastants
+
+export const featuredConstants = [
+  {
+    header: "Free shipping",
+    desc: "Free shipping on all your order",
+    icon: bus,
+  },
+  {
+    header: "Customer Support 24/7",
+    desc: "Instant access to Support",
+    icon: headphone,
+  },
+  {
+    header: "100% Secure Payment",
+    desc: "We ensure your money is save",
+    icon: shoppingBag,
+  },
+  {
+    header: "Money-Back Guarantee",
+    desc: "30 Days Money-Back Guarantee",
+    icon: box,
   },
 ];
 
