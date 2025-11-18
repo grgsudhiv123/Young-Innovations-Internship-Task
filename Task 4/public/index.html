@@ -1,3 +1,16 @@
+<!-- navigate to different sections -->
+
+<!-- header -->
+<!-- header nav1 -->
+<!-- header nav2 -->
+<!-- header nav3 -->
+
+<!-- main -->
+<!-- herosection -->
+
+<!-- footer -->
+<!-- bottomnavbar -->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,6 +25,7 @@
     <title>Shopery</title>
   </head>
   <body>
+    <!-- header -->
     <header class="w-full h-auto">
       <!-- header nav1 -->
       <div
@@ -195,7 +209,6 @@
         </div>
       </div>
       <!-- header nav3 -->
-
       <div class="header-3 bg-gray-800 hidden md:block">
         <div
           class="max-w-[82.43rem] w-full mx-auto h-auto flex justify-between p-4"
@@ -329,7 +342,119 @@
       </div>
     </header>
 
-    <main>main contents</main>
+    <!-- main -->
+    <main>
+      <!-- herosection -->
+      <section
+        class="max-w-[350px] sm:max-w-[550px] md:max-w-[700px] lg:max-w-[900px] xl:max-w-[1100px] 2xl:max-w-[1320px] mx-auto w-full h-auto mt-6 mb-[60px]"
+      >
+        <!-- hero bigbanner -->
+        <div class="grid grid-cols-12 gap-2 md:gap-6 w-full h-full">
+          <div
+            class="col-span-12 lg:col-span-8 row-span-2 w-full rounded-[10px] aspect-872/600 overflow-hidden relative"
+          >
+            <img
+              src="../src/assets/images/herosection/heroimg1.jpg"
+              alt=""
+              class="w-full h-full object-cover scale-115 object-[-10px_10px]  sm:object-[-10px_20px]"
+            />
+            <div
+              class="absolute w-full h-full hero-bg-gradient top-0 left-0 flex justify-start items-center"
+            >
+              <div
+                class="max-w-[150px] sm:max-w-[300px] xl:max-w-[556px] w-full ml-5 md:ml-[60px] leading-[100%] md:leading-[120%] font-semibold flex flex-col gap-2 md:gap-7"
+              >
+                <h1 class="text-white text-lg md:text-3xl xl:text-5xl">
+                  <span> Fresh & Healthy </span> <br />
+                  <span> Organic Food </span>
+                </h1>
+                <div>
+                  <span
+                    class="flex flex-row gap-2 text-white font-medium text-xs sm:text-md xl:text-xl leading-[150%] items-center"
+                  >
+                    <span>Sale up to</span>
+                    <span class="px-0.5 sm:px-1.5 xl:px-3 py-px sm:py-1 rounded-[5px] bg-(--warning-color)"
+                      >30% OFF</span
+                    >
+                  </span>
+                  <p class="text-[8px] sm:text-sm font-normal leading-[150%] text-gray-300">
+                    Free shipping on all your order.
+                  </p>
+                </div>
+                <button
+                  class="w-fit text-(--light-green) bg-white py-2 lg:py-3 xl:py-4 px-2 sm:px-5 lg:px-8 xl:px-10 rounded-[53px] cursor-pointer hover:bg-gray-200 transition-all duration-200 ease-in-out flex gap-1 sm:gap-4 items-center"
+                >
+                  <span class="font-semibold text-xs sm:text-sm lg:text-base leading-[120%]"
+                    >Shop now</span
+                  >
+                  <i
+                    class="fa-solid fa-arrow-right animate-pulse duration-500 ease-linear text-xs sm:text-base"
+                  ></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-span-12 sm:col-span-6 lg:col-span-4 row-span-1 col-start-1 lg:col-start-9 aspect-423/288 rounded-[10px] overflow-hidden relative"
+          >
+            <img
+              src="../src/assets/images/herosection/heroimg2.jpg"
+              alt=""
+              class="w-full h-full object-cover transform -scale-x-130 scale-y-130 object-[40px_-35px]"
+            />
+            <div class="absolute top-4 xl:top-8 left-4 xl:left-8 max-w-[165px] w-full flex flex-col gap-2 md:gap-4 xl:gap-6">
+              <div class="flex flex-col gap-2 xl:gap-3 text-gray-900">
+                <div class="flex flex-col gap-2">
+                  <span class="font-medium text-[10px] md:text-xs xl:text-sm uppercase leading-[100%] tracking-[3%]">Summer Sale</sapn> <br/>
+                  <span class="font-semibold text-lg md:text-xl lg:text-2xl xl:text-[2rem] uppercase tracking-[3%] leading-[120%]">75% OFF</span>
+                </div>
+                <p class="font-normal text-[10px] md:text-xs xl:text-sm leading-[150%] text-gray-600">Only Fruit & Vegetable</p>
+              </div>
+              <a href="/shop now" class="text-(--light-green) flex flex-row gap-1 md:gap-3 items-center">
+                <span class="font-semibold capitalize text-xs sm:text-sm xl:text-base leading-[100%] lg:leading-[120%]">Shop now</span>
+                 <i
+                    class="fa-solid fa-arrow-right animate-pulse duration-500 ease-linear text-xs sm:text-base"
+                  ></i>
+              </a>
+            </div>
+          </div>
+          <div
+            class="col-span-12 sm:col-span-6 lg:col-span-4 row-span-1 col-start-1 sm:col-start-7 lg:col-start-9 aspect-423/288 rounded-[10px] overflow-hidden relative"
+          >
+            <img
+              src="../src/assets/images/herosection/heroimg3.jpg"
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute hero3-bg-gradient w-full h-full top-0 left-0 flex items-center justify-center">
+              <div class="max-w-[343px] w-full space-y-8">
+                <div class=" text-white text-center flex flex-col gap-3">
+                  <p class="font-medium text-[10px] md:text-xs xl:text-sm leading-[100%] uppercase tracking-[3%]">Best Deal</p>
+                  <p class="font-semibold text-lg md:text-xl lg:text-2xl xl:text-[2rem] leading-[100%] xl:leading-[120%] ">
+                    <span>
+                      Special Products 
+                    </span> <br/>
+                    <span>
+                      Deal of the Month
+                    </span>
+                  </p>
+                </div>
+                 <a href="/shop now" class="text-(--light-green) flex flex-row gap-1 md:gap-3 items-center w-fit mx-auto">
+                <span class="font-semibold capitalize text-xs sm:text-sm xl:text-base leading-[100%] lg:leading-[120%]">Shop now</span>
+                 <i
+                    class="fa-solid fa-arrow-right animate-pulse duration-500 ease-linear text-xs sm:text-base"
+                  ></i>
+              </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12">g</div>
+        </div>
+        <!-- hero featured -->
+        <div></div>
+      </section>
+    </main>
+
+    <!-- footer -->
     <footer>
       <!-- footer subscribe -->
       <div class="w-full py-10 px-10 md:px-4 bg-(--bg-base-color)">
@@ -516,7 +641,8 @@
         </div>
       </div>
     </footer>
-    <!-- bottom navbar -->
+
+    <!-- bottomnavbar -->
     <div
       class="fixed block md:hidden bottom-0 bg-white w-full h-auto p-5 shadow-[0_-5px_10px_-2px_rgba(0,0,0,0.3)]"
     >

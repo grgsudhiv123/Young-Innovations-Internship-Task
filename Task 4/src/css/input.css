@@ -9,6 +9,7 @@
     --success-dark: #2c742f;
     --light-green: #00b207;
     --bg-base-color: #f7f7f7;
+    --warning-color: #ff8a00;
 
     /* font */
     --font-poppins: "Poppins", sans-serif;
@@ -93,5 +94,17 @@
     width: 100%;
     padding: 12px;
     margin: auto;
+  }
+
+  .hero-bg-gradient {
+    background: linear-gradient(
+      98.82deg,
+      rgba(0, 0, 0, 0.6) 10.4%,
+      rgba(0, 0, 0, 0) 59.43%
+    );
+  }
+
+  .hero3-bg-gradient {
+    background: rgba(0, 38, 3, 0.8);
   }
 }
