@@ -13,6 +13,8 @@
 
     /* font */
     --font-poppins: "Poppins", sans-serif;
+
+    --grey-900: #1a1a1a;
   }
 }
 
@@ -85,6 +87,7 @@
     height: auto;
     overflow-x: hidden;
     transition: all 0.2s ease-in-out;
+    color: var(--grey-900);
   }
 }
 
@@ -106,5 +109,9 @@
 
   .hero3-bg-gradient {
     background: rgba(0, 38, 3, 0.8);
+  }
+
+  .category-card-shadow:hover {
+    box-shadow: 0px 0px 12px 0px #20b52652;
   }
 }
