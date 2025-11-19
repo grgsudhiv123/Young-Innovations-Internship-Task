@@ -1,4 +1,4 @@
-import { footerConstant } from "../constants.js";
+import { footerConstant } from "../../constants.js";
 
 function footerComp() {
   const footerLinks = document.getElementById("footer-items-container");

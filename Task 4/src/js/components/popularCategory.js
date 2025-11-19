@@ -1,4 +1,4 @@
-export const BASE_URL = "http://localhost:8000";
+import { BASE_URL } from "../constants.js";
 
 const PopularCategory = async () => {
   const categoryContainer = document.getElementById("popularCategory");
@@ -19,7 +19,6 @@ const PopularCategory = async () => {
     `
       )
       .join("");
-    console.log(data);
     return data;
   } catch (error) {
     console.log(error);

@@ -10,6 +10,7 @@
     --light-green: #00b207;
     --bg-base-color: #f7f7f7;
     --warning-color: #ff8a00;
+    --bg-error: #ea4b48;
 
     /* font */
     --font-poppins: "Poppins", sans-serif;
@@ -112,6 +113,10 @@
   }
 
   .category-card-shadow:hover {
+    box-shadow: 0px 0px 12px 0px #20b52652;
+  }
+
+  .products-card-shadow:hover {
     box-shadow: 0px 0px 12px 0px #20b52652;
   }
 }
