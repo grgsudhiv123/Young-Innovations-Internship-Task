@@ -10,6 +10,8 @@
 <!-- main -->
 <!-- herosection -->
 <!-- popular categories -->
+<!-- bannersection -->
+<!-- hotdealssection -->
 
 
 <!-- footer -->
@@ -29,7 +31,6 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-
     <title>Shopery</title>
   </head>
   <body>
@@ -354,7 +355,7 @@
     <main>
       <!-- herosection -->
       <section
-        class="max-w-[350px] sm:max-w-[550px] md:max-w-[700px] lg:max-w-[900px] xl:max-w-[1100px] 2xl:max-w-[1320px] mx-auto w-full h-auto mt-6 mb-[60px]"
+        class="section-layout-width mt-6 mb-[60px]"
       >
         <!-- hero bigbanner -->
         <div class="grid grid-cols-12 gap-4 md:gap-6 w-full h-full">
@@ -390,15 +391,15 @@
                   </p>
                 </div>
                 <button
-                  class="w-fit text-(--light-green) bg-white py-2 lg:py-3 xl:py-4 px-2 sm:px-5 lg:px-8 xl:px-10 rounded-[53px] cursor-pointer hover:bg-gray-200 transition-all duration-200 ease-in-out flex gap-1 sm:gap-4 items-center"
+                  class="hero-button "
                 >
-                  <span class="font-semibold text-xs sm:text-sm lg:text-base leading-[120%]"
+                  <span class="hero-btn-text"
                     >Shop now</span
                   >
                   <i
-                    class="fa-solid fa-arrow-right animate-pulse duration-500 ease-linear text-xs sm:text-base"
+                    class="fa-solid fa-arrow-right hero-btn-icon"
                   ></i>
-                </button>
+              </button>
               </div>
             </div>
           </div>
@@ -464,7 +465,7 @@
 
       <!-- popular categories -->
       <section
-        class="max-w-[350px] sm:max-w-[550px] md:max-w-[700px] lg:max-w-[900px] xl:max-w-[1100px] 2xl:max-w-[1320px] mx-auto w-full h-auto mb-[60px] space-y-2 sm:space-y-4 md:space-y-6 xl:space-y-8"
+        class="section-layout-width mb-[60px] space-y-2 sm:space-y-4 md:space-y-6 xl:space-y-8"
       >
       <div class="w-full flex flex-row gap-5 justify-between px-2 sm:px-0">
         <h2 class="text-lg sm:text-xl md:text-2xl xl:text-[2rem] font-semibold leading-[120%] ">Popular Categories</h2>
@@ -481,7 +482,7 @@
 
      <!-- popular categories -->
       <section
-        class="max-w-[350px] sm:max-w-[550px] md:max-w-[700px] lg:max-w-[900px] xl:max-w-[1100px] 2xl:max-w-[1320px] mx-auto w-full h-auto mb-[60px] space-y-2 sm:space-y-4 md:space-y-6 xl:space-y-8"
+        class="section-layout-width mb-[60px] space-y-2 sm:space-y-4 md:space-y-6 xl:space-y-8"
       >
       <div class="w-full flex flex-row gap-5 justify-between px-2 sm:px-0">
         <h2 class="text-lg sm:text-xl md:text-2xl xl:text-[2rem] font-semibold leading-[120%] ">Popular Products</h2>
@@ -493,6 +494,115 @@
               </a>
       </div>
       <div id="popularProducts" class="w-full grid grid-cols-12 lg:grid-cols-10">
+      </div>
+    </section>
+
+    <!-- bannersection -->
+     <section class="section-layout-width grid grid-cols-12 gap-6 mb-15">
+      <div class="col-span-12 sm:col-span-6 lg:col-span-4 aspect-424/536 overflow-hidden rounded-lg relative">
+        <img src="../src/assets/images/bannersection/banner1.jpg" alt="sale of month image" class="w-full h-full object-cover "/>
+        <div class="absolute w-full h-full top-0 left-0 ">
+          <div class="w-fit mx-auto mt-6 lg:mt-9 text-center text-white flex flex-col items-center">
+            <p class="font-medium tracking-[3%] uppercase text-xs md:text-sm leading-[100%]">Best Deals</p>
+            <h2 class="text-xl md:text-2xl xl:text-[40px] leading-[120%] font-semibold mt-4">Sale of the Month</h2>
+            <div id="banner-countdown" class="w-fit flex flex-row gap-2 mx-auto mt-2">
+              <span class="flex flex-col gap-1">
+                <span class="text-md md:text-lg lg:text-xl xl:text-2xl leading-[100%] lg:leading-[150%]">00</span> <span class="text-white/80">DAYS</span>
+              </span>
+              <span>:</span>
+              <span class="flex flex-col gap-1">
+                <span class="text-md md:text-lg lg:text-xl xl:text-2xl leading-[100%] lg:leading-[150%]">02</span> <span class="text-white/80">HOURS</span>
+              </span>
+              <span>:</span>
+              <span class="flex flex-col gap-1">
+                <span class="text-md md:text-lg lg:text-xl xl:text-2xl leading-[100%] lg:leading-[150%]">18</span> <span class="text-white/80">MINS</span>
+              </span>
+              <span>:</span>
+              <span class="flex flex-col gap-1">
+                <span class="text-md md:text-lg lg:text-xl xl:text-2xl leading-[100%] lg:leading-[150%]">46</span> <span class="text-white/80">SECS</span>
+              </span>
+  
+            </div>
+             <button
+                  class="hero-button mt-6"
+                >
+                  <span class="hero-btn-text"
+                    >Shop now</span
+                  >
+                  <i
+                    class="fa-solid fa-arrow-right hero-btn-icon"
+                  ></i>
+              </button>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-span-12 sm:col-span-6 lg:col-span-4 aspect-424/536 overflow-hidden rounded-lg relative">
+        <img src="../src/assets/images/bannersection/banner2.jpg" alt="sale of month image" class="w-full h-full object-cover scale-150 object-center xl:object-[-150px_65px]"/>
+         <div class="absolute w-full h-full top-0 left-0 ">
+          <div class="w-fit mx-auto mt-6 lg:mt-9 text-center text-white flex flex-col items-center">
+            <p class="font-medium tracking-[3%] uppercase text-xs md:text-sm leading-[100%]">85% Fat Free</p>
+            <h2 class="text-lg md:text-xl lg:text-2xl xl:text-[40px] leading-[120%] font-semibold mt-4">Low-Fat Meat</h2>
+            <div class="flex flex-row gap-2">
+              <span class="text-lg font-normal leading-[150%]">Started at </span>
+              <span class="text-(--warning-color) text-xl font-semibold leading-[150%]">$79.99</span>
+            </div> 
+             <button
+                  class="hero-button mt-6"
+                >
+                  <span class="hero-btn-text"
+                    >Shop now</span
+                  >
+                  <i
+                    class="fa-solid fa-arrow-right hero-btn-icon"
+                  ></i>
+              </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-12 sm:col-span-6 lg:col-span-4 aspect-424/536 overflow-hidden rounded-lg relative">
+        <img src="../src/assets/images/bannersection/banner3.jpg" alt="sale of month image" class="w-full h-full object-cover scale-110 lg:scale-150 xl:scale-200 2xl:scale-220 2xl:object-[115px_0px]"/>
+         <div class="absolute w-full h-full top-0 left-0 ">
+          <div class="w-fit mx-auto mt-6 lg:mt-9 text-center text-black flex flex-col items-center">
+            <p class="font-medium tracking-[3%] uppercase text-xs md:text-sm leading-[100%]">Summer Sale</p>
+            <h2 class="text-xl md:text-2xl xl:text-[40px] leading-[120%] font-semibold mt-4">100% Fresh Fruit</h2>
+            <div class="flex flex-row gap-3 items-center text-sm lg:text-lg">
+              <span class=" font-normal leadinh-[100%] lg:leading-[150%]">Up To</span>
+              <span class="py-1.5 px-3 bg-black rounded-[5px] text-(--text-yellow) font-semibold leading-[150%]">64% OFF</span>
+            </div>
+             <button
+                  class="hero-button mt-6"
+                >
+                  <span class="hero-btn-text"
+                    >Shop now</span
+                  >
+                  <i
+                    class="fa-solid fa-arrow-right hero-btn-icon"
+                  ></i>
+              </button>
+          </div>
+        </div>
+      </div>
+     </section>
+
+
+     <!-- hotdealssection -->
+       <section
+        class="section-layout-width mb-[60px] space-y-2 sm:space-y-4 md:space-y-6 xl:space-y-8"
+      >
+      <div class="w-full flex flex-row gap-5 justify-between px-2 sm:px-0">
+        <h2 class="text-lg sm:text-xl md:text-2xl xl:text-[2rem] font-semibold leading-[120%] ">Hot Deals</h2>
+           <a href="/view all" class="text-(--light-green) flex flex-row gap-1 md:gap-3 items-center">
+                <span class="font-semibold capitalize text-xs sm:text-sm xl:text-base leading-[100%] lg:leading-[120%]">View All</span>
+                 <i
+                    class="fa-solid fa-arrow-right animate-pulse duration-500 ease-linear text-xs sm:text-base"
+                  ></i>
+              </a>
+      </div>
+      <div id="hotdeals-container" class="w-full grid grid-cols-12 lg:grid-cols-10">
+        <div id="hotdealproduct" class="col-span-6 sm:col-span-4 row-span-1 lg:row-span-2 border border-gray-200 hover:border-(--success-dark) products-card-shadow">
+          
+        </div>
       </div>
     </section>
 
@@ -539,34 +649,34 @@
             <div class="flex flex-row gap-2">
               <a
                 href="/"
-                class="size-8 xl:size-10 flex items-center justify-center rounded-[50%] hover:bg-(--light-green) transition-all duration-300 group"
+                class="footer-a-link group"
               >
                 <i
-                  class="fa-brands fa-facebook-f text-md xl:text-lg text-gray-700 group-hover:text-white transition-all duration-300 ease-in-out"
+                  class="fa-brands fa-facebook-f footer-a-link-icon"
                 ></i>
               </a>
               <a
                 href="/"
-                class="size-8 xl:size-10 flex items-center justify-center rounded-[50%] hover:bg-(--light-green) transition-all duration-300 group"
+                class="footer-a-link group"
               >
                 <i
-                  class="fa-brands fa-twitter te text-md xl:text-lg text-gray-700 group-hover:text-white transition-all duration-300 ease-in-out"
+                  class="fa-brands fa-twitter footer-a-link-icon"
                 ></i>
               </a>
               <a
                 href="/"
-                class="size-8 xl:size-10 flex items-center justify-center rounded-[50%] hover:bg-(--light-green) transition-all duration-300 group"
+                class="footer-a-link group"
               >
                 <i
-                  class="fa-brands fa-pinterest-p text-md xl: text-lg text-gray-700 group-hover:text-white transition-all duration-300 ease-in-out"
+                  class="fa-brands fa-pinterest-p footer-a-link-icon"
                 ></i>
               </a>
               <a
                 href="/"
-                class="size-8 xl:size-10 flex items-center justify-center rounded-[50%] hover:bg-(--light-green) transition-all duration-300 ease-in-out group"
+                class="footer-a-link group"
               >
                 <i
-                  class="fa-brands fa-instagram text-mdtxl:ext-lg text-gray-700 group-hover:text-white transition-all duration-300 ease-in-out"
+                  class="fa-brands fa-instagram footer-a-link-icon"
                 ></i>
               </a>
             </div>
@@ -685,6 +795,13 @@
         </div>
       </div>
     </footer>
+
+    
+    <!-- model -->
+     <div id="model-backdrop" class="fixed w-screen h-screen bg-gray-800/80 top-0 left-0 model-backdropstyle">
+     </div>
+     <div id="model-container" class="fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] model-containerstyle">
+     </div>
 
     <!-- bottomnavbar -->
     <div

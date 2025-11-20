@@ -142,7 +142,7 @@
       "socialLinks": [
         {
           "id": "1",
-          "name": "Facebook",
+          "name": "facebook",
           "link": "www.facebook.com/greenvalleyfarms"
         },
         {
@@ -204,7 +204,7 @@
       "socialLinks": [
         {
           "id": "1",
-          "name": "Facebook",
+          "name": "facebook",
           "link": "www.facebook.com/naturesbest"
         },
         {
@@ -266,7 +266,7 @@
       "socialLinks": [
         {
           "id": "1",
-          "name": "Facebook",
+          "name": "facebook",
           "link": "www.facebook.com/sunnyharvest"
         },
         {
@@ -328,7 +328,7 @@
       "socialLinks": [
         {
           "id": "1",
-          "name": "Facebook",
+          "name": "facebook",
           "link": "www.facebook.com/leafygreensco"
         },
         {
@@ -390,7 +390,7 @@
       "socialLinks": [
         {
           "id": "1",
-          "name": "Facebook",
+          "name": "facebook",
           "link": "www.facebook.com/farmfreshdirect"
         },
         {
@@ -452,7 +452,7 @@
       "socialLinks": [
         {
           "id": "1",
-          "name": "Facebook",
+          "name": "facebook",
           "link": "www.facebook.com/greenvalleyfarms"
         },
         {
@@ -514,7 +514,7 @@
       "socialLinks": [
         {
           "id": "1",
-          "name": "Facebook",
+          "name": "facebook",
           "link": "www.facebook.com/sunnyharvest"
         },
         {
@@ -576,7 +576,7 @@
       "socialLinks": [
         {
           "id": "1",
-          "name": "Facebook",
+          "name": "facebook",
           "link": "www.facebook.com/naturesbest"
         },
         {
@@ -638,7 +638,7 @@
       "socialLinks": [
         {
           "id": "1",
-          "name": "Facebook",
+          "name": "facebook",
           "link": "www.facebook.com/farmfreshdirect"
         },
         {
@@ -700,7 +700,7 @@
       "socialLinks": [
         {
           "id": "1",
-          "name": "Facebook",
+          "name": "facebook",
           "link": "www.facebook.com/leafygreensco"
         },
         {
@@ -770,7 +770,7 @@
       "socialLinks": [
         {
           "id": "1",
-          "name": "Facebook",
+          "name": "facebook",
           "link": "www.facebook.com/tropicalharvest"
         },
         {
@@ -817,7 +817,7 @@
       "name": "Fresh Strawberries",
       "baseprice": "12.99",
       "rating": "5",
-      "discount": "15%",
+      "discount": "60%",
       "imgURL": [
         "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?q=80&w=687&auto=format&fit=crop",
         "https://images.unsplash.com/photo-1543528176-61b239494933?q=80&w=735&auto=format&fit=crop",
@@ -832,7 +832,7 @@
       "socialLinks": [
         {
           "id": "1",
-          "name": "Facebook",
+          "name": "facebook",
           "link": "www.facebook.com/berryfields"
         },
         {
@@ -894,7 +894,7 @@
       "socialLinks": [
         {
           "id": "1",
-          "name": "Facebook",
+          "name": "facebook",
           "link": "www.facebook.com/orchardfresh"
         },
         {
@@ -956,7 +956,7 @@
       "socialLinks": [
         {
           "id": "1",
-          "name": "Facebook",
+          "name": "facebook",
           "link": "www.facebook.com/berryfields"
         },
         {
@@ -1018,7 +1018,7 @@
       "socialLinks": [
         {
           "id": "1",
-          "name": "Facebook",
+          "name": "facebook",
           "link": "www.facebook.com/citrusgrove"
         },
         {
@@ -1080,7 +1080,7 @@
       "socialLinks": [
         {
           "id": "1",
-          "name": "Facebook",
+          "name": "facebook",
           "link": "www.facebook.com/tropicalharvest"
         },
         {
@@ -1142,7 +1142,7 @@
       "socialLinks": [
         {
           "id": "1",
-          "name": "Facebook",
+          "name": "facebook",
           "link": "www.facebook.com/vineyardselect"
         },
         {
@@ -1204,7 +1204,7 @@
       "socialLinks": [
         {
           "id": "1",
-          "name": "Facebook",
+          "name": "facebook",
           "link": "www.facebook.com/summerfresh"
         },
         {
@@ -1266,7 +1266,7 @@
       "socialLinks": [
         {
           "id": "1",
-          "name": "Facebook",
+          "name": "facebook",
           "link": "www.facebook.com/tropicalharvest"
         },
         {
@@ -1328,7 +1328,7 @@
       "socialLinks": [
         {
           "id": "1",
-          "name": "Facebook",
+          "name": "facebook",
           "link": "www.facebook.com/exoticfruitsco"
         },
         {

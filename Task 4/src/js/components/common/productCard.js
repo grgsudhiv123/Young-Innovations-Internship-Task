@@ -1,6 +1,10 @@
-const productCard = (product) => {
+import { ProductModel } from "./productModel.js";
+
+const ProductCard = (product) => {
   return `
-        <div class="col-span-6 sm:col-span-4 lg:col-span-2 border cursor-pointer border-gray-200 hover:border-(--success-dark) products-card-shadow transition-all duration-200 ease-in-out group">
+        <div id="productCard-${
+          product.id
+        }" class="col-span-6 sm:col-span-4 lg:col-span-2 border cursor-pointer border-gray-200 hover:border-(--success-dark) products-card-shadow transition-all duration-200 ease-in-out group productCardId">
             <div class="p-[5px] w-full h-fit relative overflow-hidden">
                 <div class="aspect-254/230 overflow-hidden">
                     <img src=${
@@ -20,7 +24,7 @@ const productCard = (product) => {
                     <button type="button" class="m-0 p-0 size-8 md:size-10 rounded-full border border-gray-50 bg-white cursor-pointer hover:bg-gray-300 hover:border-white transition-all duration-200 ease-in-out">
                         <i class="fa-regular fa-heart text-sm md:text-xl"></i>
                     <button>
-                    <button type="button" class="m-0 p-0 size-8 md:size-10 rounded-full border border-gray-50 bg-white cursor-pointer hover:bg-gray-300 hover:border-white transition-all duration-200 ease-in-out">
+                    <button id="productmodelbtn" type="button" class="m-0 p-0 size-8 md:size-10 rounded-full border border-gray-50 bg-white cursor-pointer hover:bg-gray-300 hover:border-white transition-all duration-200 ease-in-out">
                         <i class="fa-solid fa-eye text-sm md:text-xl"></i>
                     <button>
                 </div>
@@ -82,4 +86,41 @@ const productCard = (product) => {
     `;
 };
 
-export default productCard;
+export default ProductCard;
+
+export const ProductBtns = (productData) => {
+  const modelContainer = document.getElementById("model-container");
+  const modelBackdrop = document.getElementById("model-backdrop");
+
+  // handel product model
+  productData.map((product) => {
+    const productcard = document.getElementById(`productCard-${product.id}`);
+    productcard.addEventListener("click", (e) => {
+      const modelViewBtn = e.target.closest("#productmodelbtn");
+      if (modelViewBtn) {
+        console.log("product data", product);
+        ProductModel(product);
+        const modelcont = modelContainer.classList.contains(
+          "model-containerstyle"
+        );
+
+        const modelbackdrop = modelBackdrop.classList.contains(
+          "model-backdropstyle"
+        );
+
+        console.log("modelcont : ", modelcont);
+        console.log("modelbackdrop :", modelbackdrop);
+
+        if (modelcont && modelbackdrop) {
+          modelContainer.classList.remove("model-containerstyle");
+          modelContainer.classList.add("model-containerstyle.active");
+
+          modelBackdrop.classList.remove("model-backdropstyle");
+          modelBackdrop.classList.add("model-backdropstyle.active");
+        }
+      }
+    });
+  });
+
+  //   handle product wishlist
+};

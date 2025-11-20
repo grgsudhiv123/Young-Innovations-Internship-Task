@@ -69,7 +69,6 @@ export const navbarConstants = [
 ];
 
 // featured conastants
-
 export const featuredConstants = [
   {
     header: "Free shipping",

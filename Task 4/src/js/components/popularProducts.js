@@ -1,9 +1,10 @@
 import { BASE_URL } from "../constants.js";
-import productCard from "./common/productCard.js";
+import ProductCard, { ProductBtns } from "./common/productCard.js";
 
 const PopularProducts = async () => {
   try {
     const popularProductContainer = document.getElementById("popularProducts");
+
     const productRes = await fetch(`${BASE_URL}/products`);
     const data = await productRes.json();
 
@@ -16,8 +17,12 @@ const PopularProducts = async () => {
 
     popularProductContainer.innerHTML = filteredData
       .slice(0, 9)
-      .map((product) => productCard(product))
+      .map((product) => ProductCard(product))
       .join("");
+
+    //   after the card loads we access model view btn  else we face event delegation error
+    // this function handles the product model and the product wishlist btn
+    ProductBtns(filteredData);
   } catch (error) {
     console.log("something went wrong ", error);
   }
