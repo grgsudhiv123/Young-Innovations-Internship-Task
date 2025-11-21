@@ -121,6 +121,49 @@
     }
   ],
 
+
+  "news" : [
+    {
+      "id": "1",
+      "title": "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.", 
+      "comment" : "10",
+      "date" : "10 Oct",
+      "user" : "Admin",
+      "imgURL": [
+              "https://images.unsplash.com/photo-1589984662646-e7b2e4962f18?q=80&w=687&auto=format&fit=crop",
+              "https://images.unsplash.com/photo-1587049352846-4a222e784l984?q=80&w=735&auto=format&fit=crop",
+              "https://images.unsplash.com/photo-1621583441131-ec2f8c937699?q=80&w=687&auto=format&fit=crop"
+            ],      
+      "desc":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, voluptatum.",
+      "tag" : "foods"
+    },
+    {
+      "id": "2",
+      "title": "Eget lobortis lorem lacinia. Vivamus pharetra semper,", 
+      "comment" : "38",
+      "date" : "5 Nov",
+      "user" : "Admin",
+      "imgURL": [
+              "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?q=80&w=687&auto=format&fit=crop",
+              "https://images.unsplash.com/photo-1628773822503-930a7eaecf80?q=80&w=735&auto=format&fit=crop",
+              "https://images.unsplash.com/photo-1584868356415-dde8e0c68c4f?q=80&w=687&auto=format&fit=crop"
+            ],      "desc":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, voluptatum.",
+      "tag" : "foods"
+    },
+    {
+      "id": "3",
+      "title": "Maecenas blandit risus elementum mauris malesuada.", 
+      "comment" : "55",
+      "date" : "14 Feb",
+      "user" : "Admin",
+      "imgURL": [
+              "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?q=80&w=687&auto=format&fit=crop",
+              "https://images.unsplash.com/photo-1447175008436-054170c2e979?q=80&w=699&auto=format&fit=crop",
+              "https://images.unsplash.com/photo-1582515073490-39981397c445?q=80&w=735&auto=format&fit=crop"
+            ],      "desc":"Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat, voluptatum.",
+      "tag" : "foods"
+    }
+  ],
   "products": [
     {
       "id": "101",

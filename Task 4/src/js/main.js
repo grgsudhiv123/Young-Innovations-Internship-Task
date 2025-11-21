@@ -3,6 +3,7 @@ import navbar from "./components/common/topnavbar.js";
 import { FeaturedProducts } from "./components/featuredproducts.js";
 import featured from "./components/heropage/featuredcomp.js";
 import { HotDealsSection } from "./components/hotdeals.js";
+import { LatestNewsSection } from "./components/latestnewssection.js";
 import PopularCategory from "./components/popularCategory.js";
 import PopularProducts from "./components/popularProducts.js";
 
@@ -13,5 +14,6 @@ window.addEventListener("DOMContentLoaded", async () => {
   PopularProducts();
   HotDealsSection();
   FeaturedProducts();
+  LatestNewsSection();
   footerComp();
 });
