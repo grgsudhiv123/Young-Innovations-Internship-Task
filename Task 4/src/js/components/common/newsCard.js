@@ -1,8 +1,16 @@
 export function NewsCard(newsData) {
+    const date = new Date(newsData.date);
+    console.log(date);
+    const day = date.getDate()
+    const month = date.toLocaleString('en-US', { month: 'short' });
     return `
     <div class="col-span-6 md:col-span-4 border border-gray-100 rounded-lg overflow-hidden cursor-pointer group hover:shadow-lg transition-all duration-200 ease-in-out">
-            <div class="aspect-424/324 overflow-hidden">
+            <div class="aspect-424/324 overflow-hidden relative">
               <img src=${newsData.imgURL[0]} alt="news img ${newsData.title}" class="w-full h-full object-cover object-center"/>
+              <span class="absolute size-9 md:size-11 lg:size-[56px] bottom-2 md:bottom-4 lg:bottom-6 left-2 md:left-4 lg:left-6 flex flex-col items-center justify-center bg-gray-100/80 group-hover:bg-white rounded-sm transition-all duration-200 ease-in-out">
+                <span class="text-sm md:text-lg lg:text-xl leading-[150%] font-medium">${day}</span>
+                <span class="text-[8px] md:text-xs uppercase tracking-[3%] leading-[100%] text-gray-500">${month}</span>
+              </span>
             </div>
             <div class="p-2 lg:p-4 xl:p-6 space-y-2 md:space-y-5">
                 <div class="space-y-2">
