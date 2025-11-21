@@ -97,7 +97,7 @@ export async function HotDealsSection(){
               
 
                     <div class="w-fit flex flex-col gap-1.5 mx-auto">
-                        <p class="text-xs lg:text-sm font-normal leading-0 lg:leading-[18px] text-gray-400">Hurry up! Offer ends In:</p>
+                        <p class="text-xs lg:text-sm font-normal text-center leading-0 lg:leading-[18px] text-gray-400">Hurry up! Offer ends In:</p>
                         <div id="banner-countdown" class="w-fit flex flex-row gap-2 mx-auto mt-2 text-center">
                             <span class="flex flex-col gap-1">
                                 <span class="text-xs lg:text-lg font-medium leading-[100%] lg:leading-[150%]">00</span> <span class="text-gray-400 text-[8px] lg:text-[10px]">DAYS</span>
@@ -126,5 +126,7 @@ export async function HotDealsSection(){
         const productCardString = ProductCard(product);
         tempDev.innerHTML = productCardString;
         HotDealscardContainer.appendChild(tempDev.firstElementChild);
-    })                  
+    })     
+    
+    
 }

@@ -587,25 +587,47 @@
 
 
      <!-- hotdealssection -->
-       <section
-        class="section-layout-width mb-[60px] space-y-2 sm:space-y-4 md:space-y-6 xl:space-y-8"
-      >
-      <div class="w-full flex flex-row gap-5 justify-between px-2 sm:px-0">
-        <h2 class="text-lg sm:text-xl md:text-2xl xl:text-[2rem] font-semibold leading-[120%] ">Hot Deals</h2>
-           <a href="/view all" class="text-(--light-green) flex flex-row gap-1 md:gap-3 items-center">
-                <span class="font-semibold capitalize text-xs sm:text-sm xl:text-base leading-[100%] lg:leading-[120%]">View All</span>
-                 <i
-                    class="fa-solid fa-arrow-right animate-pulse duration-500 ease-linear text-xs sm:text-base"
-                  ></i>
-              </a>
+      <div class="w-full h-auto bg-(--bg-gray) py-[60px]">
+        <section
+         class="section-layout-width space-y-2 sm:space-y-4 md:space-y-6 xl:space-y-8 "
+       >
+       <div class="w-full flex flex-row gap-5 justify-between px-2 sm:px-0">
+         <h2 class="text-lg sm:text-xl md:text-2xl xl:text-[2rem] font-semibold leading-[120%] ">Hot Deals</h2>
+            <a href="/view all" class="text-(--light-green) flex flex-row gap-1 md:gap-3 items-center">
+                 <span class="font-semibold capitalize text-xs sm:text-sm xl:text-base leading-[100%] lg:leading-[120%]">View All</span>
+                  <i
+                     class="fa-solid fa-arrow-right animate-pulse duration-500 ease-linear text-xs sm:text-base"
+                   ></i>
+               </a>
+       </div>
+       <div id="hotdeals-container" class="w-full grid grid-cols-12 lg:grid-cols-10 ">
+         <div id="hotdealproduct" class="col-span-6 sm:col-span-4 row-span-1 lg:row-span-2 border border-gray-200 hover:border-(--success-dark) products-card-shadow">
+         </div>
+       </div>
+     </section>
       </div>
-      <div id="hotdeals-container" class="w-full grid grid-cols-12 lg:grid-cols-10">
-        <div id="hotdealproduct" class="col-span-6 sm:col-span-4 row-span-1 lg:row-span-2 border border-gray-200 hover:border-(--success-dark) products-card-shadow">
-          
-        </div>
-      </div>
-    </section>
 
+      <!-- discount banner -->
+     <section class="max-w-full lg:max-w-[900px] xl:max-w-[1100px] 2xl:max-w-[1320px] mx-auto md:my-[60px] aspect-video sm:aspect-2/1 md:aspect-3/1 lg:aspect-1320/358 overflow-hidden relative">
+        <img src="../src/assets/images/discountbanner/discountbanner.jpg" alt="discount banner image" class="w-full h-full object-cover object-[-90px_0px] md:object-bottom scale-200 md:scale-100">
+        <div class=" absolute max-w-[250px] md:max-w-xs xl:max-w-[441px] w-full top-[50%] right-[50%] sm:right-[50px] md:right-[25px] xl:right-[50px] -translate-y-[50%] translate-x-[50%] sm:translate-x-[0%]  space-y-7">
+          <div class="flex flex-col gap-2 xl:gap-4">
+            <div class="flex flex-col gap-1 xl:gap-3 text-white">
+              <p class="uppercase text-xs lg:text-sm xl:text-base leading-[100%] tracking-[2%]">Summer Sale</p>
+              <h2 class="text-lg md:text-2xl xl:text-[56px] font-semibold leading-[120%]">
+                <span class="text-(--warning-color)">37%</span> 
+                OFF</h2>
+            </div>
+            <p class="text-white/70 font-normal text-xs md:text-sm lg:text-base leading-[150%]">Free on all your order, Free Shipping and  30 days money-back guarantee</p>
+          </div>
+            <button type="button" class="py-1 sm:py-3 xl:py-4 px-4 sm:px-8 xl:px-10 w-fit flex items-center gap-1 lg:gap-3 justify-center rounded-full bg-(--light-green) hover:bg-(--success-dark) transition-all duration-200 ease-in-out cursor-pointer text-white">
+            <span class="text-[8px] sm:text-sm xl:text-base font-semibold xl:leading-[120%]">Shop now</span>
+              <i
+                class="fa-solid fa-arrow-right text-xs md:text-base xl:text-2xl animate-pulse duration-500 ease-linear"
+              ></i>
+          </button>
+        </div>
+       </section>
     </main>
 
     <!-- footer -->
@@ -795,7 +817,6 @@
         </div>
       </div>
     </footer>
-
     
     <!-- model -->
      <div id="model-backdrop" class="fixed w-screen h-screen bg-gray-800/80 top-0 left-0 model-backdropstyle">
