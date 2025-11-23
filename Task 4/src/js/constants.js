@@ -180,3 +180,30 @@ export const footerConstant = [
     ],
   },
 ];
+
+
+
+
+
+// followus section constants
+export const followUsConstants = [
+    {
+      imgURL : "../src/assets/images/followussection/followusimg1.jpg",
+      url : "#"
+    },{
+      imgURL : "../src/assets/images/followussection/followusimg2.jpg",
+      url : "#"
+    },{
+      imgURL : "../src/assets/images/followussection/followusimg3.jpg",
+      url : "#"
+    }, {
+      imgURL : "../src/assets/images/followussection/followusimg4.jpg",
+      url : "#"
+    }, {
+      imgURL : "../src/assets/images/followussection/followusimg5.jpg",
+      url : "#"
+    }, {
+      imgURL : "../src/assets/images/followussection/followusimg6.jpg",
+      url : "#"
+    }
+]
