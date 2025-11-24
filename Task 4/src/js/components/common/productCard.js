@@ -1,10 +1,11 @@
+import { AddProducts, FetchCartProducts, updateCartProducts } from "../../fetchApi.js";
+import { PreventScroll } from "../../preventScroll.js";
 import { ProductModel } from "./productModel.js";
 
-const ProductCard = (product) => {
+const ProductCard = (product, prefix) => {
+  const productAdded = localStorage.getItem("productAdded");
   return `
-        <div id="productCard-${
-          product.id
-        }" class="col-span-6 sm:col-span-4 lg:col-span-2 border cursor-pointer border-gray-200 hover:border-(--success-dark) products-card-shadow transition-all duration-200 ease-in-out group productCardId">
+        <div id="${prefix}-productCard-${product.id}" class="col-span-6 sm:col-span-4 lg:col-span-2 border cursor-pointer border-gray-200 hover:border-(--success-dark) products-card-shadow transition-all duration-200 ease-in-out group productCardId">
             <div class="p-[5px] w-full h-fit relative overflow-hidden">
                 <div class="aspect-254/230 overflow-hidden">
                     <img src=${
@@ -51,7 +52,7 @@ const ProductCard = (product) => {
                         }
                         </p>
                     </div>
-                    <span class="size-6 md:size-10 flex items-center justify-center rounded-full bg-gray-50 group/cart hover:bg-(--light-green) transition-all duration-200 ease-in-out"> 
+                    <button type="button" id="productAddToCart" class="size-6 md:size-10 flex items-center justify-center rounded-full ${productAdded ? 'bg-(--light-green)' : 'bg-gray-50' }  bg-gray-50 group/cart hover:bg-(--light-green) transition-all duration-200 ease-in-out cursor-pointer"> 
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
@@ -66,7 +67,7 @@ const ProductCard = (product) => {
                             d="M15.75 10.5V6a3.75 3.75 0 1 0-7.5 0v4.5m11.356-1.993 1.263 12c.07.665-.45 1.243-1.119 1.243H4.25a1.125 1.125 0 0 1-1.12-1.243l1.264-12A1.125 1.125 0 0 1 5.513 7.5h12.974c.576 0 1.059.435 1.119 1.007ZM8.625 10.5a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm7.5 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z"
                             />
                     </svg>
-                </span>
+                </button>
                 </div>
                 <div>
                     ${
@@ -80,7 +81,6 @@ const ProductCard = (product) => {
                         : ` `
                     }
                 </div>
-              
             </div>
         </div>
     `;
@@ -88,14 +88,52 @@ const ProductCard = (product) => {
 
 export default ProductCard;
 
-export const ProductBtns = (productData) => {
+
+
+
+
+
+// product buttons handles all the product card buttons functionalities
+// i.e. add to card, add to wishlish, view product model
+
+export  const ProductBtns = async (productData,prefix) => {
+  const {preventScroll} = PreventScroll();
   const modelContainer = document.getElementById("model-container");
   const modelBackdrop = document.getElementById("model-backdrop");
 
+
+  // handle add to cart
+  const cartProduct = await FetchCartProducts();
+  var repeatedCartProduct = false;
+  const handleCartProduct = async (product)=>{
+    const repeatedProduct  = cartProduct.find(cartProduct=>cartProduct.id === product.id);
+    if(!repeatedProduct){
+      repeatedCartProduct = false;
+      await AddProducts({
+        ...product, 
+        quantity : 1,
+        addedAt:new Date().toISOString()
+      });
+    }else{
+      repeatedCartProduct = false;
+      await updateCartProducts({
+        ...product,
+        quantity : repeatedProduct.quantity+1,
+        updatedAt:new Date().toISOString()
+      },repeatedProduct.id);
+    }
+  }
+  
+
   // handel product model
   productData.map((product) => {
-    const productcard = document.getElementById(`productCard-${product.id}`);
-    productcard.addEventListener("click", (e) => {
+    const productcard = document.getElementById(`${prefix}-productCard-${product.id}`);
+    if(!productcard){
+      console.warn(`Product card with id ${prefix}-productCard-${product.id} not found`);
+      return;
+    }
+    productcard.addEventListener("click", async (e) => {   
+      // handle product model view
       const modelViewBtn = e.target.closest("#productmodelbtn");
       if (modelViewBtn) {
         console.log("product data", product);
@@ -108,19 +146,31 @@ export const ProductBtns = (productData) => {
           "model-backdropstyle"
         );
 
-        console.log("modelcont : ", modelcont);
-        console.log("modelbackdrop :", modelbackdrop);
-
         if (modelcont && modelbackdrop) {
-          modelContainer.classList.remove("model-containerstyle");
-          modelContainer.classList.add("model-containerstyle.active");
-
-          modelBackdrop.classList.remove("model-backdropstyle");
-          modelBackdrop.classList.add("model-backdropstyle.active");
+          modelContainer.classList.add("active");
+          modelBackdrop.classList.add("active");
+          preventScroll();
         }
       }
+
+      // handle add to cart
+      const addToCartBtn = e.target.closest("#productAddToCart");
+      if (addToCartBtn) {
+       await handleCartProduct(product);
+
+       
+
+       const existingProduct = JSON.parse(localStorage.getItem("productAdded"));
+       existingProduct.push(product.id)
+       localStorage.setItem("productAdded",JSON.stringify(existingProduct));
+       if(repeatedCartProduct){
+        alert("Repeated Product");
+       }
+      } 
+
+      // handle product wishlist
+      
+
     });
   });
-
-  //   handle product wishlist
 };

@@ -1,5 +1,5 @@
 import { BASE_URL } from "../constants.js";
-import ProductCard from "./common/productCard.js";
+import ProductCard, { ProductBtns } from "./common/productCard.js";
 
 export async function HotDealsSection(){
     const HotDealscardContainer = document.getElementById("hotdeals-container");
@@ -21,7 +21,7 @@ export async function HotDealsSection(){
     const hotdealproductcard  = document.getElementById("hotdealproduct");
     console.log("hotestDeal",hotestDeal);
     hotdealproductcard.innerHTML = `
-    <div class="aspect-525/460 lg:aspect-525/446 overflow-hidden relative">
+    <div class="aspect-525/460 lg:aspect-525/446 overflow-hidden relative" id="productCard-${hotestDeal.id}">
         <img src="${hotestDeal.imgURL[0]}" alt="product-image" class="w-full h-full object-cover object-center z-10"/>
         <div class="absolute top-0 lg:top-6 left-2 lg:left-6 ">
             <span class="bg-(--bg-error) rounded-xs lg:rounded-sm font-normal text-xs lg:text-sm leading-[100%] lg:leading-[150%] text-white py-px lg:py-[3px] px-0.5 lg:px-2 ">Sale ${hotestDeal.discount}</span> 
@@ -48,7 +48,8 @@ export async function HotDealsSection(){
                             />
                     </svg>
             </button>
-            <button type="button" class="size-6 md:size-8 lg:size-[46px] flex items-center justify-center rounded-full cursor-pointer bg-gray-50 hover:bg-gray-200 transition-all duration-200 ease-in-out">
+                            
+            <button id="productmodelbtn" type="button" class="size-6 md:size-8 lg:size-[46px] flex items-center justify-center rounded-full cursor-pointer bg-gray-50 hover:bg-gray-200 transition-all duration-200 ease-in-out">
                 <i class="fa-regular fa-eye text-xs md:text-sm lg:text-xl"></i>
             </button>
         </div>
@@ -121,12 +122,14 @@ export async function HotDealsSection(){
     `
 
     // ProductCard returns a string of HTML code, so we need to create a temporary div to hold it
-    remainingData.forEach((product)=>{
+    await remainingData.forEach((product)=>{
         const tempDev = document.createElement("div");
-        const productCardString = ProductCard(product);
+        const productCardString = ProductCard(product,"hotdeals");
         tempDev.innerHTML = productCardString;
         HotDealscardContainer.appendChild(tempDev.firstElementChild);
     })     
-    
-    
+
+
+    ProductBtns([hotestDeal],"hotdeals");
+    ProductBtns(remainingData,"hotdeals");
 }

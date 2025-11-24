@@ -1,5 +1,5 @@
 import { BASE_URL } from "../../constants.js";
-import { shoppingBag } from "../../icons.js";
+import { PreventScroll } from "../../preventScroll.js";
 
 export async function ProductModel(productData) {
   
@@ -19,11 +19,7 @@ export async function ProductModel(productData) {
   }
 
   const tagDatas = await getTags(); 
-  console.log("tagDatas  : ",tagDatas);
   const tagNames = productData.tags.map((tags)=>tagDatas.find(data=> data.id === tags).name);
-  console.log("tagNames : ",tagNames);
-
-  
 
   const modelContainer = document.getElementById("model-container");
 
@@ -41,8 +37,8 @@ function handleSocialLinks(platform) {
 
   modelContainer.innerHTML = `
     <div class="max-w-[350px] sm:max-w-[650px] md:max-w-[720px] lg:max-w-[950px] xl:max-w-[1200px] 2xl:max-w-[1320px] mx-auto w-full bg-white p-5 xl:p-10 h-[70vh] sm:h-auto flex lg:items-center flex-col sm:flex-row gap-6 relative overflow-y-scroll sm:overflow-y-auto overflow-x-hidden rounded-lg">
-    <button class="fixed p-4 top-0 right-0 cursor-pointer">
-      <i class="fa-solid fa-x text-sm md:text-lg lg:text-xl text-gray-500 hover:text-gray-700"></i>
+    <button id="model-close-btn" class="fixed p-4 top-0 right-0 cursor-pointer">
+      <i class="fa-solid fa-x text-sm lg:text-xl text-gray-500 hover:text-gray-700"></i>
     </button>
       <div class="flex flex-col-reverse justify-end lg:justify-start lg:flex-row gap-3 h-full">
       <div class=" flex flex-row lg:flex-col w-full lg:w-fit justify-between items-center">
@@ -195,4 +191,17 @@ function handleSocialLinks(platform) {
       </div>
     </div>
   `;
+
+  const {allowScroll} = PreventScroll();
+
+  const modelCloseBtn = document.getElementById("model-close-btn");
+  modelCloseBtn.addEventListener("click", () => {
+    const modelContainer = document.getElementById("model-container");
+    const modelBackdrop = document.getElementById("model-backdrop");
+    if(modelContainer && modelBackdrop){
+      modelContainer.classList.remove("active");
+      modelBackdrop.classList.remove("active");
+      allowScroll();
+    } 
+    });
 }

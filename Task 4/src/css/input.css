@@ -149,7 +149,28 @@
     transform: translateY(0);
   }
 
-  
+
+  .sidebar-backdropstyle  {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+  }
+  .sidebar-backdropstyle.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .sidebar-containerstyle {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(100%);
+    transition: all 0.5s ease-in-out;
+  }
+  .sidebar-containerstyle.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0%);
+  }
 }
 
 
