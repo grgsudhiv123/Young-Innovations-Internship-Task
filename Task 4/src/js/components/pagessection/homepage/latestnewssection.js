@@ -1,5 +1,5 @@
-import { FetchApi } from "../fetchApi.js";
-import { NewsCard } from "./common/newsCard.js";
+import { FetchApi } from "../../../utils/fetchApi.js";
+import { NewsCard } from "../../common/newsCard.js";
 
 export async function LatestNewsSection() {
     try {

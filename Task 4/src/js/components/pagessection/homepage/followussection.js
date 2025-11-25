@@ -1,4 +1,4 @@
-import { followUsConstants } from "../constants.js";
+import { followUsConstants } from "../../../utils/constants.js";
 
 export function FollowUsSection() {
 

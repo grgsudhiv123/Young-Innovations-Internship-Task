@@ -206,4 +206,38 @@
   .footer-a-link-icon{
     @apply text-base xl:text-lg text-gray-700 hover:text-white transition-all duration-300 ease-in-out group-hover:text-white;
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* product detail page */
+  .product-img-div{
+    @apply aspect-80/90 max-w-[40px] lg:max-w-[50px] xl:max-w-20 w-full max-h-[40px] lg:max-h-[60px]  xl:max-h-[90px] h-full overflow-hidden;
+  }
+
+  .img-styling{
+    @apply w-full h-full object-cover;
+  }
+
+
+  .product-instock{
+    @apply bg-green-500/20 text-(--success-dark);
+  }
+
+  .product-outofstock{
+    @apply bg-red-500/20 text-red-800;
+  }
 }

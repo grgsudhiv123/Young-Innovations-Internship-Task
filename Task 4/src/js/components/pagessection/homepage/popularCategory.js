@@ -1,4 +1,4 @@
-import { BASE_URL } from "../constants.js";
+import { BASE_URL } from "../../../utils/constants.js";
 
 const PopularCategory = async () => {
   const categoryContainer = document.getElementById("popularCategory");

@@ -1,5 +1,5 @@
-import { FetchApi } from "../fetchApi.js";
-import ProductCard, { ProductBtns } from "./common/productCard.js";
+import { FetchApi } from "../../../utils/fetchApi.js";
+import ProductCard, { ProductBtns } from "../../common/productCard.js";
 
 export async function FeaturedProducts () {
     try {

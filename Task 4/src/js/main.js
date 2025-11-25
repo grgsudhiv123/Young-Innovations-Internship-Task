@@ -1,21 +1,21 @@
 import footerComp from "./components/common/footer.js";
+import { footerTemplate } from "./components/common/layoutcommon/footerLayout.js";
 import { headerTemplate } from "./components/common/layoutcommon/headerLayout.js";
 import navbar from "./components/common/topnavbar.js";
-import { CompanyLogo } from "./components/companylogo.js";
-import { FeaturedProducts } from "./components/featuredproducts.js";
-import { FollowUsSection } from "./components/followussection.js";
-import featured from "./components/heropage/featuredcomp.js";
-import { HotDealsSection } from "./components/hotdeals.js";
-import { LatestNewsSection } from "./components/latestnewssection.js";
-import PopularCategory from "./components/popularCategory.js";
-import PopularProducts from "./components/popularProducts.js";
-import { HandleSidebarCart, productCart } from "./components/productCartSidebar.js";
-import { TestimonialSection } from "./components/testimonialsection.js";
+import { CompanyLogo } from "./components/pagessection/homepage/companylogo.js";
+import { FeaturedProducts } from "./components/pagessection/homepage/featuredproducts.js";
+import { FollowUsSection } from "./components/pagessection/homepage/followussection.js";
+import featured from "./components/pagessection/homepage/heropage/featuredcomp.js";
+import { HotDealsSection } from "./components/pagessection/homepage/hotdeals.js";
+import { LatestNewsSection } from "./components/pagessection/homepage/latestnewssection.js";
+import PopularCategory from "./components/pagessection/homepage/popularCategory.js";
+import PopularProducts from "./components/pagessection/homepage/popularProducts.js";
+import { HandleSidebarCart, productCart } from "./components/pagessection/homepage/productCartSidebar.js";
+import { TestimonialSection } from "./components/pagessection/homepage/testimonialsection.js";
 
 window.addEventListener("DOMContentLoaded", async () => {
-  // document.getElementById('footer').innerHTML = loadFooter();
-  document.getElementById('header').innerHTML = headerTemplate();
-  
+  document.getElementById('header').innerHTML = headerTemplate();  
+  document.getElementById('footer').innerHTML = footerTemplate();
   navbar();
   HandleSidebarCart();
   productCart();
@@ -28,6 +28,5 @@ window.addEventListener("DOMContentLoaded", async () => {
   TestimonialSection();
   CompanyLogo();
   FollowUsSection();
-  
   footerComp();
 });

@@ -1,4 +1,4 @@
-import { featuredConstants } from "../../constants.js";
+import { featuredConstants } from "../../../../utils/constants.js";
 
 function featured() {
   const featuredContainer = document.getElementById("featured-container");

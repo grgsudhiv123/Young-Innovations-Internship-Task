@@ -1,5 +1,5 @@
-import { DeleteCartProduct, FetchCartProducts } from "../fetchApi.js";
-import { PreventScroll } from "../preventScroll.js";
+import { DeleteCartProduct, FetchCartProducts } from "../../../utils/fetchApi.js";
+import { PreventScroll } from "../../../utils/preventScroll.js";
 
 const ProductCartSidebar = async (cartProducts) => {
     const cartContainer = document.getElementById("cartProduct-container");
@@ -50,7 +50,6 @@ export const productCart = async () => {
         const cartProducts =  await FetchCartProducts();
         // loading the product cart
         await ProductCartSidebar(cartProducts);
-
         const quantity = cartProducts.reduce((acc,curr)=>acc+Number(curr.quantity),0);
 
         const navCartCount = document.getElementById("nav-cart-count");
@@ -93,26 +92,31 @@ export const productCart = async () => {
 
 
 export const HandleSidebarCart = async () =>{
-    const cartBackdrop = document.getElementById("cartsidebar-backdrop");
-    const cartContainer = document.getElementById("cartsidebar-container");
+    try {
+        const cartBackdrop = document.getElementById("cartsidebar-backdrop");
+        const cartContainer = document.getElementById("cartsidebar-container");
 
-    const {allowScroll, preventScroll} = PreventScroll();
+        const {allowScroll, preventScroll} = PreventScroll();
 
-    const sidebarCartBtn = document.getElementById("open-sidebar-cart");
-    sidebarCartBtn.addEventListener("click",()=>{
-        console.log("sidebarCartBtn");
-        cartBackdrop.classList.add("active");
-        cartContainer.classList.add("active");
-        preventScroll();
-    })
-    console.log("sidebarCartBtn : ",sidebarCartBtn);
+        const sidebarCartBtn = document.getElementById("open-sidebar-cart");
+        sidebarCartBtn.addEventListener("click",()=>{
+            console.log("sidebarCartBtn");
+            cartBackdrop.classList.add("active");
+            cartContainer.classList.add("active");
+            preventScroll();
+        })
+        console.log("sidebarCartBtn : ",sidebarCartBtn);
 
-    const closeCartBtn = document.getElementById("close-sidebar-cart");
-    closeCartBtn.addEventListener("click",()=>{
-        cartBackdrop.classList.remove("active");
-        cartContainer.classList.remove("active");
-        allowScroll();
-    })
+        const closeCartBtn = document.getElementById("close-sidebar-cart");
+        closeCartBtn.addEventListener("click",()=>{
+            cartBackdrop.classList.remove("active");
+            cartContainer.classList.remove("active");
+            allowScroll();
+        })
+    } catch (error) {
+        console.log("Error :",error);
+        return error;
+    }
 }
 
 

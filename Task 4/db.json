@@ -1553,368 +1553,6 @@
   ],
   "cartProducts": [
     {
-      "id": "202",
-      "name": "Fresh Strawberries",
-      "baseprice": "12.99",
-      "rating": "5",
-      "featured": "false",
-      "discount": "60%",
-      "imgURL": [
-        "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1543528176-61b239494933?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1518635017498-87f514b751ba?q=80&w=687&auto=format&fit=crop"
-      ],
-      "SKU": "FRUIT002STRAWB2024",
-      "category": "1",
-      "tags": [
-        "1",
-        "4",
-        "9",
-        "14",
-        "15"
-      ],
-      "desc": "Juicy, sweet strawberries bursting with flavor. High in vitamin C and antioxidants. Perfect for desserts, smoothies, or fresh snacking.",
-      "brand": "Berry Fields",
-      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
-      "socialLinks": [
-        {
-          "id": "1",
-          "name": "facebook",
-          "link": "www.facebook.com/berryfields"
-        },
-        {
-          "id": "2",
-          "name": "pinterest",
-          "link": "www.pinterest.com/berryfields"
-        },
-        {
-          "id": "3",
-          "name": "twitter",
-          "link": "www.twitter.com/berryfields"
-        },
-        {
-          "id": "4",
-          "name": "instagram",
-          "link": "www.instagram.com/berryfields"
-        }
-      ],
-      "reviews": [
-        {
-          "id": "1",
-          "customer_name": "Emma Wilson",
-          "rating": "5",
-          "profileURL": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&auto=format&fit=crop",
-          "comment": "Absolutely delicious! So sweet and fresh, best strawberries ever!",
-          "dateandtime": "3 hours ago"
-        },
-        {
-          "id": "2",
-          "customer_name": "Ryan Parker",
-          "rating": "5",
-          "profileURL": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop",
-          "comment": "Perfect for making strawberry shortcake. Great quality!",
-          "dateandtime": "5 hours ago"
-        }
-      ],
-      "detail": "Premium strawberries hand-picked at peak ripeness for maximum sweetness and flavor. These berries are loaded with vitamin C, manganese, and powerful antioxidants that support immune health and fight inflammation. Perfect for fresh eating, adding to yogurt, making jams, or topping desserts. Each berry is carefully inspected to ensure you receive only the finest quality fruit. Store in refrigerator and consume within 3-5 days for best flavor.",
-      "wt": "400gm",
-      "stock": "285",
-      "color": "red",
-      "quantity": 4,
-      "addedAt": "2025-11-24T09:23:23.886Z",
-      "updatedAt": "2025-11-24T10:35:17.344Z"
-    },
-    {
-      "id": "209",
-      "name": "Fresh Pineapple",
-      "baseprice": "13.99",
-      "rating": "5",
-      "featured": "false",
-      "discount": "10%",
-      "imgURL": [
-        "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1587049352847-8d5e0c2e0c88?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1602491254713-63fae49c2d55?q=80&w=687&auto=format&fit=crop"
-      ],
-      "SKU": "FRUIT009PINEAPPL2024",
-      "category": "1",
-      "tags": [
-        "1",
-        "9",
-        "15"
-      ],
-      "desc": "Sweet and tangy fresh pineapple with tropical flavor. Contains bromelain enzyme for digestion. Perfect for fruit salads, grilling, or tropical smoothies.",
-      "brand": "Tropical Harvest",
-      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
-      "socialLinks": [
-        {
-          "id": "1",
-          "name": "facebook",
-          "link": "www.facebook.com/tropicalharvest"
-        },
-        {
-          "id": "2",
-          "name": "pinterest",
-          "link": "www.pinterest.com/tropicalharvest"
-        },
-        {
-          "id": "3",
-          "name": "twitter",
-          "link": "www.twitter.com/tropicalharvest"
-        },
-        {
-          "id": "4",
-          "name": "instagram",
-          "link": "www.instagram.com/tropicalharvest"
-        }
-      ],
-      "reviews": [
-        {
-          "id": "1",
-          "customer_name": "Harper White",
-          "rating": "5",
-          "profileURL": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=100&auto=format&fit=crop",
-          "comment": "Perfectly ripe and so sweet! Made amazing piña coladas.",
-          "dateandtime": "3 hours ago"
-        },
-        {
-          "id": "2",
-          "customer_name": "Alexander Brown",
-          "rating": "5",
-          "profileURL": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop",
-          "comment": "Great flavor! Grilled some for our BBQ and it was delicious.",
-          "dateandtime": "2 days ago"
-        }
-      ],
-      "detail": "Premium fresh pineapple selected for optimal ripeness and sweetness. This tropical fruit contains bromelain, a unique enzyme that aids digestion and reduces inflammation. Rich in vitamin C, manganese, and antioxidants, pineapple supports immune function and bone health. The sweet-tart flavor profile makes it versatile for both sweet and savory dishes. Excellent fresh, grilled, in smoothies, or added to stir-fries. Look for golden color at the base and fresh green leaves for ripeness indicator.",
-      "wt": "1.8kg",
-      "stock": "155",
-      "color": "golden",
-      "quantity": 6,
-      "addedAt": "2025-11-24T10:22:53.192Z",
-      "updatedAt": "2025-11-24T11:32:08.702Z"
-    },
-    {
-      "id": "103",
-      "name": "Red Bell Peppers",
-      "baseprice": "10.99",
-      "rating": "5",
-      "featured": "false",
-      "discount": "15%",
-      "imgURL": [
-        "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1525607551316-4a8e16d1f9ba?q=80&w=687&auto=format&fit=crop"
-      ],
-      "SKU": "VEG003PEPPER2024",
-      "category": "2",
-      "tags": [
-        "1",
-        "3",
-        "9",
-        "12"
-      ],
-      "desc": "Sweet and crunchy red bell peppers, perfect for salads, grilling, or stuffing. Rich in vitamin C and antioxidants for a healthy immune system.",
-      "brand": "Sunny Harvest",
-      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
-      "socialLinks": [
-        {
-          "id": "1",
-          "name": "facebook",
-          "link": "www.facebook.com/sunnyharvest"
-        },
-        {
-          "id": "2",
-          "name": "pinterest",
-          "link": "www.pinterest.com/sunnyharvest"
-        },
-        {
-          "id": "3",
-          "name": "twitter",
-          "link": "www.twitter.com/sunnyharvest"
-        },
-        {
-          "id": "4",
-          "name": "instagram",
-          "link": "www.instagram.com/sunnyharvest"
-        }
-      ],
-      "reviews": [
-        {
-          "id": "1",
-          "customer_name": "Lisa Anderson",
-          "rating": "5",
-          "profileURL": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format&fit=crop",
-          "comment": "So sweet and crispy! Love using these in my stir-fries.",
-          "dateandtime": "4 hours ago"
-        },
-        {
-          "id": "2",
-          "customer_name": "Robert Kim",
-          "rating": "5",
-          "profileURL": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=100&auto=format&fit=crop",
-          "comment": "Perfect for stuffed peppers. Great size and quality.",
-          "dateandtime": "1 day ago"
-        }
-      ],
-      "detail": "Our red bell peppers are vine-ripened to perfection, offering maximum sweetness and nutritional benefits. Contains three times more vitamin C than oranges and packed with vitamin A. Great for raw snacking, roasting, or adding vibrant color to any dish. Each pepper is carefully selected for optimal freshness.",
-      "wt": "300gm",
-      "stock": "410",
-      "color": "red",
-      "quantity": 1,
-      "addedAt": "2025-11-24T10:31:40.565Z"
-    },
-    {
-      "id": "110",
-      "name": "Red Onions",
-      "baseprice": "5.99",
-      "rating": "4",
-      "featured": "false",
-      "discount": "7%",
-      "imgURL": [
-        "https://images.unsplash.com/photo-1618512496248-a07fe83aa8cb?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1587411768355-f91e2e4c0de9?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1595509534488-48121ce39b4c?q=80&w=687&auto=format&fit=crop"
-      ],
-      "SKU": "VEG010ONION2024",
-      "category": "2",
-      "tags": [
-        "1",
-        "3",
-        "9",
-        "12",
-        "13"
-      ],
-      "desc": "Fresh red onions with mild, sweet flavor. Essential for salads, grilling, and cooking. Contains beneficial antioxidants and anti-inflammatory compounds.",
-      "brand": "Leafy Greens Co.",
-      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
-      "socialLinks": [
-        {
-          "id": "1",
-          "name": "facebook",
-          "link": "www.facebook.com/leafygreensco"
-        },
-        {
-          "id": "2",
-          "name": "pinterest",
-          "link": "www.pinterest.com/leafygreensco"
-        },
-        {
-          "id": "3",
-          "name": "twitter",
-          "link": "www.twitter.com/leafygreensco"
-        },
-        {
-          "id": "4",
-          "name": "instagram",
-          "link": "www.instagram.com/leafygreensco"
-        }
-      ],
-      "reviews": [
-        {
-          "id": "1",
-          "customer_name": "Barbara Lewis",
-          "rating": "4",
-          "profileURL": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=100&auto=format&fit=crop",
-          "comment": "Perfect for my Greek salad. Not too sharp, just right!",
-          "dateandtime": "2 hours ago"
-        },
-        {
-          "id": "2",
-          "customer_name": "Mark Davis",
-          "rating": "4",
-          "profileURL": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?q=80&w=100&auto=format&fit=crop",
-          "comment": "Good quality onions. Store well and last long.",
-          "dateandtime": "4 days ago"
-        },
-        {
-          "id": "3",
-          "customer_name": "Angela Moore",
-          "rating": "5",
-          "profileURL": "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=100&auto=format&fit=crop",
-          "comment": "Love the sweetness of these red onions. Great for grilling!",
-          "dateandtime": "1 week ago"
-        }
-      ],
-      "detail": "Premium red onions with beautiful purple-red skin and crisp white flesh tinged with red. These onions have a milder, slightly sweeter flavor compared to yellow onions, making them perfect for raw applications like salads, salsas, and sandwiches. Rich in quercetin and anthocyanins, powerful antioxidants that support heart health and reduce inflammation. Store in a cool, dry place for maximum shelf life. Excellent caramelized, pickled, or grilled.",
-      "wt": "550gm",
-      "stock": "465",
-      "color": "purple-red",
-      "quantity": 1,
-      "addedAt": "2025-11-24T10:34:12.813Z"
-    },
-    {
-      "id": "106",
-      "name": "Organic Cucumber",
-      "baseprice": "7.49",
-      "rating": "5",
-      "featured": "false",
-      "discount": "12%",
-      "imgURL": [
-        "https://images.unsplash.com/photo-1604977042946-1eecc30f269e?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1589927986089-35812378d193?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?q=80&w=687&auto=format&fit=crop"
-      ],
-      "SKU": "VEG006CUCUMB2024",
-      "category": "2",
-      "tags": [
-        "1",
-        "2",
-        "3",
-        "9"
-      ],
-      "desc": "Crisp and refreshing organic cucumbers. Low in calories and high in hydration. Perfect for salads, pickling, or healthy snacking.",
-      "brand": "Green Valley Farms",
-      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
-      "socialLinks": [
-        {
-          "id": "1",
-          "name": "facebook",
-          "link": "www.facebook.com/greenvalleyfarms"
-        },
-        {
-          "id": "2",
-          "name": "pinterest",
-          "link": "www.pinterest.com/greenvalleyfarms"
-        },
-        {
-          "id": "3",
-          "name": "twitter",
-          "link": "www.twitter.com/greenvalleyfarms"
-        },
-        {
-          "id": "4",
-          "name": "instagram",
-          "link": "www.instagram.com/greenvalleyfarms"
-        }
-      ],
-      "reviews": [
-        {
-          "id": "1",
-          "customer_name": "Patricia Harris",
-          "rating": "5",
-          "profileURL": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop",
-          "comment": "Super crunchy and not bitter at all. Love them!",
-          "dateandtime": "3 hours ago"
-        },
-        {
-          "id": "2",
-          "customer_name": "James Wilson",
-          "rating": "5",
-          "profileURL": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop",
-          "comment": "Perfect for making pickles. Great freshness.",
-          "dateandtime": "5 days ago"
-        }
-      ],
-      "detail": "Organically grown cucumbers with crisp texture and mild flavor. These cucumbers are 95% water, making them incredibly hydrating and low in calories. Rich in vitamin K and potassium, they support bone health and blood pressure regulation. Excellent for fresh eating, juicing, or making homemade pickles. No wax coating - just pure, natural goodness.",
-      "wt": "450gm",
-      "stock": "340",
-      "color": "green",
-      "quantity": 3,
-      "addedAt": "2025-11-24T10:34:38.258Z",
-      "updatedAt": "2025-11-24T11:35:10.129Z"
-    },
-    {
       "id": "207",
       "name": "Green Seedless Grapes",
       "baseprice": "11.49",
@@ -1981,8 +1619,9 @@
       "wt": "500gm",
       "stock": "325",
       "color": "green",
-      "quantity": 1,
-      "addedAt": "2025-11-24T10:48:47.848Z"
+      "quantity": 4,
+      "addedAt": "2025-11-24T10:48:47.848Z",
+      "updatedAt": "2025-11-25T03:31:06.780Z"
     },
     {
       "id": "104",
@@ -2054,6 +1693,288 @@
       "color": "deep green",
       "quantity": 1,
       "addedAt": "2025-11-24T11:39:32.960Z"
+    },
+    {
+      "id": "206",
+      "name": "Fresh Mangoes",
+      "baseprice": "16.99",
+      "rating": "5",
+      "featured": "false",
+      "discount": "10%",
+      "imgURL": [
+        "https://images.unsplash.com/photo-1553279768-865429fa0078?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?q=80&w=735&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1605027990121-cbae9fc60498?q=80&w=687&auto=format&fit=crop"
+      ],
+      "SKU": "FRUIT006MANGO2024",
+      "category": "1",
+      "tags": [
+        "1",
+        "4",
+        "9",
+        "15"
+      ],
+      "desc": "Sweet, tropical mangoes with rich, creamy flesh. High in vitamin A and C. Perfect for smoothies, desserts, or enjoying fresh. A taste of paradise!",
+      "brand": "Tropical Harvest",
+      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
+      "socialLinks": [
+        {
+          "id": "1",
+          "name": "facebook",
+          "link": "www.facebook.com/tropicalharvest"
+        },
+        {
+          "id": "2",
+          "name": "pinterest",
+          "link": "www.pinterest.com/tropicalharvest"
+        },
+        {
+          "id": "3",
+          "name": "twitter",
+          "link": "www.twitter.com/tropicalharvest"
+        },
+        {
+          "id": "4",
+          "name": "instagram",
+          "link": "www.instagram.com/tropicalharvest"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "1",
+          "customer_name": "Ava Martinez",
+          "rating": "5",
+          "profileURL": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop",
+          "comment": "Perfectly ripe and so delicious! Best mangoes I've had!",
+          "dateandtime": "2 hours ago"
+        },
+        {
+          "id": "2",
+          "customer_name": "Noah Davis",
+          "rating": "5",
+          "profileURL": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=100&auto=format&fit=crop",
+          "comment": "Sweet and juicy. Made amazing mango lassi with these!",
+          "dateandtime": "1 day ago"
+        }
+      ],
+      "detail": "Premium tropical mangoes carefully selected for optimal ripeness and sweetness. Known as the 'king of fruits,' mangoes are rich in vitamin A, vitamin C, and fiber, supporting eye health, immune function, and digestion. The buttery, smooth flesh has a perfect balance of sweetness and tang. Excellent for fresh eating, smoothies, salsas, chutneys, or desserts. Allow to ripen at room temperature until slightly soft to touch, then refrigerate to extend freshness.",
+      "wt": "800gm",
+      "stock": "195",
+      "color": "golden yellow",
+      "quantity": 1,
+      "addedAt": "2025-11-24T17:34:54.887Z"
+    },
+    {
+      "id": "209",
+      "name": "Fresh Pineapple",
+      "baseprice": "13.99",
+      "rating": "5",
+      "featured": "false",
+      "discount": "10%",
+      "imgURL": [
+        "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1587049352847-8d5e0c2e0c88?q=80&w=735&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1602491254713-63fae49c2d55?q=80&w=687&auto=format&fit=crop"
+      ],
+      "SKU": "FRUIT009PINEAPPL2024",
+      "category": "1",
+      "tags": [
+        "1",
+        "9",
+        "15"
+      ],
+      "desc": "Sweet and tangy fresh pineapple with tropical flavor. Contains bromelain enzyme for digestion. Perfect for fruit salads, grilling, or tropical smoothies.",
+      "brand": "Tropical Harvest",
+      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
+      "socialLinks": [
+        {
+          "id": "1",
+          "name": "facebook",
+          "link": "www.facebook.com/tropicalharvest"
+        },
+        {
+          "id": "2",
+          "name": "pinterest",
+          "link": "www.pinterest.com/tropicalharvest"
+        },
+        {
+          "id": "3",
+          "name": "twitter",
+          "link": "www.twitter.com/tropicalharvest"
+        },
+        {
+          "id": "4",
+          "name": "instagram",
+          "link": "www.instagram.com/tropicalharvest"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "1",
+          "customer_name": "Harper White",
+          "rating": "5",
+          "profileURL": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=100&auto=format&fit=crop",
+          "comment": "Perfectly ripe and so sweet! Made amazing piña coladas.",
+          "dateandtime": "3 hours ago"
+        },
+        {
+          "id": "2",
+          "customer_name": "Alexander Brown",
+          "rating": "5",
+          "profileURL": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop",
+          "comment": "Great flavor! Grilled some for our BBQ and it was delicious.",
+          "dateandtime": "2 days ago"
+        }
+      ],
+      "detail": "Premium fresh pineapple selected for optimal ripeness and sweetness. This tropical fruit contains bromelain, a unique enzyme that aids digestion and reduces inflammation. Rich in vitamin C, manganese, and antioxidants, pineapple supports immune function and bone health. The sweet-tart flavor profile makes it versatile for both sweet and savory dishes. Excellent fresh, grilled, in smoothies, or added to stir-fries. Look for golden color at the base and fresh green leaves for ripeness indicator.",
+      "wt": "1.8kg",
+      "stock": "155",
+      "color": "golden",
+      "quantity": 2,
+      "addedAt": "2025-11-24T17:40:23.323Z",
+      "updatedAt": "2025-11-25T04:17:11.134Z"
+    },
+    {
+      "id": "204",
+      "name": "Fresh Blueberries",
+      "baseprice": "14.99",
+      "rating": "5",
+      "featured": "false",
+      "discount": "12%",
+      "imgURL": [
+        "https://images.unsplash.com/photo-1498557850523-fd3d118b962e?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1606800052052-7b28d0c4a5aa?q=80&w=735&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1576856497337-4f2be24683db?q=80&w=687&auto=format&fit=crop"
+      ],
+      "SKU": "FRUIT004BLUEBERR2024",
+      "category": "1",
+      "tags": [
+        "1",
+        "5",
+        "9",
+        "14",
+        "15"
+      ],
+      "desc": "Plump, sweet blueberries packed with antioxidants. Perfect superfood for smoothies, pancakes, or healthy snacking. Rich in vitamins and minerals.",
+      "brand": "Berry Fields",
+      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
+      "socialLinks": [
+        {
+          "id": "1",
+          "name": "facebook",
+          "link": "www.facebook.com/berryfields"
+        },
+        {
+          "id": "2",
+          "name": "pinterest",
+          "link": "www.pinterest.com/berryfields"
+        },
+        {
+          "id": "3",
+          "name": "twitter",
+          "link": "www.twitter.com/berryfields"
+        },
+        {
+          "id": "4",
+          "name": "instagram",
+          "link": "www.instagram.com/berryfields"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "1",
+          "customer_name": "Isabella Roberts",
+          "rating": "5",
+          "profileURL": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=100&auto=format&fit=crop",
+          "comment": "Amazing quality! Perfect for my morning oatmeal.",
+          "dateandtime": "4 hours ago"
+        },
+        {
+          "id": "2",
+          "customer_name": "Ethan Taylor",
+          "rating": "5",
+          "profileURL": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100&auto=format&fit=crop",
+          "comment": "Fresh and flavorful. Great for baking muffins!",
+          "dateandtime": "1 day ago"
+        }
+      ],
+      "detail": "Premium fresh blueberries harvested at peak ripeness for optimal sweetness and nutritional value. These superfoods are loaded with antioxidants, particularly anthocyanins, which support brain health and combat oxidative stress. High in vitamin K, vitamin C, and fiber, blueberries promote heart health and improve cognitive function. Perfect for breakfast bowls, smoothies, baking, or enjoying fresh by the handful. Refrigerate immediately and consume within one week for best quality.",
+      "wt": "300gm",
+      "stock": "240",
+      "color": "deep blue",
+      "quantity": 1,
+      "addedAt": "2025-11-24T17:46:46.042Z"
+    },
+    {
+      "id": "202",
+      "name": "Fresh Strawberries",
+      "baseprice": "12.99",
+      "rating": "5",
+      "featured": "false",
+      "discount": "60%",
+      "imgURL": [
+        "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1543528176-61b239494933?q=80&w=735&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1518635017498-87f514b751ba?q=80&w=687&auto=format&fit=crop"
+      ],
+      "SKU": "FRUIT002STRAWB2024",
+      "category": "1",
+      "tags": [
+        "1",
+        "4",
+        "9",
+        "14",
+        "15"
+      ],
+      "desc": "Juicy, sweet strawberries bursting with flavor. High in vitamin C and antioxidants. Perfect for desserts, smoothies, or fresh snacking.",
+      "brand": "Berry Fields",
+      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
+      "socialLinks": [
+        {
+          "id": "1",
+          "name": "facebook",
+          "link": "www.facebook.com/berryfields"
+        },
+        {
+          "id": "2",
+          "name": "pinterest",
+          "link": "www.pinterest.com/berryfields"
+        },
+        {
+          "id": "3",
+          "name": "twitter",
+          "link": "www.twitter.com/berryfields"
+        },
+        {
+          "id": "4",
+          "name": "instagram",
+          "link": "www.instagram.com/berryfields"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "1",
+          "customer_name": "Emma Wilson",
+          "rating": "5",
+          "profileURL": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&auto=format&fit=crop",
+          "comment": "Absolutely delicious! So sweet and fresh, best strawberries ever!",
+          "dateandtime": "3 hours ago"
+        },
+        {
+          "id": "2",
+          "customer_name": "Ryan Parker",
+          "rating": "5",
+          "profileURL": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop",
+          "comment": "Perfect for making strawberry shortcake. Great quality!",
+          "dateandtime": "5 hours ago"
+        }
+      ],
+      "detail": "Premium strawberries hand-picked at peak ripeness for maximum sweetness and flavor. These berries are loaded with vitamin C, manganese, and powerful antioxidants that support immune health and fight inflammation. Perfect for fresh eating, adding to yogurt, making jams, or topping desserts. Each berry is carefully inspected to ensure you receive only the finest quality fruit. Store in refrigerator and consume within 3-5 days for best flavor.",
+      "wt": "400gm",
+      "stock": "285",
+      "color": "red",
+      "quantity": 1,
+      "addedAt": "2025-11-24T18:22:23.377Z"
     }
   ]
 }

@@ -1,5 +1,5 @@
-import { AddProducts, FetchCartProducts, updateCartProducts } from "../../fetchApi.js";
-import { PreventScroll } from "../../preventScroll.js";
+import { AddProducts, FetchCartProducts, updateCartProducts } from "../../utils/fetchApi.js";
+import { PreventScroll } from "../../utils/preventScroll.js";
 import { ProductModel } from "./productModel.js";
 
 const ProductCard = (product, prefix) => {
@@ -52,7 +52,7 @@ const ProductCard = (product, prefix) => {
                         }
                         </p>
                     </div>
-                    <button type="button" id="productAddToCart" class="size-6 md:size-10 flex items-center justify-center rounded-full ${productAdded ? 'bg-(--light-green)' : 'bg-gray-50' }  bg-gray-50 group/cart hover:bg-(--light-green) transition-all duration-200 ease-in-out cursor-pointer"> 
+                    <button type="button" id="${prefix}-productAddToCart-${product.id}" class="size-6 md:size-10 flex items-center justify-center rounded-full ${productAdded ? 'bg-(--light-green)' : 'bg-gray-50' }  bg-gray-50 group/cart hover:bg-(--light-green) transition-all duration-200 ease-in-out cursor-pointer"> 
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
@@ -132,7 +132,15 @@ export  const ProductBtns = async (productData,prefix) => {
       console.warn(`Product card with id ${prefix}-productCard-${product.id} not found`);
       return;
     }
-    productcard.addEventListener("click", async (e) => {   
+    productcard.addEventListener("click", async (e) => {  
+    e.preventDefault();
+    e.stopPropagation();
+
+
+      // redirect to product page
+
+
+
       // handle product model view
       const modelViewBtn = e.target.closest("#productmodelbtn");
       if (modelViewBtn) {
@@ -154,12 +162,9 @@ export  const ProductBtns = async (productData,prefix) => {
       }
 
       // handle add to cart
-      const addToCartBtn = e.target.closest("#productAddToCart");
+      const addToCartBtn = e.target.closest(`#${prefix}-productAddToCart-${product.id}`);
       if (addToCartBtn) {
        await handleCartProduct(product);
-
-       
-
        const existingProduct = JSON.parse(localStorage.getItem("productAdded"));
        existingProduct.push(product.id)
        localStorage.setItem("productAdded",JSON.stringify(existingProduct));
@@ -169,8 +174,15 @@ export  const ProductBtns = async (productData,prefix) => {
       } 
 
       // handle product wishlist
-      
 
+
+
+
+
+      // redirect to product detail page
+      if(!modelViewBtn && !addToCartBtn && productcard){
+        window.location.href =`productsdetail.html?id=${product.id}`;
+      }
     });
   });
 };

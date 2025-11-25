@@ -1,5 +1,5 @@
-import { FetchApi } from "../fetchApi.js";
-import { testimonialCard } from "./common/testimonialcard.js";
+import { FetchApi } from "../../../utils/fetchApi.js";
+import { testimonialCard } from "../../common/testimonialcard.js";
 
 export async function TestimonialSection() {
     try {

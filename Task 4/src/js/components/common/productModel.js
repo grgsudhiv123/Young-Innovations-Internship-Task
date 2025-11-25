@@ -1,5 +1,5 @@
-import { BASE_URL } from "../../constants.js";
-import { PreventScroll } from "../../preventScroll.js";
+import { BASE_URL } from "../../utils/constants.js";
+import { PreventScroll } from "../../utils/preventScroll.js";
 
 export async function ProductModel(productData) {
   

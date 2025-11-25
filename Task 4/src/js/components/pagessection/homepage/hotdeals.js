@@ -1,5 +1,5 @@
-import { BASE_URL } from "../constants.js";
-import ProductCard, { ProductBtns } from "./common/productCard.js";
+import { BASE_URL } from "../../../utils/constants.js";
+import ProductCard, { ProductBtns } from "../../common/productCard.js";
 
 export async function HotDealsSection(){
     const HotDealscardContainer = document.getElementById("hotdeals-container");

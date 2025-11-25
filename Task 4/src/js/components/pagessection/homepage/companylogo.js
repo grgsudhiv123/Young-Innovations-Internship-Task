@@ -1,4 +1,4 @@
-import { bookoffLogo, food, foodNetwork, gseries, mangoLogo, steps } from "../icons.js";
+import { bookoffLogo, food, foodNetwork, gseries, mangoLogo, steps } from "../../../utils/icons.js";
 
 export function CompanyLogo() {
     const brandContainer = document.getElementById("brandLogo-container");

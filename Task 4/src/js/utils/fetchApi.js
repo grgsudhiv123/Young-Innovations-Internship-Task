@@ -27,6 +27,29 @@ export const FetchApiById = async (url, id) => {
 
 
 
+export const FetchAllProducts = async (filter) =>{
+    try {
+        const response = await fetch(`${BASE_URL}/products?${filter}`);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.log("Error occured while fetching the data",error);
+        return error;
+    }
+}
+
+
+export const FetchProductsById = async (id)=>{
+    try {
+        const response = await fetch(`${BASE_URL}/products/${id}`);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.log(error);
+        return error;
+    }
+}
+
 
 
 export const FetchCartProducts = async ()=>{
@@ -69,7 +92,8 @@ export const updateCartProducts = async (data,id)=>{
             headers:{
                 "Content-type":"application/json"
             },
-            responseType:"json"
+            responseType:"json",
+            response : FetchCartProducts()
         })
         console.log("Product updated successfully");
         return response;
@@ -87,7 +111,8 @@ export const DeleteCartProduct = async (id)=>{
             headers:{
                 "Content-type":"application/json"
             },
-            responseType:"json"
+            responseType:"json",
+            response : FetchCartProducts()
         })
         console.log("Product deleted successfully");
         return response;
