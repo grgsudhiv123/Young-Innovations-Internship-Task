@@ -8,8 +8,6 @@ import { FetchProductsById } from "./utils/fetchApi.js";
 window.addEventListener("DOMContentLoaded", async () => {
     document.getElementById('header').innerHTML = headerTemplate();  
     document.getElementById('footer').innerHTML = footerTemplate();
-    footerComp();
-
     try {
         const urlParams = new URLSearchParams(window.location.search);
         const productId = urlParams.get('id');
@@ -22,4 +20,6 @@ window.addEventListener("DOMContentLoaded", async () => {
         console.log("error occured while updating the product detail data",error);
         return error;
     }
+
+    footerComp();
 })

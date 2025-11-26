@@ -52,6 +52,19 @@ export const FetchProductsById = async (id)=>{
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+// cart products
 export const FetchCartProducts = async ()=>{
     try {
         const response = await fetch(`${BASE_URL}/cartProducts`);
@@ -81,7 +94,6 @@ export const AddProducts = async (data)=>{
         return error;
     }
 }
-
 
 
 export const updateCartProducts = async (data,id)=>{
@@ -116,6 +128,91 @@ export const DeleteCartProduct = async (id)=>{
         })
         console.log("Product deleted successfully");
         return response;
+    } catch (error) {
+        console.log(error);
+        return error;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// wishlist 
+export const getAllWishListProduct = async () =>{
+    try {
+        const response = await fetch(`${BASE_URL}/wishlist`);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.log(error);
+        return error;
+    }
+} 
+
+export const AddWishlist = async (data)=>{
+    try {
+        const response = await fetch(`${BASE_URL}/wishlist`,{
+            method : "POST",
+            body : JSON.stringify(data),
+            headers : {
+                "content-type" : "application/json",
+            },
+            responseType : "json",
+        });
+        return data;
+    } catch (error) {
+         console.log(error);
+        return error;
+    }
+}
+
+
+export const UpdateWishlistByID = async (data,id)=>{
+    try {
+        const response = await fetch(`${BASE_URL}/wishlist/${id}`,{
+            method : "PATCH",
+            body : JSON.stringify(data),
+            headers : {
+                "content-type" : "application/json",
+            },
+            responseType : "json",
+        });
+        const data = await response.json();
+        return data; 
+    } catch (error) {
+        console.log(error);
+        return error;
+    }
+}
+
+
+
+
+export const DeleteWishlistByID = async (id)=>{
+    try {
+        const response = await fetch(`${BASE_URL}/wishlist/${id}`,{
+            method : "DELETE",
+            headers : {
+                "content-type" : "application/json",
+            },
+            responseType : "json",
+            response : getAllWishListProduct()
+        });
+        const data  = await response.json();
+        return data;
     } catch (error) {
         console.log(error);
         return error;

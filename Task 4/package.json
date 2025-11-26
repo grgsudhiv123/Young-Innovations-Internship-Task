@@ -7,5 +7,8 @@
     "dev": "npx @tailwindcss/cli -i ./src/css/input.css -o ./src/css/output.css --watch",
     "db": "json-server --watch db.json"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "^9.39.1",
+    "prettier": "^3.6.2"
+  }
 }

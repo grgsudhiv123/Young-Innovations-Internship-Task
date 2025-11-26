@@ -1,4 +1,5 @@
-import { DeleteCartProduct, FetchCartProducts } from "../../../utils/fetchApi.js";
+import { productCartFeatures } from "../../../features/cartFeatures.js";
+import {  FetchCartProducts } from "../../../utils/fetchApi.js";
 import { PreventScroll } from "../../../utils/preventScroll.js";
 
 const ProductCartSidebar = async (cartProducts) => {
@@ -47,6 +48,7 @@ const ProductCartSidebar = async (cartProducts) => {
 
 export const productCart = async () => {
     try {
+        const {deductCartProduct} = productCartFeatures();
         const cartProducts =  await FetchCartProducts();
         // loading the product cart
         await ProductCartSidebar(cartProducts);
@@ -68,9 +70,7 @@ export const productCart = async () => {
         await cartProducts.map((element) => {
         const removeCartProductBtn = document.getElementById(`sidebar-cartproduct-btn-${element.id}`);
         removeCartProductBtn.addEventListener("click", async ()=>{
-            console.log("removed Cart Product :",element.name );
-            await DeleteCartProduct(element.id);
-            localStorage.setItem("productAdded","false");
+            await deductCartProduct(element);
             });
         });
 

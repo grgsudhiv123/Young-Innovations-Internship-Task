@@ -10,6 +10,6 @@ export const relatedProducts = async (categoryId) => {
         }
     } catch (error) {
         console.log(error);
-        return null;
+        return error;
     }
 }

@@ -7,7 +7,7 @@ export async function HotDealsSection(){
     try {
         const response = await fetch(`${BASE_URL}/products`);
         const productdata = await response.json();
-        var filteredData = productdata.filter((product) => product.discount.replace("%","")>5);
+        let filteredData = productdata.filter((product) => product.discount.replace("%","")>5);
        
         const hotestDeal = filteredData.reduce((max, obj)=>(Number(obj.discount.replace("%","")) > Number(max.discount.replace("%","")) ? obj : max));
         const remainingData = filteredData.filter((product)=>product.id !== hotestDeal.id);
@@ -130,6 +130,6 @@ export async function HotDealsSection(){
     })     
 
 
-    ProductBtns([hotestDeal],"hotdeals");
     ProductBtns(remainingData,"hotdeals");
+    ProductBtns([hotestDeal],"hotdeals");
 }

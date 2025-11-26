@@ -182,8 +182,6 @@
     @apply max-w-[350px] sm:max-w-[550px] md:max-w-[700px] lg:max-w-[900px] xl:max-w-[1100px] 2xl:max-w-[1320px] mx-auto w-full h-auto ;
   }
 
-
-
   .hero-button {
     @apply w-fit text-(--light-green) bg-white py-2 lg:py-3 xl:py-4 px-2 sm:px-5 lg:px-8 xl:px-10 rounded-[53px] cursor-pointer hover:bg-gray-200 transition-all duration-200 ease-in-out flex gap-1 sm:gap-4 items-center;
   }
@@ -239,5 +237,17 @@
 
   .product-outofstock{
     @apply bg-red-500/20 text-red-800;
+  }
+
+
+
+
+  /* shopping cart */
+  .shoppingcart-button{
+    @apply py-3.5 px-8 rounded-full bg-gray-50 hover:bg-gray-200 transition-all ease-in-out duration-200 cursor-pointer text-sm font-semibold leading-[120%] text-gray-700;
+  }
+
+  .shoppingcart-quantitybtn{
+    @apply size-8.5 rounded-full flex items-center justify-center bg-gray-100 cursor-pointer hover:bg-gray-400 transition-all duration-200 ease-in-out;
   }
 }

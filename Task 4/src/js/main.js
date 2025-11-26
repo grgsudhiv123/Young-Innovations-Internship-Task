@@ -1,3 +1,5 @@
+'use strict';
+
 import footerComp from "./components/common/footer.js";
 import { footerTemplate } from "./components/common/layoutcommon/footerLayout.js";
 import { headerTemplate } from "./components/common/layoutcommon/headerLayout.js";

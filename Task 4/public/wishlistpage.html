@@ -3,13 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/css/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <title>WishList</title>
 </head>
 <body>
     <header id="header"></header>
-        <main>
+        <main class="w-full h-full pt-10 pb-20">
             
+                <h1 class=" font-semibold text-gray-800 w-fit mx-auto mb-8 text-2xl md:text-[32px] leading-[100%] md:leading-[120%]">My Wishlist</h1>
+           
+                <section class="section-layout-width bg-white">
+                    <!-- Page Title -->
+
+                    <!-- Desktop Table View -->
+                    <div class="overflow-x-auto rounded-lg overflow-hidden border border-gray-200">
+                        <table class="min-w-[550px] w-full">
+                            <thead class="border-b  border-gray-200">
+                                <tr>
+                                    <th class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">Product</th>
+                                    <th class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">Price</th>
+                                    <th class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">Stock Status</th>
+                                    <th class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider"></th>
+                                </tr>
+                            </thead>
+                            <tbody id ="wishlistTabel">
+                                <!-- Product 1 -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Social Share -->
+                    <div class="p-6 ">
+                        <div class="flex flex-wrap items-center gap-3">
+                            <span class="text-sm text-gray-600 font-medium">Share:</span>
+                            <button class="w-9 h-9 flex items-center justify-center rounded-full bg-green-600 text-white hover:bg-green-700 transition">
+                                <i class="fab fa-facebook-f text-sm"></i>
+                            </button>
+                            <button class="w-9 h-9 flex items-center justify-center rounded-full bg-gray-800 text-white hover:bg-gray-900 transition">
+                                <i class="fab fa-twitter text-sm"></i>
+                            </button>
+                            <button class="w-9 h-9 flex items-center justify-center rounded-full bg-red-600 text-white hover:bg-red-700 transition">
+                                <i class="fab fa-pinterest-p text-sm"></i>
+                            </button>
+                            <button class="w-9 h-9 flex items-center justify-center rounded-full bg-pink-500 text-white hover:bg-pink-600 transition">
+                                <i class="fab fa-instagram text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                </section>
         </main>
     <footer id="footer"></footer>
+    <script type="module" src="../src/js/wishlist.js"></script>
 </body>
 </html>

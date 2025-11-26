@@ -18,8 +18,6 @@ export const productDetailComp = async (productDetail) => {
 
 
 
-
-
      // hero img
     const productMainImgContainer = document.getElementById("product-mainimg-container");
     const productMainImg = document.createElement("img");
@@ -33,7 +31,7 @@ export const productDetailComp = async (productDetail) => {
     // handle slider img btn 
     const slidePrevBtn = document.getElementById("sliderimg-btn-prev");
     const slideNextBtn = document.getElementById("sliderimg-btn-next");
-    var imgCount = 0;
+    let imgCount = 0;
     slidePrevBtn.addEventListener("click", () => {
         if(imgCount>0){
             imgCount = imgCount - 1;
@@ -143,11 +141,6 @@ export const productDetailComp = async (productDetail) => {
     const categoryName = await getCategory(productDetail.category);
     const productCategory = document.getElementById("product-category");
     productCategory.innerText = categoryName;
-
-
-
-
-
 
     const getTags = async() =>{
         const response = await fetch(`${BASE_URL}/tags`);

@@ -1,4 +1,5 @@
-import { AddProducts, FetchCartProducts, updateCartProducts } from "../../utils/fetchApi.js";
+import { productCartFeatures } from "../../features/cartFeatures.js";
+import { handleWishList } from "../../features/wishListFeatures.js";
 import { PreventScroll } from "../../utils/preventScroll.js";
 import { ProductModel } from "./productModel.js";
 
@@ -22,7 +23,7 @@ const ProductCard = (product, prefix) => {
                     }
                 </div>
                 <div class="absolute top-4 right-4 flex flex-col gap-1 md:gap-1.5 transform translate-x-[100px] opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 ease-in-out">
-                    <button type="button" class="m-0 p-0 size-8 md:size-10 rounded-full border border-gray-50 bg-white cursor-pointer hover:bg-gray-300 hover:border-white transition-all duration-200 ease-in-out">
+                    <button id="${prefix}-productAddToWishlist-${product.id}" type="button" class="m-0 p-0 size-8 md:size-10 rounded-full border border-gray-50 bg-white cursor-pointer hover:bg-gray-300 hover:border-white transition-all duration-200 ease-in-out">
                         <i class="fa-regular fa-heart text-sm md:text-xl"></i>
                     <button>
                     <button id="productmodelbtn" type="button" class="m-0 p-0 size-8 md:size-10 rounded-full border border-gray-50 bg-white cursor-pointer hover:bg-gray-300 hover:border-white transition-all duration-200 ease-in-out">
@@ -102,28 +103,7 @@ export  const ProductBtns = async (productData,prefix) => {
   const modelBackdrop = document.getElementById("model-backdrop");
 
 
-  // handle add to cart
-  const cartProduct = await FetchCartProducts();
-  var repeatedCartProduct = false;
-  const handleCartProduct = async (product)=>{
-    const repeatedProduct  = cartProduct.find(cartProduct=>cartProduct.id === product.id);
-    if(!repeatedProduct){
-      repeatedCartProduct = false;
-      await AddProducts({
-        ...product, 
-        quantity : 1,
-        addedAt:new Date().toISOString()
-      });
-    }else{
-      repeatedCartProduct = false;
-      await updateCartProducts({
-        ...product,
-        quantity : repeatedProduct.quantity+1,
-        updatedAt:new Date().toISOString()
-      },repeatedProduct.id);
-    }
-  }
-  
+  const {addCartProduct} = productCartFeatures();
 
   // handel product model
   productData.map((product) => {
@@ -132,14 +112,9 @@ export  const ProductBtns = async (productData,prefix) => {
       console.warn(`Product card with id ${prefix}-productCard-${product.id} not found`);
       return;
     }
+
+
     productcard.addEventListener("click", async (e) => {  
-    e.preventDefault();
-    e.stopPropagation();
-
-
-      // redirect to product page
-
-
 
       // handle product model view
       const modelViewBtn = e.target.closest("#productmodelbtn");
@@ -164,23 +139,17 @@ export  const ProductBtns = async (productData,prefix) => {
       // handle add to cart
       const addToCartBtn = e.target.closest(`#${prefix}-productAddToCart-${product.id}`);
       if (addToCartBtn) {
-       await handleCartProduct(product);
-       const existingProduct = JSON.parse(localStorage.getItem("productAdded"));
-       existingProduct.push(product.id)
-       localStorage.setItem("productAdded",JSON.stringify(existingProduct));
-       if(repeatedCartProduct){
-        alert("Repeated Product");
-       }
+       await addCartProduct(product);
       } 
 
       // handle product wishlist
-
-
-
-
+      const wishlistBtn = e.target.closest(`#${prefix}-productAddToWishlist-${product.id}`);
+      if(wishlistBtn){
+        await handleWishList(product);
+      }
 
       // redirect to product detail page
-      if(!modelViewBtn && !addToCartBtn && productcard){
+      if(!modelViewBtn && !addToCartBtn && !wishlistBtn && productcard){
         window.location.href =`productsdetail.html?id=${product.id}`;
       }
     });

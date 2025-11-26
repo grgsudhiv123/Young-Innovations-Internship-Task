@@ -55,8 +55,6 @@ export function getProductInfoTabs(productData,exp) {
 
     function Tab3(CustomerReviews){
         const reviewContainer = document.getElementById("tab3-reviews");
-        console.log("reviewContainer :",reviewContainer);
-        console.log("CustomerReviews :",CustomerReviews);
         reviewContainer.innerHTML = CustomerReviews.map((review,index)=>`
             <div class="w-full space-y-3">
                 <div class="w-full flex flex-row gap-3 justify-between items-center">
