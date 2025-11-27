@@ -49,6 +49,9 @@ export const productCartFeatures = ()=>{
             alert("Error while removing the cart product");
         }
     }
+
+
+    
       return{
         addCartProduct,
         deductCartProduct,

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../src/css/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <title>Filter Page</title>
+     <style>
+        .star {
+            color: #FFA500;
+        }
+        .range-slider {
+            width: 100%;
+        }
+        .badge-green {
+            background-color: #22C55E;
+        }
+        .badge-red {
+            background-color: #EF4444;
+        }
+    </style>
+</head>
+<body>
+    <header id="header"></header>
+    <main>
+   
+    <div class="section-layout-width grid grid-cols-8 pb-6 pt-8 gap-6">
+        <div class="col-span-2">
+            <button type="button" class="px-8 py-3.5 rounded-full flex gap-3 items-center font-semibold text-sm leading-[120%] text-white bg-(--light-green) hover:bg-(--success-dark) transition-all duration-200 ease-in-out cursor-pointer"><span>Filter</span> <i class="fa-solid fa-sliders"></i></button>
+        </div>
+        <div class="col-span-6 flex justify-between items-center">
+            <div class="flex flex-row items-center gap-2 font-normal text-sm leading-[150%]">
+                <p class="text-gray-500">Sort by:</p>
+                <select id="sortBySelect" class="px-4 py-2.5 border border-gray-200 rounded-sm cursor-pointer text-gray-700">
+                    <option value="lowToHigh">Price: Low to High</option>
+                    <option value="highToLow">Price: High to Low</option>
+                    <option value="newest">Newest</option>
+                    <option value="oldest">Oldest</option>
+                </select>
+            </div>
+
+            <p class="text-base leading-[120%]">
+                <span id="priceRangeDisplay" class="font-semibold">45</span>
+                <span class="font-normal text-gray-500">Results Found</span>
+            </p>
+        </div>
+    </div>
+    <div class="section-layout-width grid grid-cols-8 gap-6">
+        <div id="filter-sidebar" class="col-span-2 h-auto">
+            <div class="sticky top-4 h-[90%]">
+                <div class="">
+                    <div class="w-full flex justify-between items-center mb-5">
+                        <h2 class="text-xl font-medium leading-[150%]">All Categories</h2>
+                        <button id="showCategoriesBtn" type="button" class="flex items-center justify-center cursor-pointer size-8 rounded-full hover:bg-gray-200 transition-all duration-200 ease-in-out ">
+                            <i class="fa-solid fa-chevron-up text-sm"></i>
+                        </button>
+                    </div>
+                    <ul id="filterCategoryContainer" class="pb-4">
+                    </ul>
+                </div>
+                <div class="border-y border-gray-200 pt-3">
+                    <div class="w-full flex justify-between items-center mb-5">
+                        <h2 class="text-xl font-medium leading-[150%]">Price</h2>
+                        <button id="showPriceRangeBtn" type="button" class="flex items-center justify-center cursor-pointer size-8 rounded-full hover:bg-gray-200 transition-all duration-200 ease-in-out ">
+                            <i class="fa-solid fa-chevron-up text-sm"></i>
+                        </button>
+                    </div>
+                    <div>
+                        <div class="slider">
+                            <div id="priceRangeProgressBar" class="progress"></div>
+                        </div>
+                        <div class="range-input">
+                            <input type="range" class="range-min" min="0" max="1000" value="250" step="10">
+                            <input type="range" class="range-max" min="0" max="1000" value="750" step="10">
+                        </div>
+                    </div>
+                    <div class="flex flex-row gap-1 pt-4 pb-6">
+                        <p class="text-sm leading-[150%] font-normal text-gray-500">Price : </p>
+                        <span class="text-sm leading-[150%] font-medium"> 
+                            <span id="rangeForMinPrice"></span> 
+                            - 
+                            <span id="rangeForMaxPrice"></span> 
+                        </span>
+                    </div>
+                </div>
+                <div class="">
+                    <div class="w-full flex justify-between items-center my-5">
+                        <h2 class="text-xl font-medium leading-[150%]">Rating</h2>
+                        <button id="showRatingBtn" type="button" class="flex items-center justify-center cursor-pointer size-8 rounded-full hover:bg-gray-200 transition-all duration-200 ease-in-out ">
+                            <i class="fa-solid fa-chevron-up text-sm"></i>
+                        </button>
+                    </div>
+                    <ul id="filterRatingContainer" class="pb-4">
+                    </ul>
+                </div>
+                <div class="border-t border-gray-200 pt-3">
+                    <div class="w-full flex justify-between items-center mb-5">
+                        <h2 class="text-xl font-medium leading-[150%]">Popular Tag</h2>
+                        <button id="showPriceRangeBtn" type="button" class="flex items-center justify-center cursor-pointer size-8 rounded-full hover:bg-gray-200 transition-all duration-200 ease-in-out ">
+                            <i class="fa-solid fa-chevron-up text-sm"></i>
+                        </button>
+                    </div>
+                    <div id="filterTagsContainer" class="flex gap-3 flex-wrap">
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div id="filteredProductContainer" class="col-span-6 grid grid-cols-6 gap-6 h-auto">
+        </div>
+    </div>
+    
+    </main>
+    <footer id="footer"></footer>
+    <script type="module" src="../src/js/filterpage.js"></script>
+    <script>
+        const priceRangeInput = document.getElementById('priceRangeInput');
+    </script>
+</body>
+</html>

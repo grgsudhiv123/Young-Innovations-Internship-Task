@@ -3,9 +3,7 @@ import { AddWishlist, DeleteWishlistByID, getAllWishListProduct } from "../utils
 
 // let repeatedWishListProduct = false;
 export const handleWishList  =  async (product) => {
-    const wishListProducts = await getAllWishListProduct();
-      console.log("wishlist products",wishListProducts);
-    try {
+  try {
       const repeatedProduct  = wishListProducts.find(wishlist => wishlist.id === product.id);
       if(!repeatedProduct){
         AddWishlist(product);

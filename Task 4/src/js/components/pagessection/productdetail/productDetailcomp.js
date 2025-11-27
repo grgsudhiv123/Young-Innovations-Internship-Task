@@ -132,7 +132,6 @@ export const productDetailComp = async (productDetail) => {
     const productDescription = document.getElementById("product-desc");
     productDescription.innerText = productDetail.desc;
 
-
      const getCategory = async(id) =>{
         const response = await fetch(`${BASE_URL}/categories/${id}`);
         const categoriesdata = await response.json();

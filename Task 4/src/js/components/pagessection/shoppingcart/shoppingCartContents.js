@@ -74,7 +74,6 @@ export const shoppingCartContents = async () => {
                     await deleteCartProduct(product.id);
                     await shoppingCartContents();
                 })
-
             }
         }
     } catch (error) {

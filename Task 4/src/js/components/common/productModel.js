@@ -2,7 +2,6 @@ import { BASE_URL } from "../../utils/constants.js";
 import { PreventScroll } from "../../utils/preventScroll.js";
 
 export async function ProductModel(productData) {
-  
   const getCategory = async(id) =>{
     const response = await fetch(`${BASE_URL}/categories/${id}`);
     const categoriesdata = await response.json();
@@ -10,7 +9,6 @@ export async function ProductModel(productData) {
   }
 
   const categoryName = await getCategory(productData.category);
-
 
   const getTags = async() =>{
     const response = await fetch(`${BASE_URL}/tags`);
