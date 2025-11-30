@@ -1,24 +1,61 @@
+import { filteredFeatures } from "../../../features/filterFeatures.js";
+import { debounce } from "../../../utils/debounce.js";
 import { FetchApi } from "../../../utils/fetchApi.js";
 import ProductCard from "../../common/productCard.js";
 
+
+
+let filter = {
+    category : "",
+    price : "",
+    rating : "",
+    tags : [],
+    stock : "",
+    sort : "",
+    order : "",
+    pagination : {
+        currentPage : 1,
+        itemsPerPage : 15
+    }
+}
+
+
+let initialFilter = JSON.parse(JSON.stringify(filter));
+
+let lastFilter = null;
+
+const debouncedDataFetch = debounce((filter) => {
+    if(isFilterChanged(filter)){
+        filteredFeatures(filter);
+    }
+}, 1000); 
+
+const isFilterChanged = (currentFilter) => {
+    const currentString = JSON.stringify(currentFilter);
+    const lastString = lastFilter ? JSON.stringify(lastFilter) : null;
+    const isUpdated = currentString !== lastString;
+
+    // clear filter btn
+    const clearFilterBtn = document.getElementById("clearFilterBtn");
+    if(isUpdated){
+        lastFilter = JSON.parse(currentString);
+        const isSameDefaultFilterString = JSON.stringify(currentFilter) === JSON.stringify(initialFilter);
+        if(clearFilterBtn && !isSameDefaultFilterString){
+            clearFilterBtn.classList.remove("bg-gray-400");
+            clearFilterBtn.classList.add("bg-(--light-green)", "hover:bg-(--success-dark)");
+        }
+    }
+    return isUpdated;
+}
+
+
 export const renderfilterProductsPage = async () => {
     try {
+        // default filter
+        filteredFeatures(filter);
 
         // for categories filter
-        const categoryData = await FetchApi("categories","");
-        const categoryContainer = document.getElementById("filterCategoryContainer");
-        if(categoryData.length > 0){
-            const categoryList = categoryData.map((category=>CategoryList(category))).join("");
-            if(categoryList){
-                categoryContainer.innerHTML = categoryList;
-            }
-            // update category quantity
-            updateCategoryQuantity(categoryData);
-        }
-
-
-        // for price range filter
-        updatePriceRange();
+        categoryFeatures();
 
         // for rating filter
         const ratingContainer = document.getElementById("filterRatingContainer");
@@ -27,34 +64,82 @@ export const renderfilterProductsPage = async () => {
             ratingContainer.innerHTML = ratingList;
         }
 
-
         // for tags filter
-        const tagsData = await FetchApi("tags","");
-        const tagsContainer = document.getElementById("filterTagsContainer");
-        if(tagsData.length > 0){
-            const tagsList = tagsData.map((tags)=>filterTagChips(tags)).join("");
-            if(tagsList){
-                tagsContainer.innerHTML = tagsList;
-            }
+        tagsFeatures();
+
+        const sortBtn = document.getElementById("sortBySelect");
+        if(sortBtn){
+            sortBtn.addEventListener("change",(e)=>{
+                const selectedValue = e.target.value;
+                if(selectedValue && selectedValue  === "asc"){
+                    filter.sort = "baseprice";
+                }else {
+                    filter.sort = "-baseprice";
+                }
+                debouncedDataFetch(filter);
+            })
         }
 
 
-        renderProductCards("");
+        
+
+        const ratingInputs = document.querySelectorAll("input[name='rating']");
+        if(ratingInputs.length > 0){
+            ratingInputs.forEach(radio => {
+                radio.addEventListener('change',(e)=>{
+                    const selectedRating = e.target.value;
+                    filter.rating = selectedRating;
+                    debouncedDataFetch(filter);
+                })
+            })
+        }
+
+        // for price range filter
+        const [minInput,maxInput] = document.querySelectorAll(".range-input input");
+        if([minInput,maxInput].length > 0){
+            [minInput,maxInput].forEach(rangeInput => {
+                rangeInput.addEventListener("change",()=>{
+                    const minPrice = Number(minInput.value);
+                    const maxPrice = Number(maxInput.value);                   
+                    filter.price = [minPrice,maxPrice];
+                    debouncedDataFetch(filter);
+                })
+            })
+        }
+
+        // for price range filter
+        updatePriceRange();
+
+        // clear filter btn
+        clearFilter();
+        
+    
     } catch (error) {
         console.log("Error while rendering data : ",error);
     }
 }
 
 
-
 // render product cards 
-const renderProductCards = async (filter) => {
+export const renderProductCards = async (productData) => {
     try {
-        const productData = await FetchApi("products",filter);
         const productContainer = document.getElementById("filteredProductContainer");
-        if(productData.length > 0){
-            const productList = productData.map((product)=>ProductCard(product)).join("");
+        const newlyFetchedProducts = productData.data;
+        // update product count in result
+        const productCountEl = document.getElementById("filteredProductCount");
+
+        if(newlyFetchedProducts.length > 0){
+            const productList = newlyFetchedProducts.map((product)=>ProductCard(product)).join("");
             productContainer.innerHTML = productList;
+            productCountEl.textContent = productData.items;
+            paginationComponent(productData.items);
+        } else{
+            productContainer.innerHTML = `
+                <div class="col-span-12 lg:col-span-6 w-full h-[80vh] flex items-center justify-center">
+                    <p class="text-center text-gray-500 text-sm font-normal leading-[150%]">No products found</p>
+                </div>
+            `;
+            productCountEl.textContent = 0;
         }
 
     } catch(error){
@@ -63,58 +148,11 @@ const renderProductCards = async (filter) => {
     }
 }
 
-
-
-
-
-
-
-
-function CategoryList(category){
-    return `
-        <li class="flex items-center gap-2 py-2.5">
-            <input type="checkbox" id="${category.name}-${category.id}" class="w-4 h-4 accent-green-800 cursor-pointer">
-            <label for="${category.name}-${category.id}" class="text-sm font-medium leading-[150%]">
-                <span id="category-name-${category.id}" class="capitalize">${category.name}</span>
-                <span class="text-gray-500">(<span id="category-quantity-${category.id}"></span>)</span>
-            </label>
-        </li>
-    `;
-}
-
-
-
-
-const updateCategoryQuantity = async (categoryData) => {
-    if(categoryData.length > 0){
-        const quantityPromises =  await Promise.all(
-            categoryData.map(async category=>{
-            try {
-                const categoryData = await FetchApi("products",`category=${category.id}`);
-                return {quantity : categoryData.length, id : category.id};
-            } catch (error) {
-                console.log(`Error while fetching category data of id ${category.id} : `,error);
-            }
-        })
-        )
-        quantityPromises.forEach((quantity) => {
-            const categoryQuantityEl = document.getElementById(`category-quantity-${quantity.id}`);
-            if(categoryQuantityEl){
-                categoryQuantityEl.textContent = quantity.quantity;
-            }
-        })
-    }
-}
-
-
-
 // price range
-
 function updatePriceRange(){
     const rangeInputs = document.querySelectorAll(".range-input input");
-        console.log("rangeInputs : ",rangeInputs);
         const progress = document.getElementById("priceRangeProgressBar");
-        const rangeGap = 50;
+        const rangeGap = 10;
         let minRange = Number(rangeInputs[0].value);
         let maxRange = Number(rangeInputs[1].value);
         progress.style.left = ((minRange/rangeInputs[0].max)*100)+"%";
@@ -160,9 +198,9 @@ function ratingStars (rating) {
     }
     return `
         <li class="flex items-center gap-2 py-2.5">
-            <input type="checkbox" id="rating-${rating}" class="w-4 h-4 accent-green-800 cursor-pointer">
-            <label for="rating-${rating}" class="text-sm font-medium leading-[150%]">
-                <span id="rating-${rating.id}" class="">${stars(rating)}</span>
+            <input type="radio" name="rating" id="rating-${rating}" value=${rating} class="w-4 h-4 accent-green-800 cursor-pointer">
+            <label for="rating-${rating}" name="rating" class="text-sm font-medium leading-[150%]">
+                <span id="rating-${rating}" class="">${stars(rating)}</span>
                 <span class="text-gray-500">${Math.floor(rating)} ${Math.floor(rating) !== 5 ? "& up" : "" }</span>
             </label>
         </li>
@@ -170,11 +208,216 @@ function ratingStars (rating) {
 }
 
 
+const paginationComponent = (totalItems) => {
+    if (!totalItems) {
+        return;
+    }
+    const itemsPerPage = 15;
+    const noOfPages = Math.ceil(totalItems / itemsPerPage);
+    const currentPage = filter.pagination.currentPage;
+
+    const pagenoBtns = Array.from({ length: noOfPages }, (_, index) => {
+        const pageNumber = index+1; 
+        const isActive = pageNumber === currentPage;
+        return `
+            <button 
+                id="pageBtn-${pageNumber}"
+                type="button" 
+                class="pagebtn flex items-center justify-center cursor-pointer size-8 rounded-full ${isActive ? 'bg-(--light-green) hover:bg-green-600 text-white' : 'text-gray-600' } transition-all duration-200 ease-in-out group"
+            >
+                <span class="text-sm">${pageNumber}</span>
+            </button>
+        `;
+    }).join('');
+    const pagenoBtnContainer = document.getElementById("paginationBtnsContainer");
+    if(pagenoBtnContainer){
+        pagenoBtnContainer.innerHTML = pagenoBtns;
+        // event listeners
+        const [prevBtn, nextBtn] = document.querySelectorAll(".paginationBtns");
+            if(prevBtn){
+              prevBtn.addEventListener("click",()=>{
+                  if(filter.pagination.currentPage > 1){
+                    filter.pagination.currentPage--;
+                    debouncedDataFetch(filter);
+                  }
+              })  
+            }
+
+            if(nextBtn){
+              nextBtn.addEventListener("click",()=>{
+                  if(filter.pagination.currentPage < noOfPages){
+                    filter.pagination.currentPage++;
+                    debouncedDataFetch(filter);
+                  }
+              })  
+            }
+
+
+        pagenoBtnContainer.addEventListener("click", (e)=>{
+            const btn = e.target.closest(".pagebtn");
+            if(btn){
+                const pageNumber = btn.querySelector("span").textContent;
+                const isActiveBtn = filter.pagination.currentPage == Number(pageNumber)
+                if(!isActiveBtn){
+                    filter.pagination.currentPage = Number(pageNumber);
+                    debouncedDataFetch(filter);
+                }
+            }
+        })
+    }
+}
+
+
+
+
+
+const categoryFeatures = async () => {
+    const categoryData = await FetchApi("categories","");
+        const categoryContainer = document.getElementById("filterCategoryContainer");
+        if(categoryData.length > 0){
+            const categoryList = categoryData.map((category=>CategoryList(category))).join("");
+            if(categoryList){
+                categoryContainer.innerHTML = categoryList;
+            }
+            // update category quantity
+            updateCategoryQuantity(categoryData);
+        }
+
+        const categoryInputs = document.querySelectorAll("input[name='category']");
+        if(categoryInputs.length > 0){
+            categoryInputs.forEach(radio=>{
+                radio.addEventListener('change',(e)=>{
+                    const selectedCategory = e.target.value;
+                    filter.category = selectedCategory;
+                    debouncedDataFetch(filter);
+                })
+            })
+        }
+}
+
+function CategoryList(category){
+    return `
+        <li class="flex items-center gap-2 py-2.5">
+            <input type="radio" name="category" value=${category.id} id="${category.name}-${category.id}" class="w-4 h-4 accent-green-800 cursor-pointer">
+            <label for="${category.name}-${category.id}" name="category" class="text-sm font-medium leading-[150%] cursor-pointer">
+                <span id="category-name-${category.id}" class="capitalize">${category.name}</span>
+                <span class="text-gray-500">(<span id="category-quantity-${category.id}"></span>)</span>
+            </label>
+        </li>
+    `;
+}
+
+const updateCategoryQuantity = async (categoryData) => {
+    if(categoryData.length > 0){
+        const quantityPromises =  await Promise.all(
+            categoryData.map(async category=>{
+            try {
+                const categoryData = await FetchApi("products",`category=${category.id}`);
+                return {quantity : categoryData.length, id : category.id};
+            } catch (error) {
+                console.log(`Error while fetching category data of id ${category.id} : `,error);
+                return error;
+            }
+        })
+        )
+        quantityPromises.forEach((quantity) => {
+            const categoryQuantityEl = document.getElementById(`category-quantity-${quantity.id}`);
+            if(categoryQuantityEl){
+                categoryQuantityEl.textContent = quantity.quantity;
+            }
+        })
+    }
+}
+
+const tagsFeatures = async () => {
+    const tagsData = await FetchApi("tags","");
+        const tagsContainer = document.getElementById("filterTagsContainer");
+        if(tagsData.length > 0){
+            const tagsList = tagsData.map((tags)=>filterTagChips(tags)).join("");
+            if(tagsList){
+                tagsContainer.innerHTML = tagsList;
+            }
+            tagsData.forEach((tagsData)=>{
+            const tagsBtns = document.getElementById(`tagsBtn-${tagsData.id}`);
+            if(tagsBtns){
+                tagsBtns.addEventListener("click",()=>{
+                    const tagsBtn = document.getElementById(`tagsBtn-${tagsData.id}`);
+                    if(tagsBtn ){
+                    const isTagActive = filter.tags.find(tag=>tag === tagsData.id);
+                    if(!isTagActive){
+                        filter.tags.push(Number(tagsData.id));
+                        tagsBtns.classList.add("active");
+                    } else{
+                        filter.tags = filter.tags.filter(tag => tag !== tagsData.id);
+                        tagsBtns.classList.remove("active");
+                    }
+                        debouncedDataFetch(filter);
+                    }
+                })
+            }
+        })
+        }
+
+}
 
 function filterTagChips(tagsData) {
     return `
-    <button type="button" id="tagsBtn-${tagsData.id}" class="w-fit px-4 py-1.5 rounded-full bg-gray-50 hover:bg-gray-200 cursor-pointer transition-all duration-200 ease-in-out">
+    <button type="button" id="tagsBtn-${tagsData.id}" class="w-fit px-4 py-1.5 rounded-full cursor-pointer transition-all duration-200 ease-in-out tagsFilterChips">
          <p class="text-sm font-normal leading-[150%] capitalize">${tagsData.name}</p>
     </button>
     `
 }
+
+
+const clearFilter = () => {
+    const clearFilterBtn = document.getElementById("clearFilterBtn");
+    if(clearFilterBtn){
+        clearFilterBtn.addEventListener("click",()=>{
+                filter =  JSON.parse(JSON.stringify(initialFilter));
+
+                clearFilterBtn.classList.remove("bg-(--light-green)", "hover:bg-(--success-dark)");
+                clearFilterBtn.classList.add("bg-gray-400");
+
+
+                debouncedDataFetch(filter);
+                // clear category radio
+                const categoryInputs = document.querySelectorAll("input[name='category']");
+                if(categoryInputs.length > 0){
+                    categoryInputs.forEach(radio=>{
+                        radio.checked = false;
+                    })
+                }
+
+
+                // clear tags filter
+                const tagsBtns = document.querySelectorAll(".tagsFilterChips");
+                if(tagsBtns.length > 0){
+                    tagsBtns.forEach(btn=>{
+                        btn.classList.remove("active");
+                    })
+                }
+
+                // clearing rating radio inputs
+                const ratingInputs  = document.querySelectorAll("input[name='rating']");
+                if(ratingInputs.length > 0){
+                    ratingInputs.forEach(radio => {
+                        radio.checked = false;
+                    })
+                }
+
+                // clear price range
+                const [minInput,maxInput] = document.querySelectorAll(".range-input input");
+                if(minInput && maxInput){
+                    minInput.value = 30;
+                    maxInput.value = 80;
+                    updatePriceRange();
+                }
+            })
+        }
+}
+
+
+
+
+
+

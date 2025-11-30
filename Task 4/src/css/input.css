@@ -307,4 +307,20 @@ input[type="range"]::-webkit-slider-thumb{
   .shoppingcart-quantitybtn{
     @apply size-8.5 rounded-full flex items-center justify-center bg-gray-100 cursor-pointer hover:bg-gray-400 transition-all duration-200 ease-in-out;
   }
+
+
+
+
+
+
+
+  /* filter page */
+
+  .tagsFilterChips{
+    @apply bg-gray-200 hover:bg-gray-400;
+  }
+
+  .tagsFilterChips.active{
+    @apply bg-(--light-green) hover:bg-(--success-dark) text-white;
+  }
 }

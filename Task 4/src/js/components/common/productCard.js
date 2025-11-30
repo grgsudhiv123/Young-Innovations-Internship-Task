@@ -6,7 +6,7 @@ import { ProductModel } from "./productModel.js";
 const ProductCard = (product, prefix) => {
   const productAdded = localStorage.getItem("productAdded");
   return `
-        <div id="${prefix}-productCard-${product.id}" class="col-span-6 sm:col-span-4 lg:col-span-2 border cursor-pointer border-gray-200 hover:border-(--success-dark) products-card-shadow transition-all duration-200 ease-in-out group productCardId">
+        <div id="${prefix}-productCard-${product.id}" class="col-span-6 sm:col-span-4 lg:col-span-2 border cursor-pointer border-gray-200 hover:border-(--success-dark) products-card-shadow transition-all duration-200 ease-in-out group productCardId h-fit">
             <div class="p-[5px] w-full h-fit relative overflow-hidden">
                 <div class="aspect-254/230 overflow-hidden">
                     <img src=${

@@ -1,127 +1,127 @@
 {
   "categories": [
     {
-      "id": "1",
+      "id": 1,
       "name": "fresh fruits",
       "img": "https://images.unsplash.com/photo-1612144515333-e8b9db423782?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "fresh vegetables",
       "img": "https://images.unsplash.com/photo-1590779033100-9f60a05a013d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "meat & fish",
       "img": "https://images.unsplash.com/photo-1728042359930-c0145f0fd442?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      "id": "4",
+      "id": 4,
       "name": "snacks",
       "img": "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      "id": "5",
+      "id": 5,
       "name": "beverages",
       "img": "https://images.unsplash.com/photo-1648156253473-1154aac22425?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      "id": "6",
+      "id": 6,
       "name": "beauty & health",
       "img": "https://images.unsplash.com/photo-1614859325002-4d658e3845b7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      "id": "7",
+      "id": 7,
       "name": "bread & bakery",
       "img": "https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      "id": "8",
+      "id": 8,
       "name": "baking needs",
       "img": "https://images.unsplash.com/photo-1612144515333-e8b9db423782?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      "id": "9",
+      "id": 9,
       "name": "cooking",
       "img": "https://images.unsplash.com/photo-1612144515333-e8b9db423782?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      "id": "10",
+      "id": 10,
       "name": "diabetic foods",
       "img": "https://images.unsplash.com/photo-1612144515333-e8b9db423782?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      "id": "11",
+      "id": 11,
       "name": "oil ",
       "img": "https://images.unsplash.com/photo-1612144515333-e8b9db423782?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      "id": "12",
+      "id": 12,
       "name": "dish detergent",
       "img": "https://images.unsplash.com/photo-1612144515333-e8b9db423782?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
   ],
   "tags": [
     {
-      "id": "1",
+      "id": 1,
       "name": "healthy"
     },
     {
-      "id": "2",
+      "id": 2,
       "name": "low fat"
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "vegeterian"
     },
     {
-      "id": "4",
+      "id": 4,
       "name": "kid foods"
     },
     {
-      "id": "5",
+      "id": 5,
       "name": "vitamis"
     },
     {
-      "id": "6",
+      "id": 6,
       "name": "bread"
     },
     {
-      "id": "7",
+      "id": 7,
       "name": "meat"
     },
     {
-      "id": "8",
+      "id": 8,
       "name": "snacks"
     },
     {
-      "id": "9",
+      "id": 9,
       "name": "healthy"
     },
     {
-      "id": "10",
+      "id": 10,
       "name": "tiffin"
     },
     {
-      "id": "12",
+      "id": 12,
       "name": "lunch"
     },
     {
-      "id": "13",
+      "id": 13,
       "name": "dinner"
     },
     {
-      "id": "14",
+      "id": 14,
       "name": "breakfast"
     },
     {
-      "id": "15",
+      "id": 15,
       "name": "fruit"
     }
   ],
   "news": [
     {
-      "id": "1",
+      "id": 1,
       "title": "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
       "comment": "10",
       "date": "2025-11-21T10:30:00.000Z",
@@ -135,7 +135,7 @@
       "tag": "foods"
     },
     {
-      "id": "2",
+      "id": 2,
       "title": "Eget lobortis lorem lacinia. Vivamus pharetra semper,",
       "comment": "38",
       "date": "2025-10-10T10:30:00.000Z",
@@ -149,7 +149,7 @@
       "tag": "foods"
     },
     {
-      "id": "3",
+      "id": 3,
       "title": "Maecenas blandit risus elementum mauris malesuada.",
       "comment": "55",
       "date": "2025-09-20T10:30:00.000Z",
@@ -168,7 +168,7 @@
       "id": "101",
       "name": "Organic Carrots",
       "baseprice": 8.99,
-      "rating": "5",
+      "rating": 5,
       "featured": "false",
       "discount": "50%",
       "imgURL": [
@@ -211,7 +211,7 @@
         {
           "id": "1",
           "customer_name": "Emily Johnson",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop",
           "comment": "Super fresh and crunchy! My kids love snacking on these carrots.",
           "dateandtime": "1 day ago"
@@ -219,7 +219,7 @@
         {
           "id": "2",
           "customer_name": "Michael Brown",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop",
           "comment": "Best carrots I've bought online. Great quality and packaging.",
           "dateandtime": "3 days ago"
@@ -233,7 +233,7 @@
     {
       "id": "102",
       "name": "Fresh Broccoli Crowns",
-      "baseprice": 12.4,
+      "baseprice": 12.44,
       "rating": 4,
       "featured": "true",
       "discount": "5%",
@@ -299,8 +299,8 @@
     {
       "id": "103",
       "name": "Red Bell Peppers",
-      "baseprice": 10.9,
-      "rating": "5",
+      "baseprice": 10.99,
+      "rating": 5,
       "featured": "false",
       "discount": "15%",
       "imgURL": [
@@ -344,7 +344,7 @@
         {
           "id": "1",
           "customer_name": "Lisa Anderson",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format&fit=crop",
           "comment": "So sweet and crispy! Love using these in my stir-fries.",
           "dateandtime": "4 hours ago"
@@ -352,7 +352,7 @@
         {
           "id": "2",
           "customer_name": "Robert Kim",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=100&auto=format&fit=crop",
           "comment": "Perfect for stuffed peppers. Great size and quality.",
           "dateandtime": "1 day ago"
@@ -367,7 +367,7 @@
       "id": "104",
       "name": "Baby Spinach Leaves",
       "baseprice": 6.99,
-      "rating": "5",
+      "rating": 5,
       "featured": "true",
       "discount": "0%",
       "imgURL": [
@@ -411,7 +411,7 @@
         {
           "id": "1",
           "customer_name": "Amanda Taylor",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=100&auto=format&fit=crop",
           "comment": "Always fresh and clean. Perfect for my morning smoothies!",
           "dateandtime": "30 minutes ago"
@@ -419,7 +419,7 @@
         {
           "id": "2",
           "customer_name": "Christopher White",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100&auto=format&fit=crop",
           "comment": "Great quality spinach. Lasts longer than store-bought.",
           "dateandtime": "6 hours ago"
@@ -500,7 +500,7 @@
       "id": "106",
       "name": "Organic Cucumber",
       "baseprice": 7.49,
-      "rating": "5",
+      "rating": 5,
       "featured": "false",
       "discount": "12%",
       "imgURL": [
@@ -543,7 +543,7 @@
         {
           "id": "1",
           "customer_name": "Patricia Harris",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop",
           "comment": "Super crunchy and not bitter at all. Love them!",
           "dateandtime": "3 hours ago"
@@ -551,7 +551,7 @@
         {
           "id": "2",
           "customer_name": "James Wilson",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop",
           "comment": "Perfect for making pickles. Great freshness.",
           "dateandtime": "5 days ago"
@@ -566,7 +566,7 @@
       "id": "107",
       "name": "Sweet Corn",
       "baseprice": 11.99,
-      "rating": "5",
+      "rating": 5,
       "featured": "true",
       "discount": "5%",
       "imgURL": [
@@ -609,7 +609,7 @@
         {
           "id": "1",
           "customer_name": "Karen Thompson",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1551843073-4a9a5b6fcd5f?q=80&w=100&auto=format&fit=crop",
           "comment": "So sweet and delicious! Kids finished all 4 cobs in one meal.",
           "dateandtime": "1 hour ago"
@@ -617,7 +617,7 @@
         {
           "id": "2",
           "customer_name": "Daniel Clark",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=100&auto=format&fit=crop",
           "comment": "Perfect for grilling. Tender kernels and great flavor.",
           "dateandtime": "2 days ago"
@@ -631,7 +631,7 @@
     {
       "id": "108",
       "name": "Fresh Cauliflower",
-      "baseprice": 13.9,
+      "baseprice": 13.88,
       "rating": 4,
       "featured": "false",
       "discount": "10%",
@@ -699,7 +699,7 @@
       "id": "109",
       "name": "Green Beans",
       "baseprice": 8.49,
-      "rating": "5",
+      "rating": 5,
       "featured": "true",
       "discount": "0%",
       "imgURL": [
@@ -743,7 +743,7 @@
         {
           "id": "1",
           "customer_name": "Nancy Walker",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=100&auto=format&fit=crop",
           "comment": "So fresh and crunchy! Great quality beans.",
           "dateandtime": "4 hours ago"
@@ -751,7 +751,7 @@
         {
           "id": "2",
           "customer_name": "Steven Hall",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop",
           "comment": "Perfect for Thanksgiving dinner. Kids loved them!",
           "dateandtime": "1 day ago"
@@ -826,7 +826,7 @@
         {
           "id": "3",
           "customer_name": "Angela Moore",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=100&auto=format&fit=crop",
           "comment": "Love the sweetness of these red onions. Great for grilling!",
           "dateandtime": "1 week ago"
@@ -841,7 +841,7 @@
       "id": "201",
       "name": "Organic Bananas",
       "baseprice": 5.99,
-      "rating": "5",
+      "rating": 5,
       "featured": "false",
       "discount": "",
       "imgURL": [
@@ -884,7 +884,7 @@
         {
           "id": "1",
           "customer_name": "Sophie Chen",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop",
           "comment": "Perfect ripeness! My kids love these in their lunchboxes.",
           "dateandtime": "2 hours ago"
@@ -892,7 +892,7 @@
         {
           "id": "2",
           "customer_name": "Marcus Johnson",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop",
           "comment": "Great for post-workout snacks. Always fresh and sweet.",
           "dateandtime": "1 day ago"
@@ -906,8 +906,8 @@
     {
       "id": "202",
       "name": "Fresh Strawberries",
-      "baseprice": 12.9,
-      "rating": "5",
+      "baseprice": 12.55,
+      "rating": 5,
       "featured": "false",
       "discount": "60%",
       "imgURL": [
@@ -951,7 +951,7 @@
         {
           "id": "1",
           "customer_name": "Emma Wilson",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&auto=format&fit=crop",
           "comment": "Absolutely delicious! So sweet and fresh, best strawberries ever!",
           "dateandtime": "3 hours ago"
@@ -959,7 +959,7 @@
         {
           "id": "2",
           "customer_name": "Ryan Parker",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop",
           "comment": "Perfect for making strawberry shortcake. Great quality!",
           "dateandtime": "5 hours ago"
@@ -973,8 +973,8 @@
     {
       "id": "203",
       "name": "Royal Gala Apples",
-      "baseprice": 10.9,
-      "rating": "5",
+      "baseprice": 10.77,
+      "rating": 5,
       "featured": "false",
       "discount": "8%",
       "imgURL": [
@@ -1018,7 +1018,7 @@
         {
           "id": "1",
           "customer_name": "Olivia Anderson",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format&fit=crop",
           "comment": "So crunchy and sweet! Perfect for apple pie.",
           "dateandtime": "1 hour ago"
@@ -1026,7 +1026,7 @@
         {
           "id": "2",
           "customer_name": "Jacob Martinez",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=100&auto=format&fit=crop",
           "comment": "Great size and flavor. Kids finish them in no time!",
           "dateandtime": "2 days ago"
@@ -1040,8 +1040,8 @@
     {
       "id": "204",
       "name": "Fresh Blueberries",
-      "baseprice": 14.9,
-      "rating": "5",
+      "baseprice": 14.89,
+      "rating": 5,
       "featured": "false",
       "discount": "12%",
       "imgURL": [
@@ -1084,7 +1084,7 @@
         {
           "id": "1",
           "customer_name": "Isabella Roberts",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=100&auto=format&fit=crop",
           "comment": "Amazing quality! Perfect for my morning oatmeal.",
           "dateandtime": "4 hours ago"
@@ -1092,7 +1092,7 @@
         {
           "id": "2",
           "customer_name": "Ethan Taylor",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100&auto=format&fit=crop",
           "comment": "Fresh and flavorful. Great for baking muffins!",
           "dateandtime": "1 day ago"
@@ -1107,7 +1107,7 @@
       "id": "205",
       "name": "Sweet Oranges",
       "baseprice": 9.49,
-      "rating": "5",
+      "rating": 5,
       "featured": "false",
       "discount": "5%",
       "imgURL": [
@@ -1152,7 +1152,7 @@
         {
           "id": "1",
           "customer_name": "Mia Thompson",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?q=80&w=100&auto=format&fit=crop",
           "comment": "So juicy and sweet! Made the best fresh orange juice.",
           "dateandtime": "30 minutes ago"
@@ -1160,7 +1160,7 @@
         {
           "id": "2",
           "customer_name": "Liam Garcia",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1463453091185-61582044d556?q=80&w=100&auto=format&fit=crop",
           "comment": "Perfect oranges. Easy to peel and incredibly fresh.",
           "dateandtime": "6 hours ago"
@@ -1174,8 +1174,8 @@
     {
       "id": "206",
       "name": "Fresh Mangoes",
-      "baseprice": 16.9,
-      "rating": "5",
+      "baseprice": 16.97,
+      "rating": 5,
       "featured": "false",
       "discount": "10%",
       "imgURL": [
@@ -1219,7 +1219,7 @@
         {
           "id": "1",
           "customer_name": "Ava Martinez",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop",
           "comment": "Perfectly ripe and so delicious! Best mangoes I've had!",
           "dateandtime": "2 hours ago"
@@ -1227,7 +1227,7 @@
         {
           "id": "2",
           "customer_name": "Noah Davis",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=100&auto=format&fit=crop",
           "comment": "Sweet and juicy. Made amazing mango lassi with these!",
           "dateandtime": "1 day ago"
@@ -1241,7 +1241,7 @@
     {
       "id": "207",
       "name": "Green Seedless Grapes",
-      "baseprice": 11.4,
+      "baseprice": 11.54,
       "rating": 4,
       "featured": "false",
       "discount": "55%",
@@ -1309,7 +1309,7 @@
       "id": "208",
       "name": "Fresh Watermelon",
       "baseprice": 8.99,
-      "rating": "5",
+      "rating": 5,
       "featured": "true",
       "discount": "0%",
       "imgURL": [
@@ -1353,7 +1353,7 @@
         {
           "id": "1",
           "customer_name": "Amelia Clark",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=100&auto=format&fit=crop",
           "comment": "So sweet and refreshing! Perfect for summer barbecues.",
           "dateandtime": "1 hour ago"
@@ -1361,7 +1361,7 @@
         {
           "id": "2",
           "customer_name": "Lucas Rodriguez",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=100&auto=format&fit=crop",
           "comment": "Kids loved it! Very juicy and flavorful watermelon.",
           "dateandtime": "4 hours ago"
@@ -1375,8 +1375,8 @@
     {
       "id": "209",
       "name": "Fresh Pineapple",
-      "baseprice": 13.9,
-      "rating": "5",
+      "baseprice": 13.77,
+      "rating": 5,
       "featured": "false",
       "discount": "10%",
       "imgURL": [
@@ -1419,7 +1419,7 @@
         {
           "id": "1",
           "customer_name": "Harper White",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=100&auto=format&fit=crop",
           "comment": "Perfectly ripe and so sweet! Made amazing piña coladas.",
           "dateandtime": "3 hours ago"
@@ -1427,7 +1427,7 @@
         {
           "id": "2",
           "customer_name": "Alexander Brown",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop",
           "comment": "Great flavor! Grilled some for our BBQ and it was delicious.",
           "dateandtime": "2 days ago"
@@ -1441,7 +1441,7 @@
     {
       "id": "210",
       "name": "Fresh Kiwi Fruits",
-      "baseprice": 10.4,
+      "baseprice": 10.84,
       "rating": 4,
       "featured": "true",
       "discount": "5%",
@@ -1503,7 +1503,7 @@
         {
           "id": "3",
           "customer_name": "Grace Turner",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=100&auto=format&fit=crop",
           "comment": "Perfect for my morning smoothie bowl. So nutritious!",
           "dateandtime": "3 days ago"
@@ -1519,8 +1519,8 @@
     {
       "id": "103",
       "name": "Red Bell Peppers",
-      "baseprice": 10.9,
-      "rating": "5",
+      "baseprice": 10.89,
+      "rating": 5,
       "featured": "false",
       "discount": "15%",
       "imgURL": [
@@ -1564,7 +1564,7 @@
         {
           "id": "1",
           "customer_name": "Lisa Anderson",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format&fit=crop",
           "comment": "So sweet and crispy! Love using these in my stir-fries.",
           "dateandtime": "4 hours ago"
@@ -1572,7 +1572,7 @@
         {
           "id": "2",
           "customer_name": "Robert Kim",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=100&auto=format&fit=crop",
           "comment": "Perfect for stuffed peppers. Great size and quality.",
           "dateandtime": "1 day ago"
@@ -1590,7 +1590,7 @@
       "id": "106",
       "name": "Organic Cucumber",
       "baseprice": 7.49,
-      "rating": "5",
+      "rating": 5,
       "featured": "false",
       "discount": "12%",
       "imgURL": [
@@ -1634,7 +1634,7 @@
         {
           "id": "1",
           "customer_name": "Patricia Harris",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop",
           "comment": "Super crunchy and not bitter at all. Love them!",
           "dateandtime": "3 hours ago"
@@ -1642,7 +1642,7 @@
         {
           "id": "2",
           "customer_name": "James Wilson",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop",
           "comment": "Perfect for making pickles. Great freshness.",
           "dateandtime": "5 days ago"
@@ -1658,8 +1658,8 @@
     {
       "id": "209",
       "name": "Fresh Pineapple",
-      "baseprice": 13.9,
-      "rating": "5",
+      "baseprice": 13.78,
+      "rating": 5,
       "featured": "false",
       "discount": "10%",
       "imgURL": [
@@ -1702,7 +1702,7 @@
         {
           "id": "1",
           "customer_name": "Harper White",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=100&auto=format&fit=crop",
           "comment": "Perfectly ripe and so sweet! Made amazing piña coladas.",
           "dateandtime": "3 hours ago"
@@ -1710,7 +1710,7 @@
         {
           "id": "2",
           "customer_name": "Alexander Brown",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop",
           "comment": "Great flavor! Grilled some for our BBQ and it was delicious.",
           "dateandtime": "2 days ago"
@@ -1726,7 +1726,7 @@
     {
       "id": "108",
       "name": "Fresh Cauliflower",
-      "baseprice": 13.9,
+      "baseprice": 13.69,
       "rating": 4,
       "featured": "false",
       "discount": "10%",
@@ -1794,8 +1794,8 @@
     {
       "id": "107",
       "name": "Sweet Corn",
-      "baseprice": 11.9,
-      "rating": "5",
+      "baseprice": 11.59,
+      "rating": 5,
       "featured": "true",
       "discount": "5%",
       "imgURL": [
@@ -1838,7 +1838,7 @@
         {
           "id": "1",
           "customer_name": "Karen Thompson",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1551843073-4a9a5b6fcd5f?q=80&w=100&auto=format&fit=crop",
           "comment": "So sweet and delicious! Kids finished all 4 cobs in one meal.",
           "dateandtime": "1 hour ago"
@@ -1846,7 +1846,7 @@
         {
           "id": "2",
           "customer_name": "Daniel Clark",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=100&auto=format&fit=crop",
           "comment": "Perfect for grilling. Tender kernels and great flavor.",
           "dateandtime": "2 days ago"
@@ -1863,7 +1863,7 @@
       "id": "104",
       "name": "Baby Spinach Leaves",
       "baseprice": 6.99,
-      "rating": "5",
+      "rating": 5,
       "featured": "true",
       "discount": "0%",
       "imgURL": [
@@ -1907,7 +1907,7 @@
         {
           "id": "1",
           "customer_name": "Amanda Taylor",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=100&auto=format&fit=crop",
           "comment": "Always fresh and clean. Perfect for my morning smoothies!",
           "dateandtime": "30 minutes ago"
@@ -1915,7 +1915,7 @@
         {
           "id": "2",
           "customer_name": "Christopher White",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100&auto=format&fit=crop",
           "comment": "Great quality spinach. Lasts longer than store-bought.",
           "dateandtime": "6 hours ago"
@@ -1934,7 +1934,7 @@
       "id": "106",
       "name": "Organic Cucumber",
       "baseprice": 7.49,
-      "rating": "5",
+      "rating": 5,
       "featured": "false",
       "discount": "12%",
       "imgURL": [
@@ -1978,7 +1978,7 @@
         {
           "id": "1",
           "customer_name": "Patricia Harris",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop",
           "comment": "Super crunchy and not bitter at all. Love them!",
           "dateandtime": "3 hours ago"
@@ -1986,7 +1986,7 @@
         {
           "id": "2",
           "customer_name": "James Wilson",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop",
           "comment": "Perfect for making pickles. Great freshness.",
           "dateandtime": "5 days ago"
@@ -2000,8 +2000,8 @@
     {
       "id": "103",
       "name": "Red Bell Peppers",
-      "baseprice": 10.9,
-      "rating": "5",
+      "baseprice": 10.94,
+      "rating": 5,
       "featured": "false",
       "discount": "15%",
       "imgURL": [
@@ -2044,7 +2044,7 @@
         {
           "id": "1",
           "customer_name": "Lisa Anderson",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format&fit=crop",
           "comment": "So sweet and crispy! Love using these in my stir-fries.",
           "dateandtime": "4 hours ago"
@@ -2052,7 +2052,7 @@
         {
           "id": "2",
           "customer_name": "Robert Kim",
-          "rating": "5",
+          "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=100&auto=format&fit=crop",
           "comment": "Perfect for stuffed peppers. Great size and quality.",
           "dateandtime": "1 day ago"

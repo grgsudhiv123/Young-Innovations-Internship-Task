@@ -12,7 +12,6 @@
     --color-red-600: oklch(57.7% 0.245 27.325);
     --color-red-700: oklch(50.5% 0.213 27.518);
     --color-red-800: oklch(44.4% 0.177 26.899);
-    --color-orange-500: oklch(70.5% 0.213 47.604);
     --color-green-100: oklch(96.2% 0.044 156.743);
     --color-green-400: oklch(79.2% 0.209 151.711);
     --color-green-500: oklch(72.3% 0.219 149.579);
@@ -351,6 +350,9 @@
   .mb-8 {
     margin-bottom: calc(var(--spacing) * 8);
   }
+  .mb-10 {
+    margin-bottom: calc(var(--spacing) * 10);
+  }
   .mb-15 {
     margin-bottom: calc(var(--spacing) * 15);
   }
@@ -541,8 +543,8 @@
   .h-\[70vh\] {
     height: 70vh;
   }
-  .h-\[90\%\] {
-    height: 90%;
+  .h-\[80vh\] {
+    height: 80vh;
   }
   .h-auto {
     height: auto;
@@ -738,9 +740,6 @@
   }
   .grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .grid-cols-6 {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
   .grid-cols-8 {
     grid-template-columns: repeat(8, minmax(0, 1fr));
@@ -1038,9 +1037,6 @@
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-gray-100) 80%, transparent);
     }
-  }
-  .bg-gray-200 {
-    background-color: var(--color-gray-200);
   }
   .bg-gray-300 {
     background-color: var(--color-gray-300);
@@ -1396,6 +1392,9 @@
   }
   .text-black {
     color: var(--color-black);
+  }
+  .text-gray-50 {
+    color: var(--color-gray-50);
   }
   .text-gray-200 {
     color: var(--color-gray-200);
@@ -1808,6 +1807,11 @@
       outline-style: none;
     }
   }
+  .disabled\:cursor-none {
+    &:disabled {
+      cursor: none;
+    }
+  }
   .sm\:right-\[50px\] {
     @media (width >= 40rem) {
       right: 50px;
@@ -2007,6 +2011,11 @@
   .md\:col-span-4 {
     @media (width >= 48rem) {
       grid-column: span 4 / span 4;
+    }
+  }
+  .md\:col-span-6 {
+    @media (width >= 48rem) {
+      grid-column: span 6 / span 6;
     }
   }
   .md\:my-\[60px\] {
@@ -2341,6 +2350,11 @@
       grid-column: span 4 / span 4;
     }
   }
+  .lg\:col-span-6 {
+    @media (width >= 64rem) {
+      grid-column: span 6 / span 6;
+    }
+  }
   .lg\:col-span-8 {
     @media (width >= 64rem) {
       grid-column: span 8 / span 8;
@@ -2480,6 +2494,11 @@
   .lg\:rotate-0 {
     @media (width >= 64rem) {
       rotate: 0deg;
+    }
+  }
+  .lg\:grid-cols-6 {
+    @media (width >= 64rem) {
+      grid-template-columns: repeat(6, minmax(0, 1fr));
     }
   }
   .lg\:grid-cols-10 {
@@ -3330,6 +3349,23 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-gray-400);
+      }
+    }
+  }
+  .tagsFilterChips {
+    background-color: var(--color-gray-200);
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-gray-400);
+      }
+    }
+  }
+  .tagsFilterChips.active {
+    background-color: var(--light-green);
+    color: var(--color-white);
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--success-dark);
       }
     }
   }
