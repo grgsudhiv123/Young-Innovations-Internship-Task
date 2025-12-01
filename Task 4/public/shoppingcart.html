@@ -14,7 +14,7 @@
     <!-- Header with banner -->
          <header id="header"></header>
 
-    <div class="relative h-32 sm:h-40 md:h-48 bg-gradient-to-r from-gray-900 to-gray-800 overflow-hidden">
+    <div class="relative h-32 sm:h-40 md:h-48 from-gray-900 to-gray-800 overflow-hidden">
         <div class="absolute inset-0 bg-black opacity-40"></div>
         <div class="absolute top-4 left-4 flex items-center gap-2 text-white text-sm">
             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -42,8 +42,8 @@
                                 </tbody>
                 </table>
                 <div class="w-full flex justify-between items-center py-4 px-5">
-                    <button type="button" class="shoppingcart-button">Return to shop</button>
-                    <button type="button" class="shoppingcart-button">Update cart</button>
+                    <button type="button" id="returnCartBtn" class="shoppingcart-button">Return to shop</button>
+                    <button type="button" id="updateCartBtn" class="shoppingcart-button">Update cart</button>
                 </div>
             </div>
             <div class="bg-white rounded-lg p-5 border border-gray-200 w-full flex items-center gap-5">
@@ -88,6 +88,13 @@
 
 
     <footer id="footer"></footer>
+
+    <!-- productcartsidebar  -->
+     <div id="cartsidebar-backdrop" class="fixed w-screen h-screen bg-gray-800/80 top-0 left-0 sidebar-backdropstyle">
+     </div>
+     <div id="cartsidebar-container" class="fixed top-[0%] right-[0%] w-[456px] h-screen bg-white p-10 sidebar-containerstyle">
+     </div>
+
     <script type="module" src="../src/js/shoppingcart.js"></script>
 </body>
 </html>

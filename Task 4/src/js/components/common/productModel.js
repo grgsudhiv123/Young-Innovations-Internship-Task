@@ -1,18 +1,19 @@
 import { BASE_URL } from "../../utils/constants.js";
+import { FetchApi, FetchApiById } from "../../utils/fetchApi.js";
 import { PreventScroll } from "../../utils/preventScroll.js";
 
 export async function ProductModel(productData) {
   const getCategory = async(id) =>{
-    const response = await fetch(`${BASE_URL}/categories/${id}`);
-    const categoriesdata = await response.json();
-    return categoriesdata.name;
+    console.log("category id : ",id);
+    const categoriesdata = await FetchApiById("categories",id);
+    return categoriesdata[0].name;
   }
 
   const categoryName = await getCategory(productData.category);
+  console.log("categoryName : ",categoryName);
 
   const getTags = async() =>{
-    const response = await fetch(`${BASE_URL}/tags`);
-    const tagsdata = await response.json();
+    const tagsdata = await FetchApi("tags","");
     return tagsdata;
   }
 

@@ -14,7 +14,6 @@ const PopularProducts = async () => {
       (data) => data.rating >= 4 && data.discount.replace("%", "") >= 10
     );
 
-    console.log("filtered data : ", filteredData);
 
     popularProductContainer.innerHTML = filteredData
       .slice(0, 9)

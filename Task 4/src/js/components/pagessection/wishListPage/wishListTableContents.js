@@ -21,7 +21,6 @@ export const WishListProductTable = async ()=>{
                         try {
                             DeleteWishlistByID(data.id);
                             alert("Product removed from wishlist");
-                            window.location.reload();
                         } catch (error) {
                             console.error("error while removing the wishlist",error);
                             alert("Error while removing the wishlist");

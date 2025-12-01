@@ -1,10 +1,13 @@
 import { productCartFeatures } from "../../features/cartFeatures.js";
 import { handleWishList } from "../../features/wishListFeatures.js";
+import { getAllWishListProduct } from "../../utils/fetchApi.js";
 import { PreventScroll } from "../../utils/preventScroll.js";
 import { ProductModel } from "./productModel.js";
 
+
+
 const ProductCard = (product, prefix) => {
-  const productAdded = localStorage.getItem("productAdded");
+  
   return `
         <div id="${prefix}-productCard-${product.id}" class="col-span-6 sm:col-span-4 lg:col-span-2 border cursor-pointer border-gray-200 hover:border-(--success-dark) products-card-shadow transition-all duration-200 ease-in-out group productCardId h-fit">
             <div class="p-[5px] w-full h-fit relative overflow-hidden">
@@ -53,7 +56,7 @@ const ProductCard = (product, prefix) => {
                         }
                         </p>
                     </div>
-                    <button type="button" id="${prefix}-productAddToCart-${product.id}" class="size-6 md:size-10 flex items-center justify-center rounded-full ${productAdded ? 'bg-(--light-green)' : 'bg-gray-50' }  bg-gray-50 group/cart hover:bg-(--light-green) transition-all duration-200 ease-in-out cursor-pointer"> 
+                    <button type="button" id="productAddToCart-${product.id}" class="size-6 md:size-10 flex items-center justify-center rounded-full transition-all duration-200 ease-in-out cursor-pointer bg-gray-50 group/cart hover:bg-(--light-green)"> 
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             fill="none"
@@ -119,7 +122,6 @@ export  const ProductBtns = async (productData,prefix) => {
       // handle product model view
       const modelViewBtn = e.target.closest("#productmodelbtn");
       if (modelViewBtn) {
-        console.log("product data", product);
         ProductModel(product);
         const modelcont = modelContainer.classList.contains(
           "model-containerstyle"
@@ -137,7 +139,7 @@ export  const ProductBtns = async (productData,prefix) => {
       }
 
       // handle add to cart
-      const addToCartBtn = e.target.closest(`#${prefix}-productAddToCart-${product.id}`);
+      const addToCartBtn = e.target.closest(`#productAddToCart-${product.id}`);
       if (addToCartBtn) {
        await addCartProduct(product);
       } 
@@ -155,3 +157,4 @@ export  const ProductBtns = async (productData,prefix) => {
     });
   });
 };
+

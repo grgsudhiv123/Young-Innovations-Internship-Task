@@ -1188,7 +1188,7 @@
       "tags": [
         4,
         9,
-       11
+        11
       ],
       "desc": "Sweet, tropical mangoes with rich, creamy flesh. High in vitamin A and C. Perfect for smoothies, desserts, or enjoying fresh. A taste of paradise!",
       "brand": "Tropical Harvest",
@@ -1517,95 +1517,24 @@
   ],
   "cartProducts": [
     {
-      "id": "103",
-      "name": "Red Bell Peppers",
-      "baseprice": 10.89,
+      "id": "101",
+      "name": "Organic Carrots",
+      "baseprice": 8.99,
       "rating": 5,
       "featured": "false",
-      "discount": "15%",
+      "discount": "50%",
       "imgURL": [
-        "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1525607551316-4a8e16d1f9ba?q=80&w=687&auto=format&fit=crop"
+        "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1447175008436-054170c2e979?q=80&w=699&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1582515073490-39981397c445?q=80&w=735&auto=format&fit=crop"
       ],
-      "SKU": "VEG003PEPPER2024",
+      "SKU": "VEG001CARROT2024",
       "category": 2,
       "tags": [
-        6,
-        9,
-        8
-      ],
-      "desc": "Sweet and crunchy red bell peppers, perfect for salads, grilling, or stuffing. Rich in vitamin C and antioxidants for a healthy immune system.",
-      "brand": "Sunny Harvest",
-      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
-      "socialLinks": [
-        {
-          "id": "1",
-          "name": "facebook",
-          "link": "www.facebook.com/sunnyharvest"
-        },
-        {
-          "id": "2",
-          "name": "pinterest",
-          "link": "www.pinterest.com/sunnyharvest"
-        },
-        {
-          "id": "3",
-          "name": "twitter",
-          "link": "www.twitter.com/sunnyharvest"
-        },
-        {
-          "id": "4",
-          "name": "instagram",
-          "link": "www.instagram.com/sunnyharvest"
-        }
-      ],
-      "reviews": [
-        {
-          "id": "1",
-          "customer_name": "Lisa Anderson",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format&fit=crop",
-          "comment": "So sweet and crispy! Love using these in my stir-fries.",
-          "dateandtime": "4 hours ago"
-        },
-        {
-          "id": "2",
-          "customer_name": "Robert Kim",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=100&auto=format&fit=crop",
-          "comment": "Perfect for stuffed peppers. Great size and quality.",
-          "dateandtime": "1 day ago"
-        }
-      ],
-      "detail": "Our red bell peppers are vine-ripened to perfection, offering maximum sweetness and nutritional benefits. Contains three times more vitamin C than oranges and packed with vitamin A. Great for raw snacking, roasting, or adding vibrant color to any dish. Each pepper is carefully selected for optimal freshness.",
-      "wt": "300gm",
-      "stock": "410",
-      "color": "red",
-      "quantity": 2,
-      "addedAt": "2025-11-26T17:57:05.200Z",
-      "updatedAt": "2025-11-26T18:00:22.309Z"
-    },
-    {
-      "id": "106",
-      "name": "Organic Cucumber",
-      "baseprice": 7.49,
-      "rating": 5,
-      "featured": "false",
-      "discount": "12%",
-      "imgURL": [
-        "https://images.unsplash.com/photo-1604977042946-1eecc30f269e?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1589927986089-35812378d193?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?q=80&w=687&auto=format&fit=crop"
-      ],
-      "SKU": "VEG006CUCUMB2024",
-      "category": 2,
-      "tags": [
-        2,
         3,
-        8
+        5
       ],
-      "desc": "Crisp and refreshing organic cucumbers. Low in calories and high in hydration. Perfect for salads, pickling, or healthy snacking.",
+      "desc": "Fresh organic carrots packed with beta-carotene and vitamins. Perfect for salads, soups, or healthy snacking. Locally sourced from organic farms.",
       "brand": "Green Valley Farms",
       "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
       "socialLinks": [
@@ -1633,100 +1562,102 @@
       "reviews": [
         {
           "id": "1",
-          "customer_name": "Patricia Harris",
+          "customer_name": "Emily Johnson",
           "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop",
-          "comment": "Super crunchy and not bitter at all. Love them!",
-          "dateandtime": "3 hours ago"
+          "profileURL": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop",
+          "comment": "Super fresh and crunchy! My kids love snacking on these carrots.",
+          "dateandtime": "1 day ago"
         },
         {
           "id": "2",
-          "customer_name": "James Wilson",
+          "customer_name": "Michael Brown",
           "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop",
-          "comment": "Perfect for making pickles. Great freshness.",
-          "dateandtime": "5 days ago"
+          "comment": "Best carrots I've bought online. Great quality and packaging.",
+          "dateandtime": "3 days ago"
         }
       ],
-      "detail": "Organically grown cucumbers with crisp texture and mild flavor. These cucumbers are 95% water, making them incredibly hydrating and low in calories. Rich in vitamin K and potassium, they support bone health and blood pressure regulation. Excellent for fresh eating, juicing, or making homemade pickles. No wax coating - just pure, natural goodness.",
-      "wt": "450gm",
-      "stock": "340",
-      "color": "green",
-      "quantity": 1,
-      "addedAt": "2025-11-26T18:00:28.743Z"
+      "detail": "Our organic carrots are grown without synthetic pesticides or fertilizers. Rich in vitamin A, fiber, and antioxidants, these carrots support eye health and boost immunity. Hand-picked at peak freshness and delivered directly to your door. Perfect for juicing, roasting, or enjoying raw with your favorite dip.",
+      "wt": "500gm",
+      "stock": "320",
+      "color": "orange",
+      "quantity": 3,
+      "addedAt": "2025-12-01T07:18:46.956Z",
+      "updatedAt": "2025-12-01T07:32:06.774Z"
     },
     {
-      "id": "209",
-      "name": "Fresh Pineapple",
-      "baseprice": 13.78,
-      "rating": 5,
-      "featured": "false",
-      "discount": "10%",
+      "id": "102",
+      "name": "Fresh Broccoli Crowns",
+      "baseprice": 12.44,
+      "rating": 4,
+      "featured": "true",
+      "discount": "5%",
       "imgURL": [
-        "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1587049352847-8d5e0c2e0c88?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1602491254713-63fae49c2d55?q=80&w=687&auto=format&fit=crop"
+        "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1628773822503-930a7eaecf80?q=80&w=735&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1584868356415-dde8e0c68c4f?q=80&w=687&auto=format&fit=crop"
       ],
-      "SKU": "FRUIT009PINEAPPL2024",
-      "category": 1,
+      "SKU": "VEG002BROCC2024",
+      "category": 2,
       "tags": [
-        1,
-        2
+        2,
+        3
       ],
-      "desc": "Sweet and tangy fresh pineapple with tropical flavor. Contains bromelain enzyme for digestion. Perfect for fruit salads, grilling, or tropical smoothies.",
-      "brand": "Tropical Harvest",
+      "desc": "Crisp and nutritious broccoli crowns, high in vitamins C and K. Ideal for steaming, stir-frying, or adding to your favorite pasta dishes.",
+      "brand": "Nature's Best",
       "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
       "socialLinks": [
         {
           "id": "1",
           "name": "facebook",
-          "link": "www.facebook.com/tropicalharvest"
+          "link": "www.facebook.com/naturesbest"
         },
         {
           "id": "2",
           "name": "pinterest",
-          "link": "www.pinterest.com/tropicalharvest"
+          "link": "www.pinterest.com/naturesbest"
         },
         {
           "id": "3",
           "name": "twitter",
-          "link": "www.twitter.com/tropicalharvest"
+          "link": "www.twitter.com/naturesbest"
         },
         {
           "id": "4",
           "name": "instagram",
-          "link": "www.instagram.com/tropicalharvest"
+          "link": "www.instagram.com/naturesbest"
         }
       ],
       "reviews": [
         {
           "id": "1",
-          "customer_name": "Harper White",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=100&auto=format&fit=crop",
-          "comment": "Perfectly ripe and so sweet! Made amazing piña coladas.",
-          "dateandtime": "3 hours ago"
+          "customer_name": "Sarah Mitchell",
+          "rating": 4,
+          "profileURL": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&auto=format&fit=crop",
+          "comment": "Fresh and green. Perfect for my weekly meal prep.",
+          "dateandtime": "5 hours ago"
         },
         {
           "id": "2",
-          "customer_name": "Alexander Brown",
-          "rating": 5,
+          "customer_name": "David Lee",
+          "rating": 4,
           "profileURL": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop",
-          "comment": "Great flavor! Grilled some for our BBQ and it was delicious.",
+          "comment": "Good quality broccoli, stays fresh for days in the fridge.",
           "dateandtime": "2 days ago"
         }
       ],
-      "detail": "Premium fresh pineapple selected for optimal ripeness and sweetness. This tropical fruit contains bromelain, a unique enzyme that aids digestion and reduces inflammation. Rich in vitamin C, manganese, and antioxidants, pineapple supports immune function and bone health. The sweet-tart flavor profile makes it versatile for both sweet and savory dishes. Excellent fresh, grilled, in smoothies, or added to stir-fries. Look for golden color at the base and fresh green leaves for ripeness indicator.",
-      "wt": "1.8kg",
-      "stock": "155",
-      "color": "golden",
-      "quantity": 1,
-      "addedAt": "2025-11-26T18:01:50.429Z"
+      "detail": "Premium broccoli crowns harvested at peak maturity for maximum nutritional value. These florets are packed with cancer-fighting compounds, fiber, and essential minerals. Steam for 5-7 minutes to retain nutrients, or add to soups and casseroles for a healthy boost.",
+      "wt": "400gm",
+      "stock": "275",
+      "color": "dark green",
+      "quantity": 2,
+      "addedAt": "2025-12-01T07:20:34.118Z",
+      "updatedAt": "2025-12-01T08:37:24.645Z"
     },
     {
       "id": "108",
       "name": "Fresh Cauliflower",
-      "baseprice": 13.69,
+      "baseprice": 13.88,
       "rating": 4,
       "featured": "false",
       "discount": "10%",
@@ -1738,7 +1669,8 @@
       "SKU": "VEG008CAULIFL2024",
       "category": 2,
       "tags": [
-        9,
+        2,
+        3,
         12
       ],
       "desc": "Fresh white cauliflower heads, versatile and nutritious. Low in carbs and calories, perfect for rice alternatives, roasting, or adding to curries and soups.",
@@ -1789,144 +1721,144 @@
       "stock": "185",
       "color": "white",
       "quantity": 1,
-      "addedAt": "2025-11-26T18:01:54.996Z"
+      "addedAt": "2025-12-01T07:48:49.475Z"
     },
     {
-      "id": "107",
-      "name": "Sweet Corn",
-      "baseprice": 11.59,
-      "rating": 5,
-      "featured": "true",
-      "discount": "5%",
+      "id": "105",
+      "name": "Fresh Tomatoes",
+      "baseprice": 9.49,
+      "rating": 4,
+      "featured": "false",
+      "discount": "8%",
       "imgURL": [
-        "https://images.unsplash.com/photo-1551754655-cd27e38d2076?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1603048588665-791ca8aea617?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1606927493524-ea86b9b4f8b6?q=80&w=687&auto=format&fit=crop"
+        "https://images.unsplash.com/photo-1546094096-0df4bcaaa337?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?q=80&w=735&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1582284540020-8acbe03f4924?q=80&w=687&auto=format&fit=crop"
       ],
-      "SKU": "VEG007CORN2024",
+      "SKU": "VEG005TOMATO2024",
       "category": 2,
       "tags": [
         3,
-        4
+        9
       ],
-      "desc": "Fresh sweet corn on the cob, naturally sweet and tender. Perfect for grilling, boiling, or roasting. A summertime favorite packed with fiber and B vitamins.",
-      "brand": "Sunny Harvest",
+      "desc": "Vine-ripened tomatoes bursting with flavor. Perfect for salads, sauces, or sandwiches. High in lycopene and vitamin C for antioxidant benefits.",
+      "brand": "Farm Fresh Direct",
       "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
       "socialLinks": [
         {
           "id": "1",
           "name": "facebook",
-          "link": "www.facebook.com/sunnyharvest"
+          "link": "www.facebook.com/farmfreshdirect"
         },
         {
           "id": "2",
           "name": "pinterest",
-          "link": "www.pinterest.com/sunnyharvest"
+          "link": "www.pinterest.com/farmfreshdirect"
         },
         {
           "id": "3",
           "name": "twitter",
-          "link": "www.twitter.com/sunnyharvest"
+          "link": "www.twitter.com/farmfreshdirect"
         },
         {
           "id": "4",
           "name": "instagram",
-          "link": "www.instagram.com/sunnyharvest"
+          "link": "www.instagram.com/farmfreshdirect"
         }
       ],
       "reviews": [
         {
           "id": "1",
-          "customer_name": "Karen Thompson",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1551843073-4a9a5b6fcd5f?q=80&w=100&auto=format&fit=crop",
-          "comment": "So sweet and delicious! Kids finished all 4 cobs in one meal.",
-          "dateandtime": "1 hour ago"
+          "customer_name": "Jennifer Martinez",
+          "rating": 4,
+          "profileURL": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?q=80&w=100&auto=format&fit=crop",
+          "comment": "Juicy and flavorful. Great for pasta sauce!",
+          "dateandtime": "2 hours ago"
         },
         {
           "id": "2",
-          "customer_name": "Daniel Clark",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=100&auto=format&fit=crop",
-          "comment": "Perfect for grilling. Tender kernels and great flavor.",
-          "dateandtime": "2 days ago"
+          "customer_name": "Thomas Green",
+          "rating": 4,
+          "profileURL": "https://images.unsplash.com/photo-1463453091185-61582044d556?q=80&w=100&auto=format&fit=crop",
+          "comment": "Good tomatoes, though a couple were slightly soft.",
+          "dateandtime": "1 day ago"
         }
       ],
-      "detail": "Farm-fresh sweet corn picked at peak ripeness to ensure maximum sweetness and tenderness. Our corn is non-GMO and grown using sustainable farming practices. High in fiber, B vitamins, and antioxidants like lutein and zeaxanthin. Grill with butter and herbs, add to salads, or enjoy boiled with a sprinkle of salt. Each ear is individually inspected for quality.",
-      "wt": "700gm",
-      "stock": "225",
-      "color": "yellow",
+      "detail": "Our tomatoes are vine-ripened for authentic garden-fresh taste. Packed with lycopene, a powerful antioxidant linked to heart health and cancer prevention. These versatile tomatoes work beautifully in everything from fresh caprese salads to hearty pasta sauces. Each tomato is hand-selected to ensure consistent quality and flavor.",
+      "wt": "600gm",
+      "stock": "295",
+      "color": "red",
       "quantity": 1,
-      "addedAt": "2025-11-26T18:01:59.881Z"
+      "addedAt": "2025-12-01T08:35:32.573Z"
     },
     {
-      "id": "104",
-      "name": "Baby Spinach Leaves",
-      "baseprice": 6.99,
+      "id": "106",
+      "name": "Organic Cucumber",
+      "baseprice": 7.49,
       "rating": 5,
-      "featured": "true",
-      "discount": "0%",
+      "featured": "false",
+      "discount": "12%",
       "imgURL": [
-        "https://images.unsplash.com/photo-1576045057995-568f588f82fb?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1594282484356-4c0b5c6e76f5?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1574316071802-0d684efa7bf5?q=80&w=687&auto=format&fit=crop"
+        "https://images.unsplash.com/photo-1604977042946-1eecc30f269e?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1589927986089-35812378d193?q=80&w=735&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?q=80&w=687&auto=format&fit=crop"
       ],
-      "SKU": "VEG004SPINACH2024",
+      "SKU": "VEG006CUCUMB2024",
       "category": 2,
       "tags": [
         2,
-        3,
-        5
+        3
       ],
-      "desc": "Tender baby spinach leaves, pre-washed and ready to eat. Excellent source of iron, calcium, and vitamins for a nutritious addition to any meal.",
-      "brand": "Leafy Greens Co.",
+      "desc": "Crisp and refreshing organic cucumbers. Low in calories and high in hydration. Perfect for salads, pickling, or healthy snacking.",
+      "brand": "Green Valley Farms",
       "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
       "socialLinks": [
         {
           "id": "1",
           "name": "facebook",
-          "link": "www.facebook.com/leafygreensco"
+          "link": "www.facebook.com/greenvalleyfarms"
         },
         {
           "id": "2",
           "name": "pinterest",
-          "link": "www.pinterest.com/leafygreensco"
+          "link": "www.pinterest.com/greenvalleyfarms"
         },
         {
           "id": "3",
           "name": "twitter",
-          "link": "www.twitter.com/leafygreensco"
+          "link": "www.twitter.com/greenvalleyfarms"
         },
         {
           "id": "4",
           "name": "instagram",
-          "link": "www.instagram.com/leafygreensco"
+          "link": "www.instagram.com/greenvalleyfarms"
         }
       ],
       "reviews": [
         {
           "id": "1",
-          "customer_name": "Amanda Taylor",
+          "customer_name": "Patricia Harris",
           "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=100&auto=format&fit=crop",
-          "comment": "Always fresh and clean. Perfect for my morning smoothies!",
-          "dateandtime": "30 minutes ago"
+          "profileURL": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop",
+          "comment": "Super crunchy and not bitter at all. Love them!",
+          "dateandtime": "3 hours ago"
         },
         {
           "id": "2",
-          "customer_name": "Christopher White",
+          "customer_name": "James Wilson",
           "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100&auto=format&fit=crop",
-          "comment": "Great quality spinach. Lasts longer than store-bought.",
-          "dateandtime": "6 hours ago"
+          "profileURL": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop",
+          "comment": "Perfect for making pickles. Great freshness.",
+          "dateandtime": "5 days ago"
         }
       ],
-      "detail": "Premium baby spinach leaves harvested young for maximum tenderness. Triple-washed and ready to use straight from the package. Rich in folate, iron, and magnesium, spinach is a nutritional powerhouse that supports bone health and energy production. Perfect for salads, sandwiches, smoothies, or quick sautés.",
-      "wt": "250gm",
-      "stock": "380",
-      "color": "deep green",
-      "quantity": 1,
-      "addedAt": "2025-11-26T18:12:43.677Z"
+      "detail": "Organically grown cucumbers with crisp texture and mild flavor. These cucumbers are 95% water, making them incredibly hydrating and low in calories. Rich in vitamin K and potassium, they support bone health and blood pressure regulation. Excellent for fresh eating, juicing, or making homemade pickles. No wax coating - just pure, natural goodness.",
+      "wt": "450gm",
+      "stock": "340",
+      "color": "green",
+      "quantity": 2,
+      "addedAt": "2025-12-01T08:37:10.863Z",
+      "updatedAt": "2025-12-01T08:37:18.613Z"
     }
   ],
   "wishlist": [
@@ -1946,8 +1878,7 @@
       "category": 2,
       "tags": [
         2,
-        3,
-        9
+        3
       ],
       "desc": "Crisp and refreshing organic cucumbers. Low in calories and high in hydration. Perfect for salads, pickling, or healthy snacking.",
       "brand": "Green Valley Farms",
@@ -1998,69 +1929,135 @@
       "color": "green"
     },
     {
-      "id": "103",
-      "name": "Red Bell Peppers",
-      "baseprice": 10.94,
+      "id": "209",
+      "name": "Fresh Pineapple",
+      "baseprice": 13.77,
       "rating": 5,
       "featured": "false",
-      "discount": "15%",
+      "discount": "10%",
       "imgURL": [
-        "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1525607551316-4a8e16d1f9ba?q=80&w=687&auto=format&fit=crop"
+        "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1587049352847-8d5e0c2e0c88?q=80&w=735&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1602491254713-63fae49c2d55?q=80&w=687&auto=format&fit=crop"
       ],
-      "SKU": "VEG003PEPPER2024",
-      "category": 2,
+      "SKU": "FRUIT009PINEAPPL2024",
+      "category": 1,
       "tags": [
-        3,
-        9
+        9,
+        1
       ],
-      "desc": "Sweet and crunchy red bell peppers, perfect for salads, grilling, or stuffing. Rich in vitamin C and antioxidants for a healthy immune system.",
-      "brand": "Sunny Harvest",
+      "desc": "Sweet and tangy fresh pineapple with tropical flavor. Contains bromelain enzyme for digestion. Perfect for fruit salads, grilling, or tropical smoothies.",
+      "brand": "Tropical Harvest",
       "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
       "socialLinks": [
         {
           "id": "1",
           "name": "facebook",
-          "link": "www.facebook.com/sunnyharvest"
+          "link": "www.facebook.com/tropicalharvest"
         },
         {
           "id": "2",
           "name": "pinterest",
-          "link": "www.pinterest.com/sunnyharvest"
+          "link": "www.pinterest.com/tropicalharvest"
         },
         {
           "id": "3",
           "name": "twitter",
-          "link": "www.twitter.com/sunnyharvest"
+          "link": "www.twitter.com/tropicalharvest"
         },
         {
           "id": "4",
           "name": "instagram",
-          "link": "www.instagram.com/sunnyharvest"
+          "link": "www.instagram.com/tropicalharvest"
         }
       ],
       "reviews": [
         {
           "id": "1",
-          "customer_name": "Lisa Anderson",
+          "customer_name": "Harper White",
           "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format&fit=crop",
-          "comment": "So sweet and crispy! Love using these in my stir-fries.",
-          "dateandtime": "4 hours ago"
+          "profileURL": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=100&auto=format&fit=crop",
+          "comment": "Perfectly ripe and so sweet! Made amazing piña coladas.",
+          "dateandtime": "3 hours ago"
         },
         {
           "id": "2",
-          "customer_name": "Robert Kim",
+          "customer_name": "Alexander Brown",
           "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=100&auto=format&fit=crop",
-          "comment": "Perfect for stuffed peppers. Great size and quality.",
+          "profileURL": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop",
+          "comment": "Great flavor! Grilled some for our BBQ and it was delicious.",
+          "dateandtime": "2 days ago"
+        }
+      ],
+      "detail": "Premium fresh pineapple selected for optimal ripeness and sweetness. This tropical fruit contains bromelain, a unique enzyme that aids digestion and reduces inflammation. Rich in vitamin C, manganese, and antioxidants, pineapple supports immune function and bone health. The sweet-tart flavor profile makes it versatile for both sweet and savory dishes. Excellent fresh, grilled, in smoothies, or added to stir-fries. Look for golden color at the base and fresh green leaves for ripeness indicator.",
+      "wt": "1.8kg",
+      "stock": "155",
+      "color": "golden"
+    },
+    {
+      "id": "105",
+      "name": "Fresh Tomatoes",
+      "baseprice": 9.49,
+      "rating": 4,
+      "featured": "false",
+      "discount": "8%",
+      "imgURL": [
+        "https://images.unsplash.com/photo-1546094096-0df4bcaaa337?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?q=80&w=735&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1582284540020-8acbe03f4924?q=80&w=687&auto=format&fit=crop"
+      ],
+      "SKU": "VEG005TOMATO2024",
+      "category": 2,
+      "tags": [
+        3,
+        9
+      ],
+      "desc": "Vine-ripened tomatoes bursting with flavor. Perfect for salads, sauces, or sandwiches. High in lycopene and vitamin C for antioxidant benefits.",
+      "brand": "Farm Fresh Direct",
+      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
+      "socialLinks": [
+        {
+          "id": "1",
+          "name": "facebook",
+          "link": "www.facebook.com/farmfreshdirect"
+        },
+        {
+          "id": "2",
+          "name": "pinterest",
+          "link": "www.pinterest.com/farmfreshdirect"
+        },
+        {
+          "id": "3",
+          "name": "twitter",
+          "link": "www.twitter.com/farmfreshdirect"
+        },
+        {
+          "id": "4",
+          "name": "instagram",
+          "link": "www.instagram.com/farmfreshdirect"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "1",
+          "customer_name": "Jennifer Martinez",
+          "rating": 4,
+          "profileURL": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?q=80&w=100&auto=format&fit=crop",
+          "comment": "Juicy and flavorful. Great for pasta sauce!",
+          "dateandtime": "2 hours ago"
+        },
+        {
+          "id": "2",
+          "customer_name": "Thomas Green",
+          "rating": 4,
+          "profileURL": "https://images.unsplash.com/photo-1463453091185-61582044d556?q=80&w=100&auto=format&fit=crop",
+          "comment": "Good tomatoes, though a couple were slightly soft.",
           "dateandtime": "1 day ago"
         }
       ],
-      "detail": "Our red bell peppers are vine-ripened to perfection, offering maximum sweetness and nutritional benefits. Contains three times more vitamin C than oranges and packed with vitamin A. Great for raw snacking, roasting, or adding vibrant color to any dish. Each pepper is carefully selected for optimal freshness.",
-      "wt": "300gm",
-      "stock": "410",
+      "detail": "Our tomatoes are vine-ripened for authentic garden-fresh taste. Packed with lycopene, a powerful antioxidant linked to heart health and cancer prevention. These versatile tomatoes work beautifully in everything from fresh caprese salads to hearty pasta sauces. Each tomato is hand-selected to ensure consistent quality and flavor.",
+      "wt": "600gm",
+      "stock": "295",
       "color": "red"
     }
   ]

@@ -18,10 +18,10 @@ const ProductCartSidebar = async (cartProducts) => {
                     <span class="text-sm font-semibold leading-[120%]">
                     ${
                         product.discount ? `
-                        <span class="line-through text-gray-600">${product.baseprice}</span>
-                        <span class="">${product.baseprice -( product.discount.replace("%","")*product.baseprice/100).toFixed(2 )}</span>
+                        <span class="line-through text-gray-600">${product.baseprice.toFixed(2)}</span>
+                        <span class="">${product.baseprice.toFixed(2) - ( product.discount.replace("%","")*product.baseprice/100).toFixed(2)}</span>
                         ` : `
-                        <span class="">${product.baseprice}</span>
+                        <span class="">${product.baseprice.toFixed(2)}</span>
                         `
                     }
                     </span>
@@ -39,7 +39,6 @@ const ProductCartSidebar = async (cartProducts) => {
       `).join("") 
       : 
       `<span class="text-base text-gray-400 leading-[150%]">Cart is empty</span>`;
-        console.log("cartProducts : ",cartProducts);
 }
 
 
@@ -71,9 +70,19 @@ export const productCart = async () => {
         const removeCartProductBtn = document.getElementById(`sidebar-cartproduct-btn-${element.id}`);
         removeCartProductBtn.addEventListener("click", async ()=>{
             await deductCartProduct(element);
+            // loading the product cart
+            await ProductCartSidebar(cartProducts);
+            productCart();
             });
         });
 
+
+        const goToCartBtn = document.getElementById("goToCartBtn");
+        if(goToCartBtn){
+            goToCartBtn.addEventListener("click", ()=>{
+                window.location.href = "/public/shoppingcart.html";
+            })
+        }
     } catch (error) {
         console.log(error);
         return error;
@@ -83,7 +92,7 @@ export const productCart = async () => {
 
  function priceAfterDiscount(curr){
     const quantity = Number(curr.quantity);
-    const price = Number(curr.baseprice.replace("$",""));
+    const price = Number(curr.baseprice);
     const discount = Number(curr.discount.replace("%",""));
     const discountPrice = price - (price * (discount/100));
     return discountPrice * quantity;
@@ -96,16 +105,38 @@ export const HandleSidebarCart = async () =>{
         const cartBackdrop = document.getElementById("cartsidebar-backdrop");
         const cartContainer = document.getElementById("cartsidebar-container");
 
+        if(cartContainer){
+            cartContainer.innerHTML = `
+            <div class="w-full h-full relative space-y-3">
+            <div class="flex justify-between items-center">
+            <h2 class="font-medium leading-[150%] text-xl">Shopping Card (<span id="sidebarCartCount"></span>)</h2>
+            <button id="close-sidebar-cart" type="button" class="size-11 rounded-full flex justify-center items-center cursor-pointer">
+                <i class="fa-solid fa-x text-sm"></i>
+            </button>
+            </div>
+            <div id="cartProduct-container" class="flex flex-col gap-3 max-h-[65%] h-full overflow-scroll overflow-x-hidden"></div>
+            </div>
+            <div class="absolute bottom-0 left-0 w-full h-auto pb-10 px-10 bg-white">
+            <div class="w-full py-6 flex justify-between">
+                <span class="font-medium text-base leading-[150%]">
+                <span id="cartProductCount"></span> Product</span>
+                <span id="cartProductTotal" class="font-semibold text-base leading-[120%]"></span>
+            </div>
+            <div class="flex flex-col gap-3">
+                <button class="py-4 px-10 text-white bg-(--light-green) hover:bg-(--success-dark) rounded-full font-semibold text-base leading-[120%] transition-all duration-200 ease-in-out cursor-pointer">Checkout</button>
+                <button id="goToCartBtn" class="py-4 px-10  text-(--light-green) rounded-full font-semibold text-base leading-[120%] bg-(--bg-button-green) hover:bg-(--light-green)/50 transition-all duration-200 ease-in-out cursor-pointer hover:text-white">Go To Cart</button>
+            </div>
+            </div>
+            `;
+            }
         const {allowScroll, preventScroll} = PreventScroll();
 
         const sidebarCartBtn = document.getElementById("open-sidebar-cart");
         sidebarCartBtn.addEventListener("click",()=>{
-            console.log("sidebarCartBtn");
             cartBackdrop.classList.add("active");
             cartContainer.classList.add("active");
             preventScroll();
         })
-        console.log("sidebarCartBtn : ",sidebarCartBtn);
 
         const closeCartBtn = document.getElementById("close-sidebar-cart");
         closeCartBtn.addEventListener("click",()=>{

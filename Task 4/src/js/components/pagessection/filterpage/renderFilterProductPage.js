@@ -1,9 +1,7 @@
 import { filteredFeatures } from "../../../features/filterFeatures.js";
 import { debounce } from "../../../utils/debounce.js";
 import { FetchApi } from "../../../utils/fetchApi.js";
-import ProductCard from "../../common/productCard.js";
-
-
+import ProductCard, { ProductBtns } from "../../common/productCard.js";
 
 let filter = {
     category : "",
@@ -125,14 +123,14 @@ export const renderProductCards = async (productData) => {
     try {
         const productContainer = document.getElementById("filteredProductContainer");
         const newlyFetchedProducts = productData.data;
-        // update product count in result
         const productCountEl = document.getElementById("filteredProductCount");
 
         if(newlyFetchedProducts.length > 0){
-            const productList = newlyFetchedProducts.map((product)=>ProductCard(product)).join("");
+            const productList = newlyFetchedProducts.map((product)=>ProductCard(product,"filteredProducts")).join("");
             productContainer.innerHTML = productList;
             productCountEl.textContent = productData.items;
             paginationComponent(productData.items);
+            ProductBtns(newlyFetchedProducts,"filteredProducts");
         } else{
             productContainer.innerHTML = `
                 <div class="col-span-12 lg:col-span-6 w-full h-[80vh] flex items-center justify-center">

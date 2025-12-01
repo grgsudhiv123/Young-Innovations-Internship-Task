@@ -1,5 +1,9 @@
 import { productCartFeatures } from "../../../features/cartFeatures.js";
-import { FetchCartProducts } from "../../../utils/fetchApi.js"
+import { FetchCartProducts, updateCartProducts } from "../../../utils/fetchApi.js"
+import { productCart } from "../homepage/productCartSidebar.js";
+
+
+let updatedCartProducts = [];
 
 function calculateDiscountedPrice (baseprice, discount){
     const discountedPrice = baseprice - (baseprice*(discount.replace("%","")/100));
@@ -12,10 +16,14 @@ function calculateSubTotal(product, quantity) {
     return subtotal.toFixed(2);
 }
 
+
+
+
 export const shoppingCartContents = async () => {
     try {
         let cartProducts = []
         cartProducts = await FetchCartProducts();
+        
         const shoppingCartContainer = document.getElementById("shoppingCartTabel");
         const {deleteCartProduct} = productCartFeatures();
         if(cartProducts){
@@ -42,7 +50,7 @@ export const shoppingCartContents = async () => {
                 const subTotalEl = document.getElementById(`subtotal-${product.id}`);
 
                 // check if elements exist
-                if(!deductBtn || !addBtn || !quantityEl || !subTotalEl){
+                if(!deductBtn || !addBtn || !quantityEl || !subTotalEl ||!removeBtn){
                     console.error(`Missing elements for product ${product.id}`);
                     return;
                 }
@@ -56,6 +64,8 @@ export const shoppingCartContents = async () => {
                     quantityEl.innerText = newQuantity;
                     const newSubtotal = calculateSubTotal(product, newQuantity);;
                     subTotalEl.innerText = newSubtotal;
+                    updateCart(product, newQuantity);
+                    updateCartTotal();
                 }
 
                 deductBtn.addEventListener("click", ()=>{
@@ -71,8 +81,24 @@ export const shoppingCartContents = async () => {
                 });
 
                 removeBtn.addEventListener("click", async ()=>{
+                    updatedCartProducts = updatedCartProducts.filter(item => item.id !== product.id);
                     await deleteCartProduct(product.id);
                     await shoppingCartContents();
+                })
+            }
+            
+
+
+            
+
+            // update cart total
+            updateCartTotal();
+
+            // return to shop btn
+            const returnToShopBtn = document.getElementById("returnCartBtn");
+            if(returnToShopBtn){
+                returnToShopBtn.addEventListener("click", ()=>{
+                    window.location.href = "/public/allproducts.html";
                 })
             }
         }
@@ -108,7 +134,7 @@ function shoppingCartTableRow (cartProduct){
             </td>
             <td class="px-2 lg:px-4 xl:px-6 py-2 lg:py-4 xl:py-6">
                 <div class="flex items-center  justify-between gap-3">
-                    <span  class="ml-2 font-medium text-base leading-[150%]">$<span id="subtotal-${cartProduct.id}"></span></span>
+                    <span  class="ml-2 font-medium text-base leading-[150%]">$<span id="subtotal-${cartProduct.id}" class="subtotalRow"></span></span>
                     <button id="removeWishListProduct-${cartProduct.id}" class="text-gray-400 hover:text-red-500 transition size-6 flex justify-center items-center cursor-pointer border-2 border-gray-200 rounded-full">
                         <i class="fas fa-times text-sm"></i>
                     </button>
@@ -117,3 +143,69 @@ function shoppingCartTableRow (cartProduct){
         </tr>   
     `
 }
+
+
+
+const updateCartTotal = () => {
+    const finalsubtotalEl = document.getElementById("cart-subtotal");
+    const finaltotalEl = document.getElementById("cart-total");
+    
+    let totalCost = 0;
+    
+    const subtotalElements = document.querySelectorAll('.subtotalRow');
+
+    subtotalElements.forEach(el => {
+        totalCost += Number(el.innerText);
+    });
+    
+    if(finalsubtotalEl && finaltotalEl){
+        finalsubtotalEl.innerText = totalCost.toFixed(2);
+        finaltotalEl.innerText = totalCost.toFixed(2);
+    }
+}
+
+
+
+
+async function updateCart(product, currentquantity) {
+    
+    const isProductInCart = updatedCartProducts.find(item => item.id === product.id);
+    if(!isProductInCart){
+        updatedCartProducts.push({
+            id: product.id,
+            quantity: currentquantity,
+            updatedAt:new Date().toISOString()
+        })
+    }else{
+        updatedCartProducts = updatedCartProducts.map(item => {
+        if(item.id === product.id){
+        return {
+            ...item, 
+            quantity : currentquantity,
+            updatedAt:new Date().toISOString()
+            }
+        }
+        return item;
+    })
+    }
+
+    // update cart products  
+    const updateCartProductsBtn = document.getElementById("updateCartBtn");
+    if(updateCartProductsBtn){
+    updateCartProductsBtn.addEventListener("click",async () => {
+    if(updatedCartProducts.length === 0){
+        return;
+    }
+
+    for(const item of updatedCartProducts){
+        await updateCartProducts(item, item.id)
+    }
+    await shoppingCartContents();
+    productCart();
+    })
+    }
+}
+
+
+
+

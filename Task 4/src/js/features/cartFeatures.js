@@ -3,6 +3,7 @@ import { AddProducts, DeleteCartProduct, FetchCartProducts, updateCartProducts }
 export const productCartFeatures = ()=>{
     let cartProduct = [];
     let repeatedCartProduct = false;
+    
     const addCartProduct = async (product)=>{
         cartProduct = await FetchCartProducts();
         const repeatedProduct  = cartProduct.find(cartProduct=>cartProduct.id === product.id);
@@ -23,6 +24,7 @@ export const productCartFeatures = ()=>{
           },repeatedProduct.id);
           alert("Product added to cart");
         }
+        window.location.reload();
       }
 
     const deductCartProduct = async (product)=>{

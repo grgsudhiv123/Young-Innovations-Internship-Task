@@ -15,7 +15,7 @@ export const FetchApi = async (url, filter) => {
 
 export const FetchApiById = async (url, id) => {
     try {
-        const response = await fetch(`${BASE_URL}/${url}/${id}`);
+        const response = await fetch(`${BASE_URL}/${url}?id=${id}`);
         const data = await response.json();
         return data;
     } catch (error) {
@@ -87,7 +87,6 @@ export const AddProducts = async (data)=>{
             },
             responseType:"json"
         })
-        console.log("Product added successfully");
         return response;
     } catch (error) {
         console.log(error);
@@ -107,7 +106,6 @@ export const updateCartProducts = async (data,id)=>{
             responseType:"json",
             response : FetchCartProducts()
         })
-        console.log("Product updated successfully");
         return response;
     } catch (error) {
         console.log(error);
@@ -126,7 +124,6 @@ export const DeleteCartProduct = async (id)=>{
             responseType:"json",
             response : FetchCartProducts()
         })
-        console.log("Product deleted successfully");
         return response;
     } catch (error) {
         console.log(error);
