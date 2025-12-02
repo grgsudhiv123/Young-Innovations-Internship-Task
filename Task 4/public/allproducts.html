@@ -60,48 +60,48 @@
                 >
                     <div class="sticky top-4 h-full">
                         <div class="">
-                            <div
-                                class="w-full flex justify-between items-center mb-5"
+                            <button
+                                id="showCategoriesBtn"
+                                type="button"
+                                class="w-full flex justify-between items-center mb-2 md:mb-5 cursor-pointer"
                             >
                                 <h2
-                                    class="text-base lg:text-lg xl:text-xl font-medium leading-[150%]"
+                                    class="text-sm md:text-base lg:text-lg xl:text-xl font-medium leading-[150%]"
                                 >
                                     All Categories
                                 </h2>
-                                <button
-                                    id="showCategoriesBtn"
-                                    type="button"
+                                <span
                                     class="flex items-center justify-center cursor-pointer size-8 rounded-full hover:bg-gray-200 transition-all duration-200 ease-in-out"
                                 >
                                     <i
-                                        class="fa-solid fa-chevron-down text-sm"
+                                        class="fa-solid fa-chevron-down text-xs md:text-sm transition-all duration-200 ease-in-out"
                                     ></i>
-                                </button>
-                            </div>
+                                </span>
+                            </button>
                             <ul
                                 id="filterCategoryContainer"
                                 class="collapseContainer"
                             ></ul>
                         </div>
-                        <div class="border-y border-gray-200 pt-3">
-                            <div
-                                class="w-full flex justify-between items-center mb-5"
+                        <div class="border-y border-gray-200 pt-1 md:pt-3">
+                            <button
+                                id="showPriceRangeBtn"
+                                type="button"
+                                class="w-full flex justify-between items-center mb-2 md:mb-5 cursor-pointer"
                             >
                                 <h2
-                                    class="text-base lg:text-lg xl:text-xl font-medium leading-[150%]"
+                                    class="text-sm md:text-base lg:text-lg xl:text-xl font-medium leading-[150%]"
                                 >
                                     Price
                                 </h2>
-                                <button
-                                    id="showPriceRangeBtn"
-                                    type="button"
+                                <span
                                     class="flex items-center justify-center cursor-pointer size-8 rounded-full hover:bg-gray-200 transition-all duration-200 ease-in-out"
                                 >
                                     <i
-                                        class="fa-solid fa-chevron-down text-sm"
+                                        class="fa-solid fa-chevron-down text-xs md:text-sm transition-all duration-200 ease-in-out"
                                     ></i>
-                                </button>
-                            </div>
+                                </span>
+                            </button>
                             <div
                                 id="priceRangeContainer"
                                 class="collapseContainer"
@@ -149,48 +149,48 @@
                             </div>
                         </div>
                         <div class="">
-                            <div
-                                class="w-full flex justify-between items-center my-5"
+                            <button
+                                id="showRatingBtn"
+                                type="button"
+                                class="w-full flex justify-between items-center my-1.5 md:my-5 cursor-pointer"
                             >
                                 <h2
-                                    class="text-base lg:text-lg xl:text-xl font-medium leading-[150%]"
+                                    class="text-sm md:text-base lg:text-lg xl:text-xl font-medium leading-[150%]"
                                 >
                                     Rating
                                 </h2>
-                                <button
-                                    id="showRatingBtn"
-                                    type="button"
+                                <span
                                     class="flex items-center justify-center cursor-pointer size-8 rounded-full hover:bg-gray-200 transition-all duration-200 ease-in-out"
                                 >
                                     <i
-                                        class="fa-solid fa-chevron-down text-sm"
+                                        class="fa-solid fa-chevron-down text-xs md:text-sm transition-all duration-200 ease-in-out"
                                     ></i>
-                                </button>
-                            </div>
+                                </span>
+                            </button>
                             <ul
                                 id="filterRatingContainer"
                                 class="collapseContainer"
                             ></ul>
                         </div>
-                        <div class="border-t border-gray-200 py-3">
-                            <div
-                                class="w-full flex justify-between items-center mb-5"
+                        <div class="border-t border-gray-200 py-1.5 md:py-3">
+                            <button
+                                id="showTagsBtn"
+                                type="button"
+                                class="w-full flex justify-between items-center mb-2 md:mb-5 cursor-pointer"
                             >
                                 <h2
-                                    class="text-base lg:text-lg xl:text-xl font-medium leading-[150%]"
+                                    class="text-sm md:text-base lg:text-lg xl:text-xl font-medium leading-[150%]"
                                 >
                                     Popular Tag
                                 </h2>
-                                <button
-                                    id="showTagsBtn"
-                                    type="button"
+                                <span
                                     class="flex items-center justify-center cursor-pointer size-8 rounded-full hover:bg-gray-200 transition-all duration-200 ease-in-out"
                                 >
                                     <i
-                                        class="fa-solid fa-chevron-down text-sm"
+                                        class="fa-solid fa-chevron-down text-xs md:text-sm transition-all duration-200 ease-in-out"
                                     ></i>
-                                </button>
-                            </div>
+                                </span>
+                            </button>
                             <div
                                 id="filterTagsContainer"
                                 class="flex gap-3 flex-wrap collapseContainer"
@@ -244,7 +244,7 @@
                                 class="w-full flex justify-between items-center mt-5 mb-5"
                             >
                                 <h2
-                                    class="text-base lg:text-lg xl:text-xl font-medium leading-[150%]"
+                                    class="text-sm md:text-base lg:text-lg xl:text-xl font-medium leading-[150%]"
                                 >
                                     Sale Products
                                 </h2>
@@ -301,11 +301,11 @@
         <!-- productcartsidebar  -->
         <div
             id="cartsidebar-backdrop"
-            class="fixed w-screen h-screen bg-gray-800/80 top-0 left-0 sidebar-backdropstyle"
+            class="fixed z-20 w-screen h-screen bg-gray-800/80 top-0 left-0 sidebar-backdropstyle"
         ></div>
         <div
             id="cartsidebar-container"
-            class="fixed top-[0%] right-[0%] w-[456px] h-screen bg-white p-10 sidebar-containerstyle"
+            class="fixed z-20 top-[0%] right-[0%] w-[350px] md:w-[456px] h-screen bg-white p-5 md:p-10 sidebar-containerstyle"
         ></div>
 
         <script type="module" src="../src/js/filterpage.js"></script>

@@ -30,13 +30,11 @@ export const ProductDetailModel = async (productData) => {
 
 export async function ProductModel(productData) {
     const getCategory = async (id) => {
-        console.log('category id : ', id);
         const categoriesdata = await FetchApiById('categories', id);
         return categoriesdata[0].name;
     };
 
     const categoryName = await getCategory(productData.category);
-    console.log('categoryName : ', categoryName);
 
     const getTags = async () => {
         const tagsdata = await FetchApi('tags', '');
@@ -225,7 +223,6 @@ const handleImage = (productDetail) => {
     const productSlideImgContainer = document.getElementById(
         'model-sliderimg-container',
     );
-    console.log('productSlideImgContainer : ', productSlideImgContainer);
     productDetail.imgURL.forEach((img) => {
         const slideImgDiv = document.createElement('div');
         slideImgDiv.id = `sliderImg-${productDetail.id}-${img}`;

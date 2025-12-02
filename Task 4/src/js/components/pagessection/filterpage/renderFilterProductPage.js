@@ -3,7 +3,7 @@ import { debounce } from '../../../utils/debounce.js';
 import { FetchAllProducts, FetchApi } from '../../../utils/fetchApi.js';
 import ProductCard, { ProductBtns } from '../../common/productCard.js';
 
-const itemsPerPage = 5;
+const itemsPerPage = 15;
 
 let filter = {
     category: '',
@@ -23,9 +23,9 @@ let initialFilter = JSON.parse(JSON.stringify(filter));
 let lastFilter = null;
 
 const debouncedDataFetch = debounce((filter) => {
-    if (isFilterChanged(filter)) {
-        filteredFeatures(filter);
-    }
+    // if (isFilterChanged(filter)) {
+    filteredFeatures(filter);
+    // }
 }, 1000);
 
 const isFilterChanged = (currentFilter) => {
@@ -521,14 +521,13 @@ const saleProductComponents = async () => {
         'saleProductContainer',
     );
     const products = await FetchAllProducts('');
-    console.log('products : ', products);
     const saleProductsData = await products.filter(
         (products) => Number(products.discount.replace('%', '')) > 40,
     );
     if (saleProductsData.length > 0) {
-        const saleProductCards = saleProductsData.slice(0, 3).map(
+        const saleProductCards = await saleProductsData.slice(0, 3).map(
             (product) => `
-        <div class="w-full flex rounded-md border border-gray-100 cursor-pointer hover:border-(--success-dark) products-card-shadow transition-all duration-200 ease-in-out">
+        <div id="saleProductCard-${product.id}" class="w-full flex rounded-md border border-gray-100 cursor-pointer hover:border-(--success-dark) products-card-shadow transition-all duration-200 ease-in-out">
             <div class="max-w-28 w-full max-h-28 h-full aspect-square overflow-hidden p-1">
                 <img src=${product.imgURL[0]} class="w-full h-full object-cover"/> 
             </div>
@@ -545,17 +544,27 @@ const saleProductComponents = async () => {
         </div>
         `,
         );
+        saleProductContainer.innerHTML = await saleProductCards.join('');
 
-        saleProductContainer.innerHTML = saleProductCards.join('');
+        saleProductsData.slice(0, 3).map((product) => {
+            const saleProductCard = document.getElementById(
+                `saleProductCard-${product.id}`,
+            );
+
+            saleProductCard.addEventListener('click', () => {
+                window.location.href = `productsdetail.html?id=${product.id}`;
+            });
+        });
     }
 };
 
 const handleFilterShowBtn = (btnId, compId) => {
     const btn = document.getElementById(btnId);
+    const icon = btn.querySelector('i');
     const comp = document.getElementById(compId);
     if (btn && comp) {
         btn.addEventListener('click', () => {
-            btn.classList.toggle('rotate-180');
+            icon.classList.toggle('rotate-180');
             comp.classList.toggle('active');
         });
     }

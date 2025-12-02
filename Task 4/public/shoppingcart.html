@@ -1,100 +1,180 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="stylesheet" href="../src/css/output.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <title>Shopping Cart</title>
-</head>
-<body>
-    <!-- Header with banner -->
-         <header id="header"></header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../src/css/output.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        />
+        <title>Shopping Cart</title>
+    </head>
+    <body>
+        <!-- Header with banner -->
+        <header id="header"></header>
 
-    <div class="relative h-32 sm:h-40 md:h-48 from-gray-900 to-gray-800 overflow-hidden">
-        <div class="absolute inset-0 bg-black opacity-40"></div>
-        <div class="absolute top-4 left-4 flex items-center gap-2 text-white text-sm">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-            </svg>
-            <span class="opacity-60">/</span>
-            <span class="text-green-400">Shopping cart</span>
+        <div
+            class="relative h-32 sm:h-40 md:h-48 from-gray-900 to-gray-800 overflow-hidden"
+        >
+            <div class="absolute inset-0 bg-black opacity-40"></div>
+            <div
+                class="absolute top-4 left-4 flex items-center gap-2 text-white text-sm"
+            >
+                <svg
+                    class="w-4 h-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                    ></path>
+                </svg>
+                <span class="opacity-60">/</span>
+                <span class="text-green-400">Shopping cart</span>
+            </div>
         </div>
-    </div>
 
-
-    <div class="section-layout-width grid grid-cols-12 p-5 gap-5">
-        <div class="col-span-8 w-full space-y-6">
-            <div class=" w-full border border-gray-200 rounded-lg">
-                <table class="min-w-[550px] w-full overflow-x-scroll">
-                                <thead class="border-b  border-b-gray-200">
+        <div class="section-layout-width my-16">
+            <div class="grid grid-cols-1 xl:grid-cols-12 gap-5">
+                <div class="xl:col-span-8 w-full space-y-6">
+                    <div
+                        class="w-full border border-gray-200 rounded-lg bg-white overflow-hidden"
+                    >
+                        <div class="overflow-x-auto">
+                            <table class="min-w-[550px] w-full">
+                                <thead class="border-b border-b-gray-200">
                                     <tr>
-                                        <th class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-[3%]">Product</th>
-                                        <th class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-[3%]">Price</th>
-                                        <th class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-[3%]">Quantity</th>
-                                        <th class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-[3%]">Subtotal</th>
+                                        <th
+                                            class="px-3 sm:px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-[3%]"
+                                        >
+                                            Product
+                                        </th>
+                                        <th
+                                            class="px-3 sm:px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-[3%]"
+                                        >
+                                            Price
+                                        </th>
+                                        <th
+                                            class="px-3 sm:px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-[3%]"
+                                        >
+                                            Quantity
+                                        </th>
+                                        <th
+                                            class="px-3 sm:px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-[3%]"
+                                        >
+                                            Subtotal
+                                        </th>
                                     </tr>
                                 </thead>
-                                <tbody id ="shoppingCartTabel">
-                                </tbody>
-                </table>
-                <div class="w-full flex justify-between items-center py-4 px-5">
-                    <button type="button" id="returnCartBtn" class="shoppingcart-button">Return to shop</button>
-                    <button type="button" id="updateCartBtn" class="shoppingcart-button">Update cart</button>
+                                <tbody id="shoppingCartTabel"></tbody>
+                            </table>
+                        </div>
+                        <div
+                            class="w-full flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-3 py-4 px-3 sm:px-5"
+                        >
+                            <button
+                                type="button"
+                                id="returnCartBtn"
+                                class="shoppingcart-button"
+                            >
+                                Return to shop
+                            </button>
+                            <button
+                                type="button"
+                                id="updateCartBtn"
+                                class="shoppingcart-button"
+                            >
+                                Update cart
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white rounded-lg p-4 sm:p-5 border border-gray-200 w-full flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-5"
+                    >
+                        <h3 class="text-base md:text-xl font-semibold">
+                            Coupon Code
+                        </h3>
+                        <div
+                            class="flex flex-1 flex-row border border-gray-300 rounded-full focus-within:shadow-xs focus-within:border-gray-500 overflow-hidden"
+                        >
+                            <input
+                                type="text"
+                                placeholder="Enter code"
+                                class="w-full px-4 py-2 md:py-3 focus:outline-none"
+                            />
+                            <button
+                                class="w-fit px-2 md:px-8 py-2 md:py-3 text-xs md:text-base bg-gray-800 text-white rounded-full hover:bg-gray-900 transition font-medium whitespace-nowrap"
+                            >
+                                Apply Coupon
+                            </button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="bg-white rounded-lg p-5 border border-gray-200 w-full flex items-center gap-5">
-                    <h3 class="text-lg font-semibold">Coupon Code</h3>
-                    <div class="flex flex-1 flex-col sm:flex-row  border border-gray-300 rounded-full focus-within:shadow-xs focus-within:border-gray-500">
-                        <input
-                            type="text"
-                            placeholder="Enter code"
-                            class="w-full px-4 py-3 focus:outline-none"
-                        />
-                        <button class="px-8 py-3 bg-gray-800 text-white rounded-full hover:bg-gray-900 transition font-medium whitespace-nowrap">
-                            Apply Coupon
+                <div class="xl:col-span-4 w-full">
+                    <div
+                        class="bg-white rounded-lg border border-gray-200 p-5 sm:p-6 lg:sticky lg:top-4"
+                    >
+                        <h3
+                            class="text-base md:text-xl font-medium leading-[150%] mb-2"
+                        >
+                            Cart Total
+                        </h3>
+
+                        <div class="space-y-2 md:space-y-4 mb-6">
+                            <div
+                                class="flex justify-between py-3 border-b border-gray-200 text-sm font-normal leading-[150%]"
+                            >
+                                <span class="text-gray-700">Subtotal:</span>
+                                <span class="font-medium" id="cart-subtotal"
+                                    >$84.00</span
+                                >
+                            </div>
+                            <div
+                                class="flex justify-between py-3 border-b border-gray-200 text-sm font-normal leading-[150%]"
+                            >
+                                <span class="text-gray-700">Shipping:</span>
+                                <span class="font-medium text-green-600"
+                                    >Free</span
+                                >
+                            </div>
+                            <div
+                                class="flex justify-between py-3 text-base font-normal leading-[150%]"
+                            >
+                                <span class="text-gray-700">Total:</span>
+                                <span
+                                    class="font-semibold text-base"
+                                    id="cart-total"
+                                ></span>
+                            </div>
+                        </div>
+
+                        <button
+                            class="w-fit md:w-full bg-green-500 text-white px-4 py-2 md:py-4 rounded-full font-semibold hover:bg-green-600 transition shadow-md hover:shadow-lg text-sm md:text-base"
+                        >
+                            Proceed to checkout
                         </button>
                     </div>
+                </div>
             </div>
         </div>
-        <div class="col-span-4 w-full">
-            <div class="bg-white rounded-lg border border-gray-200 p-6 lg:sticky lg:top-4">
-                    <h3 class="text-xl font-medium leading-[150%] mb-2">Cart Total</h3>
-                    
-                    <div class="space-y-4 mb-6">
-                        <div class="flex justify-between py-3 border-b border-gray-200 text-sm font-normal leading-[150%]">
-                            <span class="text-gray-700">Subtotal:</span>
-                            <span class="font-medium" id="cart-subtotal">$84.00</span>
-                        </div>
-                        <div class="flex justify-between py-3 border-b border-gray-200 text-sm font-normal leading-[150%]">
-                            <span class="text-gray-700">Shipping:</span>
-                            <span class="font-medium text-green-600">Free</span>
-                        </div>
-                        <div class="flex justify-between py-3 text-base font-normal leading-[150%]">
-                            <span class="text-gray-700">Total:</span>
-                            <span class="font-semibold text-base" id="cart-total">$84.00</span>
-                        </div>
-                    </div>
 
-                    <button class="w-full bg-green-500 text-white py-4 rounded-full font-semibold hover:bg-green-600 transition shadow-md hover:shadow-lg">
-                        Proceed to checkout
-                    </button>
-                </div>
-        </div>
-    </div>
+        <footer id="footer"></footer>
 
+        <!-- productcartsidebar  -->
+        <div
+            id="cartsidebar-backdrop"
+            class="fixed z-20 w-screen h-screen bg-gray-800/80 top-0 left-0 sidebar-backdropstyle"
+        ></div>
+        <div
+            id="cartsidebar-container"
+            class="fixed z-20 top-[0%] right-[0%] w-[350px] md:w-[456px] h-screen bg-white p-5 md:p-10 sidebar-containerstyle"
+        ></div>
 
-    <footer id="footer"></footer>
-
-    <!-- productcartsidebar  -->
-     <div id="cartsidebar-backdrop" class="fixed w-screen h-screen bg-gray-800/80 top-0 left-0 sidebar-backdropstyle">
-     </div>
-     <div id="cartsidebar-container" class="fixed top-[0%] right-[0%] w-[456px] h-screen bg-white p-10 sidebar-containerstyle">
-     </div>
-
-    <script type="module" src="../src/js/shoppingcart.js"></script>
-</body>
+        <script type="module" src="../src/js/shoppingcart.js"></script>
+    </body>
 </html>

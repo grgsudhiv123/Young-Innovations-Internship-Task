@@ -1,68 +1,101 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../src/css/output.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <title>WishList</title>
-</head>
-<body>
-    <header id="header"></header>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../src/css/output.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        />
+        <title>WishList</title>
+    </head>
+    <body>
+        <header id="header"></header>
         <main class="w-full h-full pt-10 pb-20">
-            
-                <h1 class=" font-semibold text-gray-800 w-fit mx-auto mb-8 text-2xl md:text-[32px] leading-[100%] md:leading-[120%]">My Wishlist</h1>
-           
-                <section class="section-layout-width bg-white">
-                    <!-- Page Title -->
+            <h1
+                class="font-semibold text-gray-800 w-fit mx-auto mb-8 text-lg md:text-2xl md:text-[32px] leading-[100%] md:leading-[120%]"
+            >
+                My Wishlist
+            </h1>
 
-                    <!-- Desktop Table View -->
-                    <div class="overflow-x-auto rounded-lg overflow-hidden border border-gray-200">
-                        <table class="min-w-[550px] w-full">
-                            <thead class="border-b  border-gray-200">
-                                <tr>
-                                    <th class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">Product</th>
-                                    <th class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">Price</th>
-                                    <th class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider">Stock Status</th>
-                                    <th class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider"></th>
-                                </tr>
-                            </thead>
-                            <tbody id ="wishlistTabel">
-                                <!-- Product 1 -->
-                            </tbody>
-                        </table>
-                    </div>
+            <section class="section-layout-width bg-white">
+                <!-- Page Title -->
 
-                    <!-- Social Share -->
-                    <div class="p-6 ">
-                        <div class="flex flex-wrap items-center gap-3">
-                            <span class="text-sm text-gray-600 font-medium">Share:</span>
-                            <button class="w-9 h-9 flex items-center justify-center rounded-full bg-green-600 text-white hover:bg-green-700 transition">
-                                <i class="fab fa-facebook-f text-sm"></i>
-                            </button>
-                            <button class="w-9 h-9 flex items-center justify-center rounded-full bg-gray-800 text-white hover:bg-gray-900 transition">
-                                <i class="fab fa-twitter text-sm"></i>
-                            </button>
-                            <button class="w-9 h-9 flex items-center justify-center rounded-full bg-red-600 text-white hover:bg-red-700 transition">
-                                <i class="fab fa-pinterest-p text-sm"></i>
-                            </button>
-                            <button class="w-9 h-9 flex items-center justify-center rounded-full bg-pink-500 text-white hover:bg-pink-600 transition">
-                                <i class="fab fa-instagram text-sm"></i>
-                            </button>
-                        </div>
+                <!-- Desktop Table View -->
+                <div
+                    class="overflow-x-auto rounded-lg overflow-hidden border border-gray-200"
+                >
+                    <table class="min-w-[550px] w-full">
+                        <thead class="border-b border-gray-200">
+                            <tr>
+                                <th
+                                    class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider whitespace-nowrap"
+                                >
+                                    Product
+                                </th>
+                                <th
+                                    class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider whitespace-nowrap"
+                                >
+                                    Price
+                                </th>
+                                <th
+                                    class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider whitespace-nowrap"
+                                >
+                                    Stock Status
+                                </th>
+                                <th
+                                    class="px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-wider whitespace-nowrap"
+                                ></th>
+                            </tr>
+                        </thead>
+                        <tbody id="wishlistTabel">
+                            <!-- Product 1 -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Social Share -->
+                <div class="p-6">
+                    <div class="flex flex-wrap items-center gap-3">
+                        <span class="text-sm text-gray-600 font-medium"
+                            >Share:</span
+                        >
+                        <button
+                            class="w-9 h-9 flex items-center justify-center rounded-full bg-green-600 text-white hover:bg-green-700 transition"
+                        >
+                            <i class="fab fa-facebook-f text-sm"></i>
+                        </button>
+                        <button
+                            class="w-9 h-9 flex items-center justify-center rounded-full bg-gray-800 text-white hover:bg-gray-900 transition"
+                        >
+                            <i class="fab fa-twitter text-sm"></i>
+                        </button>
+                        <button
+                            class="w-9 h-9 flex items-center justify-center rounded-full bg-red-600 text-white hover:bg-red-700 transition"
+                        >
+                            <i class="fab fa-pinterest-p text-sm"></i>
+                        </button>
+                        <button
+                            class="w-9 h-9 flex items-center justify-center rounded-full bg-pink-500 text-white hover:bg-pink-600 transition"
+                        >
+                            <i class="fab fa-instagram text-sm"></i>
+                        </button>
                     </div>
-                </section>
+                </div>
+            </section>
         </main>
-    <footer id="footer"></footer>
-    
-    <!-- productcartsidebar  -->
-     <div id="cartsidebar-backdrop" class="fixed w-screen h-screen bg-gray-800/80 top-0 left-0 sidebar-backdropstyle">
-     </div>
-     <div id="cartsidebar-container" class="fixed top-[0%] right-[0%] w-[456px] h-screen bg-white p-10 sidebar-containerstyle">
-     </div>
-    <script type="module" src="../src/js/wishlist.js"></script>
-</body>
+        <footer id="footer"></footer>
+
+        <!-- productcartsidebar  -->
+        <div
+            id="cartsidebar-backdrop"
+            class="fixed z-20 w-screen h-screen bg-gray-800/80 top-0 left-0 sidebar-backdropstyle"
+        ></div>
+        <div
+            id="cartsidebar-container"
+            class="fixed z-20 top-[0%] right-[0%] w-[350px] md:w-[456px] h-screen bg-white p-5 md:p-10 sidebar-containerstyle"
+        ></div>
+        <script type="module" src="../src/js/wishlist.js"></script>
+    </body>
 </html>
