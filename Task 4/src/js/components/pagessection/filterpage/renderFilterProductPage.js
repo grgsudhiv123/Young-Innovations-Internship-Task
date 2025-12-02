@@ -1,6 +1,6 @@
 import { filteredFeatures } from "../../../features/filterFeatures.js";
 import { debounce } from "../../../utils/debounce.js";
-import { FetchApi } from "../../../utils/fetchApi.js";
+import { FetchAllProducts, FetchApi } from "../../../utils/fetchApi.js";
 import ProductCard, { ProductBtns } from "../../common/productCard.js";
 
 let filter = {
@@ -127,6 +127,10 @@ export const renderfilterProductsPage = async () => {
         // clear filter btn
         clearFilter();
         
+
+
+        // saleProductComponents
+        saleProductComponents();
     
     } catch (error) {
         console.log("Error while rendering data : ",error);
@@ -203,13 +207,13 @@ function updatePriceRange(){
 }
 
 // rating
+function stars(ratingCount) {
+    const star = ratingCount 
+                &&`<i class="fa-solid fa-star text-[10px] text-(--warning-color)"></i>`.repeat(Math.floor(ratingCount)) 
+                + `<i class="fa-solid fa-star text-[10px] text-gray-200"></i>`.repeat(5-Math.floor(ratingCount));
+    return star;
+}
 function ratingStars (rating) {
-    function stars(ratingCount) {
-        const star = ratingCount 
-                    &&`<i class="fa-solid fa-star text-sm text-(--warning-color)"></i>`.repeat(Math.floor(ratingCount)) 
-                    + `<i class="fa-solid fa-star text-sm text-gray-200"></i>`.repeat(5-Math.floor(ratingCount));
-        return star;
-    }
     return `
         <li class="flex items-center gap-2 py-2.5">
             <input type="radio" name="rating" id="rating-${rating}" value=${rating} class="w-4 h-4 accent-green-800 cursor-pointer">
@@ -431,6 +435,43 @@ const clearFilter = () => {
 }
 
 
+
+
+function calculateDiscountedPrice (baseprice, discount){
+    const discountedPrice = baseprice - (baseprice*(discount.replace("%","")/100));
+    return discountedPrice.toFixed(2);
+}
+
+
+
+// sale product component 
+const saleProductComponents = async () => {
+    const saleDataConatiner = document.getElementById("saleProductConatiner");
+    const products  = await FetchAllProducts("");
+    console.log("products : ", products);
+    const saleProductsData  = await products.filter(products => Number(products.discount.replace("%","")) > 40);
+    if(saleProductsData.length > 0){
+        const saleProductCards =  saleProductsData.slice(0,3).map((product)=> `
+        <div class="w-full flex rounded-md border border-gray-100 cursor-pointer hover:border-(--success-dark) products-card-shadow transition-all duration-200 ease-in-out">
+            <div class="max-w-[112px] w-full max-h-[112px] h-full aspect-square overflow-hidden p-1">
+                <img src=${product.imgURL[0]} class="w-full h-full object-cover"/> 
+            </div>
+            <div class="px-3 w-full flex flex-col justify-center">
+                <p>${product.name}</p>
+                <p class="text-base font-normal leading-[150%]">
+                <span class="">$${calculateDiscountedPrice(product.baseprice, product.discount)}</span>
+                <span class="line-through text-gray-400">$${product.baseprice}</span>
+                </p>
+                <span class="flex">
+                    ${stars(product.rating)}
+                </span>
+            </div>
+        </div>
+        `)
+
+        saleDataConatiner.innerHTML = saleProductCards.join("");
+    }
+}
 
 
 

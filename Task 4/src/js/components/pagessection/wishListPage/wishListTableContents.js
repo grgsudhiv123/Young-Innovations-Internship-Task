@@ -1,5 +1,7 @@
 import { productCartFeatures } from "../../../features/cartFeatures.js";
 import { DeleteWishlistByID, getAllWishListProduct } from "../../../utils/fetchApi.js";
+import navbar from "../../common/topnavbar.js";
+import { HandleSidebarCart, productCart } from "../homepage/productCartSidebar.js";
 
 export const WishListProductTable = async ()=>{
     let wishListData;
@@ -21,6 +23,10 @@ export const WishListProductTable = async ()=>{
                         try {
                             DeleteWishlistByID(data.id);
                             alert("Product removed from wishlist");
+                            navbar();
+                            WishListProductTable();
+                            HandleSidebarCart();
+                            productCart();
                         } catch (error) {
                             console.error("error while removing the wishlist",error);
                             alert("Error while removing the wishlist");
@@ -39,6 +45,8 @@ export const WishListProductTable = async ()=>{
 
 
 
+                
+
             }
         } else{
             wishlistContainer.innerHTML =`
@@ -56,7 +64,7 @@ export const WishListProductTable = async ()=>{
 }
 
 function wishlistTableRow (wishlist){
-    const discountedPrice = wishlist.baseprice - (wishlist.baseprice * (wishlist.discount.replace("%","")/100)).toFixed(2);
+    const discountedPrice = wishlist.baseprice - (wishlist.baseprice * (wishlist.discount.replace("%","")/100));
     let productAvailable ;
         let stockStatus; 
         let stockColor;
@@ -79,7 +87,7 @@ function wishlistTableRow (wishlist){
                 </div>
             </td>
             <td class="px-4 lg:px-6 py-4 lg:py-6">
-                <span class="text-gray-800 font-semibold">$${discountedPrice}</span>
+                <span class="text-gray-800 font-semibold">$${discountedPrice.toFixed(2)}</span>
                 <span class="text-gray-400 line-through ml-2">$${wishlist.baseprice}</span>
             </td>
             <td class="px-4 lg:px-6 py-4 lg:py-6">

@@ -10,7 +10,7 @@ export const relatedProducts = async (categoryId) => {
             ProductBtns(relatedProducts, "relatedProducts");
         }
 
-        
+            
       
     } catch (error) {
         console.log(error);

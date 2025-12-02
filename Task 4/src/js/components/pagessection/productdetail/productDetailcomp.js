@@ -3,6 +3,7 @@ import { BASE_URL } from "../../../utils/constants.js";
 import { AddProducts, AddWishlist, FetchApi, FetchCartProducts, getAllWishListProduct, updateCartProducts } from "../../../utils/fetchApi.js";
 import { HandleSidebarCart, productCart } from "../homepage/productCartSidebar.js";
 import { getProductInfoTabs } from "./productInfoTabs.js";
+import { relatedProducts } from "./relatedProducts.js";
 
 export const productDetailComp = async (productDetail) => {
     // slider img
@@ -216,13 +217,14 @@ const productDetailButtons = async (productDetail) => {
             } else{
                 await AddProducts({
                     ...productDetail, 
-                    quantity : 1,
+                    quantity : quantity,
                     addedAt:new Date().toISOString()
                 })
             }
             
             alert("Product added to cart");
             // reload cart for fresh data
+            relatedProducts(productDetail.category);
             HandleSidebarCart();
             productCart();
         });

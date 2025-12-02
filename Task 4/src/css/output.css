@@ -245,6 +245,12 @@
   .top-4 {
     top: calc(var(--spacing) * 4);
   }
+  .top-5 {
+    top: calc(var(--spacing) * 5);
+  }
+  .top-20 {
+    top: calc(var(--spacing) * 20);
+  }
   .top-\[0\%\] {
     top: 0%;
   }
@@ -335,8 +341,14 @@
   .mt-2 {
     margin-top: calc(var(--spacing) * 2);
   }
+  .mt-3 {
+    margin-top: calc(var(--spacing) * 3);
+  }
   .mt-4 {
     margin-top: calc(var(--spacing) * 4);
+  }
+  .mt-5 {
+    margin-top: calc(var(--spacing) * 5);
   }
   .mt-6 {
     margin-top: calc(var(--spacing) * 6);
@@ -425,6 +437,18 @@
   .aspect-254\/230 {
     aspect-ratio: 254/230;
   }
+  .aspect-312\/200 {
+    aspect-ratio: 312/200;
+  }
+  .aspect-312\/240 {
+    aspect-ratio: 312/240;
+  }
+  .aspect-312\/250 {
+    aspect-ratio: 312/250;
+  }
+  .aspect-312\/295 {
+    aspect-ratio: 312/295;
+  }
   .aspect-423\/288 {
     aspect-ratio: 423/288;
   }
@@ -492,6 +516,14 @@
     width: calc(var(--spacing) * 11.5);
     height: calc(var(--spacing) * 11.5);
   }
+  .size-312 {
+    width: calc(var(--spacing) * 312);
+    height: calc(var(--spacing) * 312);
+  }
+  .size-312\/295 {
+    width: calc(312/295 * 100%);
+    height: calc(312/295 * 100%);
+  }
   .size-\[11px\] {
     width: 11px;
     height: 11px;
@@ -515,6 +547,10 @@
   .size-\[100px\] {
     width: 100px;
     height: 100px;
+  }
+  .size-\[112px\] {
+    width: 112px;
+    height: 112px;
   }
   .h-0 {
     height: calc(var(--spacing) * 0);
@@ -540,6 +576,9 @@
   .h-32 {
     height: calc(var(--spacing) * 32);
   }
+  .h-295 {
+    height: calc(var(--spacing) * 295);
+  }
   .h-\[26px\] {
     height: 26px;
   }
@@ -551,6 +590,12 @@
   }
   .h-\[80vh\] {
     height: 80vh;
+  }
+  .h-\[200px\] {
+    height: 200px;
+  }
+  .h-\[295px\] {
+    height: 295px;
   }
   .h-auto {
     height: auto;
@@ -572,6 +617,12 @@
   }
   .max-h-\[65\%\] {
     max-height: 65%;
+  }
+  .max-h-\[112px\] {
+    max-height: 112px;
+  }
+  .max-h-\[295px\] {
+    max-height: 295px;
   }
   .w-4 {
     width: calc(var(--spacing) * 4);
@@ -629,6 +680,9 @@
   }
   .max-w-\[82\.43rem\] {
     max-width: 82.43rem;
+  }
+  .max-w-\[112px\] {
+    max-width: 112px;
   }
   .max-w-\[120px\] {
     max-width: 120px;
@@ -697,6 +751,18 @@
     --tw-translate-y: calc(50% * -1);
     translate: var(--tw-translate-x) var(--tw-translate-y);
   }
+  .scale-90 {
+    --tw-scale-x: 90%;
+    --tw-scale-y: 90%;
+    --tw-scale-z: 90%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
+  .scale-100 {
+    --tw-scale-x: 100%;
+    --tw-scale-y: 100%;
+    --tw-scale-z: 100%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
   .scale-110 {
     --tw-scale-x: 110%;
     --tw-scale-y: 110%;
@@ -707,6 +773,24 @@
     --tw-scale-x: 115%;
     --tw-scale-y: 115%;
     --tw-scale-z: 115%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
+  .scale-120 {
+    --tw-scale-x: 120%;
+    --tw-scale-y: 120%;
+    --tw-scale-z: 120%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
+  .scale-125 {
+    --tw-scale-x: 125%;
+    --tw-scale-y: 125%;
+    --tw-scale-z: 125%;
+    scale: var(--tw-scale-x) var(--tw-scale-y);
+  }
+  .scale-130 {
+    --tw-scale-x: 130%;
+    --tw-scale-y: 130%;
+    --tw-scale-z: 130%;
     scale: var(--tw-scale-x) var(--tw-scale-y);
   }
   .scale-150 {
@@ -1109,14 +1193,83 @@
     --tw-gradient-to: var(--color-gray-800);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
   }
+  .object-contain {
+    object-fit: contain;
+  }
   .object-cover {
     object-fit: cover;
   }
   .object-\[-10px_10px\] {
     object-position: -10px 10px;
   }
+  .object-\[-50px_10px\] {
+    object-position: -50px 10px;
+  }
+  .object-\[-50px_40px\] {
+    object-position: -50px 40px;
+  }
+  .object-\[-80px_10px\] {
+    object-position: -80px 10px;
+  }
   .object-\[-90px_0px\] {
     object-position: -90px 0px;
+  }
+  .object-\[-100px_10px\] {
+    object-position: -100px 10px;
+  }
+  .object-\[-100px_40px\] {
+    object-position: -100px 40px;
+  }
+  .object-\[-150px-10px\] {
+    object-position: -150px-10px;
+  }
+  .object-\[-150px-50px\] {
+    object-position: -150px-50px;
+  }
+  .object-\[-150px_0px\] {
+    object-position: -150px 0px;
+  }
+  .object-\[-150px_10px\] {
+    object-position: -150px 10px;
+  }
+  .object-\[-150px_20px\] {
+    object-position: -150px 20px;
+  }
+  .object-\[-150px_25px\] {
+    object-position: -150px 25px;
+  }
+  .object-\[-150px_30px\] {
+    object-position: -150px 30px;
+  }
+  .object-\[-150px_40px\] {
+    object-position: -150px 40px;
+  }
+  .object-\[-150px_50px\] {
+    object-position: -150px 50px;
+  }
+  .object-\[-190px_20px\] {
+    object-position: -190px 20px;
+  }
+  .object-\[-190px_30px\] {
+    object-position: -190px 30px;
+  }
+  .object-\[-200px_10px\] {
+    object-position: -200px 10px;
+  }
+  .object-\[10px_-10px\] {
+    object-position: 10px -10px;
+  }
+  .object-\[10px_-50px\] {
+    object-position: 10px -50px;
+  }
+  .object-\[10px_10px\] {
+    object-position: 10px 10px;
+  }
+  .object-\[10px_40px\] {
+    object-position: 10px 40px;
+  }
+  .object-\[10px_50px\] {
+    object-position: 10px 50px;
   }
   .object-\[40px_-35px\] {
     object-position: 40px -35px;
@@ -1308,6 +1461,9 @@
     font-size: var(--text-xs);
     line-height: var(--tw-leading, var(--text-xs--line-height));
   }
+  .text-\[2rem\] {
+    font-size: 2rem;
+  }
   .text-\[8px\] {
     font-size: 8px;
   }
@@ -1391,6 +1547,9 @@
   }
   .text-\(--text-yellow\) {
     color: var(--text-yellow);
+  }
+  .text-\(--warning\) {
+    color: var(--warning);
   }
   .text-\(--warning-color\) {
     color: var(--warning-color);
@@ -2982,6 +3141,16 @@
       --tw-scale-y: 220%;
       --tw-scale-z: 220%;
       scale: var(--tw-scale-x) var(--tw-scale-y);
+    }
+  }
+  .\32 xl\:object-\[-150px-30px\] {
+    @media (width >= 96rem) {
+      object-position: -150px-30px;
+    }
+  }
+  .\32 xl\:object-\[-150px-50px\] {
+    @media (width >= 96rem) {
+      object-position: -150px-50px;
     }
   }
   .\32 xl\:object-\[115px_0px\] {

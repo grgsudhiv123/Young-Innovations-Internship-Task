@@ -34,8 +34,8 @@
             </p>
         </div>
     </div>
-    <div class="section-layout-width grid grid-cols-8 gap-6 h-auto mb-10">
-        <div id="filter-sidebar" class="hidden md:block col-span-2 h-auto">
+    <div class="section-layout-width grid grid-cols-8 gap-6 h-full mb-10">
+        <div id="filter-sidebar" class="hidden md:block col-span-2 h-full">
             <div class="sticky top-4 h-full">
                 <div class="">
                     <div class="w-full flex justify-between items-center mb-5">
@@ -82,7 +82,7 @@
                     <ul id="filterRatingContainer" class="pb-4">
                     </ul>
                 </div>
-                <div class="border-t border-gray-200 pt-3">
+                <div class="border-t border-gray-200 py-3">
                     <div class="w-full flex justify-between items-center mb-5">
                         <h2 class="text-xl font-medium leading-[150%]">Popular Tag</h2>
                         <button id="showPriceRangeBtn" type="button" class="flex items-center justify-center cursor-pointer size-8 rounded-full hover:bg-gray-200 transition-all duration-200 ease-in-out ">
@@ -92,8 +92,29 @@
                     <div id="filterTagsContainer" class="flex gap-3 flex-wrap">
                     </div>
                 </div>
-                <div class="">
-                    <img src="" alt=""/>    
+
+                <div class="aspect-312/295 overflow-hidden rounded-lg mt-3 relative">
+                    <img src="../src/assets/images/allproductspage/filterimg.jpg" class="w-full h-full object-cover scale-130 object-[-190px_30px]"/>
+                    <div class="absolute top-5 -translate-x-[50%] left-[50%]">
+                        <h2 class="whitespace-nowrap flex items-center gap-1">
+                            <span class="font-semibold text-[2rem] leading-[120%] text-(--warning-color)">79%</span>
+                            <span class="font-normal text-2xl leading-[150%]">Discount</span>
+                        </h2>
+                        <p class="font-normal text-base leading-[150%] text-gray-700  text-center">on your first order</p>
+                        <a href="/shop now" class="text-(--light-green) flex flex-row gap-1 md:gap-3 items-center justify-center mt-3">
+                            <span class="font-semibold capitalize text-xs sm:text-sm xl:text-base leading-[100%] lg:leading-[120%]">Shop now</span>
+                            <i
+                                class="fa-solid fa-arrow-right animate-pulse duration-500 ease-linear text-xs sm:text-base"
+                            ></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="w-full flex justify-between items-center mt-5 mb-5">
+                        <h2 class="text-xl font-medium leading-[150%]">Sale Products</h2>
+                    </div>
+                    <div id="saleProductConatiner" class="flex flex-col gap-4"></div>
                 </div>
             </div>
         </div>
