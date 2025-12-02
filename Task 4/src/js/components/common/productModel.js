@@ -1,62 +1,69 @@
-import { handleWishList } from "../../features/wishListFeatures.js";
-import { AddProducts, FetchApi, FetchApiById, FetchCartProducts, getAllWishListProduct, updateCartProducts } from "../../utils/fetchApi.js";
-import { PreventScroll } from "../../utils/preventScroll.js";
-import { HandleSidebarCart, productCart } from "../pagessection/homepage/productCartSidebar.js";
-
-
-
+import { handleWishList } from '../../features/wishListFeatures.js';
+import {
+    AddProducts,
+    FetchApi,
+    FetchApiById,
+    FetchCartProducts,
+    getAllWishListProduct,
+    updateCartProducts,
+} from '../../utils/fetchApi.js';
+import { PreventScroll } from '../../utils/preventScroll.js';
+import {
+    HandleSidebarCart,
+    productCart,
+} from '../pagessection/homepage/productCartSidebar.js';
 
 export const ProductDetailModel = async (productData) => {
-  try {
-    await ProductModel(productData);
+    try {
+        await ProductModel(productData);
 
-    // handle image 
-    handleImage(productData);
+        // handle image
+        handleImage(productData);
 
-    // handle product model btns
-    productDetailButtons(productData);
-  } catch (error) {
-    console.log(error);
-    return error;
-  }
-}
-
-
-
+        // handle product model btns
+        productDetailButtons(productData);
+    } catch (error) {
+        console.log(error);
+        return error;
+    }
+};
 
 export async function ProductModel(productData) {
-  const getCategory = async(id) =>{
-    console.log("category id : ",id);
-    const categoriesdata = await FetchApiById("categories",id);
-    return categoriesdata[0].name;
-  }
+    const getCategory = async (id) => {
+        console.log('category id : ', id);
+        const categoriesdata = await FetchApiById('categories', id);
+        return categoriesdata[0].name;
+    };
 
-  const categoryName = await getCategory(productData.category);
-  console.log("categoryName : ",categoryName);
+    const categoryName = await getCategory(productData.category);
+    console.log('categoryName : ', categoryName);
 
-  const getTags = async() =>{
-    const tagsdata = await FetchApi("tags","");
-    return tagsdata;
-  }
+    const getTags = async () => {
+        const tagsdata = await FetchApi('tags', '');
+        return tagsdata;
+    };
 
-  const tagDatas = await getTags(); 
-  const tagNames = productData.tags.map((tags)=>tagDatas.find(data=> Number(data.id) === Number(tags)).name);
+    const tagDatas = await getTags();
+    const tagNames = productData.tags.map(
+        (tags) =>
+            tagDatas.find((data) => Number(data.id) === Number(tags)).name,
+    );
 
-  const modelContainer = document.getElementById("model-container");
+    const modelContainer = document.getElementById('model-container');
 
-function handleSocialLinks(platform) {
-  const icons = {
-    facebook: "fa-facebook-f",
-    instagram: "fa-instagram",
-    twitter: "fa-twitter",
-    pinterest: "fa-pinterest-p"
-  };
+    function handleSocialLinks(platform) {
+        const icons = {
+            facebook: 'fa-facebook-f',
+            instagram: 'fa-instagram',
+            twitter: 'fa-twitter',
+            pinterest: 'fa-pinterest-p',
+        };
 
-  const iconClass = icons[platform] || "fa-link";
-  return `<i class="fa-brands ${iconClass} footer-a-link-icon"></i>`;
-}
+        const iconClass = icons[platform] || 'fa-link';
+        return `<i class="fa-brands ${iconClass} footer-a-link-icon"></i>`;
+    }
 
-  modelContainer.innerHTML = `
+    modelContainer.innerHTML = `
     <div class="max-w-[350px] sm:max-w-[650px] md:max-w-[720px] lg:max-w-[950px] xl:max-w-[1200px] 2xl:max-w-[1320px] mx-auto w-full bg-white p-5 xl:p-10 h-[70vh] sm:h-auto flex lg:items-center flex-col sm:flex-row gap-6 relative overflow-y-scroll sm:overflow-y-auto overflow-x-hidden rounded-lg">
     <button id="model-close-btn" class="fixed p-4 top-0 right-0 cursor-pointer">
       <i class="fa-solid fa-x text-sm lg:text-xl text-gray-500 hover:text-gray-700"></i>
@@ -82,11 +89,11 @@ function handleSocialLinks(platform) {
               <div class="flex flex-row gap-2 w-fit items-center">
                 <h2 class="text-lg sm:text-2xl xl:text-4xl font-semibold leading-[120%]">${productData.name}</h2>
                 ${
-                  productData.stock
-                    ? `
+                    productData.stock
+                        ? `
                   <span class="bg-green-500/20 px-1 xl:px-2 py-0.5 xl:py-1 rounded-sm text-(--success-dark) leading-[150%] text-xs xl:text-sm h-fit">In Stock</span>
                   `
-                    : `<span class="bg-red-500/20 px-1 xl:px-2 py-0.5 xl:py-1 rounded-sm text-red-800 leading-[150%] text-xs xl:text-sm h-fit">Out Of Stock</span>
+                        : `<span class="bg-red-500/20 px-1 xl:px-2 py-0.5 xl:py-1 rounded-sm text-red-800 leading-[150%] text-xs xl:text-sm h-fit">Out Of Stock</span>
                   `
                 }
               </div>
@@ -95,14 +102,14 @@ function handleSocialLinks(platform) {
                  <div class="flex flex-row items-center gap-2">
                     <div>
                     ${
-                      productData.rating
-                        ? `<i class="fa-solid fa-star text-[8px] md:text-xs text-(--warning-color) hover:scale-105"></i>`.repeat(
-                            Math.floor(productData.rating)
-                          ) +
-                          `<i class="fa-solid fa-star text-[8px] md:text-xs text-gray-200"></i>`.repeat(
-                            Math.floor(5 - productData.rating)
-                          )
-                        : ` `
+                        productData.rating
+                            ? `<i class="fa-solid fa-star text-[8px] md:text-xs text-(--warning-color) hover:scale-105"></i>`.repeat(
+                                  Math.floor(productData.rating),
+                              ) +
+                              `<i class="fa-solid fa-star text-[8px] md:text-xs text-gray-200"></i>`.repeat(
+                                  Math.floor(5 - productData.rating),
+                              )
+                            : ` `
                     }
                     </div>
                     <p class="font-normal text-xs xl:text-sm leading-[150%] text-gray-600">${productData.reviews.length} Reviews</p>
@@ -118,26 +125,26 @@ function handleSocialLinks(platform) {
                 <div class="flex flex-row gap-3">
                   <p class="text-xs md:text-base xl:text-xl font-normal leading-[150%]">
                     ${
-                      productData.discount
-                      ? ` 
+                        productData.discount
+                            ? ` 
                             <span class="line-through text-gray-400">$${parseFloat(
-                              productData.baseprice
+                                productData.baseprice,
                             )}</span> 
                             <span class="text-(--success-dark)">$${parseFloat(
-                      productData.baseprice -
-                                  (productData.baseprice *
-                                    productData.discount.replace("%", "")) /
-                                    100
-                              ).toFixed(2)}</span>  
+                                productData.baseprice -
+                                    (productData.baseprice *
+                                        productData.discount.replace('%', '')) /
+                                        100,
+                            ).toFixed(2)}</span>  
                             `
                             : `<span>$${parseFloat(productData.baseprice)}</span> `
-                        }
+                    }
                   </p>
                   ${
-                      productData.discount.replace("%", "")
-                        ? `<span class="px-px md:px-2 py-px md:py-[3px] rounded-full bg-(--bg-error)/20 text-red-800 text-[8px] md:text-[10px] xl:text-sm leading-[150%] font-medium">${productData.discount} Off</span>`
-                        : ""
-                    }
+                      productData.discount.replace('%', '')
+                          ? `<span class="px-px md:px-2 py-px md:py-[3px] rounded-full bg-(--bg-error)/20 text-red-800 text-[8px] md:text-[10px] xl:text-sm leading-[150%] font-medium">${productData.discount} Off</span>`
+                          : ''
+                  }
                 </div>
       </div>
         <div class="flex flex-col w-full gap-4">
@@ -151,13 +158,15 @@ function handleSocialLinks(platform) {
                     <div class="flex flex-row gap-2.5 items-center ">
                       <span class="text-xs lg:text-sm font-normal leading-[150%]">Share Items:</span>
                       <div class="flex flex-row gap-[5px]">
-                      ${
-                        productData.socialLinks.map((link)=>`
+                      ${productData.socialLinks
+                          .map(
+                              (link) => `
                         <a href=${link.link} target="_blank" class="footer-a-link group">
                         ${handleSocialLinks(`${link.name}`)}
                         </a>
-                        `).join("")
-                      }
+                        `,
+                          )
+                          .join('')}
                       </div>
                     </div>
             </div>
@@ -189,147 +198,152 @@ function handleSocialLinks(platform) {
           </div>
           <div class="flex gap-[6px] font-semibold leading-[150%] capitalize">
             <p>Tags : </p> 
-            ${
-              tagNames.map((tag)=> `<span class="text-gray-500">${tag}</span>`).join("")
-            }
+            ${tagNames
+                .map((tag) => `<span class="text-gray-500">${tag}</span>`)
+                .join('')}
           </div>
         </div>
       </div>
     </div>
   `;
 
-  const {allowScroll} = PreventScroll();
+    const { allowScroll } = PreventScroll();
 
-  const modelCloseBtn = document.getElementById("model-close-btn");
-  modelCloseBtn.addEventListener("click", () => {
-    const modelContainer = document.getElementById("model-container");
-    const modelBackdrop = document.getElementById("model-backdrop");
-    if(modelContainer && modelBackdrop){
-      modelContainer.classList.remove("active");
-      modelBackdrop.classList.remove("active");
-      allowScroll();
-    } 
+    const modelCloseBtn = document.getElementById('model-close-btn');
+    modelCloseBtn.addEventListener('click', () => {
+        const modelContainer = document.getElementById('model-container');
+        const modelBackdrop = document.getElementById('model-backdrop');
+        if (modelContainer && modelBackdrop) {
+            modelContainer.classList.remove('active');
+            modelBackdrop.classList.remove('active');
+            allowScroll();
+        }
     });
 }
 
-
 const handleImage = (productDetail) => {
-   const productSlideImgContainer = document.getElementById("model-sliderimg-container");
-   console.log("productSlideImgContainer : ",productSlideImgContainer);
-    productDetail.imgURL.forEach(img => {
-        const slideImgDiv = document.createElement("div");
-        slideImgDiv.id = `sliderImg-${productDetail.id}-${img}`
+    const productSlideImgContainer = document.getElementById(
+        'model-sliderimg-container',
+    );
+    console.log('productSlideImgContainer : ', productSlideImgContainer);
+    productDetail.imgURL.forEach((img) => {
+        const slideImgDiv = document.createElement('div');
+        slideImgDiv.id = `sliderImg-${productDetail.id}-${img}`;
         slideImgDiv.classList.add('product-img-div');
-        const slideImg = document.createElement("img");
-        slideImg.classList.add("img-styling");
+        const slideImg = document.createElement('img');
+        slideImg.classList.add('img-styling');
         slideImg.src = img;
-        slideImg.alt = productDetail.name + img ;
+        slideImg.alt = productDetail.name + img;
         slideImgDiv.appendChild(slideImg);
         productSlideImgContainer.appendChild(slideImgDiv);
     });
 
-
-
-     // hero img
-    const productMainImgContainer = document.getElementById("model-mainimg-container");
-    const productMainImg = document.createElement("img");
-    productMainImg.classList.add("img-styling");
+    // hero img
+    const productMainImgContainer = document.getElementById(
+        'model-mainimg-container',
+    );
+    const productMainImg = document.createElement('img');
+    productMainImg.classList.add('img-styling');
     productMainImg.src = productDetail.imgURL[0];
     productMainImg.alt = productDetail.name + productDetail.imgURL[0];
     productMainImgContainer.appendChild(productMainImg);
-    
-    
-    // handle slider img btn 
-    const slidePrevBtn = document.getElementById("model-slideimgbtn-prev");
-    const slideNextBtn = document.getElementById("model-slideimgbtn-next");
+
+    // handle slider img btn
+    const slidePrevBtn = document.getElementById('model-slideimgbtn-prev');
+    const slideNextBtn = document.getElementById('model-slideimgbtn-next');
     let imgCount = 0;
-    slidePrevBtn.addEventListener("click", () => {
-        if(imgCount>0){
+    slidePrevBtn.addEventListener('click', () => {
+        if (imgCount > 0) {
             imgCount = imgCount - 1;
         }
         productMainImg.src = productDetail.imgURL[imgCount];
-        productMainImg.alt = productDetail.name + productDetail.imgURL[imgCount];
+        productMainImg.alt =
+            productDetail.name + productDetail.imgURL[imgCount];
     });
-    slideNextBtn.addEventListener("click", () => {
-        if(imgCount < productDetail.imgURL.length-1){
+    slideNextBtn.addEventListener('click', () => {
+        if (imgCount < productDetail.imgURL.length - 1) {
             imgCount = imgCount + 1;
         }
         productMainImg.src = productDetail.imgURL[imgCount];
-        productMainImg.alt = productDetail.name + productDetail.imgURL[imgCount];
+        productMainImg.alt =
+            productDetail.name + productDetail.imgURL[imgCount];
     });
-}
-
-
+};
 
 const productDetailButtons = async (productDetail) => {
-        
     const cartProducts = await FetchCartProducts();
-    const isProductInCart = cartProducts.find((cartproduct)=> cartproduct.id === productDetail.id );
-    
+    const isProductInCart = cartProducts.find(
+        (cartproduct) => cartproduct.id === productDetail.id,
+    );
+
     let quantity = isProductInCart ? isProductInCart.quantity : 1;
-    const deductQuantityBtn = document.getElementById("modelProductDeductbtn");
-    const addQuantityBtn = document.getElementById("modelProductAddbtn");
-    const productQuantity = document.getElementById("modelProductQuantity");
+    const deductQuantityBtn = document.getElementById('modelProductDeductbtn');
+    const addQuantityBtn = document.getElementById('modelProductAddbtn');
+    const productQuantity = document.getElementById('modelProductQuantity');
 
     productQuantity.innerText = quantity;
 
-    deductQuantityBtn.addEventListener("click", () => {
-        if(quantity > 1){
+    deductQuantityBtn.addEventListener('click', () => {
+        if (quantity > 1) {
             quantity = quantity - 1;
             productQuantity.innerText = quantity;
         }
-    })
+    });
 
-
-    addQuantityBtn.addEventListener("click", ()=> {
-        if(quantity < productDetail.stock){
+    addQuantityBtn.addEventListener('click', () => {
+        if (quantity < productDetail.stock) {
             quantity = quantity + 1;
             productQuantity.innerText = quantity;
         }
-    })
+    });
 
-    const addToCartBtn = document.getElementById("modelAddtoCartBtn");
-    if(addToCartBtn) {
-        addToCartBtn.addEventListener("click", async () => {
-            if(isProductInCart){
-                await updateCartProducts({
-                    id: productDetail.id,
-                    quantity: quantity,
-                    updatedAt: new Date().toISOString(),
-                }, productDetail.id);
-            } else{
+    const addToCartBtn = document.getElementById('modelAddtoCartBtn');
+    if (addToCartBtn) {
+        addToCartBtn.addEventListener('click', async () => {
+            if (isProductInCart) {
+                await updateCartProducts(
+                    {
+                        id: productDetail.id,
+                        quantity: quantity,
+                        updatedAt: new Date().toISOString(),
+                    },
+                    productDetail.id,
+                );
+            } else {
                 await AddProducts({
-                    ...productDetail, 
-                    quantity : quantity,
-                    addedAt:new Date().toISOString()
-                })
+                    ...productDetail,
+                    quantity: quantity,
+                    addedAt: new Date().toISOString(),
+                });
             }
-            
-            alert("Product added to cart");
+
+            alert('Product added to cart');
             // reload cart for fresh data
             HandleSidebarCart();
             productCart();
         });
     }
-    
+
     // product wishlist btn
-    const productWishlistBtn = document.getElementById("modelWishlistBtn");
-    const productwishlistBtnIcon = document.getElementById("modelWishlistIcon");
-    if(productWishlistBtn){
+    const productWishlistBtn = document.getElementById('modelWishlistBtn');
+    const productwishlistBtnIcon = document.getElementById('modelWishlistIcon');
+    if (productWishlistBtn) {
         const wishlistData = await getAllWishListProduct();
-        const isProductInCart = wishlistData.find((wishlistproduct)=> wishlistproduct.id === productDetail.id );
-        if(isProductInCart){
-            productwishlistBtnIcon.classList.remove("fa-regular");
-            productwishlistBtnIcon.classList.add("fa-solid");
-        } else{
-            productwishlistBtnIcon.classList.remove("fa-solid");
-            productwishlistBtnIcon.classList.add("fa-regular");
+        const isProductInCart = wishlistData.find(
+            (wishlistproduct) => wishlistproduct.id === productDetail.id,
+        );
+        if (isProductInCart) {
+            productwishlistBtnIcon.classList.remove('fa-regular');
+            productwishlistBtnIcon.classList.add('fa-solid');
+        } else {
+            productwishlistBtnIcon.classList.remove('fa-solid');
+            productwishlistBtnIcon.classList.add('fa-regular');
         }
 
-        productWishlistBtn.addEventListener("click", async () => {
+        productWishlistBtn.addEventListener('click', async () => {
             handleWishList(productDetail);
             HandleSidebarCart();
             productCart();
-        })
-  }
-}
+        });
+    }
+};

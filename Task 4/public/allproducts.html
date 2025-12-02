@@ -1,154 +1,313 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../src/css/output.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-    <title>Filter Page</title>
-</head>
-<body>
-    <header id="header"></header>
-    <main>
-   
-    <div class="section-layout-width grid grid-cols-8 pb-6 pt-8 gap-6">
-        <div class="col-span-2">
-            <button type="button" id="clearFilterBtn" class="px-8 py-3.5 rounded-full flex gap-3 items-center font-semibold text-sm leading-[120%] text-white bg-gray-400 transition-all duration-200 ease-in-out cursor-pointer"><span>Filter</span> <i class="fa-solid fa-sliders"></i></button>
-        </div>
-        <div class="col-span-6 flex justify-between items-center">
-            <div class="flex flex-row items-center gap-2 font-normal text-sm leading-[150%]">
-                <p class="text-gray-500">Sort by:</p>
-                <select  id="sortBySelect" class="px-4 py-2.5 border border-gray-200 rounded-sm cursor-pointer text-gray-700">
-                    <option selected>Choose</option>
-                    <option value="asc">Price: Low to High</option>
-                    <option value="desc">Price: High to Low</option>
-                </select>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../src/css/output.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        />
+        <title>Filter Page</title>
+    </head>
+    <body>
+        <header id="header"></header>
+        <main>
+            <div class="section-layout-width grid grid-cols-8 pb-6 pt-8 gap-6">
+                <div class="col-span-3 md:col-span-2">
+                    <button
+                        type="button"
+                        id="clearFilterBtn"
+                        class="px-8 py-3.5 rounded-full flex gap-3 items-center font-semibold text-sm leading-[120%] text-white bg-gray-400 transition-all duration-200 ease-in-out cursor-pointer"
+                    >
+                        <span>Filter</span> <i class="fa-solid fa-sliders"></i>
+                    </button>
+                </div>
+                <div
+                    class="col-span-8 md:col-span-6 flex justify-between items-center"
+                >
+                    <div
+                        class="flex flex-row items-center gap-2 font-normal text-sm leading-[150%]"
+                    >
+                        <p class="text-gray-500">Sort by:</p>
+                        <select
+                            id="sortBySelect"
+                            class="px-2 md:px-4 py-1.5 md:py-2.5 border border-gray-200 rounded-sm cursor-pointer text-gray-700"
+                        >
+                            <option selected>Choose</option>
+                            <option value="asc">Price: Low to High</option>
+                            <option value="desc">Price: High to Low</option>
+                        </select>
+                    </div>
+
+                    <p class="text-xs md:text-base leading-[120%]">
+                        <span
+                            id="filteredProductCount"
+                            class="font-semibold"
+                        ></span>
+                        <span class="font-normal text-gray-500"
+                            >Results Found</span
+                        >
+                    </p>
+                </div>
             </div>
-
-            <p class="text-base leading-[120%]">
-                <span id="filteredProductCount" class="font-semibold"></span>
-                <span class="font-normal text-gray-500">Results Found</span>
-            </p>
-        </div>
-    </div>
-    <div class="section-layout-width grid grid-cols-8 gap-6 h-full mb-10">
-        <div id="filter-sidebar" class="hidden md:block col-span-2 h-full">
-            <div class="sticky top-4 h-full">
-                <div class="">
-                    <div class="w-full flex justify-between items-center mb-5">
-                        <h2 class="text-xl font-medium leading-[150%]">All Categories</h2>
-                        <button id="showCategoriesBtn" type="button" class="flex items-center justify-center cursor-pointer size-8 rounded-full hover:bg-gray-200 transition-all duration-200 ease-in-out ">
-                            <i class="fa-solid fa-chevron-up text-sm"></i>
-                        </button>
-                    </div>
-                    <ul id="filterCategoryContainer" class="pb-4">
-                    </ul>
-                </div>
-                <div class="border-y border-gray-200 pt-3">
-                    <div class="w-full flex justify-between items-center mb-5">
-                        <h2 class="text-xl font-medium leading-[150%]">Price</h2>
-                        <button id="showPriceRangeBtn" type="button" class="flex items-center justify-center cursor-pointer size-8 rounded-full hover:bg-gray-200 transition-all duration-200 ease-in-out ">
-                            <i class="fa-solid fa-chevron-up text-sm"></i>
-                        </button>
-                    </div>
-                    <div>
-                        <div class="slider">
-                            <div id="priceRangeProgressBar" class="progress"></div>
+            <div
+                class="section-layout-width grid grid-cols-8 gap-6 h-full mb-10"
+            >
+                <div
+                    id="filter-sidebar"
+                    class="col-span-8 md:col-span-2 h-full"
+                >
+                    <div class="sticky top-4 h-full">
+                        <div class="">
+                            <div
+                                class="w-full flex justify-between items-center mb-5"
+                            >
+                                <h2
+                                    class="text-base lg:text-lg xl:text-xl font-medium leading-[150%]"
+                                >
+                                    All Categories
+                                </h2>
+                                <button
+                                    id="showCategoriesBtn"
+                                    type="button"
+                                    class="flex items-center justify-center cursor-pointer size-8 rounded-full hover:bg-gray-200 transition-all duration-200 ease-in-out"
+                                >
+                                    <i
+                                        class="fa-solid fa-chevron-down text-sm"
+                                    ></i>
+                                </button>
+                            </div>
+                            <ul
+                                id="filterCategoryContainer"
+                                class="collapseContainer"
+                            ></ul>
                         </div>
-                        <div class="range-input">
-                            <input type="range" class="range-min" min="0" max="100" value="25" step="10">
-                            <input type="range" class="range-max" min="0" max="100" value="75" step="10">
+                        <div class="border-y border-gray-200 pt-3">
+                            <div
+                                class="w-full flex justify-between items-center mb-5"
+                            >
+                                <h2
+                                    class="text-base lg:text-lg xl:text-xl font-medium leading-[150%]"
+                                >
+                                    Price
+                                </h2>
+                                <button
+                                    id="showPriceRangeBtn"
+                                    type="button"
+                                    class="flex items-center justify-center cursor-pointer size-8 rounded-full hover:bg-gray-200 transition-all duration-200 ease-in-out"
+                                >
+                                    <i
+                                        class="fa-solid fa-chevron-down text-sm"
+                                    ></i>
+                                </button>
+                            </div>
+                            <div
+                                id="priceRangeContainer"
+                                class="collapseContainer"
+                            >
+                                <div class="pt-5">
+                                    <div class="slider">
+                                        <div
+                                            id="priceRangeProgressBar"
+                                            class="progress"
+                                        ></div>
+                                    </div>
+                                    <div class="range-input">
+                                        <input
+                                            type="range"
+                                            class="range-min"
+                                            min="0"
+                                            max="100"
+                                            value="25"
+                                            step="10"
+                                        />
+                                        <input
+                                            type="range"
+                                            class="range-max"
+                                            min="0"
+                                            max="100"
+                                            value="75"
+                                            step="10"
+                                        />
+                                    </div>
+                                </div>
+                                <div class="flex flex-row gap-1 pt-4 pb-6">
+                                    <p
+                                        class="text-sm leading-[150%] font-normal text-gray-500"
+                                    >
+                                        Price :
+                                    </p>
+                                    <span
+                                        class="text-sm leading-[150%] font-medium"
+                                    >
+                                        <span id="rangeForMinPrice"></span>
+                                        -
+                                        <span id="rangeForMaxPrice"></span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="">
+                            <div
+                                class="w-full flex justify-between items-center my-5"
+                            >
+                                <h2
+                                    class="text-base lg:text-lg xl:text-xl font-medium leading-[150%]"
+                                >
+                                    Rating
+                                </h2>
+                                <button
+                                    id="showRatingBtn"
+                                    type="button"
+                                    class="flex items-center justify-center cursor-pointer size-8 rounded-full hover:bg-gray-200 transition-all duration-200 ease-in-out"
+                                >
+                                    <i
+                                        class="fa-solid fa-chevron-down text-sm"
+                                    ></i>
+                                </button>
+                            </div>
+                            <ul
+                                id="filterRatingContainer"
+                                class="collapseContainer"
+                            ></ul>
+                        </div>
+                        <div class="border-t border-gray-200 py-3">
+                            <div
+                                class="w-full flex justify-between items-center mb-5"
+                            >
+                                <h2
+                                    class="text-base lg:text-lg xl:text-xl font-medium leading-[150%]"
+                                >
+                                    Popular Tag
+                                </h2>
+                                <button
+                                    id="showTagsBtn"
+                                    type="button"
+                                    class="flex items-center justify-center cursor-pointer size-8 rounded-full hover:bg-gray-200 transition-all duration-200 ease-in-out"
+                                >
+                                    <i
+                                        class="fa-solid fa-chevron-down text-sm"
+                                    ></i>
+                                </button>
+                            </div>
+                            <div
+                                id="filterTagsContainer"
+                                class="flex gap-3 flex-wrap collapseContainer"
+                            ></div>
+                        </div>
+
+                        <div
+                            class="hidden lg:block aspect-312/295 overflow-hidden rounded-lg mt-3 relative"
+                        >
+                            <img
+                                src="../src/assets/images/allproductspage/filterimg.jpg"
+                                class="w-full h-full object-cover scale-130 object-[-190px_30px]"
+                            />
+                            <div
+                                class="absolute top-5 -translate-x-[50%] left-[50%]"
+                            >
+                                <h2
+                                    class="whitespace-nowrap flex items-center gap-1"
+                                >
+                                    <span
+                                        class="font-semibold text-[2rem] leading-[120%] text-(--warning-color)"
+                                        >79%</span
+                                    >
+                                    <span
+                                        class="font-normal text-2xl leading-[150%]"
+                                        >Discount</span
+                                    >
+                                </h2>
+                                <p
+                                    class="font-normal text-base leading-[150%] text-gray-700 text-center"
+                                >
+                                    on your first order
+                                </p>
+                                <a
+                                    href="/shop now"
+                                    class="text-(--light-green) flex flex-row gap-1 md:gap-3 items-center justify-center mt-3"
+                                >
+                                    <span
+                                        class="font-semibold capitalize text-xs sm:text-sm xl:text-base leading-[100%] lg:leading-[120%]"
+                                        >Shop now</span
+                                    >
+                                    <i
+                                        class="fa-solid fa-arrow-right animate-pulse duration-500 ease-linear text-xs sm:text-base"
+                                    ></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="hidden lg:block">
+                            <div
+                                class="w-full flex justify-between items-center mt-5 mb-5"
+                            >
+                                <h2
+                                    class="text-base lg:text-lg xl:text-xl font-medium leading-[150%]"
+                                >
+                                    Sale Products
+                                </h2>
+                            </div>
+                            <div
+                                id="saleProductContainer"
+                                class="flex flex-col gap-4"
+                            ></div>
                         </div>
                     </div>
-                    <div class="flex flex-row gap-1 pt-4 pb-6">
-                        <p class="text-sm leading-[150%] font-normal text-gray-500">Price : </p>
-                        <span class="text-sm leading-[150%] font-medium"> 
-                            <span id="rangeForMinPrice"></span> 
-                            - 
-                            <span id="rangeForMaxPrice"></span> 
-                        </span>
-                    </div>
                 </div>
-                <div class="">
-                    <div class="w-full flex justify-between items-center my-5">
-                        <h2 class="text-xl font-medium leading-[150%]">Rating</h2>
-                        <button id="showRatingBtn" type="button" class="flex items-center justify-center cursor-pointer size-8 rounded-full hover:bg-gray-200 transition-all duration-200 ease-in-out ">
-                            <i class="fa-solid fa-chevron-up text-sm"></i>
-                        </button>
-                    </div>
-                    <ul id="filterRatingContainer" class="pb-4">
-                    </ul>
-                </div>
-                <div class="border-t border-gray-200 py-3">
-                    <div class="w-full flex justify-between items-center mb-5">
-                        <h2 class="text-xl font-medium leading-[150%]">Popular Tag</h2>
-                        <button id="showPriceRangeBtn" type="button" class="flex items-center justify-center cursor-pointer size-8 rounded-full hover:bg-gray-200 transition-all duration-200 ease-in-out ">
-                            <i class="fa-solid fa-chevron-up text-sm"></i>
-                        </button>
-                    </div>
-                    <div id="filterTagsContainer" class="flex gap-3 flex-wrap">
-                    </div>
-                </div>
-
-                <div class="aspect-312/295 overflow-hidden rounded-lg mt-3 relative">
-                    <img src="../src/assets/images/allproductspage/filterimg.jpg" class="w-full h-full object-cover scale-130 object-[-190px_30px]"/>
-                    <div class="absolute top-5 -translate-x-[50%] left-[50%]">
-                        <h2 class="whitespace-nowrap flex items-center gap-1">
-                            <span class="font-semibold text-[2rem] leading-[120%] text-(--warning-color)">79%</span>
-                            <span class="font-normal text-2xl leading-[150%]">Discount</span>
-                        </h2>
-                        <p class="font-normal text-base leading-[150%] text-gray-700  text-center">on your first order</p>
-                        <a href="/shop now" class="text-(--light-green) flex flex-row gap-1 md:gap-3 items-center justify-center mt-3">
-                            <span class="font-semibold capitalize text-xs sm:text-sm xl:text-base leading-[100%] lg:leading-[120%]">Shop now</span>
+                <div class="col-span-8 md:col-span-6">
+                    <div
+                        id="filteredProductContainer"
+                        class="grid grid-cols-12 lg:grid-cols-6 gap-6 h-auto"
+                    ></div>
+                    <div class="flex flex-row gap-3 w-fit mx-auto mt-6">
+                        <button
+                            type="button"
+                            class="flex items-center justify-center cursor-pointer size-8 rounded-full hover:bg-gray-400 transition-all duration-200 ease-in-out group paginationBtns"
+                        >
                             <i
-                                class="fa-solid fa-arrow-right animate-pulse duration-500 ease-linear text-xs sm:text-base"
+                                class="fa-solid fa-chevron-left text-sm text-gray-300 group-hover:text-gray-50"
                             ></i>
-                        </a>
+                        </button>
+                        <div
+                            id="paginationBtnsContainer"
+                            class="flex flex-row"
+                        ></div>
+                        <button
+                            type="button"
+                            class="flex items-center justify-center cursor-pointer size-8 rounded-full hover:bg-gray-400 transition-all duration-200 ease-in-out group paginationBtns"
+                        >
+                            <i
+                                class="fa-solid fa-chevron-right text-sm text-gray-300 group-hover:text-gray-50"
+                            ></i>
+                        </button>
                     </div>
                 </div>
-
-                <div>
-                    <div class="w-full flex justify-between items-center mt-5 mb-5">
-                        <h2 class="text-xl font-medium leading-[150%]">Sale Products</h2>
-                    </div>
-                    <div id="saleProductConatiner" class="flex flex-col gap-4"></div>
-                </div>
             </div>
-        </div>
-        <div class="col-span-8 md:col-span-6">
-            <div id="filteredProductContainer" class="grid grid-cols-12 lg:grid-cols-6 gap-6 h-auto">        
-            </div>
-            <div class="flex flex-row gap-3 w-fit mx-auto mt-6">
-                <button type="button" class="flex items-center justify-center cursor-pointer size-8 rounded-full hover:bg-gray-400 transition-all duration-200 ease-in-out group paginationBtns">
-                    <i class="fa-solid fa-chevron-left text-sm text-gray-300 group-hover:text-gray-50"></i>
-                </button>
-                <div id="paginationBtnsContainer" class="flex flex-row">
-                </div>
-                <button type="button" class="flex items-center justify-center cursor-pointer size-8 rounded-full hover:bg-gray-400 transition-all duration-200 ease-in-out group paginationBtns">
-                    <i class="fa-solid fa-chevron-right text-sm text-gray-300 group-hover:text-gray-50"></i>
-                </button>
-            </div>
-        </div>
-    </div>
-    
-    </main>   
-    <footer id="footer"></footer>
+        </main>
+        <footer id="footer"></footer>
 
-    <!-- model -->
-     <div id="model-backdrop" class="fixed w-screen h-screen bg-gray-800/80 top-0 left-0 model-backdropstyle">
-     </div>
-     <div id="model-container" class="fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] model-containerstyle">
-     </div>
+        <!-- model -->
+        <div
+            id="model-backdrop"
+            class="fixed w-screen h-screen bg-gray-800/80 top-0 left-0 model-backdropstyle"
+        ></div>
+        <div
+            id="model-container"
+            class="fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] model-containerstyle"
+        ></div>
 
-     <!-- productcartsidebar  -->
-     <div id="cartsidebar-backdrop" class="fixed w-screen h-screen bg-gray-800/80 top-0 left-0 sidebar-backdropstyle">
-     </div>
-     <div id="cartsidebar-container" class="fixed top-[0%] right-[0%] w-[456px] h-screen bg-white p-10 sidebar-containerstyle">
-     </div>
+        <!-- productcartsidebar  -->
+        <div
+            id="cartsidebar-backdrop"
+            class="fixed w-screen h-screen bg-gray-800/80 top-0 left-0 sidebar-backdropstyle"
+        ></div>
+        <div
+            id="cartsidebar-container"
+            class="fixed top-[0%] right-[0%] w-[456px] h-screen bg-white p-10 sidebar-containerstyle"
+        ></div>
 
-    <script type="module" src="../src/js/filterpage.js"></script>
-</body>
+        <script type="module" src="../src/js/filterpage.js"></script>
+    </body>
 </html>

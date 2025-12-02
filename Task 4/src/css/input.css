@@ -223,7 +223,15 @@ input[type="range"]::-webkit-slider-thumb{
 } 
 
 
+.collapseContainer {
+    max-height: 0;
+    overflow: hidden; 
+    transition: max-height 0.3s ease-in-out;
+}
 
+.collapseContainer.active {
+    max-height: 500px;
+}
 
 
 
