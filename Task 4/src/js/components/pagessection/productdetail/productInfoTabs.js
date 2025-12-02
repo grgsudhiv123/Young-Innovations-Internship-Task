@@ -40,7 +40,7 @@ export function getProductInfoTabs(productData,exp) {
         });
 
         productAddInfo.innerHTML = `
-            <ul class="space-y-3 text-sm font-normal leading-[150%] capitalize">
+            <ul class="w-full space-y-3 text-sm font-normal leading-[150%] capitalize">
                 <li class="flex max-w-[70%] w-full justify-between"><span>Wt : </span><span class="text-gray-600">${AddInfo.wt}</span></li>
                 <li class="flex max-w-[70%] w-full justify-between"><span>SKU : </span><span class="text-gray-600">${AddInfo.SKU}</span></li>
                 <li class="flex max-w-[70%] w-full justify-between"><span>Category : </span><span class="text-gray-600">${categoryName}</span></li>

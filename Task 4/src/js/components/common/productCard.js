@@ -1,13 +1,12 @@
 import { productCartFeatures } from "../../features/cartFeatures.js";
 import { handleWishList } from "../../features/wishListFeatures.js";
-import { getAllWishListProduct } from "../../utils/fetchApi.js";
+import { FetchAllProducts, FetchCartProducts, getAllWishListProduct } from "../../utils/fetchApi.js";
 import { PreventScroll } from "../../utils/preventScroll.js";
-import { ProductModel } from "./productModel.js";
+import { ProductDetailModel } from "./productModel.js";
 
 
 
 const ProductCard = (product, prefix) => {
-  
   return `
         <div id="${prefix}-productCard-${product.id}" class="col-span-6 sm:col-span-4 lg:col-span-2 border cursor-pointer border-gray-200 hover:border-(--success-dark) products-card-shadow transition-all duration-200 ease-in-out group productCardId h-fit">
             <div class="p-[5px] w-full h-fit relative overflow-hidden">
@@ -25,9 +24,9 @@ const ProductCard = (product, prefix) => {
                         : ""
                     }
                 </div>
-                <div class="absolute top-4 right-4 flex flex-col gap-1 md:gap-1.5 transform translate-x-[100px] opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 ease-in-out">
-                    <button id="${prefix}-productAddToWishlist-${product.id}" type="button" class="m-0 p-0 size-8 md:size-10 rounded-full border border-gray-50 bg-white cursor-pointer hover:bg-gray-300 hover:border-white transition-all duration-200 ease-in-out">
-                        <i class="fa-regular fa-heart text-sm md:text-xl"></i>
+                <div class="absolute top-4 right-4 flex flex-col gap-1 md:gap-1.5 transform translate-x-0 md:translate-x-[100px] opacity-100 md:opacity-0 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200 ease-in-out">
+                    <button id="productAddToWishlist-${product.id}" type="button" class="m-0 p-0 size-8 md:size-10 rounded-full border border-gray-50 bg-white cursor-pointer hover:bg-gray-300 hover:border-white transition-all duration-200 ease-in-out">
+                        <i id="wishlisticon-${product.id}" class="fa-regular fa-heart text-sm md:text-xl"></i>
                     <button>
                     <button id="productmodelbtn" type="button" class="m-0 p-0 size-8 md:size-10 rounded-full border border-gray-50 bg-white cursor-pointer hover:bg-gray-300 hover:border-white transition-all duration-200 ease-in-out">
                         <i class="fa-solid fa-eye text-sm md:text-xl"></i>
@@ -63,6 +62,7 @@ const ProductCard = (product, prefix) => {
                             viewBox="0 0 24 24"
                             stroke-width="1.5"
                             stroke="currentColor"
+                            id="carticon-${product.id}"
                             class="size-4 lg:size-5 text-gray-900 group-hover/cart:text-white transition-all duration-200 ease-in-out"
                         >
                             <path
@@ -105,6 +105,7 @@ export  const ProductBtns = async (productData,prefix) => {
   const modelContainer = document.getElementById("model-container");
   const modelBackdrop = document.getElementById("model-backdrop");
 
+  productCardBtnsState(productData);
 
   const {addCartProduct} = productCartFeatures();
 
@@ -122,7 +123,7 @@ export  const ProductBtns = async (productData,prefix) => {
       // handle product model view
       const modelViewBtn = e.target.closest("#productmodelbtn");
       if (modelViewBtn) {
-        ProductModel(product);
+        ProductDetailModel(product);
         const modelcont = modelContainer.classList.contains(
           "model-containerstyle"
         );
@@ -145,9 +146,9 @@ export  const ProductBtns = async (productData,prefix) => {
       } 
 
       // handle product wishlist
-      const wishlistBtn = e.target.closest(`#${prefix}-productAddToWishlist-${product.id}`);
+      const wishlistBtn = e.target.closest(`#productAddToWishlist-${product.id}`);
       if(wishlistBtn){
-        await handleWishList(product);
+        await handleWishList(product);       
       }
 
       // redirect to product detail page
@@ -158,3 +159,45 @@ export  const ProductBtns = async (productData,prefix) => {
   });
 };
 
+
+
+
+const productCardBtnsState = async (productData)=> {
+  try {
+    const cartData = await FetchCartProducts();
+    const wishlistData = await getAllWishListProduct();
+    if(productData){
+      productData.map(product => {
+        const wishlistIcon = document.getElementById(`wishlisticon-${product.id}`);
+        const isProductInCart = wishlistData.find((wishlistproduct)=> wishlistproduct.id === product.id );
+        if(isProductInCart && wishlistIcon){
+              wishlistIcon.classList.remove("fa-regular");
+              wishlistIcon.classList.add("fa-solid");
+        } else{
+              wishlistIcon.classList.remove("fa-solid");
+              wishlistIcon.classList.add("fa-regular");
+        }
+      })
+
+      productData.map(product => {
+        const isProductInCart = cartData.find((cartproduct)=> cartproduct.id === product.id );
+        const cartIcon = document.getElementById(`carticon-${product.id}`);
+        const addToCartBtn = document.getElementById(`productAddToCart-${product.id}`);
+        if(isProductInCart && addToCartBtn && cartIcon){
+          cartIcon.classList.remove("text-gray-900");
+          cartIcon.classList.add("text-white");
+          addToCartBtn.classList.remove("bg-gray-50");
+          addToCartBtn.classList.add("bg-(--light-green)");
+        } else{
+          cartIcon.classList.add("text-gray-900");
+          cartIcon.classList.remove("text-white");
+          addToCartBtn.classList.add("bg-gray-50");
+          addToCartBtn.classList.remove("bg-(--light-green)");
+        }
+      })
+    } 
+  } catch(error) {
+    console.log(error);
+    return error;
+  }
+} 

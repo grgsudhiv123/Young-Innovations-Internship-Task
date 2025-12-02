@@ -19,7 +19,6 @@ export async function HotDealsSection(){
     const {hotestDeal,remainingData } = await hotdealData();
 
     const hotdealproductcard  = document.getElementById("hotdealproduct");
-    console.log("hotestDeal",hotestDeal);
     hotdealproductcard.innerHTML = `
     <div class="aspect-525/460 lg:aspect-525/446 overflow-hidden relative" id="productCard-${hotestDeal.id}">
         <img src="${hotestDeal.imgURL[0]}" alt="product-image" class="w-full h-full object-cover object-center z-10"/>

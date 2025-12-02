@@ -49,12 +49,28 @@ const isFilterChanged = (currentFilter) => {
 
 export const renderfilterProductsPage = async () => {
     try {
-        // default filter
-        filteredFeatures(filter);
-
+        // default filter if we have query params
+        // for category 
+        const urlParams = new URLSearchParams(window.location.search);
+        
         // for categories filter
-        categoryFeatures();
+        await categoryFeatures();
+         if(urlParams){
+            const categoryId = (urlParams.get("category_id"));
+            if(categoryId){
+                filter.category = categoryId;
+                const categoryInputs = document.querySelectorAll("input[name='category']");
+                categoryInputs.forEach((radio)=>{
+                    if(radio.value === categoryId){
+                        radio.checked = true;
+                    }
+                })
+            }
+        }
 
+
+        filteredFeatures(filter);
+        
         // for rating filter
         const ratingContainer = document.getElementById("filterRatingContainer");
         if(ratingContainer){

@@ -1,4 +1,7 @@
+import { handleWishList } from "../../../features/wishListFeatures.js";
 import { BASE_URL } from "../../../utils/constants.js";
+import { AddProducts, AddWishlist, FetchApi, FetchCartProducts, getAllWishListProduct, updateCartProducts } from "../../../utils/fetchApi.js";
+import { HandleSidebarCart, productCart } from "../homepage/productCartSidebar.js";
 import { getProductInfoTabs } from "./productInfoTabs.js";
 
 export const productDetailComp = async (productDetail) => {
@@ -21,7 +24,6 @@ export const productDetailComp = async (productDetail) => {
      // hero img
     const productMainImgContainer = document.getElementById("product-mainimg-container");
     const productMainImg = document.createElement("img");
-    console.log("productMainImgContainer :",productMainImgContainer);
     productMainImg.classList.add("img-styling");
     productMainImg.src = productDetail.imgURL[0];
     productMainImg.alt = productDetail.name + productDetail.imgURL[0];
@@ -35,7 +37,6 @@ export const productDetailComp = async (productDetail) => {
     slidePrevBtn.addEventListener("click", () => {
         if(imgCount>0){
             imgCount = imgCount - 1;
-            console.log("imgCount :" ,imgCount );
         }
         productMainImg.src = productDetail.imgURL[imgCount];
         productMainImg.alt = productDetail.name + productDetail.imgURL[imgCount];
@@ -43,7 +44,6 @@ export const productDetailComp = async (productDetail) => {
     slideNextBtn.addEventListener("click", () => {
         if(imgCount < productDetail.imgURL.length-1){
             imgCount = imgCount + 1;
-            console.log("imgCount :" ,imgCount );
         }
         productMainImg.src = productDetail.imgURL[imgCount];
         productMainImg.alt = productDetail.name + productDetail.imgURL[imgCount];
@@ -133,9 +133,9 @@ export const productDetailComp = async (productDetail) => {
     productDescription.innerText = productDetail.desc;
 
      const getCategory = async(id) =>{
-        const response = await fetch(`${BASE_URL}/categories/${id}`);
+        const response = await fetch(`${BASE_URL}/categories?id=${id}`);
         const categoriesdata = await response.json();
-        return categoriesdata.name;
+        return categoriesdata[0].name;
     }
     const categoryName = await getCategory(productDetail.category);
     const productCategory = document.getElementById("product-category");
@@ -148,8 +148,8 @@ export const productDetailComp = async (productDetail) => {
     }
 
     const tagDatas = await getTags(); 
-    const tagNames = productDetail.tags.map((tags)=>tagDatas.find(data=> data.id === tags).name);
-
+   
+    const tagNames = productDetail.tags.map((tags)=>tagDatas.find(data=> Number(data.id) === Number(tags)).name);
     const productTags = document.getElementById("product-tags");
     productTags.innerHTML = `
         ${
@@ -157,6 +157,8 @@ export const productDetailComp = async (productDetail) => {
         }`;
 
 
+    // handle product detail btns
+    productDetailButtons(productDetail);
 
     // product info tabs
     // default
@@ -168,4 +170,82 @@ export const productDetailComp = async (productDetail) => {
         });
     });
 
+}
+
+
+
+
+
+
+const productDetailButtons = async (productDetail) => {
+        
+    const cartProducts = await FetchCartProducts();
+    const isProductInCart = cartProducts.find((cartproduct)=> cartproduct.id === productDetail.id );
+    
+    let quantity = isProductInCart ? isProductInCart.quantity : 1;
+    const deductQuantityBtn = document.getElementById("deductQuantityBtn");
+    const addQuantityBtn = document.getElementById("addQuantityBtn");
+    const productQuantity = document.getElementById("productQuantity");
+
+    productQuantity.innerText = quantity;
+
+    deductQuantityBtn.addEventListener("click", () => {
+        if(quantity > 1){
+            quantity = quantity - 1;
+            productQuantity.innerText = quantity;
+        }
+    })
+
+
+    addQuantityBtn.addEventListener("click", ()=> {
+        if(quantity < productDetail.stock){
+            quantity = quantity + 1;
+            productQuantity.innerText = quantity;
+        }
+    })
+
+    const addToCartBtn = document.getElementById("addProductToCart");
+    if(addToCartBtn) {
+        addToCartBtn.addEventListener("click", async () => {
+            if(isProductInCart){
+                await updateCartProducts({
+                    id: productDetail.id,
+                    quantity: quantity,
+                    updatedAt: new Date().toISOString(),
+                }, productDetail.id);
+            } else{
+                await AddProducts({
+                    ...productDetail, 
+                    quantity : 1,
+                    addedAt:new Date().toISOString()
+                })
+            }
+            
+            alert("Product added to cart");
+            // reload cart for fresh data
+            HandleSidebarCart();
+            productCart();
+        });
+    }
+    
+    // product wishlist btn
+    const productWishlistBtn = document.getElementById("productWishlistBtn");
+    const productwishlistBtnIcon = document.getElementById("productWishlistBtnIcon");
+    if(productWishlistBtn){
+        const wishlistData = await getAllWishListProduct();
+        const isProductInCart = wishlistData.find((wishlistproduct)=> wishlistproduct.id === productDetail.id );
+        if(isProductInCart){
+            productwishlistBtnIcon.classList.remove("fa-regular");
+            productwishlistBtnIcon.classList.add("fa-solid");
+        } else{
+            productwishlistBtnIcon.classList.remove("fa-solid");
+            productwishlistBtnIcon.classList.add("fa-regular");
+        }
+
+        productWishlistBtn.addEventListener("click", async () => {
+            handleWishList(productDetail);
+            HandleSidebarCart();
+            productCart();
+        })
+  }
 }

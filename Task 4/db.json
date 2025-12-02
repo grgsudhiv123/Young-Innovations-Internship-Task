@@ -1,127 +1,131 @@
 {
   "categories": [
     {
-      "id": 1,
+      "id": "1",
       "name": "fresh fruits",
       "img": "https://images.unsplash.com/photo-1612144515333-e8b9db423782?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "fresh vegetables",
       "img": "https://images.unsplash.com/photo-1590779033100-9f60a05a013d?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "meat & fish",
       "img": "https://images.unsplash.com/photo-1728042359930-c0145f0fd442?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "snacks",
       "img": "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "beverages",
       "img": "https://images.unsplash.com/photo-1648156253473-1154aac22425?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "beauty & health",
       "img": "https://images.unsplash.com/photo-1614859325002-4d658e3845b7?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "bread & bakery",
       "img": "https://images.unsplash.com/photo-1515823662972-da6a2e4d3002?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "baking needs",
       "img": "https://images.unsplash.com/photo-1612144515333-e8b9db423782?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "cooking",
       "img": "https://images.unsplash.com/photo-1612144515333-e8b9db423782?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "diabetic foods",
       "img": "https://images.unsplash.com/photo-1612144515333-e8b9db423782?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "oil ",
       "img": "https://images.unsplash.com/photo-1612144515333-e8b9db423782?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "dish detergent",
       "img": "https://images.unsplash.com/photo-1612144515333-e8b9db423782?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
   ],
   "tags": [
     {
-      "id": 1,
+      "id": "1",
       "name": "healthy"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "low fat"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "vegeterian"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "kid foods"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "vitamis"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "bread"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "meat"
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "snacks"
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "healthy"
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "tiffin"
     },
     {
-      "id": 12,
+      "id": "11",
+      "name": "brunch"
+    },
+    {
+      "id": "12",
       "name": "lunch"
     },
     {
-      "id": 13,
+      "id": "13",
       "name": "dinner"
     },
     {
-      "id": 14,
+      "id": "14",
       "name": "breakfast"
     },
     {
-      "id": 15,
+      "id": "15",
       "name": "fruit"
     }
   ],
   "news": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.",
       "comment": "10",
       "date": "2025-11-21T10:30:00.000Z",
@@ -135,7 +139,7 @@
       "tag": "foods"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Eget lobortis lorem lacinia. Vivamus pharetra semper,",
       "comment": "38",
       "date": "2025-10-10T10:30:00.000Z",
@@ -149,7 +153,7 @@
       "tag": "foods"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Maecenas blandit risus elementum mauris malesuada.",
       "comment": "55",
       "date": "2025-09-20T10:30:00.000Z",
@@ -1517,211 +1521,143 @@
   ],
   "cartProducts": [
     {
-      "id": "101",
-      "name": "Organic Carrots",
-      "baseprice": 8.99,
+      "id": "103",
+      "name": "Red Bell Peppers",
+      "baseprice": 10.99,
       "rating": 5,
       "featured": "false",
-      "discount": "50%",
+      "discount": "15%",
       "imgURL": [
-        "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1447175008436-054170c2e979?q=80&w=699&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1582515073490-39981397c445?q=80&w=735&auto=format&fit=crop"
+        "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?q=80&w=735&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1525607551316-4a8e16d1f9ba?q=80&w=687&auto=format&fit=crop"
       ],
-      "SKU": "VEG001CARROT2024",
+      "SKU": "VEG003PEPPER2024",
       "category": 2,
       "tags": [
         3,
-        5
+        9,
+        11
       ],
-      "desc": "Fresh organic carrots packed with beta-carotene and vitamins. Perfect for salads, soups, or healthy snacking. Locally sourced from organic farms.",
-      "brand": "Green Valley Farms",
+      "desc": "Sweet and crunchy red bell peppers, perfect for salads, grilling, or stuffing. Rich in vitamin C and antioxidants for a healthy immune system.",
+      "brand": "Sunny Harvest",
       "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
       "socialLinks": [
         {
           "id": "1",
           "name": "facebook",
-          "link": "www.facebook.com/greenvalleyfarms"
+          "link": "www.facebook.com/sunnyharvest"
         },
         {
           "id": "2",
           "name": "pinterest",
-          "link": "www.pinterest.com/greenvalleyfarms"
+          "link": "www.pinterest.com/sunnyharvest"
         },
         {
           "id": "3",
           "name": "twitter",
-          "link": "www.twitter.com/greenvalleyfarms"
+          "link": "www.twitter.com/sunnyharvest"
         },
         {
           "id": "4",
           "name": "instagram",
-          "link": "www.instagram.com/greenvalleyfarms"
+          "link": "www.instagram.com/sunnyharvest"
         }
       ],
       "reviews": [
         {
           "id": "1",
-          "customer_name": "Emily Johnson",
+          "customer_name": "Lisa Anderson",
           "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop",
-          "comment": "Super fresh and crunchy! My kids love snacking on these carrots.",
-          "dateandtime": "1 day ago"
+          "profileURL": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format&fit=crop",
+          "comment": "So sweet and crispy! Love using these in my stir-fries.",
+          "dateandtime": "4 hours ago"
         },
         {
           "id": "2",
-          "customer_name": "Michael Brown",
+          "customer_name": "Robert Kim",
           "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop",
-          "comment": "Best carrots I've bought online. Great quality and packaging.",
-          "dateandtime": "3 days ago"
-        }
-      ],
-      "detail": "Our organic carrots are grown without synthetic pesticides or fertilizers. Rich in vitamin A, fiber, and antioxidants, these carrots support eye health and boost immunity. Hand-picked at peak freshness and delivered directly to your door. Perfect for juicing, roasting, or enjoying raw with your favorite dip.",
-      "wt": "500gm",
-      "stock": "320",
-      "color": "orange",
-      "quantity": 3,
-      "addedAt": "2025-12-01T07:18:46.956Z",
-      "updatedAt": "2025-12-01T07:32:06.774Z"
-    },
-    {
-      "id": "102",
-      "name": "Fresh Broccoli Crowns",
-      "baseprice": 12.44,
-      "rating": 4,
-      "featured": "true",
-      "discount": "5%",
-      "imgURL": [
-        "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1628773822503-930a7eaecf80?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1584868356415-dde8e0c68c4f?q=80&w=687&auto=format&fit=crop"
-      ],
-      "SKU": "VEG002BROCC2024",
-      "category": 2,
-      "tags": [
-        2,
-        3
-      ],
-      "desc": "Crisp and nutritious broccoli crowns, high in vitamins C and K. Ideal for steaming, stir-frying, or adding to your favorite pasta dishes.",
-      "brand": "Nature's Best",
-      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
-      "socialLinks": [
-        {
-          "id": "1",
-          "name": "facebook",
-          "link": "www.facebook.com/naturesbest"
-        },
-        {
-          "id": "2",
-          "name": "pinterest",
-          "link": "www.pinterest.com/naturesbest"
-        },
-        {
-          "id": "3",
-          "name": "twitter",
-          "link": "www.twitter.com/naturesbest"
-        },
-        {
-          "id": "4",
-          "name": "instagram",
-          "link": "www.instagram.com/naturesbest"
-        }
-      ],
-      "reviews": [
-        {
-          "id": "1",
-          "customer_name": "Sarah Mitchell",
-          "rating": 4,
-          "profileURL": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&auto=format&fit=crop",
-          "comment": "Fresh and green. Perfect for my weekly meal prep.",
-          "dateandtime": "5 hours ago"
-        },
-        {
-          "id": "2",
-          "customer_name": "David Lee",
-          "rating": 4,
-          "profileURL": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop",
-          "comment": "Good quality broccoli, stays fresh for days in the fridge.",
-          "dateandtime": "2 days ago"
-        }
-      ],
-      "detail": "Premium broccoli crowns harvested at peak maturity for maximum nutritional value. These florets are packed with cancer-fighting compounds, fiber, and essential minerals. Steam for 5-7 minutes to retain nutrients, or add to soups and casseroles for a healthy boost.",
-      "wt": "400gm",
-      "stock": "275",
-      "color": "dark green",
-      "quantity": 2,
-      "addedAt": "2025-12-01T07:20:34.118Z",
-      "updatedAt": "2025-12-01T08:37:24.645Z"
-    },
-    {
-      "id": "108",
-      "name": "Fresh Cauliflower",
-      "baseprice": 13.88,
-      "rating": 4,
-      "featured": "false",
-      "discount": "10%",
-      "imgURL": [
-        "https://images.unsplash.com/photo-1568584711271-e88a3fdf6f75?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1510627489930-0c1b0bfb6785?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?q=80&w=687&auto=format&fit=crop"
-      ],
-      "SKU": "VEG008CAULIFL2024",
-      "category": 2,
-      "tags": [
-        2,
-        3,
-        12
-      ],
-      "desc": "Fresh white cauliflower heads, versatile and nutritious. Low in carbs and calories, perfect for rice alternatives, roasting, or adding to curries and soups.",
-      "brand": "Nature's Best",
-      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
-      "socialLinks": [
-        {
-          "id": "1",
-          "name": "facebook",
-          "link": "www.facebook.com/naturesbest"
-        },
-        {
-          "id": "2",
-          "name": "pinterest",
-          "link": "www.pinterest.com/naturesbest"
-        },
-        {
-          "id": "3",
-          "name": "twitter",
-          "link": "www.twitter.com/naturesbest"
-        },
-        {
-          "id": "4",
-          "name": "instagram",
-          "link": "www.instagram.com/naturesbest"
-        }
-      ],
-      "reviews": [
-        {
-          "id": "1",
-          "customer_name": "Michelle Rodriguez",
-          "rating": 4,
-          "profileURL": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=100&auto=format&fit=crop",
-          "comment": "Great for making cauliflower rice. Fresh and firm.",
-          "dateandtime": "7 hours ago"
-        },
-        {
-          "id": "2",
-          "customer_name": "Kevin Adams",
-          "rating": 4,
           "profileURL": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=100&auto=format&fit=crop",
-          "comment": "Good quality. Perfect size for my family's dinner.",
-          "dateandtime": "3 days ago"
+          "comment": "Perfect for stuffed peppers. Great size and quality.",
+          "dateandtime": "1 day ago"
         }
       ],
-      "detail": "Premium cauliflower heads with tight, compact florets and crisp texture. This cruciferous vegetable is a nutritional star, packed with vitamin C, vitamin K, and cancer-fighting compounds. Its mild flavor and versatile texture make it perfect for low-carb substitutes like cauliflower rice, mashed cauliflower, or pizza crust. Roast with olive oil and spices for a delicious side dish.",
-      "wt": "800gm",
-      "stock": "185",
-      "color": "white",
-      "quantity": 1,
-      "addedAt": "2025-12-01T07:48:49.475Z"
+      "detail": "Our red bell peppers are vine-ripened to perfection, offering maximum sweetness and nutritional benefits. Contains three times more vitamin C than oranges and packed with vitamin A. Great for raw snacking, roasting, or adding vibrant color to any dish. Each pepper is carefully selected for optimal freshness.",
+      "wt": "300gm",
+      "stock": "410",
+      "color": "red",
+      "quantity": 2,
+      "addedAt": "2025-12-02T03:31:11.860Z",
+      "updatedAt": "2025-12-02T04:05:20.689Z"
+    },
+    {
+      "id": "104",
+      "name": "Baby Spinach Leaves",
+      "baseprice": 6.99,
+      "rating": 5,
+      "featured": "true",
+      "discount": "0%",
+      "imgURL": [
+        "https://images.unsplash.com/photo-1576045057995-568f588f82fb?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1594282484356-4c0b5c6e76f5?q=80&w=735&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1574316071802-0d684efa7bf5?q=80&w=687&auto=format&fit=crop"
+      ],
+      "SKU": "VEG004SPINACH2024",
+      "category": 2,
+      "tags": [
+        2,
+        3,
+        14
+      ],
+      "desc": "Tender baby spinach leaves, pre-washed and ready to eat. Excellent source of iron, calcium, and vitamins for a nutritious addition to any meal.",
+      "brand": "Leafy Greens Co.",
+      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
+      "socialLinks": [
+        {
+          "id": "1",
+          "name": "facebook",
+          "link": "www.facebook.com/leafygreensco"
+        },
+        {
+          "id": "2",
+          "name": "pinterest",
+          "link": "www.pinterest.com/leafygreensco"
+        },
+        {
+          "id": "3",
+          "name": "twitter",
+          "link": "www.twitter.com/leafygreensco"
+        },
+        {
+          "id": "4",
+          "name": "instagram",
+          "link": "www.instagram.com/leafygreensco"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "1",
+          "customer_name": "Amanda Taylor",
+          "rating": 5,
+          "profileURL": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=100&auto=format&fit=crop",
+          "comment": "Always fresh and clean. Perfect for my morning smoothies!",
+          "dateandtime": "30 minutes ago"
+        },
+        {
+          "id": "2",
+          "customer_name": "Christopher White",
+          "rating": 5,
+          "profileURL": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100&auto=format&fit=crop",
+          "comment": "Great quality spinach. Lasts longer than store-bought.",
+          "dateandtime": "6 hours ago"
+        }
+      ],
+      "detail": "Premium baby spinach leaves harvested young for maximum tenderness. Triple-washed and ready to use straight from the package. Rich in folate, iron, and magnesium, spinach is a nutritional powerhouse that supports bone health and energy production. Perfect for salads, sandwiches, smoothies, or quick sautés.",
+      "wt": "250gm",
+      "stock": "380",
+      "color": "deep green",
+      "quantity": 4,
+      "addedAt": "2025-12-02T03:32:07.329Z"
     },
     {
       "id": "105",
@@ -1788,211 +1724,143 @@
       "wt": "600gm",
       "stock": "295",
       "color": "red",
-      "quantity": 1,
-      "addedAt": "2025-12-01T08:35:32.573Z"
-    },
-    {
-      "id": "106",
-      "name": "Organic Cucumber",
-      "baseprice": 7.49,
-      "rating": 5,
-      "featured": "false",
-      "discount": "12%",
-      "imgURL": [
-        "https://images.unsplash.com/photo-1604977042946-1eecc30f269e?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1589927986089-35812378d193?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?q=80&w=687&auto=format&fit=crop"
-      ],
-      "SKU": "VEG006CUCUMB2024",
-      "category": 2,
-      "tags": [
-        2,
-        3
-      ],
-      "desc": "Crisp and refreshing organic cucumbers. Low in calories and high in hydration. Perfect for salads, pickling, or healthy snacking.",
-      "brand": "Green Valley Farms",
-      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
-      "socialLinks": [
-        {
-          "id": "1",
-          "name": "facebook",
-          "link": "www.facebook.com/greenvalleyfarms"
-        },
-        {
-          "id": "2",
-          "name": "pinterest",
-          "link": "www.pinterest.com/greenvalleyfarms"
-        },
-        {
-          "id": "3",
-          "name": "twitter",
-          "link": "www.twitter.com/greenvalleyfarms"
-        },
-        {
-          "id": "4",
-          "name": "instagram",
-          "link": "www.instagram.com/greenvalleyfarms"
-        }
-      ],
-      "reviews": [
-        {
-          "id": "1",
-          "customer_name": "Patricia Harris",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop",
-          "comment": "Super crunchy and not bitter at all. Love them!",
-          "dateandtime": "3 hours ago"
-        },
-        {
-          "id": "2",
-          "customer_name": "James Wilson",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop",
-          "comment": "Perfect for making pickles. Great freshness.",
-          "dateandtime": "5 days ago"
-        }
-      ],
-      "detail": "Organically grown cucumbers with crisp texture and mild flavor. These cucumbers are 95% water, making them incredibly hydrating and low in calories. Rich in vitamin K and potassium, they support bone health and blood pressure regulation. Excellent for fresh eating, juicing, or making homemade pickles. No wax coating - just pure, natural goodness.",
-      "wt": "450gm",
-      "stock": "340",
-      "color": "green",
-      "quantity": 2,
-      "addedAt": "2025-12-01T08:37:10.863Z",
-      "updatedAt": "2025-12-01T08:37:18.613Z"
+      "quantity": 5,
+      "addedAt": "2025-12-02T03:32:27.813Z"
     }
   ],
   "wishlist": [
     {
-      "id": "106",
-      "name": "Organic Cucumber",
-      "baseprice": 7.49,
+      "id": "109",
+      "name": "Green Beans",
+      "baseprice": 8.49,
       "rating": 5,
-      "featured": "false",
-      "discount": "12%",
+      "featured": "true",
+      "discount": "0%",
       "imgURL": [
-        "https://images.unsplash.com/photo-1604977042946-1eecc30f269e?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1589927986089-35812378d193?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?q=80&w=687&auto=format&fit=crop"
+        "https://images.unsplash.com/photo-1604519633592-5d04abc7c206?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1598030413569-61428f58d922?q=80&w=735&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1590777577871-c8f0a959b192?q=80&w=687&auto=format&fit=crop"
       ],
-      "SKU": "VEG006CUCUMB2024",
+      "SKU": "VEG009BEANS2024",
       "category": 2,
       "tags": [
         2,
-        3
+        3,
+        13
       ],
-      "desc": "Crisp and refreshing organic cucumbers. Low in calories and high in hydration. Perfect for salads, pickling, or healthy snacking.",
-      "brand": "Green Valley Farms",
+      "desc": "Crisp and tender green beans, freshly harvested. Rich in vitamins A, C, and K. Perfect for steaming, stir-frying, or as a crunchy side dish.",
+      "brand": "Farm Fresh Direct",
       "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
       "socialLinks": [
         {
           "id": "1",
           "name": "facebook",
-          "link": "www.facebook.com/greenvalleyfarms"
+          "link": "www.facebook.com/farmfreshdirect"
         },
         {
           "id": "2",
           "name": "pinterest",
-          "link": "www.pinterest.com/greenvalleyfarms"
+          "link": "www.pinterest.com/farmfreshdirect"
         },
         {
           "id": "3",
           "name": "twitter",
-          "link": "www.twitter.com/greenvalleyfarms"
+          "link": "www.twitter.com/farmfreshdirect"
         },
         {
           "id": "4",
           "name": "instagram",
-          "link": "www.instagram.com/greenvalleyfarms"
+          "link": "www.instagram.com/farmfreshdirect"
         }
       ],
       "reviews": [
         {
           "id": "1",
-          "customer_name": "Patricia Harris",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop",
-          "comment": "Super crunchy and not bitter at all. Love them!",
-          "dateandtime": "3 hours ago"
-        },
-        {
-          "id": "2",
-          "customer_name": "James Wilson",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop",
-          "comment": "Perfect for making pickles. Great freshness.",
-          "dateandtime": "5 days ago"
-        }
-      ],
-      "detail": "Organically grown cucumbers with crisp texture and mild flavor. These cucumbers are 95% water, making them incredibly hydrating and low in calories. Rich in vitamin K and potassium, they support bone health and blood pressure regulation. Excellent for fresh eating, juicing, or making homemade pickles. No wax coating - just pure, natural goodness.",
-      "wt": "450gm",
-      "stock": "340",
-      "color": "green"
-    },
-    {
-      "id": "209",
-      "name": "Fresh Pineapple",
-      "baseprice": 13.77,
-      "rating": 5,
-      "featured": "false",
-      "discount": "10%",
-      "imgURL": [
-        "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1587049352847-8d5e0c2e0c88?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1602491254713-63fae49c2d55?q=80&w=687&auto=format&fit=crop"
-      ],
-      "SKU": "FRUIT009PINEAPPL2024",
-      "category": 1,
-      "tags": [
-        9,
-        1
-      ],
-      "desc": "Sweet and tangy fresh pineapple with tropical flavor. Contains bromelain enzyme for digestion. Perfect for fruit salads, grilling, or tropical smoothies.",
-      "brand": "Tropical Harvest",
-      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
-      "socialLinks": [
-        {
-          "id": "1",
-          "name": "facebook",
-          "link": "www.facebook.com/tropicalharvest"
-        },
-        {
-          "id": "2",
-          "name": "pinterest",
-          "link": "www.pinterest.com/tropicalharvest"
-        },
-        {
-          "id": "3",
-          "name": "twitter",
-          "link": "www.twitter.com/tropicalharvest"
-        },
-        {
-          "id": "4",
-          "name": "instagram",
-          "link": "www.instagram.com/tropicalharvest"
-        }
-      ],
-      "reviews": [
-        {
-          "id": "1",
-          "customer_name": "Harper White",
+          "customer_name": "Nancy Walker",
           "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=100&auto=format&fit=crop",
-          "comment": "Perfectly ripe and so sweet! Made amazing piña coladas.",
-          "dateandtime": "3 hours ago"
+          "comment": "So fresh and crunchy! Great quality beans.",
+          "dateandtime": "4 hours ago"
         },
         {
           "id": "2",
-          "customer_name": "Alexander Brown",
+          "customer_name": "Steven Hall",
           "rating": 5,
           "profileURL": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop",
-          "comment": "Great flavor! Grilled some for our BBQ and it was delicious.",
+          "comment": "Perfect for Thanksgiving dinner. Kids loved them!",
+          "dateandtime": "1 day ago"
+        }
+      ],
+      "detail": "Farm-fresh green beans with tender texture and bright green color. These beans are carefully hand-picked to ensure optimal freshness and flavor. Low in calories and high in fiber, vitamins, and minerals. Steam for 5-7 minutes to maintain crispness, sauté with garlic and almonds, or add to casseroles. Rich in plant-based protein and antioxidants that support overall health.",
+      "wt": "350gm",
+      "stock": "405",
+      "color": "bright green"
+    },
+    {
+      "id": "107",
+      "name": "Sweet Corn",
+      "baseprice": 11.99,
+      "rating": 5,
+      "featured": "true",
+      "discount": "5%",
+      "imgURL": [
+        "https://images.unsplash.com/photo-1551754655-cd27e38d2076?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1603048588665-791ca8aea617?q=80&w=735&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1606927493524-ea86b9b4f8b6?q=80&w=687&auto=format&fit=crop"
+      ],
+      "SKU": "VEG007CORN2024",
+      "category": 2,
+      "tags": [
+        3,
+        4
+      ],
+      "desc": "Fresh sweet corn on the cob, naturally sweet and tender. Perfect for grilling, boiling, or roasting. A summertime favorite packed with fiber and B vitamins.",
+      "brand": "Sunny Harvest",
+      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
+      "socialLinks": [
+        {
+          "id": "1",
+          "name": "facebook",
+          "link": "www.facebook.com/sunnyharvest"
+        },
+        {
+          "id": "2",
+          "name": "pinterest",
+          "link": "www.pinterest.com/sunnyharvest"
+        },
+        {
+          "id": "3",
+          "name": "twitter",
+          "link": "www.twitter.com/sunnyharvest"
+        },
+        {
+          "id": "4",
+          "name": "instagram",
+          "link": "www.instagram.com/sunnyharvest"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "1",
+          "customer_name": "Karen Thompson",
+          "rating": 5,
+          "profileURL": "https://images.unsplash.com/photo-1551843073-4a9a5b6fcd5f?q=80&w=100&auto=format&fit=crop",
+          "comment": "So sweet and delicious! Kids finished all 4 cobs in one meal.",
+          "dateandtime": "1 hour ago"
+        },
+        {
+          "id": "2",
+          "customer_name": "Daniel Clark",
+          "rating": 5,
+          "profileURL": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=100&auto=format&fit=crop",
+          "comment": "Perfect for grilling. Tender kernels and great flavor.",
           "dateandtime": "2 days ago"
         }
       ],
-      "detail": "Premium fresh pineapple selected for optimal ripeness and sweetness. This tropical fruit contains bromelain, a unique enzyme that aids digestion and reduces inflammation. Rich in vitamin C, manganese, and antioxidants, pineapple supports immune function and bone health. The sweet-tart flavor profile makes it versatile for both sweet and savory dishes. Excellent fresh, grilled, in smoothies, or added to stir-fries. Look for golden color at the base and fresh green leaves for ripeness indicator.",
-      "wt": "1.8kg",
-      "stock": "155",
-      "color": "golden"
+      "detail": "Farm-fresh sweet corn picked at peak ripeness to ensure maximum sweetness and tenderness. Our corn is non-GMO and grown using sustainable farming practices. High in fiber, B vitamins, and antioxidants like lutein and zeaxanthin. Grill with butter and herbs, add to salads, or enjoy boiled with a sprinkle of salt. Each ear is individually inspected for quality.",
+      "wt": "700gm",
+      "stock": "225",
+      "color": "yellow"
     },
     {
       "id": "105",
@@ -2059,6 +1927,72 @@
       "wt": "600gm",
       "stock": "295",
       "color": "red"
+    },
+    {
+      "id": "101",
+      "name": "Organic Carrots",
+      "baseprice": 8.99,
+      "rating": 5,
+      "featured": "false",
+      "discount": "50%",
+      "imgURL": [
+        "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1447175008436-054170c2e979?q=80&w=699&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1582515073490-39981397c445?q=80&w=735&auto=format&fit=crop"
+      ],
+      "SKU": "VEG001CARROT2024",
+      "category": 2,
+      "tags": [
+        3,
+        5
+      ],
+      "desc": "Fresh organic carrots packed with beta-carotene and vitamins. Perfect for salads, soups, or healthy snacking. Locally sourced from organic farms.",
+      "brand": "Green Valley Farms",
+      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
+      "socialLinks": [
+        {
+          "id": "1",
+          "name": "facebook",
+          "link": "www.facebook.com/greenvalleyfarms"
+        },
+        {
+          "id": "2",
+          "name": "pinterest",
+          "link": "www.pinterest.com/greenvalleyfarms"
+        },
+        {
+          "id": "3",
+          "name": "twitter",
+          "link": "www.twitter.com/greenvalleyfarms"
+        },
+        {
+          "id": "4",
+          "name": "instagram",
+          "link": "www.instagram.com/greenvalleyfarms"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "1",
+          "customer_name": "Emily Johnson",
+          "rating": 5,
+          "profileURL": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop",
+          "comment": "Super fresh and crunchy! My kids love snacking on these carrots.",
+          "dateandtime": "1 day ago"
+        },
+        {
+          "id": "2",
+          "customer_name": "Michael Brown",
+          "rating": 5,
+          "profileURL": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop",
+          "comment": "Best carrots I've bought online. Great quality and packaging.",
+          "dateandtime": "3 days ago"
+        }
+      ],
+      "detail": "Our organic carrots are grown without synthetic pesticides or fertilizers. Rich in vitamin A, fiber, and antioxidants, these carrots support eye health and boost immunity. Hand-picked at peak freshness and delivered directly to your door. Perfect for juicing, roasting, or enjoying raw with your favorite dip.",
+      "wt": "500gm",
+      "stock": "320",
+      "color": "orange"
     }
   ]
 }

@@ -1,6 +1,5 @@
 export function NewsCard(newsData) {
     const date = new Date(newsData.date);
-    console.log(date);
     const day = date.getDate()
     const month = date.toLocaleString('en-US', { month: 'short' });
     return `

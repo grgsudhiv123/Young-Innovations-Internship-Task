@@ -32,7 +32,6 @@ function footerComp() {
   `
     )
     .join("");
-  console.log(footerLinks);
 }
 
 export default footerComp;
