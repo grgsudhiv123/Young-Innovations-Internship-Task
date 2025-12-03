@@ -1655,210 +1655,9 @@
       "wt": "450gm",
       "stock": "340",
       "color": "green",
-      "quantity": 10,
+      "quantity": 11,
       "addedAt": "2025-12-02T08:30:28.970Z",
-      "updatedAt": "2025-12-03T07:46:05.352Z"
-    }
-  ],
-  "wishlist": [
-    {
-      "id": "206",
-      "name": "Fresh Mangoes",
-      "baseprice": 16.97,
-      "rating": 5,
-      "featured": "false",
-      "discount": "10%",
-      "imgURL": [
-        "https://images.unsplash.com/photo-1553279768-865429fa0078?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1605027990121-cbae9fc60498?q=80&w=687&auto=format&fit=crop"
-      ],
-      "SKU": "FRUIT006MANGO2024",
-      "category": 1,
-      "tags": [
-        4,
-        9,
-        11
-      ],
-      "desc": "Sweet, tropical mangoes with rich, creamy flesh. High in vitamin A and C. Perfect for smoothies, desserts, or enjoying fresh. A taste of paradise!",
-      "brand": "Tropical Harvest",
-      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
-      "socialLinks": [
-        {
-          "id": "1",
-          "name": "facebook",
-          "link": "www.facebook.com/tropicalharvest"
-        },
-        {
-          "id": "2",
-          "name": "pinterest",
-          "link": "www.pinterest.com/tropicalharvest"
-        },
-        {
-          "id": "3",
-          "name": "twitter",
-          "link": "www.twitter.com/tropicalharvest"
-        },
-        {
-          "id": "4",
-          "name": "instagram",
-          "link": "www.instagram.com/tropicalharvest"
-        }
-      ],
-      "reviews": [
-        {
-          "id": "1",
-          "customer_name": "Ava Martinez",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop",
-          "comment": "Perfectly ripe and so delicious! Best mangoes I've had!",
-          "dateandtime": "2 hours ago"
-        },
-        {
-          "id": "2",
-          "customer_name": "Noah Davis",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=100&auto=format&fit=crop",
-          "comment": "Sweet and juicy. Made amazing mango lassi with these!",
-          "dateandtime": "1 day ago"
-        }
-      ],
-      "detail": "Premium tropical mangoes carefully selected for optimal ripeness and sweetness. Known as the 'king of fruits,' mangoes are rich in vitamin A, vitamin C, and fiber, supporting eye health, immune function, and digestion. The buttery, smooth flesh has a perfect balance of sweetness and tang. Excellent for fresh eating, smoothies, salsas, chutneys, or desserts. Allow to ripen at room temperature until slightly soft to touch, then refrigerate to extend freshness.",
-      "wt": "800gm",
-      "stock": "195",
-      "color": "golden yellow"
-    },
-    {
-      "id": "106",
-      "name": "Organic Cucumber",
-      "baseprice": 7.49,
-      "rating": 5,
-      "featured": "false",
-      "discount": "12%",
-      "imgURL": [
-        "https://images.unsplash.com/photo-1604977042946-1eecc30f269e?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1589927986089-35812378d193?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?q=80&w=687&auto=format&fit=crop"
-      ],
-      "SKU": "VEG006CUCUMB2024",
-      "category": 2,
-      "tags": [
-        2,
-        3
-      ],
-      "desc": "Crisp and refreshing organic cucumbers. Low in calories and high in hydration. Perfect for salads, pickling, or healthy snacking.",
-      "brand": "Green Valley Farms",
-      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
-      "socialLinks": [
-        {
-          "id": "1",
-          "name": "facebook",
-          "link": "www.facebook.com/greenvalleyfarms"
-        },
-        {
-          "id": "2",
-          "name": "pinterest",
-          "link": "www.pinterest.com/greenvalleyfarms"
-        },
-        {
-          "id": "3",
-          "name": "twitter",
-          "link": "www.twitter.com/greenvalleyfarms"
-        },
-        {
-          "id": "4",
-          "name": "instagram",
-          "link": "www.instagram.com/greenvalleyfarms"
-        }
-      ],
-      "reviews": [
-        {
-          "id": "1",
-          "customer_name": "Patricia Harris",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop",
-          "comment": "Super crunchy and not bitter at all. Love them!",
-          "dateandtime": "3 hours ago"
-        },
-        {
-          "id": "2",
-          "customer_name": "James Wilson",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop",
-          "comment": "Perfect for making pickles. Great freshness.",
-          "dateandtime": "5 days ago"
-        }
-      ],
-      "detail": "Organically grown cucumbers with crisp texture and mild flavor. These cucumbers are 95% water, making them incredibly hydrating and low in calories. Rich in vitamin K and potassium, they support bone health and blood pressure regulation. Excellent for fresh eating, juicing, or making homemade pickles. No wax coating - just pure, natural goodness.",
-      "wt": "450gm",
-      "stock": "340",
-      "color": "green"
-    },
-    {
-      "id": "105",
-      "name": "Fresh Tomatoes",
-      "baseprice": 9.49,
-      "rating": 4,
-      "featured": "false",
-      "discount": "8%",
-      "imgURL": [
-        "https://images.unsplash.com/photo-1546094096-0df4bcaaa337?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1582284540020-8acbe03f4924?q=80&w=687&auto=format&fit=crop"
-      ],
-      "SKU": "VEG005TOMATO2024",
-      "category": 2,
-      "tags": [
-        3,
-        9
-      ],
-      "desc": "Vine-ripened tomatoes bursting with flavor. Perfect for salads, sauces, or sandwiches. High in lycopene and vitamin C for antioxidant benefits.",
-      "brand": "Farm Fresh Direct",
-      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
-      "socialLinks": [
-        {
-          "id": "1",
-          "name": "facebook",
-          "link": "www.facebook.com/farmfreshdirect"
-        },
-        {
-          "id": "2",
-          "name": "pinterest",
-          "link": "www.pinterest.com/farmfreshdirect"
-        },
-        {
-          "id": "3",
-          "name": "twitter",
-          "link": "www.twitter.com/farmfreshdirect"
-        },
-        {
-          "id": "4",
-          "name": "instagram",
-          "link": "www.instagram.com/farmfreshdirect"
-        }
-      ],
-      "reviews": [
-        {
-          "id": "1",
-          "customer_name": "Jennifer Martinez",
-          "rating": 4,
-          "profileURL": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?q=80&w=100&auto=format&fit=crop",
-          "comment": "Juicy and flavorful. Great for pasta sauce!",
-          "dateandtime": "2 hours ago"
-        },
-        {
-          "id": "2",
-          "customer_name": "Thomas Green",
-          "rating": 4,
-          "profileURL": "https://images.unsplash.com/photo-1463453091185-61582044d556?q=80&w=100&auto=format&fit=crop",
-          "comment": "Good tomatoes, though a couple were slightly soft.",
-          "dateandtime": "1 day ago"
-        }
-      ],
-      "detail": "Our tomatoes are vine-ripened for authentic garden-fresh taste. Packed with lycopene, a powerful antioxidant linked to heart health and cancer prevention. These versatile tomatoes work beautifully in everything from fresh caprese salads to hearty pasta sauces. Each tomato is hand-selected to ensure consistent quality and flavor.",
-      "wt": "600gm",
-      "stock": "295",
-      "color": "red"
+      "updatedAt": "2025-12-03T08:54:35.112Z"
     },
     {
       "id": "207",
@@ -1925,28 +1724,99 @@
       "detail": "Premium seedless green grapes harvested at peak sweetness for optimal flavor. These convenient, bite-sized fruits are packed with vitamins C and K, plus powerful antioxidants like resveratrol that support heart health. The crisp texture and sweet taste make them perfect for fresh snacking, adding to cheese boards, or freezing for a refreshing summer treat. No seeds means easy eating for kids and adults alike. Store in refrigerator and rinse before serving.",
       "wt": "500gm",
       "stock": "325",
-      "color": "green"
+      "color": "green",
+      "quantity": 5,
+      "addedAt": "2025-12-03T08:45:26.380Z",
+      "updatedAt": "2025-12-03T08:58:47.575Z"
     },
     {
-      "id": "109",
-      "name": "Green Beans",
-      "baseprice": 8.49,
+      "id": "206",
+      "name": "Fresh Mangoes",
+      "baseprice": 16.97,
       "rating": 5,
-      "featured": "true",
-      "discount": "0%",
+      "featured": "false",
+      "discount": "10%",
       "imgURL": [
-        "https://images.unsplash.com/photo-1604519633592-5d04abc7c206?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1598030413569-61428f58d922?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1590777577871-c8f0a959b192?q=80&w=687&auto=format&fit=crop"
+        "https://images.unsplash.com/photo-1553279768-865429fa0078?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?q=80&w=735&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1605027990121-cbae9fc60498?q=80&w=687&auto=format&fit=crop"
       ],
-      "SKU": "VEG009BEANS2024",
+      "SKU": "FRUIT006MANGO2024",
+      "category": 1,
+      "tags": [
+        4,
+        9,
+        11
+      ],
+      "desc": "Sweet, tropical mangoes with rich, creamy flesh. High in vitamin A and C. Perfect for smoothies, desserts, or enjoying fresh. A taste of paradise!",
+      "brand": "Tropical Harvest",
+      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
+      "socialLinks": [
+        {
+          "id": "1",
+          "name": "facebook",
+          "link": "www.facebook.com/tropicalharvest"
+        },
+        {
+          "id": "2",
+          "name": "pinterest",
+          "link": "www.pinterest.com/tropicalharvest"
+        },
+        {
+          "id": "3",
+          "name": "twitter",
+          "link": "www.twitter.com/tropicalharvest"
+        },
+        {
+          "id": "4",
+          "name": "instagram",
+          "link": "www.instagram.com/tropicalharvest"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "1",
+          "customer_name": "Ava Martinez",
+          "rating": 5,
+          "profileURL": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop",
+          "comment": "Perfectly ripe and so delicious! Best mangoes I've had!",
+          "dateandtime": "2 hours ago"
+        },
+        {
+          "id": "2",
+          "customer_name": "Noah Davis",
+          "rating": 5,
+          "profileURL": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=100&auto=format&fit=crop",
+          "comment": "Sweet and juicy. Made amazing mango lassi with these!",
+          "dateandtime": "1 day ago"
+        }
+      ],
+      "detail": "Premium tropical mangoes carefully selected for optimal ripeness and sweetness. Known as the 'king of fruits,' mangoes are rich in vitamin A, vitamin C, and fiber, supporting eye health, immune function, and digestion. The buttery, smooth flesh has a perfect balance of sweetness and tang. Excellent for fresh eating, smoothies, salsas, chutneys, or desserts. Allow to ripen at room temperature until slightly soft to touch, then refrigerate to extend freshness.",
+      "wt": "800gm",
+      "stock": "195",
+      "color": "golden yellow",
+      "quantity": 1,
+      "addedAt": "2025-12-03T08:45:30.247Z"
+    },
+    {
+      "id": "105",
+      "name": "Fresh Tomatoes",
+      "baseprice": 9.49,
+      "rating": 4,
+      "featured": "false",
+      "discount": "8%",
+      "imgURL": [
+        "https://images.unsplash.com/photo-1546094096-0df4bcaaa337?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1592924357228-91a4daadcfea?q=80&w=735&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1582284540020-8acbe03f4924?q=80&w=687&auto=format&fit=crop"
+      ],
+      "SKU": "VEG005TOMATO2024",
       "category": 2,
       "tags": [
-        2,
         3,
-        13
+        9
       ],
-      "desc": "Crisp and tender green beans, freshly harvested. Rich in vitamins A, C, and K. Perfect for steaming, stir-frying, or as a crunchy side dish.",
+      "desc": "Vine-ripened tomatoes bursting with flavor. Perfect for salads, sauces, or sandwiches. High in lycopene and vitamin C for antioxidant benefits.",
       "brand": "Farm Fresh Direct",
       "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
       "socialLinks": [
@@ -1974,91 +1844,97 @@
       "reviews": [
         {
           "id": "1",
-          "customer_name": "Nancy Walker",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=100&auto=format&fit=crop",
-          "comment": "So fresh and crunchy! Great quality beans.",
-          "dateandtime": "4 hours ago"
+          "customer_name": "Jennifer Martinez",
+          "rating": 4,
+          "profileURL": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?q=80&w=100&auto=format&fit=crop",
+          "comment": "Juicy and flavorful. Great for pasta sauce!",
+          "dateandtime": "2 hours ago"
         },
         {
           "id": "2",
-          "customer_name": "Steven Hall",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop",
-          "comment": "Perfect for Thanksgiving dinner. Kids loved them!",
+          "customer_name": "Thomas Green",
+          "rating": 4,
+          "profileURL": "https://images.unsplash.com/photo-1463453091185-61582044d556?q=80&w=100&auto=format&fit=crop",
+          "comment": "Good tomatoes, though a couple were slightly soft.",
           "dateandtime": "1 day ago"
         }
       ],
-      "detail": "Farm-fresh green beans with tender texture and bright green color. These beans are carefully hand-picked to ensure optimal freshness and flavor. Low in calories and high in fiber, vitamins, and minerals. Steam for 5-7 minutes to maintain crispness, sauté with garlic and almonds, or add to casseroles. Rich in plant-based protein and antioxidants that support overall health.",
-      "wt": "350gm",
-      "stock": "405",
-      "color": "bright green"
+      "detail": "Our tomatoes are vine-ripened for authentic garden-fresh taste. Packed with lycopene, a powerful antioxidant linked to heart health and cancer prevention. These versatile tomatoes work beautifully in everything from fresh caprese salads to hearty pasta sauces. Each tomato is hand-selected to ensure consistent quality and flavor.",
+      "wt": "600gm",
+      "stock": "295",
+      "color": "red",
+      "quantity": 1,
+      "addedAt": "2025-12-03T08:55:11.902Z"
     },
     {
-      "id": "107",
-      "name": "Sweet Corn",
-      "baseprice": 11.99,
+      "id": "101",
+      "name": "Organic Carrots",
+      "baseprice": 8.99,
       "rating": 5,
-      "featured": "true",
-      "discount": "5%",
+      "featured": "false",
+      "discount": "50%",
       "imgURL": [
-        "https://images.unsplash.com/photo-1551754655-cd27e38d2076?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1603048588665-791ca8aea617?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1606927493524-ea86b9b4f8b6?q=80&w=687&auto=format&fit=crop"
+        "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1447175008436-054170c2e979?q=80&w=699&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1582515073490-39981397c445?q=80&w=735&auto=format&fit=crop"
       ],
-      "SKU": "VEG007CORN2024",
+      "SKU": "VEG001CARROT2024",
       "category": 2,
       "tags": [
         3,
-        4
+        5
       ],
-      "desc": "Fresh sweet corn on the cob, naturally sweet and tender. Perfect for grilling, boiling, or roasting. A summertime favorite packed with fiber and B vitamins.",
-      "brand": "Sunny Harvest",
+      "desc": "Fresh organic carrots packed with beta-carotene and vitamins. Perfect for salads, soups, or healthy snacking. Locally sourced from organic farms.",
+      "brand": "Green Valley Farms",
       "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
       "socialLinks": [
         {
           "id": "1",
           "name": "facebook",
-          "link": "www.facebook.com/sunnyharvest"
+          "link": "www.facebook.com/greenvalleyfarms"
         },
         {
           "id": "2",
           "name": "pinterest",
-          "link": "www.pinterest.com/sunnyharvest"
+          "link": "www.pinterest.com/greenvalleyfarms"
         },
         {
           "id": "3",
           "name": "twitter",
-          "link": "www.twitter.com/sunnyharvest"
+          "link": "www.twitter.com/greenvalleyfarms"
         },
         {
           "id": "4",
           "name": "instagram",
-          "link": "www.instagram.com/sunnyharvest"
+          "link": "www.instagram.com/greenvalleyfarms"
         }
       ],
       "reviews": [
         {
           "id": "1",
-          "customer_name": "Karen Thompson",
+          "customer_name": "Emily Johnson",
           "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1551843073-4a9a5b6fcd5f?q=80&w=100&auto=format&fit=crop",
-          "comment": "So sweet and delicious! Kids finished all 4 cobs in one meal.",
-          "dateandtime": "1 hour ago"
+          "profileURL": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop",
+          "comment": "Super fresh and crunchy! My kids love snacking on these carrots.",
+          "dateandtime": "1 day ago"
         },
         {
           "id": "2",
-          "customer_name": "Daniel Clark",
+          "customer_name": "Michael Brown",
           "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=100&auto=format&fit=crop",
-          "comment": "Perfect for grilling. Tender kernels and great flavor.",
-          "dateandtime": "2 days ago"
+          "profileURL": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop",
+          "comment": "Best carrots I've bought online. Great quality and packaging.",
+          "dateandtime": "3 days ago"
         }
       ],
-      "detail": "Farm-fresh sweet corn picked at peak ripeness to ensure maximum sweetness and tenderness. Our corn is non-GMO and grown using sustainable farming practices. High in fiber, B vitamins, and antioxidants like lutein and zeaxanthin. Grill with butter and herbs, add to salads, or enjoy boiled with a sprinkle of salt. Each ear is individually inspected for quality.",
-      "wt": "700gm",
-      "stock": "225",
-      "color": "yellow"
+      "detail": "Our organic carrots are grown without synthetic pesticides or fertilizers. Rich in vitamin A, fiber, and antioxidants, these carrots support eye health and boost immunity. Hand-picked at peak freshness and delivered directly to your door. Perfect for juicing, roasting, or enjoying raw with your favorite dip.",
+      "wt": "500gm",
+      "stock": "320",
+      "color": "orange",
+      "quantity": 2,
+      "addedAt": "2025-12-03T09:00:24.953Z",
+      "updatedAt": "2025-12-03T09:00:48.178Z"
     }
-  ]
+  ],
+  "wishlist": []
 }

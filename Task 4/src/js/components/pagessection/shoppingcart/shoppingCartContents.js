@@ -1,4 +1,5 @@
 import { productCartFeatures } from '../../../features/cartFeatures.js';
+import { calculateDiscountedPrice } from '../../../utils/discountedPrice.js';
 import {
     DeleteCartProduct,
     FetchCartProducts,
@@ -10,12 +11,6 @@ import {
 import { updateCart, updateCartTotal } from './shoppingCartFeatures.js';
 
 let updatedCartProducts;
-
-export function calculateDiscountedPrice(baseprice, discount) {
-    const discountedPrice =
-        baseprice - baseprice * (discount.replace('%', '') / 100);
-    return discountedPrice.toFixed(2);
-}
 
 function calculateSubTotal(product, quantity) {
     const subtotal =

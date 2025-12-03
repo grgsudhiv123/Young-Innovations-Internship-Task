@@ -1,5 +1,4 @@
-import { productCart } from '../homepage/productCartSidebar.js';
-import { calculateDiscountedPrice } from './shoppingCartContents.js';
+import { calculateDiscountedPrice } from '../../../utils/discountedPrice.js';
 
 export function shoppingCartTableRow(cartProduct) {
     const discountedPrice = calculateDiscountedPrice(
