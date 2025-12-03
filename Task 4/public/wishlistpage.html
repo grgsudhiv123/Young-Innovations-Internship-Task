@@ -24,7 +24,7 @@
 
                 <!-- Desktop Table View -->
                 <div
-                    class="overflow-x-auto rounded-lg overflow-hidden border border-gray-200"
+                    class="rounded-lg border border-gray-200 overflow-hidden overflow-x-auto hidden md:block"
                 >
                     <table class="min-w-[550px] w-full">
                         <thead class="border-b border-gray-200">
@@ -53,6 +53,283 @@
                             <!-- Product 1 -->
                         </tbody>
                     </table>
+                </div>
+
+                <!-- mobile view wishlist cards -->
+                <div
+                    id="mobileWishlistContainer"
+                    class="w-full grid grid-cols-12 gap-5"
+                >
+                    <div
+                        tabindex="0"
+                        class="col-span-12 p-3 border border-gray-200 rounded-lg flex gap-5 relative"
+                    >
+                        <button
+                            type="button"
+                            class="absolute top-1 right-1 size-6 rounded-sm border border-gray-200 flex items-center justify-center"
+                        >
+                            <i class="fa-solid fa-x text-[10px]"></i>
+                        </button>
+                        <div
+                            class="size-24 flex-1/3 aspect-square overflow-hidden rounded-sm"
+                        >
+                            <img
+                                gap-5
+                                src="../src/assets/images/herosection/heroimg1.jpg"
+                                alt="wishlist card image"
+                                class="w-full h-full object-cover object-center"
+                            />
+                        </div>
+                        <div
+                            id="infoSection"
+                            class="w-fit h-full flex-2/3 flex flex-col justify-between gap-2"
+                        >
+                            <div class="flex w-full flex-col gap-0.5">
+                                <p class="font-medium text-base leading-[150%]">
+                                    Name
+                                </p>
+
+                                <div
+                                    class="flex w-full justify-between gap-5 items-center"
+                                >
+                                    <p class="flex gap-1 text-sm">
+                                        <span class="font-medium">$14.55</span>
+                                        <span
+                                            class="line-through text-gray-500 font-normal"
+                                            >$10.56</span
+                                        >
+                                    </p>
+                                    <span
+                                        class="px-2 py-1 rounded-lg text-sm bg-green-200 text-green-700 font-medium leading-[150%]"
+                                    >
+                                        Instock
+                                    </span>
+                                </div>
+                            </div>
+                            <button
+                                id="mobileWishlistCartBtn"
+                                class="w-fit px-4 py-1 text-sm text-white font-semibold rounded-lg bg-(--light-green) active:bg-(--success-dark)"
+                            >
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        tabindex="0"
+                        class="col-span-12 p-3 border border-gray-200 rounded-lg flex gap-5 relative"
+                    >
+                        <button
+                            type="button"
+                            class="absolute top-1 right-1 size-6 rounded-sm border border-gray-200 flex items-center justify-center"
+                        >
+                            <i class="fa-solid fa-x text-[10px]"></i>
+                        </button>
+                        <div
+                            class="size-24 flex-1/3 aspect-square overflow-hidden rounded-sm"
+                        >
+                            <img
+                                gap-5
+                                src="../src/assets/images/herosection/heroimg1.jpg"
+                                alt="wishlist card image"
+                                class="w-full h-full object-cover object-center"
+                            />
+                        </div>
+                        <div
+                            id="infoSection"
+                            class="w-fit h-full flex-2/3 flex flex-col justify-between gap-2"
+                        >
+                            <div class="flex w-full flex-col gap-0.5">
+                                <p class="font-medium text-base leading-[150%]">
+                                    Name
+                                </p>
+
+                                <div
+                                    class="flex w-full justify-between gap-5 items-center"
+                                >
+                                    <p class="flex gap-1 text-sm">
+                                        <span class="font-medium">$14.55</span>
+                                        <span
+                                            class="line-through text-gray-500 font-normal"
+                                            >$10.56</span
+                                        >
+                                    </p>
+                                    <span
+                                        class="px-2 py-1 rounded-lg text-sm bg-green-200 text-green-700 font-medium leading-[150%]"
+                                    >
+                                        Instock
+                                    </span>
+                                </div>
+                            </div>
+                            <button
+                                id="mobileWishlistCartBtn"
+                                class="w-fit px-4 py-1 text-sm text-white font-semibold rounded-lg bg-(--light-green) active:bg-(--success-dark)"
+                            >
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        tabindex="0"
+                        class="col-span-12 p-3 border border-gray-200 rounded-lg flex gap-5 relative"
+                    >
+                        <button
+                            type="button"
+                            class="absolute top-1 right-1 size-6 rounded-sm border border-gray-200 flex items-center justify-center"
+                        >
+                            <i class="fa-solid fa-x text-[10px]"></i>
+                        </button>
+                        <div
+                            class="size-24 flex-1/3 aspect-square overflow-hidden rounded-sm"
+                        >
+                            <img
+                                gap-5
+                                src="../src/assets/images/herosection/heroimg1.jpg"
+                                alt="wishlist card image"
+                                class="w-full h-full object-cover object-center"
+                            />
+                        </div>
+                        <div
+                            id="infoSection"
+                            class="w-fit h-full flex-2/3 flex flex-col justify-between gap-2"
+                        >
+                            <div class="flex w-full flex-col gap-0.5">
+                                <p class="font-medium text-base leading-[150%]">
+                                    Name
+                                </p>
+
+                                <div
+                                    class="flex w-full justify-between gap-5 items-center"
+                                >
+                                    <p class="flex gap-1 text-sm">
+                                        <span class="font-medium">$14.55</span>
+                                        <span
+                                            class="line-through text-gray-500 font-normal"
+                                            >$10.56</span
+                                        >
+                                    </p>
+                                    <span
+                                        class="px-2 py-1 rounded-lg text-sm bg-green-200 text-green-700 font-medium leading-[150%]"
+                                    >
+                                        Instock
+                                    </span>
+                                </div>
+                            </div>
+                            <button
+                                id="mobileWishlistCartBtn"
+                                class="w-fit px-4 py-1 text-sm text-white font-semibold rounded-lg bg-(--light-green) active:bg-(--success-dark)"
+                            >
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        tabindex="0"
+                        class="col-span-12 p-3 border border-gray-200 rounded-lg flex gap-5 relative"
+                    >
+                        <button
+                            type="button"
+                            class="absolute top-1 right-1 size-6 rounded-sm border border-gray-200 flex items-center justify-center"
+                        >
+                            <i class="fa-solid fa-x text-[10px]"></i>
+                        </button>
+                        <div
+                            class="size-24 flex-1/3 aspect-square overflow-hidden rounded-sm"
+                        >
+                            <img
+                                gap-5
+                                src="../src/assets/images/herosection/heroimg1.jpg"
+                                alt="wishlist card image"
+                                class="w-full h-full object-cover object-center"
+                            />
+                        </div>
+                        <div
+                            id="infoSection"
+                            class="w-fit h-full flex-2/3 flex flex-col justify-between gap-2"
+                        >
+                            <div class="flex w-full flex-col gap-0.5">
+                                <p class="font-medium text-base leading-[150%]">
+                                    Name
+                                </p>
+
+                                <div
+                                    class="flex w-full justify-between gap-5 items-center"
+                                >
+                                    <p class="flex gap-1 text-sm">
+                                        <span class="font-medium">$14.55</span>
+                                        <span
+                                            class="line-through text-gray-500 font-normal"
+                                            >$10.56</span
+                                        >
+                                    </p>
+                                    <span
+                                        class="px-2 py-1 rounded-lg text-sm bg-green-200 text-green-700 font-medium leading-[150%]"
+                                    >
+                                        Instock
+                                    </span>
+                                </div>
+                            </div>
+                            <button
+                                id="mobileWishlistCartBtn"
+                                class="w-fit px-4 py-1 text-sm text-white font-semibold rounded-lg bg-(--light-green) active:bg-(--success-dark)"
+                            >
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    <div
+                        tabindex="0"
+                        class="col-span-12 p-3 border border-gray-200 rounded-lg flex gap-5 relative"
+                    >
+                        <button
+                            type="button"
+                            class="absolute top-1 right-1 size-6 rounded-sm border border-gray-200 flex items-center justify-center"
+                        >
+                            <i class="fa-solid fa-x text-[10px]"></i>
+                        </button>
+                        <div
+                            class="size-24 flex-1/3 aspect-square overflow-hidden rounded-sm"
+                        >
+                            <img
+                                gap-5
+                                src="../src/assets/images/herosection/heroimg1.jpg"
+                                alt="wishlist card image"
+                                class="w-full h-full object-cover object-center"
+                            />
+                        </div>
+                        <div
+                            id="infoSection"
+                            class="w-fit h-full flex-2/3 flex flex-col justify-between gap-2"
+                        >
+                            <div class="flex w-full flex-col gap-0.5">
+                                <p class="font-medium text-base leading-[150%]">
+                                    Name
+                                </p>
+
+                                <div
+                                    class="flex w-full justify-between gap-5 items-center"
+                                >
+                                    <p class="flex gap-1 text-sm">
+                                        <span class="font-medium">$14.55</span>
+                                        <span
+                                            class="line-through text-gray-500 font-normal"
+                                            >$10.56</span
+                                        >
+                                    </p>
+                                    <span
+                                        class="px-2 py-1 rounded-lg text-sm bg-green-200 text-green-700 font-medium leading-[150%]"
+                                    >
+                                        Instock
+                                    </span>
+                                </div>
+                            </div>
+                            <button
+                                id="mobileWishlistCartBtn"
+                                class="w-fit px-4 py-1 text-sm text-white font-semibold rounded-lg bg-(--light-green) active:bg-(--success-dark)"
+                            >
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
                 </div>
 
                 <!-- Social Share -->
