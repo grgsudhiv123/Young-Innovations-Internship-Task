@@ -1936,5 +1936,139 @@
       "updatedAt": "2025-12-03T09:00:48.178Z"
     }
   ],
-  "wishlist": []
+  "wishlist": [
+    {
+      "id": "108",
+      "name": "Fresh Cauliflower",
+      "baseprice": 13.88,
+      "rating": 4,
+      "featured": "false",
+      "discount": "10%",
+      "imgURL": [
+        "https://images.unsplash.com/photo-1568584711271-e88a3fdf6f75?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1510627489930-0c1b0bfb6785?q=80&w=735&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?q=80&w=687&auto=format&fit=crop"
+      ],
+      "SKU": "VEG008CAULIFL2024",
+      "category": 2,
+      "tags": [
+        2,
+        3,
+        12
+      ],
+      "desc": "Fresh white cauliflower heads, versatile and nutritious. Low in carbs and calories, perfect for rice alternatives, roasting, or adding to curries and soups.",
+      "brand": "Nature's Best",
+      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
+      "socialLinks": [
+        {
+          "id": "1",
+          "name": "facebook",
+          "link": "www.facebook.com/naturesbest"
+        },
+        {
+          "id": "2",
+          "name": "pinterest",
+          "link": "www.pinterest.com/naturesbest"
+        },
+        {
+          "id": "3",
+          "name": "twitter",
+          "link": "www.twitter.com/naturesbest"
+        },
+        {
+          "id": "4",
+          "name": "instagram",
+          "link": "www.instagram.com/naturesbest"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "1",
+          "customer_name": "Michelle Rodriguez",
+          "rating": 4,
+          "profileURL": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=100&auto=format&fit=crop",
+          "comment": "Great for making cauliflower rice. Fresh and firm.",
+          "dateandtime": "7 hours ago"
+        },
+        {
+          "id": "2",
+          "customer_name": "Kevin Adams",
+          "rating": 4,
+          "profileURL": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=100&auto=format&fit=crop",
+          "comment": "Good quality. Perfect size for my family's dinner.",
+          "dateandtime": "3 days ago"
+        }
+      ],
+      "detail": "Premium cauliflower heads with tight, compact florets and crisp texture. This cruciferous vegetable is a nutritional star, packed with vitamin C, vitamin K, and cancer-fighting compounds. Its mild flavor and versatile texture make it perfect for low-carb substitutes like cauliflower rice, mashed cauliflower, or pizza crust. Roast with olive oil and spices for a delicious side dish.",
+      "wt": "800gm",
+      "stock": "185",
+      "color": "white"
+    },
+    {
+      "id": "106",
+      "name": "Organic Cucumber",
+      "baseprice": 7.49,
+      "rating": 5,
+      "featured": "false",
+      "discount": "12%",
+      "imgURL": [
+        "https://images.unsplash.com/photo-1604977042946-1eecc30f269e?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1589927986089-35812378d193?q=80&w=735&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?q=80&w=687&auto=format&fit=crop"
+      ],
+      "SKU": "VEG006CUCUMB2024",
+      "category": 2,
+      "tags": [
+        2,
+        3
+      ],
+      "desc": "Crisp and refreshing organic cucumbers. Low in calories and high in hydration. Perfect for salads, pickling, or healthy snacking.",
+      "brand": "Green Valley Farms",
+      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
+      "socialLinks": [
+        {
+          "id": "1",
+          "name": "facebook",
+          "link": "www.facebook.com/greenvalleyfarms"
+        },
+        {
+          "id": "2",
+          "name": "pinterest",
+          "link": "www.pinterest.com/greenvalleyfarms"
+        },
+        {
+          "id": "3",
+          "name": "twitter",
+          "link": "www.twitter.com/greenvalleyfarms"
+        },
+        {
+          "id": "4",
+          "name": "instagram",
+          "link": "www.instagram.com/greenvalleyfarms"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "1",
+          "customer_name": "Patricia Harris",
+          "rating": 5,
+          "profileURL": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop",
+          "comment": "Super crunchy and not bitter at all. Love them!",
+          "dateandtime": "3 hours ago"
+        },
+        {
+          "id": "2",
+          "customer_name": "James Wilson",
+          "rating": 5,
+          "profileURL": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop",
+          "comment": "Perfect for making pickles. Great freshness.",
+          "dateandtime": "5 days ago"
+        }
+      ],
+      "detail": "Organically grown cucumbers with crisp texture and mild flavor. These cucumbers are 95% water, making them incredibly hydrating and low in calories. Rich in vitamin K and potassium, they support bone health and blood pressure regulation. Excellent for fresh eating, juicing, or making homemade pickles. No wax coating - just pure, natural goodness.",
+      "wt": "450gm",
+      "stock": "340",
+      "color": "green"
+    }
+  ]
 }

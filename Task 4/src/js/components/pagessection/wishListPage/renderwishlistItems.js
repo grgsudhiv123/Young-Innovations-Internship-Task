@@ -5,19 +5,7 @@ export function wishlistTableRow(wishlist) {
         wishlist.baseprice,
         wishlist.discount,
     );
-    let productAvailable;
-    let stockStatus;
-    let stockColor;
-    if (wishlist.stock && wishlist.stock > 0) {
-        stockStatus = 'In Stock';
-        stockColor = 'bg-green-100 text-(--success-dark)';
-        productAvailable = true;
-    } else {
-        stockStatus = 'Out of Stock';
-        stockColor = 'bg-red-100 text-red-800';
-        productAvailable = false;
-    }
-
+    const stockStyle = getStockInfo(wishlist.stock);
     return `
         <tr tabindex="0" class="border-b border-gray-200 hover:bg-gray-50 transition">
             <td class="px-4 lg:px-6 py-4 lg:py-6">
@@ -31,11 +19,11 @@ export function wishlistTableRow(wishlist) {
                 <span class="text-gray-400 line-through ml-2">$${wishlist.baseprice}</span>
             </td>
             <td class="px-4 lg:px-6 py-4 lg:py-6">
-                <span class="inline-block px-3 py-1 text-xs font-medium rounded ${stockColor} whitespace-nowrap">${stockStatus}</span>
+                <span class="inline-block px-3 py-1 text-xs font-medium rounded ${stockStyle.color} whitespace-nowrap">${stockStyle.status}</span>
             </td>
             <td class="px-4 lg:px-6 py-4 lg:py-6">
                 <div class="flex items-center  justify-between gap-3">
-                    <button id="addWishlistToCart-${wishlist.id}" class="px-3 lg:px-6 py-2 text-white text-xs whitespace-nowrap lg:text-sm font-medium rounded-full  hover:shadow-lg transition transform hover:-translate-y-0.5 ${productAvailable ? 'cursor-pointer bg-(--light-green) hover:bg-green-700' : 'cursor-not-allowed bg-gray-400'}">
+                    <button id="addWishlistToCart-${wishlist.id}" class="px-3 lg:px-6 py-2 text-white text-xs whitespace-nowrap lg:text-sm font-medium rounded-full  hover:shadow-lg transition transform hover:-translate-y-0.5 ${stockStyle.addBtnStyle}">
                         Add to Cart
                     </button>
                     <button id="removeWishListProduct-${wishlist.id}" class="text-gray-400 hover:text-red-500 transition size-5 md:size-6 flex justify-center items-center cursor-pointer border-2 border-gray-200 rounded-full">
@@ -52,18 +40,7 @@ export function wishlistMobileCartProduct(wishlist) {
         wishlist.baseprice,
         wishlist.discount,
     );
-    let productAvailable;
-    let stockStatus;
-    let stockColor;
-    if (wishlist.stock && wishlist.stock > 0) {
-        stockStatus = 'In Stock';
-        stockColor = 'bg-green-100 text-(--success-dark)';
-        productAvailable = true;
-    } else {
-        stockStatus = 'Out of Stock';
-        stockColor = 'bg-red-100 text-red-800';
-        productAvailable = false;
-    }
+    const stockStyle = getStockInfo(wishlist.stock);
     return `
                     <div
                         tabindex="0"
@@ -108,19 +85,34 @@ export function wishlistMobileCartProduct(wishlist) {
                                         >
                                     </p>
                                     <span
-                                        class="px-2 py-1 rounded-lg text-sm ${stockColor} font-medium leading-[150%]"
+                                        class="px-2 py-1 rounded-lg text-sm ${stockStyle.color} font-medium leading-[150%]"
                                     >
-                                        ${stockStatus}
+                                        ${stockStyle.status}
                                     </span>
                                 </div>
                             </div>
                             <button
                                 id="mobileWishlistCartBtn-${wishlist.id}"
-                                class="w-fit px-4 py-1 text-sm text-white font-semibold rounded-lg ${productAvailable ? 'cursor-pointer bg-(--light-green) hover:bg-green-700' : 'cursor-not-allowed bg-gray-400'}"
+                                class="w-fit px-4 py-1 text-sm text-white font-semibold rounded-lg ${stockStyle.addBtnStyle}"
                             >
                                 Add to Cart
                             </button>
                         </div>
                     </div>
     `;
+}
+
+function getStockInfo(stock) {
+    const inStock = stock && stock > 0;
+
+    return {
+        inStock,
+        status: inStock ? 'In Stock' : 'Out of Stock',
+        color: inStock
+            ? 'bg-green-100 text-(--success-dark)'
+            : 'bg-red-100 text-red-800',
+        addBtnStyle: inStock
+            ? 'cursor-pointer bg-(--light-green) hover:bg-green-700'
+            : 'cursor-not-allowed bg-gray-400',
+    };
 }

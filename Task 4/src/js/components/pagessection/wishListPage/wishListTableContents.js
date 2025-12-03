@@ -34,9 +34,17 @@ export const WishListProductTable = async () => {
             wishlistContainer.innerHTML = `
                 <tr>
                     <td class="px-4 lg:px-6 py-4 lg:py-6 ">
-                        <p class="text-gray-500 capitalize text-base leading-[150%]">No wishlist found</p>
+                        <p class="text-gray-500 capitalize text-base leading-[150%] text-center">No wishlist product found</p>
                     </td>
                 </tr>
+                `;
+
+            mobileWishlistContainer.innerHTML = `
+                <div class="col-span-12">
+                    <div class="px-4 lg:px-6 py-4 lg:py-6 ">
+                        <p class="text-gray-500 text-center capitalize text-base leading-[150%]">No wishlist product found</p>
+                    </div>
+                </div>
                 `;
         }
     } catch (error) {
