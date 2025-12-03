@@ -16,8 +16,6 @@ export const wishListCartFeatures = (wishListData) => {
                 `removeWishListProduct-${data.id}`,
             );
 
-            console.log('removeWishlist : ', removeWishlist);
-
             const mobileRemoveWishlist = document.getElementById(
                 `mobileRemoveCartBtn-${data.id}`,
             );

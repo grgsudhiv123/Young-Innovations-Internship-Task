@@ -1,8 +1,8 @@
-    
 export const headerTemplate = () => {
     return `
       <!-- header nav1 -->
       <div
+        id="headernav1"
         class="header-1 max-w-[82.43rem] w-full mx-auto h-auto flex justify-between p-3 font-normal text-gray-600 text-[10px] md:text-xs leading-[150%]"
       >
         <a href="/" class="flex flex-row gap-2 items-center"
@@ -69,10 +69,11 @@ export const headerTemplate = () => {
           <a href="/login"> Sign in / Sign up </a>
         </div>
       </div>
-      <div class="w-full h-px bg-[#E5E5E5]"></div>
+      <div class="w-full h-px bg-[rgb(229,229,229)]"></div>
       <!-- header nav2 -->
+      <div id="headernav2" class="z-20 w-full bg-white">
       <div
-        class="header-2 max-w-[82.43rem] w-full mx-auto h-auto flex justify-between py-4 md:py-7 p-5 md:px-3 border-b border-gray-300 shadow-md md:shadow-none"
+        class="header-2 max-w-[82.43rem] w-full mx-auto h-auto flex justify-between py-4 md:py-7 p-5 md:px-3 border-b md:border-0 border-gray-300 shadow-md md:shadow-none"
       >
         <a
           href="/public/index.html"
@@ -156,8 +157,9 @@ export const headerTemplate = () => {
           </button>
         </div>
       </div>
+      </div>
       <!-- header nav3 -->
-      <div class="header-3 bg-gray-800 hidden md:block">
+      <div id="headernav3" class="sticky top-20 header-3 bg-gray-800 hidden md:block">
         <div
           class="max-w-[82.43rem] w-full mx-auto h-auto flex justify-between p-4"
         >
@@ -288,8 +290,5 @@ export const headerTemplate = () => {
           </a>
         </div>
       </div>
-    `
-} 
-
-
-
+    `;
+};
