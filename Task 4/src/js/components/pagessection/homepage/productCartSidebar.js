@@ -115,7 +115,7 @@ function priceAfterDiscount(curr) {
 
 export const HandleSidebarCart = async () => {
     try {
-        const cartBackdrop = document.getElementById('cartsidebar-backdrop');
+        const cartBackdrop = document.getElementById('backdrop');
         const cartContainer = document.getElementById('cartsidebar-container');
 
         if (cartContainer) {

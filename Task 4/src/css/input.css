@@ -125,16 +125,6 @@
         box-shadow: 0px 0px 12px 0px #20b52652;
     }
 
-    .model-backdropstyle {
-        opacity: 0;
-        visibility: hidden;
-        transition: all 0.5s ease-in-out;
-    }
-    .model-backdropstyle.active {
-        opacity: 1;
-        visibility: visible;
-    }
-
     .model-containerstyle {
         opacity: 0;
         visibility: hidden;
@@ -147,12 +137,12 @@
         transform: translateY(0);
     }
 
-    .sidebar-backdropstyle {
+    .backdropstyle {
         opacity: 0;
         visibility: hidden;
         transition: all 0.5s ease-in-out;
     }
-    .sidebar-backdropstyle.active {
+    .backdropstyle.active {
         opacity: 1;
         visibility: visible;
     }
@@ -167,6 +157,15 @@
         opacity: 1;
         visibility: visible;
         transform: translateX(0%);
+    }
+
+    .bottomContainerStyle {
+        transform: translateY(100%);
+        transition: all 0.5s ease-in-out;
+    }
+
+    .bottomContainerStyle.active {
+        transform: translateY(0%);
     }
 
     /* filter page */

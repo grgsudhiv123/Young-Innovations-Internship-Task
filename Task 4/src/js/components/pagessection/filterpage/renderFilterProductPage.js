@@ -23,9 +23,7 @@ let initialFilter = JSON.parse(JSON.stringify(filter));
 let lastFilter = null;
 
 const debouncedDataFetch = debounce((filter) => {
-    // if (isFilterChanged(filter)) {
     filteredFeatures(filter);
-    // }
 }, 1000);
 
 const isFilterChanged = (currentFilter) => {

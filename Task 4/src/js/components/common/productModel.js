@@ -210,7 +210,7 @@ export async function ProductModel(productData) {
     const modelCloseBtn = document.getElementById('model-close-btn');
     modelCloseBtn.addEventListener('click', () => {
         const modelContainer = document.getElementById('model-container');
-        const modelBackdrop = document.getElementById('model-backdrop');
+        const modelBackdrop = document.getElementById('backdrop');
         if (modelContainer && modelBackdrop) {
             modelContainer.classList.remove('active');
             modelBackdrop.classList.remove('active');
