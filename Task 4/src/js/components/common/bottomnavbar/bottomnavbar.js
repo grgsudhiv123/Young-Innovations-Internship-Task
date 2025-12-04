@@ -1,5 +1,7 @@
 import { PreventScroll } from '../../../utils/preventScroll.js';
-import { home, profile, search, setting } from './renderContents.js';
+import { general } from './renderGeneral.js';
+import { home } from './renderHome.js';
+import { search } from './renderSearch.js';
 
 export const bottomNavbar = () => {
     const backdrop = document.getElementById('backdrop');
@@ -58,6 +60,10 @@ export const bottomNavbar = () => {
 function renderBottomNavbarContents(key, container) {
     switch (key) {
         case 'home':
+            window.location.href = 'index.html';
+            break;
+
+        case 'menu':
             home(container);
             break;
 
@@ -65,12 +71,8 @@ function renderBottomNavbarContents(key, container) {
             search(container);
             break;
 
-        case 'setting':
-            setting(container);
-            break;
-
-        case 'profile':
-            profile(container);
+        case 'general':
+            general(container);
             break;
 
         default:

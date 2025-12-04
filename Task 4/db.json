@@ -1586,9 +1586,9 @@
       "wt": "250gm",
       "stock": "380",
       "color": "deep green",
-      "quantity": 5,
+      "quantity": 4,
       "addedAt": "2025-12-02T08:28:22.526Z",
-      "updatedAt": "2025-12-03T07:33:46.078Z"
+      "updatedAt": "2025-12-04T17:40:17.969Z"
     },
     {
       "id": "207",
@@ -1862,9 +1862,9 @@
       "wt": "500gm",
       "stock": "320",
       "color": "orange",
-      "quantity": 5,
+      "quantity": 1,
       "addedAt": "2025-12-03T09:00:24.953Z",
-      "updatedAt": "2025-12-03T18:45:07.975Z"
+      "updatedAt": "2025-12-04T11:10:19.479Z"
     },
     {
       "id": "108",
