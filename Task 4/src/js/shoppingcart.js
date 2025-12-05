@@ -3,7 +3,7 @@ import { renderBreadCrumb } from './components/common/breadcrumb.js';
 import footerComp from './components/common/footer.js';
 import { footerTemplate } from './components/common/layoutcommon/footerLayout.js';
 import { headerTemplate } from './components/common/layoutcommon/headerLayout.js';
-import navbar from './components/common/topnavbar.js';
+import navbar from './components/common/topnavbar/topnavbar.js';
 import {
     HandleSidebarCart,
     productCart,

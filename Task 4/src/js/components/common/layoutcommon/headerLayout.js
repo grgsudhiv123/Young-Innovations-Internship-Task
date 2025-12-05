@@ -83,9 +83,10 @@ export const headerTemplate = () => {
             src="../src/assets/icons/navbar/logo.svg"
           />Ecobazar</a
         >
+        <div id="searchContainer" class="relative max-w-90 lg:max-w-125 w-full">
         <form
           method="post"
-          class="hidden md:flex max-w-90 lg:max-w-125 w-full flex-row rounded-md border border-gray-100 overflow-hidden focus-within:border-gray-500 focus-within:ring-2 focus-within:ring-gray-200"
+          class="hidden md:flex w-full flex-row rounded-md border border-gray-100 overflow-hidden focus-within:border-gray-500 focus-within:ring-2 focus-within:ring-gray-200"
         >
           <div
             class="w-full flex flex-row items-center gap-2 px-4 lg:px-6 py-2 lg:py-3.5"
@@ -105,6 +106,7 @@ export const headerTemplate = () => {
               />
             </svg>
             <input
+              name="navbarSearchField"
               class="w-full outline-0 text-sm leading-[21px] text-gray-900 placeholder:text-gray-500"
               type="text"
               placeholder="Search"
@@ -116,7 +118,10 @@ export const headerTemplate = () => {
           >
             Search
           </button>
-        </form>
+          </form>
+          <div id="navbarSearchResult" class="absolute w-full max-h-60 overflow-y-auto z-20 bg-white -bottom-2 translate-y-full rounded-lg space-y-2 scrollBar hidden">
+          </div>
+        </div>
         <div class="flex flex-row items-center gap-2 lg:gap-4">
           <button id="navWishlistBtn" type="button" class="relative" >
             <i id="navWishlistBtnIcon" class="fa-regular fa-heart text-2xl cursor-pointer"></i>

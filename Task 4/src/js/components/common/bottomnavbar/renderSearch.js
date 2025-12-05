@@ -55,11 +55,8 @@ export async function search(container) {
 
             searchResultContainer.innerHTML = productCards;
 
-            const searchResultCards =
-                document.querySelectorAll('.searchResultCard');
-
-            if (searchResultCards) {
-                searchResultCards.forEach((card) =>
+            if (productCards) {
+                productCards.forEach((card) =>
                     card.addEventListener('click', () => {
                         const productId = card.dataset.id;
                         toProductDetail(productId);

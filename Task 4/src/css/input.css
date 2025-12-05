@@ -222,6 +222,18 @@
     .collapseContainer.active {
         max-height: 500px;
     }
+
+    .scrollBar {
+        /* For Firefox */
+        scrollbar-width: none;
+        /* For Internet Explorer and Edge (legacy) */
+        -ms-overflow-style: none;
+    }
+
+    /* For Chrome, Safari, Opera (WebKit browsers) */
+    .scrollBar::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 @layer components {

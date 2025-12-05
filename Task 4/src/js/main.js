@@ -4,7 +4,7 @@ import { bottomNavbar } from './components/common/bottomnavbar/bottomnavbar.js';
 import footerComp from './components/common/footer.js';
 import { footerTemplate } from './components/common/layoutcommon/footerLayout.js';
 import { headerTemplate } from './components/common/layoutcommon/headerLayout.js';
-import navbar from './components/common/topnavbar.js';
+import navbar from './components/common/topnavbar/topnavbar.js';
 import { CompanyLogo } from './components/pagessection/homepage/companylogo.js';
 import { FeaturedProducts } from './components/pagessection/homepage/featuredproducts.js';
 import { FollowUsSection } from './components/pagessection/homepage/followussection.js';

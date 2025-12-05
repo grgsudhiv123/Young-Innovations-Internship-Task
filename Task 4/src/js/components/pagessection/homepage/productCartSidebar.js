@@ -127,7 +127,7 @@ export const HandleSidebarCart = async () => {
                 <i class="fa-solid fa-x text-xs md:text-sm"></i>
             </button>
             </div>
-            <div id="cartProduct-container" class="flex flex-col gap-3 max-h-[70%] h-full overflow-scroll overflow-x-hidden"></div>
+            <div id="cartProduct-container" class="flex flex-col gap-3 max-h-[70%] h-full overflow-scroll overflow-x-hidden scrollBar"></div>
             </div>
             <div class="absolute bottom-0 left-0 w-full h-auto pb-10 px-10 bg-white">
             <div class="w-full py-6 flex justify-between text-sm md:text-base leading-[120%]">
