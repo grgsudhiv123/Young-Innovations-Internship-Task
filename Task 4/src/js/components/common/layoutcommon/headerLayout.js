@@ -37,10 +37,10 @@ export const headerTemplate = () => {
               <i class="fa-solid fa-chevron-down text-[7px] transition-all ease-in-out duration-200 "></i>
             </button>
             <ul class="absolute z-10 w-[50px] hidden h-fit overflow-hidden bg-gray-100 text-xs font-medium">
-              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-50 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="ZH">ZH</button></li>
-              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-50 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="ES">ES</button></li>
-              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-50 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="FR">FR</button></li>
-              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-50 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="DE">DE</button></li>
+              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-50 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="ZH" aria-label="Language option">ZH</button></li>
+              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-50 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="ES" aria-label="Language option">ES</button></li>
+              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-50 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="FR" aria-label="Language option">FR</button></li>
+              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-50 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="DE" aria-label="Language option">DE</button></li>
             </ul>
           </div>
           <div id="currencySelector" class="relative">
@@ -49,11 +49,11 @@ export const headerTemplate = () => {
               <i class="fa-solid fa-chevron-down text-[7px] transition-all ease-in-out duration-200"></i>
             </button>
             <ul class="absolute z-10 w-[50px] hidden h-fit overflow-hidden bg-gray-100 text-xs font-medium ">
-              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-50 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="EUR">EUR</button></li>
-              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-50 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="USD">USD</button></li>
-              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-50 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="CNY">CNY</button></li>
-              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-50 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="AUD">AUD</button></li>
-              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-50 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="INR">INR</button></li>
+              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-50 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="EUR" aria-label="Currency option">EUR</button></li>
+              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-50 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="USD" aria-label="Currency option">USD</button></li>
+              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-50 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="CNY" aria-label="Currency option">CNY</button></li>
+              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-50 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="AUD" aria-label="Currency option">AUD</button></li>
+              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-50 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="INR" aria-label="Currency option">INR</button></li>
             </ul>
           </div>
           <span class="h-full border border-gray-100"></span>
@@ -100,16 +100,15 @@ export const headerTemplate = () => {
           </div>
         </div>
         <div class="flex flex-row items-center gap-2 lg:gap-4">
-          <button id="navWishlistBtn" type="button" class="relative" >
+          <button id="navWishlistBtn" type="button" class="relative" aria-label="Open Wishlist">
             <i id="navWishlistBtnIcon" class="fa-regular fa-heart text-2xl cursor-pointer"></i>
             <span id="navWishlistCount" class="absolute -top-1 -right-2.5  bg-(--success-dark) group-hover:bg-(--light-green) size-[18px] border border-white flex items-center justify-center rounded-full text-[10px] leading-2.5 text-white transition-all duration-200 ease-in-out"></span>
           </button> 
           <span class="h-6 border border-gray-100"></span>
-          <button
-            type="button"
+          <div
             class="flex flex-row gap-2 lg:gap-3 items-center"
           >
-            <button type="button" id="open-sidebar-cart" class="relative cursor-pointer group">
+            <button type="button" id="open-sidebar-cart" class="relative cursor-pointer group" aria-label="Open Sidebar">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -134,10 +133,9 @@ export const headerTemplate = () => {
               class="hidden md:flex flex-col gap-2 font-normal text-[11px] leading-[120%] items-start"
             >
               <span class="text-gray-700">Shopping cart:</span>
-              <span class="text-gray-900 text-sm font-medium">$57.00</span>
-              
+              <span id="navCartTotal" class="text-gray-900 text-sm font-medium">$57.00</span>
             </div>
-          </button>
+          </div>
         </div>
       </div>
       </div>
@@ -149,23 +147,8 @@ export const headerTemplate = () => {
           <ul id="navbar-dropdwn" class="text-white flex flex-row gap-8">
           </ul>
           
-          <a href="/" class="flex flex-row gap-2 text-white items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="size-5"
-              aria-label="telephone icon"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M20.25 3.75v4.5m0-4.5h-4.5m4.5 0-6 6m3 12c-8.284 0-15-6.716-15-15V4.5A2.25 2.25 0 0 1 4.5 2.25h1.372c.516 0 .966.351 1.091.852l1.106 4.423c.11.44-.054.902-.417 1.173l-1.293.97a1.062 1.062 0 0 0-.38 1.21 12.035 12.035 0 0 0 7.143 7.143c.441.162.928-.004 1.21-.38l.97-1.293a1.125 1.125 0 0 1 1.173-.417l4.423 1.106c.5.125.852.575.852 1.091V19.5a2.25 2.25 0 0 1-2.25 2.25h-2.25Z"
-              />
-            </svg>
-
+          <a href="tel:2195550114" class="flex flex-row gap-2 text-white items-center" aria-label="Telephone link">
+            <i class="fa-solid fa-phone text-base"></i>
             <span class="font-medium text-sm leading-[150%]"
               >(219) 555-0114</span
             >

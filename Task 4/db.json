@@ -1521,216 +1521,6 @@
   ],
   "cartProducts": [
     {
-      "id": "104",
-      "name": "Baby Spinach Leaves",
-      "baseprice": 6.99,
-      "rating": 5,
-      "featured": "true",
-      "discount": "0%",
-      "imgURL": [
-        "https://images.unsplash.com/photo-1576045057995-568f588f82fb?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1594282484356-4c0b5c6e76f5?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1574316071802-0d684efa7bf5?q=80&w=687&auto=format&fit=crop"
-      ],
-      "SKU": "VEG004SPINACH2024",
-      "category": 2,
-      "tags": [
-        2,
-        3,
-        14
-      ],
-      "desc": "Tender baby spinach leaves, pre-washed and ready to eat. Excellent source of iron, calcium, and vitamins for a nutritious addition to any meal.",
-      "brand": "Leafy Greens Co.",
-      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
-      "socialLinks": [
-        {
-          "id": "1",
-          "name": "facebook",
-          "link": "www.facebook.com/leafygreensco"
-        },
-        {
-          "id": "2",
-          "name": "pinterest",
-          "link": "www.pinterest.com/leafygreensco"
-        },
-        {
-          "id": "3",
-          "name": "twitter",
-          "link": "www.twitter.com/leafygreensco"
-        },
-        {
-          "id": "4",
-          "name": "instagram",
-          "link": "www.instagram.com/leafygreensco"
-        }
-      ],
-      "reviews": [
-        {
-          "id": "1",
-          "customer_name": "Amanda Taylor",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=100&auto=format&fit=crop",
-          "comment": "Always fresh and clean. Perfect for my morning smoothies!",
-          "dateandtime": "30 minutes ago"
-        },
-        {
-          "id": "2",
-          "customer_name": "Christopher White",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100&auto=format&fit=crop",
-          "comment": "Great quality spinach. Lasts longer than store-bought.",
-          "dateandtime": "6 hours ago"
-        }
-      ],
-      "detail": "Premium baby spinach leaves harvested young for maximum tenderness. Triple-washed and ready to use straight from the package. Rich in folate, iron, and magnesium, spinach is a nutritional powerhouse that supports bone health and energy production. Perfect for salads, sandwiches, smoothies, or quick sautés.",
-      "wt": "250gm",
-      "stock": "380",
-      "color": "deep green",
-      "quantity": 4,
-      "addedAt": "2025-12-02T08:28:22.526Z",
-      "updatedAt": "2025-12-04T17:40:17.969Z"
-    },
-    {
-      "id": "207",
-      "name": "Green Seedless Grapes",
-      "baseprice": 11.54,
-      "rating": 4,
-      "featured": "false",
-      "discount": "55%",
-      "imgURL": [
-        "https://images.unsplash.com/photo-1599819177330-fd0f5bcc8a19?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1601275226753-f2b94e20b6f0?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1537640538966-79f369143f8f?q=80&w=687&auto=format&fit=crop"
-      ],
-      "SKU": "FRUIT007GRAPES2024",
-      "category": 1,
-      "tags": [
-        4,
-        9,
-        15
-      ],
-      "desc": "Crisp, sweet green seedless grapes perfect for snacking. Rich in antioxidants and natural sugars. Great for lunch boxes, fruit salads, or freezing for a cool treat.",
-      "brand": "Vineyard Select",
-      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
-      "socialLinks": [
-        {
-          "id": "1",
-          "name": "facebook",
-          "link": "www.facebook.com/vineyardselect"
-        },
-        {
-          "id": "2",
-          "name": "pinterest",
-          "link": "www.pinterest.com/vineyardselect"
-        },
-        {
-          "id": "3",
-          "name": "twitter",
-          "link": "www.twitter.com/vineyardselect"
-        },
-        {
-          "id": "4",
-          "name": "instagram",
-          "link": "www.instagram.com/vineyardselect"
-        }
-      ],
-      "reviews": [
-        {
-          "id": "1",
-          "customer_name": "Charlotte Lee",
-          "rating": 4,
-          "profileURL": "https://images.unsplash.com/photo-1551843073-4a9a5b6fcd5f?q=80&w=100&auto=format&fit=crop",
-          "comment": "Very sweet and crunchy. Perfect for snacking!",
-          "dateandtime": "5 hours ago"
-        },
-        {
-          "id": "2",
-          "customer_name": "Benjamin Wilson",
-          "rating": 4,
-          "profileURL": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?q=80&w=100&auto=format&fit=crop",
-          "comment": "Good quality grapes. A few were slightly soft but mostly great.",
-          "dateandtime": "3 days ago"
-        }
-      ],
-      "detail": "Premium seedless green grapes harvested at peak sweetness for optimal flavor. These convenient, bite-sized fruits are packed with vitamins C and K, plus powerful antioxidants like resveratrol that support heart health. The crisp texture and sweet taste make them perfect for fresh snacking, adding to cheese boards, or freezing for a refreshing summer treat. No seeds means easy eating for kids and adults alike. Store in refrigerator and rinse before serving.",
-      "wt": "500gm",
-      "stock": "325",
-      "color": "green",
-      "quantity": 4,
-      "addedAt": "2025-12-03T08:45:26.380Z",
-      "updatedAt": "2025-12-06T04:42:11.814Z"
-    },
-    {
-      "id": "206",
-      "name": "Fresh Mangoes",
-      "baseprice": 16.97,
-      "rating": 5,
-      "featured": "false",
-      "discount": "10%",
-      "imgURL": [
-        "https://images.unsplash.com/photo-1553279768-865429fa0078?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1605027990121-cbae9fc60498?q=80&w=687&auto=format&fit=crop"
-      ],
-      "SKU": "FRUIT006MANGO2024",
-      "category": 1,
-      "tags": [
-        4,
-        9,
-        11
-      ],
-      "desc": "Sweet, tropical mangoes with rich, creamy flesh. High in vitamin A and C. Perfect for smoothies, desserts, or enjoying fresh. A taste of paradise!",
-      "brand": "Tropical Harvest",
-      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
-      "socialLinks": [
-        {
-          "id": "1",
-          "name": "facebook",
-          "link": "www.facebook.com/tropicalharvest"
-        },
-        {
-          "id": "2",
-          "name": "pinterest",
-          "link": "www.pinterest.com/tropicalharvest"
-        },
-        {
-          "id": "3",
-          "name": "twitter",
-          "link": "www.twitter.com/tropicalharvest"
-        },
-        {
-          "id": "4",
-          "name": "instagram",
-          "link": "www.instagram.com/tropicalharvest"
-        }
-      ],
-      "reviews": [
-        {
-          "id": "1",
-          "customer_name": "Ava Martinez",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop",
-          "comment": "Perfectly ripe and so delicious! Best mangoes I've had!",
-          "dateandtime": "2 hours ago"
-        },
-        {
-          "id": "2",
-          "customer_name": "Noah Davis",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=100&auto=format&fit=crop",
-          "comment": "Sweet and juicy. Made amazing mango lassi with these!",
-          "dateandtime": "1 day ago"
-        }
-      ],
-      "detail": "Premium tropical mangoes carefully selected for optimal ripeness and sweetness. Known as the 'king of fruits,' mangoes are rich in vitamin A, vitamin C, and fiber, supporting eye health, immune function, and digestion. The buttery, smooth flesh has a perfect balance of sweetness and tang. Excellent for fresh eating, smoothies, salsas, chutneys, or desserts. Allow to ripen at room temperature until slightly soft to touch, then refrigerate to extend freshness.",
-      "wt": "800gm",
-      "stock": "195",
-      "color": "golden yellow",
-      "quantity": 3,
-      "addedAt": "2025-12-03T08:45:30.247Z",
-      "updatedAt": "2025-12-06T04:42:05.052Z"
-    },
-    {
       "id": "105",
       "name": "Fresh Tomatoes",
       "baseprice": 9.49,
@@ -1934,215 +1724,146 @@
       "wt": "800gm",
       "stock": "185",
       "color": "white",
-      "quantity": 3,
-      "addedAt": "2025-12-03T18:51:38.363Z",
-      "updatedAt": "2025-12-05T09:15:00.232Z"
+      "quantity": 1,
+      "addedAt": "2025-12-06T17:34:52.107Z"
     },
     {
-      "id": "106",
-      "name": "Organic Cucumber",
-      "baseprice": 7.49,
-      "rating": 5,
+      "id": "207",
+      "name": "Green Seedless Grapes",
+      "baseprice": 11.54,
+      "rating": 4,
       "featured": "false",
-      "discount": "12%",
+      "discount": "55%",
       "imgURL": [
-        "https://images.unsplash.com/photo-1604977042946-1eecc30f269e?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1589927986089-35812378d193?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1566385101042-1a0aa0c1268c?q=80&w=687&auto=format&fit=crop"
+        "https://images.unsplash.com/photo-1599819177330-fd0f5bcc8a19?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1601275226753-f2b94e20b6f0?q=80&w=735&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1537640538966-79f369143f8f?q=80&w=687&auto=format&fit=crop"
       ],
-      "SKU": "VEG006CUCUMB2024",
-      "category": 2,
-      "tags": [
-        2,
-        3
-      ],
-      "desc": "Crisp and refreshing organic cucumbers. Low in calories and high in hydration. Perfect for salads, pickling, or healthy snacking.",
-      "brand": "Green Valley Farms",
-      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
-      "socialLinks": [
-        {
-          "id": "1",
-          "name": "facebook",
-          "link": "www.facebook.com/greenvalleyfarms"
-        },
-        {
-          "id": "2",
-          "name": "pinterest",
-          "link": "www.pinterest.com/greenvalleyfarms"
-        },
-        {
-          "id": "3",
-          "name": "twitter",
-          "link": "www.twitter.com/greenvalleyfarms"
-        },
-        {
-          "id": "4",
-          "name": "instagram",
-          "link": "www.instagram.com/greenvalleyfarms"
-        }
-      ],
-      "reviews": [
-        {
-          "id": "1",
-          "customer_name": "Patricia Harris",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=100&auto=format&fit=crop",
-          "comment": "Super crunchy and not bitter at all. Love them!",
-          "dateandtime": "3 hours ago"
-        },
-        {
-          "id": "2",
-          "customer_name": "James Wilson",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop",
-          "comment": "Perfect for making pickles. Great freshness.",
-          "dateandtime": "5 days ago"
-        }
-      ],
-      "detail": "Organically grown cucumbers with crisp texture and mild flavor. These cucumbers are 95% water, making them incredibly hydrating and low in calories. Rich in vitamin K and potassium, they support bone health and blood pressure regulation. Excellent for fresh eating, juicing, or making homemade pickles. No wax coating - just pure, natural goodness.",
-      "wt": "450gm",
-      "stock": "340",
-      "color": "green",
-      "quantity": 3,
-      "addedAt": "2025-12-04T09:13:40.456Z",
-      "updatedAt": "2025-12-05T09:14:58.048Z"
-    },
-    {
-      "id": "202",
-      "name": "Fresh Strawberries",
-      "baseprice": 12.55,
-      "rating": 5,
-      "featured": "false",
-      "discount": "60%",
-      "imgURL": [
-        "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1543528176-61b239494933?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1518635017498-87f514b751ba?q=80&w=687&auto=format&fit=crop"
-      ],
-      "SKU": "FRUIT002STRAWB2024",
+      "SKU": "FRUIT007GRAPES2024",
       "category": 1,
       "tags": [
         4,
         9,
-        3
+        15
       ],
-      "desc": "Juicy, sweet strawberries bursting with flavor. High in vitamin C and antioxidants. Perfect for desserts, smoothies, or fresh snacking.",
-      "brand": "Berry Fields",
+      "desc": "Crisp, sweet green seedless grapes perfect for snacking. Rich in antioxidants and natural sugars. Great for lunch boxes, fruit salads, or freezing for a cool treat.",
+      "brand": "Vineyard Select",
       "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
       "socialLinks": [
         {
           "id": "1",
           "name": "facebook",
-          "link": "www.facebook.com/berryfields"
+          "link": "www.facebook.com/vineyardselect"
         },
         {
           "id": "2",
           "name": "pinterest",
-          "link": "www.pinterest.com/berryfields"
+          "link": "www.pinterest.com/vineyardselect"
         },
         {
           "id": "3",
           "name": "twitter",
-          "link": "www.twitter.com/berryfields"
+          "link": "www.twitter.com/vineyardselect"
         },
         {
           "id": "4",
           "name": "instagram",
-          "link": "www.instagram.com/berryfields"
+          "link": "www.instagram.com/vineyardselect"
         }
       ],
       "reviews": [
         {
           "id": "1",
-          "customer_name": "Emma Wilson",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&auto=format&fit=crop",
-          "comment": "Absolutely delicious! So sweet and fresh, best strawberries ever!",
-          "dateandtime": "3 hours ago"
+          "customer_name": "Charlotte Lee",
+          "rating": 4,
+          "profileURL": "https://images.unsplash.com/photo-1551843073-4a9a5b6fcd5f?q=80&w=100&auto=format&fit=crop",
+          "comment": "Very sweet and crunchy. Perfect for snacking!",
+          "dateandtime": "5 hours ago"
         },
         {
           "id": "2",
-          "customer_name": "Ryan Parker",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop",
-          "comment": "Perfect for making strawberry shortcake. Great quality!",
-          "dateandtime": "5 hours ago"
+          "customer_name": "Benjamin Wilson",
+          "rating": 4,
+          "profileURL": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?q=80&w=100&auto=format&fit=crop",
+          "comment": "Good quality grapes. A few were slightly soft but mostly great.",
+          "dateandtime": "3 days ago"
         }
       ],
-      "detail": "Premium strawberries hand-picked at peak ripeness for maximum sweetness and flavor. These berries are loaded with vitamin C, manganese, and powerful antioxidants that support immune health and fight inflammation. Perfect for fresh eating, adding to yogurt, making jams, or topping desserts. Each berry is carefully inspected to ensure you receive only the finest quality fruit. Store in refrigerator and consume within 3-5 days for best flavor.",
-      "wt": "400gm",
-      "stock": "285",
-      "color": "red",
-      "quantity": 1,
-      "addedAt": "2025-12-04T09:13:59.540Z"
+      "detail": "Premium seedless green grapes harvested at peak sweetness for optimal flavor. These convenient, bite-sized fruits are packed with vitamins C and K, plus powerful antioxidants like resveratrol that support heart health. The crisp texture and sweet taste make them perfect for fresh snacking, adding to cheese boards, or freezing for a refreshing summer treat. No seeds means easy eating for kids and adults alike. Store in refrigerator and rinse before serving.",
+      "wt": "500gm",
+      "stock": "325",
+      "color": "green",
+      "quantity": 4,
+      "addedAt": "2025-12-06T17:41:21.489Z"
     },
     {
-      "id": "102",
-      "name": "Fresh Broccoli Crowns",
-      "baseprice": 12.44,
-      "rating": 4,
+      "id": "104",
+      "name": "Baby Spinach Leaves",
+      "baseprice": 6.99,
+      "rating": 5,
       "featured": "true",
-      "discount": "5%",
+      "discount": "0%",
       "imgURL": [
-        "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1628773822503-930a7eaecf80?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1584868356415-dde8e0c68c4f?q=80&w=687&auto=format&fit=crop"
+        "https://images.unsplash.com/photo-1576045057995-568f588f82fb?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1594282484356-4c0b5c6e76f5?q=80&w=735&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1574316071802-0d684efa7bf5?q=80&w=687&auto=format&fit=crop"
       ],
-      "SKU": "VEG002BROCC2024",
+      "SKU": "VEG004SPINACH2024",
       "category": 2,
       "tags": [
         2,
-        3
+        3,
+        14
       ],
-      "desc": "Crisp and nutritious broccoli crowns, high in vitamins C and K. Ideal for steaming, stir-frying, or adding to your favorite pasta dishes.",
-      "brand": "Nature's Best",
+      "desc": "Tender baby spinach leaves, pre-washed and ready to eat. Excellent source of iron, calcium, and vitamins for a nutritious addition to any meal.",
+      "brand": "Leafy Greens Co.",
       "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
       "socialLinks": [
         {
           "id": "1",
           "name": "facebook",
-          "link": "www.facebook.com/naturesbest"
+          "link": "www.facebook.com/leafygreensco"
         },
         {
           "id": "2",
           "name": "pinterest",
-          "link": "www.pinterest.com/naturesbest"
+          "link": "www.pinterest.com/leafygreensco"
         },
         {
           "id": "3",
           "name": "twitter",
-          "link": "www.twitter.com/naturesbest"
+          "link": "www.twitter.com/leafygreensco"
         },
         {
           "id": "4",
           "name": "instagram",
-          "link": "www.instagram.com/naturesbest"
+          "link": "www.instagram.com/leafygreensco"
         }
       ],
       "reviews": [
         {
           "id": "1",
-          "customer_name": "Sarah Mitchell",
-          "rating": 4,
-          "profileURL": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&auto=format&fit=crop",
-          "comment": "Fresh and green. Perfect for my weekly meal prep.",
-          "dateandtime": "5 hours ago"
+          "customer_name": "Amanda Taylor",
+          "rating": 5,
+          "profileURL": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=100&auto=format&fit=crop",
+          "comment": "Always fresh and clean. Perfect for my morning smoothies!",
+          "dateandtime": "30 minutes ago"
         },
         {
           "id": "2",
-          "customer_name": "David Lee",
-          "rating": 4,
-          "profileURL": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop",
-          "comment": "Good quality broccoli, stays fresh for days in the fridge.",
-          "dateandtime": "2 days ago"
+          "customer_name": "Christopher White",
+          "rating": 5,
+          "profileURL": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100&auto=format&fit=crop",
+          "comment": "Great quality spinach. Lasts longer than store-bought.",
+          "dateandtime": "6 hours ago"
         }
       ],
-      "detail": "Premium broccoli crowns harvested at peak maturity for maximum nutritional value. These florets are packed with cancer-fighting compounds, fiber, and essential minerals. Steam for 5-7 minutes to retain nutrients, or add to soups and casseroles for a healthy boost.",
-      "wt": "400gm",
-      "stock": "275",
-      "color": "dark green",
+      "detail": "Premium baby spinach leaves harvested young for maximum tenderness. Triple-washed and ready to use straight from the package. Rich in folate, iron, and magnesium, spinach is a nutritional powerhouse that supports bone health and energy production. Perfect for salads, sandwiches, smoothies, or quick sautés.",
+      "wt": "250gm",
+      "stock": "380",
+      "color": "deep green",
       "quantity": 1,
-      "addedAt": "2025-12-05T04:34:37.656Z"
+      "addedAt": "2025-12-06T17:41:31.085Z"
     },
     {
       "id": "103",
@@ -2211,7 +1932,75 @@
       "stock": "410",
       "color": "red",
       "quantity": 1,
-      "addedAt": "2025-12-05T09:36:30.431Z"
+      "addedAt": "2025-12-06T17:41:34.964Z"
+    },
+    {
+      "id": "102",
+      "name": "Fresh Broccoli Crowns",
+      "baseprice": 12.44,
+      "rating": 4,
+      "featured": "true",
+      "discount": "5%",
+      "imgURL": [
+        "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1628773822503-930a7eaecf80?q=80&w=735&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1584868356415-dde8e0c68c4f?q=80&w=687&auto=format&fit=crop"
+      ],
+      "SKU": "VEG002BROCC2024",
+      "category": 2,
+      "tags": [
+        2,
+        3
+      ],
+      "desc": "Crisp and nutritious broccoli crowns, high in vitamins C and K. Ideal for steaming, stir-frying, or adding to your favorite pasta dishes.",
+      "brand": "Nature's Best",
+      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
+      "socialLinks": [
+        {
+          "id": "1",
+          "name": "facebook",
+          "link": "www.facebook.com/naturesbest"
+        },
+        {
+          "id": "2",
+          "name": "pinterest",
+          "link": "www.pinterest.com/naturesbest"
+        },
+        {
+          "id": "3",
+          "name": "twitter",
+          "link": "www.twitter.com/naturesbest"
+        },
+        {
+          "id": "4",
+          "name": "instagram",
+          "link": "www.instagram.com/naturesbest"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "1",
+          "customer_name": "Sarah Mitchell",
+          "rating": 4,
+          "profileURL": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&auto=format&fit=crop",
+          "comment": "Fresh and green. Perfect for my weekly meal prep.",
+          "dateandtime": "5 hours ago"
+        },
+        {
+          "id": "2",
+          "customer_name": "David Lee",
+          "rating": 4,
+          "profileURL": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop",
+          "comment": "Good quality broccoli, stays fresh for days in the fridge.",
+          "dateandtime": "2 days ago"
+        }
+      ],
+      "detail": "Premium broccoli crowns harvested at peak maturity for maximum nutritional value. These florets are packed with cancer-fighting compounds, fiber, and essential minerals. Steam for 5-7 minutes to retain nutrients, or add to soups and casseroles for a healthy boost.",
+      "wt": "400gm",
+      "stock": "275",
+      "color": "dark green",
+      "quantity": 1,
+      "addedAt": "2025-12-06T17:41:37.634Z"
     }
   ],
   "wishlist": [
@@ -2348,6 +2137,73 @@
       "wt": "250gm",
       "stock": "380",
       "color": "deep green"
+    },
+    {
+      "id": "207",
+      "name": "Green Seedless Grapes",
+      "baseprice": 11.54,
+      "rating": 4,
+      "featured": "false",
+      "discount": "55%",
+      "imgURL": [
+        "https://images.unsplash.com/photo-1599819177330-fd0f5bcc8a19?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1601275226753-f2b94e20b6f0?q=80&w=735&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1537640538966-79f369143f8f?q=80&w=687&auto=format&fit=crop"
+      ],
+      "SKU": "FRUIT007GRAPES2024",
+      "category": 1,
+      "tags": [
+        4,
+        9,
+        15
+      ],
+      "desc": "Crisp, sweet green seedless grapes perfect for snacking. Rich in antioxidants and natural sugars. Great for lunch boxes, fruit salads, or freezing for a cool treat.",
+      "brand": "Vineyard Select",
+      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
+      "socialLinks": [
+        {
+          "id": "1",
+          "name": "facebook",
+          "link": "www.facebook.com/vineyardselect"
+        },
+        {
+          "id": "2",
+          "name": "pinterest",
+          "link": "www.pinterest.com/vineyardselect"
+        },
+        {
+          "id": "3",
+          "name": "twitter",
+          "link": "www.twitter.com/vineyardselect"
+        },
+        {
+          "id": "4",
+          "name": "instagram",
+          "link": "www.instagram.com/vineyardselect"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "1",
+          "customer_name": "Charlotte Lee",
+          "rating": 4,
+          "profileURL": "https://images.unsplash.com/photo-1551843073-4a9a5b6fcd5f?q=80&w=100&auto=format&fit=crop",
+          "comment": "Very sweet and crunchy. Perfect for snacking!",
+          "dateandtime": "5 hours ago"
+        },
+        {
+          "id": "2",
+          "customer_name": "Benjamin Wilson",
+          "rating": 4,
+          "profileURL": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?q=80&w=100&auto=format&fit=crop",
+          "comment": "Good quality grapes. A few were slightly soft but mostly great.",
+          "dateandtime": "3 days ago"
+        }
+      ],
+      "detail": "Premium seedless green grapes harvested at peak sweetness for optimal flavor. These convenient, bite-sized fruits are packed with vitamins C and K, plus powerful antioxidants like resveratrol that support heart health. The crisp texture and sweet taste make them perfect for fresh snacking, adding to cheese boards, or freezing for a refreshing summer treat. No seeds means easy eating for kids and adults alike. Store in refrigerator and rinse before serving.",
+      "wt": "500gm",
+      "stock": "325",
+      "color": "green"
     }
   ]
 }

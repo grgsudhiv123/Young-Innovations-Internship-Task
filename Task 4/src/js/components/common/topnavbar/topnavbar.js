@@ -43,12 +43,14 @@ async function navbarWishList() {
     const wishlistBtnIcon = document.getElementById('navWishlistBtnIcon');
 
     const navWishlistCount = document.getElementById('navWishlistCount');
+    navWishlistCount.classList.add('hidden');
     if (wishlistBtnIcon) {
         const wishlistData = await FetchApi('wishlist', '');
         if (wishlistData.length > 0) {
             wishlistBtnIcon.classList.remove('fa-regular');
             wishlistBtnIcon.classList.add('fa-solid');
             navWishlistCount.innerText = wishlistData.length;
+            navWishlistCount.classList.remove('hidden');
         }
     }
     if (navWishlistBtn) {

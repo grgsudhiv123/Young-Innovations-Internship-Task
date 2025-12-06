@@ -103,7 +103,7 @@ export default ProductCard;
 export const ProductBtns = async (productData, prefix) => {
     const { preventScroll } = PreventScroll();
     const modelContainer = document.getElementById('model-container');
-    const modelBackdrop = document.getElementById('backdrop');
+    const modelBackdrop = document.getElementById('modelBackdrop');
 
     productCardBtnsState(productData);
 

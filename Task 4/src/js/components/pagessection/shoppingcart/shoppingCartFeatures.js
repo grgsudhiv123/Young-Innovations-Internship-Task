@@ -1,5 +1,5 @@
 import { updateCartProducts } from '../../../utils/fetchApi.js';
-import { productCart } from '../homepage/productCartSidebar.js';
+import { productCart } from '../../common/sidebar/sidebar.js';
 import { shoppingCartContents } from './shoppingCartContents.js';
 
 // updates cart total cost

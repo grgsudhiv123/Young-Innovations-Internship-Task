@@ -8,10 +8,7 @@ import {
     updateCartProducts,
 } from '../../utils/fetchApi.js';
 import { PreventScroll } from '../../utils/preventScroll.js';
-import {
-    HandleSidebarCart,
-    productCart,
-} from '../pagessection/homepage/productCartSidebar.js';
+import { HandleSidebarCart, productCart } from './sidebar/sidebar.js';
 
 export const ProductDetailModel = async (productData) => {
     try {
@@ -190,11 +187,11 @@ export async function ProductModel(productData) {
         </div>
 
         <div class="flex flex-col gap-3 text-xs lg:text-sm">
-          <div class="flex gap-[6px] font-semibold leading-[150%] capitalize">
+          <div class="flex gap-1.5 font-semibold leading-[150%] capitalize">
             <p>Category: </p> 
             <span class="text-gray-500">${categoryName}</span>
           </div>
-          <div class="flex gap-[6px] font-semibold leading-[150%] capitalize">
+          <div class="flex gap-1.5 font-semibold leading-[150%] capitalize">
             <p>Tags : </p> 
             ${tagNames
                 .map((tag) => `<span class="text-gray-500">${tag}</span>`)
@@ -210,8 +207,20 @@ export async function ProductModel(productData) {
     const modelCloseBtn = document.getElementById('model-close-btn');
     modelCloseBtn.addEventListener('click', () => {
         const modelContainer = document.getElementById('model-container');
-        const modelBackdrop = document.getElementById('backdrop');
+        const modelBackdrop = document.getElementById('modelBackdrop');
         if (modelContainer && modelBackdrop) {
+            modelContainer.classList.remove('active');
+            modelBackdrop.classList.remove('active');
+            allowScroll();
+        }
+    });
+
+    document.addEventListener('click', (e) => {
+        if (
+            !modelContainer.contains(e.target) &&
+            !modelCloseBtn.contains(e.target) &&
+            modelBackdrop.contains(e.target)
+        ) {
             modelContainer.classList.remove('active');
             modelBackdrop.classList.remove('active');
             allowScroll();

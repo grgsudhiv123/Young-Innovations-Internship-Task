@@ -1,10 +1,11 @@
 import { productCartFeatures } from '../../../features/cartFeatures.js';
 import { DeleteWishlistByID } from '../../../utils/fetchApi.js';
-import navbar from '../../common/topnavbar/topnavbar.js';
 import {
     HandleSidebarCart,
     productCart,
-} from '../homepage/productCartSidebar.js';
+} from '../../common/sidebar/sidebar.js';
+import navbar from '../../common/topnavbar/topnavbar.js';
+
 import { WishListProductTable } from './wishListTableContents.js';
 
 export const wishListCartFeatures = (wishListData) => {
