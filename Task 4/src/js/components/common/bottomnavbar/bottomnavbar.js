@@ -31,7 +31,6 @@ export const bottomNavbar = () => {
     });
 
     // close btn
-
     function closeBottomNav() {
         bottomNavbar.classList.remove('active');
         backdrop.classList.remove('active');

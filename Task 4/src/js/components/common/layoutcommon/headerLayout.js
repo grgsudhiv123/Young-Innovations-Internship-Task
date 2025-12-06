@@ -31,7 +31,7 @@ export const headerTemplate = () => {
         <div class="hidden md:flex flex-row gap-5">
           <div class="flex flex-row gap-1.5 items-center">
             <span>Eng</span>
-            <svg
+            <svg  
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -71,6 +71,7 @@ export const headerTemplate = () => {
       </div>
       <div class="w-full h-px bg-[rgb(229,229,229)]"></div>
       <!-- header nav2 -->
+      <div id="header-container" class="w-full h-auto">
       <div id="headernav2" class="z-20 w-full bg-white">
       <div
         class="header-2 max-w-[82.43rem] w-full mx-auto h-auto flex justify-between py-4 md:py-7 p-5 md:px-3 border-b md:border-0 border-gray-300 shadow-md md:shadow-none"
@@ -157,121 +158,21 @@ export const headerTemplate = () => {
               class="hidden md:flex flex-col gap-2 font-normal text-[11px] leading-[120%] items-start"
             >
               <span class="text-gray-700">Shopping cart:</span>
-              <span class="text-gray-900">$57.00</span>
+              <span class="text-gray-900 text-sm font-medium">$57.00</span>
+              
             </div>
           </button>
         </div>
       </div>
       </div>
       <!-- header nav3 -->
-      <div id="headernav3" class="sticky top-20 header-3 bg-gray-800 hidden md:block">
+      <div id="headernav3" class=" header-3 bg-gray-800 hidden md:block">
         <div
           class="max-w-[82.43rem] w-full mx-auto h-auto flex justify-between p-4"
         >
           <ul id="navbar-dropdwn" class="text-white flex flex-row gap-8">
-            <li>
-              <button
-                type="button"
-                class="flex flex-row gap-1 items-center cursor-pointer"
-              >
-                <span class="font-medium text-sm leading-[150%]"> Home </span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  aria-label="chevron down arrow"
-                  class="size-4"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
-                  />
-                </svg>
-              </button>
-            </li>
-            <li>
-              <button
-                type="button"
-                class="flex flex-row gap-1 items-center cursor-pointer"
-              >
-                <span class="font-medium text-sm leading-[150%]"> Shop </span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  aria-label="chevron down arrow"
-                  class="size-4"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
-                  />
-                </svg>
-              </button>
-            </li>
-            <li>
-              <button
-                type="button"
-                class="flex flex-row gap-1 items-center cursor-pointer"
-              >
-                <span class="font-medium text-sm leading-[150%]"> Pages </span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  aria-label="chevron down arrow"
-                  class="size-4"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
-                  />
-                </svg>
-              </button>
-            </li>
-            <li>
-              <button
-                type="button"
-                class="flex flex-row gap-1 items-center cursor-pointer"
-              >
-                <span class="font-medium text-sm leading-[150%]"> Blog </span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  aria-label="chevron down arrow"
-                  class="size-4"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="m19.5 8.25-7.5 7.5-7.5-7.5"
-                  />
-                </svg>
-              </button>
-            </li>
-            <li>
-              <a href="/" class="font-medium text-sm leading-[150%]">
-                About Us
-              </a>
-            </li>
-            <li>
-              <a href="/" class="font-medium text-sm leading-[150%]">
-                Contact Us
-              </a>
-            </li>
           </ul>
+          
           <a href="/" class="flex flex-row gap-2 text-white items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -294,6 +195,7 @@ export const headerTemplate = () => {
             >
           </a>
         </div>
+      </div>
       </div>
     `;
 };

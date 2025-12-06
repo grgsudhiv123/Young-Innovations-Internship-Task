@@ -103,7 +103,6 @@ function handleGeneralBtns() {
                 languageDropdown.classList.toggle('max-h-[500px]');
                 cheveron.classList.toggle('rotate-180');
             });
-            console.log('btn : ', btn);
         }
     });
 

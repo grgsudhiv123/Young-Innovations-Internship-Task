@@ -1,6 +1,6 @@
 import { productCartFeatures } from '../../../features/cartFeatures.js';
 import { DeleteWishlistByID } from '../../../utils/fetchApi.js';
-import navbar from '../../common/topnavbar.js';
+import navbar from '../../common/topnavbar/topnavbar.js';
 import {
     HandleSidebarCart,
     productCart,

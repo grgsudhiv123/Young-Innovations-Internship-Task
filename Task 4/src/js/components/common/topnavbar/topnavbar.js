@@ -1,7 +1,9 @@
 import { FetchApi } from '../../../utils/fetchApi.js';
+import { renderDropdown } from './dropdownMenu.js';
 import { navbarSearch } from './navbarSearch.js';
 
 async function navbar() {
+    renderDropdown();
     navbarSlide();
     navbarSearch();
     navbarWishList();
@@ -12,35 +14,26 @@ export default navbar;
 // navbar features
 function navbarSlide() {
     const nav1 = document.getElementById('headernav1');
-    const nav2 = document.getElementById('headernav2');
-    const nav3 = document.getElementById('headernav3');
+    const headerContainer = document.getElementById('header-container');
 
     const nav1Height = nav1.offsetHeight;
-    const nav2Height = nav2.offsetHeight;
-    const header = document.getElementById('header');
-
-    // const headerHeight = header.offsetHeight;
-    // let prevScroll = 0;
 
     window.addEventListener('scroll', () => {
         if (scrollY >= nav1Height) {
-            nav2.classList.add('fixed', 'left-0', 'right-0', 'top-0');
-            nav3.style.marginTop = `${nav2Height}px`;
-            nav2.classList.add('transition-all', 'duration-500', 'ease-in-out');
+            headerContainer.classList.add(
+                'fixed',
+                'left-0',
+                'right-0',
+                'top-0',
+            );
         } else {
-            nav2.classList.remove('fixed', 'left-0', 'right-0', 'top-0');
-            nav3.style.marginTop = '0';
+            headerContainer.classList.remove(
+                'fixed',
+                'left-0',
+                'right-0',
+                'top-0',
+            );
         }
-
-        // if (scrollY > headerHeight) {
-        //     if (scrollY > prevScroll) {
-        //         nav2.classList.add('-translate-y-[100%]');
-        //     } else {
-        //         nav2.classList.remove('-translate-y-[100%]');
-        //     }
-        // }
-
-        // prevScroll = scrollY;
     });
 }
 
