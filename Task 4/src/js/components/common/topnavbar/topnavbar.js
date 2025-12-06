@@ -74,11 +74,18 @@ function selectorDropdown() {
     selectLangBtn.addEventListener('click', () => {
         languageContainer.classList.toggle('hidden');
         languageChevron.classList.toggle('rotate-180');
+
+        //close container
+        currencyContainer.classList.add('hidden');
+        currencyChevron.classList.remove('rotate-180');
     });
 
     selectCurrencyBtn.addEventListener('click', () => {
         currencyContainer.classList.toggle('hidden');
         currencyChevron.classList.toggle('rotate-180');
+        // close language
+        languageContainer.classList.add('hidden');
+        languageChevron.classList.remove('rotate-180');
     });
 
     const langOptionBtns = languageContainer.querySelectorAll(
@@ -107,5 +114,17 @@ function selectorDropdown() {
             currencyContainer.classList.add('hidden');
             currencyChevron.classList.remove('rotate-180');
         });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (
+            !selectLangBtn.contains(e.target) &&
+            !selectCurrencyBtn.contains(e.target)
+        ) {
+            languageContainer.classList.add('hidden');
+            languageChevron.classList.remove('rotate-180');
+            currencyContainer.classList.add('hidden');
+            currencyChevron.classList.remove('rotate-180');
+        }
     });
 }

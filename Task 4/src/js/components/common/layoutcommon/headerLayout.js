@@ -33,27 +33,27 @@ export const headerTemplate = () => {
         <div class="hidden md:flex flex-row gap-5">
           <div id="languageSelector" class="relative">
             <button type="button" class="flex flex-row gap-1.5 items-center cursor-pointer" aria-label="Change language">
-              <span>Eng</span>
+              <span class="font-medium text-sm">Eng</span>
               <i class="fa-solid fa-chevron-down text-[7px] transition-all ease-in-out duration-200 "></i>
             </button>
-            <ul class="absolute z-10 w-full hidden h-fit overflow-hidden bg-white text-xs font-medium">
-              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-100 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="ZH">ZH</button></li>
-              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-100 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="ES">ES</button></li>
-              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-100 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="FR">FR</button></li>
-              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-100 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="DE">DE</button></li>
+            <ul class="absolute z-10 w-[50px] hidden h-fit overflow-hidden bg-gray-100 text-xs font-medium">
+              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-50 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="ZH">ZH</button></li>
+              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-50 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="ES">ES</button></li>
+              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-50 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="FR">FR</button></li>
+              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-50 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="DE">DE</button></li>
             </ul>
           </div>
           <div id="currencySelector" class="relative">
             <button type="button" class="flex flex-row gap-1.5 items-center cursor-pointer" aria-label="Change currency">
-              <span>USD</span>
+              <span class="font-medium text-sm">USD</span>
               <i class="fa-solid fa-chevron-down text-[7px] transition-all ease-in-out duration-200"></i>
             </button>
-            <ul class="absolute z-10 w-full hidden h-fit overflow-hidden bg-white text-xs font-medium ">
-              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-100 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="EUR">EUR</button></li>
-              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-100 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="USD">USD</button></li>
-              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-100 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="CNY">CNY</button></li>
-              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-100 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="AUD">AUD</button></li>
-              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-100 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="INR">INR</button></li>
+            <ul class="absolute z-10 w-[50px] hidden h-fit overflow-hidden bg-gray-100 text-xs font-medium ">
+              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-50 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="EUR">EUR</button></li>
+              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-50 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="USD">USD</button></li>
+              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-50 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="CNY">CNY</button></li>
+              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-50 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="AUD">AUD</button></li>
+              <li><button type="button" class="cursor-pointer px-1 py-0.5 hover:bg-gray-50 transition-all ease-in-out duration-200 rounded-md w-full" data-btnValue="INR">INR</button></li>
             </ul>
           </div>
           <span class="h-full border border-gray-100"></span>

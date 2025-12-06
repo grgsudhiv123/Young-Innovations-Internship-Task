@@ -662,9 +662,6 @@
   .max-h-\[70\%\] {
     max-height: 70%;
   }
-  .max-h-\[400px\] {
-    max-height: 400px;
-  }
   .max-h-\[500px\] {
     max-height: 500px;
   }
@@ -683,8 +680,14 @@
   .w-\[45px\] {
     width: 45px;
   }
+  .w-\[50px\] {
+    width: 50px;
+  }
   .w-\[65px\] {
     width: 65px;
+  }
+  .w-\[200px\] {
+    width: 200px;
   }
   .w-\[300px\] {
     width: 300px;
