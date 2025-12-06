@@ -7,6 +7,7 @@ async function navbar() {
     navbarSlide();
     navbarSearch();
     navbarWishList();
+    selectorDropdown();
 }
 
 export default navbar;
@@ -55,4 +56,56 @@ async function navbarWishList() {
             window.location.href = '/public/wishlistpage.html';
         });
     }
+}
+
+function selectorDropdown() {
+    const languageSelector = document.getElementById('languageSelector');
+    const currencySelector = document.getElementById('currencySelector');
+
+    const selectLangBtn = languageSelector.querySelector('button');
+    const selectCurrencyBtn = currencySelector.querySelector('button');
+
+    const languageChevron = selectLangBtn.querySelector('i');
+    const currencyChevron = selectCurrencyBtn.querySelector('i');
+
+    const languageContainer = languageSelector.querySelector('ul');
+    const currencyContainer = currencySelector.querySelector('ul');
+
+    selectLangBtn.addEventListener('click', () => {
+        languageContainer.classList.toggle('hidden');
+        languageChevron.classList.toggle('rotate-180');
+    });
+
+    selectCurrencyBtn.addEventListener('click', () => {
+        currencyContainer.classList.toggle('hidden');
+        currencyChevron.classList.toggle('rotate-180');
+    });
+
+    const langOptionBtns = languageContainer.querySelectorAll(
+        'button[data-btnValue]',
+    );
+    const currencyOptionBtns = currencyContainer.querySelectorAll(
+        'button[data-btnValue]',
+    );
+
+    langOptionBtns.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            selectLangBtn.querySelector('span').innerText =
+                btn.dataset.btnvalue;
+
+            languageContainer.classList.add('hidden');
+            languageChevron.classList.remove('rotate-180');
+        });
+    });
+
+    currencyOptionBtns.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            selectCurrencyBtn.querySelector('span').innerText =
+                btn.dataset.btnvalue;
+            currencyContainer.classList.add('hidden');
+            currencyChevron.classList.remove('rotate-180');
+        });
+    });
 }

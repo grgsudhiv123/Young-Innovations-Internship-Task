@@ -1,6 +1,18 @@
 import { searchProducts } from '../searchFeature.js';
 
 export async function navbarSearch() {
+    // handle search form submission
+    const form = document.forms['Search Product Form'];
+    const searchinput = form.querySelector('input');
+    searchinput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            let inputValue = searchinput.value.toLowerCase().trim();
+            window.location.href = `allproducts.html?q=${inputValue}`;
+        }
+    });
+
+    // handle input onchange product search
     const searchResultContainer = document.getElementById('navbarSearchResult');
     const searchContainer = document.getElementById('searchContainer');
 
