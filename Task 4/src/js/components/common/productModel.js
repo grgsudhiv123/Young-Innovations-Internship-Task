@@ -146,7 +146,7 @@ export async function ProductModel(productData) {
             <div class="flex flex-col md:flex-row w-full gap-2 justify-between">
                     <div class="flex flex-row items-center gap-2">
                       <span class="text-xs lg:text-sm font-normal leading-[150%]">${productData.brand}: </span>
-                      <span class="w-[40px] xl:w-[56px] h-[40px] xl:h-[56px] overflow-hidden flex shrink-0 aspect-square rounded-sm border border-gray-100">
+                      <span class="w-10 xl:w-14 h-10 xl:h-14 overflow-hidden flex shrink-0 aspect-square rounded-sm border border-gray-100">
                         <img src=${productData.brandLogo} class="w-full h-full object-cover object-center"/>
                       </span>
                     </div>
@@ -170,9 +170,9 @@ export async function ProductModel(productData) {
 
         <div class="w-full flex justify-between py-[18px] gap-3 border-y-px border-gray-100">
           <div class="w-fit flex flex-row gap-2 md:gap-4 p-1 lg:p-2 items-center border border-gray-100 rounded-full">
-          <button id="modelProductDeductbtn" type="button" class="size-[24px] lg:size-[34px] rounded-full text-xs flex justify-center items-center bg-gray-50 cursor-pointer hover:bg-gray-200 transition-all duration-200 ease-in-out"><i class="fa-solid fa-minus text-sm"></i></button>
+          <button id="modelProductDeductbtn" type="button" class="size-6 lg:size-[34px] rounded-full text-xs flex justify-center items-center bg-gray-50 cursor-pointer hover:bg-gray-200 transition-all duration-200 ease-in-out"><i class="fa-solid fa-minus text-sm"></i></button>
           <span id="modelProductQuantity" class="font-medium text-xs lg:text-base leading-[150%]"></span>
-          <button id="modelProductAddbtn" type="button" class="size-[24px] lg:size-[34px] rounded-full text-xs flex justify-center items-center bg-gray-50 cursor-pointer hover:bg-gray-200 transition-all duration-200 ease-in-out"><i class="fa-solid fa-plus text-sm"></i></button>
+          <button id="modelProductAddbtn" type="button" class="size-6 lg:size-[34px] rounded-full text-xs flex justify-center items-center bg-gray-50 cursor-pointer hover:bg-gray-200 transition-all duration-200 ease-in-out"><i class="fa-solid fa-plus text-sm"></i></button>
           </div>  
           <button id="modelAddtoCartBtn" class=" md:max-w-[250px] lg:max-w-[300px] w-fit md:w-full flex gap-1 md:gap-4 justify-center items-center rounded-full bg-(--light-green) hover:bg-(--success-dark) transition-all duration-200 ease-in-out cursor-pointer px-3">
             <span class="font-semibold text-xs lg:text-base leading-[120%] text-white">Add to cart</span>
@@ -181,7 +181,7 @@ export async function ProductModel(productData) {
               <path d="M24.1316 20.6831L18.2694 26.5453L15.8766 24.1524C15.4874 23.7632 14.8581 23.7632 14.469 24.1524C14.0798 24.5415 14.0798 25.1708 14.469 25.56L17.5657 28.6566C17.7561 28.8471 18.0128 28.9464 18.2694 28.9464C18.5261 28.9464 18.7745 28.8471 18.9732 28.6566L25.5391 22.0907C25.9283 21.7015 25.9283 21.0723 25.5391 20.6831C25.15 20.3022 24.5207 20.3022 24.1316 20.6831Z" fill="#ffffff"/>
             </svg>
           </button>
-          <button id="modelWishlistBtn" class="size-[36px] md:size-[40px] lg:size-[52px] rounded-full flex justify-center items-center bg-(--bg-button-green) hover:bg-(--light-green)/50 transition-all duration-200 ease-in-out cursor-pointer group">
+          <button id="modelWishlistBtn" class="size-9 md:size-10 lg:size-[52px] rounded-full flex justify-center items-center bg-(--bg-button-green) hover:bg-(--light-green)/50 transition-all duration-200 ease-in-out cursor-pointer group">
             <i id="modelWishlistIcon" class="fa-regular fa-heart text-base lg:text-xl text-(--success-dark) group-hover:text-white"></i>
           </button>
         </div>
