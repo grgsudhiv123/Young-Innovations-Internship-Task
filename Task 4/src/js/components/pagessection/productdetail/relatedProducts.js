@@ -1,5 +1,6 @@
 import { FetchApi } from '../../../utils/fetchApi.js';
-import ProductCard, { ProductBtns } from '../../common/productCard.js';
+import { ProductBtns } from '../../common/productscard/productCardFeatures.js';
+import ProductCard from '../../common/productscard/prooductCardcomponent.js';
 
 export const relatedProducts = async (categoryId) => {
     try {

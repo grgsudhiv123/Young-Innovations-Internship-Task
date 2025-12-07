@@ -1,24 +1,34 @@
-import { BASE_URL } from "../../../utils/constants.js";
-import ProductCard, { ProductBtns } from "../../common/productCard.js";
+import { BASE_URL } from '../../../utils/constants.js';
+import { ProductBtns } from '../../common/productscard/productCardFeatures.js';
+import ProductCard from '../../common/productscard/prooductCardcomponent.js';
 
-export async function HotDealsSection(){
-    const HotDealscardContainer = document.getElementById("hotdeals-container");
-    async function hotdealData () {
-    try {
-        const response = await fetch(`${BASE_URL}/products`);
-        const productdata = await response.json();
-        let filteredData = productdata.filter((product) => product.discount.replace("%","")>5);
-       
-        const hotestDeal = filteredData.reduce((max, obj)=>(Number(obj.discount.replace("%","")) > Number(max.discount.replace("%","")) ? obj : max));
-        const remainingData = filteredData.filter((product)=>product.id !== hotestDeal.id);
-        return {hotestDeal,remainingData};
-    } catch (error) {
-     console.log(error);   
-    }
-    }
-    const {hotestDeal,remainingData } = await hotdealData();
+export async function HotDealsSection() {
+    const HotDealscardContainer = document.getElementById('hotdeals-container');
+    async function hotdealData() {
+        try {
+            const response = await fetch(`${BASE_URL}/products`);
+            const productdata = await response.json();
+            let filteredData = productdata.filter(
+                (product) => product.discount.replace('%', '') > 5,
+            );
 
-    const hotdealproductcard  = document.getElementById("hotdealproduct");
+            const hotestDeal = filteredData.reduce((max, obj) =>
+                Number(obj.discount.replace('%', '')) >
+                Number(max.discount.replace('%', ''))
+                    ? obj
+                    : max,
+            );
+            const remainingData = filteredData.filter(
+                (product) => product.id !== hotestDeal.id,
+            );
+            return { hotestDeal, remainingData };
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    const { hotestDeal, remainingData } = await hotdealData();
+
+    const hotdealproductcard = document.getElementById('hotdealproduct');
     hotdealproductcard.innerHTML = `
     <div class="aspect-525/460 lg:aspect-525/446 overflow-hidden relative" id="productCard-${hotestDeal.id}">
         <img src="${hotestDeal.imgURL[0]}" alt="product-image" class="w-full h-full object-cover object-center z-10"/>
@@ -62,33 +72,33 @@ export async function HotDealsSection(){
             <div class="flex flex-row lg:gap-3  w-fit lg:mx-auto">
                   <p class="text-xs md:text-2xl font-normal leading-[150%] ">
                     ${
-                      hotestDeal.discount
-                      ? `
+                        hotestDeal.discount
+                            ? `
                             <span class="text-gray-900">$ ${parseFloat(
-                      hotestDeal.baseprice -
-                                  (hotestDeal.baseprice *
-                                    hotestDeal.discount.replace("%", "")) /
-                                    100
-                              ).toFixed(2)}</span>  
+                                hotestDeal.baseprice -
+                                    (hotestDeal.baseprice *
+                                        hotestDeal.discount.replace('%', '')) /
+                                        100,
+                            ).toFixed(2)}</span>  
                                <span class="line-through text-gray-400">$ ${parseFloat(
-                              hotestDeal.baseprice
-                            )}</span> 
+                                   hotestDeal.baseprice,
+                               )}</span> 
                             `
                             : `<span>$ ${parseFloat(hotestDeal.baseprice)}</span> `
-                        }
+                    }
                   </p>
                 </div>
                   <div class="flex flex-row items-center gap-2  w-fit lg:mx-auto">
                     <div class="flex flex-row lg:gap-1">
                     ${
-                      hotestDeal.rating
-                        ? `<i class="fa-solid fa-star text-[8px] md:text-xs text-(--warning-color) hover:scale-105"></i>`.repeat(
-                            Math.floor(hotestDeal.rating)
-                          ) +
-                          `<i class="fa-solid fa-star text-[8px] md:text-xs text-gray-200"></i>`.repeat(
-                            Math.floor(5 - hotestDeal.rating)
-                          )
-                        : ` `
+                        hotestDeal.rating
+                            ? `<i class="fa-solid fa-star text-[8px] md:text-xs text-(--warning-color) hover:scale-105"></i>`.repeat(
+                                  Math.floor(hotestDeal.rating),
+                              ) +
+                              `<i class="fa-solid fa-star text-[8px] md:text-xs text-gray-200"></i>`.repeat(
+                                  Math.floor(5 - hotestDeal.rating),
+                              )
+                            : ` `
                     }
                     </div>
                     <p class="font-normal text-xs lg:text-sm leading-[150%] text-gray-600"><span>(</span>${hotestDeal.reviews.length} Feedbacks <span>)</span></p>
@@ -118,17 +128,16 @@ export async function HotDealsSection(){
                     </div>
         </div>
     </div>
-    `
+    `;
 
     // ProductCard returns a string of HTML code, so we need to create a temporary div to hold it
-    await remainingData.forEach((product)=>{
-        const tempDev = document.createElement("div");
-        const productCardString = ProductCard(product,"hotdeals");
+    await remainingData.forEach((product) => {
+        const tempDev = document.createElement('div');
+        const productCardString = ProductCard(product, 'hotdeals');
         tempDev.innerHTML = productCardString;
         HotDealscardContainer.appendChild(tempDev.firstElementChild);
-    })     
+    });
 
-
-    ProductBtns(remainingData,"hotdeals");
-    ProductBtns([hotestDeal],"hotdeals");
+    ProductBtns(remainingData, 'hotdeals');
+    ProductBtns([hotestDeal], 'hotdeals');
 }

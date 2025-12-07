@@ -1,7 +1,8 @@
 import { filteredFeatures } from '../../../features/filterFeatures.js';
 import { debounce } from '../../../utils/debounce.js';
 import { FetchAllProducts, FetchApi } from '../../../utils/fetchApi.js';
-import ProductCard, { ProductBtns } from '../../common/productCard.js';
+import { ProductBtns } from '../../common/productscard/productCardFeatures.js';
+import ProductCard from '../../common/productscard/prooductCardcomponent.js';
 
 const itemsPerPage = 15;
 

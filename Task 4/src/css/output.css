@@ -221,6 +221,9 @@
   }
 }
 @layer utilities {
+  .pointer-events-auto {
+    pointer-events: auto;
+  }
   .absolute {
     position: absolute;
   }
@@ -761,6 +764,9 @@
   .max-w-full {
     max-width: 100%;
   }
+  .min-w-0 {
+    min-width: calc(var(--spacing) * 0);
+  }
   .min-w-\[550px\] {
     min-width: 550px;
   }
@@ -787,6 +793,9 @@
   }
   .flex-shrink {
     flex-shrink: 1;
+  }
+  .flex-shrink-0 {
+    flex-shrink: 0;
   }
   .shrink-0 {
     flex-shrink: 0;
@@ -1717,6 +1726,13 @@
       color: var(--color-gray-700);
     }
   }
+  .group-hover\:pointer-events-auto {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        pointer-events: auto;
+      }
+    }
+  }
   .group-hover\:max-w-full {
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
@@ -2209,6 +2225,11 @@
       opacity: 0%;
     }
   }
+  .md\:pointer-events-none {
+    @media (width >= 48rem) {
+      pointer-events: none;
+    }
+  }
   .md\:top-4 {
     @media (width >= 48rem) {
       top: calc(var(--spacing) * 4);
@@ -2385,6 +2406,12 @@
   .md\:translate-x-\[100px\] {
     @media (width >= 48rem) {
       --tw-translate-x: 100px;
+      translate: var(--tw-translate-x) var(--tw-translate-y);
+    }
+  }
+  .md\:translate-x-\[150\%\] {
+    @media (width >= 48rem) {
+      --tw-translate-x: 150%;
       translate: var(--tw-translate-x) var(--tw-translate-y);
     }
   }
