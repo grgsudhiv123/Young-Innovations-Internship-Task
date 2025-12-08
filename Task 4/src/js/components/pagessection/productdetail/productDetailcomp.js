@@ -8,6 +8,7 @@ import {
     getAllWishListProduct,
     updateCartProducts,
 } from '../../../utils/fetchApi.js';
+import { renderBreadCrumb } from '../../common/breadcrumb.js';
 import {
     HandleSidebarCart,
     productCart,
@@ -161,6 +162,9 @@ export const productDetailComp = async (productDetail) => {
     const productTags = document.getElementById('product-tags');
     productTags.innerHTML = `
         ${tagNames.map((tag) => `<span>${tag}</span>`).join(', ')}`;
+
+    // breadcrumb
+    renderBreadCrumb(productDetail, productDetail.name, categoryName);
 
     // handle product detail btns
     productDetailButtons(productDetail);

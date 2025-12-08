@@ -23,8 +23,122 @@ let filter = {
 let initialFilter = JSON.parse(JSON.stringify(filter));
 let lastFilter = null;
 
+const getFiltersFromURL = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlFilter = { ...filter };
+
+    const category = urlParams.get('category');
+    if (category) urlFilter.category = category;
+
+    const minPrice = urlParams.get('minPrice');
+    const maxPrice = urlParams.get('maxPrice');
+    if (minPrice && maxPrice) {
+        urlFilter.price = [Number(minPrice), Number(maxPrice)];
+    }
+
+    const rating = urlParams.get('rating');
+    if (rating) urlFilter.rating = rating;
+
+    const tags = urlParams.get('tags');
+    if (tags) {
+        urlFilter.tags = tags.split(',').map((tag) => Number(tag));
+    }
+
+    const sort = urlParams.get('sort');
+    if (sort) urlFilter.sort = sort;
+
+    const page = urlParams.get('page');
+    if (page) urlFilter.pagination.currentPage = Number(page);
+
+    return urlFilter;
+};
+
+const updateURL = (filterObj) => {
+    const params = new URLSearchParams();
+
+    if (filterObj.category) {
+        params.set('category', filterObj.category);
+    }
+
+    if (filterObj.price && Array.isArray(filterObj.price)) {
+        params.set('minPrice', filterObj.price[0]);
+        params.set('maxPrice', filterObj.price[1]);
+    }
+
+    if (filterObj.rating) {
+        params.set('rating', filterObj.rating);
+    }
+
+    if (filterObj.tags && filterObj.tags.length > 0) {
+        params.set('tags', filterObj.tags.join(','));
+    }
+
+    if (filterObj.sort) {
+        params.set('sort', filterObj.sort);
+    }
+
+    if (filterObj.pagination.currentPage > 1) {
+        params.set('page', filterObj.pagination.currentPage);
+    }
+
+    const newURL = params.toString()
+        ? `${window.location.pathname}?${params.toString()}`
+        : window.location.pathname;
+
+    window.history.pushState({}, '', newURL);
+};
+
+const applyFiltersToUI = (filterObj) => {
+    if (filterObj.category) {
+        const categoryInputs = document.querySelectorAll(
+            "input[name='category']",
+        );
+        categoryInputs.forEach((radio) => {
+            if (radio.value === filterObj.category) {
+                radio.checked = true;
+            }
+        });
+    }
+
+    if (filterObj.rating) {
+        const ratingInputs = document.querySelectorAll("input[name='rating']");
+        ratingInputs.forEach((radio) => {
+            if (radio.value === filterObj.rating) {
+                radio.checked = true;
+            }
+        });
+    }
+
+    if (filterObj.tags && filterObj.tags.length > 0) {
+        filterObj.tags.forEach((tagId) => {
+            const tagBtn = document.getElementById(`tagsBtn-${tagId}`);
+            if (tagBtn) {
+                tagBtn.classList.add('active');
+            }
+        });
+    }
+
+    if (filterObj.price && Array.isArray(filterObj.price)) {
+        const [minInput, maxInput] =
+            document.querySelectorAll('.range-input input');
+        if (minInput && maxInput) {
+            minInput.value = filterObj.price[0];
+            maxInput.value = filterObj.price[1];
+            updatePriceRange();
+        }
+    }
+
+    if (filterObj.sort) {
+        const sortBtn = document.getElementById('sortBySelect');
+        if (sortBtn) {
+            sortBtn.value = filterObj.sort === 'baseprice' ? 'asc' : 'desc';
+        }
+    }
+};
+
 const debouncedDataFetch = debounce((filter) => {
     filteredFeatures(filter);
+    updateURL(filter);
 }, 1000);
 
 const isFilterChanged = (currentFilter) => {
@@ -59,25 +173,11 @@ const defaultPageNo = (currentfilter) => {
 export const renderfilterProductsPage = async () => {
     try {
         // default filter if we have query params
-        // for category
-        const urlParams = new URLSearchParams(window.location.search);
+        filter = getFiltersFromURL();
 
-        // for categories filter
         await categoryFeatures();
-        if (urlParams) {
-            const categoryId = urlParams.get('category_id');
-            if (categoryId) {
-                filter.category = categoryId;
-                const categoryInputs = document.querySelectorAll(
-                    "input[name='category']",
-                );
-                categoryInputs.forEach((radio) => {
-                    if (radio.value === categoryId) {
-                        radio.checked = true;
-                    }
-                });
-            }
-        }
+
+        applyFiltersToUI(filter);
 
         filteredFeatures(filter);
 
@@ -466,6 +566,7 @@ const clearFilter = () => {
                 'hover:bg-(--success-dark)',
             );
             clearFilterBtn.classList.add('bg-gray-400');
+            window.history.pushState({}, '', window.location.pathname);
 
             debouncedDataFetch(filter);
             // clear category radio

@@ -4,7 +4,7 @@ import { home } from './renderHome.js';
 import { search } from './renderSearch.js';
 
 export const bottomNavbar = () => {
-    const backdrop = document.getElementById('backdrop');
+    const backdrop = document.getElementById('bottomNavbarbackdrop');
     const buttonsContainer = document.getElementById('bottomNavbarBtns');
     const buttons = buttonsContainer.querySelectorAll('button');
     const bottomNavbar = document.getElementById('bottomNavbarContainer');
@@ -12,6 +12,8 @@ export const bottomNavbar = () => {
     const closeBtn = bottomNavbar.querySelector('button');
 
     const { preventScroll, allowScroll } = PreventScroll();
+
+    console.log('backdrop : ', backdrop);
 
     if (!buttons || !backdrop || !bottomNavbar) {
         console.log('Error, required elements not found.');

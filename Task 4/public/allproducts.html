@@ -14,7 +14,8 @@
         <header class="absolute w-full z-20">
             <div id="header" class="w-full h-auto bg-white relative"></div>
         </header>
-        <main class="mainStyle">
+        <main class="shoppingcartmain">
+            <div id="breadcrumb"></div>
             <div class="section-layout-width grid grid-cols-8 pb-6 pt-8 gap-6">
                 <div class="col-span-3 md:col-span-2">
                     <button
@@ -354,15 +355,11 @@
         </div>
 
         <!-- backdrop -->
-        <div
-            id="sidebarBackdrop"
-            class="fixed z-20 w-screen h-screen bg-gray-800/80 top-0 left-0 backdropstyle"
-        ></div>
-
-        <div
-            id="modelBackdrop"
-            class="fixed z-20 w-screen h-screen bg-gray-800/80 top-0 left-0 backdropstyle"
-        ></div>
+    <div id="sidebarBackdrop" class="fixed z-20 w-screen h-screen bg-gray-800/80 top-0 left-0 backdropstyle" aria-label="Sidebar backdrop">
+    </div>
+    <div id="modelBackdrop" class="fixed z-20 w-screen h-screen bg-gray-800/80 top-0 left-0 backdropstyle" aria-label="Model backdrop">
+    </div>
+    <div id="bottomNavbarbackdrop" class="fixed z-20 w-screen h-screen bg-gray-800/80 top-0 left-0 backdropstyle" aria-label="Bottom navbar backdrop">
         <script type="module" src="../src/js/filterpage.js"></script>
     </body>
 </html>

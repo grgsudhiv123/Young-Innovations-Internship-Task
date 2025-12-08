@@ -15,9 +15,10 @@
       <div  id="header" class="w-full h-auto bg-white relative">
       </div>
     </header>
-    <main class="mainStyle">
+    <main class="shoppingcartmain">
         <!-- breadcrumbs -->
-        <section></section>
+        <div id="breadcrumb"></div>
+
 
         <!-- productdetails -->
         <section class="max-w-[350px] sm:max-w-[650px] md:max-w-[720px] lg:max-w-[950px] xl:max-w-[1200px] 2xl:max-w-[1320px] mx-auto w-full bg-white p-5 xl:p-10 h-auto flex lg:items-center flex-col sm:flex-row gap-6 relative">
@@ -279,12 +280,12 @@
 
 
     <!-- backdrop -->
-    <div id="sidebarBackdrop" class="fixed z-20 w-screen h-screen bg-gray-800/80 top-0 left-0 backdropstyle">
+    <div id="sidebarBackdrop" class="fixed z-20 w-screen h-screen bg-gray-800/80 top-0 left-0 backdropstyle" aria-label="Sidebar backdrop">
     </div>
-
-    <div id="modelBackdrop" class="fixed z-20 w-screen h-screen bg-gray-800/80 top-0 left-0 backdropstyle">
+    <div id="modelBackdrop" class="fixed z-20 w-screen h-screen bg-gray-800/80 top-0 left-0 backdropstyle" aria-label="Model backdrop">
     </div>
-
+    <div id="bottomNavbarbackdrop" class="fixed z-20 w-screen h-screen bg-gray-800/80 top-0 left-0 backdropstyle" aria-label="Bottom navbar backdrop">
+    </div>
     <script type="module" src="../src/js/productdetail.js"></script>
 </body>
 </html>

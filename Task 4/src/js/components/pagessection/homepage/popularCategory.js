@@ -29,11 +29,11 @@ const PopularCategory = async () => {
         if (categoryCards.length > 0) {
             categoryCards.forEach((card) => {
                 card.addEventListener('click', () => {
-                    window.location.href = `./allproducts.html?category_id=${card.dataset.cardid}`;
+                    window.location.href = `./allproducts.html?category=${card.dataset.cardid}`;
                 });
                 card.addEventListener('keydown', (e) => {
                     if (e.key === 'Enter') {
-                        window.location.href = `./allproducts.html?category_id=${card.dataset.cardid}`;
+                        window.location.href = `./allproducts.html?category=${card.dataset.cardid}`;
                     }
                 });
             });

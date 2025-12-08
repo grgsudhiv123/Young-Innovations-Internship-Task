@@ -14,7 +14,9 @@
         <header class="absolute w-full z-20">
             <div id="header" class="w-full h-auto bg-white relative"></div>
         </header>
-        <main class="w-full h-full pb-10 md:pb-20 mainStyle">
+        <main class="w-full h-full pb-10 md:pb-20 shoppingcartmain">
+            <div id="breadcrumb"></div>
+
             <h1
                 class="font-semibold text-gray-800 w-fit mx-auto mb-8 text-lg md:text-2xl md:text-[32px] leading-[100%] md:leading-[120%] mt-5"
             >
@@ -157,11 +159,17 @@
         <div
             id="sidebarBackdrop"
             class="fixed z-20 w-screen h-screen bg-gray-800/80 top-0 left-0 backdropstyle"
+            aria-label="Sidebar backdrop"
         ></div>
-
         <div
             id="modelBackdrop"
             class="fixed z-20 w-screen h-screen bg-gray-800/80 top-0 left-0 backdropstyle"
+            aria-label="Model backdrop"
+        ></div>
+        <div
+            id="bottomNavbarbackdrop"
+            class="fixed z-20 w-screen h-screen bg-gray-800/80 top-0 left-0 backdropstyle"
+            aria-label="Bottom navbar backdrop"
         ></div>
 
         <script type="module" src="../src/js/wishlist.js"></script>

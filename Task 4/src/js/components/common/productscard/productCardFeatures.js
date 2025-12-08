@@ -5,7 +5,7 @@ import {
     getAllWishListProduct,
 } from '../../../utils/fetchApi.js';
 import { PreventScroll } from '../../../utils/preventScroll.js';
-import { ProductDetailModel } from '../productModel.js';
+import { ProductDetailModel } from '../productmodel/productModel.js';
 
 // product buttons handles all the product card buttons functionalities
 // i.e. add to card, add to wishlish, view product model
@@ -35,6 +35,8 @@ export const ProductBtns = async (productData, prefix) => {
             // handle product model view
             const modelViewBtn = e.target.closest('#productmodelbtn');
             if (modelViewBtn) {
+                e.stopPropagation();
+
                 ProductDetailModel(product);
                 const modelcont = modelContainer.classList.contains(
                     'model-containerstyle',

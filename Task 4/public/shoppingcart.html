@@ -15,7 +15,8 @@
         <header class="absolute w-full z-20">
             <div id="header" class="w-full h-auto bg-white relative"></div>
         </header>
-        <main class="mainStyle">
+        <main class="shoppingcartmain">
+            <div id="breadcrumb"></div>
             <div class="section-layout-width my-16">
                 <div class="grid grid-cols-1 xl:grid-cols-12 gap-5">
                     <div class="xl:col-span-8 w-full space-y-6">
@@ -221,13 +222,18 @@
         <div
             id="sidebarBackdrop"
             class="fixed z-20 w-screen h-screen bg-gray-800/80 top-0 left-0 backdropstyle"
+            aria-label="Sidebar backdrop"
         ></div>
-
         <div
             id="modelBackdrop"
             class="fixed z-20 w-screen h-screen bg-gray-800/80 top-0 left-0 backdropstyle"
+            aria-label="Model backdrop"
         ></div>
-
+        <div
+            id="bottomNavbarbackdrop"
+            class="fixed z-20 w-screen h-screen bg-gray-800/80 top-0 left-0 backdropstyle"
+            aria-label="Bottom navbar backdrop"
+        ></div>
         <script type="module" src="../src/js/shoppingcart.js"></script>
     </body>
 </html>
