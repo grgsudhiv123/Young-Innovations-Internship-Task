@@ -234,6 +234,29 @@
     .scrollBar::-webkit-scrollbar {
         display: none;
     }
+
+    .toastAnimation {
+        opacity: 0;
+        transform: translateY(-50%);
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease;
+    }
+
+    .toastAnimation.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .spinner {
+        animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
 }
 
 @layer components {

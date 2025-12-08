@@ -51,7 +51,6 @@ function handleNavdropBtns(dropdownContainer) {
     dropdownContainer.addEventListener('click', (e) => {
         const dropdownBtns = e.target.closest('button');
         const buttonIcon = dropdownBtns.querySelector('i');
-        console.log('buttonIcon :', buttonIcon);
         const dropdownContentContainer = e.target.closest('.dropdownContents');
 
         if (dropdownBtns && !dropdownContentContainer) {

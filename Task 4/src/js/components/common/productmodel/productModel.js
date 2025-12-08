@@ -39,6 +39,7 @@ export async function ProductModel(productData) {
     );
 
     const modelContainer = document.getElementById('model-container');
+    modelContainer.focus();
 
     modelContainer.innerHTML = productModelComp(
         productData,

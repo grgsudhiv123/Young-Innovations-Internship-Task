@@ -5,7 +5,6 @@ import { PreventScroll } from '../../../../utils/preventScroll.js';
 import { ProductDetailModel } from '../../../common/productmodel/productModel.js';
 
 export const buttonFeatures = async (hotestDeal) => {
-    console.log('hotestDeal : ', hotestDeal);
     if (!hotestDeal) {
         console.log('Error hottest deal data is not found.');
         return;
@@ -60,7 +59,6 @@ const hottestProductBtnState = async (hottestdeal) => {
                 .getElementById('hottestProductWishlistBtn')
                 .querySelector('i');
 
-            console.log('wishlistIcon : ', wishlistIcon);
             const isProductInCart = wishlistData.find(
                 (wishlistproduct) => wishlistproduct.id === hottestdeal.id,
             );

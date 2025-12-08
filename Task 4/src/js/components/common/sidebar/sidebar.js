@@ -2,6 +2,7 @@ import { productCartFeatures } from '../../../features/cartFeatures.js';
 import { calculateDiscountedPrice } from '../../../utils/discountedPrice.js';
 import { FetchCartProducts } from '../../../utils/fetchApi.js';
 import { PreventScroll } from '../../../utils/preventScroll.js';
+import { singleCardButtonUpdate } from '../productscard/productCardFeatures.js';
 import { ProductCartSidebar } from './productCartSidebar.js';
 import { sidebarComp } from './sidebarComponents.js';
 
@@ -18,12 +19,14 @@ export const productCart = async () => {
             const removeCartProductBtn = document.getElementById(
                 `sidebar-cartproduct-btn-${element.id}`,
             );
-            removeCartProductBtn.addEventListener('click', async () => {
+            removeCartProductBtn.addEventListener('click', async (e) => {
+                e.stopPropagation();
                 await deleteCartProduct(element.id);
 
                 // loading the product cart
                 await ProductCartSidebar(cartProducts);
                 await productCart();
+                singleCardButtonUpdate(element.id);
             });
             const cartProductCard = document.getElementById(
                 `cartProduct-${element.id}`,

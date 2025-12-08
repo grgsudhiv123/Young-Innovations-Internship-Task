@@ -4,7 +4,7 @@ import { FetchAllProducts, FetchApi } from '../../../utils/fetchApi.js';
 import { ProductBtns } from '../../common/productscard/productCardFeatures.js';
 import ProductCard from '../../common/productscard/prooductCardcomponent.js';
 
-const itemsPerPage = 15;
+const itemsPerPage = 5;
 
 let filter = {
     category: '',
@@ -663,7 +663,8 @@ const handleFilterShowBtn = (btnId, compId) => {
     const icon = btn.querySelector('i');
     const comp = document.getElementById(compId);
     if (btn && comp) {
-        btn.addEventListener('click', () => {
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
             icon.classList.toggle('rotate-180');
             comp.classList.toggle('active');
         });

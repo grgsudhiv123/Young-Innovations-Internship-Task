@@ -78,7 +78,6 @@ const handleCartEvents = (
         el.addEventListener('click', async () => {
             try {
                 await DeleteWishlistByID(data.id);
-                alert('Product removed from wishlist');
                 navbar();
                 WishListProductTable();
                 HandleSidebarCart();

@@ -65,7 +65,6 @@ function handleDropDownBtn(homeContent) {
         );
         btn.addEventListener('click', () => {
             const btnIcon = btn.querySelector('i');
-            console.log('btnicon : ', btnIcon);
             if (listContainer) {
                 if (listContainer.classList.contains('max-h-0')) {
                     listContainer.classList.remove('max-h-0');

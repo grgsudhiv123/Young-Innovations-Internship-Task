@@ -1,13 +1,11 @@
-export const debounce = (callbackFunc, delay)=>{
+export const debounce = (callbackFunc, delay) => {
     let timeoutId;
-    return (...args)=>{
-        if(timeoutId){
+    return (...args) => {
+        if (timeoutId) {
             clearTimeout(timeoutId);
         }
-        timeoutId = setTimeout(()=>{
+        timeoutId = setTimeout(() => {
             callbackFunc(...args);
-        },delay)
-    }
-}
-
-
+        }, delay);
+    };
+};

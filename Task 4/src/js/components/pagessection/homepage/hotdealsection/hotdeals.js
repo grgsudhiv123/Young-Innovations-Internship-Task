@@ -30,6 +30,9 @@ export async function HotDealsSection() {
     }
     const { hotestDeal, remainingData } = await hotdealData();
 
+    console.log('hotestDeal : ', hotestDeal);
+    console.log('remainingData : ', remainingData);
+
     const hotdealproductcard = document.getElementById('hotdealproduct');
     if (hotdealproductcard) {
         hotdealproductcard.innerHTML = hottestdealProductCard(hotestDeal);
@@ -50,8 +53,7 @@ export async function HotDealsSection() {
         HotDealscardContainer.appendChild(tempDev.firstElementChild);
     });
 
-    ProductBtns(remainingData, 'hotdeals');
-    ProductBtns([hotestDeal], 'hotdeals');
+    await ProductBtns(remainingData, 'hotdeals');
     const hotdealCountdownContainer = document.getElementById(
         'hottestDeal-countdown',
     );

@@ -19,7 +19,7 @@ import PopularCategory from './components/pagessection/homepage/popularCategory.
 import PopularProducts from './components/pagessection/homepage/popularProducts.js';
 
 import { TestimonialSection } from './components/pagessection/homepage/testimonialsection.js';
-import { Countdown, CountdownFeat } from './utils/countdown.js';
+import { CountdownFeat } from './utils/countdown.js';
 
 window.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('header').innerHTML = headerTemplate();
@@ -37,7 +37,6 @@ window.addEventListener('DOMContentLoaded', async () => {
     TestimonialSection();
     CompanyLogo();
     FollowUsSection();
-
     CountdownFeat();
     footerComp();
 });

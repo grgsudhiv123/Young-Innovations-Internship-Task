@@ -52,14 +52,24 @@ export async function search(container) {
                 `,
                 )
                 .join('');
-
             searchResultContainer.innerHTML = productCards;
 
             if (productCards) {
-                productCards.forEach((card) =>
-                    card.addEventListener('click', () => {
+                const cards = document.querySelectorAll('.searchResultCard');
+                cards.forEach((card) =>
+                    card.addEventListener('click', (e) => {
+                        e.stopPropagation();
                         const productId = card.dataset.id;
                         toProductDetail(productId);
+                    }),
+                );
+
+                cards.forEach((card) =>
+                    card.addEventListener('keydown', (e) => {
+                        if (e.target == 'Enter') {
+                            const productId = card.dataset.id;
+                            toProductDetail(productId);
+                        }
                     }),
                 );
             }

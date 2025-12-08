@@ -6,16 +6,15 @@ import {
 } from '../../../utils/fetchApi.js';
 import { PreventScroll } from '../../../utils/preventScroll.js';
 import { ProductDetailModel } from '../productmodel/productModel.js';
-
-// product buttons handles all the product card buttons functionalities
-// i.e. add to card, add to wishlish, view product model
+import { productCart } from '../sidebar/sidebar.js';
+import navbar from '../topnavbar/topnavbar.js';
 
 export const ProductBtns = async (productData, prefix) => {
     const { preventScroll } = PreventScroll();
     const modelContainer = document.getElementById('model-container');
     const modelBackdrop = document.getElementById('modelBackdrop');
 
-    productCardBtnsState(productData);
+    productCardBtnsBatchUpdate(productData);
 
     const { addCartProduct } = productCartFeatures();
 
@@ -58,6 +57,8 @@ export const ProductBtns = async (productData, prefix) => {
             );
             if (addToCartBtn) {
                 await addCartProduct(product);
+                singleCardButtonUpdate(product.id);
+                productCart();
             }
 
             // handle product wishlist
@@ -66,6 +67,8 @@ export const ProductBtns = async (productData, prefix) => {
             );
             if (wishlistBtn) {
                 await handleWishList(product);
+                singleCardButtonUpdate(product.id);
+                navbar();
             }
 
             // redirect to product detail page
@@ -82,48 +85,61 @@ export const ProductBtns = async (productData, prefix) => {
     });
 };
 
-const productCardBtnsState = async (productData) => {
+const productCardBtnsBatchUpdate = async (productData) => {
     try {
         const cartData = await FetchCartProducts();
         const wishlistData = await getAllWishListProduct();
         if (productData) {
             productData.map((product) => {
-                const wishlistIcon = document.getElementById(
-                    `wishlisticon-${product.id}`,
+                const wishlistIcons = document.querySelectorAll(
+                    `[id$="wishlisticon-${product.id}"]`,
                 );
-                const isProductInCart = wishlistData.find(
+
+                const isProductInWishlistCart = wishlistData.find(
                     (wishlistproduct) => wishlistproduct.id === product.id,
                 );
-                if (isProductInCart && wishlistIcon) {
-                    wishlistIcon.classList.remove('fa-regular');
-                    wishlistIcon.classList.add('fa-solid');
-                } else {
-                    wishlistIcon.classList.remove('fa-solid');
-                    wishlistIcon.classList.add('fa-regular');
-                }
+                wishlistIcons.forEach((icon) => {
+                    if (isProductInWishlistCart && icon) {
+                        icon.classList.remove('fa-regular');
+                        icon.classList.add('fa-solid');
+                    } else {
+                        icon.classList.remove('fa-solid');
+                        icon.classList.add('fa-regular');
+                    }
+                });
             });
 
             productData.map((product) => {
-                const isProductInCart = cartData.find(
-                    (cartproduct) => cartproduct.id === product.id,
+                const isInCart = cartData.find(
+                    (item) => item.id === product.id,
                 );
-                const cartIcon = document.getElementById(
-                    `carticon-${product.id}`,
+
+                const cartButtons = document.querySelectorAll(
+                    `[id$="productAddToCart-${product.id}"]`,
                 );
-                const addToCartBtn = document.getElementById(
-                    `productAddToCart-${product.id}`,
+                const cartIcons = document.querySelectorAll(
+                    `[id$="carticon-${product.id}"]`,
                 );
-                if (isProductInCart && addToCartBtn && cartIcon) {
-                    cartIcon.classList.remove('text-gray-900');
-                    cartIcon.classList.add('text-white');
-                    addToCartBtn.classList.remove('bg-gray-50');
-                    addToCartBtn.classList.add('bg-(--light-green)');
-                } else {
-                    cartIcon.classList.add('text-gray-900');
-                    cartIcon.classList.remove('text-white');
-                    addToCartBtn.classList.add('bg-gray-50');
-                    addToCartBtn.classList.remove('bg-(--light-green)');
-                }
+
+                cartButtons.forEach((btn) => {
+                    if (isInCart && btn) {
+                        btn.classList.remove('bg-gray-50');
+                        btn.classList.add('bg-(--light-green)');
+                    } else {
+                        btn.classList.add('bg-gray-50');
+                        btn.classList.remove('bg-(--light-green)');
+                    }
+                });
+
+                cartIcons.forEach((icon) => {
+                    if (isInCart && icon) {
+                        icon.classList.remove('text-gray-900');
+                        icon.classList.add('text-white');
+                    } else {
+                        icon.classList.add('text-gray-900');
+                        icon.classList.remove('text-white');
+                    }
+                });
             });
         }
     } catch (error) {
@@ -131,3 +147,63 @@ const productCardBtnsState = async (productData) => {
         return error;
     }
 };
+
+const singleCardButtonUpdate = async (productId) => {
+    try {
+        const [cartData, wishlistData] = await Promise.all([
+            FetchCartProducts(),
+            getAllWishListProduct(),
+        ]);
+
+        const isProductInWishlistCart = wishlistData.find(
+            (wishlistproduct) => wishlistproduct.id === productId,
+        );
+        const wishlistIcons = document.querySelectorAll(
+            `[id$="wishlisticon-${productId}"]`,
+        );
+
+        wishlistIcons.forEach((icon) => {
+            if (isProductInWishlistCart && icon) {
+                icon.classList.remove('fa-regular');
+                icon.classList.add('fa-solid');
+            } else {
+                icon.classList.remove('fa-solid');
+                icon.classList.add('fa-regular');
+            }
+        });
+
+        const isInCart = cartData.find((item) => item.id === productId);
+
+        const cartButtons = document.querySelectorAll(
+            `[id$="productAddToCart-${productId}"]`,
+        );
+        const cartIcons = document.querySelectorAll(
+            `[id$="carticon-${productId}"]`,
+        );
+
+        cartButtons.forEach((btn) => {
+            if (isInCart && btn) {
+                btn.classList.remove('bg-gray-50');
+                btn.classList.add('bg-(--light-green)');
+            } else {
+                btn.classList.add('bg-gray-50');
+                btn.classList.remove('bg-(--light-green)');
+            }
+        });
+
+        cartIcons.forEach((icon) => {
+            if (isInCart && icon) {
+                icon.classList.remove('text-gray-900');
+                icon.classList.add('text-white');
+            } else {
+                icon.classList.add('text-gray-900');
+                icon.classList.remove('text-white');
+            }
+        });
+    } catch (error) {
+        console.log(error);
+        return error;
+    }
+};
+
+export { singleCardButtonUpdate };

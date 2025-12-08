@@ -184,5 +184,5 @@ export const footerTemplate = () => {
           </ul>
         </div>
       </div>
-    `
-}
+    `;
+};

@@ -13,15 +13,12 @@ export const bottomNavbar = () => {
 
     const { preventScroll, allowScroll } = PreventScroll();
 
-    console.log('backdrop : ', backdrop);
-
     if (!buttons || !backdrop || !bottomNavbar) {
         console.log('Error, required elements not found.');
         return;
     }
 
     buttons.forEach((btn) => {
-        console.log('dataset of btn  : ', btn.dataset.btnfor);
         btn.addEventListener('click', () => {
             if (container) {
                 bottomNavbar.classList.add('active');
