@@ -11,8 +11,6 @@ export const bottomNavbar = () => {
     const container = bottomNavbar.querySelector('div');
     const closeBtn = bottomNavbar.querySelector('button');
 
-    const { preventScroll, allowScroll } = PreventScroll();
-
     if (!buttons || !backdrop || !bottomNavbar) {
         console.log('Error, required elements not found.');
         return;
@@ -23,7 +21,7 @@ export const bottomNavbar = () => {
             if (container) {
                 bottomNavbar.classList.add('active');
                 backdrop.classList.add('active');
-                preventScroll();
+                PreventScroll.preventScroll();
             }
             renderBottomNavbarContents(btn.dataset.btnfor, container);
         });
@@ -33,12 +31,13 @@ export const bottomNavbar = () => {
     function closeBottomNav() {
         bottomNavbar.classList.remove('active');
         backdrop.classList.remove('active');
-        allowScroll();
+        PreventScroll.allowScroll();
         setTimeout(() => {
             container.innerHTML = ``;
         }, 500);
     }
-    window.addEventListener('click', (e) => {
+
+    document.addEventListener('click', (e) => {
         const isbottomNavbar = bottomNavbar.contains(e.target);
         const isbottomNavbarActive = bottomNavbar.classList.contains('active');
         const isbuttonsContainer = buttonsContainer.contains(e.target);

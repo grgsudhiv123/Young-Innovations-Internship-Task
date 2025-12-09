@@ -10,7 +10,7 @@ import { productCart } from '../sidebar/sidebar.js';
 import navbar from '../topnavbar/topnavbar.js';
 
 export const ProductBtns = async (productData, prefix) => {
-    const { preventScroll } = PreventScroll();
+    // const { preventScroll } = PreventScroll();
     const modelContainer = document.getElementById('model-container');
     const modelBackdrop = document.getElementById('modelBackdrop');
 
@@ -47,7 +47,7 @@ export const ProductBtns = async (productData, prefix) => {
                 if (modelcont && modelbackdrop) {
                     modelContainer.classList.add('active');
                     modelBackdrop.classList.add('active');
-                    preventScroll();
+                    PreventScroll.preventScroll();
                 }
             }
 

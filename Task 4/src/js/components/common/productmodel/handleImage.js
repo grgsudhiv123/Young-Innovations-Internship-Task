@@ -28,7 +28,8 @@ export const handleImage = (productDetail) => {
     const slidePrevBtn = document.getElementById('model-slideimgbtn-prev');
     const slideNextBtn = document.getElementById('model-slideimgbtn-next');
     let imgCount = 0;
-    slidePrevBtn.addEventListener('click', () => {
+    slidePrevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
         if (imgCount > 0) {
             imgCount = imgCount - 1;
         }
@@ -36,7 +37,8 @@ export const handleImage = (productDetail) => {
         productMainImg.alt =
             productDetail.name + productDetail.imgURL[imgCount];
     });
-    slideNextBtn.addEventListener('click', () => {
+    slideNextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
         if (imgCount < productDetail.imgURL.length - 1) {
             imgCount = imgCount + 1;
         }

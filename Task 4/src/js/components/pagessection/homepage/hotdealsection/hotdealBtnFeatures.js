@@ -15,7 +15,6 @@ export const buttonFeatures = async (hotestDeal) => {
     hottestProductBtnState(hotestDeal);
 
     const { addCartProduct } = productCartFeatures();
-    const { preventScroll } = PreventScroll();
 
     hottestProductCard.addEventListener('click', async (e) => {
         const addToWishListBtn = e.target.closest('#hottestProductWishlistBtn');
@@ -38,7 +37,7 @@ export const buttonFeatures = async (hotestDeal) => {
             if (modelcont && modelbackdrop) {
                 modelContainer.classList.add('active');
                 modelBackdrop.classList.add('active');
-                preventScroll();
+                PreventScroll.preventScroll();
             }
         }
 

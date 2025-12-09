@@ -37,9 +37,7 @@ export async function ProductModel(productData) {
         (tags) =>
             tagDatas.find((data) => Number(data.id) === Number(tags)).name,
     );
-
     const modelContainer = document.getElementById('model-container');
-    modelContainer.focus();
 
     modelContainer.innerHTML = productModelComp(
         productData,
@@ -47,28 +45,24 @@ export async function ProductModel(productData) {
         categoryName,
     );
 
-    const { allowScroll } = PreventScroll();
-
     const modelCloseBtn = document.getElementById('model-close-btn');
+    const modelBackdrop = document.getElementById('modelBackdrop');
     modelCloseBtn.addEventListener('click', () => {
-        const modelContainer = document.getElementById('model-container');
-        const modelBackdrop = document.getElementById('modelBackdrop');
         if (modelContainer && modelBackdrop) {
             modelContainer.classList.remove('active');
             modelBackdrop.classList.remove('active');
-            allowScroll();
+            PreventScroll.allowScroll();
         }
     });
 
     document.addEventListener('click', (e) => {
         if (
-            !modelContainer.contains(e.target) &&
-            !modelCloseBtn.contains(e.target) &&
-            modelBackdrop.contains(e.target)
+            modelBackdrop.contains(e.target) ||
+            modelCloseBtn.contains(e.target)
         ) {
             modelContainer.classList.remove('active');
             modelBackdrop.classList.remove('active');
-            allowScroll();
+            PreventScroll.allowScroll();
         }
     });
 }

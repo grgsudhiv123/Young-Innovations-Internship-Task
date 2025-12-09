@@ -87,6 +87,8 @@ function priceAfterDiscount(curr) {
     return discountPrice * quantity;
 }
 
+let documentClickHandler = null;
+
 export const HandleSidebarCart = async () => {
     try {
         const cartBackdrop = document.getElementById('sidebarBackdrop');
@@ -95,32 +97,37 @@ export const HandleSidebarCart = async () => {
         if (cartContainer) {
             cartContainer.innerHTML = sidebarComp();
         }
-        const { allowScroll, preventScroll } = PreventScroll();
+
+        const closeOutsideClick = (e) => {
+            e.stopPropagation();
+            if (
+                !closeCartBtn.contains(e.target) &&
+                !sidebarCartBtn.contains(e.target) &&
+                !cartContainer.contains(e.target) &&
+                cartBackdrop.contains(e.target)
+            ) {
+                cartBackdrop.classList.remove('active');
+                cartContainer.classList.remove('active');
+                PreventScroll.allowScroll();
+                document.removeEventListener('click', closeOutsideClick);
+            }
+        };
 
         const sidebarCartBtn = document.getElementById('open-sidebar-cart');
         sidebarCartBtn.addEventListener('click', () => {
             cartBackdrop.classList.add('active');
             cartContainer.classList.add('active');
-            preventScroll();
+            PreventScroll.preventScroll();
+            document.addEventListener('click', closeOutsideClick);
         });
 
         const closeCartBtn = document.getElementById('close-sidebar-cart');
         closeCartBtn.addEventListener('click', () => {
             cartBackdrop.classList.remove('active');
             cartContainer.classList.remove('active');
-            allowScroll();
-        });
+            PreventScroll.allowScroll();
 
-        document.addEventListener('click', (e) => {
-            if (
-                !closeCartBtn.contains(e.target) &&
-                !sidebarCartBtn.contains(e.target) &&
-                !cartContainer.contains(e.target)
-            ) {
-                cartBackdrop.classList.remove('active');
-                cartContainer.classList.remove('active');
-                allowScroll();
-            }
+            document.removeEventListener('click', closeOutsideClick);
         });
     } catch (error) {
         console.log('Error :', error);
