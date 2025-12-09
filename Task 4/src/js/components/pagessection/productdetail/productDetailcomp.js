@@ -1,20 +1,9 @@
-import { handleWishList } from '../../../features/wishListFeatures.js';
 import { BASE_URL } from '../../../utils/constants.js';
-import {
-    AddProducts,
-    AddWishlist,
-    FetchApi,
-    FetchCartProducts,
-    getAllWishListProduct,
-    updateCartProducts,
-} from '../../../utils/fetchApi.js';
+
 import { renderBreadCrumb } from '../../common/breadcrumb.js';
-import {
-    HandleSidebarCart,
-    productCart,
-} from '../../common/sidebar/sidebar.js';
+
+import { productDetailButtons } from './productDetailBtn.js';
 import { getProductInfoTabs } from './productInfoTabs.js';
-import { relatedProducts } from './relatedProducts.js';
 
 export const productDetailComp = async (productDetail) => {
     // slider img
@@ -167,7 +156,7 @@ export const productDetailComp = async (productDetail) => {
     renderBreadCrumb(productDetail, productDetail.name, categoryName);
 
     // handle product detail btns
-    productDetailButtons(productDetail);
+    await productDetailButtons(productDetail);
 
     // product info tabs
     // default
@@ -180,85 +169,4 @@ export const productDetailComp = async (productDetail) => {
                 getProductInfoTabs(productDetail, el);
             });
     });
-};
-
-const productDetailButtons = async (productDetail) => {
-    const cartProducts = await FetchCartProducts();
-    const isProductInCart = cartProducts.find(
-        (cartproduct) => cartproduct.id === productDetail.id,
-    );
-
-    let quantity = isProductInCart ? isProductInCart.quantity : 1;
-    const deductQuantityBtn = document.getElementById('deductQuantityBtn');
-    const addQuantityBtn = document.getElementById('addQuantityBtn');
-    const productQuantity = document.getElementById('productQuantity');
-
-    productQuantity.innerText = quantity;
-
-    deductQuantityBtn.addEventListener('click', () => {
-        if (quantity > 1) {
-            quantity = quantity - 1;
-            productQuantity.innerText = quantity;
-        }
-    });
-
-    addQuantityBtn.addEventListener('click', () => {
-        if (quantity < productDetail.stock) {
-            quantity = quantity + 1;
-            productQuantity.innerText = quantity;
-        }
-    });
-
-    const addToCartBtn = document.getElementById('addProductToCart');
-    if (addToCartBtn) {
-        addToCartBtn.addEventListener('click', async () => {
-            if (isProductInCart) {
-                await updateCartProducts(
-                    {
-                        id: productDetail.id,
-                        quantity: quantity,
-                        updatedAt: new Date().toISOString(),
-                    },
-                    productDetail.id,
-                );
-            } else {
-                await AddProducts({
-                    ...productDetail,
-                    quantity: quantity,
-                    addedAt: new Date().toISOString(),
-                });
-            }
-
-            alert('Product added to cart');
-            // reload cart for fresh data
-            relatedProducts(productDetail.category);
-            HandleSidebarCart();
-            productCart();
-        });
-    }
-
-    // product wishlist btn
-    const productWishlistBtn = document.getElementById('productWishlistBtn');
-    const productwishlistBtnIcon = document.getElementById(
-        'productWishlistBtnIcon',
-    );
-    if (productWishlistBtn) {
-        const wishlistData = await getAllWishListProduct();
-        const isProductInCart = wishlistData.find(
-            (wishlistproduct) => wishlistproduct.id === productDetail.id,
-        );
-        if (isProductInCart) {
-            productwishlistBtnIcon.classList.remove('fa-regular');
-            productwishlistBtnIcon.classList.add('fa-solid');
-        } else {
-            productwishlistBtnIcon.classList.remove('fa-solid');
-            productwishlistBtnIcon.classList.add('fa-regular');
-        }
-
-        productWishlistBtn.addEventListener('click', async () => {
-            handleWishList(productDetail);
-            HandleSidebarCart();
-            productCart();
-        });
-    }
 };

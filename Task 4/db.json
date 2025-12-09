@@ -1521,619 +1521,77 @@
   ],
   "cartProducts": [
     {
-      "id": "101",
-      "name": "Organic Carrots",
-      "baseprice": 8.99,
+      "id": "203",
+      "name": "Royal Gala Apples",
+      "baseprice": 10.77,
       "rating": 5,
       "featured": "false",
-      "discount": "50%",
+      "discount": "8%",
       "imgURL": [
-        "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1447175008436-054170c2e979?q=80&w=699&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1582515073490-39981397c445?q=80&w=735&auto=format&fit=crop"
+        "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?q=80&w=735&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?q=80&w=687&auto=format&fit=crop"
       ],
-      "SKU": "VEG001CARROT2024",
-      "category": 2,
-      "tags": [
-        3,
-        5
-      ],
-      "desc": "Fresh organic carrots packed with beta-carotene and vitamins. Perfect for salads, soups, or healthy snacking. Locally sourced from organic farms.",
-      "brand": "Green Valley Farms",
-      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
-      "socialLinks": [
-        {
-          "id": "1",
-          "name": "facebook",
-          "link": "www.facebook.com/greenvalleyfarms"
-        },
-        {
-          "id": "2",
-          "name": "pinterest",
-          "link": "www.pinterest.com/greenvalleyfarms"
-        },
-        {
-          "id": "3",
-          "name": "twitter",
-          "link": "www.twitter.com/greenvalleyfarms"
-        },
-        {
-          "id": "4",
-          "name": "instagram",
-          "link": "www.instagram.com/greenvalleyfarms"
-        }
-      ],
-      "reviews": [
-        {
-          "id": "1",
-          "customer_name": "Emily Johnson",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop",
-          "comment": "Super fresh and crunchy! My kids love snacking on these carrots.",
-          "dateandtime": "1 day ago"
-        },
-        {
-          "id": "2",
-          "customer_name": "Michael Brown",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop",
-          "comment": "Best carrots I've bought online. Great quality and packaging.",
-          "dateandtime": "3 days ago"
-        }
-      ],
-      "detail": "Our organic carrots are grown without synthetic pesticides or fertilizers. Rich in vitamin A, fiber, and antioxidants, these carrots support eye health and boost immunity. Hand-picked at peak freshness and delivered directly to your door. Perfect for juicing, roasting, or enjoying raw with your favorite dip.",
-      "wt": "500gm",
-      "stock": "320",
-      "color": "orange",
-      "quantity": 5,
-      "addedAt": "2025-12-08T18:15:39.287Z",
-      "updatedAt": "2025-12-08T18:16:14.298Z"
-    },
-    {
-      "id": "103",
-      "name": "Red Bell Peppers",
-      "baseprice": 10.99,
-      "rating": 5,
-      "featured": "false",
-      "discount": "15%",
-      "imgURL": [
-        "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1525607551316-4a8e16d1f9ba?q=80&w=687&auto=format&fit=crop"
-      ],
-      "SKU": "VEG003PEPPER2024",
-      "category": 2,
-      "tags": [
-        3,
-        9,
-        11
-      ],
-      "desc": "Sweet and crunchy red bell peppers, perfect for salads, grilling, or stuffing. Rich in vitamin C and antioxidants for a healthy immune system.",
-      "brand": "Sunny Harvest",
-      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
-      "socialLinks": [
-        {
-          "id": "1",
-          "name": "facebook",
-          "link": "www.facebook.com/sunnyharvest"
-        },
-        {
-          "id": "2",
-          "name": "pinterest",
-          "link": "www.pinterest.com/sunnyharvest"
-        },
-        {
-          "id": "3",
-          "name": "twitter",
-          "link": "www.twitter.com/sunnyharvest"
-        },
-        {
-          "id": "4",
-          "name": "instagram",
-          "link": "www.instagram.com/sunnyharvest"
-        }
-      ],
-      "reviews": [
-        {
-          "id": "1",
-          "customer_name": "Lisa Anderson",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format&fit=crop",
-          "comment": "So sweet and crispy! Love using these in my stir-fries.",
-          "dateandtime": "4 hours ago"
-        },
-        {
-          "id": "2",
-          "customer_name": "Robert Kim",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=100&auto=format&fit=crop",
-          "comment": "Perfect for stuffed peppers. Great size and quality.",
-          "dateandtime": "1 day ago"
-        }
-      ],
-      "detail": "Our red bell peppers are vine-ripened to perfection, offering maximum sweetness and nutritional benefits. Contains three times more vitamin C than oranges and packed with vitamin A. Great for raw snacking, roasting, or adding vibrant color to any dish. Each pepper is carefully selected for optimal freshness.",
-      "wt": "300gm",
-      "stock": "410",
-      "color": "red",
-      "quantity": 1,
-      "addedAt": "2025-12-09T03:22:14.236Z"
-    },
-    {
-      "id": "202",
-      "name": "Fresh Strawberries",
-      "baseprice": 12.55,
-      "rating": 5,
-      "featured": "false",
-      "discount": "60%",
-      "imgURL": [
-        "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1543528176-61b239494933?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1518635017498-87f514b751ba?q=80&w=687&auto=format&fit=crop"
-      ],
-      "SKU": "FRUIT002STRAWB2024",
+      "SKU": "FRUIT003APPLE2024",
       "category": 1,
       "tags": [
         4,
         9,
-        3
+        12
       ],
-      "desc": "Juicy, sweet strawberries bursting with flavor. High in vitamin C and antioxidants. Perfect for desserts, smoothies, or fresh snacking.",
-      "brand": "Berry Fields",
+      "desc": "Crisp and sweet Royal Gala apples with beautiful red striped skin. Perfect for lunch boxes, baking, or fresh eating. High in fiber and vitamin C.",
+      "brand": "Orchard Fresh",
       "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
       "socialLinks": [
         {
           "id": "1",
           "name": "facebook",
-          "link": "www.facebook.com/berryfields"
+          "link": "www.facebook.com/orchardfresh"
         },
         {
           "id": "2",
           "name": "pinterest",
-          "link": "www.pinterest.com/berryfields"
+          "link": "www.pinterest.com/orchardfresh"
         },
         {
           "id": "3",
           "name": "twitter",
-          "link": "www.twitter.com/berryfields"
+          "link": "www.twitter.com/orchardfresh"
         },
         {
           "id": "4",
           "name": "instagram",
-          "link": "www.instagram.com/berryfields"
+          "link": "www.instagram.com/orchardfresh"
         }
       ],
       "reviews": [
         {
           "id": "1",
-          "customer_name": "Emma Wilson",
+          "customer_name": "Olivia Anderson",
           "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&auto=format&fit=crop",
-          "comment": "Absolutely delicious! So sweet and fresh, best strawberries ever!",
-          "dateandtime": "3 hours ago"
+          "profileURL": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format&fit=crop",
+          "comment": "So crunchy and sweet! Perfect for apple pie.",
+          "dateandtime": "1 hour ago"
         },
         {
           "id": "2",
-          "customer_name": "Ryan Parker",
+          "customer_name": "Jacob Martinez",
           "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop",
-          "comment": "Perfect for making strawberry shortcake. Great quality!",
-          "dateandtime": "5 hours ago"
-        }
-      ],
-      "detail": "Premium strawberries hand-picked at peak ripeness for maximum sweetness and flavor. These berries are loaded with vitamin C, manganese, and powerful antioxidants that support immune health and fight inflammation. Perfect for fresh eating, adding to yogurt, making jams, or topping desserts. Each berry is carefully inspected to ensure you receive only the finest quality fruit. Store in refrigerator and consume within 3-5 days for best flavor.",
-      "wt": "400gm",
-      "stock": "285",
-      "color": "red",
-      "quantity": 1,
-      "addedAt": "2025-12-09T03:22:18.668Z"
-    },
-    {
-      "id": "204",
-      "name": "Fresh Blueberries",
-      "baseprice": 14.89,
-      "rating": 5,
-      "featured": "false",
-      "discount": "12%",
-      "imgURL": [
-        "https://images.unsplash.com/photo-1498557850523-fd3d118b962e?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1606800052052-7b28d0c4a5aa?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1576856497337-4f2be24683db?q=80&w=687&auto=format&fit=crop"
-      ],
-      "SKU": "FRUIT004BLUEBERR2024",
-      "category": 1,
-      "tags": [
-        5,
-        3
-      ],
-      "desc": "Plump, sweet blueberries packed with antioxidants. Perfect superfood for smoothies, pancakes, or healthy snacking. Rich in vitamins and minerals.",
-      "brand": "Berry Fields",
-      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
-      "socialLinks": [
-        {
-          "id": "1",
-          "name": "facebook",
-          "link": "www.facebook.com/berryfields"
-        },
-        {
-          "id": "2",
-          "name": "pinterest",
-          "link": "www.pinterest.com/berryfields"
-        },
-        {
-          "id": "3",
-          "name": "twitter",
-          "link": "www.twitter.com/berryfields"
-        },
-        {
-          "id": "4",
-          "name": "instagram",
-          "link": "www.instagram.com/berryfields"
-        }
-      ],
-      "reviews": [
-        {
-          "id": "1",
-          "customer_name": "Isabella Roberts",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=100&auto=format&fit=crop",
-          "comment": "Amazing quality! Perfect for my morning oatmeal.",
-          "dateandtime": "4 hours ago"
-        },
-        {
-          "id": "2",
-          "customer_name": "Ethan Taylor",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100&auto=format&fit=crop",
-          "comment": "Fresh and flavorful. Great for baking muffins!",
-          "dateandtime": "1 day ago"
-        }
-      ],
-      "detail": "Premium fresh blueberries harvested at peak ripeness for optimal sweetness and nutritional value. These superfoods are loaded with antioxidants, particularly anthocyanins, which support brain health and combat oxidative stress. High in vitamin K, vitamin C, and fiber, blueberries promote heart health and improve cognitive function. Perfect for breakfast bowls, smoothies, baking, or enjoying fresh by the handful. Refrigerate immediately and consume within one week for best quality.",
-      "wt": "300gm",
-      "stock": "240",
-      "color": "deep blue",
-      "quantity": 1,
-      "addedAt": "2025-12-09T03:23:25.624Z"
-    },
-    {
-      "id": "209",
-      "name": "Fresh Pineapple",
-      "baseprice": 13.77,
-      "rating": 5,
-      "featured": "false",
-      "discount": "10%",
-      "imgURL": [
-        "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1587049352847-8d5e0c2e0c88?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1602491254713-63fae49c2d55?q=80&w=687&auto=format&fit=crop"
-      ],
-      "SKU": "FRUIT009PINEAPPL2024",
-      "category": 1,
-      "tags": [
-        9,
-        1
-      ],
-      "desc": "Sweet and tangy fresh pineapple with tropical flavor. Contains bromelain enzyme for digestion. Perfect for fruit salads, grilling, or tropical smoothies.",
-      "brand": "Tropical Harvest",
-      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
-      "socialLinks": [
-        {
-          "id": "1",
-          "name": "facebook",
-          "link": "www.facebook.com/tropicalharvest"
-        },
-        {
-          "id": "2",
-          "name": "pinterest",
-          "link": "www.pinterest.com/tropicalharvest"
-        },
-        {
-          "id": "3",
-          "name": "twitter",
-          "link": "www.twitter.com/tropicalharvest"
-        },
-        {
-          "id": "4",
-          "name": "instagram",
-          "link": "www.instagram.com/tropicalharvest"
-        }
-      ],
-      "reviews": [
-        {
-          "id": "1",
-          "customer_name": "Harper White",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=100&auto=format&fit=crop",
-          "comment": "Perfectly ripe and so sweet! Made amazing piña coladas.",
-          "dateandtime": "3 hours ago"
-        },
-        {
-          "id": "2",
-          "customer_name": "Alexander Brown",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop",
-          "comment": "Great flavor! Grilled some for our BBQ and it was delicious.",
+          "profileURL": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=100&auto=format&fit=crop",
+          "comment": "Great size and flavor. Kids finish them in no time!",
           "dateandtime": "2 days ago"
         }
       ],
-      "detail": "Premium fresh pineapple selected for optimal ripeness and sweetness. This tropical fruit contains bromelain, a unique enzyme that aids digestion and reduces inflammation. Rich in vitamin C, manganese, and antioxidants, pineapple supports immune function and bone health. The sweet-tart flavor profile makes it versatile for both sweet and savory dishes. Excellent fresh, grilled, in smoothies, or added to stir-fries. Look for golden color at the base and fresh green leaves for ripeness indicator.",
-      "wt": "1.8kg",
-      "stock": "155",
-      "color": "golden",
+      "detail": "Our Royal Gala apples are hand-picked from premium orchards and known for their distinctive red-striped appearance and sweet, mild flavor. These apples offer a perfect balance of sweetness and crispness with a thin skin. Rich in dietary fiber, vitamin C, and antioxidants, apples support digestive health and boost immunity. Excellent for snacking, salads, baking, or making homemade applesauce. Store in a cool place or refrigerate to maintain crispness.",
+      "wt": "1.2kg",
+      "stock": "390",
+      "color": "red-striped",
       "quantity": 1,
-      "addedAt": "2025-12-09T03:51:33.375Z"
-    },
-    {
-      "id": "207",
-      "name": "Green Seedless Grapes",
-      "baseprice": 11.54,
-      "rating": 4,
-      "featured": "false",
-      "discount": "55%",
-      "imgURL": [
-        "https://images.unsplash.com/photo-1547514701-42782101795e?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1601275226753-f2b94e20b6f0?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1537640538966-79f369143f8f?q=80&w=687&auto=format&fit=crop"
-      ],
-      "SKU": "FRUIT007GRAPES2024",
-      "category": 1,
-      "tags": [
-        4,
-        9,
-        15
-      ],
-      "desc": "Crisp, sweet green seedless grapes perfect for snacking. Rich in antioxidants and natural sugars. Great for lunch boxes, fruit salads, or freezing for a cool treat.",
-      "brand": "Vineyard Select",
-      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
-      "socialLinks": [
-        {
-          "id": "1",
-          "name": "facebook",
-          "link": "www.facebook.com/vineyardselect"
-        },
-        {
-          "id": "2",
-          "name": "pinterest",
-          "link": "www.pinterest.com/vineyardselect"
-        },
-        {
-          "id": "3",
-          "name": "twitter",
-          "link": "www.twitter.com/vineyardselect"
-        },
-        {
-          "id": "4",
-          "name": "instagram",
-          "link": "www.instagram.com/vineyardselect"
-        }
-      ],
-      "reviews": [
-        {
-          "id": "1",
-          "customer_name": "Charlotte Lee",
-          "rating": 4,
-          "profileURL": "https://images.unsplash.com/photo-1551843073-4a9a5b6fcd5f?q=80&w=100&auto=format&fit=crop",
-          "comment": "Very sweet and crunchy. Perfect for snacking!",
-          "dateandtime": "5 hours ago"
-        },
-        {
-          "id": "2",
-          "customer_name": "Benjamin Wilson",
-          "rating": 4,
-          "profileURL": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?q=80&w=100&auto=format&fit=crop",
-          "comment": "Good quality grapes. A few were slightly soft but mostly great.",
-          "dateandtime": "3 days ago"
-        }
-      ],
-      "detail": "Premium seedless green grapes harvested at peak sweetness for optimal flavor. These convenient, bite-sized fruits are packed with vitamins C and K, plus powerful antioxidants like resveratrol that support heart health. The crisp texture and sweet taste make them perfect for fresh snacking, adding to cheese boards, or freezing for a refreshing summer treat. No seeds means easy eating for kids and adults alike. Store in refrigerator and rinse before serving.",
-      "wt": "500gm",
-      "stock": "325",
-      "color": "green",
-      "quantity": 1,
-      "addedAt": "2025-12-09T03:51:38.240Z"
+      "addedAt": "2025-12-09T18:18:44.110Z"
     }
   ],
   "wishlist": [
     {
-      "id": "102",
-      "name": "Fresh Broccoli Crowns",
-      "baseprice": 12.44,
-      "rating": 4,
-      "featured": "true",
-      "discount": "5%",
-      "imgURL": [
-        "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1628773822503-930a7eaecf80?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1584868356415-dde8e0c68c4f?q=80&w=687&auto=format&fit=crop"
-      ],
-      "SKU": "VEG002BROCC2024",
-      "category": 2,
-      "tags": [
-        2,
-        3
-      ],
-      "desc": "Crisp and nutritious broccoli crowns, high in vitamins C and K. Ideal for steaming, stir-frying, or adding to your favorite pasta dishes.",
-      "brand": "Nature's Best",
-      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
-      "socialLinks": [
-        {
-          "id": "1",
-          "name": "facebook",
-          "link": "www.facebook.com/naturesbest"
-        },
-        {
-          "id": "2",
-          "name": "pinterest",
-          "link": "www.pinterest.com/naturesbest"
-        },
-        {
-          "id": "3",
-          "name": "twitter",
-          "link": "www.twitter.com/naturesbest"
-        },
-        {
-          "id": "4",
-          "name": "instagram",
-          "link": "www.instagram.com/naturesbest"
-        }
-      ],
-      "reviews": [
-        {
-          "id": "1",
-          "customer_name": "Sarah Mitchell",
-          "rating": 4,
-          "profileURL": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&auto=format&fit=crop",
-          "comment": "Fresh and green. Perfect for my weekly meal prep.",
-          "dateandtime": "5 hours ago"
-        },
-        {
-          "id": "2",
-          "customer_name": "David Lee",
-          "rating": 4,
-          "profileURL": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop",
-          "comment": "Good quality broccoli, stays fresh for days in the fridge.",
-          "dateandtime": "2 days ago"
-        }
-      ],
-      "detail": "Premium broccoli crowns harvested at peak maturity for maximum nutritional value. These florets are packed with cancer-fighting compounds, fiber, and essential minerals. Steam for 5-7 minutes to retain nutrients, or add to soups and casseroles for a healthy boost.",
-      "wt": "400gm",
-      "stock": "275",
-      "color": "dark green"
-    },
-    {
-      "id": "104",
-      "name": "Baby Spinach Leaves",
-      "baseprice": 6.99,
-      "rating": 5,
-      "featured": "true",
-      "discount": "0%",
-      "imgURL": [
-        "https://images.unsplash.com/photo-1576045057995-568f588f82fb?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1594282484356-4c0b5c6e76f5?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1574316071802-0d684efa7bf5?q=80&w=687&auto=format&fit=crop"
-      ],
-      "SKU": "VEG004SPINACH2024",
-      "category": 2,
-      "tags": [
-        2,
-        3,
-        14
-      ],
-      "desc": "Tender baby spinach leaves, pre-washed and ready to eat. Excellent source of iron, calcium, and vitamins for a nutritious addition to any meal.",
-      "brand": "Leafy Greens Co.",
-      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
-      "socialLinks": [
-        {
-          "id": "1",
-          "name": "facebook",
-          "link": "www.facebook.com/leafygreensco"
-        },
-        {
-          "id": "2",
-          "name": "pinterest",
-          "link": "www.pinterest.com/leafygreensco"
-        },
-        {
-          "id": "3",
-          "name": "twitter",
-          "link": "www.twitter.com/leafygreensco"
-        },
-        {
-          "id": "4",
-          "name": "instagram",
-          "link": "www.instagram.com/leafygreensco"
-        }
-      ],
-      "reviews": [
-        {
-          "id": "1",
-          "customer_name": "Amanda Taylor",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=100&auto=format&fit=crop",
-          "comment": "Always fresh and clean. Perfect for my morning smoothies!",
-          "dateandtime": "30 minutes ago"
-        },
-        {
-          "id": "2",
-          "customer_name": "Christopher White",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100&auto=format&fit=crop",
-          "comment": "Great quality spinach. Lasts longer than store-bought.",
-          "dateandtime": "6 hours ago"
-        }
-      ],
-      "detail": "Premium baby spinach leaves harvested young for maximum tenderness. Triple-washed and ready to use straight from the package. Rich in folate, iron, and magnesium, spinach is a nutritional powerhouse that supports bone health and energy production. Perfect for salads, sandwiches, smoothies, or quick sautés.",
-      "wt": "250gm",
-      "stock": "380",
-      "color": "deep green"
-    },
-    {
-      "id": "101",
-      "name": "Organic Carrots",
-      "baseprice": 8.99,
-      "rating": 5,
-      "featured": "false",
-      "discount": "50%",
-      "imgURL": [
-        "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1447175008436-054170c2e979?q=80&w=699&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1582515073490-39981397c445?q=80&w=735&auto=format&fit=crop"
-      ],
-      "SKU": "VEG001CARROT2024",
-      "category": 2,
-      "tags": [
-        3,
-        5
-      ],
-      "desc": "Fresh organic carrots packed with beta-carotene and vitamins. Perfect for salads, soups, or healthy snacking. Locally sourced from organic farms.",
-      "brand": "Green Valley Farms",
-      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
-      "socialLinks": [
-        {
-          "id": "1",
-          "name": "facebook",
-          "link": "www.facebook.com/greenvalleyfarms"
-        },
-        {
-          "id": "2",
-          "name": "pinterest",
-          "link": "www.pinterest.com/greenvalleyfarms"
-        },
-        {
-          "id": "3",
-          "name": "twitter",
-          "link": "www.twitter.com/greenvalleyfarms"
-        },
-        {
-          "id": "4",
-          "name": "instagram",
-          "link": "www.instagram.com/greenvalleyfarms"
-        }
-      ],
-      "reviews": [
-        {
-          "id": "1",
-          "customer_name": "Emily Johnson",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop",
-          "comment": "Super fresh and crunchy! My kids love snacking on these carrots.",
-          "dateandtime": "1 day ago"
-        },
-        {
-          "id": "2",
-          "customer_name": "Michael Brown",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop",
-          "comment": "Best carrots I've bought online. Great quality and packaging.",
-          "dateandtime": "3 days ago"
-        }
-      ],
-      "detail": "Our organic carrots are grown without synthetic pesticides or fertilizers. Rich in vitamin A, fiber, and antioxidants, these carrots support eye health and boost immunity. Hand-picked at peak freshness and delivered directly to your door. Perfect for juicing, roasting, or enjoying raw with your favorite dip.",
-      "wt": "500gm",
-      "stock": "320",
-      "color": "orange"
-    },
-    {
       "id": "202",
       "name": "Fresh Strawberries",
       "baseprice": 12.55,
@@ -2201,25 +1659,24 @@
       "color": "red"
     },
     {
-      "id": "103",
-      "name": "Red Bell Peppers",
-      "baseprice": 10.99,
+      "id": "107",
+      "name": "Sweet Corn",
+      "baseprice": 11.99,
       "rating": 5,
-      "featured": "false",
-      "discount": "15%",
+      "featured": "true",
+      "discount": "5%",
       "imgURL": [
-        "https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1601493700631-2b16ec4b4716?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1525607551316-4a8e16d1f9ba?q=80&w=687&auto=format&fit=crop"
+        "https://images.unsplash.com/photo-1551754655-cd27e38d2076?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1603048588665-791ca8aea617?q=80&w=735&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1606927493524-ea86b9b4f8b6?q=80&w=687&auto=format&fit=crop"
       ],
-      "SKU": "VEG003PEPPER2024",
+      "SKU": "VEG007CORN2024",
       "category": 2,
       "tags": [
         3,
-        9,
-        11
+        4
       ],
-      "desc": "Sweet and crunchy red bell peppers, perfect for salads, grilling, or stuffing. Rich in vitamin C and antioxidants for a healthy immune system.",
+      "desc": "Fresh sweet corn on the cob, naturally sweet and tender. Perfect for grilling, boiling, or roasting. A summertime favorite packed with fiber and B vitamins.",
       "brand": "Sunny Harvest",
       "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
       "socialLinks": [
@@ -2247,25 +1704,25 @@
       "reviews": [
         {
           "id": "1",
-          "customer_name": "Lisa Anderson",
+          "customer_name": "Karen Thompson",
           "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format&fit=crop",
-          "comment": "So sweet and crispy! Love using these in my stir-fries.",
-          "dateandtime": "4 hours ago"
+          "profileURL": "https://images.unsplash.com/photo-1551843073-4a9a5b6fcd5f?q=80&w=100&auto=format&fit=crop",
+          "comment": "So sweet and delicious! Kids finished all 4 cobs in one meal.",
+          "dateandtime": "1 hour ago"
         },
         {
           "id": "2",
-          "customer_name": "Robert Kim",
+          "customer_name": "Daniel Clark",
           "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=100&auto=format&fit=crop",
-          "comment": "Perfect for stuffed peppers. Great size and quality.",
-          "dateandtime": "1 day ago"
+          "profileURL": "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?q=80&w=100&auto=format&fit=crop",
+          "comment": "Perfect for grilling. Tender kernels and great flavor.",
+          "dateandtime": "2 days ago"
         }
       ],
-      "detail": "Our red bell peppers are vine-ripened to perfection, offering maximum sweetness and nutritional benefits. Contains three times more vitamin C than oranges and packed with vitamin A. Great for raw snacking, roasting, or adding vibrant color to any dish. Each pepper is carefully selected for optimal freshness.",
-      "wt": "300gm",
-      "stock": "410",
-      "color": "red"
+      "detail": "Farm-fresh sweet corn picked at peak ripeness to ensure maximum sweetness and tenderness. Our corn is non-GMO and grown using sustainable farming practices. High in fiber, B vitamins, and antioxidants like lutein and zeaxanthin. Grill with butter and herbs, add to salads, or enjoy boiled with a sprinkle of salt. Each ear is individually inspected for quality.",
+      "wt": "700gm",
+      "stock": "225",
+      "color": "yellow"
     },
     {
       "id": "106",
@@ -2332,6 +1789,272 @@
       "wt": "450gm",
       "stock": "340",
       "color": "green"
+    },
+    {
+      "id": "204",
+      "name": "Fresh Blueberries",
+      "baseprice": 14.89,
+      "rating": 5,
+      "featured": "false",
+      "discount": "12%",
+      "imgURL": [
+        "https://images.unsplash.com/photo-1498557850523-fd3d118b962e?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1606800052052-7b28d0c4a5aa?q=80&w=735&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1576856497337-4f2be24683db?q=80&w=687&auto=format&fit=crop"
+      ],
+      "SKU": "FRUIT004BLUEBERR2024",
+      "category": 1,
+      "tags": [
+        5,
+        3
+      ],
+      "desc": "Plump, sweet blueberries packed with antioxidants. Perfect superfood for smoothies, pancakes, or healthy snacking. Rich in vitamins and minerals.",
+      "brand": "Berry Fields",
+      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
+      "socialLinks": [
+        {
+          "id": "1",
+          "name": "facebook",
+          "link": "www.facebook.com/berryfields"
+        },
+        {
+          "id": "2",
+          "name": "pinterest",
+          "link": "www.pinterest.com/berryfields"
+        },
+        {
+          "id": "3",
+          "name": "twitter",
+          "link": "www.twitter.com/berryfields"
+        },
+        {
+          "id": "4",
+          "name": "instagram",
+          "link": "www.instagram.com/berryfields"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "1",
+          "customer_name": "Isabella Roberts",
+          "rating": 5,
+          "profileURL": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=100&auto=format&fit=crop",
+          "comment": "Amazing quality! Perfect for my morning oatmeal.",
+          "dateandtime": "4 hours ago"
+        },
+        {
+          "id": "2",
+          "customer_name": "Ethan Taylor",
+          "rating": 5,
+          "profileURL": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100&auto=format&fit=crop",
+          "comment": "Fresh and flavorful. Great for baking muffins!",
+          "dateandtime": "1 day ago"
+        }
+      ],
+      "detail": "Premium fresh blueberries harvested at peak ripeness for optimal sweetness and nutritional value. These superfoods are loaded with antioxidants, particularly anthocyanins, which support brain health and combat oxidative stress. High in vitamin K, vitamin C, and fiber, blueberries promote heart health and improve cognitive function. Perfect for breakfast bowls, smoothies, baking, or enjoying fresh by the handful. Refrigerate immediately and consume within one week for best quality.",
+      "wt": "300gm",
+      "stock": "240",
+      "color": "deep blue"
+    },
+    {
+      "id": "209",
+      "name": "Fresh Pineapple",
+      "baseprice": 13.77,
+      "rating": 5,
+      "featured": "false",
+      "discount": "10%",
+      "imgURL": [
+        "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1587049352847-8d5e0c2e0c88?q=80&w=735&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1602491254713-63fae49c2d55?q=80&w=687&auto=format&fit=crop"
+      ],
+      "SKU": "FRUIT009PINEAPPL2024",
+      "category": 1,
+      "tags": [
+        9,
+        1
+      ],
+      "desc": "Sweet and tangy fresh pineapple with tropical flavor. Contains bromelain enzyme for digestion. Perfect for fruit salads, grilling, or tropical smoothies.",
+      "brand": "Tropical Harvest",
+      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
+      "socialLinks": [
+        {
+          "id": "1",
+          "name": "facebook",
+          "link": "www.facebook.com/tropicalharvest"
+        },
+        {
+          "id": "2",
+          "name": "pinterest",
+          "link": "www.pinterest.com/tropicalharvest"
+        },
+        {
+          "id": "3",
+          "name": "twitter",
+          "link": "www.twitter.com/tropicalharvest"
+        },
+        {
+          "id": "4",
+          "name": "instagram",
+          "link": "www.instagram.com/tropicalharvest"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "1",
+          "customer_name": "Harper White",
+          "rating": 5,
+          "profileURL": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=100&auto=format&fit=crop",
+          "comment": "Perfectly ripe and so sweet! Made amazing piña coladas.",
+          "dateandtime": "3 hours ago"
+        },
+        {
+          "id": "2",
+          "customer_name": "Alexander Brown",
+          "rating": 5,
+          "profileURL": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop",
+          "comment": "Great flavor! Grilled some for our BBQ and it was delicious.",
+          "dateandtime": "2 days ago"
+        }
+      ],
+      "detail": "Premium fresh pineapple selected for optimal ripeness and sweetness. This tropical fruit contains bromelain, a unique enzyme that aids digestion and reduces inflammation. Rich in vitamin C, manganese, and antioxidants, pineapple supports immune function and bone health. The sweet-tart flavor profile makes it versatile for both sweet and savory dishes. Excellent fresh, grilled, in smoothies, or added to stir-fries. Look for golden color at the base and fresh green leaves for ripeness indicator.",
+      "wt": "1.8kg",
+      "stock": "155",
+      "color": "golden"
+    },
+    {
+      "id": "207",
+      "name": "Green Seedless Grapes",
+      "baseprice": 11.54,
+      "rating": 4,
+      "featured": "false",
+      "discount": "55%",
+      "imgURL": [
+        "https://images.unsplash.com/photo-1547514701-42782101795e?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1601275226753-f2b94e20b6f0?q=80&w=735&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1537640538966-79f369143f8f?q=80&w=687&auto=format&fit=crop"
+      ],
+      "SKU": "FRUIT007GRAPES2024",
+      "category": 1,
+      "tags": [
+        4,
+        9,
+        15
+      ],
+      "desc": "Crisp, sweet green seedless grapes perfect for snacking. Rich in antioxidants and natural sugars. Great for lunch boxes, fruit salads, or freezing for a cool treat.",
+      "brand": "Vineyard Select",
+      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
+      "socialLinks": [
+        {
+          "id": "1",
+          "name": "facebook",
+          "link": "www.facebook.com/vineyardselect"
+        },
+        {
+          "id": "2",
+          "name": "pinterest",
+          "link": "www.pinterest.com/vineyardselect"
+        },
+        {
+          "id": "3",
+          "name": "twitter",
+          "link": "www.twitter.com/vineyardselect"
+        },
+        {
+          "id": "4",
+          "name": "instagram",
+          "link": "www.instagram.com/vineyardselect"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "1",
+          "customer_name": "Charlotte Lee",
+          "rating": 4,
+          "profileURL": "https://images.unsplash.com/photo-1551843073-4a9a5b6fcd5f?q=80&w=100&auto=format&fit=crop",
+          "comment": "Very sweet and crunchy. Perfect for snacking!",
+          "dateandtime": "5 hours ago"
+        },
+        {
+          "id": "2",
+          "customer_name": "Benjamin Wilson",
+          "rating": 4,
+          "profileURL": "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?q=80&w=100&auto=format&fit=crop",
+          "comment": "Good quality grapes. A few were slightly soft but mostly great.",
+          "dateandtime": "3 days ago"
+        }
+      ],
+      "detail": "Premium seedless green grapes harvested at peak sweetness for optimal flavor. These convenient, bite-sized fruits are packed with vitamins C and K, plus powerful antioxidants like resveratrol that support heart health. The crisp texture and sweet taste make them perfect for fresh snacking, adding to cheese boards, or freezing for a refreshing summer treat. No seeds means easy eating for kids and adults alike. Store in refrigerator and rinse before serving.",
+      "wt": "500gm",
+      "stock": "325",
+      "color": "green"
+    },
+    {
+      "id": "108",
+      "name": "Fresh Cauliflower",
+      "baseprice": 13.88,
+      "rating": 4,
+      "featured": "false",
+      "discount": "10%",
+      "imgURL": [
+        "https://images.unsplash.com/photo-1551754655-cd27e38d2076?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1510627489930-0c1b0bfb6785?q=80&w=735&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1566228017535-433d517f46e6?q=80&w=687&auto=format&fit=crop"
+      ],
+      "SKU": "VEG008CAULIFL2024",
+      "category": 2,
+      "tags": [
+        2,
+        3,
+        12
+      ],
+      "desc": "Fresh white cauliflower heads, versatile and nutritious. Low in carbs and calories, perfect for rice alternatives, roasting, or adding to curries and soups.",
+      "brand": "Nature's Best",
+      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
+      "socialLinks": [
+        {
+          "id": "1",
+          "name": "facebook",
+          "link": "www.facebook.com/naturesbest"
+        },
+        {
+          "id": "2",
+          "name": "pinterest",
+          "link": "www.pinterest.com/naturesbest"
+        },
+        {
+          "id": "3",
+          "name": "twitter",
+          "link": "www.twitter.com/naturesbest"
+        },
+        {
+          "id": "4",
+          "name": "instagram",
+          "link": "www.instagram.com/naturesbest"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "1",
+          "customer_name": "Michelle Rodriguez",
+          "rating": 4,
+          "profileURL": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=100&auto=format&fit=crop",
+          "comment": "Great for making cauliflower rice. Fresh and firm.",
+          "dateandtime": "7 hours ago"
+        },
+        {
+          "id": "2",
+          "customer_name": "Kevin Adams",
+          "rating": 4,
+          "profileURL": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=100&auto=format&fit=crop",
+          "comment": "Good quality. Perfect size for my family's dinner.",
+          "dateandtime": "3 days ago"
+        }
+      ],
+      "detail": "Premium cauliflower heads with tight, compact florets and crisp texture. This cruciferous vegetable is a nutritional star, packed with vitamin C, vitamin K, and cancer-fighting compounds. Its mild flavor and versatile texture make it perfect for low-carb substitutes like cauliflower rice, mashed cauliflower, or pizza crust. Roast with olive oil and spices for a delicious side dish.",
+      "wt": "800gm",
+      "stock": "185",
+      "color": "white"
     }
   ]
 }

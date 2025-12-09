@@ -1,4 +1,5 @@
 import { updateCartProducts } from '../../../utils/fetchApi.js';
+import { toastMessage } from '../../../utils/toast.js';
 import { productCart } from '../../common/sidebar/sidebar.js';
 import { shoppingCartContents } from './shoppingCartContents.js';
 
@@ -21,7 +22,8 @@ export const updateCartTotal = () => {
     }
 };
 
-// updates cart local quantity and the backed quantity
+let updateHandler = null;
+
 export async function updateCart(
     product,
     currentquantity,
@@ -30,6 +32,7 @@ export async function updateCart(
     const isProductInCart = updatedCartProducts.find(
         (item) => item.id === product.id,
     );
+
     if (!isProductInCart) {
         updatedCartProducts.push({
             id: product.id,
@@ -37,22 +40,24 @@ export async function updateCart(
             updatedAt: new Date().toISOString(),
         });
     } else {
-        updatedCartProducts = updatedCartProducts.map((item) => {
-            if (item.id === product.id) {
-                return {
-                    ...item,
-                    quantity: currentquantity,
-                    updatedAt: new Date().toISOString(),
-                };
-            }
-            return item;
-        });
+        const index = updatedCartProducts.findIndex(
+            (item) => item.id === product.id,
+        );
+        console.log(index);
+        updatedCartProducts[index] = {
+            ...updatedCartProducts[index],
+            quantity: currentquantity,
+            updatedAt: new Date().toISOString(),
+        };
     }
 
     // update cart products
     const updateCartProductsBtn = document.getElementById('updateCartBtn');
     if (updateCartProductsBtn) {
-        updateCartProductsBtn.addEventListener('click', async () => {
+        if (updateHandler) {
+            updateCartProductsBtn.removeEventListener('click', updateHandler);
+        }
+        updateHandler = async () => {
             if (updatedCartProducts.length === 0) {
                 return;
             }
@@ -61,7 +66,11 @@ export async function updateCart(
                 await updateCartProducts(item, item.id);
             }
             await shoppingCartContents();
-            productCart();
-        });
+            await productCart();
+
+            toastMessage('Updated products successfully', 'success');
+        };
+
+        updateCartProductsBtn.addEventListener('click', updateHandler);
     }
 }

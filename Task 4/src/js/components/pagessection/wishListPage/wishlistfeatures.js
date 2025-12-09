@@ -1,9 +1,7 @@
 import { productCartFeatures } from '../../../features/cartFeatures.js';
 import { DeleteWishlistByID } from '../../../utils/fetchApi.js';
-import {
-    HandleSidebarCart,
-    productCart,
-} from '../../common/sidebar/sidebar.js';
+import { toastMessage } from '../../../utils/toast.js';
+import { productCart } from '../../common/sidebar/sidebar.js';
 import navbar from '../../common/topnavbar/topnavbar.js';
 
 import { WishListProductTable } from './wishListTableContents.js';
@@ -64,12 +62,17 @@ const handleCartEvents = (
         el.addEventListener('click', async () => {
             try {
                 await addCartProduct(data);
+                productCart();
+                toastMessage('Product added to cart', 'success');
             } catch (error) {
                 console.error(
                     'error while adding the wishlist product to cart',
                     error,
                 );
-                alert('Error while adding the wishlist product to cart');
+                toastMessage(
+                    'Error while adding the wishlist product to cart',
+                    'error',
+                );
             }
         });
     });
@@ -80,11 +83,10 @@ const handleCartEvents = (
                 await DeleteWishlistByID(data.id);
                 navbar();
                 WishListProductTable();
-                HandleSidebarCart();
-                productCart();
+                toastMessage('Removed product successfully', 'success');
             } catch (error) {
                 console.error('error while removing the wishlist', error);
-                alert('Error while removing the wishlist');
+                toastMessage('Error while removing the wishlist', 'error');
             }
         });
     });

@@ -2,6 +2,7 @@ import { productCartFeatures } from '../../../features/cartFeatures.js';
 import { calculateDiscountedPrice } from '../../../utils/discountedPrice.js';
 import { FetchCartProducts } from '../../../utils/fetchApi.js';
 import { PreventScroll } from '../../../utils/preventScroll.js';
+import { shoppingCartContents } from '../../pagessection/shoppingcart/shoppingCartContents.js';
 import { singleCardButtonUpdate } from '../productscard/productCardFeatures.js';
 import { ProductCartSidebar } from './productCartSidebar.js';
 import { sidebarComp } from './sidebarComponents.js';
@@ -26,6 +27,7 @@ export const productCart = async () => {
                 // loading the product cart
                 await ProductCartSidebar(cartProducts);
                 await productCart();
+                await shoppingCartContents();
                 singleCardButtonUpdate(element.id);
             });
             const cartProductCard = document.getElementById(
@@ -86,8 +88,6 @@ function priceAfterDiscount(curr) {
     );
     return discountPrice * quantity;
 }
-
-let documentClickHandler = null;
 
 export const HandleSidebarCart = async () => {
     try {

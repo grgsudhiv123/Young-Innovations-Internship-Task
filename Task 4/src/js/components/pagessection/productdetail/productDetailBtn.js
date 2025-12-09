@@ -6,7 +6,8 @@ import {
     updateCartProducts,
 } from '../../../utils/fetchApi.js';
 import { toastMessage } from '../../../utils/toast.js';
-import { HandleSidebarCart, productCart } from '../sidebar/sidebar.js';
+import { productCart } from '../../common/sidebar/sidebar.js';
+import { relatedProducts } from './relatedProducts.js';
 
 export const productDetailButtons = async (productDetail) => {
     const cartProducts = await FetchCartProducts();
@@ -15,9 +16,9 @@ export const productDetailButtons = async (productDetail) => {
     );
 
     let quantity = isProductInCart ? isProductInCart.quantity : 1;
-    const deductQuantityBtn = document.getElementById('modelProductDeductbtn');
-    const addQuantityBtn = document.getElementById('modelProductAddbtn');
-    const productQuantity = document.getElementById('modelProductQuantity');
+    const deductQuantityBtn = document.getElementById('deductQuantityBtn');
+    const addQuantityBtn = document.getElementById('addQuantityBtn');
+    const productQuantity = document.getElementById('productQuantity');
 
     productQuantity.innerText = quantity;
 
@@ -35,7 +36,7 @@ export const productDetailButtons = async (productDetail) => {
         }
     });
 
-    const addToCartBtn = document.getElementById('modelAddtoCartBtn');
+    const addToCartBtn = document.getElementById('addProductToCart');
     if (addToCartBtn) {
         addToCartBtn.addEventListener('click', async () => {
             if (isProductInCart) {
@@ -55,74 +56,66 @@ export const productDetailButtons = async (productDetail) => {
                 });
             }
 
-            // reload cart for fresh data
-            productCart();
             toastMessage('Product added to cart', 'success');
+            // reload cart for fresh data
+            await relatedProducts(productDetail.category);
+            await productCart();
         });
     }
 
     // product wishlist btn
+
     initialWishlistbtnUpdate(productDetail.id);
+    const productWishlistBtn = document.getElementById('productWishlistBtn');
 
-    const productWishlistBtn = document.getElementById('modelWishlistBtn');
-    productWishlistBtn.addEventListener('click', async () => {
-        await handleWishList(productDetail);
-        HandleSidebarCart();
-        await productCart();
-        await singleWishlistBtnUpdate(productDetail.id);
-    });
-};
-
-const initialWishlistbtnUpdate = async (id) => {
-    const productWishlistBtn = document.getElementById('modelWishlistBtn');
-    const productwishlistBtnIcon = document.getElementById('modelWishlistIcon');
     if (productWishlistBtn) {
-        const wishlistData = await getAllWishListProduct();
-        const isProductInCart = wishlistData.find(
-            (wishlistproduct) => wishlistproduct.id === id,
-        );
-        if (isProductInCart) {
-            productwishlistBtnIcon.classList.remove('fa-regular');
-            productwishlistBtnIcon.classList.add('fa-solid');
-        } else {
-            productwishlistBtnIcon.classList.remove('fa-solid');
-            productwishlistBtnIcon.classList.add('fa-regular');
-        }
+        productWishlistBtn.addEventListener('click', async () => {
+            await handleWishList(productDetail);
+            await productCart();
+            await wishlistBtnupdate(productDetail.id);
+        });
     }
 };
 
-const singleWishlistBtnUpdate = async (id) => {
+const initialWishlistbtnUpdate = async (id) => {
+    const wishlistData = await getAllWishListProduct();
+    const productwishlistBtnIcon = document.getElementById(
+        'productWishlistBtnIcon',
+    );
+    const isProductInCart = wishlistData.find(
+        (wishlistproduct) => wishlistproduct.id === id,
+    );
+    if (isProductInCart) {
+        productwishlistBtnIcon.classList.remove('fa-regular');
+        productwishlistBtnIcon.classList.add('fa-solid');
+    } else {
+        productwishlistBtnIcon.classList.remove('fa-solid');
+        productwishlistBtnIcon.classList.add('fa-regular');
+    }
+};
+
+const wishlistBtnupdate = async (id) => {
     const wishlistData = await getAllWishListProduct();
     const isProductInCart = wishlistData.find(
         (wishlistproduct) => wishlistproduct.id === id,
     );
-    const wishlistModelIcon = document.querySelector(
-        `[id$="modelWishlistIcon"]`,
-    );
 
-    // update productmodel wishlist btn
-    if (isProductInCart) {
-        wishlistModelIcon.classList.remove('fa-regular');
-        wishlistModelIcon.classList.add('fa-solid');
-    } else {
-        wishlistModelIcon.classList.remove('fa-solid');
-        wishlistModelIcon.classList.add('fa-regular');
-    }
-
-    const productdetailwishlistIcon = document.querySelector(
+    // product detail
+    const wishlistIcon = document.querySelector(
         `[id$="productWishlistBtnIcon"]`,
     );
-    if (productdetailwishlistIcon) {
+    if (wishlistIcon) {
         if (isProductInCart) {
-            productdetailwishlistIcon.classList.remove('fa-regular');
-            productdetailwishlistIcon.classList.add('fa-solid');
+            wishlistIcon.classList.remove('fa-regular');
+            wishlistIcon.classList.add('fa-solid');
         } else {
-            productdetailwishlistIcon.classList.remove('fa-solid');
-            productdetailwishlistIcon.classList.add('fa-regular');
+            wishlistIcon.classList.remove('fa-solid');
+            wishlistIcon.classList.add('fa-regular');
         }
     }
 
     // restof the icons in product card
+
     const wishlistIcons = document.querySelectorAll(
         `[id$="wishlisticon-${id}"]`,
     );

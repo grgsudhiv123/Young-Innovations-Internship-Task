@@ -1,7 +1,7 @@
 export function toastMessage(message, status) {
     const toastContainer = document.createElement('div');
     toastContainer.className =
-        'toastAnimation fixed z-50 bottom-5 max-w-120 w-fit min-h-20 px-2 py-1 right-5 flex gap-2 items-center';
+        'toastAnimation fixed z-50 top-5 max-w-80 md:max-w-120 w-fit min-h-10 md:min-h-20 h-fit  px-4 py-1 md:right-5 flex gap-2 items-center translate-x-[50%] md:translate-x-[0%] shadow-lg';
 
     toastContainer.innerHTML = `
         <div class="spinner">
@@ -10,7 +10,7 @@ export function toastMessage(message, status) {
                 stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
         </div>
-        <p class="text-base text-white font-medium">${message}</p>
+        <p class="text-xs md:text-base text-white font-medium">${message}</p>
     `;
 
     document.body.appendChild(toastContainer);
@@ -23,8 +23,8 @@ export function toastMessage(message, status) {
 
     setTimeout(() => {
         toastContainer.classList.remove('active');
-        setTimeout(() => toastContainer.remove(), 200);
-    }, 3000);
+        setTimeout(() => toastContainer.remove(), 100);
+    }, 2000);
 }
 
 function toastStatus(status, toastContainer) {

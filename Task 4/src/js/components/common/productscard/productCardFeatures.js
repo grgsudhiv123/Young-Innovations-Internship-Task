@@ -10,7 +10,6 @@ import { productCart } from '../sidebar/sidebar.js';
 import navbar from '../topnavbar/topnavbar.js';
 
 export const ProductBtns = async (productData, prefix) => {
-    // const { preventScroll } = PreventScroll();
     const modelContainer = document.getElementById('model-container');
     const modelBackdrop = document.getElementById('modelBackdrop');
 
@@ -171,6 +170,20 @@ const singleCardButtonUpdate = async (productId) => {
                 icon.classList.add('fa-regular');
             }
         });
+
+        // product detail page
+        const wishlistIcon = document.querySelector(
+            `[id$="productWishlistBtnIcon"]`,
+        );
+        if (wishlistIcon) {
+            if (isProductInWishlistCart) {
+                wishlistIcon.classList.remove('fa-regular');
+                wishlistIcon.classList.add('fa-solid');
+            } else {
+                wishlistIcon.classList.remove('fa-solid');
+                wishlistIcon.classList.add('fa-regular');
+            }
+        }
 
         const isInCart = cartData.find((item) => item.id === productId);
 
