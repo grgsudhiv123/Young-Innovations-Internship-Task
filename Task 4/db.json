@@ -1521,143 +1521,77 @@
   ],
   "cartProducts": [
     {
-      "id": "203",
-      "name": "Royal Gala Apples",
-      "baseprice": 10.77,
+      "id": "104",
+      "name": "Baby Spinach Leaves",
+      "baseprice": 6.99,
       "rating": 5,
-      "featured": "false",
-      "discount": "8%",
+      "featured": "true",
+      "discount": "0%",
       "imgURL": [
-        "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1567306226416-28f0efdc88ce?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?q=80&w=687&auto=format&fit=crop"
+        "https://images.unsplash.com/photo-1576045057995-568f588f82fb?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1594282484356-4c0b5c6e76f5?q=80&w=735&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1574316071802-0d684efa7bf5?q=80&w=687&auto=format&fit=crop"
       ],
-      "SKU": "FRUIT003APPLE2024",
-      "category": 1,
+      "SKU": "VEG004SPINACH2024",
+      "category": 2,
       "tags": [
-        4,
-        9,
-        12
+        2,
+        3,
+        14
       ],
-      "desc": "Crisp and sweet Royal Gala apples with beautiful red striped skin. Perfect for lunch boxes, baking, or fresh eating. High in fiber and vitamin C.",
-      "brand": "Orchard Fresh",
+      "desc": "Tender baby spinach leaves, pre-washed and ready to eat. Excellent source of iron, calcium, and vitamins for a nutritious addition to any meal.",
+      "brand": "Leafy Greens Co.",
       "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
       "socialLinks": [
         {
           "id": "1",
           "name": "facebook",
-          "link": "www.facebook.com/orchardfresh"
+          "link": "www.facebook.com/leafygreensco"
         },
         {
           "id": "2",
           "name": "pinterest",
-          "link": "www.pinterest.com/orchardfresh"
+          "link": "www.pinterest.com/leafygreensco"
         },
         {
           "id": "3",
           "name": "twitter",
-          "link": "www.twitter.com/orchardfresh"
+          "link": "www.twitter.com/leafygreensco"
         },
         {
           "id": "4",
           "name": "instagram",
-          "link": "www.instagram.com/orchardfresh"
+          "link": "www.instagram.com/leafygreensco"
         }
       ],
       "reviews": [
         {
           "id": "1",
-          "customer_name": "Olivia Anderson",
+          "customer_name": "Amanda Taylor",
           "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=100&auto=format&fit=crop",
-          "comment": "So crunchy and sweet! Perfect for apple pie.",
-          "dateandtime": "1 hour ago"
+          "profileURL": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=100&auto=format&fit=crop",
+          "comment": "Always fresh and clean. Perfect for my morning smoothies!",
+          "dateandtime": "30 minutes ago"
         },
         {
           "id": "2",
-          "customer_name": "Jacob Martinez",
+          "customer_name": "Christopher White",
           "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=100&auto=format&fit=crop",
-          "comment": "Great size and flavor. Kids finish them in no time!",
-          "dateandtime": "2 days ago"
+          "profileURL": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100&auto=format&fit=crop",
+          "comment": "Great quality spinach. Lasts longer than store-bought.",
+          "dateandtime": "6 hours ago"
         }
       ],
-      "detail": "Our Royal Gala apples are hand-picked from premium orchards and known for their distinctive red-striped appearance and sweet, mild flavor. These apples offer a perfect balance of sweetness and crispness with a thin skin. Rich in dietary fiber, vitamin C, and antioxidants, apples support digestive health and boost immunity. Excellent for snacking, salads, baking, or making homemade applesauce. Store in a cool place or refrigerate to maintain crispness.",
-      "wt": "1.2kg",
-      "stock": "390",
-      "color": "red-striped",
-      "quantity": 1,
-      "addedAt": "2025-12-09T18:18:44.110Z"
+      "detail": "Premium baby spinach leaves harvested young for maximum tenderness. Triple-washed and ready to use straight from the package. Rich in folate, iron, and magnesium, spinach is a nutritional powerhouse that supports bone health and energy production. Perfect for salads, sandwiches, smoothies, or quick sautés.",
+      "wt": "250gm",
+      "stock": "380",
+      "color": "deep green",
+      "quantity": 9,
+      "addedAt": "2025-12-10T02:30:36.930Z",
+      "updatedAt": "2025-12-10T04:00:40.713Z"
     }
   ],
   "wishlist": [
-    {
-      "id": "202",
-      "name": "Fresh Strawberries",
-      "baseprice": 12.55,
-      "rating": 5,
-      "featured": "false",
-      "discount": "60%",
-      "imgURL": [
-        "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1543528176-61b239494933?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1518635017498-87f514b751ba?q=80&w=687&auto=format&fit=crop"
-      ],
-      "SKU": "FRUIT002STRAWB2024",
-      "category": 1,
-      "tags": [
-        4,
-        9,
-        3
-      ],
-      "desc": "Juicy, sweet strawberries bursting with flavor. High in vitamin C and antioxidants. Perfect for desserts, smoothies, or fresh snacking.",
-      "brand": "Berry Fields",
-      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
-      "socialLinks": [
-        {
-          "id": "1",
-          "name": "facebook",
-          "link": "www.facebook.com/berryfields"
-        },
-        {
-          "id": "2",
-          "name": "pinterest",
-          "link": "www.pinterest.com/berryfields"
-        },
-        {
-          "id": "3",
-          "name": "twitter",
-          "link": "www.twitter.com/berryfields"
-        },
-        {
-          "id": "4",
-          "name": "instagram",
-          "link": "www.instagram.com/berryfields"
-        }
-      ],
-      "reviews": [
-        {
-          "id": "1",
-          "customer_name": "Emma Wilson",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&auto=format&fit=crop",
-          "comment": "Absolutely delicious! So sweet and fresh, best strawberries ever!",
-          "dateandtime": "3 hours ago"
-        },
-        {
-          "id": "2",
-          "customer_name": "Ryan Parker",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop",
-          "comment": "Perfect for making strawberry shortcake. Great quality!",
-          "dateandtime": "5 hours ago"
-        }
-      ],
-      "detail": "Premium strawberries hand-picked at peak ripeness for maximum sweetness and flavor. These berries are loaded with vitamin C, manganese, and powerful antioxidants that support immune health and fight inflammation. Perfect for fresh eating, adding to yogurt, making jams, or topping desserts. Each berry is carefully inspected to ensure you receive only the finest quality fruit. Store in refrigerator and consume within 3-5 days for best flavor.",
-      "wt": "400gm",
-      "stock": "285",
-      "color": "red"
-    },
     {
       "id": "107",
       "name": "Sweet Corn",
@@ -1857,72 +1791,6 @@
       "color": "deep blue"
     },
     {
-      "id": "209",
-      "name": "Fresh Pineapple",
-      "baseprice": 13.77,
-      "rating": 5,
-      "featured": "false",
-      "discount": "10%",
-      "imgURL": [
-        "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?q=80&w=687&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1587049352847-8d5e0c2e0c88?q=80&w=735&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1602491254713-63fae49c2d55?q=80&w=687&auto=format&fit=crop"
-      ],
-      "SKU": "FRUIT009PINEAPPL2024",
-      "category": 1,
-      "tags": [
-        9,
-        1
-      ],
-      "desc": "Sweet and tangy fresh pineapple with tropical flavor. Contains bromelain enzyme for digestion. Perfect for fruit salads, grilling, or tropical smoothies.",
-      "brand": "Tropical Harvest",
-      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
-      "socialLinks": [
-        {
-          "id": "1",
-          "name": "facebook",
-          "link": "www.facebook.com/tropicalharvest"
-        },
-        {
-          "id": "2",
-          "name": "pinterest",
-          "link": "www.pinterest.com/tropicalharvest"
-        },
-        {
-          "id": "3",
-          "name": "twitter",
-          "link": "www.twitter.com/tropicalharvest"
-        },
-        {
-          "id": "4",
-          "name": "instagram",
-          "link": "www.instagram.com/tropicalharvest"
-        }
-      ],
-      "reviews": [
-        {
-          "id": "1",
-          "customer_name": "Harper White",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=100&auto=format&fit=crop",
-          "comment": "Perfectly ripe and so sweet! Made amazing piña coladas.",
-          "dateandtime": "3 hours ago"
-        },
-        {
-          "id": "2",
-          "customer_name": "Alexander Brown",
-          "rating": 5,
-          "profileURL": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop",
-          "comment": "Great flavor! Grilled some for our BBQ and it was delicious.",
-          "dateandtime": "2 days ago"
-        }
-      ],
-      "detail": "Premium fresh pineapple selected for optimal ripeness and sweetness. This tropical fruit contains bromelain, a unique enzyme that aids digestion and reduces inflammation. Rich in vitamin C, manganese, and antioxidants, pineapple supports immune function and bone health. The sweet-tart flavor profile makes it versatile for both sweet and savory dishes. Excellent fresh, grilled, in smoothies, or added to stir-fries. Look for golden color at the base and fresh green leaves for ripeness indicator.",
-      "wt": "1.8kg",
-      "stock": "155",
-      "color": "golden"
-    },
-    {
       "id": "207",
       "name": "Green Seedless Grapes",
       "baseprice": 11.54,
@@ -2055,6 +1923,272 @@
       "wt": "800gm",
       "stock": "185",
       "color": "white"
+    },
+    {
+      "id": "102",
+      "name": "Fresh Broccoli Crowns",
+      "baseprice": 12.44,
+      "rating": 4,
+      "featured": "true",
+      "discount": "5%",
+      "imgURL": [
+        "https://images.unsplash.com/photo-1459411552884-841db9b3cc2a?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1628773822503-930a7eaecf80?q=80&w=735&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1584868356415-dde8e0c68c4f?q=80&w=687&auto=format&fit=crop"
+      ],
+      "SKU": "VEG002BROCC2024",
+      "category": 2,
+      "tags": [
+        2,
+        3
+      ],
+      "desc": "Crisp and nutritious broccoli crowns, high in vitamins C and K. Ideal for steaming, stir-frying, or adding to your favorite pasta dishes.",
+      "brand": "Nature's Best",
+      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
+      "socialLinks": [
+        {
+          "id": "1",
+          "name": "facebook",
+          "link": "www.facebook.com/naturesbest"
+        },
+        {
+          "id": "2",
+          "name": "pinterest",
+          "link": "www.pinterest.com/naturesbest"
+        },
+        {
+          "id": "3",
+          "name": "twitter",
+          "link": "www.twitter.com/naturesbest"
+        },
+        {
+          "id": "4",
+          "name": "instagram",
+          "link": "www.instagram.com/naturesbest"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "1",
+          "customer_name": "Sarah Mitchell",
+          "rating": 4,
+          "profileURL": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&auto=format&fit=crop",
+          "comment": "Fresh and green. Perfect for my weekly meal prep.",
+          "dateandtime": "5 hours ago"
+        },
+        {
+          "id": "2",
+          "customer_name": "David Lee",
+          "rating": 4,
+          "profileURL": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop",
+          "comment": "Good quality broccoli, stays fresh for days in the fridge.",
+          "dateandtime": "2 days ago"
+        }
+      ],
+      "detail": "Premium broccoli crowns harvested at peak maturity for maximum nutritional value. These florets are packed with cancer-fighting compounds, fiber, and essential minerals. Steam for 5-7 minutes to retain nutrients, or add to soups and casseroles for a healthy boost.",
+      "wt": "400gm",
+      "stock": "275",
+      "color": "dark green"
+    },
+    {
+      "id": "104",
+      "name": "Baby Spinach Leaves",
+      "baseprice": 6.99,
+      "rating": 5,
+      "featured": "true",
+      "discount": "0%",
+      "imgURL": [
+        "https://images.unsplash.com/photo-1576045057995-568f588f82fb?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1594282484356-4c0b5c6e76f5?q=80&w=735&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1574316071802-0d684efa7bf5?q=80&w=687&auto=format&fit=crop"
+      ],
+      "SKU": "VEG004SPINACH2024",
+      "category": 2,
+      "tags": [
+        2,
+        3,
+        14
+      ],
+      "desc": "Tender baby spinach leaves, pre-washed and ready to eat. Excellent source of iron, calcium, and vitamins for a nutritious addition to any meal.",
+      "brand": "Leafy Greens Co.",
+      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
+      "socialLinks": [
+        {
+          "id": "1",
+          "name": "facebook",
+          "link": "www.facebook.com/leafygreensco"
+        },
+        {
+          "id": "2",
+          "name": "pinterest",
+          "link": "www.pinterest.com/leafygreensco"
+        },
+        {
+          "id": "3",
+          "name": "twitter",
+          "link": "www.twitter.com/leafygreensco"
+        },
+        {
+          "id": "4",
+          "name": "instagram",
+          "link": "www.instagram.com/leafygreensco"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "1",
+          "customer_name": "Amanda Taylor",
+          "rating": 5,
+          "profileURL": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=100&auto=format&fit=crop",
+          "comment": "Always fresh and clean. Perfect for my morning smoothies!",
+          "dateandtime": "30 minutes ago"
+        },
+        {
+          "id": "2",
+          "customer_name": "Christopher White",
+          "rating": 5,
+          "profileURL": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100&auto=format&fit=crop",
+          "comment": "Great quality spinach. Lasts longer than store-bought.",
+          "dateandtime": "6 hours ago"
+        }
+      ],
+      "detail": "Premium baby spinach leaves harvested young for maximum tenderness. Triple-washed and ready to use straight from the package. Rich in folate, iron, and magnesium, spinach is a nutritional powerhouse that supports bone health and energy production. Perfect for salads, sandwiches, smoothies, or quick sautés.",
+      "wt": "250gm",
+      "stock": "380",
+      "color": "deep green"
+    },
+    {
+      "id": "202",
+      "name": "Fresh Strawberries",
+      "baseprice": 12.55,
+      "rating": 5,
+      "featured": "false",
+      "discount": "60%",
+      "imgURL": [
+        "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1543528176-61b239494933?q=80&w=735&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1518635017498-87f514b751ba?q=80&w=687&auto=format&fit=crop"
+      ],
+      "SKU": "FRUIT002STRAWB2024",
+      "category": 1,
+      "tags": [
+        4,
+        9,
+        3
+      ],
+      "desc": "Juicy, sweet strawberries bursting with flavor. High in vitamin C and antioxidants. Perfect for desserts, smoothies, or fresh snacking.",
+      "brand": "Berry Fields",
+      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
+      "socialLinks": [
+        {
+          "id": "1",
+          "name": "facebook",
+          "link": "www.facebook.com/berryfields"
+        },
+        {
+          "id": "2",
+          "name": "pinterest",
+          "link": "www.pinterest.com/berryfields"
+        },
+        {
+          "id": "3",
+          "name": "twitter",
+          "link": "www.twitter.com/berryfields"
+        },
+        {
+          "id": "4",
+          "name": "instagram",
+          "link": "www.instagram.com/berryfields"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "1",
+          "customer_name": "Emma Wilson",
+          "rating": 5,
+          "profileURL": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=100&auto=format&fit=crop",
+          "comment": "Absolutely delicious! So sweet and fresh, best strawberries ever!",
+          "dateandtime": "3 hours ago"
+        },
+        {
+          "id": "2",
+          "customer_name": "Ryan Parker",
+          "rating": 5,
+          "profileURL": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop",
+          "comment": "Perfect for making strawberry shortcake. Great quality!",
+          "dateandtime": "5 hours ago"
+        }
+      ],
+      "detail": "Premium strawberries hand-picked at peak ripeness for maximum sweetness and flavor. These berries are loaded with vitamin C, manganese, and powerful antioxidants that support immune health and fight inflammation. Perfect for fresh eating, adding to yogurt, making jams, or topping desserts. Each berry is carefully inspected to ensure you receive only the finest quality fruit. Store in refrigerator and consume within 3-5 days for best flavor.",
+      "wt": "400gm",
+      "stock": "285",
+      "color": "red"
+    },
+    {
+      "id": "209",
+      "name": "Fresh Pineapple",
+      "baseprice": 13.77,
+      "rating": 5,
+      "featured": "false",
+      "discount": "10%",
+      "imgURL": [
+        "https://images.unsplash.com/photo-1550258987-190a2d41a8ba?q=80&w=687&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1587049352847-8d5e0c2e0c88?q=80&w=735&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1602491254713-63fae49c2d55?q=80&w=687&auto=format&fit=crop"
+      ],
+      "SKU": "FRUIT009PINEAPPL2024",
+      "category": 1,
+      "tags": [
+        9,
+        1
+      ],
+      "desc": "Sweet and tangy fresh pineapple with tropical flavor. Contains bromelain enzyme for digestion. Perfect for fruit salads, grilling, or tropical smoothies.",
+      "brand": "Tropical Harvest",
+      "brandLogo": "https://images.unsplash.com/photo-1560493676-04071c5f467b?q=80&w=100&auto=format&fit=crop",
+      "socialLinks": [
+        {
+          "id": "1",
+          "name": "facebook",
+          "link": "www.facebook.com/tropicalharvest"
+        },
+        {
+          "id": "2",
+          "name": "pinterest",
+          "link": "www.pinterest.com/tropicalharvest"
+        },
+        {
+          "id": "3",
+          "name": "twitter",
+          "link": "www.twitter.com/tropicalharvest"
+        },
+        {
+          "id": "4",
+          "name": "instagram",
+          "link": "www.instagram.com/tropicalharvest"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "1",
+          "customer_name": "Harper White",
+          "rating": 5,
+          "profileURL": "https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=100&auto=format&fit=crop",
+          "comment": "Perfectly ripe and so sweet! Made amazing piña coladas.",
+          "dateandtime": "3 hours ago"
+        },
+        {
+          "id": "2",
+          "customer_name": "Alexander Brown",
+          "rating": 5,
+          "profileURL": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop",
+          "comment": "Great flavor! Grilled some for our BBQ and it was delicious.",
+          "dateandtime": "2 days ago"
+        }
+      ],
+      "detail": "Premium fresh pineapple selected for optimal ripeness and sweetness. This tropical fruit contains bromelain, a unique enzyme that aids digestion and reduces inflammation. Rich in vitamin C, manganese, and antioxidants, pineapple supports immune function and bone health. The sweet-tart flavor profile makes it versatile for both sweet and savory dishes. Excellent fresh, grilled, in smoothies, or added to stir-fries. Look for golden color at the base and fresh green leaves for ripeness indicator.",
+      "wt": "1.8kg",
+      "stock": "155",
+      "color": "golden"
     }
   ]
 }

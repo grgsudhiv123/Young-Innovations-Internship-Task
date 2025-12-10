@@ -42,6 +42,7 @@ export const productDetailButtons = async (productDetail) => {
             if (isProductInCart) {
                 await updateCartProducts(
                     {
+                        ...productDetail,
                         id: productDetail.id,
                         quantity: quantity,
                         updatedAt: new Date().toISOString(),
