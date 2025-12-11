@@ -1,14 +1,5 @@
 'use strict';
 
-import { bottomNavbar } from './components/common/bottomnavbar/bottomnavbar.js';
-import footerComp from './components/common/footer.js';
-import { footerTemplate } from './components/common/layoutcommon/footerLayout.js';
-import { headerTemplate } from './components/common/layoutcommon/headerLayout.js';
-import {
-    HandleSidebarCart,
-    productCart,
-} from './components/common/sidebar/sidebar.js';
-import navbar from './components/common/topnavbar/topnavbar.js';
 import { CompanyLogo } from './components/pagessection/homepage/companylogo.js';
 import { FeaturedProducts } from './components/pagessection/homepage/featuredproducts.js';
 import { FollowUsSection } from './components/pagessection/homepage/followussection.js';
@@ -22,12 +13,6 @@ import { TestimonialSection } from './components/pagessection/homepage/testimoni
 import { CountdownFeat } from './utils/countdown.js';
 
 window.addEventListener('DOMContentLoaded', async () => {
-    document.getElementById('header').innerHTML = headerTemplate();
-    document.getElementById('footer').innerHTML = footerTemplate();
-    navbar();
-    bottomNavbar();
-    HandleSidebarCart();
-    productCart();
     featured();
     PopularCategory();
     PopularProducts();
@@ -38,5 +23,4 @@ window.addEventListener('DOMContentLoaded', async () => {
     CompanyLogo();
     FollowUsSection();
     CountdownFeat();
-    footerComp();
 });
