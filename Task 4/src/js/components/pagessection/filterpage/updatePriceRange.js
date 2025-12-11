@@ -40,11 +40,16 @@ export function updatePriceRange(filter) {
     });
 
     // for price range filter
+
     const [minInput, maxInput] =
         document.querySelectorAll('.range-input input');
     if ([minInput, maxInput].length > 0) {
         [minInput, maxInput].forEach((rangeInput) => {
             rangeInput.addEventListener('change', () => {
+                if (!filter.price) {
+                    console.log('Filter is missing');
+                }
+                console.log('filter price : ', filter.price);
                 const minPrice = Number(minInput.value);
                 const maxPrice = Number(maxInput.value);
                 filter.price = [minPrice, maxPrice];
@@ -53,7 +58,4 @@ export function updatePriceRange(filter) {
             });
         });
     }
-
-    // handle chevron btn
-    // handleFilterShowBtn('showPriceRangeBtn', 'priceRangeContainer');
 }

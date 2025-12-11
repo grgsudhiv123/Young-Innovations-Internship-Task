@@ -17,7 +17,7 @@ function footerComp() {
                 .map(
                     (el) => `
                  <li class="group w-fit text-gray-400 font-normal text-sm leading-[150%]">
-                     <a href="${el.link}">${el.item1}></a>
+                     <a href="${el.link}">${el.item1}</a>
                     <span class="block max-w-0 group-hover:max-w-full w-full h-px bg-gray-300 transition-all duration-300"></span>
                 </li>
             `,

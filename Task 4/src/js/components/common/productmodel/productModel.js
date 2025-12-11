@@ -46,6 +46,7 @@ export async function ProductModel(productData) {
     );
 
     const modelCloseBtn = document.getElementById('model-close-btn');
+    modelCloseBtn.focus();
     const modelBackdrop = document.getElementById('modelBackdrop');
     modelCloseBtn.addEventListener('click', () => {
         if (modelContainer && modelBackdrop) {

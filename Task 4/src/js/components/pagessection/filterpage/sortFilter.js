@@ -1,6 +1,5 @@
 import { debouncedDataFetch, defaultPageNo } from './filterFeatures.js';
 
-// sorting feature
 export function sortByFeature(filter) {
     const sortBtn = document.getElementById('sortBySelect');
     if (sortBtn) {

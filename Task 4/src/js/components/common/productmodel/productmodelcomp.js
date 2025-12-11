@@ -12,7 +12,7 @@ export const productModelComp = (productData, tagNames, categoryName) => {
     }
     return `
  <div class="max-w-[350px] sm:max-w-[650px] md:max-w-[720px] lg:max-w-[950px] xl:max-w-[1200px] 2xl:max-w-[1320px] mx-auto w-full bg-white p-5 xl:p-10 h-[70vh] sm:h-auto flex lg:items-center flex-col sm:flex-row gap-6 relative overflow-y-scroll sm:overflow-y-auto overflow-x-hidden rounded-lg">
-    <button id="model-close-btn" class="fixed p-4 top-0 right-0 cursor-pointer">
+    <button tabindex="0" id="model-close-btn" class="fixed p-4 top-0 right-0 cursor-pointer">
       <i class="fa-solid fa-x text-sm lg:text-xl text-gray-500 hover:text-gray-700"></i>
     </button>
       <div class="flex flex-col-reverse justify-end lg:justify-start lg:flex-row gap-3 h-full">

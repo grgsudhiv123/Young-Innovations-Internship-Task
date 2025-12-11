@@ -13,7 +13,6 @@ export const categoryFeatures = async (filter) => {
         if (categoryList) {
             categoryContainer.innerHTML = categoryList;
         }
-        // update category quantity
         updateCategoryQuantity(categoryData);
     }
 
@@ -23,14 +22,11 @@ export const categoryFeatures = async (filter) => {
             radio.addEventListener('change', (e) => {
                 const selectedCategory = e.target.value;
                 filter.category = selectedCategory;
-                // set default page on filter change
                 filter.pagination.currentPage = defaultPageNo(filter);
                 debouncedDataFetch(filter);
             });
         });
     }
-
-    // handleFilterShowBtn('showCategoriesBtn', 'filterCategoryContainer');
 };
 
 function CategoryList(category) {

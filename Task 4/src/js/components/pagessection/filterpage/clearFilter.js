@@ -1,7 +1,6 @@
 import { debouncedDataFetch, initialFilter } from './filterFeatures.js';
 import { updatePriceRange } from './updatePriceRange.js';
 
-// clear filter feature
 export const clearFilter = (filter) => {
     const clearFilterBtn = document.getElementById('clearFilterBtn');
     if (clearFilterBtn) {

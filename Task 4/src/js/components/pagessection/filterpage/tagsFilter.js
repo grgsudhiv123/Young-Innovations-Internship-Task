@@ -1,4 +1,5 @@
 import { FetchApi } from '../../../utils/fetchApi.js';
+import { toastMessage } from '../../../utils/toast.js';
 import { debouncedDataFetch, defaultPageNo } from './filterFeatures.js';
 
 // tags filter feature
@@ -19,7 +20,9 @@ export const tagsFeatures = async (filter) => {
                 e.stopPropagation();
                 const tagsBtn = e.target.closest('.tagsFilterChips');
 
-                if (!tagsBtn) return;
+                if (!tagsBtn) {
+                    throw new Error('Tags button not found');
+                }
                 const tagId = tagsBtn.dataset.tagid;
 
                 const isTagActive = filter.tags.find((tag) => tag === tagId);
@@ -35,10 +38,9 @@ export const tagsFeatures = async (filter) => {
                 debouncedDataFetch(filter);
             });
         }
-
-        // handleFilterShowBtn('showTagsBtn', 'filterTagsContainer');
     } catch (error) {
         console.log('Error while fetching the tags data : ', error);
+        toastMessage(error, 'error');
         return error;
     }
 };

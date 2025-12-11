@@ -1,7 +1,3 @@
-import { FeaturedProducts } from '../components/pagessection/homepage/featuredproducts.js';
-import featured from '../components/pagessection/homepage/heropage/featuredcomp.js';
-import { HotDealsSection } from '../components/pagessection/homepage/hotdealsection/hotdeals.js';
-import PopularProducts from '../components/pagessection/homepage/popularProducts.js';
 import {
     AddProducts,
     DeleteCartProduct,

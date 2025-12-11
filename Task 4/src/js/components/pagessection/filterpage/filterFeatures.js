@@ -3,10 +3,10 @@ import { debounce } from '../../../utils/debounce.js';
 import { filter } from './renderFilterProductPage.js';
 import { updatePriceRange } from './updatePriceRange.js';
 
-// get filter params from search queries
 export let initialFilter;
 let lastFilter = null;
 
+// get filter params from search queries
 export const getFiltersFromURL = (filter) => {
     const urlParams = new URLSearchParams(window.location.search);
     const urlFilter = { ...filter };
