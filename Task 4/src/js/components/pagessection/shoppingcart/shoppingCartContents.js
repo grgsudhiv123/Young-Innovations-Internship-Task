@@ -1,13 +1,11 @@
-import { productCartFeatures } from '../../../features/cartFeatures.js';
 import { calculateDiscountedPrice } from '../../../utils/discountedPrice.js';
-import { FetchCartProducts } from '../../../utils/fetchApi.js';
-import { productCart } from '../../common/sidebar/sidebar.js';
 import { handleCartEvents } from './handleCartEvents.js';
 import {
     shoppingCartTableRow,
     shoppingMobileCartProduct,
 } from './renderCartProducts.js';
 import { updateCartTotal } from './shoppingCartFeatures.js';
+import { getAllCartProducts } from '../../../api/productcart.services.js';
 
 let updatedCartProducts = [];
 
@@ -26,7 +24,7 @@ export const shoppingCartContents = async () => {
 
         let cartProducts = [];
 
-        cartProducts = await FetchCartProducts();
+        cartProducts = await getAllCartProducts();
 
         updatedCartProducts = [...cartProducts];
 

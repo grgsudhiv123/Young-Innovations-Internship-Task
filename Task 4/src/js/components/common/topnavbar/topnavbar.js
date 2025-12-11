@@ -1,4 +1,4 @@
-import { FetchApi } from '../../../utils/fetchApi.js';
+import { getAllWishListProduct } from '../../../api/wishlist.services.js';
 import { renderDropdown } from './dropdownMenu.js';
 import { navbarSearch } from './navbarSearch.js';
 
@@ -45,7 +45,7 @@ async function navbarWishList() {
     const navWishlistCount = document.getElementById('navWishlistCount');
     navWishlistCount.classList.add('hidden');
     if (wishlistBtnIcon) {
-        const wishlistData = await FetchApi('wishlist', '');
+        const wishlistData = await getAllWishListProduct();
         if (wishlistData.length > 0) {
             wishlistBtnIcon.classList.remove('fa-regular');
             wishlistBtnIcon.classList.add('fa-solid');

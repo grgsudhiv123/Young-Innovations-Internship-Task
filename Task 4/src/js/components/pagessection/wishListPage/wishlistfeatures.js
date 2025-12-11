@@ -1,5 +1,5 @@
+import { deleteWishlistProductById } from '../../../api/wishlist.services.js';
 import { productCartFeatures } from '../../../features/cartFeatures.js';
-import { DeleteWishlistByID } from '../../../utils/fetchApi.js';
 import { toastMessage } from '../../../utils/toast.js';
 import { productCart } from '../../common/sidebar/sidebar.js';
 import navbar from '../../common/topnavbar/topnavbar.js';
@@ -80,7 +80,7 @@ const handleCartEvents = (
     [removeWishlist, mobileRemoveWishlist].forEach((el) => {
         el.addEventListener('click', async () => {
             try {
-                await DeleteWishlistByID(data.id);
+                await deleteWishlistProductById(data.id);
                 navbar();
                 WishListProductTable();
                 toastMessage('Removed product successfully', 'success');

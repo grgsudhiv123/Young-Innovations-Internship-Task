@@ -4,7 +4,7 @@ export function renderDropdown() {
     const dropdownContainer = document.getElementById('navbar-dropdwn');
 
     if (!dropdownContainer) {
-        console.log('Error required elemnt not found');
+        console.error('Error required elemnt not found');
         return;
     }
 

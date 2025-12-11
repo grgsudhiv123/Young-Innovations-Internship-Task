@@ -1,6 +1,5 @@
 import { filteredFeatures } from '../../../features/filterFeatures.js';
 import { calculateDiscountedPrice } from '../../../utils/discountedPrice.js';
-import { FetchAllProducts } from '../../../utils/fetchApi.js';
 import { categoryFeatures } from './categoryFIlter.js';
 import { clearFilter } from './clearFilter.js';
 import { applyFiltersToUI, getFiltersFromURL } from './filterFeatures.js';
@@ -9,6 +8,7 @@ import { ratingFeatures, stars } from './ratingFIlter.js';
 import { sortByFeature } from './sortFilter.js';
 import { tagsFeatures } from './tagsFilter.js';
 import { updatePriceRange } from './updatePriceRange.js';
+import { getAllProducts } from '../../../api/products.services.js';
 
 export const itemsPerPage = 5;
 
@@ -67,7 +67,7 @@ const saleProductComponents = async () => {
     const saleProductContainer = document.getElementById(
         'saleProductContainer',
     );
-    const products = await FetchAllProducts('');
+    const products = await getAllProducts('');
     const saleProductsData = await products.filter(
         (products) => Number(products.discount.replace('%', '')) > 40,
     );

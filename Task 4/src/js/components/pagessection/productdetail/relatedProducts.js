@@ -1,11 +1,10 @@
-import { FetchApi } from '../../../utils/fetchApi.js';
+import { getAllProducts } from '../../../api/products.services.js';
 import { ProductBtns } from '../../common/productscard/productCardFeatures.js';
 import ProductCard from '../../common/productscard/prooductCardcomponent.js';
 
 export const relatedProducts = async (categoryId) => {
     try {
-        const relatedProducts = await FetchApi(
-            'products',
+        const relatedProducts = await getAllProducts(
             `categoryId=${categoryId}&_limit=5`,
         );
         const relatedProductContainer =

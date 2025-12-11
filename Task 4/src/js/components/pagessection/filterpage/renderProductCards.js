@@ -18,7 +18,7 @@ export const renderProductCards = async (productData, filter) => {
             productContainer.innerHTML = productList;
             productCountEl.textContent = productData.items;
             paginationComponent(productData.items, filter);
-            ProductBtns(newlyFetchedProducts, 'filteredProducts');
+            await ProductBtns(newlyFetchedProducts, 'filteredProducts');
         } else {
             productContainer.innerHTML = `
                 <div class="col-span-12 lg:col-span-6 w-full h-[80vh] flex items-center justify-center">

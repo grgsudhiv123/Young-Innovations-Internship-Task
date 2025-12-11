@@ -1,8 +1,13 @@
 import { renderProductCards } from '../components/pagessection/filterpage/renderProductCards.js';
-import { FetchAllProducts } from '../utils/fetchApi.js';
+import { getAllProducts } from '../api/products.services.js';
 
 export async function filteredFeatures(filterParams) {
     const queryParams = new URLSearchParams();
+
+    if (!filterParams) {
+        console.error('filterParams not found');
+        return;
+    }
 
     if (filterParams.category)
         queryParams.append('category', filterParams.category);
@@ -22,10 +27,13 @@ export async function filteredFeatures(filterParams) {
     }
 
     try {
-        const productData = await FetchAllProducts(queryParams);
+        const productData = await getAllProducts(queryParams.toString());
         await renderProductCards(productData, filterParams);
     } catch (error) {
-        console.error('Error while fetching filtered product data', error);
-        return error;
+        console.error(
+            'Error while fetching filtered product data',
+            error.message,
+        );
+        throw error;
     }
 }

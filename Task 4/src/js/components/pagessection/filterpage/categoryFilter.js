@@ -1,8 +1,9 @@
-import { FetchApi } from '../../../utils/fetchApi.js';
+import { getAllCategories } from '../../../api/categories.services.js';
+import { getAllProducts } from '../../../api/products.services.js';
 import { debouncedDataFetch, defaultPageNo } from './filterFeatures.js';
 
 export const categoryFeatures = async (filter) => {
-    const categoryData = await FetchApi('categories', '');
+    const categoryData = await getAllCategories();
     const categoryContainer = document.getElementById(
         'filterCategoryContainer',
     );
@@ -46,8 +47,7 @@ const updateCategoryQuantity = async (categoryData) => {
         const quantityPromises = await Promise.all(
             categoryData.map(async (category) => {
                 try {
-                    const categoryData = await FetchApi(
-                        'products',
+                    const categoryData = await getAllProducts(
                         `category=${category.id}`,
                     );
                     return { quantity: categoryData.length, id: category.id };

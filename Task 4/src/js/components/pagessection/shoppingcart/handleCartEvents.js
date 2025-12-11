@@ -6,7 +6,7 @@ import {
 } from './shoppingCartContents.js';
 import { updateCart, updateCartTotal } from './shoppingCartFeatures.js';
 export function handleCartEvents(product, updatedCartProducts) {
-    const { deleteCartProduct } = productCartFeatures();
+    const { deleteProductFromCart } = productCartFeatures();
     let updatedQuantity = product.quantity;
     let updatedSubTotal = calculateSubTotal(product, updatedQuantity);
 
@@ -100,7 +100,7 @@ export function handleCartEvents(product, updatedCartProducts) {
             updatedCartProducts = updatedCartProducts.filter(
                 (item) => item.id !== product.id,
             );
-            await deleteCartProduct(product.id);
+            await deleteProductFromCart(product.id);
             await shoppingCartContents();
             await productCart();
         });

@@ -1,5 +1,6 @@
 'use strict';
 
+import { getAllCartProducts } from './api/productcart.services.js';
 import { CompanyLogo } from './components/pagessection/homepage/companylogo.js';
 import { FeaturedProducts } from './components/pagessection/homepage/featuredproducts.js';
 import { FollowUsSection } from './components/pagessection/homepage/followussection.js';

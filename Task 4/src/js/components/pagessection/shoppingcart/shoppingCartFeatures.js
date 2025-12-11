@@ -1,4 +1,4 @@
-import { updateCartProducts } from '../../../utils/fetchApi.js';
+import { updateCartProduct } from '../../../api/productcart.services.js';
 import { toastMessage } from '../../../utils/toast.js';
 import { productCart } from '../../common/sidebar/sidebar.js';
 import { shoppingCartContents } from './shoppingCartContents.js';
@@ -43,7 +43,6 @@ export async function updateCart(
         const index = updatedCartProducts.findIndex(
             (item) => item.id === product.id,
         );
-        console.log(index);
         updatedCartProducts[index] = {
             ...updatedCartProducts[index],
             quantity: currentquantity,
@@ -63,7 +62,7 @@ export async function updateCart(
             }
 
             for (const item of updatedCartProducts) {
-                await updateCartProducts(item, item.id);
+                await updateCartProduct(item, item.id);
             }
             await shoppingCartContents();
             await productCart();

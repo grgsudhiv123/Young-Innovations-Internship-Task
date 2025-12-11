@@ -1,13 +1,12 @@
 import { debounce } from '../../utils/debounce.js';
-import { FetchAllProducts } from '../../utils/fetchApi.js';
+import { getAllProducts } from '../../api/products.services.js';
 
 export const searchProducts = async (inputField, onResultChange) => {
     try {
         if (!inputField) {
-            console.log('Error input element not found.');
-            return;
+            throw new Error('Error input element not found.');
         }
-        let productData = await FetchAllProducts('');
+        let productData = await getAllProducts();
         if (productData) {
             const debouncedSearch = debounce((searchValue) => {
                 if (searchValue.length === 0) {
@@ -29,6 +28,7 @@ export const searchProducts = async (inputField, onResultChange) => {
             });
         }
     } catch {
-        console.log('Error while searching products.');
+        console.error('Error in searchProducts', error.message);
+        throw error;
     }
 };

@@ -1,4 +1,4 @@
-import { FetchApi } from '../../../utils/fetchApi.js';
+import { getAllTags } from '../../../api/tags.services.js';
 import { toastMessage } from '../../../utils/toast.js';
 import { debouncedDataFetch, defaultPageNo } from './filterFeatures.js';
 
@@ -6,7 +6,7 @@ import { debouncedDataFetch, defaultPageNo } from './filterFeatures.js';
 
 export const tagsFeatures = async (filter) => {
     try {
-        const tagsData = await FetchApi('tags', '');
+        const tagsData = await getAllTags();
         const tagsContainer = document.getElementById('filterTagsContainer');
         if (tagsData.length > 0) {
             const tagsList = tagsData

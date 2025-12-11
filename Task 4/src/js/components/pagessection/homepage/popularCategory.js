@@ -1,14 +1,16 @@
-import { FetchApi } from '../../../utils/fetchApi.js';
+import { getAllCategories } from '../../../api/categories.services.js';
 
 const PopularCategory = async () => {
     const categoryContainer = document.getElementById('popularCategory');
-
+    if (!categoryContainer) {
+        console.error('categoryContainer element not found.');
+        return;
+    }
     try {
-        const categoryData = await FetchApi('categories', '');
+        const categoryData = await getAllCategories();
 
         if (!categoryData) {
-            console.log('Error, while fetching data');
-            return;
+            throw new Error('Error, while fetching data');
         }
 
         categoryContainer.innerHTML = categoryData
@@ -39,7 +41,8 @@ const PopularCategory = async () => {
             });
         }
     } catch (error) {
-        console.log(error);
+        console.error('Error in PopularCategory.', error.message);
+        throw error;
     }
 };
 

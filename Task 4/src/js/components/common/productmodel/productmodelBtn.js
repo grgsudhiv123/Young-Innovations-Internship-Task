@@ -1,15 +1,15 @@
 import { handleWishList } from '../../../features/wishListFeatures.js';
-import {
-    AddProducts,
-    FetchCartProducts,
-    getAllWishListProduct,
-    updateCartProducts,
-} from '../../../utils/fetchApi.js';
 import { toastMessage } from '../../../utils/toast.js';
 import { HandleSidebarCart, productCart } from '../sidebar/sidebar.js';
+import {
+    addProductToCart,
+    getAllCartProducts,
+    updateCartProduct,
+} from '../../../api/productcart.services.js';
+import { getAllWishListProduct } from '../../../api/wishlist.services.js';
 
 export const productDetailButtons = async (productDetail) => {
-    const cartProducts = await FetchCartProducts();
+    const cartProducts = await getAllCartProducts();
     const isProductInCart = cartProducts.find(
         (cartproduct) => cartproduct.id === productDetail.id,
     );
@@ -39,7 +39,7 @@ export const productDetailButtons = async (productDetail) => {
     if (addToCartBtn) {
         addToCartBtn.addEventListener('click', async () => {
             if (isProductInCart) {
-                await updateCartProducts(
+                await updateCartProduct(
                     {
                         id: productDetail.id,
                         quantity: quantity,
@@ -48,7 +48,7 @@ export const productDetailButtons = async (productDetail) => {
                     productDetail.id,
                 );
             } else {
-                await AddProducts({
+                await addProductToCart({
                     ...productDetail,
                     quantity: quantity,
                     addedAt: new Date().toISOString(),

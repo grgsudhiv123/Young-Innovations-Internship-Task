@@ -1,4 +1,4 @@
-import { getAllWishListProduct } from '../../../utils/fetchApi.js';
+import { getAllWishListProduct } from '../../../api/wishlist.services.js';
 import {
     wishlistMobileCartProduct,
     wishlistTableRow,
@@ -48,7 +48,7 @@ export const WishListProductTable = async () => {
                 `;
         }
     } catch (error) {
-        console.log('error while updating the wishlist', error);
-        return error;
+        console.error('error while updating the wishlist', error);
+        throw error;
     }
 };

@@ -1,15 +1,15 @@
 import { Countdown } from '../../../../utils/countdown.js';
-import { FetchAllProducts } from '../../../../utils/fetchApi.js';
 import { ProductBtns } from '../../../common/productscard/productCardFeatures.js';
 import ProductCard from '../../../common/productscard/prooductCardcomponent.js';
 import { buttonFeatures } from './hotdealBtnFeatures.js';
 import { hottestdealProductCard } from './mainProductCard.js';
+import { getAllProducts } from '../../../../api/products.services.js';
 
 export async function HotDealsSection() {
     const HotDealscardContainer = document.getElementById('hotdeals-container');
     async function hotdealData() {
         try {
-            const productdata = await FetchAllProducts('products', '');
+            const productdata = await getAllProducts();
             let filteredData = productdata.filter(
                 (product) => product.discount.replace('%', '') > 5,
             );
@@ -25,7 +25,8 @@ export async function HotDealsSection() {
             );
             return { hotestDeal, remainingData };
         } catch (error) {
-            console.log('Error while fetching products data.');
+            console.error('Error in hotdealData.', error.message);
+            throw error;
         }
     }
     const { hotestDeal, remainingData } = await hotdealData();

@@ -1,11 +1,10 @@
-import { productCart } from '../components/common/sidebar/sidebar.js';
 import navbar from '../components/common/topnavbar/topnavbar.js';
-import {
-    AddWishlist,
-    DeleteWishlistByID,
-    getAllWishListProduct,
-} from '../utils/fetchApi.js';
 import { toastMessage } from '../utils/toast.js';
+import {
+    addProductToWishlist,
+    deleteWishlistProductById,
+    getAllWishListProduct,
+} from '../api/wishlist.services.js';
 
 // let repeatedWishListProduct = false;
 export const handleWishList = async (product) => {
@@ -16,15 +15,16 @@ export const handleWishList = async (product) => {
         );
 
         if (!repeatedProduct) {
-            await AddWishlist(product);
+            await addProductToWishlist(product);
             await navbar();
             toastMessage('Product Added to WishList', 'success');
         } else {
-            await DeleteWishlistByID(product.id);
+            await deleteWishlistProductById(product.id);
             await navbar();
             toastMessage('Product Removed from WishList', 'success');
         }
     } catch (error) {
-        console.log(error);
+        console.error('Error at handleWishList', error.message);
+        throw error;
     }
 };

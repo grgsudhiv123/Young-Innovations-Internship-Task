@@ -1,6 +1,6 @@
+import { getAllWishListProduct } from '../../../../api/wishlist.services.js';
 import { productCartFeatures } from '../../../../features/cartFeatures.js';
 import { handleWishList } from '../../../../features/wishListFeatures.js';
-import { getAllWishListProduct } from '../../../../utils/fetchApi.js';
 import { PreventScroll } from '../../../../utils/preventScroll.js';
 import { toastMessage } from '../../../../utils/toast.js';
 import { ProductDetailModel } from '../../../common/productmodel/productModel.js';

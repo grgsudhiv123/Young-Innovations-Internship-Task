@@ -1,16 +1,16 @@
 import { productCartFeatures } from '../../../features/cartFeatures.js';
 import { calculateDiscountedPrice } from '../../../utils/discountedPrice.js';
-import { FetchCartProducts } from '../../../utils/fetchApi.js';
 import { PreventScroll } from '../../../utils/preventScroll.js';
 import { shoppingCartContents } from '../../pagessection/shoppingcart/shoppingCartContents.js';
-import { singleCardButtonUpdate } from '../productscard/productCardFeatures.js';
 import { ProductCartSidebar } from './productCartSidebar.js';
 import { sidebarComp } from './sidebarComponents.js';
+import { getAllCartProducts } from '../../../api/productcart.services.js';
+import { singleCardButtonUpdate } from '../productscard/productCardBtnUpdate.js';
 
 export const productCart = async () => {
     try {
-        const { deleteCartProduct } = productCartFeatures();
-        const cartProducts = await FetchCartProducts();
+        const { deleteProductFromCart } = productCartFeatures();
+        const cartProducts = await getAllCartProducts();
 
         // loading the product cart
         await ProductCartSidebar(cartProducts);
@@ -22,13 +22,13 @@ export const productCart = async () => {
             );
             removeCartProductBtn.addEventListener('click', async (e) => {
                 e.stopPropagation();
-                await deleteCartProduct(element.id);
+                await deleteProductFromCart(element.id);
 
                 // loading the product cart
                 await ProductCartSidebar(cartProducts);
                 await productCart();
                 await shoppingCartContents();
-                singleCardButtonUpdate(element.id);
+                await singleCardButtonUpdate(element);
             });
             const cartProductCard = document.getElementById(
                 `cartProduct-${element.id}`,

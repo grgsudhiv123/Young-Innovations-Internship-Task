@@ -1,4 +1,4 @@
-import { FetchApi } from '../../../utils/fetchApi.js';
+import { getAllProducts } from '../../../api/products.services.js';
 import { ProductBtns } from '../../common/productscard/productCardFeatures.js';
 import ProductCard from '../../common/productscard/prooductCardcomponent.js';
 
@@ -7,7 +7,7 @@ const PopularProducts = async () => {
         const popularProductContainer =
             document.getElementById('popularProducts');
 
-        const productData = await FetchApi('products', '');
+        const productData = await getAllProducts();
 
         // filtered on the basis of rating and discount of the product
         const filteredData = await productData.filter(
@@ -23,7 +23,7 @@ const PopularProducts = async () => {
         // this function handles the product model and the product wishlist btn
         ProductBtns(filteredData, 'popular');
     } catch (error) {
-        console.log('something went wrong ', error);
+        console.error('something went wrong ', error);
     }
 };
 
