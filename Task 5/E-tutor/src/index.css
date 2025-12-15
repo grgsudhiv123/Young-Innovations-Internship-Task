@@ -1,4 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap");
 @import "tailwindcss";
 
-:root {
+@theme {
+  /* font family */
+  --font-family-inter: "Inter", sans-serif;
+  /* colors */
+
+  /* gray color */
+  --color-gray-50: rgb(245, 247, 250);
+  --color-gray-100: rgb(233, 234, 240);
+  --color-gray-200: rgb(206, 209, 217);
+  --color-gray-300: rgb(183, 186, 199);
+  --color-gray-400: rgb(161, 165, 179);
+  --color-gray-500: rgb(140, 148, 163);
+  --color-gray-600: rgb(110, 116, 133);
+  --color-gray-700: rgb(78, 85, 102);
+  --color-gray-800: rgb(54, 59, 71);
+  --color-gray-900: rgb(30, 35, 47);
+
+  /* White */
+  --color-white: rgb(255, 255, 255);
+
+  /* primary color */
+  --color-primary-50: rgb(255, 245, 240);
+  --color-primary-100: rgb(255, 238, 232);
+  --color-primary-200: rgb(255, 221, 209);
+  --color-primary-300: rgb(255, 163, 134);
+  --color-primary-400: rgb(255, 133, 94);
+  --color-primary-500: rgb(255, 102, 54);
+  --color-primary-600: rgb(204, 82, 43);
+  --color-primary-700: rgb(153, 61, 32);
+  --color-primary-800: rgb(102, 41, 22);
+  --color-primary-900: rgb(51, 20, 11);
+
+  /* secondary color */
+  --color-secondary-100: rgb(235, 235, 255);
+  --color-secondary-200: rgb(205, 203, 254);
+  --color-secondary-300: rgb(154, 149, 254);
+  --color-secondary-400: rgb(120, 114, 253);
+  --color-secondary-500: rgb(86, 79, 253);
+  --color-secondary-600: rgb(69, 63, 202);
+  --color-secondary-700: rgb(52, 47, 152);
+  --color-secondary-800: rgb(34, 32, 101);
+  --color-secondary-900: rgb(17, 16, 51);
+
+  /* success color */
+  --color-success-100: rgb(225, 247, 227);
+  --color-success-200: rgb(195, 229, 198);
+  --color-success-300: rgb(123, 215, 133);
+  --color-success-400: rgb(79, 202, 92);
+  --color-success-500: rgb(35, 189, 51);
+  --color-success-600: rgb(28, 151, 41);
+  --color-success-700: rgb(21, 113, 31);
+  --color-success-800: rgb(14, 76, 20);
+  --color-success-900: rgb(7, 38, 10);
+
+  /* warning color */
+  --color-warning-100: rgb(255, 242, 229);
+  --color-warning-200: rgb(254, 209, 165);
+  --color-warning-300: rgb(254, 187, 121);
+  --color-warning-400: rgb(253, 164, 76);
+  --color-warning-500: rgb(253, 142, 31);
+  --color-warning-600: rgb(204, 115, 25);
+  --color-warning-700: rgb(152, 86, 19);
+  --color-warning-800: rgb(101, 57, 12);
+  --color-warning-900: rgb(51, 29, 6);
+
+  /* danger color */
+  --color-danger-100: rgb(255, 240, 240);
+  --color-danger-200: rgb(244, 200, 200);
+  --color-danger-300: rgb(238, 143, 143);
+  --color-danger-400: rgb(233, 105, 105);
+  --color-danger-500: rgb(227, 68, 68);
+  --color-danger-600: rgb(182, 54, 54);
+  --color-danger-700: rgb(136, 41, 41);
+  --color-danger-800: rgb(91, 27, 27);
+  --color-danger-900: rgb(45, 14, 14);
+}
+
+/* utility classes */
+
+@layer base {
+  .body {
+    font-family: var(--font-family-inter);
+    color: black;
+  }
+}
+
+/* Custom component examples */
+@layer components {
+  /* display text */
+  .text-display-1 {
+    @apply text-[5rem] leading-20 -tracking-[2%] font-semibold text-black;
+  }
+
+  .text-display-2 {
+    @apply text-7xl leading-[4.6rem] -tracking-[2%] font-semibold text-black;
+  }
+
+  .text-display-3 {
+    @apply text-[4rem] leading-17 -tracking-[2%] font-semibold text-black;
+  }
+
+  /* header text */
+  .text-heading-1 {
+    @apply text-5xl leading-13 -tracking-[2%] font-semibold text-black;
+  }
+
+  .text-heading-2 {
+    @apply text-[2.5rem] leading-12 -tracking-[1%] font-semibold text-black;
+  }
+
+  .text-heading-3 {
+    @apply text-[2rem] leading-10 -tracking-[1%] font-semibold text-black;
+  }
+
+  .text-heading-4 {
+    @apply text-[1.5rem] leading-8 -tracking-[1%] font-semibold text-black;
+  }
+
+  /* button text */
+  .button-text-large {
+    @apply font-semibold text-lg leading-14 -tracking-[1%] capitalize text-black;
+  }
+
+  .button-text-medium {
+    @apply font-semibold text-base leading-12 -tracking-[0.8%] capitalize text-black;
+  }
+
+  .button-text-small {
+    @apply font-semibold text-sm leading-10 -tracking-[0.4%] capitalize text-black;
+  }
+
+  /* label text */
+  .text-label-xxl {
+    @apply font-medium text-lg leading-[100%] uppercase text-black;
+  }
+
+  .text-label-xl {
+    @apply font-medium text-base leading-[100%] uppercase text-black;
+  }
+
+  .text-label-lg {
+    @apply font-medium text-sm leading-[100%] uppercase text-black;
+  }
+
+  .text-label-md {
+    @apply font-medium text-xs leading-[100%] uppercase text-black;
+  }
+
+  .text-label-sm {
+    @apply font-medium text-[10px] leading-[100%] uppercase text-black;
+  }
+
+  /* body text */
+  .body-xxxl {
+    @apply font-normal text-2xl leading-8 text-black;
+  }
+
+  .body-xxl-400 {
+    @apply font-normal text-xl leading-8 text-black;
+  }
+
+  .body-xxl-500 {
+    @apply font-medium text-xl leading-6.5 text-black;
+  }
+
+  .body-xxl-600 {
+    @apply font-semibold text-xl leading-6.5 text-black;
+  }
+
+  .body-xl-400 {
+    @apply font-normal text-lg leading-6 -tracking-[1.5%] text-black;
+  }
+
+  .body-xl-500 {
+    @apply font-medium text-lg leading-6 text-black;
+  }
+
+  .body-xl-600 {
+    @apply font-semibold text-lg leading-6 text-black;
+  }
+
+  .body-lg-400 {
+    @apply font-normal text-base leading-6 text-black;
+  }
+
+  .body-lg-500 {
+    @apply font-medium text-base leading-5.5 text-black;
+  }
+
+  .body-lg-600 {
+    @apply font-semibold text-base leading-5.5 text-black;
+  }
+
+  .body-md-400 {
+    @apply font-normal text-sm leading-5.5 -tracking-[-1%] text-black;
+  }
+
+  .body-md-500 {
+    @apply font-medium text-sm leading-5 -tracking-[-1%] text-black;
+  }
+
+  .body-md-600 {
+    @apply font-semibold text-sm leading-5 -tracking-[-1%] text-black;
+  }
+
+  .body-sm-400 {
+    @apply font-normal text-xs leading-4 text-black;
+  }
+
+  .body-sm-500 {
+    @apply font-medium text-xs leading-4 text-black;
+  }
+
+  .body-sm-600 {
+    @apply font-semibold text-xs leading-4 text-black;
+  }
+
+  .body-tiny-400 {
+    @apply font-normal text-[10px] leading-2.5 text-black;
+  }
+
+  .body-tiny-500 {
+    @apply font-medium text-[10px] leading-2.5 text-black;
+  }
+
+  .body-tiny-600 {
+    @apply font-semibold text-[10px] leading-2.5 text-black;
+  }
 }
