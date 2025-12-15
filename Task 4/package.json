@@ -4,6 +4,11 @@
     "tailwindcss": "^4.1.17"
   },
   "scripts": {
-    "dev": "npx @tailwindcss/cli -i ./src/css/input.css -o ./src/css/output.css --watch & json-server --watch db.json --port 8000"
+    "dev": "npx @tailwindcss/cli -i ./src/css/input.css -o ./src/css/output.css --watch",
+    "db": "json-server --watch db.json"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.1",
+    "prettier": "^3.6.2"
   }
 }

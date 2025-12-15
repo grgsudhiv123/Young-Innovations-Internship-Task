@@ -1,11 +1,488 @@
+<!-- navigate to different sections -->
+
+<!-- header -->
+<!-- main -->
+<!-- herosection -->
+<!-- popular categories -->
+<!-- bannersection -->
+<!-- hotdealssection -->
+<!-- discountbanner -->
+<!-- featuredproducts -->
+<!-- newssection -->
+<!-- brandlogo -->
+<!-- followussection -->
+<!-- productcartsidebar  -->
+<!-- footer -->
+<!-- bottomnavbar -->
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/output.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="../src/css/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <title>Shopery</title>
   </head>
-  <body></body>
-  <script src="./js/main.js"></script>
+  <body>
+    <!-- header -->
+    <header class="absolute w-full z-20">
+      <div  id="header" class="w-full h-auto bg-white relative">
+      </div>
+    </header>
+
+    <!-- main -->
+    <main class="mainStyle">
+      <!-- herosection -->
+      <section
+        class="section-layout-width mt-6 mb-[60px]"
+        aria-label="Hero section"
+      >
+        <!-- hero bigbanner -->
+        <div class="grid grid-cols-12 gap-4 md:gap-6 w-full h-full">
+          <div
+            class="col-span-12 lg:col-span-8 row-span-2 w-full rounded-[10px] aspect-872/600 overflow-hidden relative"
+          >
+            <img
+              src="../src/assets/images/herosection/heroimg1.jpg"
+              alt="Hero section main image"
+              class="w-full h-full object-cover scale-115 object-[-10px_10px]  sm:object-[-10px_20px]"
+            />
+            <div
+              class="absolute w-full h-full hero-bg-gradient top-0 left-0 flex justify-start items-center"
+            >
+              <div
+                class="max-w-[150px] sm:max-w-[300px] xl:max-w-[556px] w-full ml-5 md:ml-[60px] leading-[100%] md:leading-[120%] font-semibold flex flex-col gap-2 md:gap-7"
+              >
+                <h1 class="text-white text-lg md:text-3xl xl:text-5xl">
+                  <span> Fresh & Healthy </span> <br />
+                  <span> Organic Food </span>
+                </h1>
+                <div>
+                  <span
+                    class="flex flex-row gap-2 text-white font-medium text-xs sm:text-md xl:text-xl leading-[150%] items-center"
+                  >
+                    <span>Sale up to</span>
+                    <span class="px-0.5 sm:px-1.5 xl:px-3 py-px sm:py-1 rounded-[5px] bg-(--warning-color)"
+                      >30% OFF</span
+                    >
+                  </span>
+                  <p class="text-[8px] sm:text-sm font-normal leading-[150%] text-gray-300">
+                    Free shipping on all your order.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  aria-label="Shop now button"
+                  class="hero-button"
+                >
+                  <span class="hero-btn-text"
+                    >Shop now</span
+                  >
+                  <i
+                    class="fa-solid fa-arrow-right hero-btn-icon"
+                  ></i>
+              </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-span-12 sm:col-span-6 lg:col-span-4 row-span-1 col-start-1 lg:col-start-9 aspect-423/288 rounded-[10px] overflow-hidden relative"
+          >
+            <img
+              src="../src/assets/images/herosection/heroimg2.jpg"
+              alt="Hero section summer sale image"
+              class="w-full h-full object-cover transform -scale-x-130 scale-y-130 object-[40px_-35px]"
+            />
+            <div class="absolute top-4 xl:top-8 left-4 xl:left-8 max-w-[165px] w-full flex flex-col gap-2 md:gap-4 xl:gap-6">
+              <div class="flex flex-col gap-2 xl:gap-3 text-gray-900">
+                <div class="flex flex-col gap-2">
+                  <span class="font-medium text-[10px] md:text-xs xl:text-sm uppercase leading-[100%] tracking-[3%]">Summer Sale</sapn> <br/>
+                  <span class="font-semibold text-lg md:text-xl lg:text-2xl xl:text-[2rem] uppercase tracking-[3%] leading-[120%]">75% OFF</span>
+                </div>
+                <p class="font-normal text-[10px] md:text-xs xl:text-sm leading-[150%] text-gray-600">Only Fruit & Vegetable</p>
+              </div>
+              <a href="allproducts.html" aria-label="To all products page" class="text-(--light-green) flex flex-row gap-1 md:gap-3 items-center">
+                <span class="font-semibold capitalize text-xs sm:text-sm xl:text-base leading-[100%] lg:leading-[120%]">Shop now</span>
+                 <i
+                    class="fa-solid fa-arrow-right animate-pulse duration-500 ease-linear text-xs sm:text-base"
+                  ></i>
+              </a>
+            </div>
+          </div>
+          <div
+            class="col-span-12 sm:col-span-6 lg:col-span-4 row-span-1 col-start-1 sm:col-start-7 lg:col-start-9 aspect-423/288 rounded-[10px] overflow-hidden relative"
+          >
+            <img
+              src="../src/assets/images/herosection/heroimg3.jpg"
+              class="w-full h-full object-cover"
+              alt="Hero section best deal image."
+            />
+            <div class="absolute hero3-bg-gradient w-full h-full top-0 left-0 flex items-center justify-center">
+              <div class="max-w-[343px] w-full space-y-8">
+                <div class=" text-white text-center flex flex-col gap-3">
+                  <p class="font-medium text-[10px] md:text-xs xl:text-sm leading-[100%] uppercase tracking-[3%]">Best Deal</p>
+                  <p class="font-semibold text-lg md:text-xl lg:text-2xl xl:text-[2rem] leading-[100%] xl:leading-[120%] ">
+                    <span>
+                      Special Products 
+                    </span> <br/>
+                    <span>
+                      Deal of the Month
+                    </span>
+                  </p>
+                </div>
+                 <a href="allproducts.html" aria-label="To all products page" class="text-(--light-green) flex flex-row gap-1 md:gap-3 items-center w-fit mx-auto">
+                <span class="font-semibold capitalize text-xs sm:text-sm xl:text-base leading-[100%] lg:leading-[120%]">Shop now</span>
+                 <i
+                    class="fa-solid fa-arrow-right animate-pulse duration-500 ease-linear text-xs sm:text-base"
+                  ></i>
+              </a>
+              </div>
+            </div>
+          </div>
+          <div id="featured-container" class="col-span-12 grid grid-cols-12  gap-5 p-2 md:p-5 lg:p-10 shadow-xl rounded-lg">
+          </div>
+        </div>
+      </section>
+
+      <!-- popular categories -->
+      <section
+        class="section-layout-width mb-[60px] space-y-2 sm:space-y-4 md:space-y-6 xl:space-y-8"
+        aria-label="Popular categories section"
+      >
+      <div class="w-full flex flex-row gap-5 justify-between px-2 sm:px-0">
+        <h2 class="text-lg sm:text-xl md:text-2xl xl:text-[2rem] font-semibold leading-[120%] ">Popular Categories</h2>
+           <a href="/public/allproducts.html" aria-label="To all products section" class="text-(--light-green) flex flex-row gap-1 md:gap-3 items-center" aria-label="View all popular categories">
+                <span class="font-semibold capitalize text-xs sm:text-sm xl:text-base leading-[100%] lg:leading-[120%]">View All</span>
+                 <i
+                    class="fa-solid fa-arrow-right animate-pulse duration-500 ease-linear text-xs sm:text-base"
+                  ></i>
+              </a>
+      </div>
+      <div id="popularCategory" class="w-full grid grid-cols-12 gap-3 lg:gap-6">
+      </div>
+    </section>
+
+     <!-- popular products -->
+      <section
+        class="section-layout-width mb-[60px] space-y-2 sm:space-y-4 md:space-y-6 xl:space-y-8"
+        aria-label="Popular products section"
+      >
+      <div class="w-full flex flex-row gap-5 justify-between px-2 sm:px-0">
+        <h2 class="text-lg sm:text-xl md:text-2xl xl:text-[2rem] font-semibold leading-[120%] ">Popular Products</h2>
+           <a href="/public/allproducts.html" class="text-(--light-green) flex flex-row gap-1 md:gap-3 items-center" aria-label="Go to all products page">
+                <span class="font-semibold capitalize text-xs sm:text-sm xl:text-base leading-[100%] lg:leading-[120%]">View All</span>
+                 <i
+                    class="fa-solid fa-arrow-right animate-pulse duration-500 ease-linear text-xs sm:text-base"
+                  ></i>
+              </a>
+      </div>
+      <div id="popularProducts" class="w-full grid grid-cols-12 lg:grid-cols-10" aria-label="Popular product cards">
+      </div>
+    </section>
+
+    <!-- bannersection -->
+     <section class="section-layout-width grid grid-cols-12 gap-6 mb-15" aria-label="Sale banners">
+      <div class="col-span-12 sm:col-span-6 lg:col-span-4 aspect-424/536 overflow-hidden rounded-lg relative" aria-label="Sale of month banner">
+        <img src="../src/assets/images/bannersection/banner1.jpg" alt="sale of month image" class="w-full h-full object-cover "/>
+        <div class="absolute w-full h-full top-0 left-0 ">
+          <div class="w-fit mx-auto mt-6 lg:mt-9 text-center text-white flex flex-col items-center">
+            <p class="font-medium tracking-[3%] uppercase text-xs md:text-sm leading-[100%]">Best Deals</p>
+            <h2 class="text-xl md:text-2xl xl:text-[40px] leading-[120%] font-semibold mt-4">Sale of the Month</h2>
+            <div id="banner-countdown" class="w-fit flex flex-row gap-2 mx-auto mt-2">
+              <span class="flex flex-col gap-1">
+                <span class="text-md md:text-lg lg:text-xl xl:text-2xl leading-[100%] lg:leading-[150%] saleCountdownText">00</span> <span class="text-white/80">DAYS</span>
+              </span>
+              <span>:</span>
+              <span class="flex flex-col gap-1">
+                <span class="text-md md:text-lg lg:text-xl xl:text-2xl leading-[100%] lg:leading-[150%] saleCountdownText">02</span> <span class="text-white/80">HOURS</span>
+              </span>
+              <span>:</span>
+              <span class="flex flex-col gap-1">
+                <span class="text-md md:text-lg lg:text-xl xl:text-2xl leading-[100%] lg:leading-[150%] saleCountdownText">18</span> <span class="text-white/80">MINS</span>
+              </span>
+              <span>:</span>
+              <span class="flex flex-col gap-1">
+                <span class="text-md md:text-lg lg:text-xl xl:text-2xl leading-[100%] lg:leading-[150%] saleCountdownText">46</span> <span class="text-white/80">SECS</span>
+              </span>
+  
+            </div>
+             <button
+                  type="button"
+                  class="hero-button mt-6"
+                  aria-label="Sale of month button"
+                >
+                  <span class="hero-btn-text"
+                    >Shop now</span
+                  >
+                  <i
+                    class="fa-solid fa-arrow-right hero-btn-icon"
+                  ></i>
+              </button>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-span-12 sm:col-span-6 lg:col-span-4 aspect-424/536 overflow-hidden rounded-lg relative" aria-label="Low fat meat banner">
+        <img src="../src/assets/images/bannersection/banner2.jpg" alt="sale of month image" class="w-full h-full object-cover scale-150 object-center xl:object-[-150px_65px]"/>
+         <div class="absolute w-full h-full top-0 left-0 ">
+          <div class="w-fit mx-auto mt-6 lg:mt-9 text-center text-white flex flex-col items-center">
+            <p class="font-medium tracking-[3%] uppercase text-xs md:text-sm leading-[100%]">85% Fat Free</p>
+            <h2 class="text-lg md:text-xl lg:text-2xl xl:text-[40px] leading-[120%] font-semibold mt-4">Low-Fat Meat</h2>
+            <div class="flex flex-row gap-2">
+              <span class="text-lg font-normal leading-[150%]">Started at </span>
+              <span class="text-(--warning-color) text-xl font-semibold leading-[150%]">$79.99</span>
+            </div> 
+             <button
+                  type="button"
+                  aria-label="Low fat meat button"
+                  class="hero-button mt-6"
+                >
+                  <span class="hero-btn-text"
+                    >Shop now</span
+                  >
+                  <i
+                    class="fa-solid fa-arrow-right hero-btn-icon"
+                  ></i>
+              </button>
+          </div>
+        </div>
+      </div>
+      <div class="col-span-12 sm:col-span-6 lg:col-span-4 aspect-424/536 overflow-hidden rounded-lg relative" aria-label="Summer sale fresh fruit banner">
+        <img src="../src/assets/images/bannersection/banner3.jpg" alt="sale of month image" class="w-full h-full object-cover scale-110 lg:scale-150 xl:scale-200 2xl:scale-220 2xl:object-[115px_0px]"/>
+         <div class="absolute w-full h-full top-0 left-0 ">
+          <div class="w-fit mx-auto mt-6 lg:mt-9 text-center text-black flex flex-col items-center">
+            <p class="font-medium tracking-[3%] uppercase text-xs md:text-sm leading-[100%]">Summer Sale</p>
+            <h2 class="text-xl md:text-2xl xl:text-[40px] leading-[120%] font-semibold mt-4">100% Fresh Fruit</h2>
+            <div class="flex flex-row gap-3 items-center text-sm lg:text-lg">
+              <span class=" font-normal leadinh-[100%] lg:leading-[150%]">Up To</span>
+              <span class="py-1.5 px-3 bg-black rounded-[5px] text-(--text-yellow) font-semibold leading-[150%]">64% OFF</span>
+            </div>
+             <button
+                  type="button"
+                  class="hero-button mt-6"
+                  aria-label="Shop now summer sale"
+                >
+                  <span class="hero-btn-text"
+                    >Shop now</span
+                  >
+                  <i
+                    class="fa-solid fa-arrow-right hero-btn-icon"
+                  ></i>
+              </button>
+          </div>
+        </div>
+      </div>
+     </section>
+
+     <!-- hotdealssection -->
+      <div class="w-full h-auto bg-(--bg-gray) py-[60px]">
+        <section
+         class="section-layout-width space-y-2 sm:space-y-4 md:space-y-6 xl:space-y-8 "
+       >
+       <div class="w-full flex flex-row gap-5 justify-between px-2 sm:px-0">
+         <h2 class="text-lg sm:text-xl md:text-2xl xl:text-[2rem] font-semibold leading-[120%] ">Hot Deals</h2>
+            <a href="/public/allproducts.html" class="text-(--light-green) flex flex-row gap-1 md:gap-3 items-center">
+                 <span class="font-semibold capitalize text-xs sm:text-sm xl:text-base leading-[100%] lg:leading-[120%]" aria-label="Go to all products page">View All</span>
+                  <i
+                     class="fa-solid fa-arrow-right animate-pulse duration-500 ease-linear text-xs sm:text-base"
+                   ></i>
+               </a>
+       </div>
+       <div id="hotdeals-container" class="w-full grid grid-cols-12 lg:grid-cols-10 bg-white">
+         <div tabindex="0" id="hotdealproduct" class="col-span-6 sm:col-span-4 row-span-1 lg:row-span-2 border border-gray-200 hover:border-(--success-dark) products-card-shadow cursor-pointer" aria-label="Hottest product card">
+         </div>
+       </div>
+     </section>
+      </div>
+
+      <!-- discountbanner -->
+     <section class="max-w-full lg:max-w-[900px] xl:max-w-[1100px] 2xl:max-w-[1320px] mx-auto my-8 md:my-[60px] aspect-video sm:aspect-2/1 md:aspect-3/1 lg:aspect-1320/358 overflow-hidden relative" aria-label="Summer sale discount banner">
+        <img src="../src/assets/images/discountbanner/discountbanner.jpg" alt="discount banner image" class="w-full h-full object-cover object-[-90px_0px] md:object-bottom scale-200 md:scale-100">
+        <div class=" absolute max-w-[250px] md:max-w-xs xl:max-w-[441px] w-full top-[50%] right-[50%] sm:right-[50px] md:right-[25px] xl:right-[50px] -translate-y-[50%] translate-x-[50%] sm:translate-x-[0%]  space-y-7">
+          <div class="flex flex-col gap-2 xl:gap-4">
+            <div class="flex flex-col gap-1 xl:gap-3 text-white">
+              <p class="uppercase text-xs lg:text-sm xl:text-base leading-[100%] tracking-[2%]">Summer Sale</p>
+              <h2 class="text-lg md:text-2xl xl:text-[56px] font-semibold leading-[120%]">
+                <span class="text-(--warning-color)">37%</span> 
+                OFF</h2>
+            </div>
+            <p class="text-white/70 font-normal text-xs md:text-sm lg:text-base leading-[150%]">Free on all your order, Free Shipping and  30 days money-back guarantee</p>
+          </div>
+            <button type="button" aria-label="Summer sale button" class="py-1 sm:py-3 xl:py-4 px-4 sm:px-8 xl:px-10 w-fit flex items-center gap-1 lg:gap-3 justify-center rounded-full bg-(--light-green) hover:bg-(--success-dark) transition-all duration-200 ease-in-out cursor-pointer text-white">
+            <span class="text-[8px] sm:text-sm xl:text-base font-semibold xl:leading-[120%]">Shop now</span>
+              <i
+                class="fa-solid fa-arrow-right text-xs md:text-base xl:text-2xl animate-pulse duration-500 ease-linear"
+              ></i>
+          </button>
+        </div>
+       </section>
+
+  <!-- featuredproducts -->
+     <section
+        class="section-layout-width mb-[60px] space-y-2 sm:space-y-4 md:space-y-6 xl:space-y-8"
+        aria-label="Featured products section"
+      >
+      <div class="w-full flex flex-row gap-5 justify-between px-2 sm:px-0">
+        <h2 class="text-lg sm:text-xl md:text-2xl xl:text-[2rem] font-semibold leading-[120%] ">Featured Products</h2>
+           <a href="/public/allproducts.html" class="text-(--light-green) flex flex-row gap-1 md:gap-3 items-center">
+                <span class="font-semibold capitalize text-xs sm:text-sm xl:text-base leading-[100%] lg:leading-[120%]">View All</span>
+                 <i
+                    class="fa-solid fa-arrow-right animate-pulse duration-500 ease-linear text-xs sm:text-base"
+                  ></i>
+              </a>
+      </div>
+      <div id="featuredProducts" class="w-full grid grid-cols-12 lg:grid-cols-10" aria-label="Featured products cards container">
+      </div>
+    </section>
+
+    <!-- newssection -->
+      <section
+        class="section-layout-width mb-[60px] space-y-2 sm:space-y-4 md:space-y-6 xl:space-y-8"
+        aria-label="News section"
+      >
+        <h2 class="text-lg sm:text-xl md:text-2xl xl:text-[2rem] font-semibold leading-[120%] text-center">Latest News</h2>
+        <div id="latest-news-container" class="w-full grid grid-cols-12 gap-1 sm:gap-3 lg:gap-6" aria-label="News card container">
+          <div class="col-span-6 md:col-span-4 border border-gray-100 rounded-lg overflow-hidden cursor-pointer group hover:shadow-lg transition-all duration-200 ease-in-out" aria-label="News card">
+            <div class="aspect-424/324 overflow-hidden">
+              <img src="../src/assets/images/news/newsimg1.jpg" alt="news img" class="w-full h-full object-cover object-center"/>
+            </div>
+            <div class="p-2 lg:p-4 xl:p-6 space-y-2 md:space-y-5">
+                <div class="space-y-2">
+                  <div class="flex flex-row gap-2 xl:gap-4">
+                    <span class="flex gap-1 items-center">
+                      <i class="fa-solid fa-tag text-xs sm:text-sm xl:text-xl text-gray-300"></i>
+                      <span class="text-[8px] sm:text-xs lg:text-sm font-normal text-gray-700 leading-[100%] xl:leading-[150%]">Food</span>
+                    </span>
+                    <span class="flex gap-1 items-center">
+                      <i class="fa-regular fa-user text-xs sm:text-sm xl:text-xl text-gray-300"></i>
+                      <span class="text-[8px] sm:text-xs lg:text-sm font-normal text-gray-700 leading-[100%] xl:leading-[150%]">Admin</span>
+                    </span>
+                    <span class="flex gap-1 items-center">
+                      <i class="fa-regular fa-message text-xs sm:text-sm xl:text-xl text-gray-300"></i>    
+                      <span class="text-[8px] sm:text-xs lg:text-sm font-normal text-gray-700 leading-[100%] xl:leading-[150%]">65 comments </span>                
+                    </span>
+                  </div>
+                  <p class="text-xs sm:text-sm lg:text-lg font-medium leading-[120%] xl:leading-[150%] group-hover:text-(--success-dark) transition-all duration-200 ease-in-out">Curabitur porttitor orci eget neque accumsan venenatis. Nunc fermentum.</p>
+                </div>
+                <a href="/view all" class="text-(--light-green) flex flex-row gap-1 md:gap-3 items-center">
+                <span class="font-semibold capitalize text-xs sm:text-sm xl:text-base leading-[100%] lg:leading-[120%]">Read More</span>
+                 <i
+                    class="fa-solid fa-arrow-right animate-pulse duration-500 ease-linear text-xs sm:text-base"
+                  ></i>
+              </a>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- testimonials -->
+     <div class="w-full h-auto py-[60px] bg-(--bg-gray)">
+      <section
+        class="section-layout-width space-y-2 sm:space-y-4 md:space-y-6 xl:space-y-8"
+        aria-label="Testimonial section"
+      >
+      <div class="w-full flex flex-row gap-5 justify-between px-2 sm:px-0">
+        <h2 class="text-lg sm:text-xl md:text-2xl xl:text-[2rem] font-semibold leading-[120%] ">Client Testimonials</h2>
+           <div class="flex flex-row gap-3">
+            <button type="button" aria-label="Arrow left button" class="size-11.5 flex justify-center items-center rounded-full border border-gray-100 bg-white hover:bg-(--success-dark) transition-all duration-200 ease-in-out cursor-pointer group">
+              <i class="fa-solid fa-arrow-left group-hover:text-white"></i>
+            </button>
+            <button type="button" aria-label="Arrow right button"  class="size-11.5 flex justify-center items-center rounded-full border border-gray-100 bg-white hover:bg-(--success-dark) transition-all duration-200 ease-in-out cursor-pointer group">
+              <i class="fa-solid fa-arrow-right group-hover:text-white"></i>
+            </button>
+           </div>
+      </div>
+      <div id="testimonial-container" class="w-full grid grid-cols-12 gap-6" aria-label="Testimonial card container">
+        
+      </div>
+    </section>
+     </div>
+
+
+     <!-- brandlogo -->
+     <section id="brandLogo-container" class="section-layout-width grid grid-cols-12 py-[60px] gap-3" aria-label="Brand logo section">
+     </section>
+
+
+     <!-- followussection -->
+      <section
+        class="section-layout-width mb-[60px] space-y-2 sm:space-y-4 md:space-y-6 xl:space-y-8"
+        aria-label="Follow us section"
+      >
+        <h2 class="text-lg sm:text-xl md:text-2xl xl:text-[2rem] font-semibold leading-[120%] text-center">Follow us on Instagram</h2>
+        <div id="followus-container" class="w-full grid grid-cols-12 gap-1 sm:gap-3 lg:gap-6 " aria-label="Social link cards">
+        </div>
+    </section>
+    
+    </main>
+
+    <!-- footer -->
+    <footer id="footer" aria-label="Footer section">
+    </footer>
+    
+
+    <!-- model --> 
+    
+     <div id="model-container" class="fixed z-50 top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] model-containerstyle" aria-label="Model container">
+     </div>
+
+     <!-- productcartsidebar  -->
+     <div id="cartsidebar-container" class="fixed z-50 top-[0%] right-[0%] w-[350px] md:w-[456px] h-screen bg-white p-5 md:p-10 sidebar-containerstyle" aria-label="Product cart sidebar section">
+     </div>
+     
+    <!-- bottomnavbar -->
+    <div
+      class="fixed block md:hidden bottom-0 bg-white w-full h-auto p-5 shadow-[0_-5px_10px_-2px_rgba(0,0,0,0.3)]"
+      aria-label="Bottom navbar conatiner"
+    >
+      <div class="max-w-[16rem] w-full mx-auto">
+        <ul id="bottomNavbarBtns" class="w-full flex flex-row gap-2 items-center justify-between">
+          <li>
+            <button type="button" data-btnfor="home" aria-label="Go to home button">
+              <i class="fa-solid fa-house"></i>
+            </button>
+          </li>
+          <li>
+            <button type="button" data-btnfor="menu" aria-label="Open menu button">
+              <i class="fa-solid fa-list"></i>
+            </button>
+          </li>
+          <li>
+            <button type="button" data-btnfor="search" aria-label="Open search button">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </li>
+          <li>
+            <button type="button" data-btnfor="general" aria-label="Open general button">
+              <i class="fa-regular fa-user"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div id="bottomNavbarContainer" class="fixed z-50 bottom-0 h-[90%] w-screen bg-white rounded-t-lg p-3 bottomContainerStyle" aria-label="Bottom navbar container"> 
+      <button id="bottomNavbarCloseBtn" type="button" aria-label="Navbar close button" class="float-right size-6 flex items-center justify-center"><i class="fa-solid fa-x text-sm"></i></button>
+      <div id="bottomNavbarContent" class="w-full h-fit" aria-label="Bototm navbar contents"></div>
+    </div>
+
+
+    <!-- backdrop -->
+    <div id="sidebarBackdrop" class="fixed z-20 w-screen h-screen bg-gray-800/80 top-0 left-0 backdropstyle" aria-label="Sidebar backdrop">
+    </div>
+    <div id="modelBackdrop" class="fixed z-20 w-screen h-screen bg-gray-800/80 top-0 left-0 backdropstyle" aria-label="Model backdrop">
+    </div>
+    <div id="bottomNavbarbackdrop" class="fixed z-20 w-screen h-screen bg-gray-800/80 top-0 left-0 backdropstyle" aria-label="Bottom navbar backdrop">
+    </div>
+    <script type="module" src="../src/js/home.js"></script>
+    <script type="module" src="../src/js/commonlayout.js"></script>
+  </body>
 </html>

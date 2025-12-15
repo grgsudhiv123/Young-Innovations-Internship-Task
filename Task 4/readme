@@ -8,3 +8,13 @@ tailwindcss setup :
 npm install tailwindcss @tailwindcss/cli
 @import "tailwindcss";
 npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch
+
+
+package.json : 
+ "scripts": {
+    "dev": "npx @tailwindcss/cli -i ./src/css/input.css -o ./src/css/output.css --watch & json-server --watch db.json --port 8000"
+  }
+
+
+run project : npm run dev
+

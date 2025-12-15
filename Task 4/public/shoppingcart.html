@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../src/css/output.css" />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        />
+        <title>Shopping Cart</title>
+    </head>
+    <body>
+        <!-- Header with navbar -->
+        <header class="absolute w-full z-20">
+            <div id="header" class="w-full h-auto bg-white relative"></div>
+        </header>
+        <main class="shoppingcartmain">
+            <div id="breadcrumb"></div>
+            <div class="section-layout-width my-16">
+                <div class="grid grid-cols-1 xl:grid-cols-12 gap-5">
+                    <div class="xl:col-span-8 w-full space-y-6">
+                        <div
+                            class="w-full md:border border-gray-200 rounded-lg bg-white overflow-hidden"
+                        >
+                            <!-- desctopscreen -->
+                            <div class="hidden md:block overflow-x-auto">
+                                <table class="min-w-[550px] w-full">
+                                    <thead class="border-b border-b-gray-200">
+                                        <tr>
+                                            <th
+                                                class="px-3 sm:px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-[3%]"
+                                            >
+                                                Product
+                                            </th>
+                                            <th
+                                                class="px-3 sm:px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-[3%]"
+                                            >
+                                                Price
+                                            </th>
+                                            <th
+                                                class="px-3 sm:px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-[3%]"
+                                            >
+                                                Quantity
+                                            </th>
+                                            <th
+                                                class="px-3 sm:px-6 py-4 text-left text-xs font-semibold text-gray-500 uppercase tracking-[3%]"
+                                            >
+                                                Subtotal
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="shoppingCartTabel"></tbody>
+                                </table>
+                            </div>
+
+                            <!-- mobile screen -->
+                            <div
+                                id="mobileCartContainer"
+                                class="grid md:hidden w-full grid-cols-12 gap-4"
+                            ></div>
+
+                            <div
+                                class="w-full flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-3 py-4 px-3 sm:px-5"
+                            >
+                                <button
+                                    type="button"
+                                    id="returnCartBtn"
+                                    class="shoppingcart-button"
+                                >
+                                    Return to shop
+                                </button>
+                                <button
+                                    type="button"
+                                    id="updateCartBtn"
+                                    class="shoppingcart-button"
+                                >
+                                    Update cart
+                                </button>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-white rounded-lg p-4 sm:p-5 border border-gray-200 w-full flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-5"
+                        >
+                            <h3 class="text-base md:text-xl font-semibold">
+                                Coupon Code
+                            </h3>
+                            <div
+                                class="flex flex-1 flex-row border border-gray-300 rounded-full focus-within:shadow-xs focus-within:border-gray-500 overflow-hidden"
+                            >
+                                <input
+                                    type="text"
+                                    placeholder="Enter code"
+                                    class="w-full px-4 py-2 md:py-3 focus:outline-none"
+                                />
+                                <button
+                                    class="w-fit px-2 md:px-8 py-2 md:py-3 text-xs md:text-base bg-gray-800 text-white rounded-full hover:bg-gray-900 transition font-medium whitespace-nowrap"
+                                >
+                                    Apply Coupon
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="xl:col-span-4 w-full">
+                        <div
+                            class="bg-white rounded-lg border border-gray-200 p-5 sm:p-6 lg:sticky lg:top-4"
+                        >
+                            <h3
+                                class="text-base md:text-xl font-medium leading-[150%] mb-2"
+                            >
+                                Cart Total
+                            </h3>
+
+                            <div class="space-y-2 md:space-y-4 mb-6">
+                                <div
+                                    class="flex justify-between py-3 border-b border-gray-200 text-sm font-normal leading-[150%]"
+                                >
+                                    <span class="text-gray-700">Subtotal:</span>
+                                    <span class="font-medium">
+                                        $
+                                        <span id="cart-subtotal"></span>
+                                    </span>
+                                </div>
+                                <div
+                                    class="flex justify-between py-3 border-b border-gray-200 text-sm font-normal leading-[150%]"
+                                >
+                                    <span class="text-gray-700">Shipping:</span>
+                                    <span class="font-medium text-green-600"
+                                        >Free</span
+                                    >
+                                </div>
+                                <div
+                                    class="flex justify-between py-3 text-base font-normal leading-[150%]"
+                                >
+                                    <span class="text-gray-700">Total:</span>
+                                    <span class="font-semibold text-base">
+                                        $
+                                        <span
+                                            class="font-semibold text-base"
+                                            id="cart-total"
+                                        ></span>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <button
+                                class="w-fit md:w-1/2 xl:w-full bg-green-500 text-white px-4 py-2 md:py-4 rounded-full font-semibold hover:bg-green-600 transition shadow-md hover:shadow-lg text-sm md:text-base"
+                            >
+                                Proceed to checkout
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer id="footer"></footer>
+
+        <!-- model -->
+
+        <div
+            id="model-container"
+            tabindex="0"
+            class="fixed z-50 top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] model-containerstyle"
+        ></div>
+
+        <!-- productcartsidebar  -->
+        <div
+            id="cartsidebar-container"
+            class="fixed z-50 top-[0%] right-[0%] w-[350px] md:w-[456px] h-screen bg-white p-5 md:p-10 sidebar-containerstyle"
+        ></div>
+
+        <!-- bottomnavbar -->
+        <div
+            class="fixed block md:hidden bottom-0 bg-white w-full h-auto p-5 shadow-[0_-5px_10px_-2px_rgba(0,0,0,0.3)]"
+        >
+            <div class="max-w-[16rem] w-full mx-auto">
+                <ul
+                    id="bottomNavbarBtns"
+                    class="w-full flex flex-row gap-2 items-center justify-between"
+                >
+                    <li>
+                        <button type="button" data-btnfor="home">
+                            <i class="fa-solid fa-house"></i>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" data-btnfor="menu">
+                            <i class="fa-solid fa-list"></i>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" data-btnfor="search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" data-btnfor="general">
+                            <i class="fa-regular fa-user"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div
+            id="bottomNavbarContainer"
+            class="fixed z-50 bottom-0 h-[90%] w-screen bg-white rounded-t-lg p-3 bottomContainerStyle"
+        >
+            <button
+                id="bottomNavbarCloseBtn"
+                type="button"
+                class="float-right size-6 flex items-center justify-center"
+            >
+                <i class="fa-solid fa-x text-sm"></i>
+            </button>
+            <div id="bottomNavbarContent" class="w-full h-fit"></div>
+        </div>
+
+        <!-- backdrop -->
+        <div
+            id="sidebarBackdrop"
+            class="fixed z-20 w-screen h-screen bg-gray-800/80 top-0 left-0 backdropstyle"
+            aria-label="Sidebar backdrop"
+        ></div>
+        <div
+            id="modelBackdrop"
+            class="fixed z-20 w-screen h-screen bg-gray-800/80 top-0 left-0 backdropstyle"
+            aria-label="Model backdrop"
+        ></div>
+        <div
+            id="bottomNavbarbackdrop"
+            class="fixed z-20 w-screen h-screen bg-gray-800/80 top-0 left-0 backdropstyle"
+            aria-label="Bottom navbar backdrop"
+        ></div>
+        <script type="module" src="../src/js/shoppingcart.js"></script>
+        <script type="module" src="../src/js/commonlayout.js"></script>
+    </body>
+</html>
