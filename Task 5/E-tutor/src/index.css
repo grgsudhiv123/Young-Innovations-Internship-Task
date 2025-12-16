@@ -84,6 +84,7 @@
   .body {
     font-family: var(--font-family-inter);
     color: black;
+    background-color: rgb(245, 247, 250);
   }
 }
 
@@ -91,142 +92,152 @@
 @layer components {
   /* display text */
   .text-display-1 {
-    @apply text-[5rem] leading-20 -tracking-[2%] font-semibold text-black;
+    @apply text-[5rem] leading-20 -tracking-[2%] font-semibold;
   }
 
   .text-display-2 {
-    @apply text-7xl leading-[4.6rem] -tracking-[2%] font-semibold text-black;
+    @apply text-7xl leading-[4.6rem] -tracking-[2%] font-semibold;
   }
 
   .text-display-3 {
-    @apply text-[4rem] leading-17 -tracking-[2%] font-semibold text-black;
+    @apply text-[4rem] leading-17 -tracking-[2%] font-semibold;
   }
 
   /* header text */
   .text-heading-1 {
-    @apply text-5xl leading-13 -tracking-[2%] font-semibold text-black;
+    @apply text-5xl leading-13 -tracking-[2%] font-semibold;
   }
 
   .text-heading-2 {
-    @apply text-[2.5rem] leading-12 -tracking-[1%] font-semibold text-black;
+    @apply text-[2.5rem] leading-12 -tracking-[1%] font-semibold;
   }
 
   .text-heading-3 {
-    @apply text-[2rem] leading-10 -tracking-[1%] font-semibold text-black;
+    @apply text-[2rem] leading-10 -tracking-[1%] font-semibold;
   }
 
   .text-heading-4 {
-    @apply text-[1.5rem] leading-8 -tracking-[1%] font-semibold text-black;
+    @apply text-[1.5rem] leading-8 -tracking-[1%] font-semibold;
   }
 
   /* button text */
   .button-text-large {
-    @apply font-semibold text-lg leading-14 -tracking-[1%] capitalize text-black;
+    @apply font-semibold text-lg leading-14 -tracking-[1%] capitalize;
   }
 
   .button-text-medium {
-    @apply font-semibold text-base leading-12 -tracking-[0.8%] capitalize text-black;
+    @apply font-semibold text-base leading-12 -tracking-[0.8%] capitalize;
   }
 
   .button-text-small {
-    @apply font-semibold text-sm leading-10 -tracking-[0.4%] capitalize text-black;
+    @apply font-semibold text-sm leading-10 -tracking-[0.4%] capitalize;
   }
 
   /* label text */
   .text-label-xxl {
-    @apply font-medium text-lg leading-[100%] uppercase text-black;
+    @apply font-medium text-lg leading-[100%] uppercase;
   }
 
   .text-label-xl {
-    @apply font-medium text-base leading-[100%] uppercase text-black;
+    @apply font-medium text-base leading-[100%] uppercase;
   }
 
   .text-label-lg {
-    @apply font-medium text-sm leading-[100%] uppercase text-black;
+    @apply font-medium text-sm leading-[100%] uppercase;
   }
 
   .text-label-md {
-    @apply font-medium text-xs leading-[100%] uppercase text-black;
+    @apply font-medium text-xs leading-[100%] uppercase;
   }
 
   .text-label-sm {
-    @apply font-medium text-[10px] leading-[100%] uppercase text-black;
+    @apply font-medium text-[10px] leading-[100%] uppercase;
   }
 
   /* body text */
   .body-xxxl {
-    @apply font-normal text-2xl leading-8 text-black;
+    @apply font-normal text-2xl leading-8;
   }
 
   .body-xxl-400 {
-    @apply font-normal text-xl leading-8 text-black;
+    @apply font-normal text-xl leading-8;
   }
 
   .body-xxl-500 {
-    @apply font-medium text-xl leading-6.5 text-black;
+    @apply font-medium text-xl leading-6.5;
   }
 
   .body-xxl-600 {
-    @apply font-semibold text-xl leading-6.5 text-black;
+    @apply font-semibold text-xl leading-6.5;
   }
 
   .body-xl-400 {
-    @apply font-normal text-lg leading-6 -tracking-[1.5%] text-black;
+    @apply font-normal text-lg leading-6 -tracking-[1.5%];
   }
 
   .body-xl-500 {
-    @apply font-medium text-lg leading-6 text-black;
+    @apply font-medium text-lg leading-6;
   }
 
   .body-xl-600 {
-    @apply font-semibold text-lg leading-6 text-black;
+    @apply font-semibold text-lg leading-6;
   }
 
   .body-lg-400 {
-    @apply font-normal text-base leading-6 text-black;
+    @apply font-normal text-base leading-6;
   }
 
   .body-lg-500 {
-    @apply font-medium text-base leading-5.5 text-black;
+    @apply font-medium text-base leading-5.5;
   }
 
   .body-lg-600 {
-    @apply font-semibold text-base leading-5.5 text-black;
+    @apply font-semibold text-base leading-5.5;
   }
 
   .body-md-400 {
-    @apply font-normal text-sm leading-5.5 -tracking-[-1%] text-black;
+    @apply font-normal text-sm leading-5.5 -tracking-[-1%];
   }
 
   .body-md-500 {
-    @apply font-medium text-sm leading-5 -tracking-[-1%] text-black;
+    @apply font-medium text-sm leading-5 -tracking-[-1%];
   }
 
   .body-md-600 {
-    @apply font-semibold text-sm leading-5 -tracking-[-1%] text-black;
+    @apply font-semibold text-sm leading-5 -tracking-[-1%];
   }
 
   .body-sm-400 {
-    @apply font-normal text-xs leading-4 text-black;
+    @apply font-normal text-xs leading-4;
   }
 
   .body-sm-500 {
-    @apply font-medium text-xs leading-4 text-black;
+    @apply font-medium text-xs leading-4;
   }
 
   .body-sm-600 {
-    @apply font-semibold text-xs leading-4 text-black;
+    @apply font-semibold text-xs leading-4;
   }
 
   .body-tiny-400 {
-    @apply font-normal text-[10px] leading-2.5 text-black;
+    @apply font-normal text-[10px] leading-2.5;
   }
 
   .body-tiny-500 {
-    @apply font-medium text-[10px] leading-2.5 text-black;
+    @apply font-medium text-[10px] leading-2.5;
   }
 
   .body-tiny-600 {
-    @apply font-semibold text-[10px] leading-2.5 text-black;
+    @apply font-semibold text-[10px] leading-2.5;
+  }
+
+  /* remove scrollbar */
+  .scrollBar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .scrollBar::-webkit-scrollbar {
+    display: none;
   }
 }

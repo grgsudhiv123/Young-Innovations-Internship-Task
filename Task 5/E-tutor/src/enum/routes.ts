@@ -4,5 +4,5 @@ export const PageRoutes = {
   MY_COURSE: "/my-courses",
   EARNING: "/earning",
   MESSAGE: "/message",
-  SETTING: "setting",
+  SETTING: "/setting",
 };
