@@ -196,15 +196,15 @@
   }
 
   .body-md-400 {
-    @apply font-normal text-sm leading-5.5 -tracking-[-1%];
+    @apply font-normal text-sm leading-5.5 -tracking-[1%];
   }
 
   .body-md-500 {
-    @apply font-medium text-sm leading-5 -tracking-[-1%];
+    @apply font-medium text-sm leading-5 -tracking-[1%];
   }
 
   .body-md-600 {
-    @apply font-semibold text-sm leading-5 -tracking-[-1%];
+    @apply font-semibold text-sm leading-5 -tracking-[1%];
   }
 
   .body-sm-400 {
@@ -239,5 +239,11 @@
 
   .scrollBar::-webkit-scrollbar {
     display: none;
+  }
+
+  .style-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
   }
 }

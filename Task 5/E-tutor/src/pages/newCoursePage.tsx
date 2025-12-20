@@ -1,7 +1,12 @@
-import CustomButton from "../components/ui/button";
+import { useState } from "react";
+
 import { multistepFormConstants } from "../utils/constants/multiStepFormConstants";
 
+import BasicInfoForm from "../components/forms/basicInformation";
+
 const NewCoursePage = () => {
+  const [step, setStep] = useState(1);
+
   return (
     <div className="max-w-330 w-full h-fit mx-auto bg-white pb-10">
       <div className="w-full grid grid-cols-4 gap-6 border-b border-gray-100">
@@ -10,7 +15,12 @@ const NewCoursePage = () => {
             return (
               <button
                 type="button"
+                onClick={() => {
+                  setStep(i + 1);
+                  console.log(step);
+                }}
                 key={i}
+                data-stepBtn={i}
                 className="col-span-1 flex justify-between p-5 cursor-pointer text-gray-600"
               >
                 <span className="flex flex-row gap-2">
@@ -22,20 +32,7 @@ const NewCoursePage = () => {
             );
           })}
       </div>
-      <div className="py-6 px-10 flex flex-row justify-between">
-        <h4 className="text-heading-4 text-gray-900 inline">
-          Basic Information
-        </h4>
-
-        <div className="flex gap-3">
-          <CustomButton type="light-primary" size="base" className="">
-            Save
-          </CustomButton>
-          <CustomButton type="tertiary-primary" size="base" className="">
-            Save & Preview
-          </CustomButton>
-        </div>
-      </div>
+      <BasicInfoForm />
     </div>
   );
 };

@@ -13,7 +13,7 @@ const Sidebar = () => {
     return null;
   }
   return (
-    <nav className="max-w-70.5 w-full h-full bg-gray-900 flex flex-col justify-between">
+    <div className="max-w-70.5 w-full h-full bg-gray-900 flex flex-col justify-between">
       <div className="w-full h-fit">
         <div className="py-5 pl-6 border-b border-gray-700 mb-4">
           <Link to={PageRoutes.HOME}>
@@ -52,7 +52,7 @@ const Sidebar = () => {
         <SignOutIcon size={24} />
         <span className="body-md-500">Sign-out</span>
       </button>
-    </nav>
+    </div>
   );
 };
 

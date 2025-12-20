@@ -30,8 +30,8 @@ const TopNavbar = () => {
     }
   }
   return (
-    <nav className="absolute top-0 z-1 w-full bg-white py-[clamp(0.5rem,3vw,1.25rem)] px-[clamp(1rem,4vw,2rem)] ">
-      <div className="max-w-330 w-full mx-auto h-fit flex justify-between items-center">
+    <nav className="fixed top-0 z-1 w-full bg-white py-[clamp(0.5rem,3vw,1.25rem)] px-[clamp(1rem,4vw,2rem)] ">
+      <div className="max-w-330 w-full mx-auto h-fit flex justify-between items-center -translate-x-[11%]">
         <div className="flex flex-col gap-1.5">
           <span className="text-gray-600 body-md-500">Good Morning</span>
           <span className="body-xxl-600 text-gray-900">

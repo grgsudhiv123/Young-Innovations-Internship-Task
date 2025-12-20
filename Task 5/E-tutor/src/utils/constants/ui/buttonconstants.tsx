@@ -10,7 +10,7 @@ export const buttonTypeConstants = {
   TERTIARY_GRAY: "tertiary-gray",
 } as const;
 
-export type ButtonType =
+export type ButtonVariantType =
   (typeof buttonTypeConstants)[keyof typeof buttonTypeConstants];
 
 export const sizeConstants = {

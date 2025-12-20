@@ -1,14 +1,14 @@
-import type { ReactElement } from "react";
+import type { ButtonHTMLAttributes, ReactElement } from "react";
 import type {
-  ButtonType,
+  ButtonVariantType,
   SizeType,
 } from "../utils/constants/ui/buttonconstants";
 
-export interface ButtonPropsType {
-  type?: ButtonType;
+export interface ButtonPropsType
+  extends ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: ButtonVariantType;
   size?: SizeType;
   disabled?: boolean;
   children?: ReactElement | string;
   className?: string;
-  onClick?: () => void;
 }

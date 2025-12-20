@@ -3,7 +3,7 @@ import { FooterConstants } from "../../utils/constants/footerConstants";
 
 const FooterComp = () => {
   return (
-    <footer className="w-full py-[clamp(0.5rem,3vw,1.25rem)] px-[clamp(1rem,4vw,2rem)] mt-20">
+    <footer className="w-full py-[clamp(0.5rem,3vw,1.25rem)] px-[clamp(1rem,4vw,2rem)] ">
       <div className="max-w-330 w-full mx-auto flex justify-between">
         <p className="body-md-400 text-gray-600">
           © 2021 - Eduguard. Designed by{" "}

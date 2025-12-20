@@ -2,11 +2,12 @@ import clsx from "clsx";
 import {
   buttonTypeConstants,
   sizeConstants,
-  type ButtonType,
+  type ButtonVariantType,
 } from "../../utils/constants/ui/buttonconstants";
 import type { ButtonPropsType } from "../../types/buttonui.type";
+import type { MouseEvent } from "react";
 
-function variantType(key: ButtonType, disabled: boolean) {
+function variantType(key: ButtonVariantType, disabled: boolean) {
   switch (key) {
     case buttonTypeConstants.PRIMARY:
       return ` text-white  ${
@@ -93,33 +94,36 @@ function buttonSize(key: string) {
 }
 
 const CustomButton = ({
-  type = "primary",
+  variant = "primary",
   size = "base",
   disabled = false,
-  children = "",
-  className = "",
+  children,
+  className,
   onClick,
+  type = "button",
+  ...props
 }: ButtonPropsType) => {
-  const variant = variantType(type, disabled);
+  const button_variant = variantType(variant, disabled);
   const btnSize = buttonSize(size);
 
-  const handleOnclick = () => {
+  const handleOnclick = (e: MouseEvent<HTMLButtonElement>) => {
     if (!disabled && onClick) {
-      onClick();
+      onClick?.(e);
     }
   };
   return (
     <button
-      type="button"
       onClick={handleOnclick}
       disabled={disabled}
       className={clsx(
         "transition-colors duration-200 ease-in-out",
         disabled ? "cursor-not-allowed" : " cursor-pointer",
         btnSize,
-        variant,
+        button_variant,
         className
       )}
+      type={type}
+      {...props}
     >
       {children}
     </button>
