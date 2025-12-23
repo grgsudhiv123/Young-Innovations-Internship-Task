@@ -1,6 +1,6 @@
 import { BellIcon, MagnifyingGlassIcon } from "@phosphor-icons/react";
 import { useLocation } from "react-router";
-import { PageRoutes } from "../../enum/routes";
+import { PageRoutes } from "../../../enum/routes";
 
 const TopNavbar = () => {
   const location = useLocation();

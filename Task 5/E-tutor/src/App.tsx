@@ -1,8 +1,8 @@
 import "./App.css";
-import Sidebar from "./components/common/sidebar";
+import Sidebar from "./components/common/layout/sidebar";
 import { Outlet } from "react-router";
-import TopNavbar from "./components/common/topNavbar";
-import FooterComp from "./components/common/footer";
+import FooterComp from "./components/common/layout/footer";
+import TopNavbar from "./components/common/layout/topNavbar";
 
 function App() {
   return (
@@ -12,7 +12,6 @@ function App() {
         <TopNavbar />
         <main className="h-full w-full pt-40 flex flex-col space-y-10">
           <Outlet />
-
           <FooterComp />
         </main>
       </div>

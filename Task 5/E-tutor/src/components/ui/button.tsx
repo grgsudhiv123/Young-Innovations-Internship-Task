@@ -86,7 +86,7 @@ function buttonSize(key: string) {
       return "px-6 button-text-medium";
 
     case sizeConstants.LARGE:
-      return "px-8 button-text-large";
+      return "px-4 md:px-8 button-text-large";
 
     default:
       return "px-6 button-text-medium";

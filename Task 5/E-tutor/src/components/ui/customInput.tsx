@@ -46,7 +46,7 @@ const CustomFormField = ({
       <label className="body-md-400 text-gray-900 block mb-1.5">{label}</label>
       <div
         className={clsx(
-          "w-full px-4.5 py-3.5 flex border border-gray-100 focus-within:border-gray-300 hover:border-primary-200 hover:ring-2 ring-gray-100 hover:ring-primary-200",
+          "w-full px-[clamp(0.75rem,0.75rem+3.5vw,1.125rem)] py-[clamp(0.5rem,0.5rem+3.5vw,0.875rem)] flex items-center border border-gray-100 focus-within:border-gray-300 hover:border-primary-200 hover:ring-2 ring-gray-100 hover:ring-primary-200",
           isErrorActive
             ? "border-primary-500 bg-primary-100"
             : "border-gray-100 bg-white"
@@ -61,7 +61,7 @@ const CustomFormField = ({
             "outline-0 w-full placeholder:text-gray-500 body-lg-400"
           )}
         />
-        <span>{res}</span>
+        <span className="text-xs md:text-sm lg:text-base">{res}</span>
       </div>
       {isErrorActive && (
         <span className="absolute bottom-0 translate-y-[110%] body-sm-400 text-primary-500">

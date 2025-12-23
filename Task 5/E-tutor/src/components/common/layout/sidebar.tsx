@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router";
-import { SidebarConstant } from "../../utils/constants/sidebarConstants";
-import Logo from "../icons/logo";
-import { PageRoutes } from "../../enum/routes";
+import { SidebarConstant } from "../../../utils/constants/sidebarConstants";
+import Logo from "../../icons/logo";
+import { PageRoutes } from "../../../enum/routes";
 import { SignOutIcon } from "@phosphor-icons/react";
 
 const Sidebar = () => {
@@ -13,7 +13,7 @@ const Sidebar = () => {
     return null;
   }
   return (
-    <div className="max-w-70.5 w-full h-full bg-gray-900 flex flex-col justify-between">
+    <div className="max-w-70.5 w-full h-full bg-gray-900 hidden md:flex flex-col justify-between">
       <div className="w-full h-fit">
         <div className="py-5 pl-6 border-b border-gray-700 mb-4">
           <Link to={PageRoutes.HOME}>

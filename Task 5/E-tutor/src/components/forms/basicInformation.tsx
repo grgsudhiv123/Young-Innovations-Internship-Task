@@ -23,6 +23,7 @@ import {
 } from "../../utils/constants/basicInfoConstants";
 import CustomFormField from "../ui/customInput";
 import CustomInputDateSelector from "../ui/customInputDateSelector";
+import { useState } from "react";
 
 const BasicInfoForm = () => {
   const defaultValues = {
@@ -43,6 +44,8 @@ const BasicInfoForm = () => {
     watch,
     control,
     formState: { errors },
+    setValue,
+    getValues,
   } = useForm<BasicInfoFormType>({
     defaultValues: defaultValues,
     resolver: zodResolver(BasicInfoSchema),
@@ -52,27 +55,17 @@ const BasicInfoForm = () => {
     console.log("formData : ", data);
   };
 
-  const courseCategoryWatch = watch("courseCategory");
-  // const courseSubCategoryWatch = watch("courseSubCategory");
-  const availableSubCategories =
-    COURSE_SUB_CATEGORIES[
-      courseCategoryWatch as keyof typeof COURSE_SUB_CATEGORIES
-    ] || [];
+  const [prev, setPrev] = useState<string | null>(null);
 
-  const categoryChange = (changedValue: string) => {
-    const entry = Object.entries(COURSE_SUB_CATEGORIES).find(
-      ([mainkey, subArray]) => {
-        if (changedValue === mainkey) {
-          // console.log("subarray : ", subArray);
-        }
-      }
-    );
-    return entry;
-  };
+  const currentValue = getValues("courseCategory");
 
-  if (courseCategoryWatch) {
-    categoryChange(courseCategoryWatch);
+  const isChanged = prev !== currentValue;
+
+  if (isChanged) {
+    setPrev(currentValue);
+    setValue("courseSubCategory", "");
   }
+
   return (
     <>
       <div className="py-6 px-10 flex flex-row justify-between border-b border-gray-200">
@@ -145,7 +138,7 @@ const BasicInfoForm = () => {
                     value={field.value}
                     onValueChange={field.onChange}
                     label="Course Category"
-                    className="grid col-span-6"
+                    className="grid col-span-12 lg:col-span-6"
                   >
                     <SelectTrigger placeholder="Select option" />
                     <SelectContents>
@@ -163,26 +156,42 @@ const BasicInfoForm = () => {
               <Controller
                 name="courseSubCategory"
                 control={control}
-                render={({ field }) => (
-                  <Select
-                    error={errors?.courseSubCategory?.message}
-                    value={field.value}
-                    onValueChange={field.onChange}
-                    label="Course Sub-category"
-                    className="grid col-span-6"
-                  >
-                    <SelectTrigger placeholder="Select option" />
-                    <SelectContents>
-                      {availableSubCategories.map((item: string, i: number) => {
-                        return (
-                          <SelectItem value={item} key={i}>
-                            {item}
-                          </SelectItem>
-                        );
-                      })}
-                    </SelectContents>
-                  </Select>
-                )}
+                render={({ field }) => {
+                  const courseCategoryWatch = watch("courseCategory");
+
+                  const availableSubCategories =
+                    COURSE_SUB_CATEGORIES[
+                      courseCategoryWatch as keyof typeof COURSE_SUB_CATEGORIES
+                    ] || [];
+                  return (
+                    <Select
+                      error={errors?.courseSubCategory?.message}
+                      value={field.value}
+                      onValueChange={field.onChange}
+                      label="Course Sub-category"
+                      className="grid col-span-12 lg:col-span-6"
+                    >
+                      <SelectTrigger
+                        placeholder="Select option"
+                        disabled={
+                          availableSubCategories.length > 0 ? false : true
+                        }
+                      />
+                      <SelectContents>
+                        {availableSubCategories &&
+                          availableSubCategories.map(
+                            (item: string, i: number) => {
+                              return (
+                                <SelectItem value={item} key={i}>
+                                  {item}
+                                </SelectItem>
+                              );
+                            }
+                          )}
+                      </SelectContents>
+                    </Select>
+                  );
+                }}
               />
             </div>
 
@@ -216,7 +225,7 @@ const BasicInfoForm = () => {
                       value={field.value}
                       onValueChange={field.onChange}
                       label="Course Language"
-                      className="grid col-span-3"
+                      className="grid col-span-12 md:col-span-6 lg:col-span-3"
                     >
                       <SelectTrigger placeholder="Select option" />
                       <SelectContents>
@@ -243,7 +252,7 @@ const BasicInfoForm = () => {
                     value={field.value}
                     onValueChange={field.onChange}
                     label="Subtitle Language"
-                    className="grid col-span-3"
+                    className="grid col-span-12 md:col-span-6 lg:col-span-3"
                   >
                     <SelectTrigger placeholder="Select option" />
                     <SelectContents>
@@ -269,7 +278,7 @@ const BasicInfoForm = () => {
                     value={field.value}
                     onValueChange={field.onChange}
                     label="Course Level"
-                    className="grid col-span-3"
+                    className="grid col-span-12 md:col-span-6 lg:col-span-3"
                   >
                     <SelectTrigger placeholder="Select option" />
                     <SelectContents>
@@ -298,7 +307,7 @@ const BasicInfoForm = () => {
                       onChange={field.onChange}
                       error={errors.durations?.message}
                       type="number"
-                      className="grid col-span-3"
+                      className="grid col-span-12 md:col-span-6 lg:col-span-3"
                     />
                   );
                 }}
@@ -310,7 +319,7 @@ const BasicInfoForm = () => {
               type="button"
               size="lg"
               variant="tertiary-gray"
-              className="border border-gray-200"
+              className="border border-gray-200 "
               onClick={() => reset(defaultValues)}
             >
               Cancel

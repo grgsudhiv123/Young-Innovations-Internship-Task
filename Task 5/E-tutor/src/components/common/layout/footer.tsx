@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import { FooterConstants } from "../../utils/constants/footerConstants";
+import { FooterConstants } from "../../../utils/constants/footerConstants";
 
 const FooterComp = () => {
   return (

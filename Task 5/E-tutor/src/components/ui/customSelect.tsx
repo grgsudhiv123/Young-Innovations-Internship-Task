@@ -1,6 +1,6 @@
 import { CaretDownIcon } from "@phosphor-icons/react";
 import clsx from "clsx";
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useContext, useRef, useState } from "react";
 
 type ContextType = {
   value: string | null;
@@ -41,6 +41,8 @@ export const Select = ({
   value: controlledValue,
   onValueChange,
 }: SelectPropsType) => {
+  const selectCompRef = useRef<HTMLDivElement | null>(null);
+
   const isControlled = controlledValue !== undefined;
 
   const [open, setOpen] = useState<boolean>(false);
@@ -65,7 +67,10 @@ export const Select = ({
     <SelectContext.Provider
       value={{ value, setValue, open, setOpen, isErrorActive }}
     >
-      <div className={clsx("relative w-full bg-white", className)}>
+      <div
+        ref={selectCompRef}
+        className={clsx("relative w-full bg-white selectComp", className)}
+      >
         {label && (
           <label
             htmlFor={label}
@@ -85,17 +90,26 @@ export const Select = ({
   );
 };
 
-export const SelectTrigger = ({ placeholder }: { placeholder: string }) => {
+export const SelectTrigger = ({
+  placeholder,
+  disabled,
+}: {
+  placeholder: string;
+  disabled?: boolean;
+}) => {
   const { value, open, setOpen, isErrorActive } = useSelectContext();
+
   return (
     <button
       type="button"
       onClick={() => setOpen((prev) => !prev)}
+      disabled={disabled}
       className={clsx(
-        " w-full flex justify-between items-center border hover:border-primary-200 ring-0 hover:ring-1 ring-primary-200 px-4.5 py-3 cursor-pointer transition-all duration-200 ease-in-out",
+        "selectTriggerClass w-full flex justify-between items-center border hover:border-primary-200 ring-0 hover:ring-1 ring-primary-200 px-4.5 py-3 transition-all duration-200 ease-in-out",
         isErrorActive
           ? "border-primary-500 bg-primary-100"
-          : " border-gray-100 bg-white"
+          : " border-gray-100 bg-white",
+        disabled ? "cursor-not-allowed" : "cursor-pointer"
       )}
     >
       <span
@@ -125,7 +139,7 @@ export const SelectContents = ({ children }: SelectContents) => {
   return (
     <div
       className={clsx(
-        "absolute bottom-0 translate-y-full w-full z-50 flex flex-col shadow-2xl transition-all duration-200 ease-in-out  bg-white pt-3 border border-gray-100"
+        "absolute bottom-0 translate-y-full w-full z-50 flex flex-col shadow-2xl transition-all duration-200 ease-in-out  bg-white mt-3 border border-gray-100"
       )}
     >
       {children}

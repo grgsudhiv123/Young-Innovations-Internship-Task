@@ -122,15 +122,27 @@
 
   /* button text */
   .button-text-large {
-    @apply font-semibold text-lg leading-14 -tracking-[1%] capitalize;
+    @apply font-semibold
+    text-[clamp(0.65rem,0.65rem+1vw,1.125rem)]
+    leading-[clamp(2rem,2rem+4vw,3.5rem)]
+    -tracking-[0.8%] sm:-tracking-[1%]
+    capitalize;
   }
 
   .button-text-medium {
-    @apply font-semibold text-base leading-12 -tracking-[0.8%] capitalize;
+    @apply font-semibold
+    text-sm sm:text-base
+    leading-10 sm:leading-12
+    -tracking-[0.4%] sm:-tracking-[0.8%]
+    capitalize;
   }
 
   .button-text-small {
-    @apply font-semibold text-sm leading-10 -tracking-[0.4%] capitalize;
+    @apply font-semibold
+    text-xs sm:text-sm
+    leading-9 sm:leading-10
+    -tracking-[0.2%] sm:-tracking-[0.4%]
+    capitalize;
   }
 
   /* label text */
@@ -156,67 +168,67 @@
 
   /* body text */
   .body-xxxl {
-    @apply font-normal text-2xl leading-8;
+    @apply font-normal text-sm md:text-lg lg:text-2xl leading-8;
   }
 
   .body-xxl-400 {
-    @apply font-normal text-xl leading-8;
+    @apply font-normal text-sm md:text-base lg:text-xl leading-8;
   }
 
   .body-xxl-500 {
-    @apply font-medium text-xl leading-6.5;
+    @apply font-medium text-sm md:text-base lg:text-xl leading-6.5;
   }
 
   .body-xxl-600 {
-    @apply font-semibold text-xl leading-6.5;
+    @apply font-semibold text-sm md:text-base lg:text-xl leading-6.5;
   }
 
   .body-xl-400 {
-    @apply font-normal text-lg leading-6 -tracking-[1.5%];
+    @apply font-normal text-sm md:text-base lg:text-lg leading-6 -tracking-[1.5%];
   }
 
   .body-xl-500 {
-    @apply font-medium text-lg leading-6;
+    @apply font-medium text-sm md:text-base lg:text-lg leading-6;
   }
 
   .body-xl-600 {
-    @apply font-semibold text-lg leading-6;
+    @apply font-semibold text-sm md:text-base lg:text-lg leading-6;
   }
 
   .body-lg-400 {
-    @apply font-normal text-base leading-6;
+    @apply font-normal text-sm md:text-base leading-6;
   }
 
   .body-lg-500 {
-    @apply font-medium text-base leading-5.5;
+    @apply font-medium text-sm md:text-base leading-5.5;
   }
 
   .body-lg-600 {
-    @apply font-semibold text-base leading-5.5;
+    @apply font-semibold text-sm md:text-base leading-5.5;
   }
 
   .body-md-400 {
-    @apply font-normal text-sm leading-5.5 -tracking-[1%];
+    @apply font-normal  text-xs md:text-sm leading-5.5 -tracking-[1%];
   }
 
   .body-md-500 {
-    @apply font-medium text-sm leading-5 -tracking-[1%];
+    @apply font-medium  text-xs md:text-sm leading-5 -tracking-[1%];
   }
 
   .body-md-600 {
-    @apply font-semibold text-sm leading-5 -tracking-[1%];
+    @apply font-semibold  text-xs md:text-sm leading-5 -tracking-[1%];
   }
 
   .body-sm-400 {
-    @apply font-normal text-xs leading-4;
+    @apply font-normal text-[10px] md:text-xs leading-4;
   }
 
   .body-sm-500 {
-    @apply font-medium text-xs leading-4;
+    @apply font-medium text-[10px] md:text-xs leading-4;
   }
 
   .body-sm-600 {
-    @apply font-semibold text-xs leading-4;
+    @apply font-semibold text-[10px] md:text-xs leading-4;
   }
 
   .body-tiny-400 {
