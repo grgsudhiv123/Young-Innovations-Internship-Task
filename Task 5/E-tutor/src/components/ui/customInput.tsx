@@ -7,7 +7,7 @@ interface CustomFormFieldType {
   onChange?: (value: string) => void;
   maxLength: number;
   placeholder: string;
-  error?: string | undefined;
+  error?: string;
   watchValue?: string | undefined;
   type?: string;
 }

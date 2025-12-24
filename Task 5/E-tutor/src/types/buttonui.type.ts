@@ -9,6 +9,6 @@ export interface ButtonPropsType
   variant?: ButtonVariantType;
   size?: SizeType;
   disabled?: boolean;
-  children?: ReactElement | string;
+  children?: ReactElement;
   className?: string;
 }

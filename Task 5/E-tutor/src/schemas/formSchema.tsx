@@ -67,6 +67,31 @@ export const BasicInfoSchema = z.object({
       },
       { message: "Please enter valid duration" }
     ),
+  courseDescription: z
+    .string()
+    .min(1, "Course description are required.")
+    .max(1000, "Course description must not exceed 1000 char."),
+  courseTeach: z
+    .array(
+      z.object({
+        value: z.string().min(1, "Course teaching field cannot be empty"),
+      })
+    )
+    .min(1, "Course teachings are required"),
+  targetAudience: z
+    .array(
+      z.object({
+        value: z.string().min(1, "Target audience field cannot be empty"),
+      })
+    )
+    .min(1, "Target audience are required"),
+  courseRequirements: z
+    .array(
+      z.object({
+        value: z.string().min(1, "Course requirement field cannot be empty"),
+      })
+    )
+    .min(1, "Course requirements are required"),
 });
 
 export type BasicInfoFormType = z.infer<typeof BasicInfoSchema>;

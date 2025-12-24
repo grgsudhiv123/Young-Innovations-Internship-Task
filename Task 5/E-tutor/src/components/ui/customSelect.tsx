@@ -149,17 +149,21 @@ export const SelectContents = ({ children }: SelectContents) => {
 
 export const SelectItem = ({
   children,
-  value,
+  newvalue,
 }: {
   children: React.ReactNode;
-  value: string;
+  newvalue: string;
 }) => {
-  const { setValue } = useSelectContext();
+  const { setValue, value } = useSelectContext();
+  const isActive = value === newvalue;
   return (
     <button
       type="button"
-      onClick={() => setValue(value)}
-      className="hover:bg-primary-100 text-gray-700 capitalize hover:text-gray-900 w-full px-4.5 py-1.5 cursor-pointer flex justify-start"
+      onClick={() => setValue(newvalue)}
+      className={clsx(
+        "hover:bg-primary-100 text-gray-700 capitalize hover:text-gray-900 w-full px-4.5 py-1.5 cursor-pointer flex justify-start",
+        isActive ? "bg-primary-50" : ""
+      )}
     >
       {children}
     </button>

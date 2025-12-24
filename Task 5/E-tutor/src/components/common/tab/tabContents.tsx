@@ -1,15 +1,18 @@
-import AdvanceInfoForm from "../../forms/advanceInfo";
+import AdvanceInfoForm from "../../forms/advanceInfoForm/advanceInfo";
 import BasicInfoForm from "../../forms/basicInformation";
 import CurriculumForm from "../../forms/curriculum";
 import PublicCourseForm from "../../forms/publicCourse";
-
-const ActiveTabContents = ({ step }: { step: number }) => {
+type ActiveTabContentTypes = {
+  step: number;
+  setStep: (step: number) => void;
+};
+const ActiveTabContents = ({ step, setStep }: ActiveTabContentTypes) => {
   switch (step) {
     case 0:
-      return <BasicInfoForm />;
+      return <BasicInfoForm setStep={setStep} />;
 
     case 1:
-      return <AdvanceInfoForm />;
+      return <AdvanceInfoForm setStep={setStep} />;
 
     case 2:
       return <CurriculumForm />;
@@ -18,7 +21,7 @@ const ActiveTabContents = ({ step }: { step: number }) => {
       return <PublicCourseForm />;
 
     default:
-      return <BasicInfoForm />;
+      return <BasicInfoForm setStep={setStep} />;
   }
 };
 

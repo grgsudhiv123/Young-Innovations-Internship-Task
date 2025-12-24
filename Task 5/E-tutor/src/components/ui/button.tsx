@@ -117,7 +117,7 @@ const CustomButton = ({
       disabled={disabled}
       className={clsx(
         "transition-colors duration-200 ease-in-out",
-        disabled ? "cursor-not-allowed" : " cursor-pointer",
+        disabled ? "cursor-not-allowed" : "cursor-pointer",
         btnSize,
         button_variant,
         className

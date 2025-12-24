@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { multistepFormConstants } from "../../../utils/constants/multiStepFormConstants";
 import clsx from "clsx";
+import ActiveFormHeading from "./formheading";
 
 type TabButtonsType = {
   step: number;
@@ -54,6 +55,7 @@ const TabButtons = ({ step, setStep }: TabButtonsType) => {
           )}
         ></div>
       </div>
+      <ActiveFormHeading ActiveFormStep={multistepFormConstants[step].title} />
     </>
   );
 };
