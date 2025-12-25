@@ -13,7 +13,11 @@ const ArrayInputFields = ({
   fieldName: string;
   placeholder: string;
 }) => {
-  const { control, watch } = useFormContext();
+  const {
+    control,
+    watch,
+    formState: { errors },
+  } = useFormContext();
 
   const { fields, append } = useFieldArray({
     control,
@@ -21,7 +25,6 @@ const ArrayInputFields = ({
     rules: { minLength: 4, maxLength: 8 },
   });
 
-  console.log("fields : ", fields);
   return (
     <div className="w-full py-8 px-10 border-b border-gray-100 space-y-6">
       <div className="flex w-full justify-between">
@@ -54,25 +57,22 @@ const ArrayInputFields = ({
               render={({ field, fieldState }) => {
                 const watchValue = watch(`${fieldName}.${index}.value`);
                 return (
-                  <>
-                    <CustomFormField
-                      label={`0${index + 1}`}
-                      maxLength={120}
-                      onChange={field.onChange}
-                      value={field.value}
-                      watchValue={watchValue}
-                      placeholder={placeholder}
-                    />
-                    <span className="absolute bottom-0 translate-y-[110%] body-sm-400 text-primary-500">
-                      {fieldState.error && fieldState.error.message}
-                    </span>
-                  </>
+                  <CustomFormField
+                    label={`0${index + 1}`}
+                    maxLength={120}
+                    onChange={field.onChange}
+                    value={field.value}
+                    watchValue={watchValue}
+                    placeholder={placeholder}
+                    error={fieldState.error && fieldState.error.message}
+                  />
                 );
               }}
             />
           </div>
         );
       })}
+      <span>{errors.root?.message}</span>
     </div>
   );
 };

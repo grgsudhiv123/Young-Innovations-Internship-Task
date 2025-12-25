@@ -3,13 +3,13 @@ import { useState } from "react";
 import TabButtons from "../components/common/tab/tabButtons";
 import ActiveTabContents from "../components/common/tab/tabContents";
 import { FormProvider, useForm } from "react-hook-form";
-import { BasicInfoSchema, type BasicInfoFormType } from "../schemas/formSchema";
+import { CompleteSchema, type CompleteFormType } from "../schemas/formSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 const NewCoursePage = () => {
   const [step, setStep] = useState(0);
 
-  const methods = useForm<BasicInfoFormType>({
+  const methods = useForm<CompleteFormType>({
     defaultValues: {
       title: "",
       subtitle: "",
@@ -20,15 +20,17 @@ const NewCoursePage = () => {
       courseLanguage: "",
       courseLevel: "",
       durations: "",
+      courseThumbnail: "",
+      courseTrailer: "",
       courseDescription: "",
       courseTeach: [{ value: "" }],
       targetAudience: [{ value: "" }],
       courseRequirements: [{ value: "" }],
     },
-    resolver: zodResolver(BasicInfoSchema),
+    resolver: zodResolver(CompleteSchema),
   });
 
-  const FinalFormSubmit = (data: BasicInfoFormType) => {
+  const FinalFormSubmit = (data: CompleteFormType) => {
     console.log(data);
   };
 

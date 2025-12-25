@@ -258,4 +258,14 @@
     -webkit-appearance: none;
     -moz-appearance: none;
   }
+
+  .quill {
+    display: flex !important;
+    flex-direction: column-reverse !important;
+  }
+
+  .ql-container {
+    height: 230px !important;
+    overflow-y: scroll !important;
+  }
 }

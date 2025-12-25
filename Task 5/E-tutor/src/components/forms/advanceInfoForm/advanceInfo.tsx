@@ -1,15 +1,11 @@
-import {
-  ImageSquareIcon,
-  PlayCircleIcon,
-  UploadSimpleIcon,
-} from "@phosphor-icons/react";
-import CustomButton from "../../ui/button";
 import ArrayInputFields from "./teachingsInputFields";
 import FormButtons from "../../common/tab/formButtons";
 
 import "react-quill-new/dist/quill.snow.css";
 import ReactQuill from "react-quill-new";
 import { Controller, useFormContext } from "react-hook-form";
+import clsx from "clsx";
+import MediaUploadComp from "./mediaUploadComp";
 
 const AdvanceInfoForm = ({ setStep }: { setStep: (step: number) => void }) => {
   const { control, trigger, getValues } = useFormContext();
@@ -21,10 +17,10 @@ const AdvanceInfoForm = ({ setStep }: { setStep: (step: number) => void }) => {
       "targetAudience",
       "courseRequirements",
     ]);
-    console.log(isValid);
-    const data = getValues("courseDescription");
-    console.log(data);
     if (!isValid) return;
+    const data = getValues();
+    console.log(data);
+    setStep(2);
   };
   const handlePrevious = () => {
     setStep(0);
@@ -33,79 +29,38 @@ const AdvanceInfoForm = ({ setStep }: { setStep: (step: number) => void }) => {
   return (
     <>
       <div className="w-full py-8 px-10 border-b border-gray-100">
-        <div className="grid grid-cols-12 gap-12 w-full">
-          <div className="col-span-6 w-full">
-            <span className="body-xl-500 text-gray-900">Course Thumbnail</span>
-            <div className="w-full flex gap-12  mt-4">
-              <div className="max-w-[288px] w-full h-40 flex items-center justify-center bg-gray-50">
-                <ImageSquareIcon size={124} className="text-gray-300" />
-              </div>
-              <div className="space-y-6">
-                <p className="body-md-400 text-gray-600">
-                  Upload your course Thumbnail here.{" "}
-                  <span className="text-gray-900 body-md-500">
-                    {" "}
-                    Important guidelines:
-                  </span>
-                  1200x800 pixels or 12:8 Ratio. Supported format:
-                  <span className="text-gray-900 body-md-500">
-                    .jpg, .jpeg, or .png
-                  </span>
-                </p>
-                <CustomButton variant="light-primary">
-                  <span className="flex items-center gap-3">
-                    <span>Upload Image</span>
-                    <UploadSimpleIcon size={24} />
-                  </span>
-                </CustomButton>
-              </div>
-            </div>
-          </div>
-          <div className="col-span-6 w-full">
-            <span className="body-xl-500 text-gray-900">Course Thumbnail</span>
-            <div className="w-full flex gap-12 mt-4">
-              <div className="max-w-[288px] w-full h-40 flex items-center justify-center bg-gray-50">
-                <PlayCircleIcon size={124} className="text-gray-300" />
-              </div>
-              <div className="space-y-6">
-                <p className="body-md-400 text-gray-600">
-                  Students who watch a well-made promo video are 5X more likely
-                  to enroll in your course. We've seen that statistic go up to
-                  10X for exceptionally awesome videos.
-                </p>
-
-                <CustomButton variant="light-primary">
-                  <span className="flex items-center gap-3">
-                    <span>Upload Video</span>
-                    <UploadSimpleIcon size={24} />
-                  </span>
-                </CustomButton>
-              </div>
-            </div>
-          </div>
-        </div>
+        <MediaUploadComp />
       </div>
       <div className="w-full py-8 px-10 border-b border-gray-100">
         <span className="body-xl-500 text-gray-900">Course Descriptions</span>
-        <div>
-          <Controller
-            name="courseDescription"
-            control={control}
-            render={({ field, fieldState }) => {
-              return (
-                <>
-                  <ReactQuill
-                    {...field}
-                    theme="snow"
-                    className="h-50 border-gray-100"
-                  />
-                  {fieldState.error && fieldState.error.message}
-                </>
-              );
-            }}
-          />
-        </div>
+        <Controller
+          name="courseDescription"
+          control={control}
+          render={({ field, fieldState }) => {
+            const isError = !!fieldState.error;
+            return (
+              <div className="w-full mt-4">
+                <ReactQuill
+                  {...field}
+                  placeholder="Enter you course descriptions"
+                  className={clsx(
+                    "w-full border rounded body-lg-400",
+                    isError
+                      ? "border-primary-500 bg-primary-50"
+                      : "border-gray-50 bg-white"
+                  )}
+                />
+                {fieldState.error && (
+                  <p className="mt-2 text-sm text-primary-500">
+                    {fieldState.error.message}
+                  </p>
+                )}
+              </div>
+            );
+          }}
+        />
       </div>
+
       <ArrayInputFields
         title="What you will teach in this course "
         fieldName="courseTeach"

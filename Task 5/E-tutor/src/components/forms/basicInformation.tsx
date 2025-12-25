@@ -5,7 +5,6 @@ import {
   SelectTrigger,
 } from "../ui/customSelect";
 import { Controller, useFormContext, useWatch } from "react-hook-form";
-import { type BasicInfoFormType } from "../../schemas/formSchema";
 import {
   COURSE_CATEGORIES,
   COURSE_LANGUAGE,
@@ -20,6 +19,10 @@ import CustomFormField from "../ui/customInput";
 import CustomInputDateSelector from "../ui/customInputDateSelector";
 import { useEffect } from "react";
 import FormButtons from "../common/tab/formButtons";
+import {
+  BasicInfoSchema,
+  type BasicInfoFormType,
+} from "../../schemas/formSchema";
 
 const BasicInfoForm = ({ setStep }: { setStep: (step: number) => void }) => {
   const defaultValues = {
@@ -33,15 +36,8 @@ const BasicInfoForm = ({ setStep }: { setStep: (step: number) => void }) => {
     courseLevel: "",
     durations: "",
   };
-  const {
-    reset,
-    control,
-    setValue,
-    trigger,
-    watch,
-    getValues,
-    formState: { errors },
-  } = useFormContext<BasicInfoFormType>();
+  const { reset, control, setValue, trigger, watch, getValues } =
+    useFormContext<BasicInfoFormType>();
 
   const courseCategoryWatch = useWatch({
     control: control,
@@ -54,6 +50,8 @@ const BasicInfoForm = ({ setStep }: { setStep: (step: number) => void }) => {
     ] || [];
 
   const nextStep = async () => {
+    const isError = !BasicInfoSchema.safeParse(getValues()).success;
+    console.log("isError : ", isError);
     const isValid = await trigger([
       "title",
       "subtitle",
@@ -70,10 +68,6 @@ const BasicInfoForm = ({ setStep }: { setStep: (step: number) => void }) => {
     if (isValid) {
       setStep(1);
     }
-
-    console.log("data : ", getValues());
-
-    console.log("errors", errors);
   };
 
   const courseCategory = useWatch({

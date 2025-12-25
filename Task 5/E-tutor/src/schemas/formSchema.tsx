@@ -11,6 +11,7 @@ import {
   type COURSE_SUBCATEGORY_TYPE,
   type SUBTITLE_LANGUAGE_TYPE,
 } from "../utils/constants/basicInfoConstants";
+import { getPlainText } from "../utils/constants/getPlainText";
 
 export const BasicInfoSchema = z.object({
   title: z.string().min(1, "Title is required."),
@@ -67,10 +68,42 @@ export const BasicInfoSchema = z.object({
       },
       { message: "Please enter valid duration" }
     ),
-  courseDescription: z
-    .string()
-    .min(1, "Course description are required.")
-    .max(1000, "Course description must not exceed 1000 char."),
+});
+
+export type BasicInfoFormType = z.infer<typeof BasicInfoSchema>;
+
+const ACCEPTED_IMAGE_TYPES = [
+  "image/jpeg",
+  "image/jpg",
+  "image/png",
+  "image/webp",
+];
+
+export const AdvanceInfoSchema = z.object({
+  courseThumbnail: z.union([
+    z
+      .instanceof(File)
+      .refine((val) => val.size < 1, { message: "Thumbnail is required" })
+      .refine((val) => ACCEPTED_IMAGE_TYPES.includes(val.type), {
+        message: ".jpg, .jpeg, .png and .webp files are accepted.",
+      }),
+    z.string().url({ message: "Invalid resource URL" }),
+  ]),
+  courseTrailer: z.union([
+    z
+      .instanceof(File)
+      .refine((val) => val.size < 1, { message: "Thumbnail is required" }),
+    z.string().url({ message: "Invalid resource URL" }),
+  ]),
+  courseDescription: z.string().refine(
+    (val) => {
+      const text = getPlainText(val);
+      return text && text.length >= 50 && text.length <= 2000;
+    },
+    {
+      message: "Description must be between 50 and 2000 characters",
+    }
+  ),
   courseTeach: z
     .array(
       z.object({
@@ -94,4 +127,5 @@ export const BasicInfoSchema = z.object({
     .min(1, "Course requirements are required"),
 });
 
-export type BasicInfoFormType = z.infer<typeof BasicInfoSchema>;
+export const CompleteSchema = BasicInfoSchema.merge(AdvanceInfoSchema);
+export type CompleteFormType = z.infer<typeof CompleteSchema>;
