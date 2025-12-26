@@ -8,18 +8,18 @@ import {
 export const multistepFormConstants = [
   {
     title: "Basic Information",
-    icon: <StackIcon size={24} />,
+    icon: StackIcon,
   },
   {
     title: "Advance Information",
-    icon: <ClipboardTextIcon size={24} />,
+    icon: ClipboardTextIcon,
   },
   {
     title: "Curriculum",
-    icon: <MonitorPlayIcon size={24} />,
+    icon: MonitorPlayIcon,
   },
   {
     title: "Publish Course",
-    icon: <PlayCircleIcon size={24} />,
+    icon: PlayCircleIcon,
   },
 ];

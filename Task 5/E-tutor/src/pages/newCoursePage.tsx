@@ -26,6 +26,25 @@ const NewCoursePage = () => {
       courseTeach: [{ value: "" }],
       targetAudience: [{ value: "" }],
       courseRequirements: [{ value: "" }],
+      curriculum: [
+        {
+          sectionName: "",
+          lectures: [
+            {
+              lectureName: "Introduction to the Course",
+              lectureContent: [
+                {
+                  videoUrl: "",
+                  file: undefined,
+                  caption: "",
+                  description: "",
+                  lecture_notes: "",
+                },
+              ],
+            },
+          ],
+        },
+      ],
     },
     resolver: zodResolver(CompleteSchema),
   });

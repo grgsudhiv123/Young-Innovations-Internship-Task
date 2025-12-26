@@ -79,11 +79,19 @@ const ACCEPTED_IMAGE_TYPES = [
   "image/webp",
 ];
 
+const ACCEPTED_VIDEO_TYPES = ["video/mp4", "video/webm", "video/ogg"];
+const MAX_VIDEO_SIZE = 10 * 1024 * 1024; // 100MB
+const MAX_IMAGE_SIZE = 2 * 1024 * 1024; // 100MB
+
+const MAX_FILE_SIZE = 15 * 1024 * 1024;
+
 export const AdvanceInfoSchema = z.object({
   courseThumbnail: z.union([
     z
       .instanceof(File)
-      .refine((val) => val.size < 1, { message: "Thumbnail is required" })
+      .refine((val) => MAX_IMAGE_SIZE >= val.size, {
+        message: "Thumbnail is required",
+      })
       .refine((val) => ACCEPTED_IMAGE_TYPES.includes(val.type), {
         message: ".jpg, .jpeg, .png and .webp files are accepted.",
       }),
@@ -92,7 +100,12 @@ export const AdvanceInfoSchema = z.object({
   courseTrailer: z.union([
     z
       .instanceof(File)
-      .refine((val) => val.size < 1, { message: "Thumbnail is required" }),
+      .refine((val) => ACCEPTED_VIDEO_TYPES.includes(val.type), {
+        message: "video/mp4, video/webm and video/ogg files are accepted.",
+      })
+      .refine((val) => MAX_VIDEO_SIZE >= val.size, {
+        message: "Thumbnail is required",
+      }),
     z.string().url({ message: "Invalid resource URL" }),
   ]),
   courseDescription: z.string().refine(
@@ -127,5 +140,67 @@ export const AdvanceInfoSchema = z.object({
     .min(1, "Course requirements are required"),
 });
 
-export const CompleteSchema = BasicInfoSchema.merge(AdvanceInfoSchema);
+export const CurriculumSchema = z.object({
+  curriculum: z.array(
+    z.object({
+      sectionName: z.string().min(1, "Section name is required"),
+
+      lectures: z.array(
+        z.object({
+          lectureName: z.string().min(1, "Lecture name is required"),
+
+          lectureContent: z.array(
+            z.object({
+              videoUrl: z
+                .union([
+                  z
+                    .custom<File>((val) => val instanceof File, {
+                      message: "Invalid video file",
+                    })
+                    .refine(
+                      (file) => ACCEPTED_VIDEO_TYPES.includes(file.type),
+                      "video/mp4, video/webm and video/ogg files are accepted."
+                    )
+                    .refine(
+                      (file) => file.size <= MAX_VIDEO_SIZE,
+                      "Video must be less than 100MB"
+                    ),
+
+                  z.string().url("Invalid video URL"),
+                ])
+                .optional(),
+              file: z
+                .custom<File>((val) => val instanceof File, {
+                  message: "Invalid file",
+                })
+                .refine(
+                  (file) => !file || file.size <= MAX_FILE_SIZE,
+                  "Maximum file size is 15MB"
+                )
+                .optional(),
+              caption: z
+                .string()
+                .min(1, "Caption field cannot be empty")
+                .optional(),
+              description: z
+                .string()
+                .min(1, "Description field cannot be empty")
+                .optional(),
+              lecture_notes: z
+                .string()
+                .min(1, "Lecture notes field cannot be empty")
+                .optional(),
+            })
+          ),
+        })
+      ),
+    })
+  ),
+});
+
+export const CompleteSchema = z.union([
+  BasicInfoSchema,
+  AdvanceInfoSchema,
+  CurriculumSchema,
+]);
 export type CompleteFormType = z.infer<typeof CompleteSchema>;

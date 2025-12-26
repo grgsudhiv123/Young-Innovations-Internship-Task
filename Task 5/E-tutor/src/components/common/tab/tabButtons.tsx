@@ -29,6 +29,8 @@ const TabButtons = ({ step, setStep }: TabButtonsType) => {
       <div className="relative w-full grid grid-cols-4 gap-6 border-b border-gray-100">
         {multistepFormConstants &&
           multistepFormConstants.map((item, i) => {
+            const Icon = item.icon;
+            const isActive = step === i;
             return (
               <button
                 type="button"
@@ -41,8 +43,20 @@ const TabButtons = ({ step, setStep }: TabButtonsType) => {
                 className=" col-span-1 flex justify-between p-5 cursor-pointer text-gray-600 tabButtons"
               >
                 <span className="flex flex-row gap-2">
-                  {item.icon}
-                  <span className="body-lg-500">{item.title}</span>
+                  <Icon
+                    size={24}
+                    className={clsx(
+                      isActive ? "text-primary-500" : "text-gray-600"
+                    )}
+                  />
+                  <span
+                    className={clsx(
+                      isActive ? "text-gray-900" : "text-gray-600",
+                      "body-lg-500"
+                    )}
+                  >
+                    {item.title}
+                  </span>
                 </span>
                 {<span className="body-sm-500 text-success-500">7/12</span>}
               </button>

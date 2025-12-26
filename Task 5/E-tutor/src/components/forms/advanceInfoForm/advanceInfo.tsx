@@ -8,7 +8,7 @@ import clsx from "clsx";
 import MediaUploadComp from "./mediaUploadComp";
 
 const AdvanceInfoForm = ({ setStep }: { setStep: (step: number) => void }) => {
-  const { control, trigger, getValues } = useFormContext();
+  const { control, trigger } = useFormContext();
 
   const handleNext = async () => {
     const isValid = await trigger([
@@ -18,8 +18,7 @@ const AdvanceInfoForm = ({ setStep }: { setStep: (step: number) => void }) => {
       "courseRequirements",
     ]);
     if (!isValid) return;
-    const data = getValues();
-    console.log(data);
+
     setStep(2);
   };
   const handlePrevious = () => {

@@ -249,7 +249,7 @@ const MediaUploadComp = () => {
                       isOpen={isVideoOpen}
                       isClose={() => setIsVideoOpen(false)}
                     >
-                      <video className="w-xl" controls>
+                      <video className="w-5xl" controls>
                         <source src={watch("courseTrailer")} type="video/mp4" />
                       </video>
                     </CustomDialog>
