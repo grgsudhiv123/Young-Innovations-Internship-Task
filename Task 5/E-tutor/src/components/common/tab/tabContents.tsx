@@ -18,7 +18,7 @@ const ActiveTabContents = ({ step, setStep }: ActiveTabContentTypes) => {
       return <CurriculumForm setStep={setStep} />;
 
     case 3:
-      return <PublicCourseForm />;
+      return <PublicCourseForm setStep={setStep} />;
 
     default:
       return <BasicInfoForm setStep={setStep} />;

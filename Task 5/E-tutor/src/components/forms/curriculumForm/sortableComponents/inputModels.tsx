@@ -1,7 +1,6 @@
 import { CurriculumContents } from "../../../../utils/constants/curriculumContentsConstants";
 import CustomButton from "../../../ui/button";
 import { CustomDialog } from "../../../ui/customDialog";
-import CustomFormField from "../../../ui/customInput";
 import LectureCaption from "./contentsInput/lectureCaption";
 import LectureDescription from "./contentsInput/lectureDescription";
 import LectureFiles from "./contentsInput/lectureFiles";
