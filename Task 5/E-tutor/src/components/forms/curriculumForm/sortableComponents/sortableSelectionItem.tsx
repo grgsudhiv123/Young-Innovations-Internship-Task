@@ -12,29 +12,28 @@ import {
 } from "@phosphor-icons/react";
 import clsx from "clsx";
 import { useFieldArray, useFormContext } from "react-hook-form";
-import SortableLetureItem from "./sortableLetureItem";
+import SortableLetureItem from "./sortableLectureItem";
+import { closestCenter, DndContext, type DragEndEvent } from "@dnd-kit/core";
 
 const defaultLecture = {
   lectureName: "",
-  lectureContent: [
-    {
-      videoUrl: "",
-      file: undefined,
-      caption: "",
-      description: "",
-      lecture_notes: "",
-    },
-  ],
+  lectureContent: {
+    videoUrl: "",
+    file: undefined,
+    caption: "",
+    description: "",
+    lecture_notes: "",
+  },
 };
 
 const SortableSectionItem = ({
   id,
   onRemove,
-  index,
+  sectionindex,
 }: {
   id: string | number;
   onRemove: () => void;
-  index: number;
+  sectionindex: number;
 }) => {
   const {
     attributes,
@@ -57,12 +56,24 @@ const SortableSectionItem = ({
     fields: lectureFields,
     append: appendLecture,
     remove: removeLecture,
+    move: moveLecture,
   } = useFieldArray({
     control,
-    name: `curriculum.${index}.lectures`,
+    name: `curriculum.${sectionindex}.lectures`,
   });
 
-  console.log("lectureFields : ", lectureFields);
+  const handleLectureDrag = (event: DragEndEvent) => {
+    const { active, over } = event;
+
+    console.log("active : ", active);
+    console.log("over : ", over);
+
+    if (!active || !over || active.id === over.id) return;
+
+    const oldIndex = lectureFields.findIndex((f) => f.id === active.id);
+    const newIndex = lectureFields.findIndex((f) => f.id === over.id);
+    moveLecture(oldIndex, newIndex);
+  };
 
   return (
     <div ref={setNodeRef} {...attributes} style={style} className="bg-gray-50">
@@ -77,14 +88,14 @@ const SortableSectionItem = ({
               <ListIcon size={24} />
             </button>
             <span className="body-lg-500 text-gray-900">
-              Sections {ZeroBefore(index + 1)}:
+              Sections {ZeroBefore(sectionindex + 1)}:
             </span>
           </span>
           <input
             type="text"
             className="outline-none body-lg-400"
             placeholder="Section name"
-            {...register(`curriculum.${index}.sectionName`)}
+            {...register(`curriculum.${sectionindex}.sectionName`)}
           />
         </div>
         <div className="flex items-center gap-4">
@@ -114,21 +125,27 @@ const SortableSectionItem = ({
       </div>
 
       <div className="w-full px-6 pb-6 space-y-4">
-        <SortableContext
-          items={lectureFields.map((lecture) => lecture.id)}
-          strategy={verticalListSortingStrategy}
+        <DndContext
+          onDragEnd={handleLectureDrag}
+          collisionDetection={closestCenter}
         >
-          {lectureFields &&
-            lectureFields.map((lecture, index) => {
-              return (
-                <SortableLetureItem
-                  onLectureRemove={() => removeLecture(index)}
-                  id={lecture.id}
-                  key={lecture.id}
-                ></SortableLetureItem>
-              );
-            })}
-        </SortableContext>
+          <SortableContext
+            items={lectureFields.map((lecture) => lecture.id)}
+            strategy={verticalListSortingStrategy}
+          >
+            {lectureFields &&
+              lectureFields.map((lecture, index) => {
+                return (
+                  <SortableLetureItem
+                    inputFieldName={`curriculum.${sectionindex}.lectures.${index}.lectureName`}
+                    onLectureRemove={() => removeLecture(index)}
+                    id={lecture.id}
+                    key={lecture.id}
+                  ></SortableLetureItem>
+                );
+              })}
+          </SortableContext>
+        </DndContext>
       </div>
     </div>
   );

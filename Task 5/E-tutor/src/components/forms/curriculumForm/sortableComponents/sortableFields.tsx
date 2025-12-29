@@ -1,17 +1,9 @@
 import {
-  arrayMove,
   SortableContext,
   verticalListSortingStrategy,
 } from "@dnd-kit/sortable";
 
-import { useState } from "react";
-
-import {
-  DndContext,
-  closestCenter,
-  type DragEndEvent,
-  type UniqueIdentifier,
-} from "@dnd-kit/core";
+import { DndContext, closestCenter, type DragEndEvent } from "@dnd-kit/core";
 
 import SortableSectionItem from "./sortableSelectionItem";
 import { useFieldArray, useFormContext } from "react-hook-form";
@@ -24,69 +16,25 @@ const defaultCurriculumField = {
 const SortableFields = () => {
   const { control } = useFormContext();
 
-  const { fields, append, remove } = useFieldArray({
+  const { fields, append, remove, move } = useFieldArray({
     control,
     name: "curriculum",
   });
 
   console.log("fields : ", fields);
 
-  const [sections, setSections] = useState<
-    { id: UniqueIdentifier; lectures: UniqueIdentifier[] }[]
-  >([
-    {
-      id: "1",
-      lectures: ["1-a", "1-b", "1-c"],
-    },
-    {
-      id: "2",
-      lectures: ["2-a", "2-b", "2-c"],
-    },
-    {
-      id: "3",
-      lectures: ["3-a", "3-b", "3-c"],
-    },
-  ]);
-
   const handleDragEnd = (event: DragEndEvent) => {
     const { active, over } = event;
 
     console.log("active : ", active);
-
     console.log("over : ", over);
-    if (!active || !over) return;
 
-    if (active.id !== over.id) {
-      if (!active.id.toString().includes("-")) {
-        setSections((sections) => {
-          const oldIndex = sections.findIndex(
-            (section) => section.id === active.id
-          );
-          const newIndex = sections.findIndex(
-            (section) => section.id === over.id
-          );
+    if (!active || !over || active.id === over.id) return;
 
-          return arrayMove(sections, oldIndex, newIndex);
-        });
-      } else {
-        const sectionId = active.id.toString().split("-")[0];
-        setSections((sections) =>
-          sections.map((section) => {
-            if (section.id !== sectionId) return section;
-
-            const oldIndex = section.lectures.indexOf(active.id);
-            const newIndex = section.lectures.indexOf(over.id);
-
-            return {
-              ...section,
-              lectures: arrayMove(section.lectures, oldIndex, newIndex),
-            };
-          })
-        );
-      }
-    }
+    const oldIndex = fields.findIndex((f) => f.id === active.id);
+    const newIndex = fields.findIndex((f) => f.id === over.id);
+    move(oldIndex, newIndex);
   };
-
   return (
     <>
       <DndContext onDragEnd={handleDragEnd} collisionDetection={closestCenter}>
@@ -102,7 +50,7 @@ const SortableFields = () => {
                     id={item.id}
                     key={item.id}
                     onRemove={() => remove(index)}
-                    index={index}
+                    sectionindex={index}
                   ></SortableSectionItem>
                 );
               })}

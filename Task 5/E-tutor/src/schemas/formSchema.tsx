@@ -149,49 +149,47 @@ export const CurriculumSchema = z.object({
         z.object({
           lectureName: z.string().min(1, "Lecture name is required"),
 
-          lectureContent: z.array(
-            z.object({
-              videoUrl: z
-                .union([
-                  z
-                    .custom<File>((val) => val instanceof File, {
-                      message: "Invalid video file",
-                    })
-                    .refine(
-                      (file) => ACCEPTED_VIDEO_TYPES.includes(file.type),
-                      "video/mp4, video/webm and video/ogg files are accepted."
-                    )
-                    .refine(
-                      (file) => file.size <= MAX_VIDEO_SIZE,
-                      "Video must be less than 100MB"
-                    ),
+          lectureContent: z.object({
+            videoUrl: z
+              .union([
+                z
+                  .custom<File>((val) => val instanceof File, {
+                    message: "Invalid video file",
+                  })
+                  .refine(
+                    (file) => ACCEPTED_VIDEO_TYPES.includes(file.type),
+                    "video/mp4, video/webm and video/ogg files are accepted."
+                  )
+                  .refine(
+                    (file) => file.size <= MAX_VIDEO_SIZE,
+                    "Video must be less than 100MB"
+                  ),
 
-                  z.string().url("Invalid video URL"),
-                ])
-                .optional(),
-              file: z
-                .custom<File>((val) => val instanceof File, {
-                  message: "Invalid file",
-                })
-                .refine(
-                  (file) => !file || file.size <= MAX_FILE_SIZE,
-                  "Maximum file size is 15MB"
-                )
-                .optional(),
-              caption: z
-                .string()
-                .min(1, "Caption field cannot be empty")
-                .optional(),
-              description: z
-                .string()
-                .min(1, "Description field cannot be empty")
-                .optional(),
-              lecture_notes: z
-                .string()
-                .min(1, "Lecture notes field cannot be empty")
-                .optional(),
-            })
-          ),
+                z.string().url("Invalid video URL"),
+              ])
+              .optional(),
+            file: z
+              .custom<File>((val) => val instanceof File, {
+                message: "Invalid file",
+              })
+              .refine(
+                (file) => !file || file.size <= MAX_FILE_SIZE,
+                "Maximum file size is 15MB"
+              )
+              .optional(),
+            caption: z
+              .string()
+              .min(1, "Caption field cannot be empty")
+              .optional(),
+            description: z
+              .string()
+              .min(1, "Description field cannot be empty")
+              .optional(),
+            lecture_notes: z
+              .string()
+              .min(1, "Lecture notes field cannot be empty")
+              .optional(),
+          }),
         })
       ),
     })

@@ -1,12 +1,13 @@
 import { useFormContext } from "react-hook-form";
 import FormButtons from "../../common/tab/formButtons";
-import SortableFields from "./sortableComponents/SortableFields";
+import SortableFields from "./sortableComponents/sortableFields";
 
 const CurriculumForm = ({ setStep }: { setStep: (step: number) => void }) => {
   const { trigger, getValues } = useFormContext();
 
   const handleNext = async () => {
     const isValid = await trigger(["curriculum"]);
+    console.log("curriculum form values : ", getValues("curriculum"));
     if (isValid) {
       console.log("Form values", getValues("curriculum"));
       setStep(3);

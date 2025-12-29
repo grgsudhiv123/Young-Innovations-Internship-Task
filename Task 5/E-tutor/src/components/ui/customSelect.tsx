@@ -21,6 +21,7 @@ type SelectPropsType = {
 
 type SelectContents = {
   children: React.ReactNode;
+  className?: string;
 };
 
 const SelectContext = createContext<ContextType | null>(null);
@@ -93,9 +94,15 @@ export const Select = ({
 export const SelectTrigger = ({
   placeholder,
   disabled,
+  className,
+  textStyle,
+  chevronStyle,
 }: {
   placeholder: string;
   disabled?: boolean;
+  className?: string;
+  textStyle?: string;
+  chevronStyle?: string;
 }) => {
   const { value, open, setOpen, isErrorActive } = useSelectContext();
 
@@ -105,7 +112,8 @@ export const SelectTrigger = ({
       onClick={() => setOpen((prev) => !prev)}
       disabled={disabled}
       className={clsx(
-        "selectTriggerClass w-full flex justify-between items-center border hover:border-primary-200 ring-0 hover:ring-1 ring-primary-200 px-4.5 py-3 transition-all duration-200 ease-in-out",
+        className,
+        "selectTriggerClass w-full flex justify-between gap-2 items-center border hover:border-primary-200 ring-0 hover:ring-1 ring-primary-200 px-4.5 py-3 transition-all duration-200 ease-in-out",
         isErrorActive
           ? "border-primary-500 bg-primary-100"
           : " border-gray-100 bg-white",
@@ -115,7 +123,8 @@ export const SelectTrigger = ({
       <span
         className={clsx(
           !value ? "text-gray-500" : "text-gray-900",
-          "capitalize body-lg-400"
+          "capitalize body-lg-400",
+          textStyle
         )}
       >
         {value && value?.length !== 0 ? value : placeholder}
@@ -125,21 +134,24 @@ export const SelectTrigger = ({
         size={16}
         className={clsx(
           open ? "rotate-180" : "rotate-0",
-          "text-gray-900 transition-all duration-200 ease-in-out"
+          "text-gray-900 transition-all duration-200 ease-in-out",
+          chevronStyle
         )}
       />
     </button>
   );
 };
 
-export const SelectContents = ({ children }: SelectContents) => {
+export const SelectContents = ({ children, className }: SelectContents) => {
   const { open } = useSelectContext();
 
   if (!open) return null;
+
   return (
     <div
       className={clsx(
-        "absolute bottom-0 translate-y-full w-full z-50 flex flex-col shadow-2xl transition-all duration-200 ease-in-out  bg-white mt-3 border border-gray-100"
+        "absolute bottom-0 z-50 flex flex-col shadow-2xl bg-white border border-gray-100",
+        className
       )}
     >
       {children}
@@ -150,18 +162,23 @@ export const SelectContents = ({ children }: SelectContents) => {
 export const SelectItem = ({
   children,
   newvalue,
+  onClick,
 }: {
   children: React.ReactNode;
   newvalue: string;
+  onClick?: () => void;
 }) => {
   const { setValue, value } = useSelectContext();
   const isActive = value === newvalue;
   return (
     <button
       type="button"
-      onClick={() => setValue(newvalue)}
+      onClick={() => {
+        setValue(newvalue);
+        if (onClick) onClick();
+      }}
       className={clsx(
-        "hover:bg-primary-100 text-gray-700 capitalize hover:text-gray-900 w-full px-4.5 py-1.5 cursor-pointer flex justify-start",
+        "hover:bg-primary-100 text-gray-700 capitalize hover:text-gray-900 w-full px-4.5 py-1.5 cursor-pointer flex justify-start whitespace-nowrap",
         isActive ? "bg-primary-50" : ""
       )}
     >

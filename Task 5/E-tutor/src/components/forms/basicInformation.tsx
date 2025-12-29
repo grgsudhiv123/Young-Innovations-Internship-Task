@@ -134,7 +134,7 @@ const BasicInfoForm = ({ setStep }: { setStep: (step: number) => void }) => {
                 className="grid col-span-12 lg:col-span-6"
               >
                 <SelectTrigger placeholder="Select option" />
-                <SelectContents>
+                <SelectContents className="translate-y-full w-full">
                   {COURSE_CATEGORIES.map((item: string, i: number) => {
                     return (
                       <SelectItem newvalue={item} key={i}>
@@ -162,7 +162,7 @@ const BasicInfoForm = ({ setStep }: { setStep: (step: number) => void }) => {
                     placeholder="Select option"
                     disabled={availableSubCategories.length > 0 ? false : true}
                   />
-                  <SelectContents>
+                  <SelectContents className="translate-y-full w-full">
                     {availableSubCategories &&
                       availableSubCategories.map((item: string, i: number) => {
                         return (
@@ -211,7 +211,7 @@ const BasicInfoForm = ({ setStep }: { setStep: (step: number) => void }) => {
                   className="grid col-span-12 md:col-span-6 lg:col-span-3"
                 >
                   <SelectTrigger placeholder="Select option" />
-                  <SelectContents>
+                  <SelectContents className="translate-y-full w-full">
                     {COURSE_LANGUAGE.map((item: COURSE_LANGUAGE_TYPE, i) => {
                       return (
                         <SelectItem newvalue={item} key={i}>
@@ -236,7 +236,7 @@ const BasicInfoForm = ({ setStep }: { setStep: (step: number) => void }) => {
                 className="grid col-span-12 md:col-span-6 lg:col-span-3"
               >
                 <SelectTrigger placeholder="Select option" />
-                <SelectContents>
+                <SelectContents className="translate-y-full w-full">
                   {SUBTITLE_LANGUAGE.map(
                     (item: SUBTITLE_LANGUAGE_TYPE, i: number) => {
                       return (
@@ -262,7 +262,7 @@ const BasicInfoForm = ({ setStep }: { setStep: (step: number) => void }) => {
                 className="grid col-span-12 md:col-span-6 lg:col-span-3"
               >
                 <SelectTrigger placeholder="Select option" />
-                <SelectContents>
+                <SelectContents className="translate-y-full w-full">
                   {COURSE_LEVEL.map((item: COURSE_LEVEL_TYPE, i: number) => {
                     return (
                       <SelectItem newvalue={item} key={i}>
