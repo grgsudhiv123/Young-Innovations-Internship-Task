@@ -64,7 +64,6 @@ const BasicInfoForm = ({ setStep }: { setStep: (step: number) => void }) => {
       "durations",
     ]);
 
-    console.log("isValid : ", isValid);
     if (isValid) {
       setStep(1);
     }

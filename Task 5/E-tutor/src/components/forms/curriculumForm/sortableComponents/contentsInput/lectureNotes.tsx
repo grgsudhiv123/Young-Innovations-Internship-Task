@@ -1,11 +1,12 @@
-import React from "react";
+import { useRef } from "react";
 import { Controller } from "react-hook-form";
 
 const LectureNotes = () => {
+  const noteFileRef = useRef<HTMLInputElement | null>(null);
   return (
     <Controller
       name="lecture_notes"
-      render={({ fields }) => {
+      render={({ field }) => {
         return (
           <div className="w-full space-y-6">
             <div className="w-full flex flex-col gap-1.5">
@@ -13,10 +14,10 @@ const LectureNotes = () => {
                 Notes
               </label>
               <textarea
-                name="lecture_notes"
                 placeholder="Write your lecture Notes here..."
                 rows={8}
                 className="outline-none border border-gray-100 px-4.5 py-3 body-md-400"
+                {...field}
               />
             </div>
 
@@ -24,7 +25,7 @@ const LectureNotes = () => {
               type="button"
               className="w-full p-6 border border-gray-100  hover:bg-gray-50 transform-all duration-200 ease-in-out cursor-pointer"
             >
-              <input type="file" className="hidden" />
+              <input ref={noteFileRef} type="file" className="hidden" />
               <div className="w-full flex flex-col justify-center gap-2">
                 <p className="body-lg-500">Upload Notes</p>
                 <p className="body-md-400 text-gray-500">

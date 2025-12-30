@@ -21,13 +21,8 @@ const SortableFields = () => {
     name: "curriculum",
   });
 
-  console.log("fields : ", fields);
-
   const handleDragEnd = (event: DragEndEvent) => {
     const { active, over } = event;
-
-    console.log("active : ", active);
-    console.log("over : ", over);
 
     if (!active || !over || active.id === over.id) return;
 

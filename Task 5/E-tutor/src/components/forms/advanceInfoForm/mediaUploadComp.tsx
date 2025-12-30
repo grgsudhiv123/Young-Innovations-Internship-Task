@@ -51,7 +51,6 @@ const MediaUploadComp = () => {
 
     const videoUrl = await VideoUpload(file);
     onChange(videoUrl);
-    console.log(videoUrl);
   };
 
   const handleChangeInVideo = () => {

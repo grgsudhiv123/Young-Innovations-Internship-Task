@@ -17,13 +17,7 @@ import { closestCenter, DndContext, type DragEndEvent } from "@dnd-kit/core";
 
 const defaultLecture = {
   lectureName: "",
-  lectureContent: {
-    videoUrl: "",
-    file: undefined,
-    caption: "",
-    description: "",
-    lecture_notes: "",
-  },
+  lectureContent: {},
 };
 
 const SortableSectionItem = ({
@@ -64,9 +58,6 @@ const SortableSectionItem = ({
 
   const handleLectureDrag = (event: DragEndEvent) => {
     const { active, over } = event;
-
-    console.log("active : ", active);
-    console.log("over : ", over);
 
     if (!active || !over || active.id === over.id) return;
 
@@ -137,7 +128,7 @@ const SortableSectionItem = ({
               lectureFields.map((lecture, index) => {
                 return (
                   <SortableLetureItem
-                    inputFieldName={`curriculum.${sectionindex}.lectures.${index}.lectureName`}
+                    inputFieldName={`curriculum.${sectionindex}.lectures.${index}`}
                     onLectureRemove={() => removeLecture(index)}
                     id={lecture.id}
                     key={lecture.id}

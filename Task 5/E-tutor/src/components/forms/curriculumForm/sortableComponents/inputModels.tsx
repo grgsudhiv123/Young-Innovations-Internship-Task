@@ -1,5 +1,5 @@
+import { useFormContext } from "react-hook-form";
 import { CurriculumContents } from "../../../../utils/constants/curriculumContentsConstants";
-import CustomButton from "../../../ui/button";
 import { CustomDialog } from "../../../ui/customDialog";
 import LectureCaption from "./contentsInput/lectureCaption";
 import LectureDescription from "./contentsInput/lectureDescription";
@@ -12,33 +12,63 @@ const InputModels = ({
   isOpen,
   setIsOpen,
   selectedContent,
+  baseName,
 }: {
   isOpen: boolean;
   setIsOpen: (isOpen: boolean) => void;
   selectedContent: ModelNameKey;
+  baseName: string;
 }) => {
-  console.log("selectedContent : ", selectedContent);
+  const { trigger, reset } = useFormContext();
+
+  const handleSubmit = async () => {
+    await trigger([`${baseName}`]);
+    setIsOpen(false);
+  };
+
+  const handleCancel = () => {
+    reset([`${baseName}`]);
+    setIsOpen(false);
+  };
 
   function renderFields(key: ModelNameKey) {
     switch (key) {
       case "Section":
         return <SectionNameInput />;
-
       case CurriculumContents.VIDEO:
-        return <LectureVideoInput />;
-
+        return (
+          <LectureVideoInput
+            baseName={baseName}
+            handleSubmit={handleSubmit}
+            handleCancel={handleCancel}
+          />
+        );
       case CurriculumContents.ATTACH_FILE:
-        return <LectureFiles />;
-
-      case CurriculumContents.CAPTINOS:
-        return <LectureCaption />;
-
+        return (
+          <LectureFiles
+            baseName={baseName}
+            handleSubmit={handleSubmit}
+            handleCancel={handleCancel}
+          />
+        );
+      case CurriculumContents.CAPTIONS:
+        return (
+          <LectureCaption
+            baseName={baseName}
+            handleSubmit={handleSubmit}
+            handleCancel={handleCancel}
+          />
+        );
       case CurriculumContents.DESCRIPTION:
-        return <LectureDescription />;
-
+        return (
+          <LectureDescription
+            baseName={baseName}
+            handleSubmit={handleSubmit}
+            handleCancel={handleCancel}
+          />
+        );
       case CurriculumContents.LECTURE_NOTES:
         return <LectureNotes />;
-
       default:
         return null;
     }
@@ -54,18 +84,6 @@ const InputModels = ({
         </div>
         <div className="w-full px-5.5 py-6 space-y-6">
           {renderFields(selectedContent)}
-          <div className="w-full flex justify-between">
-            <CustomButton
-              className="bg-gray-50"
-              variant="tertiary-gray"
-              onClick={() => setIsOpen(false)}
-            >
-              <span>Cancel</span>
-            </CustomButton>
-            <CustomButton>
-              <span>Save changes</span>
-            </CustomButton>
-          </div>
         </div>
       </div>
     </CustomDialog>
@@ -78,7 +96,7 @@ const modelNameMap = {
   Section: "Edit Section Name",
   [CurriculumContents.VIDEO]: "Lecture Video",
   [CurriculumContents.ATTACH_FILE]: "Attach File",
-  [CurriculumContents.CAPTINOS]: "Add Lecture Caption",
+  [CurriculumContents.CAPTIONS]: "Add Lecture Caption",
   [CurriculumContents.DESCRIPTION]: "Add Lecture Description",
   [CurriculumContents.LECTURE_NOTES]: "Add Lecture Notes",
 } as const;

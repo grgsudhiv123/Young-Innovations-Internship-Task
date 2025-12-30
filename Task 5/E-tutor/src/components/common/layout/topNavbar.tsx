@@ -4,7 +4,6 @@ import { PageRoutes } from "../../../enum/routes";
 
 const TopNavbar = () => {
   const location = useLocation();
-  console.log(location.pathname);
   function NavHeader(path: string) {
     switch (path) {
       case PageRoutes.HOME:

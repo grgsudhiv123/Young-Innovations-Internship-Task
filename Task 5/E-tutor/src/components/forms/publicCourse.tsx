@@ -27,14 +27,14 @@ const PublicCourseForm = ({ setStep }: { setStep: (step: number) => void }) => {
               <p className="body-md-400">Welcome Message</p>
               <Controller
                 name="welcome_message"
-                render={({ fields }) => {
+                render={({ field }) => {
                   return (
                     <textarea
-                      name="welcome_message"
                       id="welcome_message"
                       placeholder="Enter course starting message here..."
                       className="w-full outline-none border border-gray-100 px-4.5 py-4"
                       rows={5}
+                      {...field}
                     />
                   );
                 }}
@@ -44,14 +44,14 @@ const PublicCourseForm = ({ setStep }: { setStep: (step: number) => void }) => {
               <p className="body-md-400">Congratulations Message</p>
               <Controller
                 name="congratulation_message"
-                render={({ fields }) => {
+                render={({ field }) => {
                   return (
                     <textarea
-                      name="congratulation_message"
                       id="congratulation_message"
                       placeholder="Enter your course completed message here..."
                       className="w-full outline-none border border-gray-100 px-4.5 py-4"
                       rows={5}
+                      {...field}
                     />
                   );
                 }}

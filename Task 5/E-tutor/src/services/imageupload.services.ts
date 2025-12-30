@@ -4,7 +4,6 @@ export const ImageUpload = async (file: File) => {
   const formData = new FormData();
   formData.append("file", file);
   formData.append("upload_preset", "imageUpload");
-  console.log("formData : ", formData);
 
   const response = await axios.post(
     "https://api.cloudinary.com/v1_1/dpsgigoy7/image/upload",

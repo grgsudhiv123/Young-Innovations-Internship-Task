@@ -33,11 +33,14 @@ const NewCoursePage = () => {
             {
               lectureName: "Introduction to the Course",
               lectureContent: {
-                videoUrl: "",
-                file: undefined,
+                videoUrl: undefined,
+                lecture_file: undefined,
                 caption: "",
                 description: "",
-                lecture_notes: "",
+                lecture_notes: {
+                  note_text: "",
+                  note_file: undefined,
+                },
               },
             },
           ],

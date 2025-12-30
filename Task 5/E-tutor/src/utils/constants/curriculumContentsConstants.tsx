@@ -1,7 +1,7 @@
 export const CurriculumContents = {
   VIDEO: "Video",
   ATTACH_FILE: "Attach File",
-  CAPTINOS: "Captions",
+  CAPTIONS: "Captions",
   DESCRIPTION: "Description",
   LECTURE_NOTES: "Lecture Notes",
 } as const;
