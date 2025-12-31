@@ -233,10 +233,27 @@ export const CurriculumSchema = z.object({
     .min(1, "Curriculum section required"),
 });
 
+export const PublishCourseSChema = z.object({
+  welcome_message: z.string().min(1, "Welcome message is required"),
+  congratulation_message: z
+    .string()
+    .min(1, "Congratulation message is required"),
+  instructors: z.array(
+    z
+      .object({
+        name: z.string(),
+        role: z.string(),
+        img: z.string(),
+      })
+      .optional()
+  ),
+});
+
 export const CompleteSchema = z.union([
   BasicInfoSchema,
   AdvanceInfoSchema,
   CurriculumSchema,
+  PublishCourseSChema,
 ]);
 
 export type CurriculumType = z.infer<typeof CurriculumSchema>;
