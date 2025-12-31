@@ -78,8 +78,9 @@ const LectureVideoInput = ({
           <Controller
             control={control}
             name={`${baseName}.videoUrl`}
-            render={({ field }) => {
+            render={({ field, fieldState }) => {
               const currentVideo = watch(`${baseName}.videoUrl`);
+              console.log("video input error : ", fieldState.error?.message);
               return (
                 <>
                   <input

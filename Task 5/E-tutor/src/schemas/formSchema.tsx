@@ -96,7 +96,7 @@ const ACCEPTED_NOTE_FILE_TYPES = [
 //   ...ACCEPTED_IMAGE_TYPES,
 //   ...ACCEPTED_VIDEO_TYPES,
 // ];
-const MAX_VIDEO_SIZE = 10 * 1024 * 1024;
+const MAX_VIDEO_SIZE = 100 * 1024 * 1024;
 const MAX_IMAGE_SIZE = 2 * 1024 * 1024;
 const MAX_FILE_SIZE = 15 * 1024 * 1024;
 
@@ -156,80 +156,81 @@ export const AdvanceInfoSchema = z.object({
 });
 
 export const CurriculumSchema = z.object({
-  curriculum: z.array(
-    z.object({
-      sectionName: z.string().min(1, "Section name is required"),
+  curriculum: z
+    .array(
+      z.object({
+        sectionName: z.string().min(1, "Section name is required"),
 
-      lectures: z.array(
-        z.object({
-          lectureName: z.string().min(1, "Lecture name is required"),
-          lectureContent: z.object({
-            videoUrl: z
-              .object({
-                file: z
-                  .custom<File>((val) => val instanceof File, {
-                    message: "Invalid video file",
-                  })
-                  .refine(
-                    (file) => ACCEPTED_VIDEO_TYPES.includes(file.type),
-                    "video/mp4, video/webm and video/ogg files are accepted."
-                  )
-                  .refine(
-                    (file) => file.size <= MAX_VIDEO_SIZE,
-                    "Video must be less than 100MB"
-                  ),
-                url: z.string().url("Invalid video URL"),
-                duration: z.string(),
-                name: z.string(),
-              })
-              .optional(),
+        lectures: z.array(
+          z.object({
+            lectureName: z.string().min(1, "Lecture name is required"),
+            lectureContent: z.object({
+              videoUrl: z
+                .object({
+                  file: z
+                    .custom<File>((val) => val instanceof File, {
+                      message: "Invalid video file",
+                    })
+                    .refine(
+                      (file) => ACCEPTED_VIDEO_TYPES.includes(file.type),
+                      "video/mp4, video/webm and video/ogg files are accepted."
+                    )
+                    .refine(
+                      (file) => file.size <= MAX_VIDEO_SIZE,
+                      "Video must be less than 100MB"
+                    ),
+                  url: z.string().url("Invalid video URL"),
+                  duration: z.string(),
+                  name: z.string(),
+                })
+                .optional(),
 
-            lecture_file: z
-              .object({
-                file: z
-                  .custom<File>((val) => val instanceof File, {
-                    message: "Invalid file",
-                  })
-                  .refine(
-                    (file) => file.size <= MAX_FILE_SIZE,
-                    "File must be less than 15MB"
-                  ),
-                url: z.string(),
-                name: z.string(),
-                size: z.number(),
-                type: z.string(),
-              })
+              lecture_file: z
+                .object({
+                  file: z
+                    .custom<File>((val) => val instanceof File, {
+                      message: "Invalid file",
+                    })
+                    .refine((file) => file.size <= MAX_FILE_SIZE, {
+                      message: "File must be less than 15MB",
+                    }),
+                  url: z.string(),
+                  name: z.string(),
+                  size: z.number(),
+                  type: z.string(),
+                })
 
-              .optional(),
-            caption: z
-              .string()
-              .min(1, "Caption field cannot be empty")
-              .optional(),
-            description: z
-              .string()
-              .min(1, "Description field cannot be empty")
-              .optional(),
-            lecture_notes: z
-              .object({
-                note_text: z.string().min(1, "Note text is required"),
-                note_file: z
-                  .instanceof(File)
-                  .refine(
-                    (val) => ACCEPTED_NOTE_FILE_TYPES.includes(val.type),
-                    {
-                      message: "PDF, DOC and DOCX files are accepted.",
-                    }
-                  )
-                  .refine((val) => MAX_FILE_SIZE >= val.size, {
-                    message: `Max file size is ${MAX_FILE_SIZE}.`,
-                  }),
-              })
-              .optional(),
-          }),
-        })
-      ),
-    })
-  ),
+                .optional(),
+              caption: z
+                .string()
+                .min(1, "Caption field cannot be empty")
+                .optional(),
+              description: z
+                .string()
+                .min(1, "Description field cannot be empty")
+                .optional(),
+              lecture_notes: z
+                .object({
+                  note_text: z.string().min(1, "Note text is required"),
+                  note_file: z
+                    .instanceof(File)
+                    .refine(
+                      (val) => ACCEPTED_NOTE_FILE_TYPES.includes(val.type),
+                      {
+                        message: "PDF, DOC and DOCX files are accepted.",
+                      }
+                    )
+                    .refine((val) => MAX_FILE_SIZE >= val.size, {
+                      message: `Max file size is ${MAX_FILE_SIZE}.`,
+                    }),
+                })
+                .optional(),
+            }),
+          })
+        ),
+      })
+    )
+    .min(1, "Curriculum section required"),
 });
 
 export const CompleteSchema = z.union([

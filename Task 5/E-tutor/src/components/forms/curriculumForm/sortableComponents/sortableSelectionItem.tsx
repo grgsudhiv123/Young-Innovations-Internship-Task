@@ -11,7 +11,7 @@ import {
   TrashIcon,
 } from "@phosphor-icons/react";
 import clsx from "clsx";
-import { useFieldArray, useFormContext } from "react-hook-form";
+import { Controller, useFieldArray, useFormContext } from "react-hook-form";
 import SortableLetureItem from "./sortableLectureItem";
 import { closestCenter, DndContext, type DragEndEvent } from "@dnd-kit/core";
 
@@ -44,7 +44,7 @@ const SortableSectionItem = ({
     opacity: isDragging ? 0.5 : 1,
   };
 
-  const { control, register } = useFormContext();
+  const { control } = useFormContext();
 
   const {
     fields: lectureFields,
@@ -67,78 +67,123 @@ const SortableSectionItem = ({
   };
 
   return (
-    <div ref={setNodeRef} {...attributes} style={style} className="bg-gray-50">
-      <div className="section flex w-full flex-row justify-between  p-6">
-        <div className="flex flex-row gap-3">
-          <span className="flex flex-row gap-2 items-center">
-            <button
-              type="button"
-              {...listeners}
-              className={clsx(isDragging ? "cursor-grabbing" : "cursor-grab")}
+    <Controller
+      control={control}
+      name={`curriculum.${sectionindex}.sectionName`}
+      render={({ field, fieldState }) => {
+        const isError = fieldState.error;
+        return (
+          <div
+            ref={setNodeRef}
+            {...attributes}
+            style={style}
+            className="bg-gray-50"
+          >
+            <div
+              className={clsx(
+                "section flex w-full flex-row justify-between p-6",
+                isError ? "bg-primary-50" : ""
+              )}
             >
-              <ListIcon size={24} />
-            </button>
-            <span className="body-lg-500 text-gray-900">
-              Sections {ZeroBefore(sectionindex + 1)}:
-            </span>
-          </span>
-          <input
-            type="text"
-            className="outline-none body-lg-400"
-            placeholder="Section name"
-            {...register(`curriculum.${sectionindex}.sectionName`)}
-          />
-        </div>
-        <div className="flex items-center gap-4">
-          <button
-            type="button"
-            className="cursor-pointer"
-            onClick={() => appendLecture(defaultLecture)}
-          >
-            <PlusIcon
-              size={24}
-              className="text-gray-500 hover:text-primary-500 transition-all ease-in-out duration-200"
-            />
-          </button>
-          <button type="button" className="cursor-pointer">
-            <PencilLineIcon
-              size={24}
-              className="text-gray-500 hover:text-primary-500 transition-all ease-in-out duration-200"
-            />
-          </button>
-          <button type="button" className="cursor-pointer" onClick={onRemove}>
-            <TrashIcon
-              size={24}
-              className="text-gray-500 hover:text-primary-500 transition-all ease-in-out duration-200"
-            />
-          </button>
-        </div>
-      </div>
+              <div className="w-1/3 flex flex-row gap-3">
+                <span className="flex flex-row gap-2 items-center">
+                  <button
+                    type="button"
+                    {...listeners}
+                    className={clsx(
+                      isDragging ? "cursor-grabbing" : "cursor-grab"
+                    )}
+                  >
+                    <ListIcon size={24} />
+                  </button>
+                  <span className="body-lg-500 text-gray-900 whitespace-nowrap">
+                    Sections {ZeroBefore(sectionindex + 1)}:
+                  </span>
+                </span>
 
-      <div className="w-full px-6 pb-6 space-y-4">
-        <DndContext
-          onDragEnd={handleLectureDrag}
-          collisionDetection={closestCenter}
-        >
-          <SortableContext
-            items={lectureFields.map((lecture) => lecture.id)}
-            strategy={verticalListSortingStrategy}
-          >
-            {lectureFields &&
-              lectureFields.map((lecture, index) => {
-                return (
-                  <SortableLetureItem
-                    inputFieldName={`curriculum.${sectionindex}.lectures.${index}`}
-                    onLectureRemove={() => removeLecture(index)}
-                    id={lecture.id}
-                    key={lecture.id}
-                  ></SortableLetureItem>
-                );
-              })}
-          </SortableContext>
-        </DndContext>
-      </div>
-    </div>
+                <div className="relative w-full">
+                  <input
+                    type="text"
+                    className={clsx(
+                      "outline-none body-lg-400 p-1 w-full border-b border-transparent",
+                      isError
+                        ? "focus-within:border-primary-500 bg-primary-100"
+                        : "focus-within:border-gray-200"
+                    )}
+                    placeholder="Section name"
+                    value={field.value}
+                    onChange={field.onChange}
+                  />
+
+                  {isError && (
+                    <span className="absolute bottom-0 left-0 translate-y-full text-primary-500 text-xs">
+                      {isError.message}
+                    </span>
+                  )}
+                </div>
+              </div>
+              <div className="flex items-center gap-4">
+                <button
+                  type="button"
+                  className="cursor-pointer"
+                  onClick={() => appendLecture(defaultLecture)}
+                >
+                  <PlusIcon
+                    size={24}
+                    className="text-gray-500 hover:text-primary-500 transition-all ease-in-out duration-200"
+                  />
+                </button>
+                <button type="button" className="cursor-pointer">
+                  <PencilLineIcon
+                    size={24}
+                    className="text-gray-500 hover:text-primary-500 transition-all ease-in-out duration-200"
+                  />
+                </button>
+                <button
+                  type="button"
+                  className="cursor-pointer"
+                  onClick={onRemove}
+                >
+                  <TrashIcon
+                    size={24}
+                    className="text-gray-500 hover:text-primary-500 transition-all ease-in-out duration-200"
+                  />
+                </button>
+              </div>
+            </div>
+
+            <div
+              className={clsx(
+                "w-full px-6 pb-6 space-y-4",
+                isError ? "bg-primary-50" : ""
+              )}
+            >
+              <DndContext
+                onDragEnd={handleLectureDrag}
+                collisionDetection={closestCenter}
+              >
+                <SortableContext
+                  items={lectureFields.map((lecture) => lecture.id)}
+                  strategy={verticalListSortingStrategy}
+                >
+                  {lectureFields &&
+                    lectureFields.map((lecture, index) => {
+                      return (
+                        <SortableLetureItem
+                          inputFieldName={`curriculum.${sectionindex}.lectures.${index}`}
+                          onLectureRemove={() => removeLecture(index)}
+                          id={lecture.id}
+                          key={lecture.id}
+                        ></SortableLetureItem>
+                      );
+                    })}
+                </SortableContext>
+              </DndContext>
+            </div>
+          </div>
+        );
+      }}
+    />
   );
 };
 export default SortableSectionItem;

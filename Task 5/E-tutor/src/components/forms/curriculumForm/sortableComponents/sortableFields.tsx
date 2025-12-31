@@ -14,7 +14,10 @@ const defaultCurriculumField = {
 };
 
 const SortableFields = () => {
-  const { control } = useFormContext();
+  const {
+    control,
+    formState: { errors },
+  } = useFormContext();
 
   const { fields, append, remove, move } = useFieldArray({
     control,
@@ -30,6 +33,8 @@ const SortableFields = () => {
     const newIndex = fields.findIndex((f) => f.id === over.id);
     move(oldIndex, newIndex);
   };
+
+  console.log("error?.curriculum.message : ", errors.curriculum);
   return (
     <>
       <DndContext onDragEnd={handleDragEnd} collisionDetection={closestCenter}>
@@ -38,7 +43,7 @@ const SortableFields = () => {
           strategy={verticalListSortingStrategy}
         >
           <div className="w-full h-auto space-y-6">
-            {fields &&
+            {fields.length !== 0 ? (
               fields.map((item, index) => {
                 return (
                   <SortableSectionItem
@@ -48,7 +53,13 @@ const SortableFields = () => {
                     sectionindex={index}
                   ></SortableSectionItem>
                 );
-              })}
+              })
+            ) : (
+              <div className="w-full p-10 text-center bg-gray-50">
+                <p className="body-lg-400 text-gray-700">No input fields </p>
+                {}
+              </div>
+            )}
           </div>
         </SortableContext>
       </DndContext>

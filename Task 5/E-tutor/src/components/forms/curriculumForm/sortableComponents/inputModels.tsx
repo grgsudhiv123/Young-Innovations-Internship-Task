@@ -68,7 +68,13 @@ const InputModels = ({
           />
         );
       case CurriculumContents.LECTURE_NOTES:
-        return <LectureNotes />;
+        return (
+          <LectureNotes
+            baseName={baseName}
+            handleSubmit={handleSubmit}
+            handleCancel={handleCancel}
+          />
+        );
       default:
         return null;
     }

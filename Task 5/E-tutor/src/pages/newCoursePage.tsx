@@ -27,24 +27,24 @@ const NewCoursePage = () => {
       targetAudience: [{ value: "" }],
       courseRequirements: [{ value: "" }],
       curriculum: [
-        {
-          sectionName: "",
-          lectures: [
-            {
-              lectureName: "Introduction to the Course",
-              lectureContent: {
-                videoUrl: undefined,
-                lecture_file: undefined,
-                caption: "",
-                description: "",
-                lecture_notes: {
-                  note_text: "",
-                  note_file: undefined,
-                },
-              },
-            },
-          ],
-        },
+        // {
+        //   sectionName: "",
+        //   lectures: [
+        //     {
+        //       lectureName: "",
+        //       lectureContent: {
+        //         videoUrl: undefined,
+        //         lecture_file: undefined,
+        //         caption: "",
+        //         description: "",
+        //         lecture_notes: {
+        //           note_text: "",
+        //           note_file: undefined,
+        //         },
+        //       },
+        //     },
+        //   ],
+        // },
       ],
     },
     resolver: zodResolver(CompleteSchema),
