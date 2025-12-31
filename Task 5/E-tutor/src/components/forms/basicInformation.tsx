@@ -50,19 +50,9 @@ const BasicInfoForm = ({ setStep }: { setStep: (step: number) => void }) => {
     ] || [];
 
   const nextStep = async () => {
-    const isError = !BasicInfoSchema.safeParse(getValues()).success;
-    console.log("isError : ", isError);
-    const isValid = await trigger([
-      "title",
-      "subtitle",
-      "coursetopic",
-      "courseCategory",
-      "courseSubCategory",
-      "subtitleLanguage",
-      "courseLanguage",
-      "courseLevel",
-      "durations",
-    ]);
+    const isValid = await trigger();
+
+    console.log("basic info isValid : ", isValid);
 
     if (isValid) {
       setStep(1);

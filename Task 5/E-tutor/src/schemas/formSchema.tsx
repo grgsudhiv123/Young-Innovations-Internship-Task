@@ -258,3 +258,10 @@ export const CompleteSchema = z.union([
 
 export type CurriculumType = z.infer<typeof CurriculumSchema>;
 export type CompleteFormType = z.infer<typeof CompleteSchema>;
+
+export const STEP_SCHEMA = [
+  BasicInfoSchema,
+  AdvanceInfoSchema,
+  CurriculumSchema,
+  PublishCourseSChema,
+];

@@ -11,15 +11,10 @@ const AdvanceInfoForm = ({ setStep }: { setStep: (step: number) => void }) => {
   const { control, trigger } = useFormContext();
 
   const handleNext = async () => {
-    const isValid = await trigger([
-      "courseDescription",
-      "courseTeach",
-      "targetAudience",
-      "courseRequirements",
-    ]);
-    if (!isValid) return;
+    const isValid = await trigger();
 
-    setStep(2);
+    console.log("isvalid advance form : ", isValid);
+    if (isValid) setStep(2);
   };
   const handlePrevious = () => {
     setStep(0);

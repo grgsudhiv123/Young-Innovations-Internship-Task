@@ -17,7 +17,7 @@ const Sidebar = () => {
       <div className="w-full h-fit">
         <div className="py-5 pl-6 border-b border-gray-700 mb-4">
           <Link to={PageRoutes.HOME}>
-            <Logo className="w-28.5 h-7.5" />
+            <Logo color="white" className="w-28.5 h-7.5" />
           </Link>
         </div>
         <div className="flex flex-col">

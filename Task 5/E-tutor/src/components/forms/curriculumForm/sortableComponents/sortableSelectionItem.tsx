@@ -188,7 +188,11 @@ const SortableSectionItem = ({
 };
 export default SortableSectionItem;
 
-function ZeroBefore(number: number) {
+export function ZeroBefore(number: number) {
   const isSingleDigit = number.toString().length <= 1;
-  return isSingleDigit ? `0${number}` : `${number}`;
+  if (number === 0) {
+    return "0";
+  } else {
+    return isSingleDigit ? `0${number}` : `${number}`;
+  }
 }

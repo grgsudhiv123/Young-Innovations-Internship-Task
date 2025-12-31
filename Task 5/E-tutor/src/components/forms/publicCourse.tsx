@@ -4,6 +4,7 @@ import { MagnifyingGlassIcon, XIcon } from "@phosphor-icons/react";
 import clsx from "clsx";
 import { useRef, useState, type ChangeEvent } from "react";
 import { PublicCoursesConstants } from "../../utils/constants/publicCoursesConstants";
+import { ZeroBefore } from "./curriculumForm/sortableComponents/sortableSelectionItem";
 
 interface searchValueType {
   name: string;
@@ -128,7 +129,9 @@ const PublicCourseForm = ({ setStep }: { setStep: (step: number) => void }) => {
         </div>
 
         <div className="w-full space-y-6">
-          <p className="body-xl-500 text-gray-900">Add Instructor (02)</p>
+          <p className="body-xl-500 text-gray-900">
+            Add Instructor ({ZeroBefore(fields.length)})
+          </p>
           <div className="relative max-w-152 w-full flex flex-row py-4.5 px-3 border border-gray-100">
             <MagnifyingGlassIcon size={24} />
             <input

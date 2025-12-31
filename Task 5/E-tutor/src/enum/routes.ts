@@ -5,4 +5,5 @@ export const PageRoutes = {
   EARNING: "/earning",
   MESSAGE: "/message",
   SETTING: "/setting",
+  SIGNIN: "/login",
 };

@@ -3,7 +3,7 @@ import { useState } from "react";
 import TabButtons from "../components/common/tab/tabButtons";
 import ActiveTabContents from "../components/common/tab/tabContents";
 import { FormProvider, useForm } from "react-hook-form";
-import { CompleteSchema, type CompleteFormType } from "../schemas/formSchema";
+import { STEP_SCHEMA, type CompleteFormType } from "../schemas/formSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 const NewCoursePage = () => {
@@ -47,7 +47,7 @@ const NewCoursePage = () => {
         // },
       ],
     },
-    resolver: zodResolver(CompleteSchema),
+    resolver: zodResolver(STEP_SCHEMA[step]),
   });
 
   const FinalFormSubmit = (data: CompleteFormType) => {

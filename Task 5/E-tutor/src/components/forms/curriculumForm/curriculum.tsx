@@ -6,7 +6,7 @@ const CurriculumForm = ({ setStep }: { setStep: (step: number) => void }) => {
   const { trigger, getValues } = useFormContext();
 
   const handleNext = async () => {
-    const isValid = await trigger(["curriculum"]);
+    const isValid = await trigger();
     console.log("curriculum form values : ", getValues("curriculum"));
     if (isValid) {
       console.log("Form values", getValues("curriculum"));
@@ -15,7 +15,7 @@ const CurriculumForm = ({ setStep }: { setStep: (step: number) => void }) => {
   };
 
   const handlePrevious = () => {
-    setStep(2);
+    setStep(1);
   };
 
   return (

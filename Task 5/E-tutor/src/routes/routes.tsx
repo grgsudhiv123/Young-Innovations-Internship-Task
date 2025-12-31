@@ -7,6 +7,8 @@ import MessagePage from "../pages/messagePage";
 import EarningPage from "../pages/earningPage";
 import MyCoursesPage from "../pages/myCoursesPage";
 import { PageRoutes } from "../enum/routes";
+import NotFoundPage from "../pages/notFoundPage";
+import SignInPage from "../pages/signinPage";
 
 const router = createBrowserRouter([
   {
@@ -38,6 +40,11 @@ const router = createBrowserRouter([
         Component: SettingPage,
       },
     ],
+  },
+  { path: "*", element: <NotFoundPage /> },
+  {
+    path: PageRoutes.SIGNIN,
+    element: <SignInPage />,
   },
 ]);
 

@@ -1,3 +1,4 @@
+import { EyeIcon, EyeSlashIcon } from "@phosphor-icons/react";
 import clsx from "clsx";
 import { useState, type ChangeEvent } from "react";
 
@@ -22,6 +23,9 @@ const CustomFormField = ({
   value,
   watchValue,
 }: CustomFormFieldType) => {
+  const isPasswordField = type === "password";
+  const [isPassword, setIspassword] = useState(true);
+
   const res =
     watchValue !== undefined ? `${watchValue.length}/${maxLength}` : "";
 
@@ -53,7 +57,13 @@ const CustomFormField = ({
         )}
       >
         <input
-          type={type ?? "text"}
+          type={
+            isPasswordField
+              ? isPassword
+                ? "password"
+                : "text"
+              : type ?? "text"
+          }
           value={currentValue as string}
           onChange={handleChange}
           placeholder={placeholder}
@@ -61,6 +71,16 @@ const CustomFormField = ({
             "outline-0 w-full placeholder:text-gray-500 body-lg-400"
           )}
         />
+
+        {type?.toLocaleLowerCase() == "password" && (
+          <button
+            type="button"
+            className="cursor-pointer"
+            onClick={() => setIspassword((prev) => !prev)}
+          >
+            {isPassword ? <EyeIcon size={16} /> : <EyeSlashIcon size={16} />}
+          </button>
+        )}
         <span className="text-xs md:text-sm lg:text-base">{res}</span>
       </div>
       {isErrorActive && (
