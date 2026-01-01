@@ -3,7 +3,22 @@ import CustomButton from "../components/ui/button";
 import signinPageImg from "../assets/signinPage/signinimg.png";
 import CustomFormField from "../components/ui/customInput";
 import { ArrowRightIcon } from "@phosphor-icons/react";
+import { SigninConstants } from "../utils/constants/loginConstants";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { SignInSchema } from "../schemas/auth.schema";
+import { Controller, useForm } from "react-hook-form";
 const SignInPage = () => {
+  const { handleSubmit, control } = useForm({
+    defaultValues: {
+      username: "",
+      password: "",
+    },
+    resolver: zodResolver(SignInSchema),
+  });
+
+  const onSubmit = () => {
+    console.log("handle submit");
+  };
   return (
     <div className="relative w-screen h-screen bg-white">
       <nav className="fixed top-0 w-full">
@@ -28,40 +43,66 @@ const SignInPage = () => {
           />
         </div>
         <div className="flex-1 flex w-full h-full items-center justify-center">
-          <div className="max-w-162 w-full flex flex-col gap-10">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="max-w-162 w-full flex flex-col gap-10"
+          >
             <h1 className="text-heading-2 text-center">
               Sign in to your account
             </h1>
             <div className="flex flex-col gap-6">
-              <CustomFormField
-                label="Email"
-                type="email"
-                placeholder="Username or email address..."
+              <Controller
+                control={control}
+                name="username"
+                render={({ field, fieldState }) => {
+                  console.log("signin username error : ", fieldState.error);
+                  return (
+                    <CustomFormField
+                      label="Email"
+                      type="email"
+                      placeholder="Username or email address..."
+                      onChange={field.onChange}
+                      value={field.value}
+                      error={fieldState.error?.message}
+                    />
+                  );
+                }}
               />
-              <CustomFormField
-                label="Password"
-                type="password"
-                placeholder="Password"
+              <Controller
+                control={control}
+                name="password"
+                render={({ field, fieldState }) => {
+                  console.log("signin password error : ", fieldState.error);
+                  return (
+                    <CustomFormField
+                      label="Password"
+                      type="password"
+                      placeholder="Password"
+                      onChange={field.onChange}
+                      value={field.value}
+                      error={fieldState.error?.message}
+                    />
+                  );
+                }}
               />
-
               <div className="w-full flex justify-between">
                 <div className="flex gap-2.5">
                   <input
                     type="checkbox"
-                    id="vehicle1"
-                    name="vehicle1"
+                    id="signin"
+                    name="signin"
                     value="Bike"
                     className="size-5.5 cursor-pointer outline-none border border-gray-100"
                   />
                   <label
-                    htmlFor="vehicle1"
+                    htmlFor="signin"
                     className="body-md-400 text-gray-700 cursor-pointer "
                   >
                     Remember me
                   </label>
                 </div>
 
-                <CustomButton className="w-fit">
+                <CustomButton type="submit" className="w-fit">
                   <div className="flex gap-3 items-center">
                     <span>Sign in</span>
                     <ArrowRightIcon size={24} />
@@ -69,7 +110,34 @@ const SignInPage = () => {
                 </CustomButton>
               </div>
             </div>
-          </div>
+            <div className="w-full space-y-6">
+              <div className="relative w-full h-auto">
+                <div className="border w-full border-gray-100 my-1.5"></div>
+                <span className="absolute left-[50%] -translate-x-1/2 top-0 -translate-y-1/2 text-label-lg text-gray-500 px-2 bg-white">
+                  SIGN IN WITH
+                </span>
+              </div>
+              <div className="grid grid-cols-12 gap-6">
+                {SigninConstants.map((item, i) => {
+                  return (
+                    <button
+                      type="button"
+                      key={i}
+                      onClick={() => (window.location.href = item.link)}
+                      className="col-span-4 flex flex-row cursor-pointer hover:bg-gray-50 border border-gray-100 transform-all ease-in-out duration-200"
+                    >
+                      <span className="size-11 flex items-center justify-center shrink-0">
+                        {item.icon}
+                      </span>
+                      <div className="flex-1 flex items-center justify-center border-l border-gray-100">
+                        <span>{item.label}</span>
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>

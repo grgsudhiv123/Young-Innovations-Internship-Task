@@ -22,6 +22,7 @@ const CustomFormField = ({
   onChange,
   value,
   watchValue,
+  ...props
 }: CustomFormFieldType) => {
   const isPasswordField = type === "password";
   const [isPassword, setIspassword] = useState(true);
@@ -70,6 +71,7 @@ const CustomFormField = ({
           className={clsx(
             "outline-0 w-full placeholder:text-gray-500 body-lg-400"
           )}
+          {...props}
         />
 
         {type?.toLocaleLowerCase() == "password" && (
