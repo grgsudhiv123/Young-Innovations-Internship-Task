@@ -12,11 +12,11 @@ interface searchValueType {
   role: string;
 }
 
-type publicCourseType = {
-  welcome_message: string;
-  congratulation_message: string;
-  instructors: searchValueType;
-};
+// type publicCourseType = {
+//   welcome_message: string;
+//   congratulation_message: string;
+//   instructors: searchValueType;
+// };
 
 const PublicCourseForm = ({ setStep }: { setStep: (step: number) => void }) => {
   const searchInputRef = useRef<HTMLInputElement | null>(null);
@@ -47,7 +47,6 @@ const PublicCourseForm = ({ setStep }: { setStep: (step: number) => void }) => {
   };
 
   const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault();
     const value = filteredValues(e.target.value);
     setSearchValue(value);
   };

@@ -31,7 +31,6 @@ const MediaUploadComp = () => {
     e: ChangeEvent<HTMLInputElement>,
     onChange: (value: string) => void
   ) => {
-    e.preventDefault();
     const file = e.target.files?.[0];
     if (!file) return;
 
@@ -45,7 +44,6 @@ const MediaUploadComp = () => {
     e: ChangeEvent<HTMLInputElement>,
     onChange: (value: string) => void
   ) => {
-    e.preventDefault();
     const file = e.target.files?.[0];
     if (!file) return;
 

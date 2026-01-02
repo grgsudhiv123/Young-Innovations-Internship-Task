@@ -6,4 +6,5 @@ export const PageRoutes = {
   MESSAGE: "/message",
   SETTING: "/setting",
   SIGNIN: "/login",
+  SIGNUP: "/signup",
 };

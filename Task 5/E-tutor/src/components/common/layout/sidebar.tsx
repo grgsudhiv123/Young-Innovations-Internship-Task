@@ -1,17 +1,35 @@
-import { Link, useLocation } from "react-router";
+import { Link, useLocation, useNavigate } from "react-router";
 import { SidebarConstant } from "../../../utils/constants/sidebarConstants";
 import Logo from "../../icons/logo";
 import { PageRoutes } from "../../../enum/routes";
 import { SignOutIcon } from "@phosphor-icons/react";
+import { Logout } from "../../../services/auth.services";
+import { toast } from "react-toastify";
 
 const Sidebar = () => {
   const location = useLocation();
   const activeStyle = "bg-primary-500 text-white";
   const inActiveStyle = "text-gray-500 hover:bg-gray-800";
 
+  const navigate = useNavigate();
+
   if (!SidebarConstant || SidebarConstant.length === 0) {
     return null;
   }
+
+  const handleLogout = async () => {
+    try {
+      await toast.promise(Logout(), {
+        pending: "Logging out",
+        success: "Logged out successfully",
+        error: "Log out failed",
+      });
+      navigate(PageRoutes.SIGNIN);
+    } catch (error) {
+      console.log("Logout errror : ", error);
+    }
+  };
+
   return (
     <div className="max-w-70.5 w-full h-full bg-gray-900 hidden md:flex flex-col justify-between">
       <div className="w-full h-fit">
@@ -48,6 +66,7 @@ const Sidebar = () => {
       <button
         type="button"
         className="w-full flex justify-start gap-3 px-6 py-3 cursor-pointer transition-colors duration-200 ease-in-out text-gray-500 hover:bg-gray-800 float-end mb-6"
+        onClick={handleLogout}
       >
         <SignOutIcon size={24} />
         <span className="body-md-500">Sign-out</span>

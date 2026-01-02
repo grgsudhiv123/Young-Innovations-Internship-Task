@@ -11,6 +11,7 @@ interface CustomFormFieldType {
   error?: string;
   watchValue?: string | undefined;
   type?: string;
+  inputFieldStyling?: string;
 }
 
 const CustomFormField = ({
@@ -22,6 +23,7 @@ const CustomFormField = ({
   onChange,
   value,
   watchValue,
+  inputFieldStyling,
   ...props
 }: CustomFormFieldType) => {
   const isPasswordField = type === "password";
@@ -54,7 +56,8 @@ const CustomFormField = ({
           "w-full px-[clamp(0.75rem,0.75rem+3.5vw,1.125rem)] py-[clamp(0.5rem,0.5rem+3.5vw,0.875rem)] flex items-center border border-gray-100 focus-within:border-gray-300 hover:border-primary-200 hover:ring-2 ring-gray-100 hover:ring-primary-200",
           isErrorActive
             ? "border-primary-500 bg-primary-100"
-            : "border-gray-100 bg-white"
+            : "border-gray-100 bg-white",
+          inputFieldStyling
         )}
       >
         <input

@@ -19,10 +19,7 @@ import CustomFormField from "../ui/customInput";
 import CustomInputDateSelector from "../ui/customInputDateSelector";
 import { useEffect } from "react";
 import FormButtons from "../common/tab/formButtons";
-import {
-  BasicInfoSchema,
-  type BasicInfoFormType,
-} from "../../schemas/formSchema";
+import { type BasicInfoFormType } from "../../schemas/formSchema";
 
 const BasicInfoForm = ({ setStep }: { setStep: (step: number) => void }) => {
   const defaultValues = {
@@ -36,7 +33,7 @@ const BasicInfoForm = ({ setStep }: { setStep: (step: number) => void }) => {
     courseLevel: "",
     durations: "",
   };
-  const { reset, control, setValue, trigger, watch, getValues } =
+  const { reset, control, setValue, trigger, watch } =
     useFormContext<BasicInfoFormType>();
 
   const courseCategoryWatch = useWatch({

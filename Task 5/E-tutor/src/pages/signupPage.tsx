@@ -1,41 +1,44 @@
 import Logo from "../components/icons/logo";
 import CustomButton from "../components/ui/button";
-import signinPageImg from "../assets/signinPage/signinimg.png";
+import signupImg from "../assets/signinPage/signupimg.png";
 import CustomFormField from "../components/ui/customInput";
 import { ArrowRightIcon } from "@phosphor-icons/react";
 import { SigninConstants } from "../utils/constants/loginConstants";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { SignInSchema, type SignInDataType } from "../schemas/auth.schema";
+import { SignUpSchema, type SignupDataType } from "../schemas/auth.schema";
 import { Controller, useForm } from "react-hook-form";
+import { SignUp } from "../services/auth.services";
 import { PageRoutes } from "../enum/routes";
-import { useNavigate } from "react-router";
-import { SignIn } from "../services/auth.services";
 import { toast } from "react-toastify";
-const SignInPage = () => {
+import { Navigate } from "react-router";
+const SignUpPage = () => {
   const { handleSubmit, control } = useForm({
     defaultValues: {
-      email: "",
+      fullname: {
+        firstName: "",
+        lastName: "",
+      },
+      username: "",
       password: "",
+      email: "",
+      confirmpassword: "",
     },
-    resolver: zodResolver(SignInSchema),
+    resolver: zodResolver(SignUpSchema),
   });
 
-  const navigate = useNavigate();
-
-  const handleSignin = async (formValues: SignInDataType) => {
+  const handleSignUp = async (formValues: SignupDataType) => {
     try {
-      await toast.promise(SignIn(formValues), {
-        pending: "Signing in",
-        success: "Successfully signed in",
-        error: "Failed to sign in",
+      await toast.promise(SignUp(formValues), {
+        pending: "Signing in new user",
+        success: "Signed in successfully",
+        error: "Sign in failed",
       });
 
-      navigate(PageRoutes.HOME);
+      return <Navigate to={PageRoutes.SIGNIN} replace />;
     } catch (error) {
-      console.log("Signin error : ", error);
+      console.log("Signup error : ", error);
     }
   };
-
   return (
     <div className="relative w-screen h-screen bg-white">
       <nav className="fixed top-0 w-full">
@@ -44,15 +47,15 @@ const SignInPage = () => {
           <div>
             <CustomButton
               variant="light-gray"
-              onClick={() => (window.location.href = PageRoutes.SIGNUP)}
+              onClick={() => (window.location.href = PageRoutes.SIGNIN)}
             >
-              <span>Don’t have account?</span>
+              <span>Already have account?</span>
             </CustomButton>
             <CustomButton
               variant="light-primary"
-              onClick={() => (window.location.href = PageRoutes.SIGNUP)}
+              onClick={() => (window.location.href = PageRoutes.SIGNIN)}
             >
-              <span>Create Account</span>
+              <span>Sign In</span>
             </CustomButton>
           </div>
         </div>
@@ -61,19 +64,67 @@ const SignInPage = () => {
       <div className="w-full h-full flex">
         <div className="flex-1 flex items-end bg-secondary-100">
           <img
-            src={signinPageImg}
+            src={signupImg}
             className="w-full h-full aspect-square object-contain"
           />
         </div>
         <div className="flex-1 flex w-full h-full items-center justify-center">
           <form
-            onSubmit={handleSubmit(handleSignin)}
+            onSubmit={handleSubmit(handleSignUp)}
             className="max-w-162 w-full flex flex-col gap-10"
           >
-            <h1 className="text-heading-2 text-center">
-              Sign in to your account
-            </h1>
-            <div className="flex flex-col gap-6">
+            <h1 className="text-heading-2 text-center">Create your account </h1>
+            <div className="w-full flex flex-col gap-6">
+              <div className="w-full flex items-end gap-4.5">
+                <Controller
+                  control={control}
+                  name={`fullname.firstName`}
+                  render={({ field, fieldState }) => {
+                    return (
+                      <CustomFormField
+                        label="Full Name"
+                        type="text"
+                        placeholder="First name..."
+                        onChange={field.onChange}
+                        value={field.value}
+                        error={fieldState.error?.message}
+                      />
+                    );
+                  }}
+                />
+                <Controller
+                  control={control}
+                  name={`fullname.lastName`}
+                  render={({ field, fieldState }) => {
+                    return (
+                      <CustomFormField
+                        label=""
+                        type="text"
+                        placeholder="Last name..."
+                        onChange={field.onChange}
+                        value={field.value}
+                        error={fieldState.error?.message}
+                      />
+                    );
+                  }}
+                />
+              </div>
+              <Controller
+                control={control}
+                name="username"
+                render={({ field, fieldState }) => {
+                  return (
+                    <CustomFormField
+                      label="Username"
+                      type="text"
+                      placeholder="Username..."
+                      onChange={field.onChange}
+                      value={field.value}
+                      error={fieldState.error?.message}
+                    />
+                  );
+                }}
+              />
               <Controller
                 control={control}
                 name="email"
@@ -82,7 +133,7 @@ const SignInPage = () => {
                     <CustomFormField
                       label="Email"
                       type="email"
-                      placeholder="Username or email address..."
+                      placeholder="Email address"
                       onChange={field.onChange}
                       value={field.value}
                       error={fieldState.error?.message}
@@ -90,23 +141,40 @@ const SignInPage = () => {
                   );
                 }}
               />
-              <Controller
-                control={control}
-                name="password"
-                render={({ field, fieldState }) => {
-                  console.log("signin password error : ", fieldState.error);
-                  return (
-                    <CustomFormField
-                      label="Password"
-                      type="password"
-                      placeholder="Password"
-                      onChange={field.onChange}
-                      value={field.value}
-                      error={fieldState.error?.message}
-                    />
-                  );
-                }}
-              />
+              <div className="w-full flex items-end gap-4.5">
+                <Controller
+                  control={control}
+                  name="password"
+                  render={({ field, fieldState }) => {
+                    return (
+                      <CustomFormField
+                        label="Password"
+                        type="password"
+                        placeholder="Create Password"
+                        onChange={field.onChange}
+                        value={field.value}
+                        error={fieldState.error?.message}
+                      />
+                    );
+                  }}
+                />
+                <Controller
+                  control={control}
+                  name="confirmpassword"
+                  render={({ field, fieldState }) => {
+                    return (
+                      <CustomFormField
+                        label="Confirm Password"
+                        type="password"
+                        placeholder="Confirm Password"
+                        onChange={field.onChange}
+                        value={field.value}
+                        error={fieldState.error?.message}
+                      />
+                    );
+                  }}
+                />
+              </div>
               <div className="w-full flex justify-between">
                 <div className="flex gap-2.5">
                   <input
@@ -120,7 +188,10 @@ const SignInPage = () => {
                     htmlFor="signin"
                     className="body-md-400 text-gray-700 cursor-pointer "
                   >
-                    Remember me
+                    I Agree with all of your{" "}
+                    <a href="#" className="text-secondary-500">
+                      Terms & Conditions
+                    </a>
                   </label>
                 </div>
 
@@ -166,4 +237,4 @@ const SignInPage = () => {
   );
 };
 
-export default SignInPage;
+export default SignUpPage;

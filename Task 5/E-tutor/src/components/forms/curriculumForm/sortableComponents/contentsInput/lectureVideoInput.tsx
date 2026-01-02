@@ -25,7 +25,6 @@ const LectureVideoInput = ({
     e: ChangeEvent<HTMLInputElement>,
     onChange: (value: videoPayloadType) => void
   ) => {
-    e.preventDefault();
     const file = e.target.files?.[0];
     if (!file) return;
 
