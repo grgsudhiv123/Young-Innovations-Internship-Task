@@ -49,8 +49,6 @@ const BasicInfoForm = ({ setStep }: { setStep: (step: number) => void }) => {
   const nextStep = async () => {
     const isValid = await trigger();
 
-    console.log("basic info isValid : ", isValid);
-
     if (isValid) {
       setStep(1);
     }
