@@ -1,6 +1,7 @@
 import CustomButton from "../../ui/button";
 
 const ActiveFormHeading = ({ ActiveFormStep }: { ActiveFormStep: string }) => {
+  const handleSubmit = () => {};
   return (
     <div className="py-6 px-10 flex flex-row justify-between border-b border-gray-200">
       <h4 className="text-heading-4 text-gray-900 ">{ActiveFormStep}</h4>
@@ -10,7 +11,7 @@ const ActiveFormHeading = ({ ActiveFormStep }: { ActiveFormStep: string }) => {
           variant="light-primary"
           size="base"
           className=""
-          //   onClick={handleSubmit(onSubmit)}
+          onClick={handleSubmit}
         >
           <span>Save</span>
         </CustomButton>

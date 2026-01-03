@@ -155,6 +155,7 @@ export const AdvanceInfoSchema = z.object({
     .min(1, "Course requirements are required"),
 });
 
+export type AdvanceInfoType = z.infer<typeof AdvanceInfoSchema>;
 export const CurriculumSchema = z.object({
   curriculum: z
     .array(
@@ -258,6 +259,7 @@ export const CompleteSchema = z.union([
 
 export type CurriculumType = z.infer<typeof CurriculumSchema>;
 export type CompleteFormType = z.infer<typeof CompleteSchema>;
+export type PublishCourseType = z.infer<typeof PublishCourseSChema>;
 
 export const STEP_SCHEMA = [
   BasicInfoSchema,

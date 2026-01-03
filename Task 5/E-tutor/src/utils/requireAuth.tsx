@@ -17,16 +17,13 @@ const RequireAuth = ({
     const userRole = user?.user_metadata.role;
     if (validUsers.length > 0) {
       if (validUsers.includes(userRole)) {
-        console.log(`${userRole} is a valid user`);
+        return children;
       } else {
-        console.log(`${userRole} cant access the current route`);
         toast.error(`${userRole} cant access the current route`);
         return <Navigate to={PageRoutes.HOME} replace />;
       }
     }
   }
-
-  return children;
 };
 
 export default RequireAuth;
