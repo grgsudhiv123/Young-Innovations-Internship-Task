@@ -3,6 +3,14 @@ import CustomButton from "../../../../ui/button";
 import { Controller, useFormContext } from "react-hook-form";
 import { BookIcon } from "@phosphor-icons/react";
 
+type payloadType = {
+  file: File;
+  url: string;
+  name: string;
+  size: number;
+  type: string;
+};
+
 const LectureNotes = ({
   baseName,
   handleSubmit,
@@ -17,7 +25,7 @@ const LectureNotes = ({
 
   const handleFileChange = (
     e: ChangeEvent<HTMLInputElement>,
-    onChange: () => void
+    onChange: (payload: payloadType) => void
   ) => {
     e.stopPropagation();
     const file = e.target.files?.[0];
@@ -66,10 +74,7 @@ const LectureNotes = ({
           />
         </div>
 
-        <button
-          type="button"
-          className="w-full p-6 border border-gray-100  hover:bg-gray-50 transform-all duration-200 ease-in-out cursor-pointer"
-        >
+        <div className="w-full p-6 border border-gray-100  hover:bg-gray-50 transform-all duration-200 ease-in-out cursor-pointer">
           <Controller
             control={control}
             name={`${baseName}.lecture_notes.note_file`}
@@ -127,7 +132,7 @@ const LectureNotes = ({
               );
             }}
           />
-        </button>
+        </div>
       </div>
 
       <div className="w-full flex justify-between">

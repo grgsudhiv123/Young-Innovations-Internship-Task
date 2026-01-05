@@ -6,25 +6,46 @@ import type {
   PublishCourseType,
 } from "../schemas/formSchema";
 
-type stepType = 1 | 2 | 3 | 4;
-
 type formdataType = {
   step1: BasicInfoFormType | null;
   step2: AdvanceInfoType | null;
   step3: CurriculumType | null;
   step4: PublishCourseType | null;
-  CurrentStep: stepType;
+  CurrentStep: number;
 };
 
 const initialState: formdataType = {
-  step1: null,
-  step2: null,
-  step3: null,
-  step4: null,
+  step1: {
+    title: "",
+    subtitle: "",
+    coursetopic: "",
+    courseCategory: "",
+    courseSubCategory: "",
+    subtitleLanguage: "",
+    courseLanguage: "",
+    courseLevel: "",
+    durations: "",
+  },
+  step2: {
+    courseThumbnail: "",
+    courseTrailer: "",
+    courseDescription: "",
+    courseTeach: [{ value: "" }],
+    targetAudience: [{ value: "" }],
+    courseRequirements: [{ value: "" }],
+  },
+  step3: {
+    curriculum: [],
+  },
+  step4: {
+    welcome_message: "",
+    congratulation_message: "",
+    instructors: [],
+  },
   CurrentStep: 1,
 };
 
-type saveStepPayload =
+export type saveStepPayload =
   | { step: 1; data: BasicInfoFormType }
   | { step: 2; data: AdvanceInfoType }
   | { step: 3; data: CurriculumType }

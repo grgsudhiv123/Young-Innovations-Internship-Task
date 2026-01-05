@@ -1,5 +1,5 @@
 import { Controller, useFieldArray, useFormContext } from "react-hook-form";
-import FormButtons from "../common/tab/formButtons";
+// import FormButtons from "../common/tab/formButtons";
 import { MagnifyingGlassIcon, XIcon } from "@phosphor-icons/react";
 import clsx from "clsx";
 import { useRef, useState, type ChangeEvent } from "react";
@@ -18,33 +18,33 @@ interface searchValueType {
 //   instructors: searchValueType;
 // };
 
-const PublicCourseForm = ({ setStep }: { setStep: (step: number) => void }) => {
+const PublicCourseForm = () => {
   const searchInputRef = useRef<HTMLInputElement | null>(null);
 
   const [searchValue, setSearchValue] = useState<searchValueType[] | null>(
     null
   );
-  const { control, trigger } = useFormContext();
+  const { control, watch } = useFormContext();
 
   const { fields, append, remove } = useFieldArray({
     control,
     name: "instructors",
   });
 
-  console.log("fields : ", fields);
+  const instructors = watch("instructors") as searchValueType[];
 
-  const handleNext = async () => {
-    const isValid = await trigger([
-      "courseDescription",
-      "courseTeach",
-      "targetAudience",
-      "courseRequirements",
-    ]);
-    if (!isValid) return;
-  };
-  const handlePrevious = () => {
-    setStep(2);
-  };
+  // const handleNext = async () => {
+  //   const isValid = await trigger([
+  //     "courseDescription",
+  //     "courseTeach",
+  //     "targetAudience",
+  //     "courseRequirements",
+  //   ]);
+  //   if (!isValid) return;
+  // };
+  // const handlePrevious = () => {
+  //   setStep(2);
+  // };
 
   const handleSearchChange = (e: ChangeEvent<HTMLInputElement>) => {
     const value = filteredValues(e.target.value);
@@ -173,7 +173,7 @@ const PublicCourseForm = ({ setStep }: { setStep: (step: number) => void }) => {
 
           {fields && fields.length > 0 && (
             <div className="grid grid-cols-12 gap-6">
-              {fields.map((user, i) => {
+              {instructors.map((user, i) => {
                 return (
                   <div
                     key={i}
@@ -209,13 +209,13 @@ const PublicCourseForm = ({ setStep }: { setStep: (step: number) => void }) => {
         </div>
       </div>
 
-      <div className="px-10">
+      {/* <div className="px-10">
         <FormButtons
           handleNextBtn={handleNext}
           handlePreviosBtn={handlePrevious}
           prevButtonLabel="Previous"
         />
-      </div>
+      </div> */}
     </>
   );
 };

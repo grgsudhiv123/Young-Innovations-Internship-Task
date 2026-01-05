@@ -14,10 +14,7 @@ const defaultCurriculumField = {
 };
 
 const SortableFields = () => {
-  const {
-    control,
-    formState: { errors },
-  } = useFormContext();
+  const { control } = useFormContext();
 
   const { fields, append, remove, move } = useFieldArray({
     control,
@@ -34,7 +31,6 @@ const SortableFields = () => {
     move(oldIndex, newIndex);
   };
 
-  console.log("error?.curriculum.message : ", errors.curriculum);
   return (
     <>
       <DndContext onDragEnd={handleDragEnd} collisionDetection={closestCenter}>

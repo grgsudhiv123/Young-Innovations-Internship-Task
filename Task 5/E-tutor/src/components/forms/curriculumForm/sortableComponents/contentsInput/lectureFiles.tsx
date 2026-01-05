@@ -3,6 +3,14 @@ import { Controller, useFormContext } from "react-hook-form";
 import CustomButton from "../../../../ui/button";
 import { BookIcon } from "@phosphor-icons/react";
 
+type FilePayload = {
+  file: File;
+  url: string;
+  name: string;
+  size: number;
+  type: string;
+};
+
 const LectureFiles = ({
   baseName,
   handleSubmit,
@@ -14,17 +22,16 @@ const LectureFiles = ({
 }) => {
   const fileRef = useRef<HTMLInputElement | null>(null);
 
-  const { getValues, watch } = useFormContext();
+  const { watch } = useFormContext();
 
   const handleFileChange = (
     e: ChangeEvent<HTMLInputElement>,
-    onChange: () => void
+    onChange: (payload: FilePayload) => void
   ) => {
     e.stopPropagation();
     const file = e?.target.files?.[0];
 
     if (!file) return;
-    console.log("file : ", file);
 
     const payload = {
       file: file,
@@ -35,7 +42,6 @@ const LectureFiles = ({
     };
 
     onChange(payload);
-    console.log("values : ", getValues());
   };
 
   const handleFileClick = () => {
@@ -47,8 +53,11 @@ const LectureFiles = ({
       <Controller
         name={`${baseName}.lecture_file`}
         render={({ field, fieldState }) => {
+          console.log(`${baseName}.lecture_file`, fieldState);
           const currentFile = watch(`${baseName}.lecture_file`);
-          console.log("Lecture file error : ", fieldState.error?.message);
+          const isError = fieldState.error;
+          if (isError)
+            console.log("Lecture file error : ", fieldState.error?.message);
           return (
             <>
               {currentFile ? (
@@ -74,7 +83,7 @@ const LectureFiles = ({
               ) : (
                 <button
                   type="button"
-                  className="w-full p-6 border border-gray-100  hover:bg-gray-50 transform-all duration-200 ease-in-out cursor-pointer"
+                  className="relative w-full p-6 border border-gray-100  hover:bg-gray-50 transform-all duration-200 ease-in-out cursor-pointer"
                   onClick={handleFileClick}
                 >
                   <input
@@ -91,6 +100,12 @@ const LectureFiles = ({
                       <span className="text-gray-700"> browse file</span>
                     </p>
                   </div>
+
+                  {isError && (
+                    <span className="absolute bottom-0 left-0 translate-y-full text-primary-500 text-xs">
+                      {isError.message}
+                    </span>
+                  )}
                 </button>
               )}
             </>

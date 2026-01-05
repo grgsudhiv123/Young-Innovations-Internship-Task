@@ -1,5 +1,5 @@
 import ArrayInputFields from "./teachingsInputFields";
-import FormButtons from "../../common/tab/formButtons";
+// import FormButtons from "../../common/tab/formButtons";
 
 import "react-quill-new/dist/quill.snow.css";
 import ReactQuill from "react-quill-new";
@@ -7,18 +7,8 @@ import { Controller, useFormContext } from "react-hook-form";
 import clsx from "clsx";
 import MediaUploadComp from "./mediaUploadComp";
 
-const AdvanceInfoForm = ({ setStep }: { setStep: (step: number) => void }) => {
-  const { control, trigger } = useFormContext();
-
-  const handleNext = async () => {
-    const isValid = await trigger();
-
-    console.log("isvalid advance form : ", isValid);
-    if (isValid) setStep(2);
-  };
-  const handlePrevious = () => {
-    setStep(0);
-  };
+const AdvanceInfoForm = () => {
+  const { control } = useFormContext();
 
   return (
     <>
@@ -71,11 +61,11 @@ const AdvanceInfoForm = ({ setStep }: { setStep: (step: number) => void }) => {
         placeholder="What is you course requirements..."
       />
       <div className="px-10">
-        <FormButtons
+        {/* <FormButtons
           handleNextBtn={handleNext}
           handlePreviosBtn={handlePrevious}
           prevButtonLabel="Previous"
-        />
+        /> */}
       </div>
     </>
   );

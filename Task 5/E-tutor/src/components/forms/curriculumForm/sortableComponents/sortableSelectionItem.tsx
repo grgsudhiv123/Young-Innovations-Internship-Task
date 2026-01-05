@@ -72,13 +72,9 @@ const SortableSectionItem = ({
       name={`curriculum.${sectionindex}.sectionName`}
       render={({ field, fieldState }) => {
         const isError = fieldState.error;
+
         return (
-          <div
-            ref={setNodeRef}
-            {...attributes}
-            style={style}
-            className="bg-gray-50"
-          >
+          <div ref={setNodeRef} style={style} className="bg-gray-50">
             <div
               className={clsx(
                 "section flex w-full flex-row justify-between p-6",
@@ -90,6 +86,7 @@ const SortableSectionItem = ({
                   <button
                     type="button"
                     {...listeners}
+                    {...attributes}
                     className={clsx(
                       isDragging ? "cursor-grabbing" : "cursor-grab"
                     )}

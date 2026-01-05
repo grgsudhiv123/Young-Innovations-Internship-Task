@@ -22,8 +22,11 @@ const InputModels = ({
   const { trigger, reset } = useFormContext();
 
   const handleSubmit = async () => {
-    await trigger([`${baseName}`]);
-    setIsOpen(false);
+    const isValid = await trigger([`${baseName}`]);
+    console.log(`${baseName} isValid : `, isValid);
+    if (isValid) {
+      setIsOpen(false);
+    }
   };
 
   const handleCancel = () => {
@@ -54,8 +57,8 @@ const InputModels = ({
       case CurriculumContents.CAPTIONS:
         return (
           <LectureCaption
+            setIsOpen={setIsOpen}
             baseName={baseName}
-            handleSubmit={handleSubmit}
             handleCancel={handleCancel}
           />
         );
@@ -63,7 +66,7 @@ const InputModels = ({
         return (
           <LectureDescription
             baseName={baseName}
-            handleSubmit={handleSubmit}
+            setIsOpen={setIsOpen}
             handleCancel={handleCancel}
           />
         );

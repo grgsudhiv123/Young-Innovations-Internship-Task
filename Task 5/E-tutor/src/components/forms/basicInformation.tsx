@@ -18,23 +18,10 @@ import {
 import CustomFormField from "../ui/customInput";
 import CustomInputDateSelector from "../ui/customInputDateSelector";
 import { useEffect } from "react";
-import FormButtons from "../common/tab/formButtons";
 import { type BasicInfoFormType } from "../../schemas/formSchema";
 
-const BasicInfoForm = ({ setStep }: { setStep: (step: number) => void }) => {
-  const defaultValues = {
-    title: "",
-    subtitle: "",
-    coursetopic: "",
-    courseCategory: "",
-    courseSubCategory: "",
-    subtitleLanguage: "",
-    courseLanguage: "",
-    courseLevel: "",
-    durations: "",
-  };
-  const { reset, control, setValue, trigger, watch } =
-    useFormContext<BasicInfoFormType>();
+const BasicInfoForm = () => {
+  const { control, setValue, watch } = useFormContext<BasicInfoFormType>();
 
   const courseCategoryWatch = useWatch({
     control: control,
@@ -46,14 +33,6 @@ const BasicInfoForm = ({ setStep }: { setStep: (step: number) => void }) => {
       courseCategoryWatch as keyof typeof COURSE_SUB_CATEGORIES
     ] || [];
 
-  const nextStep = async () => {
-    const isValid = await trigger();
-
-    if (isValid) {
-      setStep(1);
-    }
-  };
-
   const courseCategory = useWatch({
     name: "courseCategory",
     control,
@@ -61,8 +40,6 @@ const BasicInfoForm = ({ setStep }: { setStep: (step: number) => void }) => {
   useEffect(() => {
     setValue("courseSubCategory", "");
   }, [courseCategory, setValue]);
-
-  const handleReset = () => reset(defaultValues);
 
   return (
     <div className="w-full h-auto px-10 py-8 ">
@@ -278,11 +255,11 @@ const BasicInfoForm = ({ setStep }: { setStep: (step: number) => void }) => {
         </div>
       </div>
 
-      <FormButtons
+      {/* <FormButtons
         handlePreviosBtn={handleReset}
         handleNextBtn={nextStep}
         prevButtonLabel="Cancel"
-      />
+      /> */}
     </div>
   );
 };

@@ -179,7 +179,9 @@ export const CurriculumSchema = z.object({
                     .refine(
                       (file) => file.size <= MAX_VIDEO_SIZE,
                       "Video must be less than 100MB"
-                    ),
+                    )
+                    .optional()
+                    .nullable(),
                   url: z.string().url("Invalid video URL"),
                   duration: z.string(),
                   name: z.string(),
@@ -188,19 +190,20 @@ export const CurriculumSchema = z.object({
 
               lecture_file: z
                 .object({
-                  file: z
-                    .custom<File>((val) => val instanceof File, {
-                      message: "Invalid file",
-                    })
-                    .refine((file) => file.size <= MAX_FILE_SIZE, {
-                      message: "File must be less than 15MB",
-                    }),
+                  file: z.optional(
+                    z
+                      .custom<File>((val) => val instanceof File, {
+                        message: "Invalid file",
+                      })
+                      .refine((file) => file.size <= MAX_FILE_SIZE, {
+                        message: "File must be less than 15MB",
+                      })
+                  ),
                   url: z.string(),
                   name: z.string(),
                   size: z.number(),
                   type: z.string(),
                 })
-
                 .optional(),
               caption: z
                 .string()

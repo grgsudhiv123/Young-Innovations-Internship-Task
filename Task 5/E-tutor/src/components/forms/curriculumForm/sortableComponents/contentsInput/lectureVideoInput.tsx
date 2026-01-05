@@ -25,20 +25,24 @@ const LectureVideoInput = ({
     e: ChangeEvent<HTMLInputElement>,
     onChange: (value: videoPayloadType) => void
   ) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
+    try {
+      const file = e.target.files?.[0];
+      if (!file) throw new Error("Media file not found");
 
-    const videoUrl = await VideoUpload(file);
-    const duration = await getVideoDuration(file);
-    const formattedDuration = getFormattedDuration(duration);
+      const videoUrl = await VideoUpload(file);
+      const duration = await getVideoDuration(file);
+      const formattedDuration = getFormattedDuration(duration);
 
-    const payload = {
-      file: file,
-      url: videoUrl as string,
-      duration: formattedDuration,
-      name: file.name,
-    };
-    onChange(payload);
+      const payload = {
+        file: file,
+        url: videoUrl as string,
+        duration: formattedDuration,
+        name: file.name,
+      };
+      onChange(payload);
+    } catch (error) {
+      console.log("error : ", error);
+    }
   };
 
   const handleChangeInVideo = () => {

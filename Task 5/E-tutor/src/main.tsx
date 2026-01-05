@@ -6,20 +6,23 @@ import router from "./routes/routes.tsx";
 import { AuthProvider } from "./hooks/useAuth.tsx";
 import { ToastContainer } from "react-toastify";
 import { Provider } from "react-redux";
-import Store from "./features/formstore.tsx";
+import { persistor, store } from "./features/formstore.tsx";
+import { PersistGate } from "redux-persist/integration/react";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <Provider store={Store}>
-      <AuthProvider>
-        <ToastContainer
-          stacked
-          hideProgressBar
-          position="top-center"
-          autoClose={3000}
-        />
-        <RouterProvider router={router} />
-      </AuthProvider>
+    <Provider store={store}>
+      <PersistGate loading={<div>Loading...</div>} persistor={persistor}>
+        <AuthProvider>
+          <ToastContainer
+            stacked
+            hideProgressBar
+            position="top-center"
+            autoClose={3000}
+          />
+          <RouterProvider router={router} />
+        </AuthProvider>
+      </PersistGate>
     </Provider>
   </StrictMode>
 );

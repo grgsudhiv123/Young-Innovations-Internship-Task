@@ -94,7 +94,6 @@ const SignInPage = () => {
                 control={control}
                 name="password"
                 render={({ field, fieldState }) => {
-                  console.log("signin password error : ", fieldState.error);
                   return (
                     <CustomFormField
                       label="Password"
