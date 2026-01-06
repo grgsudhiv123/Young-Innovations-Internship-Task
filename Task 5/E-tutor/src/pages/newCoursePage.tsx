@@ -32,17 +32,20 @@ const NewCoursePage = () => {
 
   const [step, setStep] = useState(currentStepRedux - 1);
 
+  const clonedDefaults = structuredClone({
+    ...defaultValue.step1,
+    ...defaultValue.step2,
+    ...defaultValue.step3,
+    ...defaultValue.step4,
+  });
+
   const methods = useForm<CompleteFormType>({
-    defaultValues: {
-      ...defaultValue.step1,
-      ...defaultValue.step2,
-      ...defaultValue.step3,
-      ...defaultValue.step4,
-    },
+    defaultValues: clonedDefaults,
     resolver: zodResolver(STEP_SCHEMA[step]),
   });
 
   const getStepData = (step: number) => {
+    console.log("form values :", methods.getValues());
     switch (step) {
       case 1:
         return {
@@ -143,7 +146,6 @@ const NewCoursePage = () => {
   const handlePreviousStep = () => {
     if (step === 0) {
       dispatch(resetForm());
-      // methods.reset(defaultValue);
     }
     if (step > 0) {
       setStep(step - 1);
@@ -165,7 +167,7 @@ const NewCoursePage = () => {
           <FormButtons
             handlePreviosBtn={handlePreviousStep}
             handleNextBtn={handleNextStep}
-            prevButtonLabel="Cancel"
+            prevButtonLabel={currentStepRedux === 1 ? "Cancel" : "Previous"}
           />
         </div>
       </form>

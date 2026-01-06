@@ -60,13 +60,6 @@ const AdvanceInfoForm = () => {
         fieldName="courseRequirements"
         placeholder="What is you course requirements..."
       />
-      <div className="px-10">
-        {/* <FormButtons
-          handleNextBtn={handleNext}
-          handlePreviosBtn={handlePrevious}
-          prevButtonLabel="Previous"
-        /> */}
-      </div>
     </>
   );
 };
