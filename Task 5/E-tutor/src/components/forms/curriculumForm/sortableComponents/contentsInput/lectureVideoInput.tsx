@@ -2,9 +2,9 @@ import { Controller, useFormContext } from "react-hook-form";
 import CustomButton from "../../../../ui/button";
 import { useRef, type ChangeEvent } from "react";
 import { VideoUpload } from "../../../../../services/imageupload.services";
+import { toast } from "react-toastify";
 
 type videoPayloadType = {
-  file: File;
   url: string;
   duration: string;
   name: string;
@@ -29,13 +29,17 @@ const LectureVideoInput = ({
       const file = e.target.files?.[0];
       if (!file) throw new Error("Media file not found");
 
-      const videoUrl = await VideoUpload(file);
+      const videoUrl = await toast.promise(VideoUpload(file), {
+        pending: "Uploading video",
+        success: "Video uploaded successfully",
+        error: "Failed to upload video",
+      });
+
       const duration = await getVideoDuration(file);
       const formattedDuration = getFormattedDuration(duration);
 
       const payload = {
-        file: file,
-        url: videoUrl as string,
+        url: videoUrl,
         duration: formattedDuration,
         name: file.name,
       };
@@ -81,9 +85,8 @@ const LectureVideoInput = ({
           <Controller
             control={control}
             name={`${baseName}.videoUrl`}
-            render={({ field, fieldState }) => {
+            render={({ field }) => {
               const currentVideo = watch(`${baseName}.videoUrl`);
-              console.log("video input error : ", fieldState.error?.message);
               return (
                 <>
                   <input

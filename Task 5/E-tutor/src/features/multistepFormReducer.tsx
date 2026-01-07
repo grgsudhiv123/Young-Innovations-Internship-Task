@@ -35,7 +35,17 @@ const initialState: formdataType = {
     courseRequirements: [{ value: "" }],
   },
   step3: {
-    curriculum: [],
+    curriculum: [
+      {
+        sectionName: "",
+        lectures: [
+          {
+            lectureName: "",
+            lectureContent: {},
+          },
+        ],
+      },
+    ],
   },
   step4: {
     welcome_message: "",

@@ -23,7 +23,6 @@ const InputModels = ({
 
   const handleSubmit = async () => {
     const isValid = await trigger([`${baseName}`]);
-    console.log(`${baseName} isValid : `, isValid);
     if (isValid) {
       setIsOpen(false);
     }

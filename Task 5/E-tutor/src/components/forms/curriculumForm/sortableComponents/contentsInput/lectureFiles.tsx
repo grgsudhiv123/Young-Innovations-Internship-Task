@@ -2,9 +2,9 @@ import { useRef, type ChangeEvent } from "react";
 import { Controller, useFormContext } from "react-hook-form";
 import CustomButton from "../../../../ui/button";
 import { BookIcon } from "@phosphor-icons/react";
+import { useAppSelector } from "../../../../../hooks/multistepFormHook";
 
 type FilePayload = {
-  file: File;
   url: string;
   name: string;
   size: number;
@@ -24,6 +24,11 @@ const LectureFiles = ({
 
   const { watch } = useFormContext();
 
+  const selector = useAppSelector(
+    (state) => state.multistepForm.step3?.curriculum
+  );
+
+  console.log("selector curriculum : ", selector);
   const handleFileChange = (
     e: ChangeEvent<HTMLInputElement>,
     onChange: (payload: FilePayload) => void
@@ -34,13 +39,11 @@ const LectureFiles = ({
     if (!file) return;
 
     const payload = {
-      file: file,
       url: URL.createObjectURL(file),
       name: file.name,
       size: file.size,
       type: file.type,
     };
-
     onChange(payload);
   };
 
@@ -53,11 +56,9 @@ const LectureFiles = ({
       <Controller
         name={`${baseName}.lecture_file`}
         render={({ field, fieldState }) => {
-          console.log(`${baseName}.lecture_file`, fieldState);
           const currentFile = watch(`${baseName}.lecture_file`);
           const isError = fieldState.error;
-          if (isError)
-            console.log("Lecture file error : ", fieldState.error?.message);
+
           return (
             <>
               {currentFile ? (
@@ -74,7 +75,10 @@ const LectureFiles = ({
                   </div>
                   <button
                     type="button"
-                    onClick={handleFileClick}
+                    onClick={() => {
+                      handleFileClick();
+                      console.log("clicked file note");
+                    }}
                     className="hover:text-secondary-500 p-1 rounded-sm transition-all ease-in-out duration-200 cursor-pointer border border-gray-100"
                   >
                     Replace File
@@ -122,7 +126,7 @@ const LectureFiles = ({
           <span>Cancel</span>
         </CustomButton>
         <CustomButton onClick={handleSubmit}>
-          <span>Upload Video</span>
+          <span>Upload File</span>
         </CustomButton>
       </div>
     </>

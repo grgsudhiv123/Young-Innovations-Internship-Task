@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { FormProvider, useForm } from "react-hook-form";
+import { useEffect, useState } from "react";
+import { FormProvider, useForm, type FieldPath } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import TabButtons from "../components/common/tab/tabButtons";
@@ -21,6 +21,32 @@ import {
   resetForm,
 } from "../features/multistepFormReducer";
 import { useAppDispatch, useAppSelector } from "../hooks/multistepFormHook";
+import ActiveFormHeading from "../components/common/tab/formheading";
+import { multistepFormConstants } from "../utils/constants/multiStepFormConstants";
+
+const stepFields: FieldPath<CompleteFormType>[][] = [
+  [
+    "title",
+    "subtitle",
+    "coursetopic",
+    "courseCategory",
+    "courseSubCategory",
+    "subtitleLanguage",
+    "courseLanguage",
+    "courseLevel",
+    "durations",
+  ],
+  [
+    "courseThumbnail",
+    "courseTrailer",
+    "courseDescription",
+    "courseTeach",
+    "targetAudience",
+    "courseRequirements",
+  ],
+  ["curriculum"],
+  ["welcome_message", "congratulation_message", "instructors"],
+];
 
 const NewCoursePage = () => {
   const dispatch = useAppDispatch();
@@ -32,20 +58,27 @@ const NewCoursePage = () => {
 
   const [step, setStep] = useState(currentStepRedux - 1);
 
-  const clonedDefaults = structuredClone({
-    ...defaultValue.step1,
-    ...defaultValue.step2,
-    ...defaultValue.step3,
-    ...defaultValue.step4,
-  });
+  const getClonedDefaults = () => {
+    return {
+      ...defaultValue.step1,
+      ...defaultValue.step2,
+      curriculum: JSON.parse(
+        JSON.stringify(defaultValue.step3?.curriculum ?? [])
+      ),
+      ...defaultValue.step4,
+    };
+  };
 
   const methods = useForm<CompleteFormType>({
-    defaultValues: clonedDefaults,
+    defaultValues: getClonedDefaults(),
     resolver: zodResolver(STEP_SCHEMA[step]),
   });
 
+  useEffect(() => {
+    methods.reset(getClonedDefaults());
+  }, [step, defaultValue]);
+
   const getStepData = (step: number) => {
-    console.log("form values :", methods.getValues());
     switch (step) {
       case 1:
         return {
@@ -87,31 +120,7 @@ const NewCoursePage = () => {
   };
 
   const handleNextStep = async () => {
-    const stepFields = [
-      [
-        "title",
-        "subtitle",
-        "coursetopic",
-        "courseCategory",
-        "courseSubCategory",
-        "subtitleLanguage",
-        "courseLanguage",
-        "courseLevel",
-        "durations",
-      ],
-      [
-        "courseThumbnail",
-        "courseTrailer",
-        "courseDescription",
-        "courseTeach",
-        "targetAudience",
-        "courseRequirements",
-      ],
-      ["curriculum"],
-      ["welcome_message", "congratulation_message", "instructors"],
-    ];
-    const isValid = await methods.trigger(stepFields[step] as string[]);
-    console.log(`isvalid ${step}: `, isValid);
+    const isValid = await methods.trigger(stepFields[step]);
     if (!isValid) return;
 
     if (step <= 3) {
@@ -158,11 +167,15 @@ const NewCoursePage = () => {
   };
 
   console.log("errors : ", methods.formState.errors);
+
   return (
     <FormProvider {...methods}>
       <form onSubmit={methods.handleSubmit(handleFinalSubmit)}>
         <div className="max-w-330 w-full h-fit mx-auto bg-white pb-10">
           <TabButtons setStep={setStep} step={step} />
+          <ActiveFormHeading
+            ActiveFormStep={multistepFormConstants[step].title}
+          />
           <ActiveTabContents step={step} />
           <FormButtons
             handlePreviosBtn={handlePreviousStep}

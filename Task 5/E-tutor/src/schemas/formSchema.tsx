@@ -13,6 +13,25 @@ import {
 } from "../utils/constants/basicInfoConstants";
 import { getPlainText } from "../utils/constants/getPlainText";
 
+const ACCEPTED_IMAGE_TYPES = [
+  "image/jpeg",
+  "image/jpg",
+  "image/png",
+  "image/webp",
+];
+
+const ACCEPTED_VIDEO_TYPES = ["video/mp4", "video/webm", "video/ogg"];
+const ACCEPTED_NOTE_FILE_TYPES = [
+  "application/pdf",
+  "application/msword",
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+  "text/plain",
+];
+
+const MAX_VIDEO_SIZE = 100 * 1024 * 1024;
+const MAX_IMAGE_SIZE = 2 * 1024 * 1024;
+const MAX_FILE_SIZE = 15 * 1024 * 1024;
+
 export const BasicInfoSchema = z.object({
   title: z.string().min(1, "Title is required."),
   subtitle: z.string().min(1, "Subtitle is required."),
@@ -70,36 +89,6 @@ export const BasicInfoSchema = z.object({
     ),
 });
 
-export type BasicInfoFormType = z.infer<typeof BasicInfoSchema>;
-
-const ACCEPTED_IMAGE_TYPES = [
-  "image/jpeg",
-  "image/jpg",
-  "image/png",
-  "image/webp",
-];
-
-const ACCEPTED_VIDEO_TYPES = ["video/mp4", "video/webm", "video/ogg"];
-const ACCEPTED_NOTE_FILE_TYPES = [
-  "application/pdf",
-  "application/msword",
-  "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-  "text/plain",
-];
-
-// const ACCEPTED_FILES_TYPE = [
-//   ".doc",
-//   ".docx",
-//   ".xml",
-//   "application/msword",
-//   "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-//   ...ACCEPTED_IMAGE_TYPES,
-//   ...ACCEPTED_VIDEO_TYPES,
-// ];
-const MAX_VIDEO_SIZE = 100 * 1024 * 1024;
-const MAX_IMAGE_SIZE = 2 * 1024 * 1024;
-const MAX_FILE_SIZE = 15 * 1024 * 1024;
-
 export const AdvanceInfoSchema = z.object({
   courseThumbnail: z.union([
     z
@@ -155,83 +144,100 @@ export const AdvanceInfoSchema = z.object({
     .min(1, "Course requirements are required"),
 });
 
-export type AdvanceInfoType = z.infer<typeof AdvanceInfoSchema>;
 export const CurriculumSchema = z.object({
   curriculum: z
     .array(
       z.object({
         sectionName: z.string().min(1, "Section name is required"),
+        lectures: z
+          .array(
+            z.object({
+              lectureName: z.string().min(1, "Lecture name is required"),
+              lectureContent: z.object({
+                videoUrl: z
+                  .object({
+                    file: z
+                      .custom<File>((val) => val instanceof File, {
+                        message: "Invalid video file",
+                      })
+                      .refine(
+                        (file) => ACCEPTED_VIDEO_TYPES.includes(file.type),
+                        "video/mp4, video/webm and video/ogg files are accepted."
+                      )
+                      .refine(
+                        (file) => file.size <= MAX_VIDEO_SIZE,
+                        "Video must be less than 100MB"
+                      )
+                      .optional(),
+                    url: z.string().url("Invalid video URL"),
+                    duration: z.string(),
+                    name: z.string(),
+                  })
+                  .refine((data) => {
+                    return data.url || data.file;
+                  }, "Either file or URL must be provided")
+                  .optional(),
 
-        lectures: z.array(
-          z.object({
-            lectureName: z.string().min(1, "Lecture name is required"),
-            lectureContent: z.object({
-              videoUrl: z
-                .object({
-                  file: z
-                    .custom<File>((val) => val instanceof File, {
-                      message: "Invalid video file",
-                    })
-                    .refine(
-                      (file) => ACCEPTED_VIDEO_TYPES.includes(file.type),
-                      "video/mp4, video/webm and video/ogg files are accepted."
-                    )
-                    .refine(
-                      (file) => file.size <= MAX_VIDEO_SIZE,
-                      "Video must be less than 100MB"
-                    )
-                    .optional()
-                    .nullable(),
-                  url: z.string().url("Invalid video URL"),
-                  duration: z.string(),
-                  name: z.string(),
-                })
-                .optional(),
-
-              lecture_file: z
-                .object({
-                  file: z.optional(
-                    z
+                lecture_file: z
+                  .object({
+                    file: z
                       .custom<File>((val) => val instanceof File, {
                         message: "Invalid file",
                       })
                       .refine((file) => file.size <= MAX_FILE_SIZE, {
                         message: "File must be less than 15MB",
                       })
-                  ),
-                  url: z.string(),
-                  name: z.string(),
-                  size: z.number(),
-                  type: z.string(),
-                })
-                .optional(),
-              caption: z
-                .string()
-                .min(1, "Caption field cannot be empty")
-                .optional(),
-              description: z
-                .string()
-                .min(1, "Description field cannot be empty")
-                .optional(),
-              lecture_notes: z
-                .object({
-                  note_text: z.string().min(1, "Note text is required"),
-                  note_file: z
-                    .instanceof(File)
-                    .refine(
-                      (val) => ACCEPTED_NOTE_FILE_TYPES.includes(val.type),
-                      {
-                        message: "PDF, DOC and DOCX files are accepted.",
-                      }
-                    )
-                    .refine((val) => MAX_FILE_SIZE >= val.size, {
-                      message: `Max file size is ${MAX_FILE_SIZE}.`,
+                      .optional(),
+                    url: z.string(),
+                    name: z.string(),
+                    size: z.number(),
+                    type: z.string(),
+                  })
+                  .optional(),
+                caption: z
+                  .string()
+                  .optional()
+                  .refine((val) => !val || val.trim().length > 0, {
+                    message: "Caption cannot be empty",
+                  }),
+                description: z
+                  .string()
+                  .optional()
+                  .refine((val) => !val || val.trim().length > 0, {
+                    message: "Description field cannot be empty",
+                  }),
+                lecture_notes: z
+                  .object({
+                    note_text: z
+                      .string()
+                      .refine((val) => !val || val.trim().length > 0, {
+                        message: "Note text is required",
+                      }),
+                    note_file: z.object({
+                      file: z
+                        .custom<File>((val) => val instanceof File, {
+                          message: "Invalid file",
+                        })
+                        .refine(
+                          (file) =>
+                            ACCEPTED_NOTE_FILE_TYPES.includes(file.type),
+                          ".doc,.docx,pdf, xml file are accepted"
+                        )
+                        .refine((file) => file.size <= MAX_FILE_SIZE, {
+                          message: "File must be less than 15MB",
+                        })
+                        .optional(),
+                      url: z.string(),
+                      name: z.string(),
+                      size: z.number(),
+                      type: z.string(),
                     }),
-                })
-                .optional(),
-            }),
-          })
-        ),
+                  })
+                  .optional(),
+              }),
+            })
+          )
+          .optional(),
       })
     )
     .min(1, "Curriculum section required"),
@@ -260,9 +266,11 @@ export const CompleteSchema = z.union([
   PublishCourseSChema,
 ]);
 
+export type BasicInfoFormType = z.infer<typeof BasicInfoSchema>;
+export type AdvanceInfoType = z.infer<typeof AdvanceInfoSchema>;
 export type CurriculumType = z.infer<typeof CurriculumSchema>;
-export type CompleteFormType = z.infer<typeof CompleteSchema>;
 export type PublishCourseType = z.infer<typeof PublishCourseSChema>;
+export type CompleteFormType = z.infer<typeof CompleteSchema>;
 
 export const STEP_SCHEMA = [
   BasicInfoSchema,

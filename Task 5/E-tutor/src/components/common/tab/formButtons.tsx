@@ -11,7 +11,7 @@ const FormButtons = ({
   prevButtonLabel,
 }: FormButtonsType) => {
   return (
-    <div className="mt-8 w-full flex justify-between">
+    <div className="mt-8 w-full flex justify-between px-10">
       <CustomButton
         type="button"
         size="lg"

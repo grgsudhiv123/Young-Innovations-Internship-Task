@@ -3,8 +3,7 @@ import CustomButton from "../../../../ui/button";
 import { Controller, useFormContext } from "react-hook-form";
 import { BookIcon } from "@phosphor-icons/react";
 
-type payloadType = {
-  file: File;
+type FilePayload = {
   url: string;
   name: string;
   size: number;
@@ -25,20 +24,19 @@ const LectureNotes = ({
 
   const handleFileChange = (
     e: ChangeEvent<HTMLInputElement>,
-    onChange: (payload: payloadType) => void
+    onChange: (payload: FilePayload) => void
   ) => {
     e.stopPropagation();
     const file = e.target.files?.[0];
+
     if (!file) return;
 
     const payload = {
-      file: file,
       url: URL.createObjectURL(file),
       name: file.name,
       size: file.size,
       type: file.type,
     };
-
     onChange(payload);
   };
 
@@ -55,12 +53,7 @@ const LectureNotes = ({
           <Controller
             control={control}
             name={`${baseName}.lecture_notes.note_text`}
-            render={({ field, fieldState }) => {
-              console.log(
-                "Lecture note text error : ",
-                fieldState.error?.message
-              );
-
+            render={({ field }) => {
               return (
                 <textarea
                   placeholder="Write your lecture Notes here..."
@@ -78,12 +71,9 @@ const LectureNotes = ({
           <Controller
             control={control}
             name={`${baseName}.lecture_notes.note_file`}
-            render={({ field, fieldState }) => {
+            render={({ field }) => {
               const currentFile = watch(`${baseName}.lecture_notes.note_file`);
-              console.log(
-                "Lecture note file error : ",
-                fieldState.error?.message
-              );
+
               return (
                 <>
                   <input

@@ -15,10 +15,10 @@ import { Controller, useFieldArray, useFormContext } from "react-hook-form";
 import SortableLetureItem from "./sortableLectureItem";
 import { closestCenter, DndContext, type DragEndEvent } from "@dnd-kit/core";
 
-const defaultLecture = {
+const defaultLecture = () => ({
   lectureName: "",
   lectureContent: {},
-};
+});
 
 const SortableSectionItem = ({
   id,
@@ -123,7 +123,7 @@ const SortableSectionItem = ({
                 <button
                   type="button"
                   className="cursor-pointer"
-                  onClick={() => appendLecture(defaultLecture)}
+                  onClick={() => appendLecture(defaultLecture())}
                 >
                   <PlusIcon
                     size={24}

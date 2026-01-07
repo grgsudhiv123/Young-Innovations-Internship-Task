@@ -38,7 +38,6 @@ const TopNavbar = () => {
   }
 
   const { user } = UseAuth();
-  console.log("user in topnavbar : ", user);
 
   const handleImageChange = async (e: ChangeEvent<HTMLInputElement>) => {
     try {

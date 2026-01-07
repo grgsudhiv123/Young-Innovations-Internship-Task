@@ -15,7 +15,6 @@ const LectureCaption = ({
 
   const handleSubmit = async () => {
     const isValid = await trigger([`${baseName}.caption`]);
-    console.log(`${baseName}.caption isValid : `, isValid);
     if (isValid) {
       setIsOpen(false);
     }
@@ -33,8 +32,7 @@ const LectureCaption = ({
           control={control}
           render={({ field, fieldState }) => {
             const isError = fieldState.error;
-            console.log(`${baseName}.caption error : `, isError?.message);
-            console.log("caption error : ", isError ? true : false);
+
             return (
               <div className="relative w-full">
                 <textarea

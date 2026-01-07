@@ -9,9 +9,10 @@ import SortableSectionItem from "./sortableSelectionItem";
 import { useFieldArray, useFormContext } from "react-hook-form";
 import CustomButton from "../../../ui/button";
 
-const defaultCurriculumField = {
+const defaultCurriculumField = () => ({
   sectionName: "",
-};
+  lectures: [],
+});
 
 const SortableFields = () => {
   const { control } = useFormContext();
@@ -53,7 +54,6 @@ const SortableFields = () => {
             ) : (
               <div className="w-full p-10 text-center bg-gray-50">
                 <p className="body-lg-400 text-gray-700">No input fields </p>
-                {}
               </div>
             )}
           </div>
@@ -64,7 +64,7 @@ const SortableFields = () => {
         variant="light-primary"
         className="w-full mt-8"
         size="base"
-        onClick={() => append(defaultCurriculumField)}
+        onClick={() => append(defaultCurriculumField())}
       >
         <span>Add Sections</span>
       </CustomButton>
