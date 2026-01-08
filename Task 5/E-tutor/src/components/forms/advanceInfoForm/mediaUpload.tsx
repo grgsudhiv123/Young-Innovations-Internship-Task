@@ -191,9 +191,11 @@ const MediaUpload = ({ header, fieldName }: MediaUploadPropsType) => {
                   isClose={() => setIsModelOpen(false)}
                 >
                   {isImageField ? (
-                    <img src={field.value} />
+                    <div className="bg-white w-full ">
+                      <img className="w-lg mx-auto" src={field.value} />
+                    </div>
                   ) : (
-                    <video className="w-5xl" controls>
+                    <video className="w-full" controls>
                       <source src={field.value} type="video/mp4" />
                     </video>
                   )}

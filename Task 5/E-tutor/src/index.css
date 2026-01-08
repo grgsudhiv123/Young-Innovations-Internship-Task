@@ -268,4 +268,42 @@
     height: 230px !important;
     overflow-y: scroll !important;
   }
+
+  /* model animation */
+  .dialog {
+    border: none;
+    opacity: 0;
+    animation-fill-mode: forwards;
+  }
+
+  .dialog-open {
+    animation: fade-in 200ms ease-out forwards;
+  }
+
+  .dialog-close {
+    animation: fade-out 200ms ease-in forwards;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-out {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+
+  dialog::backdrop {
+    background: rgba(0, 0, 0, 0.4);
+    animation: fade-in 200ms ease-out;
+  }
 }

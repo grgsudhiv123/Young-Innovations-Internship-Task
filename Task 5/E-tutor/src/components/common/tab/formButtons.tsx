@@ -4,11 +4,13 @@ type FormButtonsType = {
   handlePreviosBtn: () => void;
   handleNextBtn: () => void;
   prevButtonLabel: string;
+  nextButtonLabel: string;
 };
 const FormButtons = ({
   handlePreviosBtn,
   handleNextBtn,
   prevButtonLabel,
+  nextButtonLabel,
 }: FormButtonsType) => {
   return (
     <div className="mt-8 w-full flex justify-between px-10">
@@ -22,7 +24,7 @@ const FormButtons = ({
         <span>{prevButtonLabel}</span>
       </CustomButton>
       <CustomButton type="submit" size="lg" onClick={handleNextBtn}>
-        <span>Save & Next</span>
+        <span>{nextButtonLabel}</span>
       </CustomButton>
     </div>
   );

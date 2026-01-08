@@ -23,3 +23,13 @@ export const multistepFormConstants = [
     icon: PlayCircleIcon,
   },
 ];
+
+export const FormConstants = {
+  BASIC_INFORMATION: "basic information",
+  ADVANCE_INFORMATION: "advance information",
+  CURRICULUM: "curriculum",
+  PUBLISH_COURSE: "publish course",
+} as const;
+
+export type FormConstantsType =
+  (typeof FormConstants)[keyof typeof FormConstants];

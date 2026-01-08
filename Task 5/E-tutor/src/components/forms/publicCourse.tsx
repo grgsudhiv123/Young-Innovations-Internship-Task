@@ -6,7 +6,7 @@ import { useRef, useState, type ChangeEvent } from "react";
 import { PublicCoursesConstants } from "../../utils/constants/publicCoursesConstants";
 import { ZeroBefore } from "./curriculumForm/sortableComponents/sortableSelectionItem";
 
-interface searchValueType {
+export interface searchValueType {
   name: string;
   img: string;
   role: string;

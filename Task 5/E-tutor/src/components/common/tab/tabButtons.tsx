@@ -1,6 +1,8 @@
-import { useEffect, useRef } from "react";
+// import { useEffect, useRef } from "react";
 import { multistepFormConstants } from "../../../utils/constants/multiStepFormConstants";
 import clsx from "clsx";
+import { useAppDispatch } from "../../../hooks/multistepFormHook";
+import { goToStep } from "../../../features/multistepFormReducer";
 
 type TabButtonsType = {
   step: number;
@@ -8,20 +10,22 @@ type TabButtonsType = {
 };
 
 const TabButtons = ({ step, setStep }: TabButtonsType) => {
-  const buttonRef = useRef<(HTMLButtonElement | null)[]>([]);
-  const sliderRef = useRef<HTMLDivElement | null>(null);
+  // const buttonRef = useRef<(HTMLButtonElement | null)[]>([]);
+  // const sliderRef = useRef<HTMLDivElement | null>(null);
 
-  useEffect(() => {
-    const activeTabButton = buttonRef.current[step];
-    const slider = sliderRef.current;
+  // useEffect(() => {
+  //   const activeTabButton = buttonRef.current[step];
+  //   const slider = sliderRef.current;
 
-    if (!activeTabButton || !slider) {
-      return;
-    }
+  //   if (!activeTabButton || !slider) {
+  //     return;
+  //   }
 
-    slider.style.width = `${activeTabButton.offsetWidth}px`;
-    slider.style.transform = `translateX(${activeTabButton.offsetLeft}px)`;
-  }, [step]);
+  //   slider.style.width = `${activeTabButton.offsetWidth}px`;
+  //   slider.style.transform = `translateX(${activeTabButton.offsetLeft}px)`;
+  // }, [step]);
+
+  const dispatch = useAppDispatch();
 
   return (
     <>
@@ -33,13 +37,19 @@ const TabButtons = ({ step, setStep }: TabButtonsType) => {
             return (
               <button
                 type="button"
-                ref={(el) => {
-                  buttonRef.current[i] = el;
+                // ref={(el) => {
+                //   buttonRef.current[i] = el;
+                // }}
+                onClick={() => {
+                  setStep(i);
+                  dispatch(goToStep(i + 1));
                 }}
-                onClick={() => setStep(i)}
                 key={i}
                 data-stepbtn={i}
-                className=" col-span-1 flex justify-between p-5 cursor-pointer text-gray-600 tabButtons"
+                className={clsx(
+                  " col-span-1 flex justify-between p-5 cursor-pointer text-gray-600 tabButtons border-b-4",
+                  isActive ? "border-warning-500 " : "border-none"
+                )}
               >
                 <span className="flex flex-row gap-2">
                   <Icon
@@ -61,12 +71,12 @@ const TabButtons = ({ step, setStep }: TabButtonsType) => {
               </button>
             );
           })}
-        <div
+        {/* <div
           ref={sliderRef}
           className={clsx(
             `absolute left-0 bottom-0 bg-warning-500 h-1 w-5 transition-all duration-200 ease-in-out`
           )}
-        ></div>
+        ></div> */}
       </div>
     </>
   );

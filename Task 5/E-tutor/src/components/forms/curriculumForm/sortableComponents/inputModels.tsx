@@ -84,7 +84,7 @@ const InputModels = ({
 
   return (
     <CustomDialog isOpen={isOpen} isClose={() => setIsOpen(false)}>
-      <div className="w-2xl h-auto bg-white">
+      <div className="w-full h-auto bg-white">
         <div className="w-full px-5 py-4 border border-b border-gray-100">
           <p className="body-lg-500 text-base leading-5.5">
             {ModelName(selectedContent)}

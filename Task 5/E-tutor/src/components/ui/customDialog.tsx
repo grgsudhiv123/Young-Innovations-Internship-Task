@@ -2,41 +2,55 @@ import { X } from "@phosphor-icons/react";
 import { useEffect, useRef } from "react";
 import { createPortal } from "react-dom";
 
+type CustomDialogProps = {
+  isOpen: boolean;
+  isClose: (value: boolean) => void;
+  children: React.ReactNode;
+};
+
 export const CustomDialog = ({
   isOpen,
   isClose,
   children,
-}: {
-  isOpen: boolean;
-  isClose: (close: boolean) => void;
-  children: React.ReactNode;
-}) => {
-  const dialogRef = useRef<HTMLDialogElement | null>(null);
+}: CustomDialogProps) => {
+  const dialogRef = useRef<HTMLDialogElement>(null);
 
   useEffect(() => {
-    if (!dialogRef) return;
-    if (isOpen) {
-      dialogRef.current?.showModal();
-    } else {
-      dialogRef.current?.close();
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+
+    if (isOpen && !dialog.open) {
+      dialog.showModal();
+    }
+
+    if (!isOpen && dialog.open) {
+      dialog.close();
     }
   }, [isOpen]);
-
-  if (!isOpen) return null;
 
   return createPortal(
     <dialog
       ref={dialogRef}
-      className="min-w-1/5 min-h-50 z-10 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2  rounded-md p-2 bg-transparent"
+      className=" backdrop:bg-black/40 w-[80vw] max-w-3xl min-h-50 z-10 top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2  rounded-md p-2 bg-transparent"
+      onClick={(e) => {
+        if (e.target === e.currentTarget) {
+          isClose(false);
+        }
+      }}
+      onCancel={(e) => {
+        e.preventDefault();
+        isClose(false);
+      }}
     >
-      <div className="relative w-full h-full bg-transparent">
+      <div className="relative bg-white rounded-md p-4">
         <button
           type="button"
-          className="absolute top-2 right-2 z-20 cursor-pointer hover:text-gray-700 float-end p-1 bg-gray-50"
           onClick={() => isClose(false)}
+          className="absolute top-2 right-2 p-1 rounded hover:bg-gray-100"
         >
-          <X size={24} />
+          <X size={20} />
         </button>
+
         {children}
       </div>
     </dialog>,

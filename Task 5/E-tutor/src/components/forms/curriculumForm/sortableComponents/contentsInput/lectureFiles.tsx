@@ -68,6 +68,7 @@ const LectureFiles = ({
                     <a
                       href={currentFile.url.replace("blob:", "")}
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="capitalize"
                     >
                       {currentFile.name}

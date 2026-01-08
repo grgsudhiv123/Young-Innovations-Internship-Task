@@ -14,6 +14,7 @@ import ProtectedRoutes from "../pages/protectedRoutes";
 import RedirectIfLoggedin from "../utils/redirectIfLoggedin";
 import RequireAuth from "../utils/requireAuth";
 import { UserRole } from "../utils/constants/userrole.constants";
+import CompleteFormPreview from "../components/forms/formDetail";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,12 @@ const router = createBrowserRouter([
                 <NewCoursePage />,
               </RequireAuth>
             ),
+            children: [
+              {
+                path: PageRoutes.CREATE_NEW_COURSE_FORM_DETAIL,
+                element: <CompleteFormPreview />,
+              },
+            ],
           },
           {
             path: PageRoutes.MY_COURSE,

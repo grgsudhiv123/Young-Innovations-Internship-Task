@@ -3,9 +3,11 @@ import CustomButton from "../../ui/button";
 const ActiveFormHeading = ({
   ActiveFormStep,
   handleSave,
+  handleSavePreview,
 }: {
   ActiveFormStep: string;
   handleSave: () => void;
+  handleSavePreview: () => void;
 }) => {
   return (
     <div className="py-6 px-10 flex flex-row justify-between border-b border-gray-200">
@@ -20,7 +22,12 @@ const ActiveFormHeading = ({
         >
           <span>Save</span>
         </CustomButton>
-        <CustomButton variant="tertiary-primary" size="base" className="">
+        <CustomButton
+          onClick={handleSavePreview}
+          variant="tertiary-primary"
+          size="base"
+          className=""
+        >
           <span>Save & Preview</span>
         </CustomButton>
       </div>

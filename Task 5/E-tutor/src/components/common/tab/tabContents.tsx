@@ -13,6 +13,7 @@ const ActiveTabContents = ({ step }: ActiveTabContentTypes) => {
       {step === 1 && <AdvanceInfoForm />}
       {step === 2 && <CurriculumForm />}
       {step === 3 && <PublicCourseForm />}
+      {step === 4 && <PublicCourseForm />}
     </>
   );
 };
