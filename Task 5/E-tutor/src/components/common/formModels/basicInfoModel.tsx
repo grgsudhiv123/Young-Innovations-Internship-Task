@@ -117,7 +117,7 @@ const BasicInfoModel = () => {
 
 export default BasicInfoModel;
 
-const InfoRow = ({
+export const InfoRow = ({
   label,
   value,
   icon: Icon,
@@ -134,7 +134,7 @@ const InfoRow = ({
     )}
     <div className="flex-1 min-w-0">
       <p className="text-sm font-medium text-gray-500 mb-1">{label}</p>
-      <p className="text-base font-semibold text-gray-900 wrap-break-words">
+      <p className="text-base font-semibold text-gray-900 line-clamp-1">
         {value || <span className="text-gray-400 italic">Not provided</span>}
       </p>
     </div>

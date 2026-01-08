@@ -209,7 +209,7 @@ const CurriculumModel = () => {
 
 export default CurriculumModel;
 
-const ContentRow = ({
+export const ContentRow = ({
   label,
   icon: Icon,
   children,
@@ -226,7 +226,7 @@ const ContentRow = ({
     )}
     <div className="flex-1 min-w-0">
       <p className="text-xs font-medium text-gray-500 mb-1">{label}</p>
-      <div className="wrap-break-words">{children}</div>
+      <div className="">{children}</div>
     </div>
   </div>
 );

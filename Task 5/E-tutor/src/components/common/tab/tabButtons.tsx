@@ -67,7 +67,7 @@ const TabButtons = ({ step, setStep }: TabButtonsType) => {
                     {item.title}
                   </span>
                 </span>
-                {<span className="body-sm-500 text-success-500">7/12</span>}
+                {/* {<span className="body-sm-500 text-success-500">7/12</span>} */}
               </button>
             );
           })}

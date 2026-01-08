@@ -37,6 +37,7 @@ const BasicInfoForm = () => {
     name: "courseCategory",
     control,
   });
+
   useEffect(() => {
     setValue("courseSubCategory", "");
   }, [courseCategory, setValue]);

@@ -17,12 +17,14 @@ import {
   Trophy,
   UsersThree,
   User,
-  type IconProps,
 } from "@phosphor-icons/react";
 import type { searchValueType } from "./publicCourse";
 import CustomButton from "../ui/button";
 import { useNavigate } from "react-router";
 import { PageRoutes } from "../../enum/routes";
+import { InfoRow } from "../common/formModels/basicInfoModel";
+import { ListRow } from "../common/formModels/advanceFormModel";
+import { ContentRow } from "../common/formModels/curriculumodel";
 
 type sectionType = {
   sectionName: string;
@@ -532,85 +534,3 @@ const CompleteFormPreview = () => {
 };
 
 export default CompleteFormPreview;
-
-const InfoRow = ({
-  label,
-  value,
-  icon: Icon,
-}: {
-  label: string;
-  value: string;
-  icon?: React.ComponentType<IconProps>;
-}) => (
-  <div className="flex items-start gap-3 py-3 border-b border-gray-100 last:border-0">
-    {Icon && (
-      <div className="shrink-0 w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center">
-        <Icon size={20} className="text-primary-600" />
-      </div>
-    )}
-    <div className="flex-1 min-w-0">
-      <p className="text-sm font-medium text-gray-500 mb-1">{label}</p>
-      <p className="text-base font-semibold text-gray-900  whitespace-pre-wrap line-clamp-2">
-        {value || <span className="text-gray-400 italic">Not provided</span>}
-      </p>
-    </div>
-  </div>
-);
-
-const ListRow = ({
-  label,
-  items,
-  icon: Icon,
-}: {
-  label: string;
-  items: { value: string }[];
-  icon?: React.ComponentType<IconProps>;
-}) => (
-  <div className="flex items-start gap-3 py-3 border-b border-gray-100 last:border-0">
-    {Icon && (
-      <div className="shrink-0 w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center">
-        <Icon size={20} className="text-primary-600" />
-      </div>
-    )}
-    <div className="flex-1 min-w-0">
-      <p className="text-sm font-medium text-gray-500 mb-1">{label}</p>
-      {items && items.length > 0 ? (
-        <ul className="space-y-1">
-          {items.map((item, index) => (
-            <li
-              key={index}
-              className="text-base text-gray-900 flex items-start gap-2"
-            >
-              <span className="text-primary-600 mt-1">•</span>
-              <span className="flex-1">{item.value}</span>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <span className="text-gray-400 italic">Not provided</span>
-      )}
-    </div>
-  </div>
-);
-
-const ContentRow = ({
-  label,
-  icon: Icon,
-  children,
-}: {
-  label: string;
-  icon?: React.ComponentType<IconProps>;
-  children: React.ReactNode;
-}) => (
-  <div className="flex items-start gap-2 py-2">
-    {Icon && (
-      <div className="shrink-0 w-6 h-6 bg-primary-50 rounded flex items-center justify-center mt-0.5">
-        <Icon size={14} className="text-primary-600" />
-      </div>
-    )}
-    <div className="flex-1 min-w-0">
-      <p className="text-xs font-medium text-gray-500 mb-1">{label}</p>
-      <div className="">{children}</div>
-    </div>
-  </div>
-);

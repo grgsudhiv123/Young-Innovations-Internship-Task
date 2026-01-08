@@ -12,6 +12,7 @@ const persistConfig = {
   storage: localStorage,
   whitelist: ["multistepForm"],
 };
+
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = configureStore({

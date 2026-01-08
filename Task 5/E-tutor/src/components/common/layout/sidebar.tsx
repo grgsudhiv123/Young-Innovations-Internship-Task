@@ -26,7 +26,7 @@ const Sidebar = () => {
       });
       navigate(PageRoutes.SIGNIN);
     } catch (error) {
-      console.log("Logout errror : ", error);
+      console.log("Logout error : ", error);
     }
   };
 

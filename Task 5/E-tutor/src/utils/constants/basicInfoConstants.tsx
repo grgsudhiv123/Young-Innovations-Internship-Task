@@ -17,33 +17,11 @@ export const COURSE_SUB_CATEGORIES = {
 export type COURSE_SUBCATEGORY_TYPE =
   (typeof COURSE_SUB_CATEGORIES)[keyof typeof COURSE_SUB_CATEGORIES][number];
 
-export const COURSE_LANGUAGE = [
-  "English",
-  "Spanish",
-  "French",
-  "German",
-  "Mandarin",
-  "Cantonese",
-  "Japanese",
-  "Korean",
-  "Hindi",
-  "Nepali",
-] as const;
+export const COURSE_LANGUAGE = ["English", "Spanish", "French"] as const;
 
 export type COURSE_LANGUAGE_TYPE = (typeof COURSE_LANGUAGE)[number];
 
-export const SUBTITLE_LANGUAGE = [
-  "English",
-  "Spanish",
-  "French",
-  "German",
-  "Mandarin",
-  "Cantonese",
-  "Japanese",
-  "Korean",
-  "Hindi",
-  "Nepali",
-] as const;
+export const SUBTITLE_LANGUAGE = ["English", "Spanish", "French"] as const;
 
 export type SUBTITLE_LANGUAGE_TYPE = (typeof SUBTITLE_LANGUAGE)[number];
 

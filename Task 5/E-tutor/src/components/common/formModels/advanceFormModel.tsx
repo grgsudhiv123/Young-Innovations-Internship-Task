@@ -8,6 +8,7 @@ import {
   ImageIcon,
   CameraIcon,
 } from "@phosphor-icons/react";
+import { InfoRow } from "./basicInfoModel";
 
 const AdvanceFormModel = () => {
   const { getValues } = useFormContext();
@@ -87,31 +88,7 @@ const AdvanceFormModel = () => {
 
 export default AdvanceFormModel;
 
-const InfoRow = ({
-  label,
-  value,
-  icon: Icon,
-}: {
-  label: string;
-  value: string;
-  icon?: React.ComponentType<IconProps>;
-}) => (
-  <div className="flex items-start gap-3 py-3 border-b border-gray-100 last:border-0">
-    {Icon && (
-      <div className="shrink-0 w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center">
-        <Icon size={20} className="text-primary-600" />
-      </div>
-    )}
-    <div className="flex-1 min-w-0">
-      <p className="text-sm font-medium text-gray-500 mb-1">{label}</p>
-      <p className="text-base font-semibold text-gray-900 wrap-break-words line-clamp-1">
-        {value || <span className="text-gray-400 italic">Not provided</span>}
-      </p>
-    </div>
-  </div>
-);
-
-const ListRow = ({
+export const ListRow = ({
   label,
   items,
   icon: Icon,
@@ -122,7 +99,7 @@ const ListRow = ({
 }) => (
   <div className="flex items-start gap-3 py-3 border-b border-gray-100 last:border-0">
     {Icon && (
-      <div className="flex-shrink-0 w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center">
+      <div className="shrink-0 w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center">
         <Icon size={20} className="text-primary-600" />
       </div>
     )}

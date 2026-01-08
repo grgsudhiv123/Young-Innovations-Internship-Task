@@ -1,12 +1,7 @@
 import { useFormContext } from "react-hook-form";
-import {
-  ChatCircle,
-  Trophy,
-  UsersThree,
-  User,
-  type IconProps,
-} from "@phosphor-icons/react";
+import { ChatCircle, Trophy, UsersThree, User } from "@phosphor-icons/react";
 import type { searchValueType } from "../../forms/publicCourse";
+import { InfoRow } from "./basicInfoModel";
 
 const PublishCourseModel = () => {
   const { getValues } = useFormContext();
@@ -98,27 +93,3 @@ const PublishCourseModel = () => {
 };
 
 export default PublishCourseModel;
-
-const InfoRow = ({
-  label,
-  value,
-  icon: Icon,
-}: {
-  label: string;
-  value: string;
-  icon?: React.ComponentType<IconProps>;
-}) => (
-  <div className="w-full flex items-start gap-3 py-3 border-b border-gray-100 last:border-0">
-    {Icon && (
-      <div className="shrink-0 w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center">
-        <Icon size={20} className="text-primary-600" />
-      </div>
-    )}
-    <div className="flex-1 min-w-0">
-      <p className="text-sm font-medium text-gray-500 mb-1">{label}</p>
-      <p className="text-base font-semibold text-gray-900 whitespace-pre-wrap">
-        {value || <span className="text-gray-400 italic">Not provided</span>}
-      </p>
-    </div>
-  </div>
-);
